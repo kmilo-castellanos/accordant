@@ -1,0 +1,296 @@
+/**
+ */
+package co.edu.uniandes.accordant_dv.impl;
+
+import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
+import co.edu.uniandes.accordant_dv.Deployment;
+import co.edu.uniandes.accordant_dv.DeploymentView;
+import co.edu.uniandes.accordant_dv.Device;
+import co.edu.uniandes.accordant_dv.Service;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Deployment View</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentViewImpl#getName <em>Name</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentViewImpl#getDevs <em>Devs</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentViewImpl#getDeployments <em>Deployments</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentViewImpl#getServices <em>Services</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements DeploymentView {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDevs() <em>Devs</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDevs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Device> devs;
+
+	/**
+	 * The cached value of the '{@link #getDeployments() <em>Deployments</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeployments()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Deployment> deployments;
+
+	/**
+	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getServices()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Service> services;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DeploymentViewImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return Accordant_dvPackage.Literals.DEPLOYMENT_VIEW;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.DEPLOYMENT_VIEW__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Device> getDevs() {
+		if (devs == null) {
+			devs = new EObjectContainmentEList<Device>(Device.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__DEVS);
+		}
+		return devs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Deployment> getDeployments() {
+		if (deployments == null) {
+			deployments = new EObjectContainmentEList<Deployment>(Deployment.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__DEPLOYMENTS);
+		}
+		return deployments;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Service> getServices() {
+		if (services == null) {
+			services = new EObjectContainmentEList<Service>(Service.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__SERVICES);
+		}
+		return services;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__DEVS:
+				return ((InternalEList<?>)getDevs()).basicRemove(otherEnd, msgs);
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__DEPLOYMENTS:
+				return ((InternalEList<?>)getDeployments()).basicRemove(otherEnd, msgs);
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__SERVICES:
+				return ((InternalEList<?>)getServices()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__NAME:
+				return getName();
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__DEVS:
+				return getDevs();
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__DEPLOYMENTS:
+				return getDeployments();
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__SERVICES:
+				return getServices();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__NAME:
+				setName((String)newValue);
+				return;
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__DEVS:
+				getDevs().clear();
+				getDevs().addAll((Collection<? extends Device>)newValue);
+				return;
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__DEPLOYMENTS:
+				getDeployments().clear();
+				getDeployments().addAll((Collection<? extends Deployment>)newValue);
+				return;
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__SERVICES:
+				getServices().clear();
+				getServices().addAll((Collection<? extends Service>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__DEVS:
+				getDevs().clear();
+				return;
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__DEPLOYMENTS:
+				getDeployments().clear();
+				return;
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__SERVICES:
+				getServices().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__DEVS:
+				return devs != null && !devs.isEmpty();
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__DEPLOYMENTS:
+				return deployments != null && !deployments.isEmpty();
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__SERVICES:
+				return services != null && !services.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
+	}
+
+} //DeploymentViewImpl

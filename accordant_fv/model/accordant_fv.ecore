@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="accordant_fv" nsURI="http://uniandes.accordant.functional" nsPrefix="accordant_fv">
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionalView">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conns" lowerBound="1" upperBound="-1"
+        eType="#//Connector" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comps" lowerBound="1" upperBound="-1"
+        eType="#//Component" containment="true" eOpposite="#//Component/funcView"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="delivery" eType="#//DeliveryModel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="synct" eType="#//SyncType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notification" eType="#//NotificationModel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="buffering" eType="#//Buffering"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="throughput" eType="#//Throughput"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="1" upperBound="-1"
+        eType="#//Role" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="protocol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" lowerBound="1" upperBound="-1"
+        eType="#//Port" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="procModel" eType="#//ProcessingModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="funcView" eType="#//FunctionalView"
+        eOpposite="#//FunctionalView/comps"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transformer" eSuperTypes="#//AnalyticsComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sqlExp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lambdaExp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="codeRepo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Estimator" eSuperTypes="#//AnalyticsComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Stream" eSuperTypes="#//Connector"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Adaptor" eSuperTypes="#//Connector"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Distributor" eSuperTypes="#//Connector"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Ingestor" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="props" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalyticsComponent" abstract="true"
+      eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pmml" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//Connector"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sink" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PortType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ProcessingModel">
+    <eLiterals name="STREAM" value="2" literal="STREAM"/>
+    <eLiterals name="BATCH" literal="BATCH"/>
+    <eLiterals name="MICROBATCH" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DeliveryModel">
+    <eLiterals name="BEST_EFFORT"/>
+    <eLiterals name="AT_LEAST_ONE" value="1"/>
+    <eLiterals name="AT_MOST_ONE" value="2"/>
+    <eLiterals name="EXACTLY_ONE" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SyncType">
+    <eLiterals name="ASYNC"/>
+    <eLiterals name="SYNC" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="NotificationModel">
+    <eLiterals name="POLLED"/>
+    <eLiterals name="PUBSUB" value="1"/>
+    <eLiterals name="QUEUED" value="2"/>
+    <eLiterals name="CENTRAL" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Buffering">
+    <eLiterals name="BUFFERED" value="1" literal="BUFFERED"/>
+    <eLiterals name="UNBUFFERED"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Throughput">
+    <eLiterals name="ATOMIC"/>
+    <eLiterals name="HIGH_ORDER" value="1" literal="HIGH_ORDER"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PortType">
+    <eLiterals name="REQUIRED"/>
+    <eLiterals name="PROVIDED" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Arbitrator" eSuperTypes="#//Connector"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Role">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//RoleType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoleType">
+    <eLiterals name="OUT"/>
+    <eLiterals name="IN" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcedureCall" eSuperTypes="#//Connector"/>
+</ecore:EPackage>

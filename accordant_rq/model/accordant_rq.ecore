@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="accordant_rq" nsURI="http://uniandes.accordant.requirement"
+    nsPrefix="accordant_rq">
+  <eClassifiers xsi:type="ecore:EClass" name="RequirementPackage">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenarios" eType="#//QScenario"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="QAMetric">
+    <eLiterals name="THROUGHPUT" literal="THROUGHPUT"/>
+    <eLiterals name="LATENCY" value="1"/>
+    <eLiterals name="DEADLINE" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MetricUnit">
+    <eLiterals name="MILLIS"/>
+    <eLiterals name="SECONDS"/>
+    <eLiterals name="MINUTES"/>
+    <eLiterals name="HOURS"/>
+    <eLiterals name="TASKS"/>
+    <eLiterals name="BYTES"/>
+    <eLiterals name="MSGS"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QScenario">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="measure" eType="#//QAMetric"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//MetricUnit"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="points" eType="#//SensitivityPoint"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SensitivityPoint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rationale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalyzedQS"/>
+</ecore:EPackage>

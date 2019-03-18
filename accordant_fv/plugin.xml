@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated accordant_fv -->
+      <package
+            uri="http://uniandes.accordant.functional"
+            class="co.edu.uniandes.accordant_fv.Accordant_fvPackage"
+            genModel="model/accordant_fv.genmodel"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/bdarchops-fv/model/bdarchops_fv.genmodel
+gmf_dashboard/domainModel=platform\:/resource/bdarchops-fv/model/bdarchops_fv.ecore
+gmf_dashboard/generationModel=platform\:/resource/bdarchops-editor/model/bdarchopsmm.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/bdarchops-editor/model/bdarchopsmm.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/bdarchops-editor/model/bdarchopsmm.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/bdarchops-editor/model/bdarchopsmm.gmftool

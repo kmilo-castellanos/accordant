@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/accordant_fv/src" modelPluginID="accordant_fv"
+    modelName="accordant_fv" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>accordant_fv.ecore</foreignModel>
+  <genPackages prefix="Accordant_fv" basePackage="co.edu.uniandes" disposableProviderFactory="true"
+      ecorePackage="accordant_fv.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="accordant_fv.ecore#//ProcessingModel">
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//ProcessingModel/STREAM"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//ProcessingModel/BATCH"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//ProcessingModel/MICROBATCH"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="accordant_fv.ecore#//DeliveryModel">
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//DeliveryModel/BEST_EFFORT"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//DeliveryModel/AT_LEAST_ONE"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//DeliveryModel/AT_MOST_ONE"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//DeliveryModel/EXACTLY_ONE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="accordant_fv.ecore#//SyncType">
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//SyncType/ASYNC"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//SyncType/SYNC"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="accordant_fv.ecore#//NotificationModel">
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//NotificationModel/POLLED"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//NotificationModel/PUBSUB"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//NotificationModel/QUEUED"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//NotificationModel/CENTRAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="accordant_fv.ecore#//Buffering">
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//Buffering/BUFFERED"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//Buffering/UNBUFFERED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="accordant_fv.ecore#//Throughput">
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//Throughput/ATOMIC"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//Throughput/HIGH_ORDER"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="accordant_fv.ecore#//PortType">
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//PortType/REQUIRED"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//PortType/PROVIDED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="accordant_fv.ecore#//RoleType">
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//RoleType/OUT"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_fv.ecore#//RoleType/IN"/>
+    </genEnums>
+    <genClasses ecoreClass="accordant_fv.ecore#//FunctionalView">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//FunctionalView/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_fv.ecore#//FunctionalView/conns"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_fv.ecore#//FunctionalView/comps"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="accordant_fv.ecore#//Connector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Connector/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Connector/delivery"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Connector/synct"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Connector/notification"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Connector/buffering"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Connector/throughput"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_fv.ecore#//Connector/roles"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Connector/protocol"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="accordant_fv.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Component/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_fv.ecore#//Component/ports"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Component/procModel"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference accordant_fv.ecore#//Component/funcView"/>
+    </genClasses>
+    <genClasses ecoreClass="accordant_fv.ecore#//Transformer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Transformer/sqlExp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Transformer/lambdaExp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Transformer/codeRepo"/>
+    </genClasses>
+    <genClasses ecoreClass="accordant_fv.ecore#//Estimator"/>
+    <genClasses ecoreClass="accordant_fv.ecore#//Stream"/>
+    <genClasses ecoreClass="accordant_fv.ecore#//Adaptor"/>
+    <genClasses ecoreClass="accordant_fv.ecore#//Distributor"/>
+    <genClasses ecoreClass="accordant_fv.ecore#//Ingestor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Ingestor/conn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Ingestor/format"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Ingestor/props"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Ingestor/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="accordant_fv.ecore#//AnalyticsComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//AnalyticsComponent/pmml"/>
+    </genClasses>
+    <genClasses ecoreClass="accordant_fv.ecore#//Event"/>
+    <genClasses ecoreClass="accordant_fv.ecore#//Sink">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Sink/conn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Sink/format"/>
+    </genClasses>
+    <genClasses ecoreClass="accordant_fv.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Port/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Port/name"/>
+    </genClasses>
+    <genClasses ecoreClass="accordant_fv.ecore#//Arbitrator"/>
+    <genClasses ecoreClass="accordant_fv.ecore#//Role">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Role/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_fv.ecore#//Role/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference accordant_fv.ecore#//Role/port"/>
+    </genClasses>
+    <genClasses ecoreClass="accordant_fv.ecore#//ProcedureCall"/>
+  </genPackages>
+</genmodel:GenModel>

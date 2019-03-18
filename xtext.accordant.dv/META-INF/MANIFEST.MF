@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: xtext.example.dv
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: xtext.accordant.dv;singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ accordant_dv;bundle-version="0.1.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.apache.log4j
+Export-Package: co.edu.uniandes.accordant_dv,
+ co.edu.uniandes.accordant_dv.serializer,
+ co.edu.uniandes.accordant_dv.parser.antlr,
+ co.edu.uniandes.accordant_dv.generator,
+ co.edu.uniandes.accordant_dv.services,
+ co.edu.uniandes.accordant_dv.formatting2,
+ co.edu.uniandes.accordant_dv.validation,
+ co.edu.uniandes.accordant_dv.scoping,
+ co.edu.uniandes.accordant_dv.parser.antlr.internal
