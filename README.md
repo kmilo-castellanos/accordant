@@ -15,3 +15,9 @@ Accordant Domain Specific Languages using Xtext
 * xtext.accordant.fv.tests: Xtext functional view tests
 * xtext.accordant.fv.ui: Xtext functional view UI
 * xtext.accordant.fv.ui.tests: Xtext functional view UI tests
+
+
+## Eclipse Plugins
+* Xtext Complete SDK
+* Xtend
+* GMF Tooling
