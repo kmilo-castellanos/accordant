@@ -12,6 +12,7 @@ import co.edu.uniandes.accordant_dv.EnvVar;
 import co.edu.uniandes.accordant_dv.ExecEnvironment;
 import co.edu.uniandes.accordant_dv.ExposedPort;
 import co.edu.uniandes.accordant_dv.Pod;
+import co.edu.uniandes.accordant_dv.ServerlessEnv;
 import co.edu.uniandes.accordant_dv.Service;
 import co.edu.uniandes.accordant_dv.services.AdvlGrammarAccess;
 import com.google.inject.Inject;
@@ -62,6 +63,9 @@ public class AdvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case Accordant_dvPackage.POD:
 				sequence_Pod(context, (Pod) semanticObject); 
 				return; 
+			case Accordant_dvPackage.SERVERLESS_ENV:
+				sequence_ServerlessEnv(context, (ServerlessEnv) semanticObject); 
+				return; 
 			case Accordant_dvPackage.SERVICE:
 				sequence_Service(context, (Service) semanticObject); 
 				return; 
@@ -75,7 +79,14 @@ public class AdvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Artifact returns Artifact
 	 *
 	 * Constraint:
-	 *     (name=ID component=EString? connector=EString? props=EString?)
+	 *     (
+	 *         name=ID 
+	 *         component=EString? 
+	 *         connector=EString? 
+	 *         paas=[ExecEnvironment|ID]? 
+	 *         saas=[ServerlessEnv|ID]? 
+	 *         props=EString?
+	 *     )
 	 */
 	protected void sequence_Artifact(ISerializationContext context, Artifact semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -87,7 +98,15 @@ public class AdvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     DeploymentView returns DeploymentView
 	 *
 	 * Constraint:
-	 *     (name=ID (devs+=Device devs+=Device*)? deployments+=Deployment deployments+=Deployment* (services+=Service services+=Service*)?)
+	 *     (
+	 *         name=ID 
+	 *         (devs+=Device devs+=Device*)? 
+	 *         (deployments+=Deployment deployments+=Deployment*)? 
+	 *         (services+=Service services+=Service*)? 
+	 *         (serverless+=ServerlessEnv serverless+=ServerlessEnv*)? 
+	 *         artifacts+=Artifact 
+	 *         artifacts+=Artifact*
+	 *     )
 	 */
 	protected void sequence_DeploymentView(ISerializationContext context, DeploymentView semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -158,7 +177,6 @@ public class AdvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         mem_req=EInt? 
 	 *         (ports+=EInt ports+=EInt*)? 
 	 *         (commands+=EString commands+=EString*)? 
-	 *         (artifacts+=Artifact artifacts+=Artifact*)? 
 	 *         (vars+=EnvVar vars+=EnvVar*)?
 	 *     )
 	 */
@@ -194,6 +212,18 @@ public class AdvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     )
 	 */
 	protected void sequence_Pod(ISerializationContext context, Pod semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ServerlessEnv returns ServerlessEnv
+	 *
+	 * Constraint:
+	 *     (name=ID provider=EString? memory=EFloat? timeout=EInt?)
+	 */
+	protected void sequence_ServerlessEnv(ISerializationContext context, ServerlessEnv semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

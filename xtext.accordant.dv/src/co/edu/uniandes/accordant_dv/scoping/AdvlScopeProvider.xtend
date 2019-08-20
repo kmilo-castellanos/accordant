@@ -11,6 +11,9 @@ import co.edu.uniandes.accordant_dv.Accordant_dvPackage
 //import co.edu.uniandes.accordant_fv.Component
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.emf.ecore.EObject
+import co.edu.uniandes.accordant_dv.Artifact
+import org.eclipse.xtext.scoping.Scopes
+import co.edu.uniandes.accordant_dv.ExecEnvironment
 
 /**
  * This class contains custom scoping description.
@@ -41,6 +44,18 @@ override getScope(EObject context, EReference reference) {
             }
             * 
             */
+             if (context instanceof Artifact
+            && (reference == Accordant_dvPackage.Literals.ARTIFACT__PAAS
+            )) {
+				// Collect a list of candidates by going through the model
+				// EcoreUtil2 provides useful functionality to do that
+				// For example searching for all elements within the root Object's tree
+				val rootElement = EcoreUtil2.getRootContainer(context)
+				// val candidates = EcoreUtil2.getAllContentsOfType(rootElement, Interface)
+				val candidates = EcoreUtil2.getAllContentsOfType(rootElement, ExecEnvironment)
+				// Create IEObjectDescriptions and puts them into an IScope instance
+				return Scopes.scopeFor(candidates)
+			}
         }
         return super.getScope(context, reference);
     }

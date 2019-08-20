@@ -61,7 +61,8 @@ enum Throughput returns Throughput:
 
 Stream returns Stream:
 	{Stream}
-	
+	'Stream'
+	name=ID
 	'{'
 		('delivery' ':' delivery=DeliveryModel)?
 		('synct' ':' synct=SyncType)?
@@ -76,6 +77,7 @@ Stream returns Stream:
 Adaptor returns Adaptor:
 	{Adaptor}
 	'Adaptor'
+	name=ID
 	'{'
 		('delivery' ':' delivery=DeliveryModel?) 
 		('synct' ':' synct=SyncType)? 
@@ -90,6 +92,7 @@ Adaptor returns Adaptor:
 Distributor returns Distributor:
 	{Distributor}
 	'Distributor'
+	name=ID
 	'{'
 		('delivery' ':' delivery=DeliveryModel)?
 		('sync' ':' synct=SyncType)?

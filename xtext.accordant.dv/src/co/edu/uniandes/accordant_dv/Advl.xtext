@@ -12,8 +12,10 @@ DeploymentView returns DeploymentView:
 	name=ID
 	'{'
 		('devs' '{' devs+=Device ( "," devs+=Device)* '}')?
-		'deployments' '{' deployments+=Deployment ( "," deployments+=Deployment)* '}'
-		('services' '{' services+=Service ( "," services+=Service)* '}')?   
+		('deployments' '{' deployments+=Deployment ( "," deployments+=Deployment)* '}')?
+		('services' '{' services+=Service ( "," services+=Service)* '}')?
+		('serverless' '{' serverless+=ServerlessEnv ( "," serverless+=ServerlessEnv)* '}')?
+		'artifacts' '{' artifacts+=Artifact ( "," artifacts+=Artifact)* '}'
 	'}';
 
 
@@ -91,7 +93,7 @@ terminal FLOAT:
 	
 	
 ExecEnvironment returns ExecEnvironment:
-	'ExecEnvironment'
+	'ExecEnv'
 	name=ID
 	'{'
 		('image' ':' image=EString)?
@@ -101,7 +103,7 @@ ExecEnvironment returns ExecEnvironment:
 		('mem_req' ':' mem_req=EInt)?
 		('ports' '[' ports+=EInt ( "," ports+=EInt)* ']')?
 		('commands''[' commands+=EString ( "," commands+=EString)* ']')?
-		('artifacts' '{' artifacts+=Artifact ( "," artifacts+=Artifact)* '}')?
+		//('artifacts' '{' artifacts+=Artifact ( "," artifacts+=Artifact)* '}')?
 		('envVars' '{' vars+=EnvVar ( "," vars+=EnvVar)* '}')	?
 	'}';
 
@@ -109,6 +111,16 @@ EnvVar returns EnvVar:
 	{EnvVar}
 	(name=EString':'value=EString)?;
 
+ServerlessEnv returns ServerlessEnv:
+	{ServerlessEnv}
+	'ServerlessEnv'
+	name=ID
+	'{'
+		('provider' ':' provider=EString)?
+		('memory' ':' memory = EFloat)?
+		('timeout' ':' timeout = EInt)?
+	'}';
+	
 
 Artifact returns Artifact:
 	{Artifact}
@@ -117,6 +129,8 @@ Artifact returns Artifact:
 	'{'
 		('comp' ':' component=EString)?
 		('conn' ':' connector=EString)?
+		('paas' ':' paas=[ExecEnvironment])?
+		('iaas' ':' saas=[ServerlessEnv])?
 		('props' ':' props=EString)?
 		//('aconn' ':' aconn=[bdarchops_fv::Connector|EString])?
 		//('acomp' ':' acomp=[bdarchops_fv::Component|EString])?
