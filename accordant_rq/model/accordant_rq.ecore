@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="accordant_rq" nsURI="http://uniandes.accordant.requirement"
     nsPrefix="accordant_rq">
-  <eClassifiers xsi:type="ecore:EClass" name="RequirementPackage">
+  <eClassifiers xsi:type="ecore:EClass" name="InputPackage">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenarios" eType="#//QScenario"
@@ -28,12 +28,44 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//MetricUnit"
         defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="points" eType="#//SensitivityPoint"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qAttribute" eType="#//QAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="analyzed" eType="#//AnalyzedQS"
+        eOpposite="#//AnalyzedQS/qs"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stimulus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="environment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SensitivityPoint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rationale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tactic" lowerBound="1"
+        upperBound="-1" eType="#//Tactic" eOpposite="#//Tactic/spoint"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRisk" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnalyzedQS"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Tactic">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qAttribute" eType="#//QAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subtactics" upperBound="-1"
+        eType="#//Tactic" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rationale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stimulus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="response" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="viewpoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="spoint" upperBound="-1"
+        eType="#//SensitivityPoint" eOpposite="#//SensitivityPoint/tactic"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="QAttribute">
+    <eLiterals name="AVAILABILITY" literal="AVAILABILITY"/>
+    <eLiterals name="PERFORMANCE"/>
+    <eLiterals name="MODIFIABILITY"/>
+    <eLiterals name="TESTABILITY"/>
+    <eLiterals name="SCALABILITY"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalyzedQS">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="points" eType="#//SensitivityPoint"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qs" lowerBound="1" eType="#//QScenario"
+        eOpposite="#//QScenario/analyzed"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reasoning" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>
