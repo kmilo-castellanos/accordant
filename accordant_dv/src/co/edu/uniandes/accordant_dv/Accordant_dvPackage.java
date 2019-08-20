@@ -104,13 +104,31 @@ public interface Accordant_dvPackage extends EPackage {
 	int DEPLOYMENT_VIEW__SERVICES = 3;
 
 	/**
+	 * The feature id for the '<em><b>Serverless</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOYMENT_VIEW__SERVERLESS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Artifacts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOYMENT_VIEW__ARTIFACTS = 5;
+
+	/**
 	 * The number of structural features of the '<em>Deployment View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOYMENT_VIEW_FEATURE_COUNT = 4;
+	int DEPLOYMENT_VIEW_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Deployment View</em>' class.
@@ -186,13 +204,22 @@ public interface Accordant_dvPackage extends EPackage {
 	int DEVICE__NAME = 5;
 
 	/**
+	 * The feature id for the '<em><b>Os</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE__OS = 6;
+
+	/**
 	 * The number of structural features of the '<em>Device</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_FEATURE_COUNT = 6;
+	int DEVICE_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Device</em>' class.
@@ -214,22 +241,13 @@ public interface Accordant_dvPackage extends EPackage {
 	int EXEC_ENVIRONMENT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Artifacts</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXEC_ENVIRONMENT__ARTIFACTS = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_ENVIRONMENT__NAME = 1;
+	int EXEC_ENVIRONMENT__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Cpu req</b></em>' attribute.
@@ -238,7 +256,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_ENVIRONMENT__CPU_REQ = 2;
+	int EXEC_ENVIRONMENT__CPU_REQ = 1;
 
 	/**
 	 * The feature id for the '<em><b>Mem req</b></em>' attribute.
@@ -247,7 +265,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_ENVIRONMENT__MEM_REQ = 3;
+	int EXEC_ENVIRONMENT__MEM_REQ = 2;
 
 	/**
 	 * The feature id for the '<em><b>Cpu lim</b></em>' attribute.
@@ -256,7 +274,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_ENVIRONMENT__CPU_LIM = 4;
+	int EXEC_ENVIRONMENT__CPU_LIM = 3;
 
 	/**
 	 * The feature id for the '<em><b>Mem lim</b></em>' attribute.
@@ -265,7 +283,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_ENVIRONMENT__MEM_LIM = 5;
+	int EXEC_ENVIRONMENT__MEM_LIM = 4;
 
 	/**
 	 * The feature id for the '<em><b>Image</b></em>' attribute.
@@ -274,7 +292,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_ENVIRONMENT__IMAGE = 6;
+	int EXEC_ENVIRONMENT__IMAGE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Ports</b></em>' attribute list.
@@ -283,7 +301,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_ENVIRONMENT__PORTS = 7;
+	int EXEC_ENVIRONMENT__PORTS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Vars</b></em>' containment reference list.
@@ -292,7 +310,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_ENVIRONMENT__VARS = 8;
+	int EXEC_ENVIRONMENT__VARS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Commands</b></em>' attribute list.
@@ -301,7 +319,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_ENVIRONMENT__COMMANDS = 9;
+	int EXEC_ENVIRONMENT__COMMANDS = 8;
 
 	/**
 	 * The number of structural features of the '<em>Exec Environment</em>' class.
@@ -310,7 +328,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_ENVIRONMENT_FEATURE_COUNT = 10;
+	int EXEC_ENVIRONMENT_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Exec Environment</em>' class.
@@ -368,13 +386,31 @@ public interface Accordant_dvPackage extends EPackage {
 	int ARTIFACT__CONNECTOR = 3;
 
 	/**
+	 * The feature id for the '<em><b>Saas</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT__SAAS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Paas</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT__PAAS = 5;
+
+	/**
 	 * The number of structural features of the '<em>Artifact</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT_FEATURE_COUNT = 4;
+	int ARTIFACT_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Artifact</em>' class.
@@ -724,6 +760,79 @@ public interface Accordant_dvPackage extends EPackage {
 	int EXPOSED_PORT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link co.edu.uniandes.accordant_dv.impl.ServerlessEnvImpl <em>Serverless Env</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see co.edu.uniandes.accordant_dv.impl.ServerlessEnvImpl
+	 * @see co.edu.uniandes.accordant_dv.impl.Accordant_dvPackageImpl#getServerlessEnv()
+	 * @generated
+	 */
+	int SERVERLESS_ENV = 9;
+
+	/**
+	 * The feature id for the '<em><b>Provider</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVERLESS_ENV__PROVIDER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Timeout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVERLESS_ENV__TIMEOUT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Memory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVERLESS_ENV__MEMORY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVERLESS_ENV__NAME = 3;
+
+	/**
+	 * The feature id for the '<em><b>Props</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVERLESS_ENV__PROPS = 4;
+
+	/**
+	 * The number of structural features of the '<em>Serverless Env</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVERLESS_ENV_FEATURE_COUNT = 5;
+
+	/**
+	 * The number of operations of the '<em>Serverless Env</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVERLESS_ENV_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_dv.EventConnTech <em>Event Conn Tech</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -731,7 +840,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_dv.impl.Accordant_dvPackageImpl#getEventConnTech()
 	 * @generated
 	 */
-	int EVENT_CONN_TECH = 9;
+	int EVENT_CONN_TECH = 10;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_dv.IngestorTech <em>Ingestor Tech</em>}' enum.
@@ -741,7 +850,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_dv.impl.Accordant_dvPackageImpl#getIngestorTech()
 	 * @generated
 	 */
-	int INGESTOR_TECH = 10;
+	int INGESTOR_TECH = 11;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_dv.SinkTech <em>Sink Tech</em>}' enum.
@@ -751,7 +860,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_dv.impl.Accordant_dvPackageImpl#getSinkTech()
 	 * @generated
 	 */
-	int SINK_TECH = 11;
+	int SINK_TECH = 12;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_dv.EstimatorTech <em>Estimator Tech</em>}' enum.
@@ -761,7 +870,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_dv.impl.Accordant_dvPackageImpl#getEstimatorTech()
 	 * @generated
 	 */
-	int ESTIMATOR_TECH = 12;
+	int ESTIMATOR_TECH = 13;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_dv.TransformerTech <em>Transformer Tech</em>}' enum.
@@ -771,7 +880,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_dv.impl.Accordant_dvPackageImpl#getTransformerTech()
 	 * @generated
 	 */
-	int TRANSFORMER_TECH = 13;
+	int TRANSFORMER_TECH = 14;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_dv.TypeDevice <em>Type Device</em>}' enum.
@@ -781,38 +890,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_dv.impl.Accordant_dvPackageImpl#getTypeDevice()
 	 * @generated
 	 */
-	int TYPE_DEVICE = 14;
-
-	/**
-	 * The meta object id for the '{@link co.edu.uniandes.accordant_dv.QAMetric <em>QA Metric</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see co.edu.uniandes.accordant_dv.QAMetric
-	 * @see co.edu.uniandes.accordant_dv.impl.Accordant_dvPackageImpl#getQAMetric()
-	 * @generated
-	 */
-	int QA_METRIC = 15;
-
-	/**
-	 * The meta object id for the '{@link co.edu.uniandes.accordant_dv.Comparator <em>Comparator</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see co.edu.uniandes.accordant_dv.Comparator
-	 * @see co.edu.uniandes.accordant_dv.impl.Accordant_dvPackageImpl#getComparator()
-	 * @generated
-	 */
-	int COMPARATOR = 16;
-
-	/**
-	 * The meta object id for the '{@link co.edu.uniandes.accordant_dv.Unit <em>Unit</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see co.edu.uniandes.accordant_dv.Unit
-	 * @see co.edu.uniandes.accordant_dv.impl.Accordant_dvPackageImpl#getUnit()
-	 * @generated
-	 */
-	int UNIT = 17;
-
+	int TYPE_DEVICE = 15;
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.DeploymentView <em>Deployment View</em>}'.
@@ -867,6 +945,28 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDeploymentView_Services();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_dv.DeploymentView#getServerless <em>Serverless</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Serverless</em>'.
+	 * @see co.edu.uniandes.accordant_dv.DeploymentView#getServerless()
+	 * @see #getDeploymentView()
+	 * @generated
+	 */
+	EReference getDeploymentView_Serverless();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_dv.DeploymentView#getArtifacts <em>Artifacts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Artifacts</em>'.
+	 * @see co.edu.uniandes.accordant_dv.DeploymentView#getArtifacts()
+	 * @see #getDeploymentView()
+	 * @generated
+	 */
+	EReference getDeploymentView_Artifacts();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.Device <em>Device</em>}'.
@@ -945,6 +1045,17 @@ public interface Accordant_dvPackage extends EPackage {
 	EAttribute getDevice_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_dv.Device#getOs <em>Os</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Os</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Device#getOs()
+	 * @see #getDevice()
+	 * @generated
+	 */
+	EAttribute getDevice_Os();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.ExecEnvironment <em>Exec Environment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -953,17 +1064,6 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getExecEnvironment();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getArtifacts <em>Artifacts</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Artifacts</em>'.
-	 * @see co.edu.uniandes.accordant_dv.ExecEnvironment#getArtifacts()
-	 * @see #getExecEnvironment()
-	 * @generated
-	 */
-	EReference getExecEnvironment_Artifacts();
 
 	/**
 	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getName <em>Name</em>}'.
@@ -1117,6 +1217,28 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getArtifact_Connector();
+
+	/**
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.Artifact#getSaas <em>Saas</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Saas</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Artifact#getSaas()
+	 * @see #getArtifact()
+	 * @generated
+	 */
+	EReference getArtifact_Saas();
+
+	/**
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.Artifact#getPaas <em>Paas</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Paas</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Artifact#getPaas()
+	 * @see #getArtifact()
+	 * @generated
+	 */
+	EReference getArtifact_Paas();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.Deployment <em>Deployment</em>}'.
@@ -1411,6 +1533,71 @@ public interface Accordant_dvPackage extends EPackage {
 	EReference getExposedPort_Exposes();
 
 	/**
+	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.ServerlessEnv <em>Serverless Env</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Serverless Env</em>'.
+	 * @see co.edu.uniandes.accordant_dv.ServerlessEnv
+	 * @generated
+	 */
+	EClass getServerlessEnv();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getProvider <em>Provider</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Provider</em>'.
+	 * @see co.edu.uniandes.accordant_dv.ServerlessEnv#getProvider()
+	 * @see #getServerlessEnv()
+	 * @generated
+	 */
+	EAttribute getServerlessEnv_Provider();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getTimeout <em>Timeout</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Timeout</em>'.
+	 * @see co.edu.uniandes.accordant_dv.ServerlessEnv#getTimeout()
+	 * @see #getServerlessEnv()
+	 * @generated
+	 */
+	EAttribute getServerlessEnv_Timeout();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getMemory <em>Memory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Memory</em>'.
+	 * @see co.edu.uniandes.accordant_dv.ServerlessEnv#getMemory()
+	 * @see #getServerlessEnv()
+	 * @generated
+	 */
+	EAttribute getServerlessEnv_Memory();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see co.edu.uniandes.accordant_dv.ServerlessEnv#getName()
+	 * @see #getServerlessEnv()
+	 * @generated
+	 */
+	EAttribute getServerlessEnv_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getProps <em>Props</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Props</em>'.
+	 * @see co.edu.uniandes.accordant_dv.ServerlessEnv#getProps()
+	 * @see #getServerlessEnv()
+	 * @generated
+	 */
+	EAttribute getServerlessEnv_Props();
+
+	/**
 	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_dv.EventConnTech <em>Event Conn Tech</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1469,36 +1656,6 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getTypeDevice();
-
-	/**
-	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_dv.QAMetric <em>QA Metric</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>QA Metric</em>'.
-	 * @see co.edu.uniandes.accordant_dv.QAMetric
-	 * @generated
-	 */
-	EEnum getQAMetric();
-
-	/**
-	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_dv.Comparator <em>Comparator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Comparator</em>'.
-	 * @see co.edu.uniandes.accordant_dv.Comparator
-	 * @generated
-	 */
-	EEnum getComparator();
-
-	/**
-	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_dv.Unit <em>Unit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Unit</em>'.
-	 * @see co.edu.uniandes.accordant_dv.Unit
-	 * @generated
-	 */
-	EEnum getUnit();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1566,6 +1723,22 @@ public interface Accordant_dvPackage extends EPackage {
 		EReference DEPLOYMENT_VIEW__SERVICES = eINSTANCE.getDeploymentView_Services();
 
 		/**
+		 * The meta object literal for the '<em><b>Serverless</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEPLOYMENT_VIEW__SERVERLESS = eINSTANCE.getDeploymentView_Serverless();
+
+		/**
+		 * The meta object literal for the '<em><b>Artifacts</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEPLOYMENT_VIEW__ARTIFACTS = eINSTANCE.getDeploymentView_Artifacts();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.DeviceImpl <em>Device</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1624,6 +1797,14 @@ public interface Accordant_dvPackage extends EPackage {
 		EAttribute DEVICE__NAME = eINSTANCE.getDevice_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Os</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEVICE__OS = eINSTANCE.getDevice_Os();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.ExecEnvironmentImpl <em>Exec Environment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1632,14 +1813,6 @@ public interface Accordant_dvPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EXEC_ENVIRONMENT = eINSTANCE.getExecEnvironment();
-
-		/**
-		 * The meta object literal for the '<em><b>Artifacts</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXEC_ENVIRONMENT__ARTIFACTS = eINSTANCE.getExecEnvironment_Artifacts();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1754,6 +1927,22 @@ public interface Accordant_dvPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ARTIFACT__CONNECTOR = eINSTANCE.getArtifact_Connector();
+
+		/**
+		 * The meta object literal for the '<em><b>Saas</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARTIFACT__SAAS = eINSTANCE.getArtifact_Saas();
+
+		/**
+		 * The meta object literal for the '<em><b>Paas</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARTIFACT__PAAS = eINSTANCE.getArtifact_Paas();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl <em>Deployment</em>}' class.
@@ -1982,6 +2171,56 @@ public interface Accordant_dvPackage extends EPackage {
 		EReference EXPOSED_PORT__EXPOSES = eINSTANCE.getExposedPort_Exposes();
 
 		/**
+		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.ServerlessEnvImpl <em>Serverless Env</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see co.edu.uniandes.accordant_dv.impl.ServerlessEnvImpl
+		 * @see co.edu.uniandes.accordant_dv.impl.Accordant_dvPackageImpl#getServerlessEnv()
+		 * @generated
+		 */
+		EClass SERVERLESS_ENV = eINSTANCE.getServerlessEnv();
+
+		/**
+		 * The meta object literal for the '<em><b>Provider</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVERLESS_ENV__PROVIDER = eINSTANCE.getServerlessEnv_Provider();
+
+		/**
+		 * The meta object literal for the '<em><b>Timeout</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVERLESS_ENV__TIMEOUT = eINSTANCE.getServerlessEnv_Timeout();
+
+		/**
+		 * The meta object literal for the '<em><b>Memory</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVERLESS_ENV__MEMORY = eINSTANCE.getServerlessEnv_Memory();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVERLESS_ENV__NAME = eINSTANCE.getServerlessEnv_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Props</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVERLESS_ENV__PROPS = eINSTANCE.getServerlessEnv_Props();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.EventConnTech <em>Event Conn Tech</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2040,36 +2279,6 @@ public interface Accordant_dvPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum TYPE_DEVICE = eINSTANCE.getTypeDevice();
-
-		/**
-		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.QAMetric <em>QA Metric</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see co.edu.uniandes.accordant_dv.QAMetric
-		 * @see co.edu.uniandes.accordant_dv.impl.Accordant_dvPackageImpl#getQAMetric()
-		 * @generated
-		 */
-		EEnum QA_METRIC = eINSTANCE.getQAMetric();
-
-		/**
-		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.Comparator <em>Comparator</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see co.edu.uniandes.accordant_dv.Comparator
-		 * @see co.edu.uniandes.accordant_dv.impl.Accordant_dvPackageImpl#getComparator()
-		 * @generated
-		 */
-		EEnum COMPARATOR = eINSTANCE.getComparator();
-
-		/**
-		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.Unit <em>Unit</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see co.edu.uniandes.accordant_dv.Unit
-		 * @see co.edu.uniandes.accordant_dv.impl.Accordant_dvPackageImpl#getUnit()
-		 * @generated
-		 */
-		EEnum UNIT = eINSTANCE.getUnit();
 
 	}
 

@@ -66,6 +66,7 @@ public class Accordant_dvFactoryImpl extends EFactoryImpl implements Accordant_d
 			case Accordant_dvPackage.ENV_VAR: return createEnvVar();
 			case Accordant_dvPackage.SERVICE: return createService();
 			case Accordant_dvPackage.EXPOSED_PORT: return createExposedPort();
+			case Accordant_dvPackage.SERVERLESS_ENV: return createServerlessEnv();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -91,12 +92,6 @@ public class Accordant_dvFactoryImpl extends EFactoryImpl implements Accordant_d
 				return createTransformerTechFromString(eDataType, initialValue);
 			case Accordant_dvPackage.TYPE_DEVICE:
 				return createTypeDeviceFromString(eDataType, initialValue);
-			case Accordant_dvPackage.QA_METRIC:
-				return createQAMetricFromString(eDataType, initialValue);
-			case Accordant_dvPackage.COMPARATOR:
-				return createComparatorFromString(eDataType, initialValue);
-			case Accordant_dvPackage.UNIT:
-				return createUnitFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -122,12 +117,6 @@ public class Accordant_dvFactoryImpl extends EFactoryImpl implements Accordant_d
 				return convertTransformerTechToString(eDataType, instanceValue);
 			case Accordant_dvPackage.TYPE_DEVICE:
 				return convertTypeDeviceToString(eDataType, instanceValue);
-			case Accordant_dvPackage.QA_METRIC:
-				return convertQAMetricToString(eDataType, instanceValue);
-			case Accordant_dvPackage.COMPARATOR:
-				return convertComparatorToString(eDataType, instanceValue);
-			case Accordant_dvPackage.UNIT:
-				return convertUnitToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -221,6 +210,16 @@ public class Accordant_dvFactoryImpl extends EFactoryImpl implements Accordant_d
 	public ExposedPort createExposedPort() {
 		ExposedPortImpl exposedPort = new ExposedPortImpl();
 		return exposedPort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServerlessEnv createServerlessEnv() {
+		ServerlessEnvImpl serverlessEnv = new ServerlessEnvImpl();
+		return serverlessEnv;
 	}
 
 	/**
@@ -340,66 +339,6 @@ public class Accordant_dvFactoryImpl extends EFactoryImpl implements Accordant_d
 	 * @generated
 	 */
 	public String convertTypeDeviceToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public QAMetric createQAMetricFromString(EDataType eDataType, String initialValue) {
-		QAMetric result = QAMetric.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertQAMetricToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Comparator createComparatorFromString(EDataType eDataType, String initialValue) {
-		Comparator result = Comparator.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertComparatorToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Unit createUnitFromString(EDataType eDataType, String initialValue) {
-		Unit result = Unit.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertUnitToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

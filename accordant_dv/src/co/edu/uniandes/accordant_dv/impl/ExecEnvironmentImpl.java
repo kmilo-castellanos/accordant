@@ -3,7 +3,6 @@
 package co.edu.uniandes.accordant_dv.impl;
 
 import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
-import co.edu.uniandes.accordant_dv.Artifact;
 import co.edu.uniandes.accordant_dv.EnvVar;
 import co.edu.uniandes.accordant_dv.ExecEnvironment;
 
@@ -32,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.edu.uniandes.accordant_dv.impl.ExecEnvironmentImpl#getArtifacts <em>Artifacts</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ExecEnvironmentImpl#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ExecEnvironmentImpl#getCpu_req <em>Cpu req</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ExecEnvironmentImpl#getMem_req <em>Mem req</em>}</li>
@@ -47,16 +45,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements ExecEnvironment {
-	/**
-	 * The cached value of the '{@link #getArtifacts() <em>Artifacts</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getArtifacts()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Artifact> artifacts;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -231,18 +219,6 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Artifact> getArtifacts() {
-		if (artifacts == null) {
-			artifacts = new EObjectContainmentEList<Artifact>(Artifact.class, this, Accordant_dvPackage.EXEC_ENVIRONMENT__ARTIFACTS);
-		}
-		return artifacts;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getName() {
 		return name;
 	}
@@ -408,8 +384,6 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Accordant_dvPackage.EXEC_ENVIRONMENT__ARTIFACTS:
-				return ((InternalEList<?>)getArtifacts()).basicRemove(otherEnd, msgs);
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__VARS:
 				return ((InternalEList<?>)getVars()).basicRemove(otherEnd, msgs);
 		}
@@ -424,8 +398,6 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Accordant_dvPackage.EXEC_ENVIRONMENT__ARTIFACTS:
-				return getArtifacts();
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__NAME:
 				return getName();
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__CPU_REQ:
@@ -457,10 +429,6 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Accordant_dvPackage.EXEC_ENVIRONMENT__ARTIFACTS:
-				getArtifacts().clear();
-				getArtifacts().addAll((Collection<? extends Artifact>)newValue);
-				return;
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__NAME:
 				setName((String)newValue);
 				return;
@@ -503,9 +471,6 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Accordant_dvPackage.EXEC_ENVIRONMENT__ARTIFACTS:
-				getArtifacts().clear();
-				return;
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -545,8 +510,6 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Accordant_dvPackage.EXEC_ENVIRONMENT__ARTIFACTS:
-				return artifacts != null && !artifacts.isEmpty();
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__CPU_REQ:

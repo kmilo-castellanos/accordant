@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.Device#getStorage <em>Storage</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Device#getMem <em>Mem</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Device#getName <em>Name</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.Device#getOs <em>Os</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDevice()
@@ -184,5 +185,31 @@ public interface Device extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Os</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Os</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Os</em>' attribute.
+	 * @see #setOs(String)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDevice_Os()
+	 * @model
+	 * @generated
+	 */
+	String getOs();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.Device#getOs <em>Os</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Os</em>' attribute.
+	 * @see #getOs()
+	 * @generated
+	 */
+	void setOs(String value);
 
 } // Device

@@ -4,8 +4,11 @@ package co.edu.uniandes.accordant_dv.impl;
 
 import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
 import co.edu.uniandes.accordant_dv.Artifact;
+import co.edu.uniandes.accordant_dv.ExecEnvironment;
+import co.edu.uniandes.accordant_dv.ServerlessEnv;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -21,6 +24,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getProps <em>Props</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getConnector <em>Connector</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getSaas <em>Saas</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getPaas <em>Paas</em>}</li>
  * </ul>
  *
  * @generated
@@ -105,6 +110,26 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 * @ordered
 	 */
 	protected String connector = CONNECTOR_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSaas() <em>Saas</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSaas()
+	 * @generated
+	 * @ordered
+	 */
+	protected ServerlessEnv saas;
+
+	/**
+	 * The cached value of the '{@link #getPaas() <em>Paas</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaas()
+	 * @generated
+	 * @ordered
+	 */
+	protected ExecEnvironment paas;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,6 +239,82 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ServerlessEnv getSaas() {
+		if (saas != null && saas.eIsProxy()) {
+			InternalEObject oldSaas = (InternalEObject)saas;
+			saas = (ServerlessEnv)eResolveProxy(oldSaas);
+			if (saas != oldSaas) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_dvPackage.ARTIFACT__SAAS, oldSaas, saas));
+			}
+		}
+		return saas;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServerlessEnv basicGetSaas() {
+		return saas;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSaas(ServerlessEnv newSaas) {
+		ServerlessEnv oldSaas = saas;
+		saas = newSaas;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.ARTIFACT__SAAS, oldSaas, saas));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExecEnvironment getPaas() {
+		if (paas != null && paas.eIsProxy()) {
+			InternalEObject oldPaas = (InternalEObject)paas;
+			paas = (ExecEnvironment)eResolveProxy(oldPaas);
+			if (paas != oldPaas) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_dvPackage.ARTIFACT__PAAS, oldPaas, paas));
+			}
+		}
+		return paas;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExecEnvironment basicGetPaas() {
+		return paas;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPaas(ExecEnvironment newPaas) {
+		ExecEnvironment oldPaas = paas;
+		paas = newPaas;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.ARTIFACT__PAAS, oldPaas, paas));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -225,6 +326,12 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 				return getComponent();
 			case Accordant_dvPackage.ARTIFACT__CONNECTOR:
 				return getConnector();
+			case Accordant_dvPackage.ARTIFACT__SAAS:
+				if (resolve) return getSaas();
+				return basicGetSaas();
+			case Accordant_dvPackage.ARTIFACT__PAAS:
+				if (resolve) return getPaas();
+				return basicGetPaas();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -250,6 +357,12 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 			case Accordant_dvPackage.ARTIFACT__CONNECTOR:
 				setConnector((String)newValue);
 				return;
+			case Accordant_dvPackage.ARTIFACT__SAAS:
+				setSaas((ServerlessEnv)newValue);
+				return;
+			case Accordant_dvPackage.ARTIFACT__PAAS:
+				setPaas((ExecEnvironment)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -274,6 +387,12 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 			case Accordant_dvPackage.ARTIFACT__CONNECTOR:
 				setConnector(CONNECTOR_EDEFAULT);
 				return;
+			case Accordant_dvPackage.ARTIFACT__SAAS:
+				setSaas((ServerlessEnv)null);
+				return;
+			case Accordant_dvPackage.ARTIFACT__PAAS:
+				setPaas((ExecEnvironment)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -294,6 +413,10 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 				return COMPONENT_EDEFAULT == null ? component != null : !COMPONENT_EDEFAULT.equals(component);
 			case Accordant_dvPackage.ARTIFACT__CONNECTOR:
 				return CONNECTOR_EDEFAULT == null ? connector != null : !CONNECTOR_EDEFAULT.equals(connector);
+			case Accordant_dvPackage.ARTIFACT__SAAS:
+				return saas != null;
+			case Accordant_dvPackage.ARTIFACT__PAAS:
+				return paas != null;
 		}
 		return super.eIsSet(featureID);
 	}

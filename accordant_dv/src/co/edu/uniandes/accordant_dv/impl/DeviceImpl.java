@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeviceImpl#getStorage <em>Storage</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeviceImpl#getMem <em>Mem</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeviceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeviceImpl#getOs <em>Os</em>}</li>
  * </ul>
  *
  * @generated
@@ -151,6 +152,26 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getOs() <em>Os</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOs()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String OS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getOs() <em>Os</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOs()
+	 * @generated
+	 * @ordered
+	 */
+	protected String os = OS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -302,6 +323,27 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getOs() {
+		return os;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOs(String newOs) {
+		String oldOs = os;
+		os = newOs;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.DEVICE__OS, oldOs, os));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -317,6 +359,8 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 				return getMem();
 			case Accordant_dvPackage.DEVICE__NAME:
 				return getName();
+			case Accordant_dvPackage.DEVICE__OS:
+				return getOs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -346,6 +390,9 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 				return;
 			case Accordant_dvPackage.DEVICE__NAME:
 				setName((String)newValue);
+				return;
+			case Accordant_dvPackage.DEVICE__OS:
+				setOs((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -377,6 +424,9 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 			case Accordant_dvPackage.DEVICE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case Accordant_dvPackage.DEVICE__OS:
+				setOs(OS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -401,6 +451,8 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 				return mem != MEM_EDEFAULT;
 			case Accordant_dvPackage.DEVICE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case Accordant_dvPackage.DEVICE__OS:
+				return OS_EDEFAULT == null ? os != null : !OS_EDEFAULT.equals(os);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -427,6 +479,8 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 		result.append(mem);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", os: ");
+		result.append(os);
 		result.append(')');
 		return result.toString();
 	}

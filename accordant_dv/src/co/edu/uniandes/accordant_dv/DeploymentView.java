@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.DeploymentView#getDevs <em>Devs</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.DeploymentView#getDeployments <em>Deployments</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.DeploymentView#getServices <em>Services</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.DeploymentView#getServerless <em>Serverless</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.DeploymentView#getArtifacts <em>Artifacts</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeploymentView()
@@ -63,7 +65,7 @@ public interface DeploymentView extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Devs</em>' containment reference list.
 	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeploymentView_Devs()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Device> getDevs();
@@ -99,5 +101,37 @@ public interface DeploymentView extends EObject {
 	 * @generated
 	 */
 	EList<Service> getServices();
+
+	/**
+	 * Returns the value of the '<em><b>Serverless</b></em>' containment reference list.
+	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.ServerlessEnv}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Serverless</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Serverless</em>' containment reference list.
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeploymentView_Serverless()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ServerlessEnv> getServerless();
+
+	/**
+	 * Returns the value of the '<em><b>Artifacts</b></em>' containment reference list.
+	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.Artifact}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Artifacts</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Artifacts</em>' containment reference list.
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeploymentView_Artifacts()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Artifact> getArtifacts();
 
 } // DeploymentView

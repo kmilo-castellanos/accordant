@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getArtifacts <em>Artifacts</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getCpu_req <em>Cpu req</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getMem_req <em>Mem req</em>}</li>
@@ -32,22 +31,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface ExecEnvironment extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Artifacts</b></em>' containment reference list.
-	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.Artifact}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Artifacts</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Artifacts</em>' containment reference list.
-	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getExecEnvironment_Artifacts()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Artifact> getArtifacts();
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

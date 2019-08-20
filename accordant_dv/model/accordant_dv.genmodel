@@ -35,33 +35,13 @@
       <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//TypeDevice/LARGE"/>
       <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//TypeDevice/SMALL"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="accordant_dv.ecore#//QAMetric">
-      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//QAMetric/THROUGHPUT"/>
-      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//QAMetric/LATENCY"/>
-      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//QAMetric/DEADLINE"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="accordant_dv.ecore#//Comparator">
-      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//Comparator/LOWER"/>
-      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//Comparator/GREATER"/>
-      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//Comparator/EQUALS"/>
-      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//Comparator/DIFF"/>
-      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//Comparator/GREQ"/>
-      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//Comparator/LWEQ"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="accordant_dv.ecore#//Unit">
-      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//Unit/MILLIS"/>
-      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//Unit/SECONDS"/>
-      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//Unit/MINUTES"/>
-      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//Unit/HOURS"/>
-      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//Unit/TASKS"/>
-      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//Unit/BYTES"/>
-      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//Unit/MSGS"/>
-    </genEnums>
     <genClasses ecoreClass="accordant_dv.ecore#//DeploymentView">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//DeploymentView/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//DeploymentView/devs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//DeploymentView/deployments"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//DeploymentView/services"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//DeploymentView/serverless"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//DeploymentView/artifacts"/>
     </genClasses>
     <genClasses ecoreClass="accordant_dv.ecore#//Device">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Device/host"/>
@@ -70,9 +50,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Device/storage"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Device/mem"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Device/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Device/os"/>
     </genClasses>
     <genClasses ecoreClass="accordant_dv.ecore#//ExecEnvironment">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//ExecEnvironment/artifacts"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//ExecEnvironment/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//ExecEnvironment/cpu_req"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//ExecEnvironment/mem_req"/>
@@ -88,6 +68,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Artifact/props"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Artifact/component"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Artifact/connector"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//Artifact/saas"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//Artifact/paas"/>
     </genClasses>
     <genClasses ecoreClass="accordant_dv.ecore#//Deployment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Deployment/name"/>
@@ -120,6 +102,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//ExposedPort/target"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//ExposedPort/port"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//ExposedPort/exposes"/>
+    </genClasses>
+    <genClasses ecoreClass="accordant_dv.ecore#//ServerlessEnv">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//ServerlessEnv/provider"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//ServerlessEnv/timeout"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//ServerlessEnv/memory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//ServerlessEnv/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//ServerlessEnv/props"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

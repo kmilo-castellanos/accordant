@@ -5,7 +5,6 @@ package co.edu.uniandes.accordant_dv.impl;
 import co.edu.uniandes.accordant_dv.Accordant_dvFactory;
 import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
 import co.edu.uniandes.accordant_dv.Artifact;
-import co.edu.uniandes.accordant_dv.Comparator;
 import co.edu.uniandes.accordant_dv.Deployment;
 import co.edu.uniandes.accordant_dv.DeploymentView;
 import co.edu.uniandes.accordant_dv.Device;
@@ -16,13 +15,11 @@ import co.edu.uniandes.accordant_dv.ExecEnvironment;
 import co.edu.uniandes.accordant_dv.ExposedPort;
 import co.edu.uniandes.accordant_dv.IngestorTech;
 import co.edu.uniandes.accordant_dv.Pod;
-import co.edu.uniandes.accordant_dv.QAMetric;
+import co.edu.uniandes.accordant_dv.ServerlessEnv;
 import co.edu.uniandes.accordant_dv.Service;
 import co.edu.uniandes.accordant_dv.SinkTech;
 import co.edu.uniandes.accordant_dv.TransformerTech;
 import co.edu.uniandes.accordant_dv.TypeDevice;
-import co.edu.uniandes.accordant_dv.Unit;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -106,6 +103,13 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass serverlessEnvEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum eventConnTechEEnum = null;
 
 	/**
@@ -142,27 +146,6 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * @generated
 	 */
 	private EEnum typeDeviceEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum qaMetricEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum comparatorEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum unitEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -275,6 +258,24 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDeploymentView_Serverless() {
+		return (EReference)deploymentViewEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDeploymentView_Artifacts() {
+		return (EReference)deploymentViewEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDevice() {
 		return deviceEClass;
 	}
@@ -338,6 +339,15 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDevice_Os() {
+		return (EAttribute)deviceEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getExecEnvironment() {
 		return execEnvironmentEClass;
 	}
@@ -347,17 +357,8 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExecEnvironment_Artifacts() {
-		return (EReference)execEnvironmentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getExecEnvironment_Name() {
-		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -366,7 +367,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * @generated
 	 */
 	public EAttribute getExecEnvironment_Cpu_req() {
-		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -375,7 +376,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * @generated
 	 */
 	public EAttribute getExecEnvironment_Mem_req() {
-		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -384,7 +385,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * @generated
 	 */
 	public EAttribute getExecEnvironment_Cpu_lim() {
-		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -393,7 +394,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * @generated
 	 */
 	public EAttribute getExecEnvironment_Mem_lim() {
-		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -402,7 +403,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * @generated
 	 */
 	public EAttribute getExecEnvironment_Image() {
-		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -411,7 +412,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * @generated
 	 */
 	public EAttribute getExecEnvironment_Ports() {
-		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -420,7 +421,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * @generated
 	 */
 	public EReference getExecEnvironment_Vars() {
-		return (EReference)execEnvironmentEClass.getEStructuralFeatures().get(8);
+		return (EReference)execEnvironmentEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -429,7 +430,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * @generated
 	 */
 	public EAttribute getExecEnvironment_Commands() {
-		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -475,6 +476,24 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 */
 	public EAttribute getArtifact_Connector() {
 		return (EAttribute)artifactEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getArtifact_Saas() {
+		return (EReference)artifactEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getArtifact_Paas() {
+		return (EReference)artifactEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -725,6 +744,60 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getServerlessEnv() {
+		return serverlessEnvEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getServerlessEnv_Provider() {
+		return (EAttribute)serverlessEnvEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getServerlessEnv_Timeout() {
+		return (EAttribute)serverlessEnvEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getServerlessEnv_Memory() {
+		return (EAttribute)serverlessEnvEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getServerlessEnv_Name() {
+		return (EAttribute)serverlessEnvEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getServerlessEnv_Props() {
+		return (EAttribute)serverlessEnvEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getEventConnTech() {
 		return eventConnTechEEnum;
 	}
@@ -779,33 +852,6 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getQAMetric() {
-		return qaMetricEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getComparator() {
-		return comparatorEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getUnit() {
-		return unitEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Accordant_dvFactory getAccordant_dvFactory() {
 		return (Accordant_dvFactory)getEFactoryInstance();
 	}
@@ -834,6 +880,8 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		createEReference(deploymentViewEClass, DEPLOYMENT_VIEW__DEVS);
 		createEReference(deploymentViewEClass, DEPLOYMENT_VIEW__DEPLOYMENTS);
 		createEReference(deploymentViewEClass, DEPLOYMENT_VIEW__SERVICES);
+		createEReference(deploymentViewEClass, DEPLOYMENT_VIEW__SERVERLESS);
+		createEReference(deploymentViewEClass, DEPLOYMENT_VIEW__ARTIFACTS);
 
 		deviceEClass = createEClass(DEVICE);
 		createEAttribute(deviceEClass, DEVICE__HOST);
@@ -842,9 +890,9 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		createEAttribute(deviceEClass, DEVICE__STORAGE);
 		createEAttribute(deviceEClass, DEVICE__MEM);
 		createEAttribute(deviceEClass, DEVICE__NAME);
+		createEAttribute(deviceEClass, DEVICE__OS);
 
 		execEnvironmentEClass = createEClass(EXEC_ENVIRONMENT);
-		createEReference(execEnvironmentEClass, EXEC_ENVIRONMENT__ARTIFACTS);
 		createEAttribute(execEnvironmentEClass, EXEC_ENVIRONMENT__NAME);
 		createEAttribute(execEnvironmentEClass, EXEC_ENVIRONMENT__CPU_REQ);
 		createEAttribute(execEnvironmentEClass, EXEC_ENVIRONMENT__MEM_REQ);
@@ -860,6 +908,8 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		createEAttribute(artifactEClass, ARTIFACT__PROPS);
 		createEAttribute(artifactEClass, ARTIFACT__COMPONENT);
 		createEAttribute(artifactEClass, ARTIFACT__CONNECTOR);
+		createEReference(artifactEClass, ARTIFACT__SAAS);
+		createEReference(artifactEClass, ARTIFACT__PAAS);
 
 		deploymentEClass = createEClass(DEPLOYMENT);
 		createEAttribute(deploymentEClass, DEPLOYMENT__NAME);
@@ -893,6 +943,13 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		createEAttribute(exposedPortEClass, EXPOSED_PORT__PORT);
 		createEReference(exposedPortEClass, EXPOSED_PORT__EXPOSES);
 
+		serverlessEnvEClass = createEClass(SERVERLESS_ENV);
+		createEAttribute(serverlessEnvEClass, SERVERLESS_ENV__PROVIDER);
+		createEAttribute(serverlessEnvEClass, SERVERLESS_ENV__TIMEOUT);
+		createEAttribute(serverlessEnvEClass, SERVERLESS_ENV__MEMORY);
+		createEAttribute(serverlessEnvEClass, SERVERLESS_ENV__NAME);
+		createEAttribute(serverlessEnvEClass, SERVERLESS_ENV__PROPS);
+
 		// Create enums
 		eventConnTechEEnum = createEEnum(EVENT_CONN_TECH);
 		ingestorTechEEnum = createEEnum(INGESTOR_TECH);
@@ -900,9 +957,6 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		estimatorTechEEnum = createEEnum(ESTIMATOR_TECH);
 		transformerTechEEnum = createEEnum(TRANSFORMER_TECH);
 		typeDeviceEEnum = createEEnum(TYPE_DEVICE);
-		qaMetricEEnum = createEEnum(QA_METRIC);
-		comparatorEEnum = createEEnum(COMPARATOR);
-		unitEEnum = createEEnum(UNIT);
 	}
 
 	/**
@@ -937,9 +991,11 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		// Initialize classes, features, and operations; add parameters
 		initEClass(deploymentViewEClass, DeploymentView.class, "DeploymentView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDeploymentView_Name(), ecorePackage.getEString(), "name", null, 1, 1, DeploymentView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeploymentView_Devs(), this.getDevice(), null, "devs", null, 1, -1, DeploymentView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeploymentView_Devs(), this.getDevice(), null, "devs", null, 0, -1, DeploymentView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeploymentView_Deployments(), this.getDeployment(), null, "deployments", null, 0, -1, DeploymentView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeploymentView_Services(), this.getService(), null, "services", null, 0, -1, DeploymentView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeploymentView_Serverless(), this.getServerlessEnv(), null, "serverless", null, 0, -1, DeploymentView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeploymentView_Artifacts(), this.getArtifact(), null, "artifacts", null, 0, -1, DeploymentView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDevice_Host(), ecorePackage.getEString(), "host", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -948,9 +1004,9 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		initEAttribute(getDevice_Storage(), ecorePackage.getEInt(), "storage", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDevice_Mem(), ecorePackage.getEInt(), "mem", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDevice_Name(), ecorePackage.getEString(), "name", null, 1, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDevice_Os(), ecorePackage.getEString(), "os", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(execEnvironmentEClass, ExecEnvironment.class, "ExecEnvironment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExecEnvironment_Artifacts(), this.getArtifact(), null, "artifacts", null, 0, -1, ExecEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExecEnvironment_Name(), ecorePackage.getEString(), "name", null, 0, 1, ExecEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExecEnvironment_Cpu_req(), ecorePackage.getEFloat(), "cpu_req", null, 0, 1, ExecEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExecEnvironment_Mem_req(), ecorePackage.getEInt(), "mem_req", null, 0, 1, ExecEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -966,6 +1022,8 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		initEAttribute(getArtifact_Props(), ecorePackage.getEString(), "props", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArtifact_Component(), ecorePackage.getEString(), "component", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArtifact_Connector(), ecorePackage.getEString(), "connector", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArtifact_Saas(), this.getServerlessEnv(), null, "saas", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArtifact_Paas(), this.getExecEnvironment(), null, "paas", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deploymentEClass, Deployment.class, "Deployment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDeployment_Name(), ecorePackage.getEString(), "name", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -999,6 +1057,13 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		initEAttribute(getExposedPort_Port(), ecorePackage.getEInt(), "port", null, 0, 1, ExposedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExposedPort_Exposes(), this.getPod(), null, "exposes", null, 0, -1, ExposedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(serverlessEnvEClass, ServerlessEnv.class, "ServerlessEnv", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getServerlessEnv_Provider(), ecorePackage.getEString(), "provider", null, 0, 1, ServerlessEnv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServerlessEnv_Timeout(), ecorePackage.getEInt(), "timeout", null, 0, 1, ServerlessEnv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServerlessEnv_Memory(), ecorePackage.getEFloat(), "memory", null, 0, 1, ServerlessEnv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServerlessEnv_Name(), ecorePackage.getEString(), "name", null, 0, 1, ServerlessEnv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServerlessEnv_Props(), ecorePackage.getEString(), "props", null, 0, 1, ServerlessEnv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(eventConnTechEEnum, EventConnTech.class, "EventConnTech");
 		addEEnumLiteral(eventConnTechEEnum, EventConnTech.KAFKA);
@@ -1027,28 +1092,6 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		addEEnumLiteral(typeDeviceEEnum, TypeDevice.MEDIUM);
 		addEEnumLiteral(typeDeviceEEnum, TypeDevice.LARGE);
 		addEEnumLiteral(typeDeviceEEnum, TypeDevice.SMALL);
-
-		initEEnum(qaMetricEEnum, QAMetric.class, "QAMetric");
-		addEEnumLiteral(qaMetricEEnum, QAMetric.THROUGHPUT);
-		addEEnumLiteral(qaMetricEEnum, QAMetric.LATENCY);
-		addEEnumLiteral(qaMetricEEnum, QAMetric.DEADLINE);
-
-		initEEnum(comparatorEEnum, Comparator.class, "Comparator");
-		addEEnumLiteral(comparatorEEnum, Comparator.LOWER);
-		addEEnumLiteral(comparatorEEnum, Comparator.GREATER);
-		addEEnumLiteral(comparatorEEnum, Comparator.EQUALS);
-		addEEnumLiteral(comparatorEEnum, Comparator.DIFF);
-		addEEnumLiteral(comparatorEEnum, Comparator.GREQ);
-		addEEnumLiteral(comparatorEEnum, Comparator.LWEQ);
-
-		initEEnum(unitEEnum, Unit.class, "Unit");
-		addEEnumLiteral(unitEEnum, Unit.MILLIS);
-		addEEnumLiteral(unitEEnum, Unit.SECONDS);
-		addEEnumLiteral(unitEEnum, Unit.MINUTES);
-		addEEnumLiteral(unitEEnum, Unit.HOURS);
-		addEEnumLiteral(unitEEnum, Unit.TASKS);
-		addEEnumLiteral(unitEEnum, Unit.BYTES);
-		addEEnumLiteral(unitEEnum, Unit.MSGS);
 
 		// Create resource
 		createResource(eNS_URI);

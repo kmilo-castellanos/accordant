@@ -103,6 +103,15 @@ public interface Accordant_dvFactory extends EFactory {
 	ExposedPort createExposedPort();
 
 	/**
+	 * Returns a new object of class '<em>Serverless Env</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Serverless Env</em>'.
+	 * @generated
+	 */
+	ServerlessEnv createServerlessEnv();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

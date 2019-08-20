@@ -104,6 +104,10 @@ public class Accordant_dvAdapterFactory extends AdapterFactoryImpl {
 				return createExposedPortAdapter();
 			}
 			@Override
+			public Adapter caseServerlessEnv(ServerlessEnv object) {
+				return createServerlessEnvAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -246,6 +250,20 @@ public class Accordant_dvAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createExposedPortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link co.edu.uniandes.accordant_dv.ServerlessEnv <em>Serverless Env</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see co.edu.uniandes.accordant_dv.ServerlessEnv
+	 * @generated
+	 */
+	public Adapter createServerlessEnvAdapter() {
 		return null;
 	}
 

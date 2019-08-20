@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getProps <em>Props</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getComponent <em>Component</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getConnector <em>Connector</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getSaas <em>Saas</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getPaas <em>Paas</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getArtifact()
@@ -127,5 +129,57 @@ public interface Artifact extends EObject {
 	 * @generated
 	 */
 	void setConnector(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Saas</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Saas</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Saas</em>' reference.
+	 * @see #setSaas(ServerlessEnv)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getArtifact_Saas()
+	 * @model
+	 * @generated
+	 */
+	ServerlessEnv getSaas();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.Artifact#getSaas <em>Saas</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Saas</em>' reference.
+	 * @see #getSaas()
+	 * @generated
+	 */
+	void setSaas(ServerlessEnv value);
+
+	/**
+	 * Returns the value of the '<em><b>Paas</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Paas</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Paas</em>' reference.
+	 * @see #setPaas(ExecEnvironment)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getArtifact_Paas()
+	 * @model
+	 * @generated
+	 */
+	ExecEnvironment getPaas();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.Artifact#getPaas <em>Paas</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Paas</em>' reference.
+	 * @see #getPaas()
+	 * @generated
+	 */
+	void setPaas(ExecEnvironment value);
 
 } // Artifact
