@@ -93,7 +93,7 @@ class AdvlGenerator extends AbstractGenerator {
 			        component: «format(dep.name)»
 					«IF pod.restartPolicy!==null»    restartPolicy: «pod.restartPolicy»«ENDIF»
 			    spec:
-			      containers:
+			      containers: 
 			«FOR exenv: pod.envs»
 				      - name: «format(exenv.name)»
 				        image: «exenv.image»
