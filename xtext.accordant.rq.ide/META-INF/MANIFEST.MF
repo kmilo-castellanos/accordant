@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: xtext.accordant.rq.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: xtext.accordant.rq.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: xtext.accordant.rq,
+ accordant_rq,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: co.edu.uniandes.accordant_rq.ide.contentassist.antlr.internal,
+ co.edu.uniandes.accordant_rq.ide.contentassist.antlr
+

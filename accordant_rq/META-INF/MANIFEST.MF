@@ -7,9 +7,10 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: accordant_rq,
- accordant_rq.impl,
- accordant_rq.util
+Export-Package: co.edu.uniandes.accordant_rq,
+ co.edu.uniandes.accordant_rq.impl,
+ co.edu.uniandes.accordant_rq.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ accordant_rq;bundle-version="0.1.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

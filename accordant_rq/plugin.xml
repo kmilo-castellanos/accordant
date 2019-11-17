@@ -10,7 +10,7 @@
       <!-- @generated accordant_rq -->
       <package
             uri="http://uniandes.accordant.requirement"
-            class="accordant_rq.Accordant_rqPackage"
+            class="co.edu.uniandes.accordant_rq.Accordant_rqPackage"
             genModel="model/accordant_rq.genmodel"/>
    </extension>
 

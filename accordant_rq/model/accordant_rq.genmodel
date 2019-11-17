@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    modelDirectory="/accordant_rq/src" creationIcons="false" editDirectory="/accordant_rq.edit/src"
-    editorDirectory="/accordant_rq.editor/src" modelPluginID="accordant_rq" modelName="Accordant_rq"
-    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
+    modelDirectory="/accordant_rq/src" editDirectory="/accordant_rq.edit/src"
+    editorDirectory="/accordant_rq.editor/src" modelPluginID="accordant_rq" modelName="accordant_rq"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>accordant_rq.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="Accordant_rq" disposableProviderFactory="true" ecorePackage="accordant_rq.ecore#/">
+  <genPackages prefix="Accordant_rq" basePackage="co.edu.uniandes" disposableProviderFactory="true"
+      ecorePackage="accordant_rq.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="accordant_rq.ecore#//QAMetric">
       <genEnumLiterals ecoreEnumLiteral="accordant_rq.ecore#//QAMetric/THROUGHPUT"/>
       <genEnumLiterals ecoreEnumLiteral="accordant_rq.ecore#//QAMetric/LATENCY"/>
