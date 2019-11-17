@@ -17,10 +17,12 @@ class AdvlFormatter extends AbstractFormatter2 {
 	
 	@Inject extension AdvlGrammarAccess
 
+
 	def dispatch void format(DeploymentView deploymentView, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
+		println("format-AdvlFormatter");
 		for (Device device : deploymentView.getDevs()) {
-			device.format;
+			device.format; 
 		}
 		for (Deployment deployment : deploymentView.getDeployments()) {
 			deployment.format;

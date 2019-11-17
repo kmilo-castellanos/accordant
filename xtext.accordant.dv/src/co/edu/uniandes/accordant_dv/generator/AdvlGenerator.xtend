@@ -7,7 +7,10 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import co.edu.uniandes.accordant_dv.*
+import co.edu.uniandes.accordant_dv.Device
+import co.edu.uniandes.accordant_dv.DeploymentView
+import co.edu.uniandes.accordant_dv.Service
+
 
 /**
  * Generates code from your model files on save.
@@ -15,11 +18,32 @@ import co.edu.uniandes.accordant_dv.*
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class AdvlGenerator extends AbstractGenerator {
+	
+	override void beforeGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		println("beforeGenerate Advl");
+	}
+	
+/*
+ * 
+ override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		// if(resource.allContents.filter(Estimator)!==null && resource.allContents.filter(Estimator).size>0){
+		println("doGenerate-AfvlGenerator");
+		resource.allContents.toIterable.filter(typeof(Estimator)).forEach [
+			fsa.
+				generateFile('''edu/uniandes/accordant/«formatJavaPackageName(funcView.name)»/estimator/«formatJavaClassName(name)»Estimator.java''',
+					estimatorToJava)
+		]
 
+	// }
+	// println("deviceToKubeNode")
+	// fsa.generateFile(resource.className+".java", estimatorToJava(resource.contents.head as FunctionalView))
+	}
+ 
+ * 
+ */
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		if(resource.allContents.filter(Device)!==null && resource.allContents.filter(Device).size>0){
-			//println("deviceToKubeNode")
 			fsa.generateFile("kubernetes-gen/"+resource.className+"-nodes.yaml", deviceToKubeNode(resource.contents.head as DeploymentView))
 		}
 		
@@ -34,7 +58,7 @@ class AdvlGenerator extends AbstractGenerator {
 	def className(Resource res) {
 		var name = res.URI.lastSegment
 		return name.substring(0, name.indexOf('.'))
-	}	
+	}
 	def format(String exp) {
 		return exp.replaceAll("_","-")
 	}
@@ -130,7 +154,7 @@ class AdvlGenerator extends AbstractGenerator {
 		
  		«ENDFOR»
 		
-		'''
+		''' 
 		
 	def deviceToKubeNode(DeploymentView deployView)  
 		'''

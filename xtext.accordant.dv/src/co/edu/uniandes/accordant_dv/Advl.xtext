@@ -11,10 +11,10 @@ DeploymentView returns DeploymentView:
 	'DeploymentView'
 	name=ID
 	'{'
-		('devs' '{' devs+=Device ( "," devs+=Device)* '}')?
-		('deployments' '{' deployments+=Deployment ( "," deployments+=Deployment)* '}')?
+		'devs' '{' devs+=Device ( "," devs+=Device)* '}'
+		'deployments' '{' deployments+=Deployment ( "," deployments+=Deployment)* '}'
 		('services' '{' services+=Service ( "," services+=Service)* '}')?
-		('serverless' '{' serverless+=ServerlessEnv ( "," serverless+=ServerlessEnv)* '}')?
+		//('serverless' '{' serverless+=ServerlessEnv ( "," serverless+=ServerlessEnv)* '}')?
 		'artifacts' '{' artifacts+=Artifact ( "," artifacts+=Artifact)* '}'
 	'}';
 
@@ -30,7 +30,7 @@ Device returns Device:
 		('type' ':' type=TypeDevice)?
 		('cpu' ':' cpu=EInt)?
 		('storage' ':' storage=EInt)?
-		('memory' ':' mem=EInt)?	
+		('memory' ':' mem=EInt)? 
 	'}';
 		
 Deployment returns Deployment:

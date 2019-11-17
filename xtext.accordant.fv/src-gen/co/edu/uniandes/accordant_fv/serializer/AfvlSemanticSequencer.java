@@ -89,6 +89,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
+	 *         name=ID 
 	 *         delivery=DeliveryModel? 
 	 *         synct=SyncType? 
 	 *         notification=NotificationModel? 
@@ -110,6 +111,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
+	 *         name=ID 
 	 *         delivery=DeliveryModel? 
 	 *         synct=SyncType? 
 	 *         notification=NotificationModel? 
@@ -258,6 +260,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
+	 *         name=ID 
 	 *         delivery=DeliveryModel? 
 	 *         synct=SyncType? 
 	 *         notification=NotificationModel? 

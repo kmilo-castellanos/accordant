@@ -33,7 +33,7 @@ Workflow {
 		}
 		language = StandardLanguage {
 			name = "co.edu.uniandes.accordant_dv.Advl"
-			fileExtensions = "avl"
+			fileExtensions = "adl"
 			referencedResource = "platform:/resource/accordant_dv/model/accordant_dv.genmodel"
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}

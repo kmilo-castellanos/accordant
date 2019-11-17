@@ -100,10 +100,11 @@ public class AdvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         (devs+=Device devs+=Device*)? 
-	 *         (deployments+=Deployment deployments+=Deployment*)? 
+	 *         devs+=Device 
+	 *         devs+=Device* 
+	 *         deployments+=Deployment 
+	 *         deployments+=Deployment* 
 	 *         (services+=Service services+=Service*)? 
-	 *         (serverless+=ServerlessEnv serverless+=ServerlessEnv*)? 
 	 *         artifacts+=Artifact 
 	 *         artifacts+=Artifact*
 	 *     )

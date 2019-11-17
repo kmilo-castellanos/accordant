@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: xtext.example.dv
+Bundle-Name: xtext.accordant.dv
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: xtext.accordant.dv;singleton:=true
@@ -14,7 +14,6 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtend.lib,
  accordant_dv;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Import-Package: org.apache.log4j
 Export-Package: co.edu.uniandes.accordant_dv,
  co.edu.uniandes.accordant_dv.serializer,
  co.edu.uniandes.accordant_dv.parser.antlr,
@@ -24,3 +23,5 @@ Export-Package: co.edu.uniandes.accordant_dv,
  co.edu.uniandes.accordant_dv.validation,
  co.edu.uniandes.accordant_dv.scoping,
  co.edu.uniandes.accordant_dv.parser.antlr.internal
+Import-Package: org.apache.log4j
+Bundle-ClassPath: lib/,.

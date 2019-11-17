@@ -65,7 +65,7 @@ public interface DeploymentView extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Devs</em>' containment reference list.
 	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeploymentView_Devs()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<Device> getDevs();

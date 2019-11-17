@@ -11,5 +11,5 @@ class AdvlStandaloneSetup extends AdvlStandaloneSetupGenerated {
 
 	def static void doSetup() {
 		new AdvlStandaloneSetup().createInjectorAndDoEMFRegistration()
-	}
+	} 
 }
