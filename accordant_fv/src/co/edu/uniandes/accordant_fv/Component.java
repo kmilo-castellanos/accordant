@@ -2,6 +2,7 @@
  */
 package co.edu.uniandes.accordant_fv;
 
+import co.edu.uniandes.accordant_rq.SensitivityPoint;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -19,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_fv.Component#getPorts <em>Ports</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Component#getProcModel <em>Proc Model</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Component#getFuncView <em>Func View</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.Component#getSpoint <em>Spoint</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getComponent()
@@ -124,5 +126,31 @@ public interface Component extends EObject {
 	 * @generated
 	 */
 	void setFuncView(FunctionalView value);
+
+	/**
+	 * Returns the value of the '<em><b>Spoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Spoint</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Spoint</em>' reference.
+	 * @see #setSpoint(SensitivityPoint)
+	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getComponent_Spoint()
+	 * @model
+	 * @generated
+	 */
+	SensitivityPoint getSpoint();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_fv.Component#getSpoint <em>Spoint</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Spoint</em>' reference.
+	 * @see #getSpoint()
+	 * @generated
+	 */
+	void setSpoint(SensitivityPoint value);
 
 } // Component

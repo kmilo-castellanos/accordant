@@ -96,7 +96,8 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         buffering=Buffering? 
 	 *         throughput=Throughput? 
 	 *         roles+=Role 
-	 *         roles+=Role*
+	 *         roles+=Role* 
+	 *         spoint=[SensitivityPoint|ID]?
 	 *     )
 	 */
 	protected void sequence_Adaptor(ISerializationContext context, Adaptor semanticObject) {
@@ -118,7 +119,8 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         buffering=Buffering? 
 	 *         throughput=Throughput? 
 	 *         roles+=Role 
-	 *         roles+=Role*
+	 *         roles+=Role* 
+	 *         spoint=[SensitivityPoint|ID]?
 	 *     )
 	 */
 	protected void sequence_Distributor(ISerializationContext context, Distributor semanticObject) {
@@ -132,7 +134,14 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Estimator returns Estimator
 	 *
 	 * Constraint:
-	 *     (name=ID procModel=ProcessingModel? pmml=EString? ports+=Port ports+=Port*)
+	 *     (
+	 *         name=ID 
+	 *         procModel=ProcessingModel? 
+	 *         pmml=EString? 
+	 *         spoint=[SensitivityPoint|ID]? 
+	 *         ports+=Port 
+	 *         ports+=Port*
+	 *     )
 	 */
 	protected void sequence_Estimator(ISerializationContext context, Estimator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -153,7 +162,8 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         buffering=Buffering? 
 	 *         throughput=Throughput? 
 	 *         roles+=Role 
-	 *         roles+=Role*
+	 *         roles+=Role* 
+	 *         spoint=[SensitivityPoint|ID]?
 	 *     )
 	 */
 	protected void sequence_Event(ISerializationContext context, Event semanticObject) {
@@ -166,7 +176,14 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     FunctionalView returns FunctionalView
 	 *
 	 * Constraint:
-	 *     (name=EString comps+=Component comps+=Component* conns+=Connector conns+=Connector*)
+	 *     (
+	 *         name=ID 
+	 *         ipackage=[InputPackage|ID] 
+	 *         comps+=Component 
+	 *         comps+=Component* 
+	 *         conns+=Connector 
+	 *         conns+=Connector*
+	 *     )
 	 */
 	protected void sequence_FunctionalView(ISerializationContext context, FunctionalView semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -185,6 +202,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         conn=EString? 
 	 *         format=EString? 
 	 *         props=EString? 
+	 *         spoint=[SensitivityPoint|ID]? 
 	 *         ports+=Port 
 	 *         ports+=Port*
 	 *     )
@@ -220,7 +238,8 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         buffering=Buffering? 
 	 *         throughput=Throughput? 
 	 *         roles+=Role 
-	 *         roles+=Role*
+	 *         roles+=Role* 
+	 *         spoint=[SensitivityPoint|ID]?
 	 *     )
 	 */
 	protected void sequence_ProcedureCall(ISerializationContext context, ProcedureCall semanticObject) {
@@ -246,7 +265,14 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Sink returns Sink
 	 *
 	 * Constraint:
-	 *     (name=ID procModel=ProcessingModel? conn=EString? ports+=Port ports+=Port*)
+	 *     (
+	 *         name=ID 
+	 *         procModel=ProcessingModel? 
+	 *         conn=EString? 
+	 *         spoint=[SensitivityPoint|ID]? 
+	 *         ports+=Port 
+	 *         ports+=Port*
+	 *     )
 	 */
 	protected void sequence_Sink(ISerializationContext context, Sink semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -267,7 +293,8 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         buffering=Buffering? 
 	 *         throughput=Throughput? 
 	 *         roles+=Role 
-	 *         roles+=Role*
+	 *         roles+=Role* 
+	 *         spoint=[SensitivityPoint|ID]?
 	 *     )
 	 */
 	protected void sequence_Stream(ISerializationContext context, Stream semanticObject) {
@@ -281,7 +308,14 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Transformer returns Transformer
 	 *
 	 * Constraint:
-	 *     (name=ID procModel=ProcessingModel? pmml=EString? ports+=Port ports+=Port*)
+	 *     (
+	 *         name=ID 
+	 *         procModel=ProcessingModel? 
+	 *         pmml=EString? 
+	 *         spoint=[SensitivityPoint|ID]? 
+	 *         ports+=Port 
+	 *         ports+=Port*
+	 *     )
 	 */
 	protected void sequence_Transformer(ISerializationContext context, Transformer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

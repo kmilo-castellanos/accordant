@@ -10,6 +10,11 @@ import org.eclipse.emf.ecore.EObject
 import co.edu.uniandes.accordant_fv.Accordant_fvPackage
 import co.edu.uniandes.accordant_fv.Role
 import co.edu.uniandes.accordant_fv.Port
+import co.edu.uniandes.accordant_fv.Component
+import co.edu.uniandes.accordant_fv.FunctionalView
+import co.edu.uniandes.accordant_rq.SensitivityPoint
+import co.edu.uniandes.accordant_fv.Connector
+
 /**
  * This class contains custom scoping description.
  * 
@@ -18,24 +23,45 @@ import co.edu.uniandes.accordant_fv.Port
  */
 class AfvlScopeProvider extends AbstractAfvlScopeProvider {
 	override getScope(EObject context, EReference reference) {
-    // We want to define the Scope for the Element's superElement cross-reference
-    /*if (context instanceof Connector
-            && (reference == Bdarchops_fvPackage.Literals.CONNECTOR__SRC  
-            	|| reference == Bdarchops_fvPackage.Literals.CONNECTOR__DST
-            )) {*/
-      if (context instanceof Role
-            && (reference == Accordant_fvPackage.Literals.ROLE__PORT
+		// We want to define the Scope for the Element's superElement cross-reference
+		/*if (context instanceof Connector
+		 *         && (reference == Bdarchops_fvPackage.Literals.CONNECTOR__SRC  
+		 *         	|| reference == Bdarchops_fvPackage.Literals.CONNECTOR__DST
+		 )) {*/
+		if (context instanceof Role && (reference == Accordant_fvPackage.Literals.ROLE__PORT
             )) {
-        // Collect a list of candidates by going through the model
-        // EcoreUtil2 provides useful functionality to do that
-        // For example searching for all elements within the root Object's tree
-        val rootElement = EcoreUtil2.getRootContainer(context)
-        //val candidates = EcoreUtil2.getAllContentsOfType(rootElement, Interface)
-        val candidates = EcoreUtil2.getAllContentsOfType(rootElement, Port)
-        // Create IEObjectDescriptions and puts them into an IScope instance
-        return Scopes.scopeFor(candidates)
-    }
-    return super.getScope(context, reference);
-}
+			// Collect a list of candidates by going through the model
+			// EcoreUtil2 provides useful functionality to do that
+			// For example searching for all elements within the root Object's tree
+			val rootElement = EcoreUtil2.getRootContainer(context)
+			// val candidates = EcoreUtil2.getAllContentsOfType(rootElement, Interface)
+			val candidates = EcoreUtil2.getAllContentsOfType(rootElement, Port)
+			// Create IEObjectDescriptions and puts them into an IScope instance
+			return Scopes.scopeFor(candidates)
+		} else if (context instanceof Component && (reference == Accordant_fvPackage.Literals.COMPONENT__SPOINT
+            )) {
+			val rootElement = EcoreUtil2.getContainerOfType(context, FunctionalView)
+			val pointList = <SensitivityPoint>newArrayList
+			val importedPackage = rootElement?.ipackage
+			if (importedPackage !== null) {
+				for (points : importedPackage.analyzedQs.map[SPoints]) {
+					pointList += points
+				}
+			}
+			return Scopes.scopeFor(pointList)
+		}else if (context instanceof Connector && (reference == Accordant_fvPackage.Literals.CONNECTOR__SPOINT
+            )) {
+			val rootElement = EcoreUtil2.getContainerOfType(context, FunctionalView)
+			val pointList = <SensitivityPoint>newArrayList
+			val importedPackage = rootElement?.ipackage
+			if (importedPackage !== null) {
+				for (points : importedPackage.analyzedQs.map[SPoints]) {
+					pointList += points
+				}
+			}
+			return Scopes.scopeFor(pointList)
+		}
+		return super.getScope(context, reference);
+	}
 
 }

@@ -8,6 +8,8 @@
         eType="#//Connector" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="comps" lowerBound="1" upperBound="-1"
         eType="#//Component" containment="true" eOpposite="#//Component/funcView"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ipackage" lowerBound="1"
+        eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//InputPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -20,6 +22,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="1" upperBound="-1"
         eType="#//Role" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="protocol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="spoint" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//SensitivityPoint"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -29,6 +32,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="procModel" eType="#//ProcessingModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="funcView" eType="#//FunctionalView"
         eOpposite="#//FunctionalView/comps"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="spoint" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//SensitivityPoint"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transformer" eSuperTypes="#//AnalyticsComponent">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sqlExp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

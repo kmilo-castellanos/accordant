@@ -11,6 +11,7 @@ import co.edu.uniandes.accordant_fv.Role;
 import co.edu.uniandes.accordant_fv.SyncType;
 import co.edu.uniandes.accordant_fv.Throughput;
 
+import co.edu.uniandes.accordant_rq.SensitivityPoint;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -43,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.ConnectorImpl#getThroughput <em>Throughput</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.ConnectorImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.ConnectorImpl#getProtocol <em>Protocol</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.impl.ConnectorImpl#getSpoint <em>Spoint</em>}</li>
  * </ul>
  *
  * @generated
@@ -197,6 +199,16 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String protocol = PROTOCOL_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSpoint() <em>Spoint</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSpoint()
+	 * @generated
+	 * @ordered
+	 */
+	protected SensitivityPoint spoint;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -381,6 +393,44 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SensitivityPoint getSpoint() {
+		if (spoint != null && spoint.eIsProxy()) {
+			InternalEObject oldSpoint = (InternalEObject)spoint;
+			spoint = (SensitivityPoint)eResolveProxy(oldSpoint);
+			if (spoint != oldSpoint) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_fvPackage.CONNECTOR__SPOINT, oldSpoint, spoint));
+			}
+		}
+		return spoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SensitivityPoint basicGetSpoint() {
+		return spoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSpoint(SensitivityPoint newSpoint) {
+		SensitivityPoint oldSpoint = spoint;
+		spoint = newSpoint;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.CONNECTOR__SPOINT, oldSpoint, spoint));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -414,6 +464,9 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 				return getRoles();
 			case Accordant_fvPackage.CONNECTOR__PROTOCOL:
 				return getProtocol();
+			case Accordant_fvPackage.CONNECTOR__SPOINT:
+				if (resolve) return getSpoint();
+				return basicGetSpoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -452,6 +505,9 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 			case Accordant_fvPackage.CONNECTOR__PROTOCOL:
 				setProtocol((String)newValue);
 				return;
+			case Accordant_fvPackage.CONNECTOR__SPOINT:
+				setSpoint((SensitivityPoint)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -488,6 +544,9 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 			case Accordant_fvPackage.CONNECTOR__PROTOCOL:
 				setProtocol(PROTOCOL_EDEFAULT);
 				return;
+			case Accordant_fvPackage.CONNECTOR__SPOINT:
+				setSpoint((SensitivityPoint)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -516,6 +575,8 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 				return roles != null && !roles.isEmpty();
 			case Accordant_fvPackage.CONNECTOR__PROTOCOL:
 				return PROTOCOL_EDEFAULT == null ? protocol != null : !PROTOCOL_EDEFAULT.equals(protocol);
+			case Accordant_fvPackage.CONNECTOR__SPOINT:
+				return spoint != null;
 		}
 		return super.eIsSet(featureID);
 	}

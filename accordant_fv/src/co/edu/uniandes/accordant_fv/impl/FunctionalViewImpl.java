@@ -7,6 +7,7 @@ import co.edu.uniandes.accordant_fv.Component;
 import co.edu.uniandes.accordant_fv.Connector;
 import co.edu.uniandes.accordant_fv.FunctionalView;
 
+import co.edu.uniandes.accordant_rq.InputPackage;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -35,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.FunctionalViewImpl#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.FunctionalViewImpl#getConns <em>Conns</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.FunctionalViewImpl#getComps <em>Comps</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.impl.FunctionalViewImpl#getIpackage <em>Ipackage</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,6 +81,16 @@ public class FunctionalViewImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected EList<Component> comps;
+
+	/**
+	 * The cached value of the '{@link #getIpackage() <em>Ipackage</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIpackage()
+	 * @generated
+	 * @ordered
+	 */
+	protected InputPackage ipackage;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -149,6 +161,44 @@ public class FunctionalViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public InputPackage getIpackage() {
+		if (ipackage != null && ipackage.eIsProxy()) {
+			InternalEObject oldIpackage = (InternalEObject)ipackage;
+			ipackage = (InputPackage)eResolveProxy(oldIpackage);
+			if (ipackage != oldIpackage) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_fvPackage.FUNCTIONAL_VIEW__IPACKAGE, oldIpackage, ipackage));
+			}
+		}
+		return ipackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InputPackage basicGetIpackage() {
+		return ipackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIpackage(InputPackage newIpackage) {
+		InputPackage oldIpackage = ipackage;
+		ipackage = newIpackage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.FUNCTIONAL_VIEW__IPACKAGE, oldIpackage, ipackage));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -189,6 +239,9 @@ public class FunctionalViewImpl extends MinimalEObjectImpl.Container implements 
 				return getConns();
 			case Accordant_fvPackage.FUNCTIONAL_VIEW__COMPS:
 				return getComps();
+			case Accordant_fvPackage.FUNCTIONAL_VIEW__IPACKAGE:
+				if (resolve) return getIpackage();
+				return basicGetIpackage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,6 +266,9 @@ public class FunctionalViewImpl extends MinimalEObjectImpl.Container implements 
 				getComps().clear();
 				getComps().addAll((Collection<? extends Component>)newValue);
 				return;
+			case Accordant_fvPackage.FUNCTIONAL_VIEW__IPACKAGE:
+				setIpackage((InputPackage)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -234,6 +290,9 @@ public class FunctionalViewImpl extends MinimalEObjectImpl.Container implements 
 			case Accordant_fvPackage.FUNCTIONAL_VIEW__COMPS:
 				getComps().clear();
 				return;
+			case Accordant_fvPackage.FUNCTIONAL_VIEW__IPACKAGE:
+				setIpackage((InputPackage)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -252,6 +311,8 @@ public class FunctionalViewImpl extends MinimalEObjectImpl.Container implements 
 				return conns != null && !conns.isEmpty();
 			case Accordant_fvPackage.FUNCTIONAL_VIEW__COMPS:
 				return comps != null && !comps.isEmpty();
+			case Accordant_fvPackage.FUNCTIONAL_VIEW__IPACKAGE:
+				return ipackage != null;
 		}
 		return super.eIsSet(featureID);
 	}

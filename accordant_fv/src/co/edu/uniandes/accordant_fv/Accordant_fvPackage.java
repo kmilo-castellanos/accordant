@@ -95,13 +95,22 @@ public interface Accordant_fvPackage extends EPackage {
 	int FUNCTIONAL_VIEW__COMPS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Ipackage</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_VIEW__IPACKAGE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Functional View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTIONAL_VIEW_FEATURE_COUNT = 3;
+	int FUNCTIONAL_VIEW_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Functional View</em>' class.
@@ -195,13 +204,22 @@ public interface Accordant_fvPackage extends EPackage {
 	int CONNECTOR__PROTOCOL = 7;
 
 	/**
+	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__SPOINT = 8;
+
+	/**
 	 * The number of structural features of the '<em>Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_FEATURE_COUNT = 8;
+	int CONNECTOR_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Connector</em>' class.
@@ -259,13 +277,22 @@ public interface Accordant_fvPackage extends EPackage {
 	int COMPONENT__FUNC_VIEW = 3;
 
 	/**
+	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__SPOINT = 4;
+
+	/**
 	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = 4;
+	int COMPONENT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Component</em>' class.
@@ -321,6 +348,15 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @ordered
 	 */
 	int ANALYTICS_COMPONENT__FUNC_VIEW = COMPONENT__FUNC_VIEW;
+
+	/**
+	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYTICS_COMPONENT__SPOINT = COMPONENT__SPOINT;
 
 	/**
 	 * The feature id for the '<em><b>Pmml</b></em>' attribute.
@@ -394,6 +430,15 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @ordered
 	 */
 	int TRANSFORMER__FUNC_VIEW = ANALYTICS_COMPONENT__FUNC_VIEW;
+
+	/**
+	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSFORMER__SPOINT = ANALYTICS_COMPONENT__SPOINT;
 
 	/**
 	 * The feature id for the '<em><b>Pmml</b></em>' attribute.
@@ -494,6 +539,15 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @ordered
 	 */
 	int ESTIMATOR__FUNC_VIEW = ANALYTICS_COMPONENT__FUNC_VIEW;
+
+	/**
+	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESTIMATOR__SPOINT = ANALYTICS_COMPONENT__SPOINT;
 
 	/**
 	 * The feature id for the '<em><b>Pmml</b></em>' attribute.
@@ -605,6 +659,15 @@ public interface Accordant_fvPackage extends EPackage {
 	int STREAM__PROTOCOL = CONNECTOR__PROTOCOL;
 
 	/**
+	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STREAM__SPOINT = CONNECTOR__SPOINT;
+
+	/**
 	 * The number of structural features of the '<em>Stream</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -703,6 +766,15 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @ordered
 	 */
 	int ADAPTOR__PROTOCOL = CONNECTOR__PROTOCOL;
+
+	/**
+	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADAPTOR__SPOINT = CONNECTOR__SPOINT;
 
 	/**
 	 * The number of structural features of the '<em>Adaptor</em>' class.
@@ -805,6 +877,15 @@ public interface Accordant_fvPackage extends EPackage {
 	int DISTRIBUTOR__PROTOCOL = CONNECTOR__PROTOCOL;
 
 	/**
+	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISTRIBUTOR__SPOINT = CONNECTOR__SPOINT;
+
+	/**
 	 * The number of structural features of the '<em>Distributor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -867,6 +948,15 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @ordered
 	 */
 	int INGESTOR__FUNC_VIEW = COMPONENT__FUNC_VIEW;
+
+	/**
+	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INGESTOR__SPOINT = COMPONENT__SPOINT;
 
 	/**
 	 * The feature id for the '<em><b>Conn</b></em>' attribute.
@@ -1005,6 +1095,15 @@ public interface Accordant_fvPackage extends EPackage {
 	int EVENT__PROTOCOL = CONNECTOR__PROTOCOL;
 
 	/**
+	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT__SPOINT = CONNECTOR__SPOINT;
+
+	/**
 	 * The number of structural features of the '<em>Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1067,6 +1166,15 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @ordered
 	 */
 	int SINK__FUNC_VIEW = COMPONENT__FUNC_VIEW;
+
+	/**
+	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINK__SPOINT = COMPONENT__SPOINT;
 
 	/**
 	 * The feature id for the '<em><b>Conn</b></em>' attribute.
@@ -1233,6 +1341,15 @@ public interface Accordant_fvPackage extends EPackage {
 	int ARBITRATOR__PROTOCOL = CONNECTOR__PROTOCOL;
 
 	/**
+	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARBITRATOR__SPOINT = CONNECTOR__SPOINT;
+
+	/**
 	 * The number of structural features of the '<em>Arbitrator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1388,6 +1505,15 @@ public interface Accordant_fvPackage extends EPackage {
 	int PROCEDURE_CALL__PROTOCOL = CONNECTOR__PROTOCOL;
 
 	/**
+	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCEDURE_CALL__SPOINT = CONNECTOR__SPOINT;
+
+	/**
 	 * The number of structural features of the '<em>Procedure Call</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1530,6 +1656,17 @@ public interface Accordant_fvPackage extends EPackage {
 	EReference getFunctionalView_Comps();
 
 	/**
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_fv.FunctionalView#getIpackage <em>Ipackage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Ipackage</em>'.
+	 * @see co.edu.uniandes.accordant_fv.FunctionalView#getIpackage()
+	 * @see #getFunctionalView()
+	 * @generated
+	 */
+	EReference getFunctionalView_Ipackage();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_fv.Connector <em>Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1628,6 +1765,17 @@ public interface Accordant_fvPackage extends EPackage {
 	EAttribute getConnector_Protocol();
 
 	/**
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_fv.Connector#getSpoint <em>Spoint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Spoint</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Connector#getSpoint()
+	 * @see #getConnector()
+	 * @generated
+	 */
+	EReference getConnector_Spoint();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_fv.Component <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1680,6 +1828,17 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponent_FuncView();
+
+	/**
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_fv.Component#getSpoint <em>Spoint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Spoint</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Component#getSpoint()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_Spoint();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_fv.Transformer <em>Transformer</em>}'.
@@ -2114,6 +2273,14 @@ public interface Accordant_fvPackage extends EPackage {
 		EReference FUNCTIONAL_VIEW__COMPS = eINSTANCE.getFunctionalView_Comps();
 
 		/**
+		 * The meta object literal for the '<em><b>Ipackage</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FUNCTIONAL_VIEW__IPACKAGE = eINSTANCE.getFunctionalView_Ipackage();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.impl.ConnectorImpl <em>Connector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2188,6 +2355,14 @@ public interface Accordant_fvPackage extends EPackage {
 		EAttribute CONNECTOR__PROTOCOL = eINSTANCE.getConnector_Protocol();
 
 		/**
+		 * The meta object literal for the '<em><b>Spoint</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONNECTOR__SPOINT = eINSTANCE.getConnector_Spoint();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.impl.ComponentImpl <em>Component</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2228,6 +2403,14 @@ public interface Accordant_fvPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT__FUNC_VIEW = eINSTANCE.getComponent_FuncView();
+
+		/**
+		 * The meta object literal for the '<em><b>Spoint</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__SPOINT = eINSTANCE.getComponent_Spoint();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.impl.TransformerImpl <em>Transformer</em>}' class.

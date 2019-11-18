@@ -2,6 +2,7 @@
  */
 package co.edu.uniandes.accordant_fv;
 
+import co.edu.uniandes.accordant_rq.InputPackage;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -18,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_fv.FunctionalView#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.FunctionalView#getConns <em>Conns</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.FunctionalView#getComps <em>Comps</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.FunctionalView#getIpackage <em>Ipackage</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getFunctionalView()
@@ -84,5 +86,31 @@ public interface FunctionalView extends EObject {
 	 * @generated
 	 */
 	EList<Component> getComps();
+
+	/**
+	 * Returns the value of the '<em><b>Ipackage</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ipackage</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ipackage</em>' reference.
+	 * @see #setIpackage(InputPackage)
+	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getFunctionalView_Ipackage()
+	 * @model required="true"
+	 * @generated
+	 */
+	InputPackage getIpackage();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_fv.FunctionalView#getIpackage <em>Ipackage</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ipackage</em>' reference.
+	 * @see #getIpackage()
+	 * @generated
+	 */
+	void setIpackage(InputPackage value);
 
 } // FunctionalView

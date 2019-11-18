@@ -6,6 +6,7 @@
   <semanticResources>accordant_fv.ecore</semanticResources>
   <semanticResources>accordant_fv.genmodel</semanticResources>
   <semanticResources>accordant_fv2.ecore_diagram</semanticResources>
+  <semanticResources>platform:/resource/accordant_rq/model/accordant_rq.ecore</semanticResources>
   <ownedViews xmi:type="viewpoint:DView" xmi:id="_-b_KoMtIEeiK-MPy7Mpvlg">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
   </ownedViews>

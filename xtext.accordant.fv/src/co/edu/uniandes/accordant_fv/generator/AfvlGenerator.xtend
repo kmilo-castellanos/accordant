@@ -13,6 +13,8 @@ import co.edu.uniandes.accordant_fv.Estimator
 import java.net.URL
 import org.jpmml.model.PMMLUtil
 import org.dmg.pmml.DataType
+import co.edu.uniandes.accordant_rq.SensitivityPoint
+import co.edu.uniandes.accordant_rq.AnalyzedQS
 
 /**
  * Generates code from your model files on save.
@@ -102,6 +104,7 @@ class AfvlGenerator extends AbstractGenerator {
 				Dataset<Row> resultDs = pmmlTransformer.transform(inputDs);
 				
 				//TODO add output connector code
+				«logMetric(estimator.spoint)»
 				resultDs.coalesce(1).write().option("header", "true").mode("overwrite")
 												.csv("out/«formatJavaClassName(estimator.name)».csv");
 												
@@ -124,6 +127,16 @@ class AfvlGenerator extends AbstractGenerator {
 			}
 		}
 		return struct;
+	}
+
+	def logMetric(SensitivityPoint spoint) {
+		println("Entro a generator spoint" + spoint);
+		var logging = "//log(";
+		if (spoint !== null && spoint.eContainer!==null) {
+			val aqs = spoint.eContainer as AnalyzedQS;
+			logging +=aqs.qs.measure+","+aqs.qs.minValue+","+aqs.qs.maxValue+","+aqs.qs.unit+");"
+		}
+		return logging;
 	}
 
 	def parseDTypes(DataType datatype) {

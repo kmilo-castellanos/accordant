@@ -29,6 +29,8 @@ import co.edu.uniandes.accordant_fv.SyncType;
 import co.edu.uniandes.accordant_fv.Throughput;
 import co.edu.uniandes.accordant_fv.Transformer;
 
+import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
+import co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -258,11 +260,16 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 
 		isInited = true;
 
+		// Obtain or create and register interdependencies
+		Accordant_rqPackageImpl theAccordant_rqPackage = (Accordant_rqPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI) instanceof Accordant_rqPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI) : Accordant_rqPackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theAccordant_fvPackage.createPackageContents();
+		theAccordant_rqPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAccordant_fvPackage.initializePackageContents();
+		theAccordant_rqPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAccordant_fvPackage.freeze();
@@ -307,6 +314,15 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 	 */
 	public EReference getFunctionalView_Comps() {
 		return (EReference)functionalViewEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFunctionalView_Ipackage() {
+		return (EReference)functionalViewEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -395,6 +411,15 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getConnector_Spoint() {
+		return (EReference)connectorEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getComponent() {
 		return componentEClass;
 	}
@@ -433,6 +458,15 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 	 */
 	public EReference getComponent_FuncView() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponent_Spoint() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -791,6 +825,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		createEAttribute(functionalViewEClass, FUNCTIONAL_VIEW__NAME);
 		createEReference(functionalViewEClass, FUNCTIONAL_VIEW__CONNS);
 		createEReference(functionalViewEClass, FUNCTIONAL_VIEW__COMPS);
+		createEReference(functionalViewEClass, FUNCTIONAL_VIEW__IPACKAGE);
 
 		connectorEClass = createEClass(CONNECTOR);
 		createEAttribute(connectorEClass, CONNECTOR__NAME);
@@ -801,12 +836,14 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		createEAttribute(connectorEClass, CONNECTOR__THROUGHPUT);
 		createEReference(connectorEClass, CONNECTOR__ROLES);
 		createEAttribute(connectorEClass, CONNECTOR__PROTOCOL);
+		createEReference(connectorEClass, CONNECTOR__SPOINT);
 
 		componentEClass = createEClass(COMPONENT);
 		createEAttribute(componentEClass, COMPONENT__NAME);
 		createEReference(componentEClass, COMPONENT__PORTS);
 		createEAttribute(componentEClass, COMPONENT__PROC_MODEL);
 		createEReference(componentEClass, COMPONENT__FUNC_VIEW);
+		createEReference(componentEClass, COMPONENT__SPOINT);
 
 		transformerEClass = createEClass(TRANSFORMER);
 		createEAttribute(transformerEClass, TRANSFORMER__SQL_EXP);
@@ -883,6 +920,9 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		Accordant_rqPackage theAccordant_rqPackage = (Accordant_rqPackage)EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -905,6 +945,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		initEAttribute(getFunctionalView_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionalView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFunctionalView_Conns(), this.getConnector(), null, "conns", null, 1, -1, FunctionalView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFunctionalView_Comps(), this.getComponent(), this.getComponent_FuncView(), "comps", null, 1, -1, FunctionalView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFunctionalView_Ipackage(), theAccordant_rqPackage.getInputPackage(), null, "ipackage", null, 1, 1, FunctionalView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorEClass, Connector.class, "Connector", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConnector_Name(), ecorePackage.getEString(), "name", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -915,12 +956,14 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		initEAttribute(getConnector_Throughput(), this.getThroughput(), "throughput", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnector_Roles(), this.getRole(), null, "roles", null, 1, -1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConnector_Protocol(), ecorePackage.getEString(), "protocol", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnector_Spoint(), theAccordant_rqPackage.getSensitivityPoint(), null, "spoint", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Ports(), this.getPort(), null, "ports", null, 1, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_ProcModel(), this.getProcessingModel(), "procModel", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_FuncView(), this.getFunctionalView(), this.getFunctionalView_Comps(), "funcView", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_Spoint(), theAccordant_rqPackage.getSensitivityPoint(), null, "spoint", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transformerEClass, Transformer.class, "Transformer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTransformer_SqlExp(), ecorePackage.getEString(), "sqlExp", null, 0, 1, Transformer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
