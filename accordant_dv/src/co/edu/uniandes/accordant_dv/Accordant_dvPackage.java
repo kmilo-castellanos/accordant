@@ -486,13 +486,22 @@ public interface Accordant_dvPackage extends EPackage {
 	int DEPLOYMENT__STRATEGY = 5;
 
 	/**
+	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOYMENT__SPOINT = 6;
+
+	/**
 	 * The number of structural features of the '<em>Deployment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOYMENT_FEATURE_COUNT = 6;
+	int DEPLOYMENT_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Deployment</em>' class.
@@ -891,6 +900,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 */
 	int TYPE_DEVICE = 15;
+
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.DeploymentView <em>Deployment View</em>}'.
@@ -1315,6 +1325,17 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDeployment_Strategy();
+
+	/**
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.Deployment#getSpoint <em>Spoint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Spoint</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Deployment#getSpoint()
+	 * @see #getDeployment()
+	 * @generated
+	 */
+	EReference getDeployment_Spoint();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.Pod <em>Pod</em>}'.
@@ -2001,6 +2022,14 @@ public interface Accordant_dvPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DEPLOYMENT__STRATEGY = eINSTANCE.getDeployment_Strategy();
+
+		/**
+		 * The meta object literal for the '<em><b>Spoint</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEPLOYMENT__SPOINT = eINSTANCE.getDeployment_Spoint();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.PodImpl <em>Pod</em>}' class.

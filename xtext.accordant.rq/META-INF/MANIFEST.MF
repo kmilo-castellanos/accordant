@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: xtext.accordant.rq
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: xtext.accordant.rq; singleton:=true
+Bundle-SymbolicName: xtext.accordant.rq;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase,
@@ -24,3 +24,4 @@ Export-Package: co.edu.uniandes.accordant_rq,
  co.edu.uniandes.accordant_rq.services,
  co.edu.uniandes.accordant_rq.generator
 Import-Package: org.apache.log4j
+Bundle-ClassPath: lib/,.

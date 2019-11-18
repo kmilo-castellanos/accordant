@@ -8,14 +8,18 @@ var rootPath = ".."
 Workflow {
 
 	component = XtextGenerator {
+		
 		configuration = {
-			project = StandardProjectConfig {
+			project = StandardProjectConfig {					
+					
 				baseName = "xtext.accordant.dv"
 				rootPath = rootPath
 				runtimeTest = {
 					enabled = true
 				}
+				
 				eclipsePlugin = {
+					
 					enabled = true
 				}
 				eclipsePluginTest = {
@@ -34,11 +38,11 @@ Workflow {
 			fileExtensions = "adl"
 			referencedResource = "platform:/resource/accordant_dv/model/accordant_dv.genmodel"
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
-
+			
 			formatter = {
 				generateStub = true
 			}
-
+	
 			serializer = {
 				generateStub = false
 			}

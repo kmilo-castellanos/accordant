@@ -33,6 +33,7 @@
     <genClasses ecoreClass="accordant_rq.ecore#//InputPackage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_rq.ecore#//InputPackage/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_rq.ecore#//InputPackage/scenarios"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_rq.ecore#//InputPackage/gtactics"/>
     </genClasses>
     <genClasses ecoreClass="accordant_rq.ecore#//QScenario">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_rq.ecore#//QScenario/measure"/>

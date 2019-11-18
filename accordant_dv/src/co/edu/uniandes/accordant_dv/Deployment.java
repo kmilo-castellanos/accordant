@@ -2,6 +2,8 @@
  */
 package co.edu.uniandes.accordant_dv;
 
+import co.edu.uniandes.accordant_rq.SensitivityPoint;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -21,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.Deployment#getMaxUnavail <em>Max Unavail</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Deployment#getPods <em>Pods</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Deployment#getStrategy <em>Strategy</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.Deployment#getSpoint <em>Spoint</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeployment()
@@ -173,5 +176,31 @@ public interface Deployment extends EObject {
 	 * @generated
 	 */
 	void setStrategy(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Spoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Spoint</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Spoint</em>' reference.
+	 * @see #setSpoint(SensitivityPoint)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeployment_Spoint()
+	 * @model
+	 * @generated
+	 */
+	SensitivityPoint getSpoint();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.Deployment#getSpoint <em>Spoint</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Spoint</em>' reference.
+	 * @see #getSpoint()
+	 * @generated
+	 */
+	void setSpoint(SensitivityPoint value);
 
 } // Deployment

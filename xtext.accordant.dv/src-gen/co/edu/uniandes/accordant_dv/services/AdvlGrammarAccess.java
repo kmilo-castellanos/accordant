@@ -410,11 +410,13 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 		//	'Deployment' name=ID
 		//	'{' ('replicas' ':' replicas=EInt)? ('maxSurge' ':' maxSurge=EInt)? ('maxUnavailable' ':' maxUnavail=EInt)?
 		//	'pods' '{' pods+=Pod ("," pods+=Pod)* '}'
+		//	//'sPoint' ':' spoint=[rq::SensitivityPoint] 
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Deployment' name=ID '{' ('replicas' ':' replicas=EInt)? ('maxSurge' ':' maxSurge=EInt)? ('maxUnavailable' ':'
-		//maxUnavail=EInt)? 'pods' '{' pods+=Pod ("," pods+=Pod)* '}' '}'
+		//maxUnavail=EInt)? 'pods' '{' pods+=Pod ("," pods+=Pod)* '}' //'sPoint' ':' spoint=[rq::SensitivityPoint] 
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Deployment'
@@ -501,6 +503,7 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 		
+		////'sPoint' ':' spoint=[rq::SensitivityPoint] 
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
@@ -899,13 +902,6 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
-		////enum Comparator returns Comparator:
-		////	LOWER = '<' | LWEQ = '<=' | EQUALS = '=' | DIFF = '!=' |
-		////	DIFF = '<>' | GREQ = '>='| GREATER = '>'
-		////;
-		////enum Unit returns Unit:
-		////	MILLIS = 'MILLIS' | SECONDS = 'SECONDS' | MINUTES = 'MINUTES' |  HOURS = 'HOURS'  | TASKS = 'TASKS' | BYTES = 'BYTES' | MSGS = 'MSGS'
-		////;
 		//EInt ecore::EInt:
 		//	'-'? INT;
 		@Override public ParserRule getRule() { return rule; }
@@ -1379,17 +1375,11 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 		//	name=ID
 		//	'{' ('comp' ':' component=EString)? ('conn' ':' connector=EString)? ('paas' ':' paas=[ExecEnvironment])? ('iaas' ':'
 		//	saas=[ServerlessEnv])? ('props' ':' props=EString)?
-		//	//('aconn' ':' aconn=[bdarchops_fv::Connector|EString])?
-		//	//('acomp' ':' acomp=[bdarchops_fv::Component|EString])?
-		//	//		('scenarios' '{' scenarios+=QScenario ( "," scenarios+=QScenario)* )'}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Artifact} 'Artifact' name=ID '{' ('comp' ':' component=EString)? ('conn' ':' connector=EString)? ('paas' ':'
-		//paas=[ExecEnvironment])? ('iaas' ':' saas=[ServerlessEnv])? ('props' ':' props=EString)? //('aconn' ':' aconn=[bdarchops_fv::Connector|EString])?
-		////('acomp' ':' acomp=[bdarchops_fv::Component|EString])?
-		////		('scenarios' '{' scenarios+=QScenario ( "," scenarios+=QScenario)* )'}'
-		//'}'
+		//paas=[ExecEnvironment])? ('iaas' ':' saas=[ServerlessEnv])? ('props' ':' props=EString)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Artifact}
@@ -1488,9 +1478,6 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPropsEStringParserRuleCall_8_2_0() { return cPropsEStringParserRuleCall_8_2_0; }
 		
-		////('aconn' ':' aconn=[bdarchops_fv::Connector|EString])?
-		////('acomp' ':' acomp=[bdarchops_fv::Component|EString])?
-		////		('scenarios' '{' scenarios+=QScenario ( "," scenarios+=QScenario)* )'}'
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
@@ -1647,6 +1634,7 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 	//	'Deployment' name=ID
 	//	'{' ('replicas' ':' replicas=EInt)? ('maxSurge' ':' maxSurge=EInt)? ('maxUnavailable' ':' maxUnavail=EInt)?
 	//	'pods' '{' pods+=Pod ("," pods+=Pod)* '}'
+	//	//'sPoint' ':' spoint=[rq::SensitivityPoint] 
 	//	'}';
 	public DeploymentElements getDeploymentAccess() {
 		return pDeployment;
@@ -1705,13 +1693,6 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 		return getTypeDeviceAccess().getRule();
 	}
 	
-	////enum Comparator returns Comparator:
-	////	LOWER = '<' | LWEQ = '<=' | EQUALS = '=' | DIFF = '!=' |
-	////	DIFF = '<>' | GREQ = '>='| GREATER = '>'
-	////;
-	////enum Unit returns Unit:
-	////	MILLIS = 'MILLIS' | SECONDS = 'SECONDS' | MINUTES = 'MINUTES' |  HOURS = 'HOURS'  | TASKS = 'TASKS' | BYTES = 'BYTES' | MSGS = 'MSGS'
-	////;
 	//EInt ecore::EInt:
 	//	'-'? INT;
 	public EIntElements getEIntAccess() {
@@ -1783,9 +1764,6 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=ID
 	//	'{' ('comp' ':' component=EString)? ('conn' ':' connector=EString)? ('paas' ':' paas=[ExecEnvironment])? ('iaas' ':'
 	//	saas=[ServerlessEnv])? ('props' ':' props=EString)?
-	//	//('aconn' ':' aconn=[bdarchops_fv::Connector|EString])?
-	//	//('acomp' ':' acomp=[bdarchops_fv::Component|EString])?
-	//	//		('scenarios' '{' scenarios+=QScenario ( "," scenarios+=QScenario)* )'}'
 	//	'}';
 	public ArtifactElements getArtifactAccess() {
 		return pArtifact;

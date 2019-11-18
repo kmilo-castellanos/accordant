@@ -20,6 +20,11 @@ import co.edu.uniandes.accordant_dv.Service;
 import co.edu.uniandes.accordant_dv.SinkTech;
 import co.edu.uniandes.accordant_dv.TransformerTech;
 import co.edu.uniandes.accordant_dv.TypeDevice;
+
+import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
+
+import co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -193,11 +198,16 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 
 		isInited = true;
 
+		// Obtain or create and register interdependencies
+		Accordant_rqPackageImpl theAccordant_rqPackage = (Accordant_rqPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI) instanceof Accordant_rqPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI) : Accordant_rqPackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theAccordant_dvPackage.createPackageContents();
+		theAccordant_rqPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAccordant_dvPackage.initializePackageContents();
+		theAccordant_rqPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAccordant_dvPackage.freeze();
@@ -564,6 +574,15 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDeployment_Spoint() {
+		return (EReference)deploymentEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPod() {
 		return podEClass;
 	}
@@ -918,6 +937,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		createEAttribute(deploymentEClass, DEPLOYMENT__MAX_UNAVAIL);
 		createEReference(deploymentEClass, DEPLOYMENT__PODS);
 		createEAttribute(deploymentEClass, DEPLOYMENT__STRATEGY);
+		createEReference(deploymentEClass, DEPLOYMENT__SPOINT);
 
 		podEClass = createEClass(POD);
 		createEAttribute(podEClass, POD__NAME);
@@ -982,6 +1002,9 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		Accordant_rqPackage theAccordant_rqPackage = (Accordant_rqPackage)EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -1032,6 +1055,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		initEAttribute(getDeployment_MaxUnavail(), ecorePackage.getEInt(), "maxUnavail", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeployment_Pods(), this.getPod(), null, "pods", null, 1, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeployment_Strategy(), ecorePackage.getEString(), "strategy", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeployment_Spoint(), theAccordant_rqPackage.getSensitivityPoint(), null, "spoint", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(podEClass, Pod.class, "Pod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPod_Name(), ecorePackage.getEString(), "name", null, 0, 1, Pod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

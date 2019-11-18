@@ -78,6 +78,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Deployment/maxUnavail"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//Deployment/pods"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Deployment/strategy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//Deployment/spoint"/>
     </genClasses>
     <genClasses ecoreClass="accordant_dv.ecore#//Pod">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Pod/name"/>
@@ -109,6 +110,66 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//ServerlessEnv/memory"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//ServerlessEnv/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//ServerlessEnv/props"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Accordant_rq" basePackage="co.edu.uniandes" ecorePackage="../../accordant_rq/model/accordant_rq.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../accordant_rq/model/accordant_rq.ecore#//QAMetric">
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//QAMetric/THROUGHPUT"/>
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//QAMetric/LATENCY"/>
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//QAMetric/DEADLINE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../accordant_rq/model/accordant_rq.ecore#//MetricUnit">
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//MetricUnit/MILLIS"/>
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//MetricUnit/SECONDS"/>
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//MetricUnit/MINUTES"/>
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//MetricUnit/HOURS"/>
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//MetricUnit/TASKS"/>
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//MetricUnit/BYTES"/>
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//MetricUnit/MSGS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../accordant_rq/model/accordant_rq.ecore#//QAttribute">
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//QAttribute/AVAILABILITY"/>
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//QAttribute/PERFORMANCE"/>
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//QAttribute/MODIFIABILITY"/>
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//QAttribute/TESTABILITY"/>
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//QAttribute/SCALABILITY"/>
+    </genEnums>
+    <genClasses ecoreClass="../../accordant_rq/model/accordant_rq.ecore#//InputPackage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//InputPackage/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../accordant_rq/model/accordant_rq.ecore#//InputPackage/scenarios"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../accordant_rq/model/accordant_rq.ecore#//InputPackage/gtactics"/>
+    </genClasses>
+    <genClasses ecoreClass="../../accordant_rq/model/accordant_rq.ecore#//QScenario">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//QScenario/measure"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//QScenario/minValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//QScenario/maxValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//QScenario/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//QScenario/qAttribute"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../accordant_rq/model/accordant_rq.ecore#//QScenario/analyzed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//QScenario/stimulus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//QScenario/environment"/>
+    </genClasses>
+    <genClasses ecoreClass="../../accordant_rq/model/accordant_rq.ecore#//SensitivityPoint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//SensitivityPoint/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//SensitivityPoint/rationale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//SensitivityPoint/code"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../accordant_rq/model/accordant_rq.ecore#//SensitivityPoint/tactic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//SensitivityPoint/isRisk"/>
+    </genClasses>
+    <genClasses ecoreClass="../../accordant_rq/model/accordant_rq.ecore#//Tactic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//Tactic/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//Tactic/qAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../accordant_rq/model/accordant_rq.ecore#//Tactic/subtactics"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//Tactic/rationale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//Tactic/stimulus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//Tactic/response"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//Tactic/viewpoint"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../accordant_rq/model/accordant_rq.ecore#//Tactic/spoint"/>
+    </genClasses>
+    <genClasses ecoreClass="../../accordant_rq/model/accordant_rq.ecore#//AnalyzedQS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../accordant_rq/model/accordant_rq.ecore#//AnalyzedQS/points"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../accordant_rq/model/accordant_rq.ecore#//AnalyzedQS/qs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//AnalyzedQS/reasoning"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
