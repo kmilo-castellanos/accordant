@@ -177,8 +177,17 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInputPackage_Gtactics() {
+	public EReference getInputPackage_Tactics() {
 		return (EReference)inputPackageEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInputPackage_AnalyzedQs() {
+		return (EReference)inputPackageEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -240,17 +249,8 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getQScenario_Analyzed() {
-		return (EReference)qScenarioEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getQScenario_Stimulus() {
-		return (EAttribute)qScenarioEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)qScenarioEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -259,6 +259,15 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * @generated
 	 */
 	public EAttribute getQScenario_Environment() {
+		return (EAttribute)qScenarioEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getQScenario_Name() {
 		return (EAttribute)qScenarioEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -303,7 +312,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSensitivityPoint_Tactic() {
+	public EReference getSensitivityPoint_AppliedTactics() {
 		return (EReference)sensitivityPointEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -348,17 +357,8 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTactic_Subtactics() {
-		return (EReference)tacticEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getTactic_Rationale() {
-		return (EAttribute)tacticEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)tacticEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -367,7 +367,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * @generated
 	 */
 	public EAttribute getTactic_Stimulus() {
-		return (EAttribute)tacticEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)tacticEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -376,7 +376,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * @generated
 	 */
 	public EAttribute getTactic_Response() {
-		return (EAttribute)tacticEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)tacticEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -385,16 +385,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * @generated
 	 */
 	public EAttribute getTactic_Viewpoint() {
-		return (EAttribute)tacticEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTactic_Spoint() {
-		return (EReference)tacticEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)tacticEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -411,7 +402,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAnalyzedQS_Points() {
+	public EReference getAnalyzedQS_SPoints() {
 		return (EReference)analyzedQSEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -431,6 +422,15 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 */
 	public EAttribute getAnalyzedQS_Reasoning() {
 		return (EAttribute)analyzedQSEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAnalyzedQS_Name() {
+		return (EAttribute)analyzedQSEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -491,7 +491,8 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		inputPackageEClass = createEClass(INPUT_PACKAGE);
 		createEAttribute(inputPackageEClass, INPUT_PACKAGE__NAME);
 		createEReference(inputPackageEClass, INPUT_PACKAGE__SCENARIOS);
-		createEReference(inputPackageEClass, INPUT_PACKAGE__GTACTICS);
+		createEReference(inputPackageEClass, INPUT_PACKAGE__TACTICS);
+		createEReference(inputPackageEClass, INPUT_PACKAGE__ANALYZED_QS);
 
 		qScenarioEClass = createEClass(QSCENARIO);
 		createEAttribute(qScenarioEClass, QSCENARIO__MEASURE);
@@ -499,31 +500,30 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		createEAttribute(qScenarioEClass, QSCENARIO__MAX_VALUE);
 		createEAttribute(qScenarioEClass, QSCENARIO__UNIT);
 		createEAttribute(qScenarioEClass, QSCENARIO__QATTRIBUTE);
-		createEReference(qScenarioEClass, QSCENARIO__ANALYZED);
 		createEAttribute(qScenarioEClass, QSCENARIO__STIMULUS);
 		createEAttribute(qScenarioEClass, QSCENARIO__ENVIRONMENT);
+		createEAttribute(qScenarioEClass, QSCENARIO__NAME);
 
 		sensitivityPointEClass = createEClass(SENSITIVITY_POINT);
 		createEAttribute(sensitivityPointEClass, SENSITIVITY_POINT__NAME);
 		createEAttribute(sensitivityPointEClass, SENSITIVITY_POINT__RATIONALE);
 		createEAttribute(sensitivityPointEClass, SENSITIVITY_POINT__CODE);
-		createEReference(sensitivityPointEClass, SENSITIVITY_POINT__TACTIC);
+		createEReference(sensitivityPointEClass, SENSITIVITY_POINT__APPLIED_TACTICS);
 		createEAttribute(sensitivityPointEClass, SENSITIVITY_POINT__IS_RISK);
 
 		tacticEClass = createEClass(TACTIC);
 		createEAttribute(tacticEClass, TACTIC__NAME);
 		createEAttribute(tacticEClass, TACTIC__QATTRIBUTE);
-		createEReference(tacticEClass, TACTIC__SUBTACTICS);
 		createEAttribute(tacticEClass, TACTIC__RATIONALE);
 		createEAttribute(tacticEClass, TACTIC__STIMULUS);
 		createEAttribute(tacticEClass, TACTIC__RESPONSE);
 		createEAttribute(tacticEClass, TACTIC__VIEWPOINT);
-		createEReference(tacticEClass, TACTIC__SPOINT);
 
 		analyzedQSEClass = createEClass(ANALYZED_QS);
-		createEReference(analyzedQSEClass, ANALYZED_QS__POINTS);
+		createEReference(analyzedQSEClass, ANALYZED_QS__SPOINTS);
 		createEReference(analyzedQSEClass, ANALYZED_QS__QS);
 		createEAttribute(analyzedQSEClass, ANALYZED_QS__REASONING);
+		createEAttribute(analyzedQSEClass, ANALYZED_QS__NAME);
 
 		// Create enums
 		qaMetricEEnum = createEEnum(QA_METRIC);
@@ -563,8 +563,9 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		// Initialize classes, features, and operations; add parameters
 		initEClass(inputPackageEClass, InputPackage.class, "InputPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInputPackage_Name(), ecorePackage.getEString(), "name", null, 1, 1, InputPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInputPackage_Scenarios(), this.getQScenario(), null, "scenarios", null, 0, -1, InputPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInputPackage_Gtactics(), this.getTactic(), null, "gtactics", null, 0, -1, InputPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInputPackage_Scenarios(), this.getQScenario(), null, "scenarios", null, 1, -1, InputPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInputPackage_Tactics(), this.getTactic(), null, "tactics", null, 0, -1, InputPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInputPackage_AnalyzedQs(), this.getAnalyzedQS(), null, "analyzedQs", null, 0, -1, InputPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(qScenarioEClass, QScenario.class, "QScenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getQScenario_Measure(), this.getQAMetric(), "measure", null, 1, 1, QScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -572,31 +573,30 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		initEAttribute(getQScenario_MaxValue(), ecorePackage.getEFloat(), "maxValue", null, 1, 1, QScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQScenario_Unit(), this.getMetricUnit(), "unit", null, 1, 1, QScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQScenario_QAttribute(), this.getQAttribute(), "qAttribute", null, 1, 1, QScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getQScenario_Analyzed(), this.getAnalyzedQS(), this.getAnalyzedQS_Qs(), "analyzed", null, 0, 1, QScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQScenario_Stimulus(), ecorePackage.getEString(), "stimulus", null, 1, 1, QScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQScenario_Environment(), ecorePackage.getEString(), "environment", null, 1, 1, QScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQScenario_Name(), ecorePackage.getEString(), "name", null, 1, 1, QScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensitivityPointEClass, SensitivityPoint.class, "SensitivityPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSensitivityPoint_Name(), ecorePackage.getEString(), "name", null, 0, 1, SensitivityPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSensitivityPoint_Name(), ecorePackage.getEString(), "name", null, 0, 1, SensitivityPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSensitivityPoint_Rationale(), ecorePackage.getEString(), "rationale", null, 0, 1, SensitivityPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSensitivityPoint_Code(), ecorePackage.getEString(), "code", null, 0, 1, SensitivityPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSensitivityPoint_Tactic(), this.getTactic(), this.getTactic_Spoint(), "tactic", null, 1, -1, SensitivityPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSensitivityPoint_AppliedTactics(), this.getTactic(), null, "appliedTactics", null, 0, -1, SensitivityPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSensitivityPoint_IsRisk(), ecorePackage.getEBoolean(), "isRisk", null, 0, 1, SensitivityPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tacticEClass, Tactic.class, "Tactic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTactic_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tactic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTactic_QAttribute(), this.getQAttribute(), "qAttribute", null, 0, 1, Tactic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTactic_Subtactics(), this.getTactic(), null, "subtactics", null, 0, -1, Tactic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTactic_Rationale(), ecorePackage.getEString(), "rationale", null, 0, 1, Tactic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTactic_Stimulus(), ecorePackage.getEString(), "stimulus", null, 0, 1, Tactic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTactic_Response(), ecorePackage.getEString(), "response", null, 0, 1, Tactic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTactic_Viewpoint(), ecorePackage.getEString(), "viewpoint", null, 0, 1, Tactic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTactic_Spoint(), this.getSensitivityPoint(), this.getSensitivityPoint_Tactic(), "spoint", null, 0, -1, Tactic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(analyzedQSEClass, AnalyzedQS.class, "AnalyzedQS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnalyzedQS_Points(), this.getSensitivityPoint(), null, "points", null, 0, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAnalyzedQS_Qs(), this.getQScenario(), this.getQScenario_Analyzed(), "qs", null, 1, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnalyzedQS_SPoints(), this.getSensitivityPoint(), null, "sPoints", null, 0, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnalyzedQS_Qs(), this.getQScenario(), null, "qs", null, 1, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAnalyzedQS_Reasoning(), ecorePackage.getEString(), "reasoning", null, 0, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAnalyzedQS_Name(), ecorePackage.getEString(), "name", null, 1, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(qaMetricEEnum, QAMetric.class, "QAMetric");

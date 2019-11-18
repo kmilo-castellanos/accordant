@@ -122,13 +122,31 @@ public interface Accordant_dvPackage extends EPackage {
 	int DEPLOYMENT_VIEW__ARTIFACTS = 5;
 
 	/**
+	 * The feature id for the '<em><b>Ipackage</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOYMENT_VIEW__IPACKAGE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Fv</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOYMENT_VIEW__FV = 7;
+
+	/**
 	 * The number of structural features of the '<em>Deployment View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOYMENT_VIEW_FEATURE_COUNT = 6;
+	int DEPLOYMENT_VIEW_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Deployment View</em>' class.
@@ -322,13 +340,22 @@ public interface Accordant_dvPackage extends EPackage {
 	int EXEC_ENVIRONMENT__COMMANDS = 8;
 
 	/**
+	 * The feature id for the '<em><b>Paas Arts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXEC_ENVIRONMENT__PAAS_ARTS = 9;
+
+	/**
 	 * The number of structural features of the '<em>Exec Environment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_ENVIRONMENT_FEATURE_COUNT = 9;
+	int EXEC_ENVIRONMENT_FEATURE_COUNT = 10;
 
 	/**
 	 * The number of operations of the '<em>Exec Environment</em>' class.
@@ -368,40 +395,31 @@ public interface Accordant_dvPackage extends EPackage {
 	int ARTIFACT__PROPS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Component</b></em>' attribute.
+	 * The feature id for the '<em><b>Comp</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT__COMPONENT = 2;
+	int ARTIFACT__COMP = 2;
 
 	/**
-	 * The feature id for the '<em><b>Connector</b></em>' attribute.
+	 * The feature id for the '<em><b>Conn</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT__CONNECTOR = 3;
+	int ARTIFACT__CONN = 3;
 
 	/**
-	 * The feature id for the '<em><b>Saas</b></em>' reference.
+	 * The feature id for the '<em><b>Spoint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT__SAAS = 4;
-
-	/**
-	 * The feature id for the '<em><b>Paas</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARTIFACT__PAAS = 5;
+	int ARTIFACT__SPOINT = 4;
 
 	/**
 	 * The number of structural features of the '<em>Artifact</em>' class.
@@ -410,7 +428,7 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT_FEATURE_COUNT = 6;
+	int ARTIFACT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Artifact</em>' class.
@@ -824,13 +842,22 @@ public interface Accordant_dvPackage extends EPackage {
 	int SERVERLESS_ENV__PROPS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Saas Arts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVERLESS_ENV__SAAS_ARTS = 5;
+
+	/**
 	 * The number of structural features of the '<em>Serverless Env</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVERLESS_ENV_FEATURE_COUNT = 5;
+	int SERVERLESS_ENV_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Serverless Env</em>' class.
@@ -977,6 +1004,28 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDeploymentView_Artifacts();
+
+	/**
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.DeploymentView#getIpackage <em>Ipackage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Ipackage</em>'.
+	 * @see co.edu.uniandes.accordant_dv.DeploymentView#getIpackage()
+	 * @see #getDeploymentView()
+	 * @generated
+	 */
+	EReference getDeploymentView_Ipackage();
+
+	/**
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.DeploymentView#getFv <em>Fv</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Fv</em>'.
+	 * @see co.edu.uniandes.accordant_dv.DeploymentView#getFv()
+	 * @see #getDeploymentView()
+	 * @generated
+	 */
+	EReference getDeploymentView_Fv();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.Device <em>Device</em>}'.
@@ -1175,6 +1224,17 @@ public interface Accordant_dvPackage extends EPackage {
 	EAttribute getExecEnvironment_Commands();
 
 	/**
+	 * Returns the meta object for the reference list '{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getPaasArts <em>Paas Arts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Paas Arts</em>'.
+	 * @see co.edu.uniandes.accordant_dv.ExecEnvironment#getPaasArts()
+	 * @see #getExecEnvironment()
+	 * @generated
+	 */
+	EReference getExecEnvironment_PaasArts();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.Artifact <em>Artifact</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1207,48 +1267,37 @@ public interface Accordant_dvPackage extends EPackage {
 	EAttribute getArtifact_Props();
 
 	/**
-	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_dv.Artifact#getComponent <em>Component</em>}'.
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.Artifact#getComp <em>Comp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Component</em>'.
-	 * @see co.edu.uniandes.accordant_dv.Artifact#getComponent()
+	 * @return the meta object for the reference '<em>Comp</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Artifact#getComp()
 	 * @see #getArtifact()
 	 * @generated
 	 */
-	EAttribute getArtifact_Component();
+	EReference getArtifact_Comp();
 
 	/**
-	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_dv.Artifact#getConnector <em>Connector</em>}'.
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.Artifact#getConn <em>Conn</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Connector</em>'.
-	 * @see co.edu.uniandes.accordant_dv.Artifact#getConnector()
+	 * @return the meta object for the reference '<em>Conn</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Artifact#getConn()
 	 * @see #getArtifact()
 	 * @generated
 	 */
-	EAttribute getArtifact_Connector();
+	EReference getArtifact_Conn();
 
 	/**
-	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.Artifact#getSaas <em>Saas</em>}'.
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.Artifact#getSpoint <em>Spoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Saas</em>'.
-	 * @see co.edu.uniandes.accordant_dv.Artifact#getSaas()
+	 * @return the meta object for the reference '<em>Spoint</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Artifact#getSpoint()
 	 * @see #getArtifact()
 	 * @generated
 	 */
-	EReference getArtifact_Saas();
-
-	/**
-	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.Artifact#getPaas <em>Paas</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Paas</em>'.
-	 * @see co.edu.uniandes.accordant_dv.Artifact#getPaas()
-	 * @see #getArtifact()
-	 * @generated
-	 */
-	EReference getArtifact_Paas();
+	EReference getArtifact_Spoint();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.Deployment <em>Deployment</em>}'.
@@ -1619,6 +1668,17 @@ public interface Accordant_dvPackage extends EPackage {
 	EAttribute getServerlessEnv_Props();
 
 	/**
+	 * Returns the meta object for the reference list '{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getSaasArts <em>Saas Arts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Saas Arts</em>'.
+	 * @see co.edu.uniandes.accordant_dv.ServerlessEnv#getSaasArts()
+	 * @see #getServerlessEnv()
+	 * @generated
+	 */
+	EReference getServerlessEnv_SaasArts();
+
+	/**
 	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_dv.EventConnTech <em>Event Conn Tech</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1758,6 +1818,22 @@ public interface Accordant_dvPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DEPLOYMENT_VIEW__ARTIFACTS = eINSTANCE.getDeploymentView_Artifacts();
+
+		/**
+		 * The meta object literal for the '<em><b>Ipackage</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEPLOYMENT_VIEW__IPACKAGE = eINSTANCE.getDeploymentView_Ipackage();
+
+		/**
+		 * The meta object literal for the '<em><b>Fv</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEPLOYMENT_VIEW__FV = eINSTANCE.getDeploymentView_Fv();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.DeviceImpl <em>Device</em>}' class.
@@ -1908,6 +1984,14 @@ public interface Accordant_dvPackage extends EPackage {
 		EAttribute EXEC_ENVIRONMENT__COMMANDS = eINSTANCE.getExecEnvironment_Commands();
 
 		/**
+		 * The meta object literal for the '<em><b>Paas Arts</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXEC_ENVIRONMENT__PAAS_ARTS = eINSTANCE.getExecEnvironment_PaasArts();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl <em>Artifact</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1934,36 +2018,28 @@ public interface Accordant_dvPackage extends EPackage {
 		EAttribute ARTIFACT__PROPS = eINSTANCE.getArtifact_Props();
 
 		/**
-		 * The meta object literal for the '<em><b>Component</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Comp</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ARTIFACT__COMPONENT = eINSTANCE.getArtifact_Component();
+		EReference ARTIFACT__COMP = eINSTANCE.getArtifact_Comp();
 
 		/**
-		 * The meta object literal for the '<em><b>Connector</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Conn</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ARTIFACT__CONNECTOR = eINSTANCE.getArtifact_Connector();
+		EReference ARTIFACT__CONN = eINSTANCE.getArtifact_Conn();
 
 		/**
-		 * The meta object literal for the '<em><b>Saas</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Spoint</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ARTIFACT__SAAS = eINSTANCE.getArtifact_Saas();
-
-		/**
-		 * The meta object literal for the '<em><b>Paas</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ARTIFACT__PAAS = eINSTANCE.getArtifact_Paas();
+		EReference ARTIFACT__SPOINT = eINSTANCE.getArtifact_Spoint();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl <em>Deployment</em>}' class.
@@ -2248,6 +2324,14 @@ public interface Accordant_dvPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SERVERLESS_ENV__PROPS = eINSTANCE.getServerlessEnv_Props();
+
+		/**
+		 * The meta object literal for the '<em><b>Saas Arts</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVERLESS_ENV__SAAS_ARTS = eINSTANCE.getServerlessEnv_SaasArts();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.EventConnTech <em>Event Conn Tech</em>}' enum.

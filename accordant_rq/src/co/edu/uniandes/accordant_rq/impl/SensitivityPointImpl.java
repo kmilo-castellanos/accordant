@@ -9,18 +9,13 @@ import co.edu.uniandes.accordant_rq.Tactic;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl#getRationale <em>Rationale</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl#getCode <em>Code</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl#getTactic <em>Tactic</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl#getAppliedTactics <em>Applied Tactics</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl#isIsRisk <em>Is Risk</em>}</li>
  * </ul>
  *
@@ -101,14 +96,14 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 	protected String code = CODE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTactic() <em>Tactic</em>}' reference list.
+	 * The cached value of the '{@link #getAppliedTactics() <em>Applied Tactics</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTactic()
+	 * @see #getAppliedTactics()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Tactic> tactic;
+	protected EList<Tactic> appliedTactics;
 
 	/**
 	 * The default value of the '{@link #isIsRisk() <em>Is Risk</em>}' attribute.
@@ -217,11 +212,11 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Tactic> getTactic() {
-		if (tactic == null) {
-			tactic = new EObjectWithInverseResolvingEList.ManyInverse<Tactic>(Tactic.class, this, Accordant_rqPackage.SENSITIVITY_POINT__TACTIC, Accordant_rqPackage.TACTIC__SPOINT);
+	public EList<Tactic> getAppliedTactics() {
+		if (appliedTactics == null) {
+			appliedTactics = new EObjectResolvingEList<Tactic>(Tactic.class, this, Accordant_rqPackage.SENSITIVITY_POINT__APPLIED_TACTICS);
 		}
-		return tactic;
+		return appliedTactics;
 	}
 
 	/**
@@ -250,35 +245,6 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Accordant_rqPackage.SENSITIVITY_POINT__TACTIC:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTactic()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Accordant_rqPackage.SENSITIVITY_POINT__TACTIC:
-				return ((InternalEList<?>)getTactic()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -288,8 +254,8 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 				return getRationale();
 			case Accordant_rqPackage.SENSITIVITY_POINT__CODE:
 				return getCode();
-			case Accordant_rqPackage.SENSITIVITY_POINT__TACTIC:
-				return getTactic();
+			case Accordant_rqPackage.SENSITIVITY_POINT__APPLIED_TACTICS:
+				return getAppliedTactics();
 			case Accordant_rqPackage.SENSITIVITY_POINT__IS_RISK:
 				return isIsRisk();
 		}
@@ -314,9 +280,9 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 			case Accordant_rqPackage.SENSITIVITY_POINT__CODE:
 				setCode((String)newValue);
 				return;
-			case Accordant_rqPackage.SENSITIVITY_POINT__TACTIC:
-				getTactic().clear();
-				getTactic().addAll((Collection<? extends Tactic>)newValue);
+			case Accordant_rqPackage.SENSITIVITY_POINT__APPLIED_TACTICS:
+				getAppliedTactics().clear();
+				getAppliedTactics().addAll((Collection<? extends Tactic>)newValue);
 				return;
 			case Accordant_rqPackage.SENSITIVITY_POINT__IS_RISK:
 				setIsRisk((Boolean)newValue);
@@ -342,8 +308,8 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 			case Accordant_rqPackage.SENSITIVITY_POINT__CODE:
 				setCode(CODE_EDEFAULT);
 				return;
-			case Accordant_rqPackage.SENSITIVITY_POINT__TACTIC:
-				getTactic().clear();
+			case Accordant_rqPackage.SENSITIVITY_POINT__APPLIED_TACTICS:
+				getAppliedTactics().clear();
 				return;
 			case Accordant_rqPackage.SENSITIVITY_POINT__IS_RISK:
 				setIsRisk(IS_RISK_EDEFAULT);
@@ -366,8 +332,8 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 				return RATIONALE_EDEFAULT == null ? rationale != null : !RATIONALE_EDEFAULT.equals(rationale);
 			case Accordant_rqPackage.SENSITIVITY_POINT__CODE:
 				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
-			case Accordant_rqPackage.SENSITIVITY_POINT__TACTIC:
-				return tactic != null && !tactic.isEmpty();
+			case Accordant_rqPackage.SENSITIVITY_POINT__APPLIED_TACTICS:
+				return appliedTactics != null && !appliedTactics.isEmpty();
 			case Accordant_rqPackage.SENSITIVITY_POINT__IS_RISK:
 				return isRisk != IS_RISK_EDEFAULT;
 		}

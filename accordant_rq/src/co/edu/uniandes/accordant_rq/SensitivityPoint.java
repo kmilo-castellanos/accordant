@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getRationale <em>Rationale</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getCode <em>Code</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getTactic <em>Tactic</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getAppliedTactics <em>Applied Tactics</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.SensitivityPoint#isIsRisk <em>Is Risk</em>}</li>
  * </ul>
  *
@@ -38,7 +38,7 @@ public interface SensitivityPoint extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getSensitivityPoint_Name()
-	 * @model
+	 * @model id="true"
 	 * @generated
 	 */
 	String getName();
@@ -106,22 +106,20 @@ public interface SensitivityPoint extends EObject {
 	void setCode(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Tactic</b></em>' reference list.
+	 * Returns the value of the '<em><b>Applied Tactics</b></em>' reference list.
 	 * The list contents are of type {@link co.edu.uniandes.accordant_rq.Tactic}.
-	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_rq.Tactic#getSpoint <em>Spoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Tactic</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Applied Tactics</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tactic</em>' reference list.
-	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getSensitivityPoint_Tactic()
-	 * @see co.edu.uniandes.accordant_rq.Tactic#getSpoint
-	 * @model opposite="spoint" required="true"
+	 * @return the value of the '<em>Applied Tactics</em>' reference list.
+	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getSensitivityPoint_AppliedTactics()
+	 * @model
 	 * @generated
 	 */
-	EList<Tactic> getTactic();
+	EList<Tactic> getAppliedTactics();
 
 	/**
 	 * Returns the value of the '<em><b>Is Risk</b></em>' attribute.

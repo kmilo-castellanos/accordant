@@ -86,13 +86,22 @@ public interface Accordant_rqPackage extends EPackage {
 	int INPUT_PACKAGE__SCENARIOS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Gtactics</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Tactics</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_PACKAGE__GTACTICS = 2;
+	int INPUT_PACKAGE__TACTICS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Analyzed Qs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PACKAGE__ANALYZED_QS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Input Package</em>' class.
@@ -101,7 +110,7 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_PACKAGE_FEATURE_COUNT = 3;
+	int INPUT_PACKAGE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Input Package</em>' class.
@@ -168,22 +177,13 @@ public interface Accordant_rqPackage extends EPackage {
 	int QSCENARIO__QATTRIBUTE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Analyzed</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QSCENARIO__ANALYZED = 5;
-
-	/**
 	 * The feature id for the '<em><b>Stimulus</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QSCENARIO__STIMULUS = 6;
+	int QSCENARIO__STIMULUS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Environment</b></em>' attribute.
@@ -192,7 +192,16 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QSCENARIO__ENVIRONMENT = 7;
+	int QSCENARIO__ENVIRONMENT = 6;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QSCENARIO__NAME = 7;
 
 	/**
 	 * The number of structural features of the '<em>QScenario</em>' class.
@@ -250,13 +259,13 @@ public interface Accordant_rqPackage extends EPackage {
 	int SENSITIVITY_POINT__CODE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Tactic</b></em>' reference list.
+	 * The feature id for the '<em><b>Applied Tactics</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SENSITIVITY_POINT__TACTIC = 3;
+	int SENSITIVITY_POINT__APPLIED_TACTICS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Is Risk</b></em>' attribute.
@@ -314,22 +323,13 @@ public interface Accordant_rqPackage extends EPackage {
 	int TACTIC__QATTRIBUTE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Subtactics</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TACTIC__SUBTACTICS = 2;
-
-	/**
 	 * The feature id for the '<em><b>Rationale</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TACTIC__RATIONALE = 3;
+	int TACTIC__RATIONALE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Stimulus</b></em>' attribute.
@@ -338,7 +338,7 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TACTIC__STIMULUS = 4;
+	int TACTIC__STIMULUS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Response</b></em>' attribute.
@@ -347,7 +347,7 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TACTIC__RESPONSE = 5;
+	int TACTIC__RESPONSE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Viewpoint</b></em>' attribute.
@@ -356,16 +356,7 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TACTIC__VIEWPOINT = 6;
-
-	/**
-	 * The feature id for the '<em><b>Spoint</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TACTIC__SPOINT = 7;
+	int TACTIC__VIEWPOINT = 5;
 
 	/**
 	 * The number of structural features of the '<em>Tactic</em>' class.
@@ -374,7 +365,7 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TACTIC_FEATURE_COUNT = 8;
+	int TACTIC_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Tactic</em>' class.
@@ -396,13 +387,13 @@ public interface Accordant_rqPackage extends EPackage {
 	int ANALYZED_QS = 4;
 
 	/**
-	 * The feature id for the '<em><b>Points</b></em>' containment reference.
+	 * The feature id for the '<em><b>SPoints</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYZED_QS__POINTS = 0;
+	int ANALYZED_QS__SPOINTS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Qs</b></em>' reference.
@@ -423,13 +414,22 @@ public interface Accordant_rqPackage extends EPackage {
 	int ANALYZED_QS__REASONING = 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYZED_QS__NAME = 3;
+
+	/**
 	 * The number of structural features of the '<em>Analyzed QS</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYZED_QS_FEATURE_COUNT = 3;
+	int ANALYZED_QS_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Analyzed QS</em>' class.
@@ -504,15 +504,26 @@ public interface Accordant_rqPackage extends EPackage {
 	EReference getInputPackage_Scenarios();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_rq.InputPackage#getGtactics <em>Gtactics</em>}'.
+	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_rq.InputPackage#getTactics <em>Tactics</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Gtactics</em>'.
-	 * @see co.edu.uniandes.accordant_rq.InputPackage#getGtactics()
+	 * @return the meta object for the containment reference list '<em>Tactics</em>'.
+	 * @see co.edu.uniandes.accordant_rq.InputPackage#getTactics()
 	 * @see #getInputPackage()
 	 * @generated
 	 */
-	EReference getInputPackage_Gtactics();
+	EReference getInputPackage_Tactics();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_rq.InputPackage#getAnalyzedQs <em>Analyzed Qs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Analyzed Qs</em>'.
+	 * @see co.edu.uniandes.accordant_rq.InputPackage#getAnalyzedQs()
+	 * @see #getInputPackage()
+	 * @generated
+	 */
+	EReference getInputPackage_AnalyzedQs();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_rq.QScenario <em>QScenario</em>}'.
@@ -580,17 +591,6 @@ public interface Accordant_rqPackage extends EPackage {
 	EAttribute getQScenario_QAttribute();
 
 	/**
-	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_rq.QScenario#getAnalyzed <em>Analyzed</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Analyzed</em>'.
-	 * @see co.edu.uniandes.accordant_rq.QScenario#getAnalyzed()
-	 * @see #getQScenario()
-	 * @generated
-	 */
-	EReference getQScenario_Analyzed();
-
-	/**
 	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.QScenario#getStimulus <em>Stimulus</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -611,6 +611,17 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getQScenario_Environment();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.QScenario#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see co.edu.uniandes.accordant_rq.QScenario#getName()
+	 * @see #getQScenario()
+	 * @generated
+	 */
+	EAttribute getQScenario_Name();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_rq.SensitivityPoint <em>Sensitivity Point</em>}'.
@@ -656,15 +667,15 @@ public interface Accordant_rqPackage extends EPackage {
 	EAttribute getSensitivityPoint_Code();
 
 	/**
-	 * Returns the meta object for the reference list '{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getTactic <em>Tactic</em>}'.
+	 * Returns the meta object for the reference list '{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getAppliedTactics <em>Applied Tactics</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Tactic</em>'.
-	 * @see co.edu.uniandes.accordant_rq.SensitivityPoint#getTactic()
+	 * @return the meta object for the reference list '<em>Applied Tactics</em>'.
+	 * @see co.edu.uniandes.accordant_rq.SensitivityPoint#getAppliedTactics()
 	 * @see #getSensitivityPoint()
 	 * @generated
 	 */
-	EReference getSensitivityPoint_Tactic();
+	EReference getSensitivityPoint_AppliedTactics();
 
 	/**
 	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.SensitivityPoint#isIsRisk <em>Is Risk</em>}'.
@@ -708,17 +719,6 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTactic_QAttribute();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_rq.Tactic#getSubtactics <em>Subtactics</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Subtactics</em>'.
-	 * @see co.edu.uniandes.accordant_rq.Tactic#getSubtactics()
-	 * @see #getTactic()
-	 * @generated
-	 */
-	EReference getTactic_Subtactics();
 
 	/**
 	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.Tactic#getRationale <em>Rationale</em>}'.
@@ -765,17 +765,6 @@ public interface Accordant_rqPackage extends EPackage {
 	EAttribute getTactic_Viewpoint();
 
 	/**
-	 * Returns the meta object for the reference list '{@link co.edu.uniandes.accordant_rq.Tactic#getSpoint <em>Spoint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Spoint</em>'.
-	 * @see co.edu.uniandes.accordant_rq.Tactic#getSpoint()
-	 * @see #getTactic()
-	 * @generated
-	 */
-	EReference getTactic_Spoint();
-
-	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_rq.AnalyzedQS <em>Analyzed QS</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -786,15 +775,15 @@ public interface Accordant_rqPackage extends EPackage {
 	EClass getAnalyzedQS();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getPoints <em>Points</em>}'.
+	 * Returns the meta object for the containment reference '{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getSPoints <em>SPoints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Points</em>'.
-	 * @see co.edu.uniandes.accordant_rq.AnalyzedQS#getPoints()
+	 * @return the meta object for the containment reference '<em>SPoints</em>'.
+	 * @see co.edu.uniandes.accordant_rq.AnalyzedQS#getSPoints()
 	 * @see #getAnalyzedQS()
 	 * @generated
 	 */
-	EReference getAnalyzedQS_Points();
+	EReference getAnalyzedQS_SPoints();
 
 	/**
 	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getQs <em>Qs</em>}'.
@@ -817,6 +806,17 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAnalyzedQS_Reasoning();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see co.edu.uniandes.accordant_rq.AnalyzedQS#getName()
+	 * @see #getAnalyzedQS()
+	 * @generated
+	 */
+	EAttribute getAnalyzedQS_Name();
 
 	/**
 	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_rq.QAMetric <em>QA Metric</em>}'.
@@ -898,12 +898,20 @@ public interface Accordant_rqPackage extends EPackage {
 		EReference INPUT_PACKAGE__SCENARIOS = eINSTANCE.getInputPackage_Scenarios();
 
 		/**
-		 * The meta object literal for the '<em><b>Gtactics</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Tactics</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INPUT_PACKAGE__GTACTICS = eINSTANCE.getInputPackage_Gtactics();
+		EReference INPUT_PACKAGE__TACTICS = eINSTANCE.getInputPackage_Tactics();
+
+		/**
+		 * The meta object literal for the '<em><b>Analyzed Qs</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INPUT_PACKAGE__ANALYZED_QS = eINSTANCE.getInputPackage_AnalyzedQs();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_rq.impl.QScenarioImpl <em>QScenario</em>}' class.
@@ -956,14 +964,6 @@ public interface Accordant_rqPackage extends EPackage {
 		EAttribute QSCENARIO__QATTRIBUTE = eINSTANCE.getQScenario_QAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Analyzed</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference QSCENARIO__ANALYZED = eINSTANCE.getQScenario_Analyzed();
-
-		/**
 		 * The meta object literal for the '<em><b>Stimulus</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -978,6 +978,14 @@ public interface Accordant_rqPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute QSCENARIO__ENVIRONMENT = eINSTANCE.getQScenario_Environment();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QSCENARIO__NAME = eINSTANCE.getQScenario_Name();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl <em>Sensitivity Point</em>}' class.
@@ -1014,12 +1022,12 @@ public interface Accordant_rqPackage extends EPackage {
 		EAttribute SENSITIVITY_POINT__CODE = eINSTANCE.getSensitivityPoint_Code();
 
 		/**
-		 * The meta object literal for the '<em><b>Tactic</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Applied Tactics</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SENSITIVITY_POINT__TACTIC = eINSTANCE.getSensitivityPoint_Tactic();
+		EReference SENSITIVITY_POINT__APPLIED_TACTICS = eINSTANCE.getSensitivityPoint_AppliedTactics();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Risk</b></em>' attribute feature.
@@ -1056,14 +1064,6 @@ public interface Accordant_rqPackage extends EPackage {
 		EAttribute TACTIC__QATTRIBUTE = eINSTANCE.getTactic_QAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Subtactics</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TACTIC__SUBTACTICS = eINSTANCE.getTactic_Subtactics();
-
-		/**
 		 * The meta object literal for the '<em><b>Rationale</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1096,14 +1096,6 @@ public interface Accordant_rqPackage extends EPackage {
 		EAttribute TACTIC__VIEWPOINT = eINSTANCE.getTactic_Viewpoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Spoint</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TACTIC__SPOINT = eINSTANCE.getTactic_Spoint();
-
-		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_rq.impl.AnalyzedQSImpl <em>Analyzed QS</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1114,12 +1106,12 @@ public interface Accordant_rqPackage extends EPackage {
 		EClass ANALYZED_QS = eINSTANCE.getAnalyzedQS();
 
 		/**
-		 * The meta object literal for the '<em><b>Points</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>SPoints</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ANALYZED_QS__POINTS = eINSTANCE.getAnalyzedQS_Points();
+		EReference ANALYZED_QS__SPOINTS = eINSTANCE.getAnalyzedQS_SPoints();
 
 		/**
 		 * The meta object literal for the '<em><b>Qs</b></em>' reference feature.
@@ -1136,6 +1128,14 @@ public interface Accordant_rqPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ANALYZED_QS__REASONING = eINSTANCE.getAnalyzedQS_Reasoning();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ANALYZED_QS__NAME = eINSTANCE.getAnalyzedQS_Name();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_rq.QAMetric <em>QA Metric</em>}' enum.

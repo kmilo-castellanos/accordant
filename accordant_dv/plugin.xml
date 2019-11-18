@@ -23,4 +23,12 @@
             genModel="model/accordant_dv.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated accordant_dv -->
+      <package
+            uri="http://uniandes.accordant.functional"
+            class="co.edu.uniandes.accordant_fv.Accordant_fvPackage"
+            genModel="model/accordant_dv.genmodel"/>
+   </extension>
+
 </plugin>

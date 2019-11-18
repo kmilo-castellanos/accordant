@@ -16,7 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link co.edu.uniandes.accordant_rq.InputPackage#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.InputPackage#getScenarios <em>Scenarios</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_rq.InputPackage#getGtactics <em>Gtactics</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.InputPackage#getTactics <em>Tactics</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.InputPackage#getAnalyzedQs <em>Analyzed Qs</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getInputPackage()
@@ -61,25 +62,41 @@ public interface InputPackage extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Scenarios</em>' containment reference list.
 	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getInputPackage_Scenarios()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<QScenario> getScenarios();
 
 	/**
-	 * Returns the value of the '<em><b>Gtactics</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Tactics</b></em>' containment reference list.
 	 * The list contents are of type {@link co.edu.uniandes.accordant_rq.Tactic}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Gtactics</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Tactics</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gtactics</em>' containment reference list.
-	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getInputPackage_Gtactics()
+	 * @return the value of the '<em>Tactics</em>' containment reference list.
+	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getInputPackage_Tactics()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Tactic> getGtactics();
+	EList<Tactic> getTactics();
+
+	/**
+	 * Returns the value of the '<em><b>Analyzed Qs</b></em>' containment reference list.
+	 * The list contents are of type {@link co.edu.uniandes.accordant_rq.AnalyzedQS}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Analyzed Qs</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Analyzed Qs</em>' containment reference list.
+	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getInputPackage_AnalyzedQs()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<AnalyzedQS> getAnalyzedQs();
 
 } // InputPackage

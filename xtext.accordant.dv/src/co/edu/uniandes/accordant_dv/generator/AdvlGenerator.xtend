@@ -19,28 +19,7 @@ import co.edu.uniandes.accordant_dv.Service
  */
 class AdvlGenerator extends AbstractGenerator {
 	
-	override void beforeGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		println("beforeGenerate Advl");
-	}
-	
-/*
- * 
- override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		// if(resource.allContents.filter(Estimator)!==null && resource.allContents.filter(Estimator).size>0){
-		println("doGenerate-AfvlGenerator");
-		resource.allContents.toIterable.filter(typeof(Estimator)).forEach [
-			fsa.
-				generateFile('''edu/uniandes/accordant/«formatJavaPackageName(funcView.name)»/estimator/«formatJavaClassName(name)»Estimator.java''',
-					estimatorToJava)
-		]
-
-	// }
-	// println("deviceToKubeNode")
-	// fsa.generateFile(resource.className+".java", estimatorToJava(resource.contents.head as FunctionalView))
-	}
  
- * 
- */
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		if(resource.allContents.filter(Device)!==null && resource.allContents.filter(Device).size>0){

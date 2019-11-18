@@ -14,6 +14,13 @@ import org.eclipse.emf.ecore.EObject
 import co.edu.uniandes.accordant_dv.Artifact
 import org.eclipse.xtext.scoping.Scopes
 import co.edu.uniandes.accordant_dv.ExecEnvironment
+import co.edu.uniandes.accordant_rq.InputPackage
+import org.eclipse.xtext.scoping.IScope
+import org.eclipse.xtext.naming.QualifiedName;
+import co.edu.uniandes.accordant_rq.SensitivityPoint
+import co.edu.uniandes.accordant_dv.Deployment
+import co.edu.uniandes.accordant_fv.Component
+import co.edu.uniandes.accordant_fv.Connector
 
 /**
  * This class contains custom scoping description.
@@ -23,41 +30,49 @@ import co.edu.uniandes.accordant_dv.ExecEnvironment
  */
 class AdvlScopeProvider extends AbstractAdvlScopeProvider {
 
-override getScope(EObject context, EReference reference) {
-        if (context instanceof DeploymentView) {
-        /*    if (reference == Accordant_dvPackage.Literals.DEPLOYMENT_VIEW__FVIMPORT) {
-                val rootElement = EcoreUtil2.getContainerOfType(context, DeploymentView)
-                val names = <Component>newArrayList
-                val importedModule = rootElement?.fvimport
-                if (importedModule !== null) {
-                    for (v : importedModule.comps) {
-                        names += v
-                    }
-                    //for (f : importedModule.funcs.map[left]) {
-                    //   names += f
-                    //}
-                }
-                // this is the unqualified variant
-                // return Scopes.scopeFor(names)
-                // this is the unqualified variant
-                return Scopes.scopeFor(names, [QualifiedName.create(importedModule.name, it.name)], IScope.NULLSCOPE)
-            }
-            * 
-            */
-             if (context instanceof Artifact
-            && (reference == Accordant_dvPackage.Literals.ARTIFACT__PAAS
-            )) {
-				// Collect a list of candidates by going through the model
-				// EcoreUtil2 provides useful functionality to do that
-				// For example searching for all elements within the root Object's tree
-				val rootElement = EcoreUtil2.getRootContainer(context)
-				// val candidates = EcoreUtil2.getAllContentsOfType(rootElement, Interface)
-				val candidates = EcoreUtil2.getAllContentsOfType(rootElement, ExecEnvironment)
-				// Create IEObjectDescriptions and puts them into an IScope instance
-				return Scopes.scopeFor(candidates)
+	override getScope(EObject context, EReference reference) {
+		if (context instanceof Deployment && reference == Accordant_dvPackage.Literals.DEPLOYMENT__SPOINT) {
+			val rootElement = EcoreUtil2.getContainerOfType(context, DeploymentView)
+			val pointList = <SensitivityPoint>newArrayList
+			val importedPackage = rootElement?.ipackage
+			if (importedPackage !== null) {
+				for (points : importedPackage.analyzedQs.map[SPoints]) {
+					pointList += points
+				}
 			}
-        }
-        return super.getScope(context, reference);
-    }
+			return Scopes.scopeFor(pointList)
+		} else if (context instanceof Artifact) {
+			val rootElement = EcoreUtil2.getContainerOfType(context, DeploymentView)
+			if (reference == Accordant_dvPackage.Literals.ARTIFACT__COMP) {
+				val compList = <Component>newArrayList
+				val fview = rootElement?.fv
+				if (fview !== null) {
+					for (comp : fview.comps) {
+						compList += comp
+					}
+				}
+				return Scopes.scopeFor(compList)
+			} else if (reference == Accordant_dvPackage.Literals.ARTIFACT__CONN) {
+				val connList = <Connector>newArrayList
+				val fview = rootElement?.fv
+				if (fview !== null) {
+					for (conn : fview.conns) {
+						connList += conn
+					}
+				}
+				return Scopes.scopeFor(connList)
+			} else if (reference == Accordant_dvPackage.Literals.ARTIFACT__SPOINT) {
+				val pointList = <SensitivityPoint>newArrayList
+				val importedPackage = rootElement?.ipackage
+				if (importedPackage !== null) {
+					for (points : importedPackage.analyzedQs.map[SPoints]) {
+						pointList += points
+					}
+				}
+				return Scopes.scopeFor(pointList)
+			}
+		}
+		return super.getScope(context, reference);
+	}
 
 }

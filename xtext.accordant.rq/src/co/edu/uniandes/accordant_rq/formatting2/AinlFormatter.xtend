@@ -21,7 +21,7 @@ class AinlFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(AnalyzedQS analyzedQS, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		analyzedQS.getPoints.format;
+		analyzedQS.getSPoints.format;
 	}
 	
 	// TODO: implement for Tactic

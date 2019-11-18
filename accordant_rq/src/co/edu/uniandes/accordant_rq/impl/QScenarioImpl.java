@@ -3,18 +3,13 @@
 package co.edu.uniandes.accordant_rq.impl;
 
 import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
-import co.edu.uniandes.accordant_rq.AnalyzedQS;
 import co.edu.uniandes.accordant_rq.MetricUnit;
 import co.edu.uniandes.accordant_rq.QAMetric;
 import co.edu.uniandes.accordant_rq.QAttribute;
 import co.edu.uniandes.accordant_rq.QScenario;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -31,9 +26,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.QScenarioImpl#getMaxValue <em>Max Value</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.QScenarioImpl#getUnit <em>Unit</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.QScenarioImpl#getQAttribute <em>QAttribute</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_rq.impl.QScenarioImpl#getAnalyzed <em>Analyzed</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.QScenarioImpl#getStimulus <em>Stimulus</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.QScenarioImpl#getEnvironment <em>Environment</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.impl.QScenarioImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -140,16 +135,6 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	protected QAttribute qAttribute = QATTRIBUTE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAnalyzed() <em>Analyzed</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnalyzed()
-	 * @generated
-	 * @ordered
-	 */
-	protected AnalyzedQS analyzed;
-
-	/**
 	 * The default value of the '{@link #getStimulus() <em>Stimulus</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -188,6 +173,26 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * @ordered
 	 */
 	protected String environment = ENVIRONMENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -318,66 +323,6 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AnalyzedQS getAnalyzed() {
-		if (analyzed != null && analyzed.eIsProxy()) {
-			InternalEObject oldAnalyzed = (InternalEObject)analyzed;
-			analyzed = (AnalyzedQS)eResolveProxy(oldAnalyzed);
-			if (analyzed != oldAnalyzed) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_rqPackage.QSCENARIO__ANALYZED, oldAnalyzed, analyzed));
-			}
-		}
-		return analyzed;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AnalyzedQS basicGetAnalyzed() {
-		return analyzed;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetAnalyzed(AnalyzedQS newAnalyzed, NotificationChain msgs) {
-		AnalyzedQS oldAnalyzed = analyzed;
-		analyzed = newAnalyzed;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.QSCENARIO__ANALYZED, oldAnalyzed, newAnalyzed);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAnalyzed(AnalyzedQS newAnalyzed) {
-		if (newAnalyzed != analyzed) {
-			NotificationChain msgs = null;
-			if (analyzed != null)
-				msgs = ((InternalEObject)analyzed).eInverseRemove(this, Accordant_rqPackage.ANALYZED_QS__QS, AnalyzedQS.class, msgs);
-			if (newAnalyzed != null)
-				msgs = ((InternalEObject)newAnalyzed).eInverseAdd(this, Accordant_rqPackage.ANALYZED_QS__QS, AnalyzedQS.class, msgs);
-			msgs = basicSetAnalyzed(newAnalyzed, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.QSCENARIO__ANALYZED, newAnalyzed, newAnalyzed));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getStimulus() {
 		return stimulus;
 	}
@@ -420,15 +365,8 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Accordant_rqPackage.QSCENARIO__ANALYZED:
-				if (analyzed != null)
-					msgs = ((InternalEObject)analyzed).eInverseRemove(this, Accordant_rqPackage.ANALYZED_QS__QS, AnalyzedQS.class, msgs);
-				return basicSetAnalyzed((AnalyzedQS)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -436,13 +374,11 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Accordant_rqPackage.QSCENARIO__ANALYZED:
-				return basicSetAnalyzed(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.QSCENARIO__NAME, oldName, name));
 	}
 
 	/**
@@ -463,13 +399,12 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 				return getUnit();
 			case Accordant_rqPackage.QSCENARIO__QATTRIBUTE:
 				return getQAttribute();
-			case Accordant_rqPackage.QSCENARIO__ANALYZED:
-				if (resolve) return getAnalyzed();
-				return basicGetAnalyzed();
 			case Accordant_rqPackage.QSCENARIO__STIMULUS:
 				return getStimulus();
 			case Accordant_rqPackage.QSCENARIO__ENVIRONMENT:
 				return getEnvironment();
+			case Accordant_rqPackage.QSCENARIO__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -497,14 +432,14 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 			case Accordant_rqPackage.QSCENARIO__QATTRIBUTE:
 				setQAttribute((QAttribute)newValue);
 				return;
-			case Accordant_rqPackage.QSCENARIO__ANALYZED:
-				setAnalyzed((AnalyzedQS)newValue);
-				return;
 			case Accordant_rqPackage.QSCENARIO__STIMULUS:
 				setStimulus((String)newValue);
 				return;
 			case Accordant_rqPackage.QSCENARIO__ENVIRONMENT:
 				setEnvironment((String)newValue);
+				return;
+			case Accordant_rqPackage.QSCENARIO__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -533,14 +468,14 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 			case Accordant_rqPackage.QSCENARIO__QATTRIBUTE:
 				setQAttribute(QATTRIBUTE_EDEFAULT);
 				return;
-			case Accordant_rqPackage.QSCENARIO__ANALYZED:
-				setAnalyzed((AnalyzedQS)null);
-				return;
 			case Accordant_rqPackage.QSCENARIO__STIMULUS:
 				setStimulus(STIMULUS_EDEFAULT);
 				return;
 			case Accordant_rqPackage.QSCENARIO__ENVIRONMENT:
 				setEnvironment(ENVIRONMENT_EDEFAULT);
+				return;
+			case Accordant_rqPackage.QSCENARIO__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -564,12 +499,12 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 				return unit != UNIT_EDEFAULT;
 			case Accordant_rqPackage.QSCENARIO__QATTRIBUTE:
 				return qAttribute != QATTRIBUTE_EDEFAULT;
-			case Accordant_rqPackage.QSCENARIO__ANALYZED:
-				return analyzed != null;
 			case Accordant_rqPackage.QSCENARIO__STIMULUS:
 				return STIMULUS_EDEFAULT == null ? stimulus != null : !STIMULUS_EDEFAULT.equals(stimulus);
 			case Accordant_rqPackage.QSCENARIO__ENVIRONMENT:
 				return ENVIRONMENT_EDEFAULT == null ? environment != null : !ENVIRONMENT_EDEFAULT.equals(environment);
+			case Accordant_rqPackage.QSCENARIO__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -598,6 +533,8 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 		result.append(stimulus);
 		result.append(", environment: ");
 		result.append(environment);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

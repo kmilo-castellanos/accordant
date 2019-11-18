@@ -4,25 +4,11 @@ package co.edu.uniandes.accordant_rq.impl;
 
 import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
 import co.edu.uniandes.accordant_rq.QAttribute;
-import co.edu.uniandes.accordant_rq.SensitivityPoint;
 import co.edu.uniandes.accordant_rq.Tactic;
-
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,12 +20,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.TacticImpl#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.TacticImpl#getQAttribute <em>QAttribute</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_rq.impl.TacticImpl#getSubtactics <em>Subtactics</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.TacticImpl#getRationale <em>Rationale</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.TacticImpl#getStimulus <em>Stimulus</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.TacticImpl#getResponse <em>Response</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.TacticImpl#getViewpoint <em>Viewpoint</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_rq.impl.TacticImpl#getSpoint <em>Spoint</em>}</li>
  * </ul>
  *
  * @generated
@@ -84,16 +68,6 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 	 * @ordered
 	 */
 	protected QAttribute qAttribute = QATTRIBUTE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getSubtactics() <em>Subtactics</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubtactics()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Tactic> subtactics;
 
 	/**
 	 * The default value of the '{@link #getRationale() <em>Rationale</em>}' attribute.
@@ -176,16 +150,6 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 	protected String viewpoint = VIEWPOINT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSpoint() <em>Spoint</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSpoint()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<SensitivityPoint> spoint;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -244,18 +208,6 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 		qAttribute = newQAttribute == null ? QATTRIBUTE_EDEFAULT : newQAttribute;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.TACTIC__QATTRIBUTE, oldQAttribute, qAttribute));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Tactic> getSubtactics() {
-		if (subtactics == null) {
-			subtactics = new EObjectContainmentEList<Tactic>(Tactic.class, this, Accordant_rqPackage.TACTIC__SUBTACTICS);
-		}
-		return subtactics;
 	}
 
 	/**
@@ -347,49 +299,6 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SensitivityPoint> getSpoint() {
-		if (spoint == null) {
-			spoint = new EObjectWithInverseResolvingEList.ManyInverse<SensitivityPoint>(SensitivityPoint.class, this, Accordant_rqPackage.TACTIC__SPOINT, Accordant_rqPackage.SENSITIVITY_POINT__TACTIC);
-		}
-		return spoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Accordant_rqPackage.TACTIC__SPOINT:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSpoint()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Accordant_rqPackage.TACTIC__SUBTACTICS:
-				return ((InternalEList<?>)getSubtactics()).basicRemove(otherEnd, msgs);
-			case Accordant_rqPackage.TACTIC__SPOINT:
-				return ((InternalEList<?>)getSpoint()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -397,8 +306,6 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 				return getName();
 			case Accordant_rqPackage.TACTIC__QATTRIBUTE:
 				return getQAttribute();
-			case Accordant_rqPackage.TACTIC__SUBTACTICS:
-				return getSubtactics();
 			case Accordant_rqPackage.TACTIC__RATIONALE:
 				return getRationale();
 			case Accordant_rqPackage.TACTIC__STIMULUS:
@@ -407,8 +314,6 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 				return getResponse();
 			case Accordant_rqPackage.TACTIC__VIEWPOINT:
 				return getViewpoint();
-			case Accordant_rqPackage.TACTIC__SPOINT:
-				return getSpoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -428,10 +333,6 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 			case Accordant_rqPackage.TACTIC__QATTRIBUTE:
 				setQAttribute((QAttribute)newValue);
 				return;
-			case Accordant_rqPackage.TACTIC__SUBTACTICS:
-				getSubtactics().clear();
-				getSubtactics().addAll((Collection<? extends Tactic>)newValue);
-				return;
 			case Accordant_rqPackage.TACTIC__RATIONALE:
 				setRationale((String)newValue);
 				return;
@@ -443,10 +344,6 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 				return;
 			case Accordant_rqPackage.TACTIC__VIEWPOINT:
 				setViewpoint((String)newValue);
-				return;
-			case Accordant_rqPackage.TACTIC__SPOINT:
-				getSpoint().clear();
-				getSpoint().addAll((Collection<? extends SensitivityPoint>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -466,9 +363,6 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 			case Accordant_rqPackage.TACTIC__QATTRIBUTE:
 				setQAttribute(QATTRIBUTE_EDEFAULT);
 				return;
-			case Accordant_rqPackage.TACTIC__SUBTACTICS:
-				getSubtactics().clear();
-				return;
 			case Accordant_rqPackage.TACTIC__RATIONALE:
 				setRationale(RATIONALE_EDEFAULT);
 				return;
@@ -480,9 +374,6 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 				return;
 			case Accordant_rqPackage.TACTIC__VIEWPOINT:
 				setViewpoint(VIEWPOINT_EDEFAULT);
-				return;
-			case Accordant_rqPackage.TACTIC__SPOINT:
-				getSpoint().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -500,8 +391,6 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case Accordant_rqPackage.TACTIC__QATTRIBUTE:
 				return qAttribute != QATTRIBUTE_EDEFAULT;
-			case Accordant_rqPackage.TACTIC__SUBTACTICS:
-				return subtactics != null && !subtactics.isEmpty();
 			case Accordant_rqPackage.TACTIC__RATIONALE:
 				return RATIONALE_EDEFAULT == null ? rationale != null : !RATIONALE_EDEFAULT.equals(rationale);
 			case Accordant_rqPackage.TACTIC__STIMULUS:
@@ -510,8 +399,6 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 				return RESPONSE_EDEFAULT == null ? response != null : !RESPONSE_EDEFAULT.equals(response);
 			case Accordant_rqPackage.TACTIC__VIEWPOINT:
 				return VIEWPOINT_EDEFAULT == null ? viewpoint != null : !VIEWPOINT_EDEFAULT.equals(viewpoint);
-			case Accordant_rqPackage.TACTIC__SPOINT:
-				return spoint != null && !spoint.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

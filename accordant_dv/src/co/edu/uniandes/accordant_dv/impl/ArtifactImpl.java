@@ -4,9 +4,9 @@ package co.edu.uniandes.accordant_dv.impl;
 
 import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
 import co.edu.uniandes.accordant_dv.Artifact;
-import co.edu.uniandes.accordant_dv.ExecEnvironment;
-import co.edu.uniandes.accordant_dv.ServerlessEnv;
-
+import co.edu.uniandes.accordant_fv.Component;
+import co.edu.uniandes.accordant_fv.Connector;
+import co.edu.uniandes.accordant_rq.SensitivityPoint;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -25,10 +25,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getProps <em>Props</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getComponent <em>Component</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getConnector <em>Connector</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getSaas <em>Saas</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getPaas <em>Paas</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getComp <em>Comp</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getConn <em>Conn</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getSpoint <em>Spoint</em>}</li>
  * </ul>
  *
  * @generated
@@ -75,64 +74,34 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	protected String props = PROPS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getComponent() <em>Component</em>}' attribute.
+	 * The cached value of the '{@link #getComp() <em>Comp</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComponent()
+	 * @see #getComp()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String COMPONENT_EDEFAULT = null;
+	protected Component comp;
 
 	/**
-	 * The cached value of the '{@link #getComponent() <em>Component</em>}' attribute.
+	 * The cached value of the '{@link #getConn() <em>Conn</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComponent()
+	 * @see #getConn()
 	 * @generated
 	 * @ordered
 	 */
-	protected String component = COMPONENT_EDEFAULT;
+	protected Connector conn;
 
 	/**
-	 * The default value of the '{@link #getConnector() <em>Connector</em>}' attribute.
+	 * The cached value of the '{@link #getSpoint() <em>Spoint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConnector()
+	 * @see #getSpoint()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONNECTOR_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getConnector() <em>Connector</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConnector()
-	 * @generated
-	 * @ordered
-	 */
-	protected String connector = CONNECTOR_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getSaas() <em>Saas</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSaas()
-	 * @generated
-	 * @ordered
-	 */
-	protected ServerlessEnv saas;
-
-	/**
-	 * The cached value of the '{@link #getPaas() <em>Paas</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaas()
-	 * @generated
-	 * @ordered
-	 */
-	protected ExecEnvironment paas;
+	protected SensitivityPoint spoint;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -200,58 +169,16 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getComponent() {
-		return component;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComponent(String newComponent) {
-		String oldComponent = component;
-		component = newComponent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.ARTIFACT__COMPONENT, oldComponent, component));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getConnector() {
-		return connector;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setConnector(String newConnector) {
-		String oldConnector = connector;
-		connector = newConnector;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.ARTIFACT__CONNECTOR, oldConnector, connector));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServerlessEnv getSaas() {
-		if (saas != null && saas.eIsProxy()) {
-			InternalEObject oldSaas = (InternalEObject)saas;
-			saas = (ServerlessEnv)eResolveProxy(oldSaas);
-			if (saas != oldSaas) {
+	public Component getComp() {
+		if (comp != null && comp.eIsProxy()) {
+			InternalEObject oldComp = (InternalEObject)comp;
+			comp = (Component)eResolveProxy(oldComp);
+			if (comp != oldComp) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_dvPackage.ARTIFACT__SAAS, oldSaas, saas));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_dvPackage.ARTIFACT__COMP, oldComp, comp));
 			}
 		}
-		return saas;
+		return comp;
 	}
 
 	/**
@@ -259,8 +186,8 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServerlessEnv basicGetSaas() {
-		return saas;
+	public Component basicGetComp() {
+		return comp;
 	}
 
 	/**
@@ -268,11 +195,11 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSaas(ServerlessEnv newSaas) {
-		ServerlessEnv oldSaas = saas;
-		saas = newSaas;
+	public void setComp(Component newComp) {
+		Component oldComp = comp;
+		comp = newComp;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.ARTIFACT__SAAS, oldSaas, saas));
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.ARTIFACT__COMP, oldComp, comp));
 	}
 
 	/**
@@ -280,16 +207,16 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecEnvironment getPaas() {
-		if (paas != null && paas.eIsProxy()) {
-			InternalEObject oldPaas = (InternalEObject)paas;
-			paas = (ExecEnvironment)eResolveProxy(oldPaas);
-			if (paas != oldPaas) {
+	public Connector getConn() {
+		if (conn != null && conn.eIsProxy()) {
+			InternalEObject oldConn = (InternalEObject)conn;
+			conn = (Connector)eResolveProxy(oldConn);
+			if (conn != oldConn) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_dvPackage.ARTIFACT__PAAS, oldPaas, paas));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_dvPackage.ARTIFACT__CONN, oldConn, conn));
 			}
 		}
-		return paas;
+		return conn;
 	}
 
 	/**
@@ -297,8 +224,8 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecEnvironment basicGetPaas() {
-		return paas;
+	public Connector basicGetConn() {
+		return conn;
 	}
 
 	/**
@@ -306,11 +233,49 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPaas(ExecEnvironment newPaas) {
-		ExecEnvironment oldPaas = paas;
-		paas = newPaas;
+	public void setConn(Connector newConn) {
+		Connector oldConn = conn;
+		conn = newConn;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.ARTIFACT__PAAS, oldPaas, paas));
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.ARTIFACT__CONN, oldConn, conn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SensitivityPoint getSpoint() {
+		if (spoint != null && spoint.eIsProxy()) {
+			InternalEObject oldSpoint = (InternalEObject)spoint;
+			spoint = (SensitivityPoint)eResolveProxy(oldSpoint);
+			if (spoint != oldSpoint) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_dvPackage.ARTIFACT__SPOINT, oldSpoint, spoint));
+			}
+		}
+		return spoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SensitivityPoint basicGetSpoint() {
+		return spoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSpoint(SensitivityPoint newSpoint) {
+		SensitivityPoint oldSpoint = spoint;
+		spoint = newSpoint;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.ARTIFACT__SPOINT, oldSpoint, spoint));
 	}
 
 	/**
@@ -325,16 +290,15 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 				return getName();
 			case Accordant_dvPackage.ARTIFACT__PROPS:
 				return getProps();
-			case Accordant_dvPackage.ARTIFACT__COMPONENT:
-				return getComponent();
-			case Accordant_dvPackage.ARTIFACT__CONNECTOR:
-				return getConnector();
-			case Accordant_dvPackage.ARTIFACT__SAAS:
-				if (resolve) return getSaas();
-				return basicGetSaas();
-			case Accordant_dvPackage.ARTIFACT__PAAS:
-				if (resolve) return getPaas();
-				return basicGetPaas();
+			case Accordant_dvPackage.ARTIFACT__COMP:
+				if (resolve) return getComp();
+				return basicGetComp();
+			case Accordant_dvPackage.ARTIFACT__CONN:
+				if (resolve) return getConn();
+				return basicGetConn();
+			case Accordant_dvPackage.ARTIFACT__SPOINT:
+				if (resolve) return getSpoint();
+				return basicGetSpoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -353,17 +317,14 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 			case Accordant_dvPackage.ARTIFACT__PROPS:
 				setProps((String)newValue);
 				return;
-			case Accordant_dvPackage.ARTIFACT__COMPONENT:
-				setComponent((String)newValue);
+			case Accordant_dvPackage.ARTIFACT__COMP:
+				setComp((Component)newValue);
 				return;
-			case Accordant_dvPackage.ARTIFACT__CONNECTOR:
-				setConnector((String)newValue);
+			case Accordant_dvPackage.ARTIFACT__CONN:
+				setConn((Connector)newValue);
 				return;
-			case Accordant_dvPackage.ARTIFACT__SAAS:
-				setSaas((ServerlessEnv)newValue);
-				return;
-			case Accordant_dvPackage.ARTIFACT__PAAS:
-				setPaas((ExecEnvironment)newValue);
+			case Accordant_dvPackage.ARTIFACT__SPOINT:
+				setSpoint((SensitivityPoint)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -383,17 +344,14 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 			case Accordant_dvPackage.ARTIFACT__PROPS:
 				setProps(PROPS_EDEFAULT);
 				return;
-			case Accordant_dvPackage.ARTIFACT__COMPONENT:
-				setComponent(COMPONENT_EDEFAULT);
+			case Accordant_dvPackage.ARTIFACT__COMP:
+				setComp((Component)null);
 				return;
-			case Accordant_dvPackage.ARTIFACT__CONNECTOR:
-				setConnector(CONNECTOR_EDEFAULT);
+			case Accordant_dvPackage.ARTIFACT__CONN:
+				setConn((Connector)null);
 				return;
-			case Accordant_dvPackage.ARTIFACT__SAAS:
-				setSaas((ServerlessEnv)null);
-				return;
-			case Accordant_dvPackage.ARTIFACT__PAAS:
-				setPaas((ExecEnvironment)null);
+			case Accordant_dvPackage.ARTIFACT__SPOINT:
+				setSpoint((SensitivityPoint)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -411,14 +369,12 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case Accordant_dvPackage.ARTIFACT__PROPS:
 				return PROPS_EDEFAULT == null ? props != null : !PROPS_EDEFAULT.equals(props);
-			case Accordant_dvPackage.ARTIFACT__COMPONENT:
-				return COMPONENT_EDEFAULT == null ? component != null : !COMPONENT_EDEFAULT.equals(component);
-			case Accordant_dvPackage.ARTIFACT__CONNECTOR:
-				return CONNECTOR_EDEFAULT == null ? connector != null : !CONNECTOR_EDEFAULT.equals(connector);
-			case Accordant_dvPackage.ARTIFACT__SAAS:
-				return saas != null;
-			case Accordant_dvPackage.ARTIFACT__PAAS:
-				return paas != null;
+			case Accordant_dvPackage.ARTIFACT__COMP:
+				return comp != null;
+			case Accordant_dvPackage.ARTIFACT__CONN:
+				return conn != null;
+			case Accordant_dvPackage.ARTIFACT__SPOINT:
+				return spoint != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -437,10 +393,6 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 		result.append(name);
 		result.append(", props: ");
 		result.append(props);
-		result.append(", component: ");
-		result.append(component);
-		result.append(", connector: ");
-		result.append(connector);
 		result.append(')');
 		return result.toString();
 	}

@@ -10,6 +10,8 @@ import co.edu.uniandes.accordant_dv.Device;
 import co.edu.uniandes.accordant_dv.ServerlessEnv;
 import co.edu.uniandes.accordant_dv.Service;
 
+import co.edu.uniandes.accordant_fv.FunctionalView;
+import co.edu.uniandes.accordant_rq.InputPackage;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -40,6 +42,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentViewImpl#getServices <em>Services</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentViewImpl#getServerless <em>Serverless</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentViewImpl#getArtifacts <em>Artifacts</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentViewImpl#getIpackage <em>Ipackage</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentViewImpl#getFv <em>Fv</em>}</li>
  * </ul>
  *
  * @generated
@@ -114,6 +118,26 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected EList<Artifact> artifacts;
+
+	/**
+	 * The cached value of the '{@link #getIpackage() <em>Ipackage</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIpackage()
+	 * @generated
+	 * @ordered
+	 */
+	protected InputPackage ipackage;
+
+	/**
+	 * The cached value of the '{@link #getFv() <em>Fv</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFv()
+	 * @generated
+	 * @ordered
+	 */
+	protected FunctionalView fv;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,6 +244,82 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public InputPackage getIpackage() {
+		if (ipackage != null && ipackage.eIsProxy()) {
+			InternalEObject oldIpackage = (InternalEObject)ipackage;
+			ipackage = (InputPackage)eResolveProxy(oldIpackage);
+			if (ipackage != oldIpackage) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_dvPackage.DEPLOYMENT_VIEW__IPACKAGE, oldIpackage, ipackage));
+			}
+		}
+		return ipackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InputPackage basicGetIpackage() {
+		return ipackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIpackage(InputPackage newIpackage) {
+		InputPackage oldIpackage = ipackage;
+		ipackage = newIpackage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.DEPLOYMENT_VIEW__IPACKAGE, oldIpackage, ipackage));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FunctionalView getFv() {
+		if (fv != null && fv.eIsProxy()) {
+			InternalEObject oldFv = (InternalEObject)fv;
+			fv = (FunctionalView)eResolveProxy(oldFv);
+			if (fv != oldFv) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_dvPackage.DEPLOYMENT_VIEW__FV, oldFv, fv));
+			}
+		}
+		return fv;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FunctionalView basicGetFv() {
+		return fv;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFv(FunctionalView newFv) {
+		FunctionalView oldFv = fv;
+		fv = newFv;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.DEPLOYMENT_VIEW__FV, oldFv, fv));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -257,6 +357,12 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 				return getServerless();
 			case Accordant_dvPackage.DEPLOYMENT_VIEW__ARTIFACTS:
 				return getArtifacts();
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__IPACKAGE:
+				if (resolve) return getIpackage();
+				return basicGetIpackage();
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__FV:
+				if (resolve) return getFv();
+				return basicGetFv();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -293,6 +399,12 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 				getArtifacts().clear();
 				getArtifacts().addAll((Collection<? extends Artifact>)newValue);
 				return;
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__IPACKAGE:
+				setIpackage((InputPackage)newValue);
+				return;
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__FV:
+				setFv((FunctionalView)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -323,6 +435,12 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 			case Accordant_dvPackage.DEPLOYMENT_VIEW__ARTIFACTS:
 				getArtifacts().clear();
 				return;
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__IPACKAGE:
+				setIpackage((InputPackage)null);
+				return;
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__FV:
+				setFv((FunctionalView)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -347,6 +465,10 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 				return serverless != null && !serverless.isEmpty();
 			case Accordant_dvPackage.DEPLOYMENT_VIEW__ARTIFACTS:
 				return artifacts != null && !artifacts.isEmpty();
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__IPACKAGE:
+				return ipackage != null;
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__FV:
+				return fv != null;
 		}
 		return super.eIsSet(featureID);
 	}

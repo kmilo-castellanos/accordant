@@ -3,14 +3,18 @@
 package co.edu.uniandes.accordant_dv.impl;
 
 import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
+import co.edu.uniandes.accordant_dv.Artifact;
 import co.edu.uniandes.accordant_dv.ServerlessEnv;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ServerlessEnvImpl#getMemory <em>Memory</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ServerlessEnvImpl#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ServerlessEnvImpl#getProps <em>Props</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.ServerlessEnvImpl#getSaasArts <em>Saas Arts</em>}</li>
  * </ul>
  *
  * @generated
@@ -129,6 +134,16 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	 * @ordered
 	 */
 	protected String props = PROPS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSaasArts() <em>Saas Arts</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSaasArts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Artifact> saasArts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,6 +274,18 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Artifact> getSaasArts() {
+		if (saasArts == null) {
+			saasArts = new EObjectResolvingEList<Artifact>(Artifact.class, this, Accordant_dvPackage.SERVERLESS_ENV__SAAS_ARTS);
+		}
+		return saasArts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -272,6 +299,8 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 				return getName();
 			case Accordant_dvPackage.SERVERLESS_ENV__PROPS:
 				return getProps();
+			case Accordant_dvPackage.SERVERLESS_ENV__SAAS_ARTS:
+				return getSaasArts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -281,6 +310,7 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -298,6 +328,10 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 				return;
 			case Accordant_dvPackage.SERVERLESS_ENV__PROPS:
 				setProps((String)newValue);
+				return;
+			case Accordant_dvPackage.SERVERLESS_ENV__SAAS_ARTS:
+				getSaasArts().clear();
+				getSaasArts().addAll((Collection<? extends Artifact>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -326,6 +360,9 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 			case Accordant_dvPackage.SERVERLESS_ENV__PROPS:
 				setProps(PROPS_EDEFAULT);
 				return;
+			case Accordant_dvPackage.SERVERLESS_ENV__SAAS_ARTS:
+				getSaasArts().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -348,6 +385,8 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case Accordant_dvPackage.SERVERLESS_ENV__PROPS:
 				return PROPS_EDEFAULT == null ? props != null : !PROPS_EDEFAULT.equals(props);
+			case Accordant_dvPackage.SERVERLESS_ENV__SAAS_ARTS:
+				return saasArts != null && !saasArts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

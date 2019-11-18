@@ -2,6 +2,7 @@
  */
 package co.edu.uniandes.accordant_dv;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -18,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getMemory <em>Memory</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getProps <em>Props</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getSaasArts <em>Saas Arts</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getServerlessEnv()
@@ -154,5 +156,21 @@ public interface ServerlessEnv extends EObject {
 	 * @generated
 	 */
 	void setProps(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Saas Arts</b></em>' reference list.
+	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.Artifact}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Saas Arts</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Saas Arts</em>' reference list.
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getServerlessEnv_SaasArts()
+	 * @model
+	 * @generated
+	 */
+	EList<Artifact> getSaasArts();
 
 } // ServerlessEnv

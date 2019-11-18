@@ -13,9 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getPoints <em>Points</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getSPoints <em>SPoints</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getQs <em>Qs</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getReasoning <em>Reasoning</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getAnalyzedQS()
@@ -24,34 +25,33 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface AnalyzedQS extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Points</b></em>' containment reference.
+	 * Returns the value of the '<em><b>SPoints</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Points</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>SPoints</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Points</em>' containment reference.
-	 * @see #setPoints(SensitivityPoint)
-	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getAnalyzedQS_Points()
+	 * @return the value of the '<em>SPoints</em>' containment reference.
+	 * @see #setSPoints(SensitivityPoint)
+	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getAnalyzedQS_SPoints()
 	 * @model containment="true"
 	 * @generated
 	 */
-	SensitivityPoint getPoints();
+	SensitivityPoint getSPoints();
 
 	/**
-	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getPoints <em>Points</em>}' containment reference.
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getSPoints <em>SPoints</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Points</em>' containment reference.
-	 * @see #getPoints()
+	 * @param value the new value of the '<em>SPoints</em>' containment reference.
+	 * @see #getSPoints()
 	 * @generated
 	 */
-	void setPoints(SensitivityPoint value);
+	void setSPoints(SensitivityPoint value);
 
 	/**
 	 * Returns the value of the '<em><b>Qs</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_rq.QScenario#getAnalyzed <em>Analyzed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Qs</em>' reference isn't clear,
@@ -61,8 +61,7 @@ public interface AnalyzedQS extends EObject {
 	 * @return the value of the '<em>Qs</em>' reference.
 	 * @see #setQs(QScenario)
 	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getAnalyzedQS_Qs()
-	 * @see co.edu.uniandes.accordant_rq.QScenario#getAnalyzed
-	 * @model opposite="analyzed" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	QScenario getQs();
@@ -102,5 +101,31 @@ public interface AnalyzedQS extends EObject {
 	 * @generated
 	 */
 	void setReasoning(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getAnalyzedQS_Name()
+	 * @model id="true" required="true"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // AnalyzedQS

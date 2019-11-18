@@ -18,9 +18,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_rq.QScenario#getMaxValue <em>Max Value</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.QScenario#getUnit <em>Unit</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.QScenario#getQAttribute <em>QAttribute</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_rq.QScenario#getAnalyzed <em>Analyzed</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.QScenario#getStimulus <em>Stimulus</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.QScenario#getEnvironment <em>Environment</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.QScenario#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getQScenario()
@@ -168,34 +168,6 @@ public interface QScenario extends EObject {
 	void setQAttribute(QAttribute value);
 
 	/**
-	 * Returns the value of the '<em><b>Analyzed</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getQs <em>Qs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Analyzed</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Analyzed</em>' reference.
-	 * @see #setAnalyzed(AnalyzedQS)
-	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getQScenario_Analyzed()
-	 * @see co.edu.uniandes.accordant_rq.AnalyzedQS#getQs
-	 * @model opposite="qs"
-	 * @generated
-	 */
-	AnalyzedQS getAnalyzed();
-
-	/**
-	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.QScenario#getAnalyzed <em>Analyzed</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Analyzed</em>' reference.
-	 * @see #getAnalyzed()
-	 * @generated
-	 */
-	void setAnalyzed(AnalyzedQS value);
-
-	/**
 	 * Returns the value of the '<em><b>Stimulus</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -246,5 +218,31 @@ public interface QScenario extends EObject {
 	 * @generated
 	 */
 	void setEnvironment(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getQScenario_Name()
+	 * @model id="true" required="true"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.QScenario#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // QScenario

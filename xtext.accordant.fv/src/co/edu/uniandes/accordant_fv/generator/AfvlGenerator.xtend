@@ -23,7 +23,6 @@ class AfvlGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		// if(resource.allContents.filter(Estimator)!==null && resource.allContents.filter(Estimator).size>0){
-		println("doGenerate-AfvlGenerator");
 		resource.allContents.toIterable.filter(typeof(Estimator)).forEach [
 			fsa.
 				generateFile('''edu/uniandes/accordant/«formatJavaPackageName(funcView.name)»/estimator/«formatJavaClassName(name)»Estimator.java''',

@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getPorts <em>Ports</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getVars <em>Vars</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getCommands <em>Commands</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getPaasArts <em>Paas Arts</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getExecEnvironment()
@@ -234,5 +235,21 @@ public interface ExecEnvironment extends EObject {
 	 * @generated
 	 */
 	EList<String> getCommands();
+
+	/**
+	 * Returns the value of the '<em><b>Paas Arts</b></em>' reference list.
+	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.Artifact}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Paas Arts</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Paas Arts</em>' reference list.
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getExecEnvironment_PaasArts()
+	 * @model
+	 * @generated
+	 */
+	EList<Artifact> getPaasArts();
 
 } // ExecEnvironment

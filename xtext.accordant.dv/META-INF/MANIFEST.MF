@@ -13,6 +13,7 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.util,
  org.eclipse.xtend.lib,
  accordant_dv;bundle-version="0.1.0",
+ accordant_fv;bundle-version="0.1.0",
  accordant_rq;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: co.edu.uniandes.accordant_dv,

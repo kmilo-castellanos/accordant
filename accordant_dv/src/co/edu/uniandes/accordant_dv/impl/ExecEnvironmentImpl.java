@@ -3,6 +3,7 @@
 package co.edu.uniandes.accordant_dv.impl;
 
 import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
+import co.edu.uniandes.accordant_dv.Artifact;
 import co.edu.uniandes.accordant_dv.EnvVar;
 import co.edu.uniandes.accordant_dv.ExecEnvironment;
 
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -40,6 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ExecEnvironmentImpl#getPorts <em>Ports</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ExecEnvironmentImpl#getVars <em>Vars</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ExecEnvironmentImpl#getCommands <em>Commands</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.ExecEnvironmentImpl#getPaasArts <em>Paas Arts</em>}</li>
  * </ul>
  *
  * @generated
@@ -194,6 +197,16 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected EList<String> commands;
+
+	/**
+	 * The cached value of the '{@link #getPaasArts() <em>Paas Arts</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaasArts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Artifact> paasArts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -381,6 +394,18 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Artifact> getPaasArts() {
+		if (paasArts == null) {
+			paasArts = new EObjectResolvingEList<Artifact>(Artifact.class, this, Accordant_dvPackage.EXEC_ENVIRONMENT__PAAS_ARTS);
+		}
+		return paasArts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -416,6 +441,8 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 				return getVars();
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__COMMANDS:
 				return getCommands();
+			case Accordant_dvPackage.EXEC_ENVIRONMENT__PAAS_ARTS:
+				return getPaasArts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -459,6 +486,10 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 				getCommands().clear();
 				getCommands().addAll((Collection<? extends String>)newValue);
 				return;
+			case Accordant_dvPackage.EXEC_ENVIRONMENT__PAAS_ARTS:
+				getPaasArts().clear();
+				getPaasArts().addAll((Collection<? extends Artifact>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -498,6 +529,9 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__COMMANDS:
 				getCommands().clear();
 				return;
+			case Accordant_dvPackage.EXEC_ENVIRONMENT__PAAS_ARTS:
+				getPaasArts().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -528,6 +562,8 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 				return vars != null && !vars.isEmpty();
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__COMMANDS:
 				return commands != null && !commands.isEmpty();
+			case Accordant_dvPackage.EXEC_ENVIRONMENT__PAAS_ARTS:
+				return paasArts != null && !paasArts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

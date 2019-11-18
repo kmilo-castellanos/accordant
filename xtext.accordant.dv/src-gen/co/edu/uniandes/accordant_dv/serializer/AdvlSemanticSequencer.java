@@ -79,14 +79,7 @@ public class AdvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Artifact returns Artifact
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         component=EString? 
-	 *         connector=EString? 
-	 *         paas=[ExecEnvironment|ID]? 
-	 *         saas=[ServerlessEnv|ID]? 
-	 *         props=EString?
-	 *     )
+	 *     ((conn=[Connector|ID] | props=EString | spoint=[SensitivityPoint|ID])? (name=ID comp=[Component|ID]?)?)+
 	 */
 	protected void sequence_Artifact(ISerializationContext context, Artifact semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -100,13 +93,16 @@ public class AdvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=ID 
+	 *         ipackage=[InputPackage|ID] 
+	 *         fv=[FunctionalView|ID] 
+	 *         artifacts+=Artifact 
+	 *         artifacts+=Artifact* 
 	 *         devs+=Device 
 	 *         devs+=Device* 
 	 *         deployments+=Deployment 
 	 *         deployments+=Deployment* 
 	 *         (services+=Service services+=Service*)? 
-	 *         artifacts+=Artifact 
-	 *         artifacts+=Artifact*
+	 *         (serverless+=ServerlessEnv serverless+=ServerlessEnv*)?
 	 *     )
 	 */
 	protected void sequence_DeploymentView(ISerializationContext context, DeploymentView semanticObject) {
@@ -125,7 +121,8 @@ public class AdvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         maxSurge=EInt? 
 	 *         maxUnavail=EInt? 
 	 *         pods+=Pod 
-	 *         pods+=Pod*
+	 *         pods+=Pod* 
+	 *         spoint=[SensitivityPoint|ID]?
 	 *     )
 	 */
 	protected void sequence_Deployment(ISerializationContext context, Deployment semanticObject) {
@@ -138,14 +135,7 @@ public class AdvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Device returns Device
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         host=EString? 
-	 *         type=TypeDevice? 
-	 *         cpu=EInt? 
-	 *         storage=EInt? 
-	 *         mem=EInt?
-	 *     )
+	 *     ((type=TypeDevice | cpu=EInt | storage=EInt | mem=EInt)? (name=ID host=EString?)?)+
 	 */
 	protected void sequence_Device(ISerializationContext context, Device semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -171,6 +161,7 @@ public class AdvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=ID 
+	 *         (PaasArts+=[Artifact|ID] PaasArts+=[Artifact|ID]*)? 
 	 *         image=EString? 
 	 *         cpu_lim=EFloat? 
 	 *         mem_lim=EInt? 

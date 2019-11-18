@@ -14,6 +14,8 @@
         eType="#//ServerlessEnv" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="artifacts" upperBound="-1"
         eType="#//Artifact" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ipackage" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//InputPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fv" lowerBound="1" eType="ecore:EClass ../../accordant_fv/model/accordant_fv.ecore#//FunctionalView"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EventConnTech">
     <eLiterals name="KAFKA"/>
@@ -67,15 +69,16 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="commands" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="PaasArts" upperBound="-1"
+        eType="#//Artifact"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Artifact">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="props" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="component" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="connector" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="saas" eType="#//ServerlessEnv"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="paas" eType="#//ExecEnvironment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comp" eType="ecore:EClass ../../accordant_fv/model/accordant_fv.ecore#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conn" eType="ecore:EClass ../../accordant_fv/model/accordant_fv.ecore#//Connector"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="spoint" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//SensitivityPoint"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Deployment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -122,5 +125,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="props" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SaasArts" upperBound="-1"
+        eType="#//Artifact"/>
   </eClassifiers>
 </ecore:EPackage>

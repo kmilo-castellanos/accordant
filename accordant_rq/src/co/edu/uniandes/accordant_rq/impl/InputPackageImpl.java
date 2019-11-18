@@ -3,6 +3,7 @@
 package co.edu.uniandes.accordant_rq.impl;
 
 import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
+import co.edu.uniandes.accordant_rq.AnalyzedQS;
 import co.edu.uniandes.accordant_rq.InputPackage;
 import co.edu.uniandes.accordant_rq.QScenario;
 
@@ -30,7 +31,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.InputPackageImpl#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.InputPackageImpl#getScenarios <em>Scenarios</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_rq.impl.InputPackageImpl#getGtactics <em>Gtactics</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.impl.InputPackageImpl#getTactics <em>Tactics</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.impl.InputPackageImpl#getAnalyzedQs <em>Analyzed Qs</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,14 +69,24 @@ public class InputPackageImpl extends MinimalEObjectImpl.Container implements In
 	protected EList<QScenario> scenarios;
 
 	/**
-	 * The cached value of the '{@link #getGtactics() <em>Gtactics</em>}' containment reference list.
+	 * The cached value of the '{@link #getTactics() <em>Tactics</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGtactics()
+	 * @see #getTactics()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Tactic> gtactics;
+	protected EList<Tactic> tactics;
+
+	/**
+	 * The cached value of the '{@link #getAnalyzedQs() <em>Analyzed Qs</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAnalyzedQs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AnalyzedQS> analyzedQs;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,11 +145,23 @@ public class InputPackageImpl extends MinimalEObjectImpl.Container implements In
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Tactic> getGtactics() {
-		if (gtactics == null) {
-			gtactics = new EObjectContainmentEList<Tactic>(Tactic.class, this, Accordant_rqPackage.INPUT_PACKAGE__GTACTICS);
+	public EList<Tactic> getTactics() {
+		if (tactics == null) {
+			tactics = new EObjectContainmentEList<Tactic>(Tactic.class, this, Accordant_rqPackage.INPUT_PACKAGE__TACTICS);
 		}
-		return gtactics;
+		return tactics;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<AnalyzedQS> getAnalyzedQs() {
+		if (analyzedQs == null) {
+			analyzedQs = new EObjectContainmentEList<AnalyzedQS>(AnalyzedQS.class, this, Accordant_rqPackage.INPUT_PACKAGE__ANALYZED_QS);
+		}
+		return analyzedQs;
 	}
 
 	/**
@@ -150,8 +174,10 @@ public class InputPackageImpl extends MinimalEObjectImpl.Container implements In
 		switch (featureID) {
 			case Accordant_rqPackage.INPUT_PACKAGE__SCENARIOS:
 				return ((InternalEList<?>)getScenarios()).basicRemove(otherEnd, msgs);
-			case Accordant_rqPackage.INPUT_PACKAGE__GTACTICS:
-				return ((InternalEList<?>)getGtactics()).basicRemove(otherEnd, msgs);
+			case Accordant_rqPackage.INPUT_PACKAGE__TACTICS:
+				return ((InternalEList<?>)getTactics()).basicRemove(otherEnd, msgs);
+			case Accordant_rqPackage.INPUT_PACKAGE__ANALYZED_QS:
+				return ((InternalEList<?>)getAnalyzedQs()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -168,8 +194,10 @@ public class InputPackageImpl extends MinimalEObjectImpl.Container implements In
 				return getName();
 			case Accordant_rqPackage.INPUT_PACKAGE__SCENARIOS:
 				return getScenarios();
-			case Accordant_rqPackage.INPUT_PACKAGE__GTACTICS:
-				return getGtactics();
+			case Accordant_rqPackage.INPUT_PACKAGE__TACTICS:
+				return getTactics();
+			case Accordant_rqPackage.INPUT_PACKAGE__ANALYZED_QS:
+				return getAnalyzedQs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -190,9 +218,13 @@ public class InputPackageImpl extends MinimalEObjectImpl.Container implements In
 				getScenarios().clear();
 				getScenarios().addAll((Collection<? extends QScenario>)newValue);
 				return;
-			case Accordant_rqPackage.INPUT_PACKAGE__GTACTICS:
-				getGtactics().clear();
-				getGtactics().addAll((Collection<? extends Tactic>)newValue);
+			case Accordant_rqPackage.INPUT_PACKAGE__TACTICS:
+				getTactics().clear();
+				getTactics().addAll((Collection<? extends Tactic>)newValue);
+				return;
+			case Accordant_rqPackage.INPUT_PACKAGE__ANALYZED_QS:
+				getAnalyzedQs().clear();
+				getAnalyzedQs().addAll((Collection<? extends AnalyzedQS>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -212,8 +244,11 @@ public class InputPackageImpl extends MinimalEObjectImpl.Container implements In
 			case Accordant_rqPackage.INPUT_PACKAGE__SCENARIOS:
 				getScenarios().clear();
 				return;
-			case Accordant_rqPackage.INPUT_PACKAGE__GTACTICS:
-				getGtactics().clear();
+			case Accordant_rqPackage.INPUT_PACKAGE__TACTICS:
+				getTactics().clear();
+				return;
+			case Accordant_rqPackage.INPUT_PACKAGE__ANALYZED_QS:
+				getAnalyzedQs().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -231,8 +266,10 @@ public class InputPackageImpl extends MinimalEObjectImpl.Container implements In
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case Accordant_rqPackage.INPUT_PACKAGE__SCENARIOS:
 				return scenarios != null && !scenarios.isEmpty();
-			case Accordant_rqPackage.INPUT_PACKAGE__GTACTICS:
-				return gtactics != null && !gtactics.isEmpty();
+			case Accordant_rqPackage.INPUT_PACKAGE__TACTICS:
+				return tactics != null && !tactics.isEmpty();
+			case Accordant_rqPackage.INPUT_PACKAGE__ANALYZED_QS:
+				return analyzedQs != null && !analyzedQs.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

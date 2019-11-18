@@ -24,23 +24,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.edu.uniandes.accordant_rq.impl.AnalyzedQSImpl#getPoints <em>Points</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.impl.AnalyzedQSImpl#getSPoints <em>SPoints</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.AnalyzedQSImpl#getQs <em>Qs</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.AnalyzedQSImpl#getReasoning <em>Reasoning</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.impl.AnalyzedQSImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements AnalyzedQS {
 	/**
-	 * The cached value of the '{@link #getPoints() <em>Points</em>}' containment reference.
+	 * The cached value of the '{@link #getSPoints() <em>SPoints</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPoints()
+	 * @see #getSPoints()
 	 * @generated
 	 * @ordered
 	 */
-	protected SensitivityPoint points;
+	protected SensitivityPoint sPoints;
 
 	/**
 	 * The cached value of the '{@link #getQs() <em>Qs</em>}' reference.
@@ -73,6 +74,26 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	protected String reasoning = REASONING_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -96,8 +117,8 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SensitivityPoint getPoints() {
-		return points;
+	public SensitivityPoint getSPoints() {
+		return sPoints;
 	}
 
 	/**
@@ -105,11 +126,11 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPoints(SensitivityPoint newPoints, NotificationChain msgs) {
-		SensitivityPoint oldPoints = points;
-		points = newPoints;
+	public NotificationChain basicSetSPoints(SensitivityPoint newSPoints, NotificationChain msgs) {
+		SensitivityPoint oldSPoints = sPoints;
+		sPoints = newSPoints;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.ANALYZED_QS__POINTS, oldPoints, newPoints);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.ANALYZED_QS__SPOINTS, oldSPoints, newSPoints);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -120,18 +141,18 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPoints(SensitivityPoint newPoints) {
-		if (newPoints != points) {
+	public void setSPoints(SensitivityPoint newSPoints) {
+		if (newSPoints != sPoints) {
 			NotificationChain msgs = null;
-			if (points != null)
-				msgs = ((InternalEObject)points).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Accordant_rqPackage.ANALYZED_QS__POINTS, null, msgs);
-			if (newPoints != null)
-				msgs = ((InternalEObject)newPoints).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Accordant_rqPackage.ANALYZED_QS__POINTS, null, msgs);
-			msgs = basicSetPoints(newPoints, msgs);
+			if (sPoints != null)
+				msgs = ((InternalEObject)sPoints).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Accordant_rqPackage.ANALYZED_QS__SPOINTS, null, msgs);
+			if (newSPoints != null)
+				msgs = ((InternalEObject)newSPoints).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Accordant_rqPackage.ANALYZED_QS__SPOINTS, null, msgs);
+			msgs = basicSetSPoints(newSPoints, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.ANALYZED_QS__POINTS, newPoints, newPoints));
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.ANALYZED_QS__SPOINTS, newSPoints, newSPoints));
 	}
 
 	/**
@@ -165,33 +186,11 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQs(QScenario newQs, NotificationChain msgs) {
+	public void setQs(QScenario newQs) {
 		QScenario oldQs = qs;
 		qs = newQs;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.ANALYZED_QS__QS, oldQs, newQs);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setQs(QScenario newQs) {
-		if (newQs != qs) {
-			NotificationChain msgs = null;
-			if (qs != null)
-				msgs = ((InternalEObject)qs).eInverseRemove(this, Accordant_rqPackage.QSCENARIO__ANALYZED, QScenario.class, msgs);
-			if (newQs != null)
-				msgs = ((InternalEObject)newQs).eInverseAdd(this, Accordant_rqPackage.QSCENARIO__ANALYZED, QScenario.class, msgs);
-			msgs = basicSetQs(newQs, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.ANALYZED_QS__QS, newQs, newQs));
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.ANALYZED_QS__QS, oldQs, qs));
 	}
 
 	/**
@@ -220,15 +219,20 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Accordant_rqPackage.ANALYZED_QS__QS:
-				if (qs != null)
-					msgs = ((InternalEObject)qs).eInverseRemove(this, Accordant_rqPackage.QSCENARIO__ANALYZED, QScenario.class, msgs);
-				return basicSetQs((QScenario)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.ANALYZED_QS__NAME, oldName, name));
 	}
 
 	/**
@@ -239,10 +243,8 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Accordant_rqPackage.ANALYZED_QS__POINTS:
-				return basicSetPoints(null, msgs);
-			case Accordant_rqPackage.ANALYZED_QS__QS:
-				return basicSetQs(null, msgs);
+			case Accordant_rqPackage.ANALYZED_QS__SPOINTS:
+				return basicSetSPoints(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -255,13 +257,15 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Accordant_rqPackage.ANALYZED_QS__POINTS:
-				return getPoints();
+			case Accordant_rqPackage.ANALYZED_QS__SPOINTS:
+				return getSPoints();
 			case Accordant_rqPackage.ANALYZED_QS__QS:
 				if (resolve) return getQs();
 				return basicGetQs();
 			case Accordant_rqPackage.ANALYZED_QS__REASONING:
 				return getReasoning();
+			case Accordant_rqPackage.ANALYZED_QS__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -274,14 +278,17 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Accordant_rqPackage.ANALYZED_QS__POINTS:
-				setPoints((SensitivityPoint)newValue);
+			case Accordant_rqPackage.ANALYZED_QS__SPOINTS:
+				setSPoints((SensitivityPoint)newValue);
 				return;
 			case Accordant_rqPackage.ANALYZED_QS__QS:
 				setQs((QScenario)newValue);
 				return;
 			case Accordant_rqPackage.ANALYZED_QS__REASONING:
 				setReasoning((String)newValue);
+				return;
+			case Accordant_rqPackage.ANALYZED_QS__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -295,14 +302,17 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Accordant_rqPackage.ANALYZED_QS__POINTS:
-				setPoints((SensitivityPoint)null);
+			case Accordant_rqPackage.ANALYZED_QS__SPOINTS:
+				setSPoints((SensitivityPoint)null);
 				return;
 			case Accordant_rqPackage.ANALYZED_QS__QS:
 				setQs((QScenario)null);
 				return;
 			case Accordant_rqPackage.ANALYZED_QS__REASONING:
 				setReasoning(REASONING_EDEFAULT);
+				return;
+			case Accordant_rqPackage.ANALYZED_QS__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -316,12 +326,14 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Accordant_rqPackage.ANALYZED_QS__POINTS:
-				return points != null;
+			case Accordant_rqPackage.ANALYZED_QS__SPOINTS:
+				return sPoints != null;
 			case Accordant_rqPackage.ANALYZED_QS__QS:
 				return qs != null;
 			case Accordant_rqPackage.ANALYZED_QS__REASONING:
 				return REASONING_EDEFAULT == null ? reasoning != null : !REASONING_EDEFAULT.equals(reasoning);
+			case Accordant_rqPackage.ANALYZED_QS__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -338,6 +350,8 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (reasoning: ");
 		result.append(reasoning);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

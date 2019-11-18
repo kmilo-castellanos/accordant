@@ -61,7 +61,7 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     AnalyzedQS returns AnalyzedQS
 	 *
 	 * Constraint:
-	 *     (reasoning=EString? qs=[QScenario|EString] points=SensitivityPoint?)
+	 *     (name=ID qs=[QScenario|ID] reasoning=EString? sPoints=SensitivityPoint?)
 	 */
 	protected void sequence_AnalyzedQS(ISerializationContext context, AnalyzedQS semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -73,7 +73,14 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     InputPackage returns InputPackage
 	 *
 	 * Constraint:
-	 *     (name=EString scenarios+=QScenario scenarios+=QScenario* gtactics+=Tactic gtactics+=Tactic*)
+	 *     (
+	 *         name=ID 
+	 *         scenarios+=QScenario 
+	 *         scenarios+=QScenario* 
+	 *         (analyzedQs+=AnalyzedQS analyzedQs+=AnalyzedQS*)? 
+	 *         tactics+=Tactic 
+	 *         tactics+=Tactic*
+	 *     )
 	 */
 	protected void sequence_InputPackage(ISerializationContext context, InputPackage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -86,6 +93,7 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
+	 *         name=ID 
 	 *         qAttribute=QAttribute 
 	 *         measure=QAMetric 
 	 *         minValue=EFloat 
@@ -97,6 +105,8 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_QScenario(ISerializationContext context, QScenario semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__NAME));
 			if (transientValues.isValueTransient(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__QATTRIBUTE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__QATTRIBUTE));
 			if (transientValues.isValueTransient(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__MEASURE) == ValueTransient.YES)
@@ -113,6 +123,7 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__ENVIRONMENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getQScenarioAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getQScenarioAccess().getQAttributeQAttributeEnumRuleCall_5_0(), semanticObject.getQAttribute());
 		feeder.accept(grammarAccess.getQScenarioAccess().getMeasureQAMetricEnumRuleCall_8_0(), semanticObject.getMeasure());
 		feeder.accept(grammarAccess.getQScenarioAccess().getMinValueEFloatParserRuleCall_11_0(), semanticObject.getMinValue());
@@ -130,12 +141,12 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
+	 *         name=ID 
 	 *         isRisk?='isRisk'? 
-	 *         name=EString 
 	 *         rationale=EString? 
 	 *         code=EString? 
-	 *         tactic+=[Tactic|EString] 
-	 *         tactic+=[Tactic|EString]*
+	 *         appliedTactics+=[Tactic|ID] 
+	 *         appliedTactics+=[Tactic|ID]*
 	 *     )
 	 */
 	protected void sequence_SensitivityPoint(ISerializationContext context, SensitivityPoint semanticObject) {
@@ -149,7 +160,7 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=EString 
+	 *         name=ID 
 	 *         qAttribute=QAttribute? 
 	 *         rationale=EString? 
 	 *         stimulus=EString? 
