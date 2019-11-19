@@ -29,9 +29,7 @@ class AinlScopeProvider extends AbstractAinlScopeProvider {
 			// val candidates = EcoreUtil2.getAllContentsOfType(rootElement, Interface)
 			val candidates = EcoreUtil2.getAllContentsOfType(rootElement, QScenario)
 			// Create IEObjectDescriptions and puts them into an IScope instance
-			val iScope=Scopes.scopeFor(candidates)
-			println(iScope)
-			return iScope
+			return Scopes.scopeFor(candidates)
 		}
 		return super.getScope(context, reference);
 	}

@@ -130,7 +130,6 @@ class AfvlGenerator extends AbstractGenerator {
 	}
 
 	def logMetric(SensitivityPoint spoint) {
-		println("Entro a generator spoint" + spoint);
 		var logging = "//log(";
 		if (spoint !== null && spoint.eContainer!==null) {
 			val aqs = spoint.eContainer as AnalyzedQS;

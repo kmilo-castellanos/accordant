@@ -16,7 +16,7 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class AinlGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		println("doGenerate-AinlGenerator");
+		//println("doGenerate-AinlGenerator");
 		
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
 //			resource.allContents
