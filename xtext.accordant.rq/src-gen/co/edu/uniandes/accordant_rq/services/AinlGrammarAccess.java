@@ -213,30 +213,31 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cQAttributeAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cQAttributeQAttributeEnumRuleCall_5_0 = (RuleCall)cQAttributeAssignment_5.eContents().get(0);
-		private final Keyword cMeasureKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cStimulusKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cMeasureAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cMeasureQAMetricEnumRuleCall_8_0 = (RuleCall)cMeasureAssignment_8.eContents().get(0);
-		private final Keyword cMinValueKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cStimulusAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cStimulusEStringParserRuleCall_8_0 = (RuleCall)cStimulusAssignment_8.eContents().get(0);
+		private final Keyword cEnvironmentKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Assignment cMinValueAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cMinValueEFloatParserRuleCall_11_0 = (RuleCall)cMinValueAssignment_11.eContents().get(0);
-		private final Keyword cMaxValueKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cEnvironmentAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cEnvironmentEStringParserRuleCall_11_0 = (RuleCall)cEnvironmentAssignment_11.eContents().get(0);
+		private final Keyword cResponseKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		private final Keyword cColonKeyword_13 = (Keyword)cGroup.eContents().get(13);
-		private final Assignment cMaxValueAssignment_14 = (Assignment)cGroup.eContents().get(14);
-		private final RuleCall cMaxValueEFloatParserRuleCall_14_0 = (RuleCall)cMaxValueAssignment_14.eContents().get(0);
-		private final Keyword cUnitKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Assignment cResponseAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final RuleCall cResponseEStringParserRuleCall_14_0 = (RuleCall)cResponseAssignment_14.eContents().get(0);
+		private final Keyword cMeasureKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		private final Keyword cColonKeyword_16 = (Keyword)cGroup.eContents().get(16);
-		private final Assignment cUnitAssignment_17 = (Assignment)cGroup.eContents().get(17);
-		private final RuleCall cUnitMetricUnitEnumRuleCall_17_0 = (RuleCall)cUnitAssignment_17.eContents().get(0);
-		private final Keyword cStimulusKeyword_18 = (Keyword)cGroup.eContents().get(18);
-		private final Keyword cColonKeyword_19 = (Keyword)cGroup.eContents().get(19);
-		private final Assignment cStimulusAssignment_20 = (Assignment)cGroup.eContents().get(20);
-		private final RuleCall cStimulusEStringParserRuleCall_20_0 = (RuleCall)cStimulusAssignment_20.eContents().get(0);
-		private final Keyword cEnvironmentKeyword_21 = (Keyword)cGroup.eContents().get(21);
-		private final Keyword cColonKeyword_22 = (Keyword)cGroup.eContents().get(22);
-		private final Assignment cEnvironmentAssignment_23 = (Assignment)cGroup.eContents().get(23);
-		private final RuleCall cEnvironmentEStringParserRuleCall_23_0 = (RuleCall)cEnvironmentAssignment_23.eContents().get(0);
+		private final Assignment cMeasureAssignment_17 = (Assignment)cGroup.eContents().get(17);
+		private final RuleCall cMeasureQAMetricEnumRuleCall_17_0 = (RuleCall)cMeasureAssignment_17.eContents().get(0);
+		private final Keyword cBetweenKeyword_18 = (Keyword)cGroup.eContents().get(18);
+		private final Assignment cMinValueAssignment_19 = (Assignment)cGroup.eContents().get(19);
+		private final RuleCall cMinValueEFloatParserRuleCall_19_0 = (RuleCall)cMinValueAssignment_19.eContents().get(0);
+		private final Keyword cAndKeyword_20 = (Keyword)cGroup.eContents().get(20);
+		private final Assignment cMaxValueAssignment_21 = (Assignment)cGroup.eContents().get(21);
+		private final RuleCall cMaxValueEFloatParserRuleCall_21_0 = (RuleCall)cMaxValueAssignment_21.eContents().get(0);
+		private final Keyword cInKeyword_22 = (Keyword)cGroup.eContents().get(22);
+		private final Assignment cUnitAssignment_23 = (Assignment)cGroup.eContents().get(23);
+		private final RuleCall cUnitMetricUnitEnumRuleCall_23_0 = (RuleCall)cUnitAssignment_23.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_24 = (Keyword)cGroup.eContents().get(24);
 		
 		//QScenario:
@@ -244,18 +245,16 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 		//	name=ID
 		//	'{'
 		//	'QA' ':' qAttribute=QAttribute
-		//	'measure' ':' measure=QAMetric
-		//	'minValue' ':' minValue=EFloat
-		//	'maxValue' ':' maxValue=EFloat
-		//	'unit' ':' unit=MetricUnit
 		//	'stimulus' ':' stimulus=EString
 		//	'environment' ':' environment=EString
+		//	'response' ':' response=EString
+		//	'measure' ':' measure=QAMetric 'between' minValue=EFloat 'and' maxValue=EFloat 'in' unit=MetricUnit
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'QS' name=ID '{' 'QA' ':' qAttribute=QAttribute 'measure' ':' measure=QAMetric 'minValue' ':' minValue=EFloat 'maxValue'
-		//':' maxValue=EFloat 'unit' ':' unit=MetricUnit 'stimulus' ':' stimulus=EString 'environment' ':' environment=EString
-		//'}'
+		//'QS' name=ID '{' 'QA' ':' qAttribute=QAttribute 'stimulus' ':' stimulus=EString 'environment' ':' environment=EString
+		//'response' ':' response=EString 'measure' ':' measure=QAMetric 'between' minValue=EFloat 'and' maxValue=EFloat 'in'
+		//unit=MetricUnit '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'QS'
@@ -282,77 +281,80 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 		//QAttribute
 		public RuleCall getQAttributeQAttributeEnumRuleCall_5_0() { return cQAttributeQAttributeEnumRuleCall_5_0; }
 		
-		//'measure'
-		public Keyword getMeasureKeyword_6() { return cMeasureKeyword_6; }
+		//'stimulus'
+		public Keyword getStimulusKeyword_6() { return cStimulusKeyword_6; }
 		
 		//':'
 		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
 		
-		//measure=QAMetric
-		public Assignment getMeasureAssignment_8() { return cMeasureAssignment_8; }
+		//stimulus=EString
+		public Assignment getStimulusAssignment_8() { return cStimulusAssignment_8; }
 		
-		//QAMetric
-		public RuleCall getMeasureQAMetricEnumRuleCall_8_0() { return cMeasureQAMetricEnumRuleCall_8_0; }
+		//EString
+		public RuleCall getStimulusEStringParserRuleCall_8_0() { return cStimulusEStringParserRuleCall_8_0; }
 		
-		//'minValue'
-		public Keyword getMinValueKeyword_9() { return cMinValueKeyword_9; }
+		//'environment'
+		public Keyword getEnvironmentKeyword_9() { return cEnvironmentKeyword_9; }
 		
 		//':'
 		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
 		
-		//minValue=EFloat
-		public Assignment getMinValueAssignment_11() { return cMinValueAssignment_11; }
+		//environment=EString
+		public Assignment getEnvironmentAssignment_11() { return cEnvironmentAssignment_11; }
 		
-		//EFloat
-		public RuleCall getMinValueEFloatParserRuleCall_11_0() { return cMinValueEFloatParserRuleCall_11_0; }
+		//EString
+		public RuleCall getEnvironmentEStringParserRuleCall_11_0() { return cEnvironmentEStringParserRuleCall_11_0; }
 		
-		//'maxValue'
-		public Keyword getMaxValueKeyword_12() { return cMaxValueKeyword_12; }
+		//'response'
+		public Keyword getResponseKeyword_12() { return cResponseKeyword_12; }
 		
 		//':'
 		public Keyword getColonKeyword_13() { return cColonKeyword_13; }
 		
-		//maxValue=EFloat
-		public Assignment getMaxValueAssignment_14() { return cMaxValueAssignment_14; }
+		//response=EString
+		public Assignment getResponseAssignment_14() { return cResponseAssignment_14; }
 		
-		//EFloat
-		public RuleCall getMaxValueEFloatParserRuleCall_14_0() { return cMaxValueEFloatParserRuleCall_14_0; }
+		//EString
+		public RuleCall getResponseEStringParserRuleCall_14_0() { return cResponseEStringParserRuleCall_14_0; }
 		
-		//'unit'
-		public Keyword getUnitKeyword_15() { return cUnitKeyword_15; }
+		//'measure'
+		public Keyword getMeasureKeyword_15() { return cMeasureKeyword_15; }
 		
 		//':'
 		public Keyword getColonKeyword_16() { return cColonKeyword_16; }
 		
+		//measure=QAMetric
+		public Assignment getMeasureAssignment_17() { return cMeasureAssignment_17; }
+		
+		//QAMetric
+		public RuleCall getMeasureQAMetricEnumRuleCall_17_0() { return cMeasureQAMetricEnumRuleCall_17_0; }
+		
+		//'between'
+		public Keyword getBetweenKeyword_18() { return cBetweenKeyword_18; }
+		
+		//minValue=EFloat
+		public Assignment getMinValueAssignment_19() { return cMinValueAssignment_19; }
+		
+		//EFloat
+		public RuleCall getMinValueEFloatParserRuleCall_19_0() { return cMinValueEFloatParserRuleCall_19_0; }
+		
+		//'and'
+		public Keyword getAndKeyword_20() { return cAndKeyword_20; }
+		
+		//maxValue=EFloat
+		public Assignment getMaxValueAssignment_21() { return cMaxValueAssignment_21; }
+		
+		//EFloat
+		public RuleCall getMaxValueEFloatParserRuleCall_21_0() { return cMaxValueEFloatParserRuleCall_21_0; }
+		
+		//'in'
+		public Keyword getInKeyword_22() { return cInKeyword_22; }
+		
 		//unit=MetricUnit
-		public Assignment getUnitAssignment_17() { return cUnitAssignment_17; }
+		public Assignment getUnitAssignment_23() { return cUnitAssignment_23; }
 		
 		//MetricUnit
-		public RuleCall getUnitMetricUnitEnumRuleCall_17_0() { return cUnitMetricUnitEnumRuleCall_17_0; }
-		
-		//'stimulus'
-		public Keyword getStimulusKeyword_18() { return cStimulusKeyword_18; }
-		
-		//':'
-		public Keyword getColonKeyword_19() { return cColonKeyword_19; }
-		
-		//stimulus=EString
-		public Assignment getStimulusAssignment_20() { return cStimulusAssignment_20; }
-		
-		//EString
-		public RuleCall getStimulusEStringParserRuleCall_20_0() { return cStimulusEStringParserRuleCall_20_0; }
-		
-		//'environment'
-		public Keyword getEnvironmentKeyword_21() { return cEnvironmentKeyword_21; }
-		
-		//':'
-		public Keyword getColonKeyword_22() { return cColonKeyword_22; }
-		
-		//environment=EString
-		public Assignment getEnvironmentAssignment_23() { return cEnvironmentAssignment_23; }
-		
-		//EString
-		public RuleCall getEnvironmentEStringParserRuleCall_23_0() { return cEnvironmentEStringParserRuleCall_23_0; }
+		public RuleCall getUnitMetricUnitEnumRuleCall_23_0() { return cUnitMetricUnitEnumRuleCall_23_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_24() { return cRightCurlyBracketKeyword_24; }
@@ -1040,12 +1042,10 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=ID
 	//	'{'
 	//	'QA' ':' qAttribute=QAttribute
-	//	'measure' ':' measure=QAMetric
-	//	'minValue' ':' minValue=EFloat
-	//	'maxValue' ':' maxValue=EFloat
-	//	'unit' ':' unit=MetricUnit
 	//	'stimulus' ':' stimulus=EString
 	//	'environment' ':' environment=EString
+	//	'response' ':' response=EString
+	//	'measure' ':' measure=QAMetric 'between' minValue=EFloat 'and' maxValue=EFloat 'in' unit=MetricUnit
 	//	'}';
 	public QScenarioElements getQScenarioAccess() {
 		return pQScenario;

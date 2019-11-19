@@ -82,6 +82,10 @@
         <element xmi:type="ecore:EAttribute" href="accordant_rq.ecore#//QScenario/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_CQqq8QoQEeqDacbynDS8aA"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_NF1yYAqMEeqDacbynDS8aA" type="3001">
+        <element xmi:type="ecore:EAttribute" href="accordant_rq.ecore#//QScenario/response"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_NF3AgAqMEeqDacbynDS8aA"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_jPsfEEc0EemtVtH8Gkx1aA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_jPsfEUc0EemtVtH8Gkx1aA"/>
     </children>
@@ -94,7 +98,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_jPsfF0c0EemtVtH8Gkx1aA"/>
     </children>
     <element xmi:type="ecore:EClass" href="accordant_rq.ecore#//QScenario"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jPr4AUc0EemtVtH8Gkx1aA" x="200" y="44" width="137" height="177"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jPr4AUc0EemtVtH8Gkx1aA" x="200" y="44" width="137" height="189"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_WziOcEc2EemtVtH8Gkx1aA" type="2001" fontName=".AppleSystemUIFont">
     <children xmi:type="notation:DecorationNode" xmi:id="_WziOckc2EemtVtH8Gkx1aA" type="5001"/>

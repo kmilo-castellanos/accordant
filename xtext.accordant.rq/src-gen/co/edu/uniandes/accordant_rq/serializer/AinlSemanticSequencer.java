@@ -95,12 +95,13 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (
 	 *         name=ID 
 	 *         qAttribute=QAttribute 
+	 *         stimulus=EString 
+	 *         environment=EString 
+	 *         response=EString 
 	 *         measure=QAMetric 
 	 *         minValue=EFloat 
 	 *         maxValue=EFloat 
-	 *         unit=MetricUnit 
-	 *         stimulus=EString 
-	 *         environment=EString
+	 *         unit=MetricUnit
 	 *     )
 	 */
 	protected void sequence_QScenario(ISerializationContext context, QScenario semanticObject) {
@@ -109,6 +110,12 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__NAME));
 			if (transientValues.isValueTransient(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__QATTRIBUTE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__QATTRIBUTE));
+			if (transientValues.isValueTransient(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__STIMULUS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__STIMULUS));
+			if (transientValues.isValueTransient(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__ENVIRONMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__ENVIRONMENT));
+			if (transientValues.isValueTransient(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__RESPONSE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__RESPONSE));
 			if (transientValues.isValueTransient(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__MEASURE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__MEASURE));
 			if (transientValues.isValueTransient(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__MIN_VALUE) == ValueTransient.YES)
@@ -117,20 +124,17 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__MAX_VALUE));
 			if (transientValues.isValueTransient(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__UNIT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__UNIT));
-			if (transientValues.isValueTransient(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__STIMULUS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__STIMULUS));
-			if (transientValues.isValueTransient(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__ENVIRONMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Accordant_rqPackage.Literals.QSCENARIO__ENVIRONMENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getQScenarioAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getQScenarioAccess().getQAttributeQAttributeEnumRuleCall_5_0(), semanticObject.getQAttribute());
-		feeder.accept(grammarAccess.getQScenarioAccess().getMeasureQAMetricEnumRuleCall_8_0(), semanticObject.getMeasure());
-		feeder.accept(grammarAccess.getQScenarioAccess().getMinValueEFloatParserRuleCall_11_0(), semanticObject.getMinValue());
-		feeder.accept(grammarAccess.getQScenarioAccess().getMaxValueEFloatParserRuleCall_14_0(), semanticObject.getMaxValue());
-		feeder.accept(grammarAccess.getQScenarioAccess().getUnitMetricUnitEnumRuleCall_17_0(), semanticObject.getUnit());
-		feeder.accept(grammarAccess.getQScenarioAccess().getStimulusEStringParserRuleCall_20_0(), semanticObject.getStimulus());
-		feeder.accept(grammarAccess.getQScenarioAccess().getEnvironmentEStringParserRuleCall_23_0(), semanticObject.getEnvironment());
+		feeder.accept(grammarAccess.getQScenarioAccess().getStimulusEStringParserRuleCall_8_0(), semanticObject.getStimulus());
+		feeder.accept(grammarAccess.getQScenarioAccess().getEnvironmentEStringParserRuleCall_11_0(), semanticObject.getEnvironment());
+		feeder.accept(grammarAccess.getQScenarioAccess().getResponseEStringParserRuleCall_14_0(), semanticObject.getResponse());
+		feeder.accept(grammarAccess.getQScenarioAccess().getMeasureQAMetricEnumRuleCall_17_0(), semanticObject.getMeasure());
+		feeder.accept(grammarAccess.getQScenarioAccess().getMinValueEFloatParserRuleCall_19_0(), semanticObject.getMinValue());
+		feeder.accept(grammarAccess.getQScenarioAccess().getMaxValueEFloatParserRuleCall_21_0(), semanticObject.getMaxValue());
+		feeder.accept(grammarAccess.getQScenarioAccess().getUnitMetricUnitEnumRuleCall_23_0(), semanticObject.getUnit());
 		feeder.finish();
 	}
 	

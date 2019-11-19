@@ -276,6 +276,15 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getQScenario_Response() {
+		return (EAttribute)qScenarioEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSensitivityPoint() {
 		return sensitivityPointEClass;
 	}
@@ -503,6 +512,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		createEAttribute(qScenarioEClass, QSCENARIO__STIMULUS);
 		createEAttribute(qScenarioEClass, QSCENARIO__ENVIRONMENT);
 		createEAttribute(qScenarioEClass, QSCENARIO__NAME);
+		createEAttribute(qScenarioEClass, QSCENARIO__RESPONSE);
 
 		sensitivityPointEClass = createEClass(SENSITIVITY_POINT);
 		createEAttribute(sensitivityPointEClass, SENSITIVITY_POINT__NAME);
@@ -576,6 +586,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		initEAttribute(getQScenario_Stimulus(), ecorePackage.getEString(), "stimulus", null, 1, 1, QScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQScenario_Environment(), ecorePackage.getEString(), "environment", null, 1, 1, QScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQScenario_Name(), ecorePackage.getEString(), "name", null, 1, 1, QScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQScenario_Response(), ecorePackage.getEString(), "response", null, 0, 1, QScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensitivityPointEClass, SensitivityPoint.class, "SensitivityPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSensitivityPoint_Name(), ecorePackage.getEString(), "name", null, 0, 1, SensitivityPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

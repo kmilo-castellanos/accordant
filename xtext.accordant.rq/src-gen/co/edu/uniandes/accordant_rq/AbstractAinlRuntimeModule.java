@@ -180,7 +180,6 @@ public abstract class AbstractAinlRuntimeModule extends DefaultRuntimeModule {
 	
 	// contributed by org.eclipse.xtext.xtext.generator.builder.BuilderIntegrationFragment2
 	public Class<? extends IAllContainersState.Provider> bindIAllContainersState$Provider() {
-		
 		return ResourceSetBasedAllContainersStateProvider.class;
 	}
 	

@@ -204,13 +204,22 @@ public interface Accordant_rqPackage extends EPackage {
 	int QSCENARIO__NAME = 7;
 
 	/**
+	 * The feature id for the '<em><b>Response</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QSCENARIO__RESPONSE = 8;
+
+	/**
 	 * The number of structural features of the '<em>QScenario</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QSCENARIO_FEATURE_COUNT = 8;
+	int QSCENARIO_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>QScenario</em>' class.
@@ -624,6 +633,17 @@ public interface Accordant_rqPackage extends EPackage {
 	EAttribute getQScenario_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.QScenario#getResponse <em>Response</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Response</em>'.
+	 * @see co.edu.uniandes.accordant_rq.QScenario#getResponse()
+	 * @see #getQScenario()
+	 * @generated
+	 */
+	EAttribute getQScenario_Response();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_rq.SensitivityPoint <em>Sensitivity Point</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -986,6 +1006,14 @@ public interface Accordant_rqPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute QSCENARIO__NAME = eINSTANCE.getQScenario_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Response</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QSCENARIO__RESPONSE = eINSTANCE.getQScenario_Response();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl <em>Sensitivity Point</em>}' class.

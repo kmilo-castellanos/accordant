@@ -23,12 +23,10 @@ QScenario returns QScenario:
 	name=ID
 	'{'
 		'QA' ':' qAttribute=QAttribute
-		'measure' ':' measure=QAMetric
-		'minValue' ':' minValue=EFloat
-		'maxValue' ':' maxValue=EFloat
-		'unit' ':' unit=MetricUnit
 		'stimulus' ':' stimulus=EString
 		'environment' ':' environment=EString
+		'response' ':' response=EString
+		'measure' ':' measure=QAMetric 'between' minValue=EFloat 'and' maxValue=EFloat 'in' unit=MetricUnit
 		
 	'}';
 

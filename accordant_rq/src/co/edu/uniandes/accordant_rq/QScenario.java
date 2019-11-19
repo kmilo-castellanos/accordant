@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_rq.QScenario#getStimulus <em>Stimulus</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.QScenario#getEnvironment <em>Environment</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.QScenario#getName <em>Name</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.QScenario#getResponse <em>Response</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getQScenario()
@@ -244,5 +245,31 @@ public interface QScenario extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Response</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Response</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Response</em>' attribute.
+	 * @see #setResponse(String)
+	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getQScenario_Response()
+	 * @model
+	 * @generated
+	 */
+	String getResponse();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.QScenario#getResponse <em>Response</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Response</em>' attribute.
+	 * @see #getResponse()
+	 * @generated
+	 */
+	void setResponse(String value);
 
 } // QScenario

@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.QScenarioImpl#getStimulus <em>Stimulus</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.QScenarioImpl#getEnvironment <em>Environment</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.QScenarioImpl#getName <em>Name</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.impl.QScenarioImpl#getResponse <em>Response</em>}</li>
  * </ul>
  *
  * @generated
@@ -193,6 +194,26 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getResponse() <em>Response</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResponse()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RESPONSE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getResponse() <em>Response</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResponse()
+	 * @generated
+	 * @ordered
+	 */
+	protected String response = RESPONSE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -386,6 +407,27 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getResponse() {
+		return response;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResponse(String newResponse) {
+		String oldResponse = response;
+		response = newResponse;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.QSCENARIO__RESPONSE, oldResponse, response));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -405,6 +447,8 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 				return getEnvironment();
 			case Accordant_rqPackage.QSCENARIO__NAME:
 				return getName();
+			case Accordant_rqPackage.QSCENARIO__RESPONSE:
+				return getResponse();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -440,6 +484,9 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 				return;
 			case Accordant_rqPackage.QSCENARIO__NAME:
 				setName((String)newValue);
+				return;
+			case Accordant_rqPackage.QSCENARIO__RESPONSE:
+				setResponse((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -477,6 +524,9 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 			case Accordant_rqPackage.QSCENARIO__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case Accordant_rqPackage.QSCENARIO__RESPONSE:
+				setResponse(RESPONSE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -505,6 +555,8 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 				return ENVIRONMENT_EDEFAULT == null ? environment != null : !ENVIRONMENT_EDEFAULT.equals(environment);
 			case Accordant_rqPackage.QSCENARIO__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case Accordant_rqPackage.QSCENARIO__RESPONSE:
+				return RESPONSE_EDEFAULT == null ? response != null : !RESPONSE_EDEFAULT.equals(response);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -535,6 +587,8 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 		result.append(environment);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", response: ");
+		result.append(response);
 		result.append(')');
 		return result.toString();
 	}
