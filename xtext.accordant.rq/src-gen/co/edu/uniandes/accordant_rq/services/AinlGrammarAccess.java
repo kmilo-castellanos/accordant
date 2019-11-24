@@ -804,12 +804,14 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLATENCYLATENCYKeyword_1_0 = (Keyword)cLATENCYEnumLiteralDeclaration_1.eContents().get(0);
 		private final EnumLiteralDeclaration cDEADLINEEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
 		private final Keyword cDEADLINEDEADLINEKeyword_2_0 = (Keyword)cDEADLINEEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cUPDATETIMEEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cUPDATETIMEUPDATETIMEKeyword_3_0 = (Keyword)cUPDATETIMEEnumLiteralDeclaration_3.eContents().get(0);
 		
 		//enum QAMetric:
-		//	THROUGHPUT | LATENCY | DEADLINE;
+		//	THROUGHPUT | LATENCY | DEADLINE | UPDATETIME;
 		public EnumRule getRule() { return rule; }
 		
-		//THROUGHPUT | LATENCY | DEADLINE
+		//THROUGHPUT | LATENCY | DEADLINE | UPDATETIME
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//THROUGHPUT
@@ -829,6 +831,12 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'DEADLINE'
 		public Keyword getDEADLINEDEADLINEKeyword_2_0() { return cDEADLINEDEADLINEKeyword_2_0; }
+		
+		//UPDATETIME
+		public EnumLiteralDeclaration getUPDATETIMEEnumLiteralDeclaration_3() { return cUPDATETIMEEnumLiteralDeclaration_3; }
+		
+		//'UPDATETIME'
+		public Keyword getUPDATETIMEUPDATETIMEKeyword_3_0() { return cUPDATETIMEUPDATETIMEKeyword_3_0; }
 	}
 	public class MetricUnitElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.accordant_rq.Ainl.MetricUnit");
@@ -1056,7 +1064,7 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//enum QAMetric:
-	//	THROUGHPUT | LATENCY | DEADLINE;
+	//	THROUGHPUT | LATENCY | DEADLINE | UPDATETIME;
 	public QAMetricElements getQAMetricAccess() {
 		return eQAMetric;
 	}

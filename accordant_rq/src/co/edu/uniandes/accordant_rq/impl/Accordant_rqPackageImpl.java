@@ -614,6 +614,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		addEEnumLiteral(qaMetricEEnum, QAMetric.THROUGHPUT);
 		addEEnumLiteral(qaMetricEEnum, QAMetric.LATENCY);
 		addEEnumLiteral(qaMetricEEnum, QAMetric.DEADLINE);
+		addEEnumLiteral(qaMetricEEnum, QAMetric.UPDATETIME);
 
 		initEEnum(metricUnitEEnum, MetricUnit.class, "MetricUnit");
 		addEEnumLiteral(metricUnitEEnum, MetricUnit.MILLIS);

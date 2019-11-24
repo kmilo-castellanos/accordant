@@ -48,6 +48,10 @@
         <element xmi:type="ecore:EAttribute" href="accordant_fv.ecore#//Connector/protocol"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_OXgl8SuuEemN1bPUVLLmRg"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="__rSgUAzREeqLDY8BgWJ0Gw" type="3001">
+        <element xmi:type="ecore:EAttribute" href="accordant_fv.ecore#//Connector/props"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__rSgUQzREeqLDY8BgWJ0Gw"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_hQr-_irzEeiyhZsreJRi0w"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_hQr-_yrzEeiyhZsreJRi0w"/>
     </children>
@@ -60,7 +64,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_hQr_BSrzEeiyhZsreJRi0w"/>
     </children>
     <element xmi:type="ecore:EClass" href="accordant_fv.ecore#//Connector"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hQr--yrzEeiyhZsreJRi0w" x="424" y="88" width="149"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hQr--yrzEeiyhZsreJRi0w" x="424" y="76" width="149"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_hQr_BirzEeiyhZsreJRi0w" type="2001" fontName=".AppleSystemUIFont">
     <children xmi:type="notation:DecorationNode" xmi:id="_hQsmACrzEeiyhZsreJRi0w" type="5001"/>
@@ -264,6 +268,14 @@
       <children xmi:type="notation:Node" xmi:id="_svBb8DodEemdT-XHBCFyPg" type="3001">
         <element xmi:type="ecore:EAttribute" href="accordant_fv.ecore#//Sink/format"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_svBb8TodEemdT-XHBCFyPg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_P6evwAymEeqLDY8BgWJ0Gw" type="3001">
+        <element xmi:type="ecore:EAttribute" href="accordant_fv.ecore#//Sink/type"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_P6evwQymEeqLDY8BgWJ0Gw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_WArR8AymEeqLDY8BgWJ0Gw" type="3001">
+        <element xmi:type="ecore:EAttribute" href="accordant_fv.ecore#//Sink/props"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_WArR8QymEeqLDY8BgWJ0Gw"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_XS7bpCu_EeiyhZsreJRi0w"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_XS7bpSu_EeiyhZsreJRi0w"/>
@@ -551,6 +563,35 @@
     <element xmi:type="ecore:EClass" href="accordant_fv.ecore#//ProcedureCall"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0bkboSudEemN1bPUVLLmRg" x="584" y="336" width="93"/>
   </children>
+  <children xmi:type="notation:Shape" xmi:id="_i0negAymEeqLDY8BgWJ0Gw" type="2005" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:DecorationNode" xmi:id="_i0osoAymEeqLDY8BgWJ0Gw" type="5005"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_i0osoQymEeqLDY8BgWJ0Gw" type="7011">
+      <children xmi:type="notation:Node" xmi:id="_mQwOMAymEeqLDY8BgWJ0Gw" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="accordant_fv.ecore#//AccessType/HTTP"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_mQwOMQymEeqLDY8BgWJ0Gw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_nx7tEAymEeqLDY8BgWJ0Gw" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="accordant_fv.ecore#//AccessType/HDFS"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_nx7tEQymEeqLDY8BgWJ0Gw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_sEJwMAymEeqLDY8BgWJ0Gw" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="accordant_fv.ecore#//AccessType/DATABASE"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_sEJwMQymEeqLDY8BgWJ0Gw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_0SttEAymEeqLDY8BgWJ0Gw" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="accordant_fv.ecore#//AccessType/FILESYSTEM"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_0SttEQymEeqLDY8BgWJ0Gw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_i0osogymEeqLDY8BgWJ0Gw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_i0osowymEeqLDY8BgWJ0Gw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_i0ospAymEeqLDY8BgWJ0Gw" type="7012">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_i0ospQymEeqLDY8BgWJ0Gw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_i0ospgymEeqLDY8BgWJ0Gw"/>
+    </children>
+    <element xmi:type="ecore:EEnum" href="accordant_fv.ecore#//AccessType"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i0negQymEeqLDY8BgWJ0Gw" x="328" y="384"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_hPwx4SrzEeiyhZsreJRi0w"/>
   <element xmi:type="ecore:EPackage" href="accordant_fv.ecore#/"/>
   <edges xmi:type="notation:Connector" xmi:id="_hRXUYCrzEeiyhZsreJRi0w" type="4003" source="_hQrX4CrzEeiyhZsreJRi0w" target="_hQr--irzEeiyhZsreJRi0w">
@@ -564,7 +605,7 @@
     <element xmi:type="ecore:EReference" href="accordant_fv.ecore#//FunctionalView/conns"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hRXUYirzEeiyhZsreJRi0w" points="[0, 7, -49, -59]$[0, 56, -49, -10]$[47, 65, -2, -1]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hShyACrzEeiyhZsreJRi0w" id="(0.6404494382022472,0.8813559322033898)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hShyASrzEeiyhZsreJRi0w" id="(0.0,0.47096774193548385)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hShyASrzEeiyhZsreJRi0w" id="(0.006711409395973154,0.36257309941520466)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_hRaXsCrzEeiyhZsreJRi0w" type="4003" source="_hQrX4CrzEeiyhZsreJRi0w" target="_hQr_BirzEeiyhZsreJRi0w">
     <children xmi:type="notation:DecorationNode" xmi:id="_hRaXsyrzEeiyhZsreJRi0w" type="6002">
@@ -589,9 +630,9 @@
   <edges xmi:type="notation:Connector" xmi:id="_hRnzECrzEeiyhZsreJRi0w" type="4004" source="_hQtNIirzEeiyhZsreJRi0w" target="_hQr--irzEeiyhZsreJRi0w">
     <styles xmi:type="notation:FontStyle" xmi:id="_hRnzESrzEeiyhZsreJRi0w" fontName=".AppleSystemUIFont"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hRnzEirzEeiyhZsreJRi0w" points="[-2, -8, 87, -28]$[-89, -8, 0, -28]$[-89, 16, 0, -4]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hRnzEirzEeiyhZsreJRi0w" points="[-2, 0, 37, -32]$[-17, 0, 22, -32]$[-17, 27, 22, -5]$[-37, 27, 2, -5]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hSiZEirzEeiyhZsreJRi0w" id="(0.028985507246376812,0.23076923076923078)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hSiZEyrzEeiyhZsreJRi0w" id="(0.7378048780487805,0.02877697841726619)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hSiZEyrzEeiyhZsreJRi0w" id="(0.9865771812080537,0.14035087719298245)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_hRpBMCrzEeiyhZsreJRi0w" type="4004" source="_hQt0ICrzEeiyhZsreJRi0w" target="_hQr--irzEeiyhZsreJRi0w">
     <styles xmi:type="notation:FontStyle" xmi:id="_hRpBMSrzEeiyhZsreJRi0w" fontName=".AppleSystemUIFont"/>
@@ -638,7 +679,7 @@
   <edges xmi:type="notation:Connector" xmi:id="_cYm8ACu_EeiyhZsreJRi0w" type="4004" source="_XS7boCu_EeiyhZsreJRi0w" target="_hQr_BirzEeiyhZsreJRi0w">
     <styles xmi:type="notation:FontStyle" xmi:id="_cYm8ASu_EeiyhZsreJRi0w" fontName=".AppleSystemUIFont"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cYm8Aiu_EeiyhZsreJRi0w" points="[4, 0, -45, 143]$[23, 0, -26, 143]$[23, -139, -26, 4]$[47, -139, -2, 4]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cYm8Aiu_EeiyhZsreJRi0w" points="[4, -7, -45, 158]$[23, -7, -26, 158]$[23, -165, -26, 0]$[47, -165, -2, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cYoKICu_EeiyhZsreJRi0w" id="(0.9732142857142857,0.4745762711864407)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cYoxMCu_EeiyhZsreJRi0w" id="(0.018518518518518517,0.8666666666666667)"/>
   </edges>

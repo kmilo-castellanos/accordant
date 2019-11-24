@@ -23,8 +23,11 @@ import co.edu.uniandes.accordant_rq.AnalyzedQS
  */
 class AfvlGenerator extends AbstractGenerator {
 
+	var Resource gResource=null;
+	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		// if(resource.allContents.filter(Estimator)!==null && resource.allContents.filter(Estimator).size>0){
+		gResource=resource;
 		resource.allContents.toIterable.filter(typeof(Estimator)).forEach [
 			fsa.
 				generateFile('''edu/uniandes/accordant/«formatJavaPackageName(funcView.name)»/estimator/«formatJavaClassName(name)»Estimator.java''',
@@ -116,7 +119,8 @@ class AfvlGenerator extends AbstractGenerator {
 
 	def structField(String pmml) {
 		var struct = "";
-		val input = new URL(pmml).openStream();
+		var url = new URL(pmml)
+		val input =	url.openStream();
 		val model = PMMLUtil.unmarshal(input);
 		if (model !== null) {
 			val datad = model.dataDictionary
@@ -126,6 +130,7 @@ class AfvlGenerator extends AbstractGenerator {
 						parseDTypes(field.dataType) + ", true));"
 			}
 		}
+		input.close()
 		return struct;
 	}
 

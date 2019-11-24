@@ -16,6 +16,7 @@
     <eLiterals name="THROUGHPUT" literal="THROUGHPUT"/>
     <eLiterals name="LATENCY" value="1"/>
     <eLiterals name="DEADLINE" value="3"/>
+    <eLiterals name="UPDATETIME" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MetricUnit">
     <eLiterals name="MILLIS"/>

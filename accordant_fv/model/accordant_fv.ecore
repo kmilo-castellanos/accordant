@@ -23,6 +23,7 @@
         eType="#//Role" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="protocol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="spoint" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//SensitivityPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="props" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -47,7 +48,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="conn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="props" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AccessType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnalyticsComponent" abstract="true"
       eSuperTypes="#//Component">
@@ -57,6 +58,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="Sink" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="conn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AccessType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="props" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Port">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PortType"/>
@@ -108,4 +112,10 @@
     <eLiterals name="IN" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProcedureCall" eSuperTypes="#//Connector"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="AccessType">
+    <eLiterals name="HTTP"/>
+    <eLiterals name="HDFS" value="1"/>
+    <eLiterals name="DATABASE" value="2"/>
+    <eLiterals name="FILESYSTEM" value="3"/>
+  </eClassifiers>
 </ecore:EPackage>

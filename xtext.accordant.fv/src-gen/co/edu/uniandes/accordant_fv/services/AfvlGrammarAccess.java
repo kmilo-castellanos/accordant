@@ -352,212 +352,224 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	public class StreamElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.accordant_fv.Afvl.Stream");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cStreamAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cStreamKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cStreamKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cDeliveryKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cDeliveryAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cDeliveryDeliveryModelEnumRuleCall_3_2_0 = (RuleCall)cDeliveryAssignment_3_2.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cDeliveryKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cSyncKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cDeliveryAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cDeliveryDeliveryModelEnumRuleCall_4_2_0 = (RuleCall)cDeliveryAssignment_4_2.eContents().get(0);
+		private final Assignment cSynctAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cSynctSyncTypeEnumRuleCall_4_2_0 = (RuleCall)cSynctAssignment_4_2.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cSynctKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cNotificationKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cSynctAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cSynctSyncTypeEnumRuleCall_5_2_0 = (RuleCall)cSynctAssignment_5_2.eContents().get(0);
+		private final Assignment cNotificationAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cNotificationNotificationModelEnumRuleCall_5_2_0 = (RuleCall)cNotificationAssignment_5_2.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cNotificationKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cBufferingKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cNotificationAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cNotificationNotificationModelEnumRuleCall_6_2_0 = (RuleCall)cNotificationAssignment_6_2.eContents().get(0);
+		private final Assignment cBufferingAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cBufferingBufferingEnumRuleCall_6_2_0 = (RuleCall)cBufferingAssignment_6_2.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cBufferingKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cThroughputKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cBufferingAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cBufferingBufferingEnumRuleCall_7_2_0 = (RuleCall)cBufferingAssignment_7_2.eContents().get(0);
+		private final Assignment cThroughputAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cThroughputThroughputEnumRuleCall_7_2_0 = (RuleCall)cThroughputAssignment_7_2.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cThroughputKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cPropsKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
 		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cThroughputAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final RuleCall cThroughputThroughputEnumRuleCall_8_2_0 = (RuleCall)cThroughputAssignment_8_2.eContents().get(0);
-		private final Keyword cRolesKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cLeftCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Assignment cRolesAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cRolesRoleParserRuleCall_12_0 = (RuleCall)cRolesAssignment_12.eContents().get(0);
-		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
-		private final Keyword cCommaKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
-		private final Assignment cRolesAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
-		private final RuleCall cRolesRoleParserRuleCall_13_1_0 = (RuleCall)cRolesAssignment_13_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
-		private final Keyword cSensitivityPointKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
-		private final Keyword cColonKeyword_15_1 = (Keyword)cGroup_15.eContents().get(1);
-		private final Assignment cSpointAssignment_15_2 = (Assignment)cGroup_15.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_15_2_0 = (CrossReference)cSpointAssignment_15_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_15_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_15_2_0.eContents().get(1);
+		private final Assignment cPropsAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cPropsEStringParserRuleCall_8_2_0 = (RuleCall)cPropsAssignment_8_2.eContents().get(0);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cSensitivityPointKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Assignment cSpointAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final CrossReference cSpointSensitivityPointCrossReference_9_2_0 = (CrossReference)cSpointAssignment_9_2.eContents().get(0);
+		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_9_2_0.eContents().get(1);
+		private final Keyword cRolesKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cColonKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cLeftCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cRolesAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cRolesRoleParserRuleCall_13_0 = (RuleCall)cRolesAssignment_13.eContents().get(0);
+		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
+		private final Keyword cCommaKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
+		private final Assignment cRolesAssignment_14_1 = (Assignment)cGroup_14.eContents().get(1);
+		private final RuleCall cRolesRoleParserRuleCall_14_1_0 = (RuleCall)cRolesAssignment_14_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
 		////ConnProps returns DeliveryModel | SyncType | NotificationModel
 		//Stream:
-		//	{Stream}
 		//	'Stream'
 		//	name=ID
-		//	'{' ('delivery' ':' delivery=DeliveryModel)? ('synct' ':' synct=SyncType)? ('notification' ':'
+		//	'{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 		//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-		//	//('dst' dst=[Interface|EString])? 
-		//	//('src' src=[Interface|EString])?
-		//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Stream} 'Stream' name=ID '{' ('delivery' ':' delivery=DeliveryModel)? ('synct' ':' synct=SyncType)? ('notification' ':'
-		//notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)? //('dst' dst=[Interface|EString])? 
-		////('src' src=[Interface|EString])?
-		//'roles' ':' '{' roles+=Role ("," roles+=Role)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? '}'
+		//'Stream' name=ID '{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
+		//notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
+		//('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? 'roles' ':' '{' roles+=Role (","
+		//roles+=Role)* '}' '}'
 		public Group getGroup() { return cGroup; }
 		
-		//{Stream}
-		public Action getStreamAction_0() { return cStreamAction_0; }
-		
 		//'Stream'
-		public Keyword getStreamKeyword_1() { return cStreamKeyword_1; }
+		public Keyword getStreamKeyword_0() { return cStreamKeyword_0; }
 		
 		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//('delivery' ':' delivery=DeliveryModel)?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//'delivery'
-		public Keyword getDeliveryKeyword_4_0() { return cDeliveryKeyword_4_0; }
+		public Keyword getDeliveryKeyword_3_0() { return cDeliveryKeyword_3_0; }
+		
+		//':'
+		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
+		
+		//delivery=DeliveryModel
+		public Assignment getDeliveryAssignment_3_2() { return cDeliveryAssignment_3_2; }
+		
+		//DeliveryModel
+		public RuleCall getDeliveryDeliveryModelEnumRuleCall_3_2_0() { return cDeliveryDeliveryModelEnumRuleCall_3_2_0; }
+		
+		//('sync' ':' synct=SyncType)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'sync'
+		public Keyword getSyncKeyword_4_0() { return cSyncKeyword_4_0; }
 		
 		//':'
 		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
 		
-		//delivery=DeliveryModel
-		public Assignment getDeliveryAssignment_4_2() { return cDeliveryAssignment_4_2; }
+		//synct=SyncType
+		public Assignment getSynctAssignment_4_2() { return cSynctAssignment_4_2; }
 		
-		//DeliveryModel
-		public RuleCall getDeliveryDeliveryModelEnumRuleCall_4_2_0() { return cDeliveryDeliveryModelEnumRuleCall_4_2_0; }
+		//SyncType
+		public RuleCall getSynctSyncTypeEnumRuleCall_4_2_0() { return cSynctSyncTypeEnumRuleCall_4_2_0; }
 		
-		//('synct' ':' synct=SyncType)?
+		//('notification' ':' notification=NotificationModel)?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'synct'
-		public Keyword getSynctKeyword_5_0() { return cSynctKeyword_5_0; }
+		//'notification'
+		public Keyword getNotificationKeyword_5_0() { return cNotificationKeyword_5_0; }
 		
 		//':'
 		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
 		
-		//synct=SyncType
-		public Assignment getSynctAssignment_5_2() { return cSynctAssignment_5_2; }
+		//notification=NotificationModel
+		public Assignment getNotificationAssignment_5_2() { return cNotificationAssignment_5_2; }
 		
-		//SyncType
-		public RuleCall getSynctSyncTypeEnumRuleCall_5_2_0() { return cSynctSyncTypeEnumRuleCall_5_2_0; }
+		//NotificationModel
+		public RuleCall getNotificationNotificationModelEnumRuleCall_5_2_0() { return cNotificationNotificationModelEnumRuleCall_5_2_0; }
 		
-		//('notification' ':' notification=NotificationModel)?
+		//('buffering' ':' buffering=Buffering)?
 		public Group getGroup_6() { return cGroup_6; }
 		
-		//'notification'
-		public Keyword getNotificationKeyword_6_0() { return cNotificationKeyword_6_0; }
+		//'buffering'
+		public Keyword getBufferingKeyword_6_0() { return cBufferingKeyword_6_0; }
 		
 		//':'
 		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 		
-		//notification=NotificationModel
-		public Assignment getNotificationAssignment_6_2() { return cNotificationAssignment_6_2; }
+		//buffering=Buffering
+		public Assignment getBufferingAssignment_6_2() { return cBufferingAssignment_6_2; }
 		
-		//NotificationModel
-		public RuleCall getNotificationNotificationModelEnumRuleCall_6_2_0() { return cNotificationNotificationModelEnumRuleCall_6_2_0; }
+		//Buffering
+		public RuleCall getBufferingBufferingEnumRuleCall_6_2_0() { return cBufferingBufferingEnumRuleCall_6_2_0; }
 		
-		//('buffering' ':' buffering=Buffering)?
+		//('throughput' ':' throughput=Throughput)?
 		public Group getGroup_7() { return cGroup_7; }
 		
-		//'buffering'
-		public Keyword getBufferingKeyword_7_0() { return cBufferingKeyword_7_0; }
+		//'throughput'
+		public Keyword getThroughputKeyword_7_0() { return cThroughputKeyword_7_0; }
 		
 		//':'
 		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 		
-		//buffering=Buffering
-		public Assignment getBufferingAssignment_7_2() { return cBufferingAssignment_7_2; }
+		//throughput=Throughput
+		public Assignment getThroughputAssignment_7_2() { return cThroughputAssignment_7_2; }
 		
-		//Buffering
-		public RuleCall getBufferingBufferingEnumRuleCall_7_2_0() { return cBufferingBufferingEnumRuleCall_7_2_0; }
+		//Throughput
+		public RuleCall getThroughputThroughputEnumRuleCall_7_2_0() { return cThroughputThroughputEnumRuleCall_7_2_0; }
 		
-		//('throughput' ':' throughput=Throughput)?
+		//('props' ':' props=EString)?
 		public Group getGroup_8() { return cGroup_8; }
 		
-		//'throughput'
-		public Keyword getThroughputKeyword_8_0() { return cThroughputKeyword_8_0; }
+		//'props'
+		public Keyword getPropsKeyword_8_0() { return cPropsKeyword_8_0; }
 		
 		//':'
 		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 		
-		//throughput=Throughput
-		public Assignment getThroughputAssignment_8_2() { return cThroughputAssignment_8_2; }
+		//props=EString
+		public Assignment getPropsAssignment_8_2() { return cPropsAssignment_8_2; }
 		
-		//Throughput
-		public RuleCall getThroughputThroughputEnumRuleCall_8_2_0() { return cThroughputThroughputEnumRuleCall_8_2_0; }
-		
-		////('dst' dst=[Interface|EString])? 
-		////('src' src=[Interface|EString])?
-		//'roles'
-		public Keyword getRolesKeyword_9() { return cRolesKeyword_9; }
-		
-		//':'
-		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_11() { return cLeftCurlyBracketKeyword_11; }
-		
-		//roles+=Role
-		public Assignment getRolesAssignment_12() { return cRolesAssignment_12; }
-		
-		//Role
-		public RuleCall getRolesRoleParserRuleCall_12_0() { return cRolesRoleParserRuleCall_12_0; }
-		
-		//("," roles+=Role)*
-		public Group getGroup_13() { return cGroup_13; }
-		
-		//","
-		public Keyword getCommaKeyword_13_0() { return cCommaKeyword_13_0; }
-		
-		//roles+=Role
-		public Assignment getRolesAssignment_13_1() { return cRolesAssignment_13_1; }
-		
-		//Role
-		public RuleCall getRolesRoleParserRuleCall_13_1_0() { return cRolesRoleParserRuleCall_13_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
+		//EString
+		public RuleCall getPropsEStringParserRuleCall_8_2_0() { return cPropsEStringParserRuleCall_8_2_0; }
 		
 		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
-		public Group getGroup_15() { return cGroup_15; }
+		public Group getGroup_9() { return cGroup_9; }
 		
 		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_15_0() { return cSensitivityPointKeyword_15_0; }
+		public Keyword getSensitivityPointKeyword_9_0() { return cSensitivityPointKeyword_9_0; }
 		
 		//':'
-		public Keyword getColonKeyword_15_1() { return cColonKeyword_15_1; }
+		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 		
 		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_15_2() { return cSpointAssignment_15_2; }
+		public Assignment getSpointAssignment_9_2() { return cSpointAssignment_9_2; }
 		
 		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_15_2_0() { return cSpointSensitivityPointCrossReference_15_2_0; }
+		public CrossReference getSpointSensitivityPointCrossReference_9_2_0() { return cSpointSensitivityPointCrossReference_9_2_0; }
 		
 		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_15_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_15_2_0_1; }
+		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1; }
+		
+		//'roles'
+		public Keyword getRolesKeyword_10() { return cRolesKeyword_10; }
+		
+		//':'
+		public Keyword getColonKeyword_11() { return cColonKeyword_11; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_12() { return cLeftCurlyBracketKeyword_12; }
+		
+		//roles+=Role
+		public Assignment getRolesAssignment_13() { return cRolesAssignment_13; }
+		
+		//Role
+		public RuleCall getRolesRoleParserRuleCall_13_0() { return cRolesRoleParserRuleCall_13_0; }
+		
+		//("," roles+=Role)*
+		public Group getGroup_14() { return cGroup_14; }
+		
+		//","
+		public Keyword getCommaKeyword_14_0() { return cCommaKeyword_14_0; }
+		
+		//roles+=Role
+		public Assignment getRolesAssignment_14_1() { return cRolesAssignment_14_1; }
+		
+		//Role
+		public RuleCall getRolesRoleParserRuleCall_14_1_0() { return cRolesRoleParserRuleCall_14_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_16() { return cRightCurlyBracketKeyword_16; }
@@ -565,207 +577,219 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	public class AdaptorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.accordant_fv.Afvl.Adaptor");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cAdaptorAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cAdaptorKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cAdaptorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cDeliveryKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cDeliveryAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cDeliveryDeliveryModelEnumRuleCall_3_2_0 = (RuleCall)cDeliveryAssignment_3_2.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cDeliveryKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cSyncKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cDeliveryAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cDeliveryDeliveryModelEnumRuleCall_4_2_0 = (RuleCall)cDeliveryAssignment_4_2.eContents().get(0);
+		private final Assignment cSynctAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cSynctSyncTypeEnumRuleCall_4_2_0 = (RuleCall)cSynctAssignment_4_2.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cSynctKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cNotificationKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cSynctAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cSynctSyncTypeEnumRuleCall_5_2_0 = (RuleCall)cSynctAssignment_5_2.eContents().get(0);
+		private final Assignment cNotificationAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cNotificationNotificationModelEnumRuleCall_5_2_0 = (RuleCall)cNotificationAssignment_5_2.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cNotificationKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cBufferingKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cNotificationAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cNotificationNotificationModelEnumRuleCall_6_2_0 = (RuleCall)cNotificationAssignment_6_2.eContents().get(0);
+		private final Assignment cBufferingAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cBufferingBufferingEnumRuleCall_6_2_0 = (RuleCall)cBufferingAssignment_6_2.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cBufferingKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cThroughputKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cBufferingAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cBufferingBufferingEnumRuleCall_7_2_0 = (RuleCall)cBufferingAssignment_7_2.eContents().get(0);
+		private final Assignment cThroughputAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cThroughputThroughputEnumRuleCall_7_2_0 = (RuleCall)cThroughputAssignment_7_2.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cThroughputKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cPropsKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
 		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cThroughputAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final RuleCall cThroughputThroughputEnumRuleCall_8_2_0 = (RuleCall)cThroughputAssignment_8_2.eContents().get(0);
-		private final Keyword cRolesKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Keyword cLeftCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Assignment cRolesAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cRolesRoleParserRuleCall_11_0 = (RuleCall)cRolesAssignment_11.eContents().get(0);
-		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
-		private final Keyword cCommaKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final Assignment cRolesAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
-		private final RuleCall cRolesRoleParserRuleCall_12_1_0 = (RuleCall)cRolesAssignment_12_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
-		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
-		private final Keyword cSensitivityPointKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
-		private final Keyword cColonKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
-		private final Assignment cSpointAssignment_14_2 = (Assignment)cGroup_14.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_14_2_0 = (CrossReference)cSpointAssignment_14_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_14_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_14_2_0.eContents().get(1);
+		private final Assignment cPropsAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cPropsEStringParserRuleCall_8_2_0 = (RuleCall)cPropsAssignment_8_2.eContents().get(0);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cSensitivityPointKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Assignment cSpointAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final CrossReference cSpointSensitivityPointCrossReference_9_2_0 = (CrossReference)cSpointAssignment_9_2.eContents().get(0);
+		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_9_2_0.eContents().get(1);
+		private final Keyword cRolesKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cLeftCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cRolesAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cRolesRoleParserRuleCall_12_0 = (RuleCall)cRolesAssignment_12.eContents().get(0);
+		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
+		private final Keyword cCommaKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
+		private final Assignment cRolesAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
+		private final RuleCall cRolesRoleParserRuleCall_13_1_0 = (RuleCall)cRolesAssignment_13_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		
 		//Adaptor:
-		//	{Adaptor}
 		//	'Adaptor'
 		//	name=ID
-		//	'{' ('delivery' ':' delivery=DeliveryModel?) ('synct' ':' synct=SyncType)? ('notification' ':'
+		//	'{' ('delivery' ':' delivery=DeliveryModel?) ('sync' ':' synct=SyncType)? ('notification' ':'
 		//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-		//	//('dst' dst=[Interface|EString])?
-		//	//('src' src=[Interface|EString])?
-		//	'roles' '{' roles+=Role ("," roles+=Role)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	'roles' '{' roles+=Role ("," roles+=Role)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Adaptor} 'Adaptor' name=ID '{' ('delivery' ':' delivery=DeliveryModel?) ('synct' ':' synct=SyncType)? ('notification'
-		//':' notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)? //('dst' dst=[Interface|EString])?
-		////('src' src=[Interface|EString])?
-		//'roles' '{' roles+=Role ("," roles+=Role)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? '}'
+		//'Adaptor' name=ID '{' ('delivery' ':' delivery=DeliveryModel?) ('sync' ':' synct=SyncType)? ('notification' ':'
+		//notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
+		//('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? 'roles' '{' roles+=Role (","
+		//roles+=Role)* '}' '}'
 		public Group getGroup() { return cGroup; }
 		
-		//{Adaptor}
-		public Action getAdaptorAction_0() { return cAdaptorAction_0; }
-		
 		//'Adaptor'
-		public Keyword getAdaptorKeyword_1() { return cAdaptorKeyword_1; }
+		public Keyword getAdaptorKeyword_0() { return cAdaptorKeyword_0; }
 		
 		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//'delivery' ':' delivery=DeliveryModel?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//'delivery'
-		public Keyword getDeliveryKeyword_4_0() { return cDeliveryKeyword_4_0; }
+		public Keyword getDeliveryKeyword_3_0() { return cDeliveryKeyword_3_0; }
+		
+		//':'
+		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
+		
+		//delivery=DeliveryModel?
+		public Assignment getDeliveryAssignment_3_2() { return cDeliveryAssignment_3_2; }
+		
+		//DeliveryModel
+		public RuleCall getDeliveryDeliveryModelEnumRuleCall_3_2_0() { return cDeliveryDeliveryModelEnumRuleCall_3_2_0; }
+		
+		//('sync' ':' synct=SyncType)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'sync'
+		public Keyword getSyncKeyword_4_0() { return cSyncKeyword_4_0; }
 		
 		//':'
 		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
 		
-		//delivery=DeliveryModel?
-		public Assignment getDeliveryAssignment_4_2() { return cDeliveryAssignment_4_2; }
+		//synct=SyncType
+		public Assignment getSynctAssignment_4_2() { return cSynctAssignment_4_2; }
 		
-		//DeliveryModel
-		public RuleCall getDeliveryDeliveryModelEnumRuleCall_4_2_0() { return cDeliveryDeliveryModelEnumRuleCall_4_2_0; }
+		//SyncType
+		public RuleCall getSynctSyncTypeEnumRuleCall_4_2_0() { return cSynctSyncTypeEnumRuleCall_4_2_0; }
 		
-		//('synct' ':' synct=SyncType)?
+		//('notification' ':' notification=NotificationModel)?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'synct'
-		public Keyword getSynctKeyword_5_0() { return cSynctKeyword_5_0; }
+		//'notification'
+		public Keyword getNotificationKeyword_5_0() { return cNotificationKeyword_5_0; }
 		
 		//':'
 		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
 		
-		//synct=SyncType
-		public Assignment getSynctAssignment_5_2() { return cSynctAssignment_5_2; }
+		//notification=NotificationModel
+		public Assignment getNotificationAssignment_5_2() { return cNotificationAssignment_5_2; }
 		
-		//SyncType
-		public RuleCall getSynctSyncTypeEnumRuleCall_5_2_0() { return cSynctSyncTypeEnumRuleCall_5_2_0; }
+		//NotificationModel
+		public RuleCall getNotificationNotificationModelEnumRuleCall_5_2_0() { return cNotificationNotificationModelEnumRuleCall_5_2_0; }
 		
-		//('notification' ':' notification=NotificationModel)?
+		//('buffering' ':' buffering=Buffering)?
 		public Group getGroup_6() { return cGroup_6; }
 		
-		//'notification'
-		public Keyword getNotificationKeyword_6_0() { return cNotificationKeyword_6_0; }
+		//'buffering'
+		public Keyword getBufferingKeyword_6_0() { return cBufferingKeyword_6_0; }
 		
 		//':'
 		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 		
-		//notification=NotificationModel
-		public Assignment getNotificationAssignment_6_2() { return cNotificationAssignment_6_2; }
+		//buffering=Buffering
+		public Assignment getBufferingAssignment_6_2() { return cBufferingAssignment_6_2; }
 		
-		//NotificationModel
-		public RuleCall getNotificationNotificationModelEnumRuleCall_6_2_0() { return cNotificationNotificationModelEnumRuleCall_6_2_0; }
+		//Buffering
+		public RuleCall getBufferingBufferingEnumRuleCall_6_2_0() { return cBufferingBufferingEnumRuleCall_6_2_0; }
 		
-		//('buffering' ':' buffering=Buffering)?
+		//('throughput' ':' throughput=Throughput)?
 		public Group getGroup_7() { return cGroup_7; }
 		
-		//'buffering'
-		public Keyword getBufferingKeyword_7_0() { return cBufferingKeyword_7_0; }
+		//'throughput'
+		public Keyword getThroughputKeyword_7_0() { return cThroughputKeyword_7_0; }
 		
 		//':'
 		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 		
-		//buffering=Buffering
-		public Assignment getBufferingAssignment_7_2() { return cBufferingAssignment_7_2; }
+		//throughput=Throughput
+		public Assignment getThroughputAssignment_7_2() { return cThroughputAssignment_7_2; }
 		
-		//Buffering
-		public RuleCall getBufferingBufferingEnumRuleCall_7_2_0() { return cBufferingBufferingEnumRuleCall_7_2_0; }
+		//Throughput
+		public RuleCall getThroughputThroughputEnumRuleCall_7_2_0() { return cThroughputThroughputEnumRuleCall_7_2_0; }
 		
-		//('throughput' ':' throughput=Throughput)?
+		//('props' ':' props=EString)?
 		public Group getGroup_8() { return cGroup_8; }
 		
-		//'throughput'
-		public Keyword getThroughputKeyword_8_0() { return cThroughputKeyword_8_0; }
+		//'props'
+		public Keyword getPropsKeyword_8_0() { return cPropsKeyword_8_0; }
 		
 		//':'
 		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 		
-		//throughput=Throughput
-		public Assignment getThroughputAssignment_8_2() { return cThroughputAssignment_8_2; }
+		//props=EString
+		public Assignment getPropsAssignment_8_2() { return cPropsAssignment_8_2; }
 		
-		//Throughput
-		public RuleCall getThroughputThroughputEnumRuleCall_8_2_0() { return cThroughputThroughputEnumRuleCall_8_2_0; }
-		
-		////('dst' dst=[Interface|EString])?
-		////('src' src=[Interface|EString])?
-		//'roles'
-		public Keyword getRolesKeyword_9() { return cRolesKeyword_9; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_10() { return cLeftCurlyBracketKeyword_10; }
-		
-		//roles+=Role
-		public Assignment getRolesAssignment_11() { return cRolesAssignment_11; }
-		
-		//Role
-		public RuleCall getRolesRoleParserRuleCall_11_0() { return cRolesRoleParserRuleCall_11_0; }
-		
-		//("," roles+=Role)*
-		public Group getGroup_12() { return cGroup_12; }
-		
-		//","
-		public Keyword getCommaKeyword_12_0() { return cCommaKeyword_12_0; }
-		
-		//roles+=Role
-		public Assignment getRolesAssignment_12_1() { return cRolesAssignment_12_1; }
-		
-		//Role
-		public RuleCall getRolesRoleParserRuleCall_12_1_0() { return cRolesRoleParserRuleCall_12_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
+		//EString
+		public RuleCall getPropsEStringParserRuleCall_8_2_0() { return cPropsEStringParserRuleCall_8_2_0; }
 		
 		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
-		public Group getGroup_14() { return cGroup_14; }
+		public Group getGroup_9() { return cGroup_9; }
 		
 		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_14_0() { return cSensitivityPointKeyword_14_0; }
+		public Keyword getSensitivityPointKeyword_9_0() { return cSensitivityPointKeyword_9_0; }
 		
 		//':'
-		public Keyword getColonKeyword_14_1() { return cColonKeyword_14_1; }
+		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 		
 		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_14_2() { return cSpointAssignment_14_2; }
+		public Assignment getSpointAssignment_9_2() { return cSpointAssignment_9_2; }
 		
 		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_14_2_0() { return cSpointSensitivityPointCrossReference_14_2_0; }
+		public CrossReference getSpointSensitivityPointCrossReference_9_2_0() { return cSpointSensitivityPointCrossReference_9_2_0; }
 		
 		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_14_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_14_2_0_1; }
+		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1; }
+		
+		//'roles'
+		public Keyword getRolesKeyword_10() { return cRolesKeyword_10; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_11() { return cLeftCurlyBracketKeyword_11; }
+		
+		//roles+=Role
+		public Assignment getRolesAssignment_12() { return cRolesAssignment_12; }
+		
+		//Role
+		public RuleCall getRolesRoleParserRuleCall_12_0() { return cRolesRoleParserRuleCall_12_0; }
+		
+		//("," roles+=Role)*
+		public Group getGroup_13() { return cGroup_13; }
+		
+		//","
+		public Keyword getCommaKeyword_13_0() { return cCommaKeyword_13_0; }
+		
+		//roles+=Role
+		public Assignment getRolesAssignment_13_1() { return cRolesAssignment_13_1; }
+		
+		//Role
+		public RuleCall getRolesRoleParserRuleCall_13_1_0() { return cRolesRoleParserRuleCall_13_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
@@ -773,208 +797,219 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	public class DistributorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.accordant_fv.Afvl.Distributor");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cDistributorAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cDistributorKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cDistributorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cDeliveryKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cDeliveryAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cDeliveryDeliveryModelEnumRuleCall_3_2_0 = (RuleCall)cDeliveryAssignment_3_2.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cDeliveryKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cSyncKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cDeliveryAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cDeliveryDeliveryModelEnumRuleCall_4_2_0 = (RuleCall)cDeliveryAssignment_4_2.eContents().get(0);
+		private final Assignment cSynctAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cSynctSyncTypeEnumRuleCall_4_2_0 = (RuleCall)cSynctAssignment_4_2.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cSyncKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cNotificationKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cSynctAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cSynctSyncTypeEnumRuleCall_5_2_0 = (RuleCall)cSynctAssignment_5_2.eContents().get(0);
+		private final Assignment cNotificationAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cNotificationNotificationModelEnumRuleCall_5_2_0 = (RuleCall)cNotificationAssignment_5_2.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cNotificationKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cBufferingKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cNotificationAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cNotificationNotificationModelEnumRuleCall_6_2_0 = (RuleCall)cNotificationAssignment_6_2.eContents().get(0);
+		private final Assignment cBufferingAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cBufferingBufferingEnumRuleCall_6_2_0 = (RuleCall)cBufferingAssignment_6_2.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cBufferingKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cThroughputKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cBufferingAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cBufferingBufferingEnumRuleCall_7_2_0 = (RuleCall)cBufferingAssignment_7_2.eContents().get(0);
+		private final Assignment cThroughputAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cThroughputThroughputEnumRuleCall_7_2_0 = (RuleCall)cThroughputAssignment_7_2.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cThroughputKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cPropsKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
 		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cThroughputAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final RuleCall cThroughputThroughputEnumRuleCall_8_2_0 = (RuleCall)cThroughputAssignment_8_2.eContents().get(0);
-		private final Keyword cRolesKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Keyword cLeftCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Assignment cRolesAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cRolesRoleParserRuleCall_11_0 = (RuleCall)cRolesAssignment_11.eContents().get(0);
-		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
-		private final Keyword cCommaKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final Assignment cRolesAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
-		private final RuleCall cRolesRoleParserRuleCall_12_1_0 = (RuleCall)cRolesAssignment_12_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
-		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
-		private final Keyword cSensitivityPointKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
-		private final Keyword cColonKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
-		private final Assignment cSpointAssignment_14_2 = (Assignment)cGroup_14.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_14_2_0 = (CrossReference)cSpointAssignment_14_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_14_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_14_2_0.eContents().get(1);
+		private final Assignment cPropsAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cPropsEStringParserRuleCall_8_2_0 = (RuleCall)cPropsAssignment_8_2.eContents().get(0);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cSensitivityPointKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Assignment cSpointAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final CrossReference cSpointSensitivityPointCrossReference_9_2_0 = (CrossReference)cSpointAssignment_9_2.eContents().get(0);
+		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_9_2_0.eContents().get(1);
+		private final Keyword cRolesKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cLeftCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cRolesAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cRolesRoleParserRuleCall_12_0 = (RuleCall)cRolesAssignment_12.eContents().get(0);
+		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
+		private final Keyword cCommaKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
+		private final Assignment cRolesAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
+		private final RuleCall cRolesRoleParserRuleCall_13_1_0 = (RuleCall)cRolesAssignment_13_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		
 		//Distributor:
-		//	{Distributor}
 		//	'Distributor'
 		//	name=ID
 		//	'{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 		//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-		//	//('dst' dst=[Interface|EString])?
-		//	//('src' src=[Interface|EString])?
-		//	'roles' '{' roles+=Role ("," roles+=Role)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	'roles' '{' roles+=Role ("," roles+=Role)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Distributor} 'Distributor' name=ID '{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)?
-		//('notification' ':' notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':'
-		//throughput=Throughput)? //('dst' dst=[Interface|EString])?
-		////('src' src=[Interface|EString])?
-		//'roles' '{' roles+=Role ("," roles+=Role)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? '}'
+		//'Distributor' name=ID '{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
+		//notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
+		//('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? 'roles' '{' roles+=Role (","
+		//roles+=Role)* '}' '}'
 		public Group getGroup() { return cGroup; }
 		
-		//{Distributor}
-		public Action getDistributorAction_0() { return cDistributorAction_0; }
-		
 		//'Distributor'
-		public Keyword getDistributorKeyword_1() { return cDistributorKeyword_1; }
+		public Keyword getDistributorKeyword_0() { return cDistributorKeyword_0; }
 		
 		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//('delivery' ':' delivery=DeliveryModel)?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//'delivery'
-		public Keyword getDeliveryKeyword_4_0() { return cDeliveryKeyword_4_0; }
+		public Keyword getDeliveryKeyword_3_0() { return cDeliveryKeyword_3_0; }
+		
+		//':'
+		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
+		
+		//delivery=DeliveryModel
+		public Assignment getDeliveryAssignment_3_2() { return cDeliveryAssignment_3_2; }
+		
+		//DeliveryModel
+		public RuleCall getDeliveryDeliveryModelEnumRuleCall_3_2_0() { return cDeliveryDeliveryModelEnumRuleCall_3_2_0; }
+		
+		//('sync' ':' synct=SyncType)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'sync'
+		public Keyword getSyncKeyword_4_0() { return cSyncKeyword_4_0; }
 		
 		//':'
 		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
 		
-		//delivery=DeliveryModel
-		public Assignment getDeliveryAssignment_4_2() { return cDeliveryAssignment_4_2; }
+		//synct=SyncType
+		public Assignment getSynctAssignment_4_2() { return cSynctAssignment_4_2; }
 		
-		//DeliveryModel
-		public RuleCall getDeliveryDeliveryModelEnumRuleCall_4_2_0() { return cDeliveryDeliveryModelEnumRuleCall_4_2_0; }
+		//SyncType
+		public RuleCall getSynctSyncTypeEnumRuleCall_4_2_0() { return cSynctSyncTypeEnumRuleCall_4_2_0; }
 		
-		//('sync' ':' synct=SyncType)?
+		//('notification' ':' notification=NotificationModel)?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'sync'
-		public Keyword getSyncKeyword_5_0() { return cSyncKeyword_5_0; }
+		//'notification'
+		public Keyword getNotificationKeyword_5_0() { return cNotificationKeyword_5_0; }
 		
 		//':'
 		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
 		
-		//synct=SyncType
-		public Assignment getSynctAssignment_5_2() { return cSynctAssignment_5_2; }
+		//notification=NotificationModel
+		public Assignment getNotificationAssignment_5_2() { return cNotificationAssignment_5_2; }
 		
-		//SyncType
-		public RuleCall getSynctSyncTypeEnumRuleCall_5_2_0() { return cSynctSyncTypeEnumRuleCall_5_2_0; }
+		//NotificationModel
+		public RuleCall getNotificationNotificationModelEnumRuleCall_5_2_0() { return cNotificationNotificationModelEnumRuleCall_5_2_0; }
 		
-		//('notification' ':' notification=NotificationModel)?
+		//('buffering' ':' buffering=Buffering)?
 		public Group getGroup_6() { return cGroup_6; }
 		
-		//'notification'
-		public Keyword getNotificationKeyword_6_0() { return cNotificationKeyword_6_0; }
+		//'buffering'
+		public Keyword getBufferingKeyword_6_0() { return cBufferingKeyword_6_0; }
 		
 		//':'
 		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 		
-		//notification=NotificationModel
-		public Assignment getNotificationAssignment_6_2() { return cNotificationAssignment_6_2; }
+		//buffering=Buffering
+		public Assignment getBufferingAssignment_6_2() { return cBufferingAssignment_6_2; }
 		
-		//NotificationModel
-		public RuleCall getNotificationNotificationModelEnumRuleCall_6_2_0() { return cNotificationNotificationModelEnumRuleCall_6_2_0; }
+		//Buffering
+		public RuleCall getBufferingBufferingEnumRuleCall_6_2_0() { return cBufferingBufferingEnumRuleCall_6_2_0; }
 		
-		//('buffering' ':' buffering=Buffering)?
+		//('throughput' ':' throughput=Throughput)?
 		public Group getGroup_7() { return cGroup_7; }
 		
-		//'buffering'
-		public Keyword getBufferingKeyword_7_0() { return cBufferingKeyword_7_0; }
+		//'throughput'
+		public Keyword getThroughputKeyword_7_0() { return cThroughputKeyword_7_0; }
 		
 		//':'
 		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 		
-		//buffering=Buffering
-		public Assignment getBufferingAssignment_7_2() { return cBufferingAssignment_7_2; }
+		//throughput=Throughput
+		public Assignment getThroughputAssignment_7_2() { return cThroughputAssignment_7_2; }
 		
-		//Buffering
-		public RuleCall getBufferingBufferingEnumRuleCall_7_2_0() { return cBufferingBufferingEnumRuleCall_7_2_0; }
+		//Throughput
+		public RuleCall getThroughputThroughputEnumRuleCall_7_2_0() { return cThroughputThroughputEnumRuleCall_7_2_0; }
 		
-		//('throughput' ':' throughput=Throughput)?
+		//('props' ':' props=EString)?
 		public Group getGroup_8() { return cGroup_8; }
 		
-		//'throughput'
-		public Keyword getThroughputKeyword_8_0() { return cThroughputKeyword_8_0; }
+		//'props'
+		public Keyword getPropsKeyword_8_0() { return cPropsKeyword_8_0; }
 		
 		//':'
 		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 		
-		//throughput=Throughput
-		public Assignment getThroughputAssignment_8_2() { return cThroughputAssignment_8_2; }
+		//props=EString
+		public Assignment getPropsAssignment_8_2() { return cPropsAssignment_8_2; }
 		
-		//Throughput
-		public RuleCall getThroughputThroughputEnumRuleCall_8_2_0() { return cThroughputThroughputEnumRuleCall_8_2_0; }
-		
-		////('dst' dst=[Interface|EString])?
-		////('src' src=[Interface|EString])?
-		//'roles'
-		public Keyword getRolesKeyword_9() { return cRolesKeyword_9; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_10() { return cLeftCurlyBracketKeyword_10; }
-		
-		//roles+=Role
-		public Assignment getRolesAssignment_11() { return cRolesAssignment_11; }
-		
-		//Role
-		public RuleCall getRolesRoleParserRuleCall_11_0() { return cRolesRoleParserRuleCall_11_0; }
-		
-		//("," roles+=Role)*
-		public Group getGroup_12() { return cGroup_12; }
-		
-		//","
-		public Keyword getCommaKeyword_12_0() { return cCommaKeyword_12_0; }
-		
-		//roles+=Role
-		public Assignment getRolesAssignment_12_1() { return cRolesAssignment_12_1; }
-		
-		//Role
-		public RuleCall getRolesRoleParserRuleCall_12_1_0() { return cRolesRoleParserRuleCall_12_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
+		//EString
+		public RuleCall getPropsEStringParserRuleCall_8_2_0() { return cPropsEStringParserRuleCall_8_2_0; }
 		
 		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
-		public Group getGroup_14() { return cGroup_14; }
+		public Group getGroup_9() { return cGroup_9; }
 		
 		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_14_0() { return cSensitivityPointKeyword_14_0; }
+		public Keyword getSensitivityPointKeyword_9_0() { return cSensitivityPointKeyword_9_0; }
 		
 		//':'
-		public Keyword getColonKeyword_14_1() { return cColonKeyword_14_1; }
+		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 		
 		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_14_2() { return cSpointAssignment_14_2; }
+		public Assignment getSpointAssignment_9_2() { return cSpointAssignment_9_2; }
 		
 		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_14_2_0() { return cSpointSensitivityPointCrossReference_14_2_0; }
+		public CrossReference getSpointSensitivityPointCrossReference_9_2_0() { return cSpointSensitivityPointCrossReference_9_2_0; }
 		
 		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_14_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_14_2_0_1; }
+		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1; }
+		
+		//'roles'
+		public Keyword getRolesKeyword_10() { return cRolesKeyword_10; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_11() { return cLeftCurlyBracketKeyword_11; }
+		
+		//roles+=Role
+		public Assignment getRolesAssignment_12() { return cRolesAssignment_12; }
+		
+		//Role
+		public RuleCall getRolesRoleParserRuleCall_12_0() { return cRolesRoleParserRuleCall_12_0; }
+		
+		//("," roles+=Role)*
+		public Group getGroup_13() { return cGroup_13; }
+		
+		//","
+		public Keyword getCommaKeyword_13_0() { return cCommaKeyword_13_0; }
+		
+		//roles+=Role
+		public Assignment getRolesAssignment_13_1() { return cRolesAssignment_13_1; }
+		
+		//Role
+		public RuleCall getRolesRoleParserRuleCall_13_1_0() { return cRolesRoleParserRuleCall_13_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
@@ -982,214 +1017,223 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	public class EventElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.accordant_fv.Afvl.Event");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cEventAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cEventKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cEventKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cDeliveryKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cDeliveryAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cDeliveryDeliveryModelEnumRuleCall_3_2_0 = (RuleCall)cDeliveryAssignment_3_2.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cDeliveryKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cSyncKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cDeliveryAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cDeliveryDeliveryModelEnumRuleCall_4_2_0 = (RuleCall)cDeliveryAssignment_4_2.eContents().get(0);
+		private final Assignment cSynctAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cSynctSyncTypeEnumRuleCall_4_2_0 = (RuleCall)cSynctAssignment_4_2.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cSynctKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cNotificationKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cSynctAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cSynctSyncTypeEnumRuleCall_5_2_0 = (RuleCall)cSynctAssignment_5_2.eContents().get(0);
+		private final Assignment cNotificationAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cNotificationNotificationModelEnumRuleCall_5_2_0 = (RuleCall)cNotificationAssignment_5_2.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cNotificationKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cBufferingKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cNotificationAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cNotificationNotificationModelEnumRuleCall_6_2_0 = (RuleCall)cNotificationAssignment_6_2.eContents().get(0);
+		private final Assignment cBufferingAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cBufferingBufferingEnumRuleCall_6_2_0 = (RuleCall)cBufferingAssignment_6_2.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cBufferingKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cThroughputKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cBufferingAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cBufferingBufferingEnumRuleCall_7_2_0 = (RuleCall)cBufferingAssignment_7_2.eContents().get(0);
+		private final Assignment cThroughputAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cThroughputThroughputEnumRuleCall_7_2_0 = (RuleCall)cThroughputAssignment_7_2.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cThroughputKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cPropsKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
 		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cThroughputAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final RuleCall cThroughputThroughputEnumRuleCall_8_2_0 = (RuleCall)cThroughputAssignment_8_2.eContents().get(0);
-		private final Keyword cRolesKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cLeftCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Assignment cRolesAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cRolesRoleParserRuleCall_12_0 = (RuleCall)cRolesAssignment_12.eContents().get(0);
-		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
-		private final Keyword cCommaKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
-		private final Assignment cRolesAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
-		private final RuleCall cRolesRoleParserRuleCall_13_1_0 = (RuleCall)cRolesAssignment_13_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
-		private final Keyword cSensitivityPointKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
-		private final Keyword cColonKeyword_15_1 = (Keyword)cGroup_15.eContents().get(1);
-		private final Assignment cSpointAssignment_15_2 = (Assignment)cGroup_15.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_15_2_0 = (CrossReference)cSpointAssignment_15_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_15_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_15_2_0.eContents().get(1);
+		private final Assignment cPropsAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cPropsEStringParserRuleCall_8_2_0 = (RuleCall)cPropsAssignment_8_2.eContents().get(0);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cSensitivityPointKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Assignment cSpointAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final CrossReference cSpointSensitivityPointCrossReference_9_2_0 = (CrossReference)cSpointAssignment_9_2.eContents().get(0);
+		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_9_2_0.eContents().get(1);
+		private final Keyword cRolesKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cColonKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cLeftCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cRolesAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cRolesRoleParserRuleCall_13_0 = (RuleCall)cRolesAssignment_13.eContents().get(0);
+		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
+		private final Keyword cCommaKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
+		private final Assignment cRolesAssignment_14_1 = (Assignment)cGroup_14.eContents().get(1);
+		private final RuleCall cRolesRoleParserRuleCall_14_1_0 = (RuleCall)cRolesAssignment_14_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
 		//Event:
-		//	{Event}
 		//	'Event'
 		//	name=ID
-		//	//'(' src=[Interface] '=>' dst=[Interface] ')'
-		//	'{' ('delivery' ':' delivery=DeliveryModel)? ('synct' ':' synct=SyncType)? ('notification' ':'
+		//	'{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 		//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-		//	//('dst' dst=[Interface|EString])?
-		//	//('src' src=[Interface|EString])?
-		//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Event} 'Event' name=ID //'(' src=[Interface] '=>' dst=[Interface] ')'
-		//'{' ('delivery' ':' delivery=DeliveryModel)? ('synct' ':' synct=SyncType)? ('notification' ':'
-		//notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)? //('dst' dst=[Interface|EString])?
-		////('src' src=[Interface|EString])?
-		//'roles' ':' '{' roles+=Role ("," roles+=Role)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? '}'
+		//'Event' name=ID '{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
+		//notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
+		//('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? 'roles' ':' '{' roles+=Role (","
+		//roles+=Role)* '}' '}'
 		public Group getGroup() { return cGroup; }
 		
-		//{Event}
-		public Action getEventAction_0() { return cEventAction_0; }
-		
 		//'Event'
-		public Keyword getEventKeyword_1() { return cEventKeyword_1; }
+		public Keyword getEventKeyword_0() { return cEventKeyword_0; }
 		
 		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		////'(' src=[Interface] '=>' dst=[Interface] ')'
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//('delivery' ':' delivery=DeliveryModel)?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//'delivery'
-		public Keyword getDeliveryKeyword_4_0() { return cDeliveryKeyword_4_0; }
+		public Keyword getDeliveryKeyword_3_0() { return cDeliveryKeyword_3_0; }
+		
+		//':'
+		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
+		
+		//delivery=DeliveryModel
+		public Assignment getDeliveryAssignment_3_2() { return cDeliveryAssignment_3_2; }
+		
+		//DeliveryModel
+		public RuleCall getDeliveryDeliveryModelEnumRuleCall_3_2_0() { return cDeliveryDeliveryModelEnumRuleCall_3_2_0; }
+		
+		//('sync' ':' synct=SyncType)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'sync'
+		public Keyword getSyncKeyword_4_0() { return cSyncKeyword_4_0; }
 		
 		//':'
 		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
 		
-		//delivery=DeliveryModel
-		public Assignment getDeliveryAssignment_4_2() { return cDeliveryAssignment_4_2; }
+		//synct=SyncType
+		public Assignment getSynctAssignment_4_2() { return cSynctAssignment_4_2; }
 		
-		//DeliveryModel
-		public RuleCall getDeliveryDeliveryModelEnumRuleCall_4_2_0() { return cDeliveryDeliveryModelEnumRuleCall_4_2_0; }
+		//SyncType
+		public RuleCall getSynctSyncTypeEnumRuleCall_4_2_0() { return cSynctSyncTypeEnumRuleCall_4_2_0; }
 		
-		//('synct' ':' synct=SyncType)?
+		//('notification' ':' notification=NotificationModel)?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'synct'
-		public Keyword getSynctKeyword_5_0() { return cSynctKeyword_5_0; }
+		//'notification'
+		public Keyword getNotificationKeyword_5_0() { return cNotificationKeyword_5_0; }
 		
 		//':'
 		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
 		
-		//synct=SyncType
-		public Assignment getSynctAssignment_5_2() { return cSynctAssignment_5_2; }
+		//notification=NotificationModel
+		public Assignment getNotificationAssignment_5_2() { return cNotificationAssignment_5_2; }
 		
-		//SyncType
-		public RuleCall getSynctSyncTypeEnumRuleCall_5_2_0() { return cSynctSyncTypeEnumRuleCall_5_2_0; }
+		//NotificationModel
+		public RuleCall getNotificationNotificationModelEnumRuleCall_5_2_0() { return cNotificationNotificationModelEnumRuleCall_5_2_0; }
 		
-		//('notification' ':' notification=NotificationModel)?
+		//('buffering' ':' buffering=Buffering)?
 		public Group getGroup_6() { return cGroup_6; }
 		
-		//'notification'
-		public Keyword getNotificationKeyword_6_0() { return cNotificationKeyword_6_0; }
+		//'buffering'
+		public Keyword getBufferingKeyword_6_0() { return cBufferingKeyword_6_0; }
 		
 		//':'
 		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 		
-		//notification=NotificationModel
-		public Assignment getNotificationAssignment_6_2() { return cNotificationAssignment_6_2; }
+		//buffering=Buffering
+		public Assignment getBufferingAssignment_6_2() { return cBufferingAssignment_6_2; }
 		
-		//NotificationModel
-		public RuleCall getNotificationNotificationModelEnumRuleCall_6_2_0() { return cNotificationNotificationModelEnumRuleCall_6_2_0; }
+		//Buffering
+		public RuleCall getBufferingBufferingEnumRuleCall_6_2_0() { return cBufferingBufferingEnumRuleCall_6_2_0; }
 		
-		//('buffering' ':' buffering=Buffering)?
+		//('throughput' ':' throughput=Throughput)?
 		public Group getGroup_7() { return cGroup_7; }
 		
-		//'buffering'
-		public Keyword getBufferingKeyword_7_0() { return cBufferingKeyword_7_0; }
+		//'throughput'
+		public Keyword getThroughputKeyword_7_0() { return cThroughputKeyword_7_0; }
 		
 		//':'
 		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 		
-		//buffering=Buffering
-		public Assignment getBufferingAssignment_7_2() { return cBufferingAssignment_7_2; }
+		//throughput=Throughput
+		public Assignment getThroughputAssignment_7_2() { return cThroughputAssignment_7_2; }
 		
-		//Buffering
-		public RuleCall getBufferingBufferingEnumRuleCall_7_2_0() { return cBufferingBufferingEnumRuleCall_7_2_0; }
+		//Throughput
+		public RuleCall getThroughputThroughputEnumRuleCall_7_2_0() { return cThroughputThroughputEnumRuleCall_7_2_0; }
 		
-		//('throughput' ':' throughput=Throughput)?
+		//('props' ':' props=EString)?
 		public Group getGroup_8() { return cGroup_8; }
 		
-		//'throughput'
-		public Keyword getThroughputKeyword_8_0() { return cThroughputKeyword_8_0; }
+		//'props'
+		public Keyword getPropsKeyword_8_0() { return cPropsKeyword_8_0; }
 		
 		//':'
 		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 		
-		//throughput=Throughput
-		public Assignment getThroughputAssignment_8_2() { return cThroughputAssignment_8_2; }
+		//props=EString
+		public Assignment getPropsAssignment_8_2() { return cPropsAssignment_8_2; }
 		
-		//Throughput
-		public RuleCall getThroughputThroughputEnumRuleCall_8_2_0() { return cThroughputThroughputEnumRuleCall_8_2_0; }
-		
-		////('dst' dst=[Interface|EString])?
-		////('src' src=[Interface|EString])?
-		//'roles'
-		public Keyword getRolesKeyword_9() { return cRolesKeyword_9; }
-		
-		//':'
-		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_11() { return cLeftCurlyBracketKeyword_11; }
-		
-		//roles+=Role
-		public Assignment getRolesAssignment_12() { return cRolesAssignment_12; }
-		
-		//Role
-		public RuleCall getRolesRoleParserRuleCall_12_0() { return cRolesRoleParserRuleCall_12_0; }
-		
-		//("," roles+=Role)*
-		public Group getGroup_13() { return cGroup_13; }
-		
-		//","
-		public Keyword getCommaKeyword_13_0() { return cCommaKeyword_13_0; }
-		
-		//roles+=Role
-		public Assignment getRolesAssignment_13_1() { return cRolesAssignment_13_1; }
-		
-		//Role
-		public RuleCall getRolesRoleParserRuleCall_13_1_0() { return cRolesRoleParserRuleCall_13_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
+		//EString
+		public RuleCall getPropsEStringParserRuleCall_8_2_0() { return cPropsEStringParserRuleCall_8_2_0; }
 		
 		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
-		public Group getGroup_15() { return cGroup_15; }
+		public Group getGroup_9() { return cGroup_9; }
 		
 		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_15_0() { return cSensitivityPointKeyword_15_0; }
+		public Keyword getSensitivityPointKeyword_9_0() { return cSensitivityPointKeyword_9_0; }
 		
 		//':'
-		public Keyword getColonKeyword_15_1() { return cColonKeyword_15_1; }
+		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 		
 		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_15_2() { return cSpointAssignment_15_2; }
+		public Assignment getSpointAssignment_9_2() { return cSpointAssignment_9_2; }
 		
 		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_15_2_0() { return cSpointSensitivityPointCrossReference_15_2_0; }
+		public CrossReference getSpointSensitivityPointCrossReference_9_2_0() { return cSpointSensitivityPointCrossReference_9_2_0; }
 		
 		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_15_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_15_2_0_1; }
+		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1; }
+		
+		//'roles'
+		public Keyword getRolesKeyword_10() { return cRolesKeyword_10; }
+		
+		//':'
+		public Keyword getColonKeyword_11() { return cColonKeyword_11; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_12() { return cLeftCurlyBracketKeyword_12; }
+		
+		//roles+=Role
+		public Assignment getRolesAssignment_13() { return cRolesAssignment_13; }
+		
+		//Role
+		public RuleCall getRolesRoleParserRuleCall_13_0() { return cRolesRoleParserRuleCall_13_0; }
+		
+		//("," roles+=Role)*
+		public Group getGroup_14() { return cGroup_14; }
+		
+		//","
+		public Keyword getCommaKeyword_14_0() { return cCommaKeyword_14_0; }
+		
+		//roles+=Role
+		public Assignment getRolesAssignment_14_1() { return cRolesAssignment_14_1; }
+		
+		//Role
+		public RuleCall getRolesRoleParserRuleCall_14_1_0() { return cRolesRoleParserRuleCall_14_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_16() { return cRightCurlyBracketKeyword_16; }
@@ -1197,214 +1241,223 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	public class ProcedureCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.accordant_fv.Afvl.ProcedureCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cProcedureCallAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cProcCallKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cProcCallKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cDeliveryKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cDeliveryAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cDeliveryDeliveryModelEnumRuleCall_3_2_0 = (RuleCall)cDeliveryAssignment_3_2.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cDeliveryKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cSyncKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cDeliveryAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cDeliveryDeliveryModelEnumRuleCall_4_2_0 = (RuleCall)cDeliveryAssignment_4_2.eContents().get(0);
+		private final Assignment cSynctAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cSynctSyncTypeEnumRuleCall_4_2_0 = (RuleCall)cSynctAssignment_4_2.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cSynctKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cNotificationKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cSynctAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cSynctSyncTypeEnumRuleCall_5_2_0 = (RuleCall)cSynctAssignment_5_2.eContents().get(0);
+		private final Assignment cNotificationAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cNotificationNotificationModelEnumRuleCall_5_2_0 = (RuleCall)cNotificationAssignment_5_2.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cNotificationKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cBufferingKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cNotificationAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cNotificationNotificationModelEnumRuleCall_6_2_0 = (RuleCall)cNotificationAssignment_6_2.eContents().get(0);
+		private final Assignment cBufferingAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cBufferingBufferingEnumRuleCall_6_2_0 = (RuleCall)cBufferingAssignment_6_2.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cBufferingKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cThroughputKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cBufferingAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cBufferingBufferingEnumRuleCall_7_2_0 = (RuleCall)cBufferingAssignment_7_2.eContents().get(0);
+		private final Assignment cThroughputAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cThroughputThroughputEnumRuleCall_7_2_0 = (RuleCall)cThroughputAssignment_7_2.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cThroughputKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cPropsKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
 		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cThroughputAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final RuleCall cThroughputThroughputEnumRuleCall_8_2_0 = (RuleCall)cThroughputAssignment_8_2.eContents().get(0);
-		private final Keyword cRolesKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cLeftCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Assignment cRolesAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cRolesRoleParserRuleCall_12_0 = (RuleCall)cRolesAssignment_12.eContents().get(0);
-		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
-		private final Keyword cCommaKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
-		private final Assignment cRolesAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
-		private final RuleCall cRolesRoleParserRuleCall_13_1_0 = (RuleCall)cRolesAssignment_13_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
-		private final Keyword cSensitivityPointKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
-		private final Keyword cColonKeyword_15_1 = (Keyword)cGroup_15.eContents().get(1);
-		private final Assignment cSpointAssignment_15_2 = (Assignment)cGroup_15.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_15_2_0 = (CrossReference)cSpointAssignment_15_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_15_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_15_2_0.eContents().get(1);
+		private final Assignment cPropsAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cPropsEStringParserRuleCall_8_2_0 = (RuleCall)cPropsAssignment_8_2.eContents().get(0);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cSensitivityPointKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Assignment cSpointAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final CrossReference cSpointSensitivityPointCrossReference_9_2_0 = (CrossReference)cSpointAssignment_9_2.eContents().get(0);
+		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_9_2_0.eContents().get(1);
+		private final Keyword cRolesKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cColonKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cLeftCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cRolesAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cRolesRoleParserRuleCall_13_0 = (RuleCall)cRolesAssignment_13.eContents().get(0);
+		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
+		private final Keyword cCommaKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
+		private final Assignment cRolesAssignment_14_1 = (Assignment)cGroup_14.eContents().get(1);
+		private final RuleCall cRolesRoleParserRuleCall_14_1_0 = (RuleCall)cRolesAssignment_14_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
 		//ProcedureCall:
-		//	{ProcedureCall}
 		//	'ProcCall'
 		//	name=ID
-		//	//'(' src=[Interface] '=>' dst=[Interface] ')'
-		//	'{' ('delivery' ':' delivery=DeliveryModel)? ('synct' ':' synct=SyncType)? ('notification' ':'
+		//	'{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 		//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-		//	//('dst' dst=[Interface|EString])?
-		//	//('src' src=[Interface|EString])?
-		//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ProcedureCall} 'ProcCall' name=ID //'(' src=[Interface] '=>' dst=[Interface] ')'
-		//'{' ('delivery' ':' delivery=DeliveryModel)? ('synct' ':' synct=SyncType)? ('notification' ':'
-		//notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)? //('dst' dst=[Interface|EString])?
-		////('src' src=[Interface|EString])?
-		//'roles' ':' '{' roles+=Role ("," roles+=Role)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? '}'
+		//'ProcCall' name=ID '{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
+		//notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
+		//('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? 'roles' ':' '{' roles+=Role (","
+		//roles+=Role)* '}' '}'
 		public Group getGroup() { return cGroup; }
 		
-		//{ProcedureCall}
-		public Action getProcedureCallAction_0() { return cProcedureCallAction_0; }
-		
 		//'ProcCall'
-		public Keyword getProcCallKeyword_1() { return cProcCallKeyword_1; }
+		public Keyword getProcCallKeyword_0() { return cProcCallKeyword_0; }
 		
 		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		////'(' src=[Interface] '=>' dst=[Interface] ')'
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//('delivery' ':' delivery=DeliveryModel)?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//'delivery'
-		public Keyword getDeliveryKeyword_4_0() { return cDeliveryKeyword_4_0; }
+		public Keyword getDeliveryKeyword_3_0() { return cDeliveryKeyword_3_0; }
+		
+		//':'
+		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
+		
+		//delivery=DeliveryModel
+		public Assignment getDeliveryAssignment_3_2() { return cDeliveryAssignment_3_2; }
+		
+		//DeliveryModel
+		public RuleCall getDeliveryDeliveryModelEnumRuleCall_3_2_0() { return cDeliveryDeliveryModelEnumRuleCall_3_2_0; }
+		
+		//('sync' ':' synct=SyncType)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'sync'
+		public Keyword getSyncKeyword_4_0() { return cSyncKeyword_4_0; }
 		
 		//':'
 		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
 		
-		//delivery=DeliveryModel
-		public Assignment getDeliveryAssignment_4_2() { return cDeliveryAssignment_4_2; }
+		//synct=SyncType
+		public Assignment getSynctAssignment_4_2() { return cSynctAssignment_4_2; }
 		
-		//DeliveryModel
-		public RuleCall getDeliveryDeliveryModelEnumRuleCall_4_2_0() { return cDeliveryDeliveryModelEnumRuleCall_4_2_0; }
+		//SyncType
+		public RuleCall getSynctSyncTypeEnumRuleCall_4_2_0() { return cSynctSyncTypeEnumRuleCall_4_2_0; }
 		
-		//('synct' ':' synct=SyncType)?
+		//('notification' ':' notification=NotificationModel)?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'synct'
-		public Keyword getSynctKeyword_5_0() { return cSynctKeyword_5_0; }
+		//'notification'
+		public Keyword getNotificationKeyword_5_0() { return cNotificationKeyword_5_0; }
 		
 		//':'
 		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
 		
-		//synct=SyncType
-		public Assignment getSynctAssignment_5_2() { return cSynctAssignment_5_2; }
+		//notification=NotificationModel
+		public Assignment getNotificationAssignment_5_2() { return cNotificationAssignment_5_2; }
 		
-		//SyncType
-		public RuleCall getSynctSyncTypeEnumRuleCall_5_2_0() { return cSynctSyncTypeEnumRuleCall_5_2_0; }
+		//NotificationModel
+		public RuleCall getNotificationNotificationModelEnumRuleCall_5_2_0() { return cNotificationNotificationModelEnumRuleCall_5_2_0; }
 		
-		//('notification' ':' notification=NotificationModel)?
+		//('buffering' ':' buffering=Buffering)?
 		public Group getGroup_6() { return cGroup_6; }
 		
-		//'notification'
-		public Keyword getNotificationKeyword_6_0() { return cNotificationKeyword_6_0; }
+		//'buffering'
+		public Keyword getBufferingKeyword_6_0() { return cBufferingKeyword_6_0; }
 		
 		//':'
 		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 		
-		//notification=NotificationModel
-		public Assignment getNotificationAssignment_6_2() { return cNotificationAssignment_6_2; }
+		//buffering=Buffering
+		public Assignment getBufferingAssignment_6_2() { return cBufferingAssignment_6_2; }
 		
-		//NotificationModel
-		public RuleCall getNotificationNotificationModelEnumRuleCall_6_2_0() { return cNotificationNotificationModelEnumRuleCall_6_2_0; }
+		//Buffering
+		public RuleCall getBufferingBufferingEnumRuleCall_6_2_0() { return cBufferingBufferingEnumRuleCall_6_2_0; }
 		
-		//('buffering' ':' buffering=Buffering)?
+		//('throughput' ':' throughput=Throughput)?
 		public Group getGroup_7() { return cGroup_7; }
 		
-		//'buffering'
-		public Keyword getBufferingKeyword_7_0() { return cBufferingKeyword_7_0; }
+		//'throughput'
+		public Keyword getThroughputKeyword_7_0() { return cThroughputKeyword_7_0; }
 		
 		//':'
 		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 		
-		//buffering=Buffering
-		public Assignment getBufferingAssignment_7_2() { return cBufferingAssignment_7_2; }
+		//throughput=Throughput
+		public Assignment getThroughputAssignment_7_2() { return cThroughputAssignment_7_2; }
 		
-		//Buffering
-		public RuleCall getBufferingBufferingEnumRuleCall_7_2_0() { return cBufferingBufferingEnumRuleCall_7_2_0; }
+		//Throughput
+		public RuleCall getThroughputThroughputEnumRuleCall_7_2_0() { return cThroughputThroughputEnumRuleCall_7_2_0; }
 		
-		//('throughput' ':' throughput=Throughput)?
+		//('props' ':' props=EString)?
 		public Group getGroup_8() { return cGroup_8; }
 		
-		//'throughput'
-		public Keyword getThroughputKeyword_8_0() { return cThroughputKeyword_8_0; }
+		//'props'
+		public Keyword getPropsKeyword_8_0() { return cPropsKeyword_8_0; }
 		
 		//':'
 		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 		
-		//throughput=Throughput
-		public Assignment getThroughputAssignment_8_2() { return cThroughputAssignment_8_2; }
+		//props=EString
+		public Assignment getPropsAssignment_8_2() { return cPropsAssignment_8_2; }
 		
-		//Throughput
-		public RuleCall getThroughputThroughputEnumRuleCall_8_2_0() { return cThroughputThroughputEnumRuleCall_8_2_0; }
-		
-		////('dst' dst=[Interface|EString])?
-		////('src' src=[Interface|EString])?
-		//'roles'
-		public Keyword getRolesKeyword_9() { return cRolesKeyword_9; }
-		
-		//':'
-		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_11() { return cLeftCurlyBracketKeyword_11; }
-		
-		//roles+=Role
-		public Assignment getRolesAssignment_12() { return cRolesAssignment_12; }
-		
-		//Role
-		public RuleCall getRolesRoleParserRuleCall_12_0() { return cRolesRoleParserRuleCall_12_0; }
-		
-		//("," roles+=Role)*
-		public Group getGroup_13() { return cGroup_13; }
-		
-		//","
-		public Keyword getCommaKeyword_13_0() { return cCommaKeyword_13_0; }
-		
-		//roles+=Role
-		public Assignment getRolesAssignment_13_1() { return cRolesAssignment_13_1; }
-		
-		//Role
-		public RuleCall getRolesRoleParserRuleCall_13_1_0() { return cRolesRoleParserRuleCall_13_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
+		//EString
+		public RuleCall getPropsEStringParserRuleCall_8_2_0() { return cPropsEStringParserRuleCall_8_2_0; }
 		
 		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
-		public Group getGroup_15() { return cGroup_15; }
+		public Group getGroup_9() { return cGroup_9; }
 		
 		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_15_0() { return cSensitivityPointKeyword_15_0; }
+		public Keyword getSensitivityPointKeyword_9_0() { return cSensitivityPointKeyword_9_0; }
 		
 		//':'
-		public Keyword getColonKeyword_15_1() { return cColonKeyword_15_1; }
+		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 		
 		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_15_2() { return cSpointAssignment_15_2; }
+		public Assignment getSpointAssignment_9_2() { return cSpointAssignment_9_2; }
 		
 		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_15_2_0() { return cSpointSensitivityPointCrossReference_15_2_0; }
+		public CrossReference getSpointSensitivityPointCrossReference_9_2_0() { return cSpointSensitivityPointCrossReference_9_2_0; }
 		
 		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_15_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_15_2_0_1; }
+		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1; }
+		
+		//'roles'
+		public Keyword getRolesKeyword_10() { return cRolesKeyword_10; }
+		
+		//':'
+		public Keyword getColonKeyword_11() { return cColonKeyword_11; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_12() { return cLeftCurlyBracketKeyword_12; }
+		
+		//roles+=Role
+		public Assignment getRolesAssignment_13() { return cRolesAssignment_13; }
+		
+		//Role
+		public RuleCall getRolesRoleParserRuleCall_13_0() { return cRolesRoleParserRuleCall_13_0; }
+		
+		//("," roles+=Role)*
+		public Group getGroup_14() { return cGroup_14; }
+		
+		//","
+		public Keyword getCommaKeyword_14_0() { return cCommaKeyword_14_0; }
+		
+		//roles+=Role
+		public Assignment getRolesAssignment_14_1() { return cRolesAssignment_14_1; }
+		
+		//Role
+		public RuleCall getRolesRoleParserRuleCall_14_1_0() { return cRolesRoleParserRuleCall_14_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_16() { return cRightCurlyBracketKeyword_16; }
@@ -1698,56 +1751,61 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cProcModelKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cProcModelAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cProcModelProcessingModelEnumRuleCall_3_2_0 = (RuleCall)cProcModelAssignment_3_2.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cConnKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cConnAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cConnEStringParserRuleCall_4_2_0 = (RuleCall)cConnAssignment_4_2.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cFormatKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cFormatAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cFormatEStringParserRuleCall_5_2_0 = (RuleCall)cFormatAssignment_5_2.eContents().get(0);
+		private final Keyword cTypeKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cTypeAccessTypeEnumRuleCall_5_0 = (RuleCall)cTypeAssignment_5.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cPropsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cProcModelKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cPropsAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cPropsEStringParserRuleCall_6_2_0 = (RuleCall)cPropsAssignment_6_2.eContents().get(0);
+		private final Assignment cProcModelAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cProcModelProcessingModelEnumRuleCall_6_2_0 = (RuleCall)cProcModelAssignment_6_2.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cSensitivityPointKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cConnKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cSpointAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_7_2_0 = (CrossReference)cSpointAssignment_7_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_7_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_7_2_0.eContents().get(1);
-		private final Keyword cPortsKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Keyword cLeftCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Assignment cPortsAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cPortsPortParserRuleCall_11_0 = (RuleCall)cPortsAssignment_11.eContents().get(0);
-		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
-		private final Keyword cCommaKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final Assignment cPortsAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
-		private final RuleCall cPortsPortParserRuleCall_12_1_0 = (RuleCall)cPortsAssignment_12_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
-		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Assignment cConnAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cConnEStringParserRuleCall_7_2_0 = (RuleCall)cConnAssignment_7_2.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cFormatKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Assignment cFormatAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cFormatEStringParserRuleCall_8_2_0 = (RuleCall)cFormatAssignment_8_2.eContents().get(0);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cPropsKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Assignment cPropsAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final RuleCall cPropsEStringParserRuleCall_9_2_0 = (RuleCall)cPropsAssignment_9_2.eContents().get(0);
+		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
+		private final Keyword cSensitivityPointKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Keyword cColonKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
+		private final Assignment cSpointAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
+		private final CrossReference cSpointSensitivityPointCrossReference_10_2_0 = (CrossReference)cSpointAssignment_10_2.eContents().get(0);
+		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_10_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_10_2_0.eContents().get(1);
+		private final Keyword cPortsKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cColonKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cLeftCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cPortsAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final RuleCall cPortsPortParserRuleCall_14_0 = (RuleCall)cPortsAssignment_14.eContents().get(0);
+		private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
+		private final Keyword cCommaKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
+		private final Assignment cPortsAssignment_15_1 = (Assignment)cGroup_15.eContents().get(1);
+		private final RuleCall cPortsPortParserRuleCall_15_1_0 = (RuleCall)cPortsAssignment_15_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Keyword cRightCurlyBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		
 		//Ingestor:
 		//	'Ingestor'
 		//	name=ID
-		//	'{' ('procModel' ':' procModel=ProcessingModel)? ('conn' ':' conn=EString)? ('format' ':' format=EString)? ('props'
-		//	':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	'{'
+		//	'type' ':' type=AccessType ('procModel' ':' procModel=ProcessingModel)? ('conn' ':' conn=EString)? ('format' ':'
+		//	format=EString)? ('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
 		//	'ports' ':' '{' ports+=Port ("," ports+=Port)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Ingestor' name=ID '{' ('procModel' ':' procModel=ProcessingModel)? ('conn' ':' conn=EString)? ('format' ':'
-		//format=EString)? ('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? 'ports' ':' '{'
-		//ports+=Port ("," ports+=Port)* '}' '}'
+		//'Ingestor' name=ID '{' 'type' ':' type=AccessType ('procModel' ':' procModel=ProcessingModel)? ('conn' ':'
+		//conn=EString)? ('format' ':' format=EString)? ('props' ':' props=EString)? ('sensitivityPoint' ':'
+		//spoint=[rq::SensitivityPoint])? 'ports' ':' '{' ports+=Port ("," ports+=Port)* '}' '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Ingestor'
@@ -1762,116 +1820,128 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
+		//'type'
+		public Keyword getTypeKeyword_3() { return cTypeKeyword_3; }
+		
+		//':'
+		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+		
+		//type=AccessType
+		public Assignment getTypeAssignment_5() { return cTypeAssignment_5; }
+		
+		//AccessType
+		public RuleCall getTypeAccessTypeEnumRuleCall_5_0() { return cTypeAccessTypeEnumRuleCall_5_0; }
+		
 		//('procModel' ':' procModel=ProcessingModel)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'procModel'
-		public Keyword getProcModelKeyword_3_0() { return cProcModelKeyword_3_0; }
-		
-		//':'
-		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
-		
-		//procModel=ProcessingModel
-		public Assignment getProcModelAssignment_3_2() { return cProcModelAssignment_3_2; }
-		
-		//ProcessingModel
-		public RuleCall getProcModelProcessingModelEnumRuleCall_3_2_0() { return cProcModelProcessingModelEnumRuleCall_3_2_0; }
-		
-		//('conn' ':' conn=EString)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'conn'
-		public Keyword getConnKeyword_4_0() { return cConnKeyword_4_0; }
-		
-		//':'
-		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
-		
-		//conn=EString
-		public Assignment getConnAssignment_4_2() { return cConnAssignment_4_2; }
-		
-		//EString
-		public RuleCall getConnEStringParserRuleCall_4_2_0() { return cConnEStringParserRuleCall_4_2_0; }
-		
-		//('format' ':' format=EString)?
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//'format'
-		public Keyword getFormatKeyword_5_0() { return cFormatKeyword_5_0; }
-		
-		//':'
-		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
-		
-		//format=EString
-		public Assignment getFormatAssignment_5_2() { return cFormatAssignment_5_2; }
-		
-		//EString
-		public RuleCall getFormatEStringParserRuleCall_5_2_0() { return cFormatEStringParserRuleCall_5_2_0; }
-		
-		//('props' ':' props=EString)?
 		public Group getGroup_6() { return cGroup_6; }
 		
-		//'props'
-		public Keyword getPropsKeyword_6_0() { return cPropsKeyword_6_0; }
+		//'procModel'
+		public Keyword getProcModelKeyword_6_0() { return cProcModelKeyword_6_0; }
 		
 		//':'
 		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 		
-		//props=EString
-		public Assignment getPropsAssignment_6_2() { return cPropsAssignment_6_2; }
+		//procModel=ProcessingModel
+		public Assignment getProcModelAssignment_6_2() { return cProcModelAssignment_6_2; }
 		
-		//EString
-		public RuleCall getPropsEStringParserRuleCall_6_2_0() { return cPropsEStringParserRuleCall_6_2_0; }
+		//ProcessingModel
+		public RuleCall getProcModelProcessingModelEnumRuleCall_6_2_0() { return cProcModelProcessingModelEnumRuleCall_6_2_0; }
 		
-		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//('conn' ':' conn=EString)?
 		public Group getGroup_7() { return cGroup_7; }
 		
-		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_7_0() { return cSensitivityPointKeyword_7_0; }
+		//'conn'
+		public Keyword getConnKeyword_7_0() { return cConnKeyword_7_0; }
 		
 		//':'
 		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 		
-		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_7_2() { return cSpointAssignment_7_2; }
+		//conn=EString
+		public Assignment getConnAssignment_7_2() { return cConnAssignment_7_2; }
 		
-		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_7_2_0() { return cSpointSensitivityPointCrossReference_7_2_0; }
+		//EString
+		public RuleCall getConnEStringParserRuleCall_7_2_0() { return cConnEStringParserRuleCall_7_2_0; }
 		
-		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_7_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_7_2_0_1; }
+		//('format' ':' format=EString)?
+		public Group getGroup_8() { return cGroup_8; }
 		
-		//'ports'
-		public Keyword getPortsKeyword_8() { return cPortsKeyword_8; }
+		//'format'
+		public Keyword getFormatKeyword_8_0() { return cFormatKeyword_8_0; }
 		
 		//':'
-		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
+		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
+		
+		//format=EString
+		public Assignment getFormatAssignment_8_2() { return cFormatAssignment_8_2; }
+		
+		//EString
+		public RuleCall getFormatEStringParserRuleCall_8_2_0() { return cFormatEStringParserRuleCall_8_2_0; }
+		
+		//('props' ':' props=EString)?
+		public Group getGroup_9() { return cGroup_9; }
+		
+		//'props'
+		public Keyword getPropsKeyword_9_0() { return cPropsKeyword_9_0; }
+		
+		//':'
+		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
+		
+		//props=EString
+		public Assignment getPropsAssignment_9_2() { return cPropsAssignment_9_2; }
+		
+		//EString
+		public RuleCall getPropsEStringParserRuleCall_9_2_0() { return cPropsEStringParserRuleCall_9_2_0; }
+		
+		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		public Group getGroup_10() { return cGroup_10; }
+		
+		//'sensitivityPoint'
+		public Keyword getSensitivityPointKeyword_10_0() { return cSensitivityPointKeyword_10_0; }
+		
+		//':'
+		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
+		
+		//spoint=[rq::SensitivityPoint]
+		public Assignment getSpointAssignment_10_2() { return cSpointAssignment_10_2; }
+		
+		//[rq::SensitivityPoint]
+		public CrossReference getSpointSensitivityPointCrossReference_10_2_0() { return cSpointSensitivityPointCrossReference_10_2_0; }
+		
+		//ID
+		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_10_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_10_2_0_1; }
+		
+		//'ports'
+		public Keyword getPortsKeyword_11() { return cPortsKeyword_11; }
+		
+		//':'
+		public Keyword getColonKeyword_12() { return cColonKeyword_12; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_10() { return cLeftCurlyBracketKeyword_10; }
+		public Keyword getLeftCurlyBracketKeyword_13() { return cLeftCurlyBracketKeyword_13; }
 		
 		//ports+=Port
-		public Assignment getPortsAssignment_11() { return cPortsAssignment_11; }
+		public Assignment getPortsAssignment_14() { return cPortsAssignment_14; }
 		
 		//Port
-		public RuleCall getPortsPortParserRuleCall_11_0() { return cPortsPortParserRuleCall_11_0; }
+		public RuleCall getPortsPortParserRuleCall_14_0() { return cPortsPortParserRuleCall_14_0; }
 		
 		//("," ports+=Port)*
-		public Group getGroup_12() { return cGroup_12; }
+		public Group getGroup_15() { return cGroup_15; }
 		
 		//","
-		public Keyword getCommaKeyword_12_0() { return cCommaKeyword_12_0; }
+		public Keyword getCommaKeyword_15_0() { return cCommaKeyword_15_0; }
 		
 		//ports+=Port
-		public Assignment getPortsAssignment_12_1() { return cPortsAssignment_12_1; }
+		public Assignment getPortsAssignment_15_1() { return cPortsAssignment_15_1; }
 		
 		//Port
-		public RuleCall getPortsPortParserRuleCall_12_1_0() { return cPortsPortParserRuleCall_12_1_0; }
+		public RuleCall getPortsPortParserRuleCall_15_1_0() { return cPortsPortParserRuleCall_15_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
+		public Keyword getRightCurlyBracketKeyword_16() { return cRightCurlyBracketKeyword_16; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
+		public Keyword getRightCurlyBracketKeyword_17() { return cRightCurlyBracketKeyword_17; }
 	}
 	public class SinkElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.accordant_fv.Afvl.Sink");
@@ -1880,45 +1950,61 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cProcModelKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cProcModelAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cProcModelProcessingModelEnumRuleCall_3_2_0 = (RuleCall)cProcModelAssignment_3_2.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cConnKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cConnAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cConnEStringParserRuleCall_4_2_0 = (RuleCall)cConnAssignment_4_2.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cSensitivityPointKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cSpointAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_5_2_0 = (CrossReference)cSpointAssignment_5_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_5_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_5_2_0.eContents().get(1);
-		private final Keyword cPortsKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cPortsAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cPortsPortParserRuleCall_9_0 = (RuleCall)cPortsAssignment_9.eContents().get(0);
+		private final Keyword cTypeKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cTypeAccessTypeEnumRuleCall_5_0 = (RuleCall)cTypeAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cProcModelKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Assignment cProcModelAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cProcModelProcessingModelEnumRuleCall_6_2_0 = (RuleCall)cProcModelAssignment_6_2.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cConnKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Assignment cConnAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cConnEStringParserRuleCall_7_2_0 = (RuleCall)cConnAssignment_7_2.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cFormatKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Assignment cFormatAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cFormatEStringParserRuleCall_8_2_0 = (RuleCall)cFormatAssignment_8_2.eContents().get(0);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cPropsKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Assignment cPropsAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final RuleCall cPropsEStringParserRuleCall_9_2_0 = (RuleCall)cPropsAssignment_9_2.eContents().get(0);
 		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cCommaKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Assignment cPortsAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
-		private final RuleCall cPortsPortParserRuleCall_10_1_0 = (RuleCall)cPortsAssignment_10_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cSensitivityPointKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Keyword cColonKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
+		private final Assignment cSpointAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
+		private final CrossReference cSpointSensitivityPointCrossReference_10_2_0 = (CrossReference)cSpointAssignment_10_2.eContents().get(0);
+		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_10_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_10_2_0.eContents().get(1);
+		private final Keyword cPortsKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cColonKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cLeftCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cPortsAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final RuleCall cPortsPortParserRuleCall_14_0 = (RuleCall)cPortsAssignment_14.eContents().get(0);
+		private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
+		private final Keyword cCommaKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
+		private final Assignment cPortsAssignment_15_1 = (Assignment)cGroup_15.eContents().get(1);
+		private final RuleCall cPortsPortParserRuleCall_15_1_0 = (RuleCall)cPortsAssignment_15_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Keyword cRightCurlyBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		
 		//Sink:
 		//	'Sink'
 		//	name=ID
-		//	'{' ('procModel' ':' procModel=ProcessingModel)? ('conn' ':' conn=EString)? ('sensitivityPoint' ':'
-		//	spoint=[rq::SensitivityPoint])?
+		//	'{'
+		//	'type' ':' type=AccessType ('procModel' ':' procModel=ProcessingModel)? ('conn' ':' conn=EString)? ('format' ':'
+		//	format=EString)? ('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
 		//	'ports' ':' '{' ports+=Port ("," ports+=Port)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Sink' name=ID '{' ('procModel' ':' procModel=ProcessingModel)? ('conn' ':' conn=EString)? ('sensitivityPoint' ':'
-		//spoint=[rq::SensitivityPoint])? 'ports' ':' '{' ports+=Port ("," ports+=Port)* '}' '}'
+		//'Sink' name=ID '{' 'type' ':' type=AccessType ('procModel' ':' procModel=ProcessingModel)? ('conn' ':' conn=EString)?
+		//('format' ':' format=EString)? ('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//'ports' ':' '{' ports+=Port ("," ports+=Port)* '}' '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Sink'
@@ -1933,86 +2019,128 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
+		//'type'
+		public Keyword getTypeKeyword_3() { return cTypeKeyword_3; }
+		
+		//':'
+		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+		
+		//type=AccessType
+		public Assignment getTypeAssignment_5() { return cTypeAssignment_5; }
+		
+		//AccessType
+		public RuleCall getTypeAccessTypeEnumRuleCall_5_0() { return cTypeAccessTypeEnumRuleCall_5_0; }
+		
 		//('procModel' ':' procModel=ProcessingModel)?
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//'procModel'
-		public Keyword getProcModelKeyword_3_0() { return cProcModelKeyword_3_0; }
+		public Keyword getProcModelKeyword_6_0() { return cProcModelKeyword_6_0; }
 		
 		//':'
-		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
+		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 		
 		//procModel=ProcessingModel
-		public Assignment getProcModelAssignment_3_2() { return cProcModelAssignment_3_2; }
+		public Assignment getProcModelAssignment_6_2() { return cProcModelAssignment_6_2; }
 		
 		//ProcessingModel
-		public RuleCall getProcModelProcessingModelEnumRuleCall_3_2_0() { return cProcModelProcessingModelEnumRuleCall_3_2_0; }
+		public RuleCall getProcModelProcessingModelEnumRuleCall_6_2_0() { return cProcModelProcessingModelEnumRuleCall_6_2_0; }
 		
 		//('conn' ':' conn=EString)?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_7() { return cGroup_7; }
 		
 		//'conn'
-		public Keyword getConnKeyword_4_0() { return cConnKeyword_4_0; }
+		public Keyword getConnKeyword_7_0() { return cConnKeyword_7_0; }
 		
 		//':'
-		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
+		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 		
 		//conn=EString
-		public Assignment getConnAssignment_4_2() { return cConnAssignment_4_2; }
+		public Assignment getConnAssignment_7_2() { return cConnAssignment_7_2; }
 		
 		//EString
-		public RuleCall getConnEStringParserRuleCall_4_2_0() { return cConnEStringParserRuleCall_4_2_0; }
+		public RuleCall getConnEStringParserRuleCall_7_2_0() { return cConnEStringParserRuleCall_7_2_0; }
+		
+		//('format' ':' format=EString)?
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//'format'
+		public Keyword getFormatKeyword_8_0() { return cFormatKeyword_8_0; }
+		
+		//':'
+		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
+		
+		//format=EString
+		public Assignment getFormatAssignment_8_2() { return cFormatAssignment_8_2; }
+		
+		//EString
+		public RuleCall getFormatEStringParserRuleCall_8_2_0() { return cFormatEStringParserRuleCall_8_2_0; }
+		
+		//('props' ':' props=EString)?
+		public Group getGroup_9() { return cGroup_9; }
+		
+		//'props'
+		public Keyword getPropsKeyword_9_0() { return cPropsKeyword_9_0; }
+		
+		//':'
+		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
+		
+		//props=EString
+		public Assignment getPropsAssignment_9_2() { return cPropsAssignment_9_2; }
+		
+		//EString
+		public RuleCall getPropsEStringParserRuleCall_9_2_0() { return cPropsEStringParserRuleCall_9_2_0; }
 		
 		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_5_0() { return cSensitivityPointKeyword_5_0; }
-		
-		//':'
-		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
-		
-		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_5_2() { return cSpointAssignment_5_2; }
-		
-		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_5_2_0() { return cSpointSensitivityPointCrossReference_5_2_0; }
-		
-		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_5_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_5_2_0_1; }
-		
-		//'ports'
-		public Keyword getPortsKeyword_6() { return cPortsKeyword_6; }
-		
-		//':'
-		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_8() { return cLeftCurlyBracketKeyword_8; }
-		
-		//ports+=Port
-		public Assignment getPortsAssignment_9() { return cPortsAssignment_9; }
-		
-		//Port
-		public RuleCall getPortsPortParserRuleCall_9_0() { return cPortsPortParserRuleCall_9_0; }
-		
-		//("," ports+=Port)*
 		public Group getGroup_10() { return cGroup_10; }
 		
-		//","
-		public Keyword getCommaKeyword_10_0() { return cCommaKeyword_10_0; }
+		//'sensitivityPoint'
+		public Keyword getSensitivityPointKeyword_10_0() { return cSensitivityPointKeyword_10_0; }
+		
+		//':'
+		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
+		
+		//spoint=[rq::SensitivityPoint]
+		public Assignment getSpointAssignment_10_2() { return cSpointAssignment_10_2; }
+		
+		//[rq::SensitivityPoint]
+		public CrossReference getSpointSensitivityPointCrossReference_10_2_0() { return cSpointSensitivityPointCrossReference_10_2_0; }
+		
+		//ID
+		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_10_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_10_2_0_1; }
+		
+		//'ports'
+		public Keyword getPortsKeyword_11() { return cPortsKeyword_11; }
+		
+		//':'
+		public Keyword getColonKeyword_12() { return cColonKeyword_12; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_13() { return cLeftCurlyBracketKeyword_13; }
 		
 		//ports+=Port
-		public Assignment getPortsAssignment_10_1() { return cPortsAssignment_10_1; }
+		public Assignment getPortsAssignment_14() { return cPortsAssignment_14; }
 		
 		//Port
-		public RuleCall getPortsPortParserRuleCall_10_1_0() { return cPortsPortParserRuleCall_10_1_0; }
+		public RuleCall getPortsPortParserRuleCall_14_0() { return cPortsPortParserRuleCall_14_0; }
+		
+		//("," ports+=Port)*
+		public Group getGroup_15() { return cGroup_15; }
+		
+		//","
+		public Keyword getCommaKeyword_15_0() { return cCommaKeyword_15_0; }
+		
+		//ports+=Port
+		public Assignment getPortsAssignment_15_1() { return cPortsAssignment_15_1; }
+		
+		//Port
+		public RuleCall getPortsPortParserRuleCall_15_1_0() { return cPortsPortParserRuleCall_15_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public Keyword getRightCurlyBracketKeyword_16() { return cRightCurlyBracketKeyword_16; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
+		public Keyword getRightCurlyBracketKeyword_17() { return cRightCurlyBracketKeyword_17; }
 	}
 	
 	public class DeliveryModelElements extends AbstractEnumRuleElementFinder {
@@ -2271,6 +2399,49 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//'MICROBATCH'
 		public Keyword getMICROBATCHMICROBATCHKeyword_2_0() { return cMICROBATCHMICROBATCHKeyword_2_0; }
 	}
+	public class AccessTypeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.accordant_fv.Afvl.AccessType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cHTTPEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cHTTPHTTPKeyword_0_0 = (Keyword)cHTTPEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cDATABASEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cDATABASEDATABASEKeyword_1_0 = (Keyword)cDATABASEEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cFILESYSTEMEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cFILESYSTEMFILESYSTEMKeyword_2_0 = (Keyword)cFILESYSTEMEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cHDFSEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cHDFSHDFSKeyword_3_0 = (Keyword)cHDFSEnumLiteralDeclaration_3.eContents().get(0);
+		
+		//enum AccessType:
+		//	HTTP | DATABASE | FILESYSTEM | HDFS;
+		public EnumRule getRule() { return rule; }
+		
+		//HTTP | DATABASE | FILESYSTEM | HDFS
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//HTTP
+		public EnumLiteralDeclaration getHTTPEnumLiteralDeclaration_0() { return cHTTPEnumLiteralDeclaration_0; }
+		
+		//'HTTP'
+		public Keyword getHTTPHTTPKeyword_0_0() { return cHTTPHTTPKeyword_0_0; }
+		
+		//DATABASE
+		public EnumLiteralDeclaration getDATABASEEnumLiteralDeclaration_1() { return cDATABASEEnumLiteralDeclaration_1; }
+		
+		//'DATABASE'
+		public Keyword getDATABASEDATABASEKeyword_1_0() { return cDATABASEDATABASEKeyword_1_0; }
+		
+		//FILESYSTEM
+		public EnumLiteralDeclaration getFILESYSTEMEnumLiteralDeclaration_2() { return cFILESYSTEMEnumLiteralDeclaration_2; }
+		
+		//'FILESYSTEM'
+		public Keyword getFILESYSTEMFILESYSTEMKeyword_2_0() { return cFILESYSTEMFILESYSTEMKeyword_2_0; }
+		
+		//HDFS
+		public EnumLiteralDeclaration getHDFSEnumLiteralDeclaration_3() { return cHDFSEnumLiteralDeclaration_3; }
+		
+		//'HDFS'
+		public Keyword getHDFSHDFSKeyword_3_0() { return cHDFSHDFSKeyword_3_0; }
+	}
 	
 	private final FunctionalViewElements pFunctionalView;
 	private final ConnectorElements pConnector;
@@ -2292,6 +2463,7 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	private final EventElements pEvent;
 	private final ProcedureCallElements pProcedureCall;
 	private final ProcessingModelElements eProcessingModel;
+	private final AccessTypeElements eAccessType;
 	private final TransformerElements pTransformer;
 	private final EstimatorElements pEstimator;
 	private final IngestorElements pIngestor;
@@ -2326,6 +2498,7 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pEvent = new EventElements();
 		this.pProcedureCall = new ProcedureCallElements();
 		this.eProcessingModel = new ProcessingModelElements();
+		this.eAccessType = new AccessTypeElements();
 		this.pTransformer = new TransformerElements();
 		this.pEstimator = new EstimatorElements();
 		this.pIngestor = new IngestorElements();
@@ -2509,14 +2682,12 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////ConnProps returns DeliveryModel | SyncType | NotificationModel
 	//Stream:
-	//	{Stream}
 	//	'Stream'
 	//	name=ID
-	//	'{' ('delivery' ':' delivery=DeliveryModel)? ('synct' ':' synct=SyncType)? ('notification' ':'
+	//	'{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 	//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-	//	//('dst' dst=[Interface|EString])? 
-	//	//('src' src=[Interface|EString])?
-	//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}'
 	//	'}';
 	public StreamElements getStreamAccess() {
 		return pStream;
@@ -2527,14 +2698,12 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Adaptor:
-	//	{Adaptor}
 	//	'Adaptor'
 	//	name=ID
-	//	'{' ('delivery' ':' delivery=DeliveryModel?) ('synct' ':' synct=SyncType)? ('notification' ':'
+	//	'{' ('delivery' ':' delivery=DeliveryModel?) ('sync' ':' synct=SyncType)? ('notification' ':'
 	//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-	//	//('dst' dst=[Interface|EString])?
-	//	//('src' src=[Interface|EString])?
-	//	'roles' '{' roles+=Role ("," roles+=Role)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	'roles' '{' roles+=Role ("," roles+=Role)* '}'
 	//	'}';
 	public AdaptorElements getAdaptorAccess() {
 		return pAdaptor;
@@ -2545,14 +2714,12 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Distributor:
-	//	{Distributor}
 	//	'Distributor'
 	//	name=ID
 	//	'{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 	//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-	//	//('dst' dst=[Interface|EString])?
-	//	//('src' src=[Interface|EString])?
-	//	'roles' '{' roles+=Role ("," roles+=Role)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	'roles' '{' roles+=Role ("," roles+=Role)* '}'
 	//	'}';
 	public DistributorElements getDistributorAccess() {
 		return pDistributor;
@@ -2563,15 +2730,12 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Event:
-	//	{Event}
 	//	'Event'
 	//	name=ID
-	//	//'(' src=[Interface] '=>' dst=[Interface] ')'
-	//	'{' ('delivery' ':' delivery=DeliveryModel)? ('synct' ':' synct=SyncType)? ('notification' ':'
+	//	'{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 	//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-	//	//('dst' dst=[Interface|EString])?
-	//	//('src' src=[Interface|EString])?
-	//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}'
 	//	'}';
 	public EventElements getEventAccess() {
 		return pEvent;
@@ -2582,15 +2746,12 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ProcedureCall:
-	//	{ProcedureCall}
 	//	'ProcCall'
 	//	name=ID
-	//	//'(' src=[Interface] '=>' dst=[Interface] ')'
-	//	'{' ('delivery' ':' delivery=DeliveryModel)? ('synct' ':' synct=SyncType)? ('notification' ':'
+	//	'{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 	//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-	//	//('dst' dst=[Interface|EString])?
-	//	//('src' src=[Interface|EString])?
-	//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}'
 	//	'}';
 	public ProcedureCallElements getProcedureCallAccess() {
 		return pProcedureCall;
@@ -2608,6 +2769,16 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public EnumRule getProcessingModelRule() {
 		return getProcessingModelAccess().getRule();
+	}
+	
+	//enum AccessType:
+	//	HTTP | DATABASE | FILESYSTEM | HDFS;
+	public AccessTypeElements getAccessTypeAccess() {
+		return eAccessType;
+	}
+	
+	public EnumRule getAccessTypeRule() {
+		return getAccessTypeAccess().getRule();
 	}
 	
 	//Transformer:
@@ -2643,8 +2814,9 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	//Ingestor:
 	//	'Ingestor'
 	//	name=ID
-	//	'{' ('procModel' ':' procModel=ProcessingModel)? ('conn' ':' conn=EString)? ('format' ':' format=EString)? ('props'
-	//	':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	'{'
+	//	'type' ':' type=AccessType ('procModel' ':' procModel=ProcessingModel)? ('conn' ':' conn=EString)? ('format' ':'
+	//	format=EString)? ('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
 	//	'ports' ':' '{' ports+=Port ("," ports+=Port)* '}'
 	//	'}';
 	public IngestorElements getIngestorAccess() {
@@ -2658,8 +2830,9 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	//Sink:
 	//	'Sink'
 	//	name=ID
-	//	'{' ('procModel' ':' procModel=ProcessingModel)? ('conn' ':' conn=EString)? ('sensitivityPoint' ':'
-	//	spoint=[rq::SensitivityPoint])?
+	//	'{'
+	//	'type' ':' type=AccessType ('procModel' ':' procModel=ProcessingModel)? ('conn' ':' conn=EString)? ('format' ':'
+	//	format=EString)? ('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
 	//	'ports' ':' '{' ports+=Port ("," ports+=Port)* '}'
 	//	'}';
 	public SinkElements getSinkAccess() {

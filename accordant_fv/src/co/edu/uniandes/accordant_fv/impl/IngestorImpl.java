@@ -2,6 +2,7 @@
  */
 package co.edu.uniandes.accordant_fv.impl;
 
+import co.edu.uniandes.accordant_fv.AccessType;
 import co.edu.uniandes.accordant_fv.Accordant_fvPackage;
 import co.edu.uniandes.accordant_fv.Ingestor;
 
@@ -96,7 +97,7 @@ public class IngestorImpl extends ComponentImpl implements Ingestor {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TYPE_EDEFAULT = null;
+	protected static final AccessType TYPE_EDEFAULT = AccessType.HTTP;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -106,7 +107,7 @@ public class IngestorImpl extends ComponentImpl implements Ingestor {
 	 * @generated
 	 * @ordered
 	 */
-	protected String type = TYPE_EDEFAULT;
+	protected AccessType type = TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,7 +196,7 @@ public class IngestorImpl extends ComponentImpl implements Ingestor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getType() {
+	public AccessType getType() {
 		return type;
 	}
 
@@ -204,9 +205,9 @@ public class IngestorImpl extends ComponentImpl implements Ingestor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(String newType) {
-		String oldType = type;
-		type = newType;
+	public void setType(AccessType newType) {
+		AccessType oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.INGESTOR__TYPE, oldType, type));
 	}
@@ -249,7 +250,7 @@ public class IngestorImpl extends ComponentImpl implements Ingestor {
 				setProps((String)newValue);
 				return;
 			case Accordant_fvPackage.INGESTOR__TYPE:
-				setType((String)newValue);
+				setType((AccessType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -294,7 +295,7 @@ public class IngestorImpl extends ComponentImpl implements Ingestor {
 			case Accordant_fvPackage.INGESTOR__PROPS:
 				return PROPS_EDEFAULT == null ? props != null : !PROPS_EDEFAULT.equals(props);
 			case Accordant_fvPackage.INGESTOR__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+				return type != TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

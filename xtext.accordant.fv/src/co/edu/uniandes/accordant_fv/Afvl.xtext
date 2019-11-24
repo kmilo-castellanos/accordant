@@ -63,39 +63,34 @@ enum Throughput returns Throughput:
 //ConnProps returns DeliveryModel | SyncType | NotificationModel
 
 Stream returns Stream:
-	{Stream}
 	'Stream'
 	name=ID
 	'{'
 		('delivery' ':' delivery=DeliveryModel)?
-		('synct' ':' synct=SyncType)?
+		('sync' ':' synct=SyncType)?
 		('notification' ':' notification=NotificationModel)?
 		('buffering' ':' buffering=Buffering)?
 		('throughput' ':' throughput=Throughput)?
-		//('dst' dst=[Interface|EString])? 
-		//('src' src=[Interface|EString])?
-		'roles' ':' '{' roles+=Role ( "," roles+=Role)* '}' 
+		('props' ':' props=EString)?		
 		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		'roles' ':' '{' roles+=Role ( "," roles+=Role)* '}' 
 	'}';
 
 Adaptor returns Adaptor:
-	{Adaptor}
 	'Adaptor'
 	name=ID
 	'{'
 		('delivery' ':' delivery=DeliveryModel?) 
-		('synct' ':' synct=SyncType)? 
+		('sync' ':' synct=SyncType)? 
 		('notification' ':' notification=NotificationModel)? 
 		('buffering' ':' buffering=Buffering)? 
 		('throughput' ':' throughput=Throughput)? 
-		//('dst' dst=[Interface|EString])?
-		//('src' src=[Interface|EString])?
-		'roles' '{' roles+=Role ( "," roles+=Role)* '}' 
+		('props' ':' props=EString)?		
 		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		'roles' '{' roles+=Role ( "," roles+=Role)* '}' 
 	'}';
 
 Distributor returns Distributor:
-	{Distributor}
 	'Distributor'
 	name=ID
 	'{'
@@ -104,49 +99,44 @@ Distributor returns Distributor:
 		('notification' ':' notification=NotificationModel)?
 		('buffering' ':' buffering=Buffering)?
 		('throughput' ':' throughput=Throughput)?
-		//('dst' dst=[Interface|EString])?
-		//('src' src=[Interface|EString])?
-		'roles' '{' roles+=Role ( "," roles+=Role)* '}'
+		('props' ':' props=EString)?		
 		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		'roles' '{' roles+=Role ( "," roles+=Role)* '}'
 	'}';
 
 Event returns Event:
-	{Event}
 	'Event'
 	name=ID 
-	//'(' src=[Interface] '=>' dst=[Interface] ')'
 	'{'
 		('delivery' ':' delivery=DeliveryModel)?
-		('synct' ':' synct=SyncType)?
+		('sync' ':' synct=SyncType)? 
 		('notification' ':' notification=NotificationModel)?
 		('buffering' ':' buffering=Buffering)?
 		('throughput' ':' throughput=Throughput)?
-		//('dst' dst=[Interface|EString])?
-		//('src' src=[Interface|EString])?
-		'roles' ':' '{' roles+=Role ( "," roles+=Role)* '}' 
+		('props' ':' props=EString)?		
 		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		'roles' ':' '{' roles+=Role ( "," roles+=Role)* '}' 
 	'}';
 
 ProcedureCall returns ProcedureCall:
-	{ProcedureCall}
 	'ProcCall'
 	name=ID 
-	//'(' src=[Interface] '=>' dst=[Interface] ')'
 	'{'
 		('delivery' ':' delivery=DeliveryModel)?
-		('synct' ':' synct=SyncType)?
+		('sync' ':' synct=SyncType)?
 		('notification' ':' notification=NotificationModel)?
 		('buffering' ':' buffering=Buffering)?
 		('throughput' ':' throughput=Throughput)?
-		//('dst' dst=[Interface|EString])?
-		//('src' src=[Interface|EString])?
-		'roles' ':' '{' roles+=Role ( "," roles+=Role)* '}' 
+		('props' ':' props=EString)?		
 		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		'roles' ':' '{' roles+=Role ( "," roles+=Role)* '}' 
 	'}';
 
 enum ProcessingModel returns ProcessingModel:
 				STREAM = 'STREAM' | BATCH = 'BATCH' | MICROBATCH = 'MICROBATCH';
 
+enum AccessType returns AccessType:
+				HTTP = 'HTTP' | DATABASE = 'DATABASE' | FILESYSTEM = 'FILESYSTEM' | HDFS='HDFS';
 
 Transformer returns Transformer:
 	'Transformer'
@@ -172,6 +162,7 @@ Ingestor returns Ingestor:
 	'Ingestor'
 	name=ID
 	'{'
+		'type' ':' type=AccessType
 		('procModel' ':' procModel=ProcessingModel)?
 		('conn' ':' conn=EString)?
 		('format' ':' format=EString)?
@@ -179,13 +170,16 @@ Ingestor returns Ingestor:
 		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
 		'ports' ':' '{' ports+=Port ( "," ports+=Port)* '}' 
 	'}';
-
+ 
 Sink returns Sink:
 	'Sink'
 	name=ID
 	'{'
+		'type' ':' type=AccessType
 		('procModel' ':' procModel=ProcessingModel)?
 		('conn' ':' conn=EString)?
+		('format' ':' format=EString)?
+		('props' ':' props=EString)?
 		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
 		'ports' ':' '{' ports+=Port ( "," ports+=Port)* '}'  
 	'}';

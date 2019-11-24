@@ -24,6 +24,22 @@
   <children xmi:type="notation:Shape" xmi:id="_gqR8AEc0EemtVtH8Gkx1aA" type="2005" fontName=".AppleSystemUIFont">
     <children xmi:type="notation:DecorationNode" xmi:id="_gqR8Akc0EemtVtH8Gkx1aA" type="5005"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_gqR8A0c0EemtVtH8Gkx1aA" type="7011">
+      <children xmi:type="notation:Node" xmi:id="_cSW40AudEeqLDY8BgWJ0Gw" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="accordant_rq.ecore#//QAMetric/THROUGHPUT"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_cSW40QudEeqLDY8BgWJ0Gw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_cSXf4AudEeqLDY8BgWJ0Gw" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="accordant_rq.ecore#//QAMetric/LATENCY"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_cSXf4QudEeqLDY8BgWJ0Gw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_cSXf4gudEeqLDY8BgWJ0Gw" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="accordant_rq.ecore#//QAMetric/DEADLINE"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_cSXf4wudEeqLDY8BgWJ0Gw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_ZqhZoA5rEeqLDY8BgWJ0Gw" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="accordant_rq.ecore#//QAMetric/UPDATETIME"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ZqhZoQ5rEeqLDY8BgWJ0Gw"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_gqR8BEc0EemtVtH8Gkx1aA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_gqR8BUc0EemtVtH8Gkx1aA"/>
     </children>

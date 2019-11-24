@@ -2,6 +2,7 @@
  */
 package co.edu.uniandes.accordant_fv.impl;
 
+import co.edu.uniandes.accordant_fv.AccessType;
 import co.edu.uniandes.accordant_fv.Accordant_fvFactory;
 import co.edu.uniandes.accordant_fv.Accordant_fvPackage;
 import co.edu.uniandes.accordant_fv.Adaptor;
@@ -215,6 +216,13 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 	private EEnum roleTypeEEnum = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum accessTypeEEnum = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -413,6 +421,15 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 	 */
 	public EReference getConnector_Spoint() {
 		return (EReference)connectorEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConnector_Props() {
+		return (EAttribute)connectorEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -645,6 +662,24 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSink_Type() {
+		return (EAttribute)sinkEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSink_Props() {
+		return (EAttribute)sinkEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPort() {
 		return portEClass;
 	}
@@ -798,6 +833,15 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getAccessType() {
+		return accessTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Accordant_fvFactory getAccordant_fvFactory() {
 		return (Accordant_fvFactory)getEFactoryInstance();
 	}
@@ -837,6 +881,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		createEReference(connectorEClass, CONNECTOR__ROLES);
 		createEAttribute(connectorEClass, CONNECTOR__PROTOCOL);
 		createEReference(connectorEClass, CONNECTOR__SPOINT);
+		createEAttribute(connectorEClass, CONNECTOR__PROPS);
 
 		componentEClass = createEClass(COMPONENT);
 		createEAttribute(componentEClass, COMPONENT__NAME);
@@ -872,6 +917,8 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		sinkEClass = createEClass(SINK);
 		createEAttribute(sinkEClass, SINK__CONN);
 		createEAttribute(sinkEClass, SINK__FORMAT);
+		createEAttribute(sinkEClass, SINK__TYPE);
+		createEAttribute(sinkEClass, SINK__PROPS);
 
 		portEClass = createEClass(PORT);
 		createEAttribute(portEClass, PORT__TYPE);
@@ -895,6 +942,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		throughputEEnum = createEEnum(THROUGHPUT);
 		portTypeEEnum = createEEnum(PORT_TYPE);
 		roleTypeEEnum = createEEnum(ROLE_TYPE);
+		accessTypeEEnum = createEEnum(ACCESS_TYPE);
 	}
 
 	/**
@@ -957,6 +1005,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		initEReference(getConnector_Roles(), this.getRole(), null, "roles", null, 1, -1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConnector_Protocol(), ecorePackage.getEString(), "protocol", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnector_Spoint(), theAccordant_rqPackage.getSensitivityPoint(), null, "spoint", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConnector_Props(), ecorePackage.getEString(), "props", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -982,7 +1031,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		initEAttribute(getIngestor_Conn(), ecorePackage.getEString(), "conn", null, 0, 1, Ingestor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIngestor_Format(), ecorePackage.getEString(), "format", null, 0, 1, Ingestor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIngestor_Props(), ecorePackage.getEString(), "props", null, 0, 1, Ingestor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIngestor_Type(), ecorePackage.getEString(), "type", null, 0, 1, Ingestor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIngestor_Type(), this.getAccessType(), "type", null, 0, 1, Ingestor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(analyticsComponentEClass, AnalyticsComponent.class, "AnalyticsComponent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAnalyticsComponent_Pmml(), ecorePackage.getEString(), "pmml", null, 0, 1, AnalyticsComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -992,6 +1041,8 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		initEClass(sinkEClass, Sink.class, "Sink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSink_Conn(), ecorePackage.getEString(), "conn", null, 0, 1, Sink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSink_Format(), ecorePackage.getEString(), "format", null, 0, 1, Sink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSink_Type(), this.getAccessType(), "type", null, 0, 1, Sink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSink_Props(), ecorePackage.getEString(), "props", "", 0, 1, Sink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPort_Type(), this.getPortType(), "type", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1043,6 +1094,12 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		initEEnum(roleTypeEEnum, RoleType.class, "RoleType");
 		addEEnumLiteral(roleTypeEEnum, RoleType.OUT);
 		addEEnumLiteral(roleTypeEEnum, RoleType.IN);
+
+		initEEnum(accessTypeEEnum, AccessType.class, "AccessType");
+		addEEnumLiteral(accessTypeEEnum, AccessType.HTTP);
+		addEEnumLiteral(accessTypeEEnum, AccessType.HDFS);
+		addEEnumLiteral(accessTypeEEnum, AccessType.DATABASE);
+		addEEnumLiteral(accessTypeEEnum, AccessType.FILESYSTEM);
 
 		// Create resource
 		createResource(eNS_URI);

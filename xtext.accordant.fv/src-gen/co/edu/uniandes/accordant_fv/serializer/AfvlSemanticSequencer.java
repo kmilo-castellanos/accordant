@@ -95,9 +95,10 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         notification=NotificationModel? 
 	 *         buffering=Buffering? 
 	 *         throughput=Throughput? 
+	 *         props=EString? 
+	 *         spoint=[SensitivityPoint|ID]? 
 	 *         roles+=Role 
-	 *         roles+=Role* 
-	 *         spoint=[SensitivityPoint|ID]?
+	 *         roles+=Role*
 	 *     )
 	 */
 	protected void sequence_Adaptor(ISerializationContext context, Adaptor semanticObject) {
@@ -118,9 +119,10 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         notification=NotificationModel? 
 	 *         buffering=Buffering? 
 	 *         throughput=Throughput? 
+	 *         props=EString? 
+	 *         spoint=[SensitivityPoint|ID]? 
 	 *         roles+=Role 
-	 *         roles+=Role* 
-	 *         spoint=[SensitivityPoint|ID]?
+	 *         roles+=Role*
 	 *     )
 	 */
 	protected void sequence_Distributor(ISerializationContext context, Distributor semanticObject) {
@@ -161,9 +163,10 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         notification=NotificationModel? 
 	 *         buffering=Buffering? 
 	 *         throughput=Throughput? 
+	 *         props=EString? 
+	 *         spoint=[SensitivityPoint|ID]? 
 	 *         roles+=Role 
-	 *         roles+=Role* 
-	 *         spoint=[SensitivityPoint|ID]?
+	 *         roles+=Role*
 	 *     )
 	 */
 	protected void sequence_Event(ISerializationContext context, Event semanticObject) {
@@ -198,6 +201,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=ID 
+	 *         type=AccessType 
 	 *         procModel=ProcessingModel? 
 	 *         conn=EString? 
 	 *         format=EString? 
@@ -237,9 +241,10 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         notification=NotificationModel? 
 	 *         buffering=Buffering? 
 	 *         throughput=Throughput? 
+	 *         props=EString? 
+	 *         spoint=[SensitivityPoint|ID]? 
 	 *         roles+=Role 
-	 *         roles+=Role* 
-	 *         spoint=[SensitivityPoint|ID]?
+	 *         roles+=Role*
 	 *     )
 	 */
 	protected void sequence_ProcedureCall(ISerializationContext context, ProcedureCall semanticObject) {
@@ -267,8 +272,11 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=ID 
+	 *         type=AccessType 
 	 *         procModel=ProcessingModel? 
 	 *         conn=EString? 
+	 *         format=EString? 
+	 *         props=EString? 
 	 *         spoint=[SensitivityPoint|ID]? 
 	 *         ports+=Port 
 	 *         ports+=Port*
@@ -292,9 +300,10 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         notification=NotificationModel? 
 	 *         buffering=Buffering? 
 	 *         throughput=Throughput? 
+	 *         props=EString? 
+	 *         spoint=[SensitivityPoint|ID]? 
 	 *         roles+=Role 
-	 *         roles+=Role* 
-	 *         spoint=[SensitivityPoint|ID]?
+	 *         roles+=Role*
 	 *     )
 	 */
 	protected void sequence_Stream(ISerializationContext context, Stream semanticObject) {

@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_fv.Connector#getRoles <em>Roles</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Connector#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Connector#getSpoint <em>Spoint</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.Connector#getProps <em>Props</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getConnector()
@@ -270,5 +271,31 @@ public interface Connector extends EObject {
 	 * @generated
 	 */
 	void setSpoint(SensitivityPoint value);
+
+	/**
+	 * Returns the value of the '<em><b>Props</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Props</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Props</em>' attribute.
+	 * @see #setProps(String)
+	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getConnector_Props()
+	 * @model
+	 * @generated
+	 */
+	String getProps();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_fv.Connector#getProps <em>Props</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Props</em>' attribute.
+	 * @see #getProps()
+	 * @generated
+	 */
+	void setProps(String value);
 
 } // Connector

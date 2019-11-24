@@ -1,6 +1,6 @@
 /**
  */
-package co.edu.uniandes.accordant_rq;
+package co.edu.uniandes.accordant_fv;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -10,145 +10,147 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>QA Metric</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Access Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getQAMetric()
+ * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getAccessType()
  * @model
  * @generated
  */
-public enum QAMetric implements Enumerator {
+public enum AccessType implements Enumerator {
 	/**
-	 * The '<em><b>THROUGHPUT</b></em>' literal object.
+	 * The '<em><b>HTTP</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #THROUGHPUT_VALUE
+	 * @see #HTTP_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	THROUGHPUT(0, "THROUGHPUT", "THROUGHPUT"),
+	HTTP(0, "HTTP", "HTTP"),
 
 	/**
-	 * The '<em><b>LATENCY</b></em>' literal object.
+	 * The '<em><b>HDFS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #LATENCY_VALUE
+	 * @see #HDFS_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	LATENCY(1, "LATENCY", "LATENCY"),
+	HDFS(1, "HDFS", "HDFS"),
 
 	/**
-	 * The '<em><b>DEADLINE</b></em>' literal object.
+	 * The '<em><b>DATABASE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #DEADLINE_VALUE
+	 * @see #DATABASE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	DEADLINE(3, "DEADLINE", "DEADLINE"), /**
-	 * The '<em><b>UPDATETIME</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #UPDATETIME_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	UPDATETIME(4, "UPDATETIME", "UPDATETIME");
+	DATABASE(2, "DATABASE", "DATABASE"),
 
 	/**
-	 * The '<em><b>THROUGHPUT</b></em>' literal value.
+	 * The '<em><b>FILESYSTEM</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #FILESYSTEM_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	FILESYSTEM(3, "FILESYSTEM", "FILESYSTEM");
+
+	/**
+	 * The '<em><b>HTTP</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>THROUGHPUT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>HTTP</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #THROUGHPUT
+	 * @see #HTTP
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int THROUGHPUT_VALUE = 0;
+	public static final int HTTP_VALUE = 0;
 
 	/**
-	 * The '<em><b>LATENCY</b></em>' literal value.
+	 * The '<em><b>HDFS</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>LATENCY</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>HDFS</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #LATENCY
+	 * @see #HDFS
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LATENCY_VALUE = 1;
+	public static final int HDFS_VALUE = 1;
 
 	/**
-	 * The '<em><b>DEADLINE</b></em>' literal value.
+	 * The '<em><b>DATABASE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>DEADLINE</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>DATABASE</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #DEADLINE
+	 * @see #DATABASE
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DEADLINE_VALUE = 3;
+	public static final int DATABASE_VALUE = 2;
 
 	/**
-	 * The '<em><b>UPDATETIME</b></em>' literal value.
+	 * The '<em><b>FILESYSTEM</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>UPDATETIME</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>FILESYSTEM</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #UPDATETIME
+	 * @see #FILESYSTEM
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UPDATETIME_VALUE = 4;
+	public static final int FILESYSTEM_VALUE = 3;
 
 	/**
-	 * An array of all the '<em><b>QA Metric</b></em>' enumerators.
+	 * An array of all the '<em><b>Access Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final QAMetric[] VALUES_ARRAY =
-		new QAMetric[] {
-			THROUGHPUT,
-			LATENCY,
-			DEADLINE,
-			UPDATETIME,
+	private static final AccessType[] VALUES_ARRAY =
+		new AccessType[] {
+			HTTP,
+			HDFS,
+			DATABASE,
+			FILESYSTEM,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>QA Metric</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Access Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<QAMetric> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<AccessType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>QA Metric</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Access Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static QAMetric get(String literal) {
+	public static AccessType get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			QAMetric result = VALUES_ARRAY[i];
+			AccessType result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -157,16 +159,16 @@ public enum QAMetric implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>QA Metric</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Access Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static QAMetric getByName(String name) {
+	public static AccessType getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			QAMetric result = VALUES_ARRAY[i];
+			AccessType result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -175,19 +177,19 @@ public enum QAMetric implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>QA Metric</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Access Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static QAMetric get(int value) {
+	public static AccessType get(int value) {
 		switch (value) {
-			case THROUGHPUT_VALUE: return THROUGHPUT;
-			case LATENCY_VALUE: return LATENCY;
-			case DEADLINE_VALUE: return DEADLINE;
-			case UPDATETIME_VALUE: return UPDATETIME;
+			case HTTP_VALUE: return HTTP;
+			case HDFS_VALUE: return HDFS;
+			case DATABASE_VALUE: return DATABASE;
+			case FILESYSTEM_VALUE: return FILESYSTEM;
 		}
 		return null;
 	}
@@ -219,7 +221,7 @@ public enum QAMetric implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private QAMetric(int value, String name, String literal) {
+	private AccessType(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -263,4 +265,4 @@ public enum QAMetric implements Enumerator {
 		return literal;
 	}
 	
-} //QAMetric
+} //AccessType

@@ -99,6 +99,8 @@ public class Accordant_fvFactoryImpl extends EFactoryImpl implements Accordant_f
 				return createPortTypeFromString(eDataType, initialValue);
 			case Accordant_fvPackage.ROLE_TYPE:
 				return createRoleTypeFromString(eDataType, initialValue);
+			case Accordant_fvPackage.ACCESS_TYPE:
+				return createAccessTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -128,6 +130,8 @@ public class Accordant_fvFactoryImpl extends EFactoryImpl implements Accordant_f
 				return convertPortTypeToString(eDataType, instanceValue);
 			case Accordant_fvPackage.ROLE_TYPE:
 				return convertRoleTypeToString(eDataType, instanceValue);
+			case Accordant_fvPackage.ACCESS_TYPE:
+				return convertAccessTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -420,6 +424,26 @@ public class Accordant_fvFactoryImpl extends EFactoryImpl implements Accordant_f
 	 * @generated
 	 */
 	public String convertRoleTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AccessType createAccessTypeFromString(EDataType eDataType, String initialValue) {
+		AccessType result = AccessType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertAccessTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

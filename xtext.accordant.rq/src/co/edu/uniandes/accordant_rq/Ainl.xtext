@@ -31,7 +31,7 @@ QScenario returns QScenario:
 	'}';
 
 enum QAMetric returns QAMetric:
-				THROUGHPUT = 'THROUGHPUT' | LATENCY = 'LATENCY' | DEADLINE = 'DEADLINE';
+				THROUGHPUT = 'THROUGHPUT' | LATENCY = 'LATENCY' | DEADLINE = 'DEADLINE' | UPDATETIME='UPDATETIME';
 
 EFloat returns ecore::EFloat:
 	'-'? INT? '.' INT (('E'|'e') '-'? INT)?;

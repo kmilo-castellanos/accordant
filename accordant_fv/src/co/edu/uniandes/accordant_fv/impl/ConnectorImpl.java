@@ -45,6 +45,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.ConnectorImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.ConnectorImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.ConnectorImpl#getSpoint <em>Spoint</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.impl.ConnectorImpl#getProps <em>Props</em>}</li>
  * </ul>
  *
  * @generated
@@ -209,6 +210,26 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected SensitivityPoint spoint;
+
+	/**
+	 * The default value of the '{@link #getProps() <em>Props</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProps()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PROPS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getProps() <em>Props</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProps()
+	 * @generated
+	 * @ordered
+	 */
+	protected String props = PROPS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -431,6 +452,27 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getProps() {
+		return props;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProps(String newProps) {
+		String oldProps = props;
+		props = newProps;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.CONNECTOR__PROPS, oldProps, props));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -467,6 +509,8 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 			case Accordant_fvPackage.CONNECTOR__SPOINT:
 				if (resolve) return getSpoint();
 				return basicGetSpoint();
+			case Accordant_fvPackage.CONNECTOR__PROPS:
+				return getProps();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -508,6 +552,9 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 			case Accordant_fvPackage.CONNECTOR__SPOINT:
 				setSpoint((SensitivityPoint)newValue);
 				return;
+			case Accordant_fvPackage.CONNECTOR__PROPS:
+				setProps((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -547,6 +594,9 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 			case Accordant_fvPackage.CONNECTOR__SPOINT:
 				setSpoint((SensitivityPoint)null);
 				return;
+			case Accordant_fvPackage.CONNECTOR__PROPS:
+				setProps(PROPS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -577,6 +627,8 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 				return PROTOCOL_EDEFAULT == null ? protocol != null : !PROTOCOL_EDEFAULT.equals(protocol);
 			case Accordant_fvPackage.CONNECTOR__SPOINT:
 				return spoint != null;
+			case Accordant_fvPackage.CONNECTOR__PROPS:
+				return PROPS_EDEFAULT == null ? props != null : !PROPS_EDEFAULT.equals(props);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -605,6 +657,8 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 		result.append(throughput);
 		result.append(", protocol: ");
 		result.append(protocol);
+		result.append(", props: ");
+		result.append(props);
 		result.append(')');
 		return result.toString();
 	}

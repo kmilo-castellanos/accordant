@@ -103,6 +103,7 @@ public interface Ingestor extends Component {
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link co.edu.uniandes.accordant_fv.AccessType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
@@ -110,21 +111,23 @@ public interface Ingestor extends Component {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see #setType(String)
+	 * @see co.edu.uniandes.accordant_fv.AccessType
+	 * @see #setType(AccessType)
 	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getIngestor_Type()
 	 * @model
 	 * @generated
 	 */
-	String getType();
+	AccessType getType();
 
 	/**
 	 * Sets the value of the '{@link co.edu.uniandes.accordant_fv.Ingestor#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see co.edu.uniandes.accordant_fv.AccessType
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(String value);
+	void setType(AccessType value);
 
 } // Ingestor

@@ -22,11 +22,12 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAinlParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'InputPackage'", "'{'", "'QScenarios'", "','", "'}'", "'analyzedQScenarios'", "'tactics'", "'QS'", "'QA'", "':'", "'stimulus'", "'environment'", "'response'", "'measure'", "'between'", "'and'", "'in'", "'-'", "'.'", "'E'", "'e'", "'AQS'", "'of'", "'reasoning'", "'Sensitivity_Points'", "'SensitivityPoint'", "'isRisk'", "'rationale'", "'code'", "'('", "')'", "'Tactic'", "'viewpoint'", "'THROUGHPUT'", "'LATENCY'", "'DEADLINE'", "'MILLIS'", "'SECONDS'", "'MINUTES'", "'HOURS'", "'TASKS'", "'BYTES'", "'MSGS'", "'AVAILABILITY'", "'PERFORMANCE'", "'MODIFIABILITY'", "'TESTABILITY'", "'SCALABILITY'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'InputPackage'", "'{'", "'QScenarios'", "','", "'}'", "'analyzedQScenarios'", "'tactics'", "'QS'", "'QA'", "':'", "'stimulus'", "'environment'", "'response'", "'measure'", "'between'", "'and'", "'in'", "'-'", "'.'", "'E'", "'e'", "'AQS'", "'of'", "'reasoning'", "'Sensitivity_Points'", "'SensitivityPoint'", "'isRisk'", "'rationale'", "'code'", "'('", "')'", "'Tactic'", "'viewpoint'", "'THROUGHPUT'", "'LATENCY'", "'DEADLINE'", "'UPDATETIME'", "'MILLIS'", "'SECONDS'", "'MINUTES'", "'HOURS'", "'TASKS'", "'BYTES'", "'MSGS'", "'AVAILABILITY'", "'PERFORMANCE'", "'MODIFIABILITY'", "'TESTABILITY'", "'SCALABILITY'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
     public static final int T__15=15;
+    public static final int T__59=59;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
@@ -2433,23 +2434,24 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQAMetric"
-    // InternalAinl.g:1148:1: ruleQAMetric returns [Enumerator current=null] : ( (enumLiteral_0= 'THROUGHPUT' ) | (enumLiteral_1= 'LATENCY' ) | (enumLiteral_2= 'DEADLINE' ) ) ;
+    // InternalAinl.g:1148:1: ruleQAMetric returns [Enumerator current=null] : ( (enumLiteral_0= 'THROUGHPUT' ) | (enumLiteral_1= 'LATENCY' ) | (enumLiteral_2= 'DEADLINE' ) | (enumLiteral_3= 'UPDATETIME' ) ) ;
     public final Enumerator ruleQAMetric() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
         Token enumLiteral_2=null;
+        Token enumLiteral_3=null;
 
 
         	enterRule();
 
         try {
-            // InternalAinl.g:1154:2: ( ( (enumLiteral_0= 'THROUGHPUT' ) | (enumLiteral_1= 'LATENCY' ) | (enumLiteral_2= 'DEADLINE' ) ) )
-            // InternalAinl.g:1155:2: ( (enumLiteral_0= 'THROUGHPUT' ) | (enumLiteral_1= 'LATENCY' ) | (enumLiteral_2= 'DEADLINE' ) )
+            // InternalAinl.g:1154:2: ( ( (enumLiteral_0= 'THROUGHPUT' ) | (enumLiteral_1= 'LATENCY' ) | (enumLiteral_2= 'DEADLINE' ) | (enumLiteral_3= 'UPDATETIME' ) ) )
+            // InternalAinl.g:1155:2: ( (enumLiteral_0= 'THROUGHPUT' ) | (enumLiteral_1= 'LATENCY' ) | (enumLiteral_2= 'DEADLINE' ) | (enumLiteral_3= 'UPDATETIME' ) )
             {
-            // InternalAinl.g:1155:2: ( (enumLiteral_0= 'THROUGHPUT' ) | (enumLiteral_1= 'LATENCY' ) | (enumLiteral_2= 'DEADLINE' ) )
-            int alt22=3;
+            // InternalAinl.g:1155:2: ( (enumLiteral_0= 'THROUGHPUT' ) | (enumLiteral_1= 'LATENCY' ) | (enumLiteral_2= 'DEADLINE' ) | (enumLiteral_3= 'UPDATETIME' ) )
+            int alt22=4;
             switch ( input.LA(1) ) {
             case 44:
                 {
@@ -2464,6 +2466,11 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
             case 46:
                 {
                 alt22=3;
+                }
+                break;
+            case 47:
+                {
+                alt22=4;
                 }
                 break;
             default:
@@ -2525,6 +2532,23 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 4 :
+                    // InternalAinl.g:1180:3: (enumLiteral_3= 'UPDATETIME' )
+                    {
+                    // InternalAinl.g:1180:3: (enumLiteral_3= 'UPDATETIME' )
+                    // InternalAinl.g:1181:4: enumLiteral_3= 'UPDATETIME'
+                    {
+                    enumLiteral_3=(Token)match(input,47,FOLLOW_2); 
+
+                    				current = grammarAccess.getQAMetricAccess().getUPDATETIMEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_3, grammarAccess.getQAMetricAccess().getUPDATETIMEEnumLiteralDeclaration_3());
+                    			
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -2548,7 +2572,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMetricUnit"
-    // InternalAinl.g:1183:1: ruleMetricUnit returns [Enumerator current=null] : ( (enumLiteral_0= 'MILLIS' ) | (enumLiteral_1= 'SECONDS' ) | (enumLiteral_2= 'MINUTES' ) | (enumLiteral_3= 'HOURS' ) | (enumLiteral_4= 'TASKS' ) | (enumLiteral_5= 'BYTES' ) | (enumLiteral_6= 'MSGS' ) ) ;
+    // InternalAinl.g:1191:1: ruleMetricUnit returns [Enumerator current=null] : ( (enumLiteral_0= 'MILLIS' ) | (enumLiteral_1= 'SECONDS' ) | (enumLiteral_2= 'MINUTES' ) | (enumLiteral_3= 'HOURS' ) | (enumLiteral_4= 'TASKS' ) | (enumLiteral_5= 'BYTES' ) | (enumLiteral_6= 'MSGS' ) ) ;
     public final Enumerator ruleMetricUnit() throws RecognitionException {
         Enumerator current = null;
 
@@ -2564,43 +2588,43 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAinl.g:1189:2: ( ( (enumLiteral_0= 'MILLIS' ) | (enumLiteral_1= 'SECONDS' ) | (enumLiteral_2= 'MINUTES' ) | (enumLiteral_3= 'HOURS' ) | (enumLiteral_4= 'TASKS' ) | (enumLiteral_5= 'BYTES' ) | (enumLiteral_6= 'MSGS' ) ) )
-            // InternalAinl.g:1190:2: ( (enumLiteral_0= 'MILLIS' ) | (enumLiteral_1= 'SECONDS' ) | (enumLiteral_2= 'MINUTES' ) | (enumLiteral_3= 'HOURS' ) | (enumLiteral_4= 'TASKS' ) | (enumLiteral_5= 'BYTES' ) | (enumLiteral_6= 'MSGS' ) )
+            // InternalAinl.g:1197:2: ( ( (enumLiteral_0= 'MILLIS' ) | (enumLiteral_1= 'SECONDS' ) | (enumLiteral_2= 'MINUTES' ) | (enumLiteral_3= 'HOURS' ) | (enumLiteral_4= 'TASKS' ) | (enumLiteral_5= 'BYTES' ) | (enumLiteral_6= 'MSGS' ) ) )
+            // InternalAinl.g:1198:2: ( (enumLiteral_0= 'MILLIS' ) | (enumLiteral_1= 'SECONDS' ) | (enumLiteral_2= 'MINUTES' ) | (enumLiteral_3= 'HOURS' ) | (enumLiteral_4= 'TASKS' ) | (enumLiteral_5= 'BYTES' ) | (enumLiteral_6= 'MSGS' ) )
             {
-            // InternalAinl.g:1190:2: ( (enumLiteral_0= 'MILLIS' ) | (enumLiteral_1= 'SECONDS' ) | (enumLiteral_2= 'MINUTES' ) | (enumLiteral_3= 'HOURS' ) | (enumLiteral_4= 'TASKS' ) | (enumLiteral_5= 'BYTES' ) | (enumLiteral_6= 'MSGS' ) )
+            // InternalAinl.g:1198:2: ( (enumLiteral_0= 'MILLIS' ) | (enumLiteral_1= 'SECONDS' ) | (enumLiteral_2= 'MINUTES' ) | (enumLiteral_3= 'HOURS' ) | (enumLiteral_4= 'TASKS' ) | (enumLiteral_5= 'BYTES' ) | (enumLiteral_6= 'MSGS' ) )
             int alt23=7;
             switch ( input.LA(1) ) {
-            case 47:
+            case 48:
                 {
                 alt23=1;
                 }
                 break;
-            case 48:
+            case 49:
                 {
                 alt23=2;
                 }
                 break;
-            case 49:
+            case 50:
                 {
                 alt23=3;
                 }
                 break;
-            case 50:
+            case 51:
                 {
                 alt23=4;
                 }
                 break;
-            case 51:
+            case 52:
                 {
                 alt23=5;
                 }
                 break;
-            case 52:
+            case 53:
                 {
                 alt23=6;
                 }
                 break;
-            case 53:
+            case 54:
                 {
                 alt23=7;
                 }
@@ -2614,12 +2638,12 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
             switch (alt23) {
                 case 1 :
-                    // InternalAinl.g:1191:3: (enumLiteral_0= 'MILLIS' )
+                    // InternalAinl.g:1199:3: (enumLiteral_0= 'MILLIS' )
                     {
-                    // InternalAinl.g:1191:3: (enumLiteral_0= 'MILLIS' )
-                    // InternalAinl.g:1192:4: enumLiteral_0= 'MILLIS'
+                    // InternalAinl.g:1199:3: (enumLiteral_0= 'MILLIS' )
+                    // InternalAinl.g:1200:4: enumLiteral_0= 'MILLIS'
                     {
-                    enumLiteral_0=(Token)match(input,47,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,48,FOLLOW_2); 
 
                     				current = grammarAccess.getMetricUnitAccess().getMILLISEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getMetricUnitAccess().getMILLISEnumLiteralDeclaration_0());
@@ -2631,12 +2655,12 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalAinl.g:1199:3: (enumLiteral_1= 'SECONDS' )
+                    // InternalAinl.g:1207:3: (enumLiteral_1= 'SECONDS' )
                     {
-                    // InternalAinl.g:1199:3: (enumLiteral_1= 'SECONDS' )
-                    // InternalAinl.g:1200:4: enumLiteral_1= 'SECONDS'
+                    // InternalAinl.g:1207:3: (enumLiteral_1= 'SECONDS' )
+                    // InternalAinl.g:1208:4: enumLiteral_1= 'SECONDS'
                     {
-                    enumLiteral_1=(Token)match(input,48,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,49,FOLLOW_2); 
 
                     				current = grammarAccess.getMetricUnitAccess().getSECONDSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getMetricUnitAccess().getSECONDSEnumLiteralDeclaration_1());
@@ -2648,12 +2672,12 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalAinl.g:1207:3: (enumLiteral_2= 'MINUTES' )
+                    // InternalAinl.g:1215:3: (enumLiteral_2= 'MINUTES' )
                     {
-                    // InternalAinl.g:1207:3: (enumLiteral_2= 'MINUTES' )
-                    // InternalAinl.g:1208:4: enumLiteral_2= 'MINUTES'
+                    // InternalAinl.g:1215:3: (enumLiteral_2= 'MINUTES' )
+                    // InternalAinl.g:1216:4: enumLiteral_2= 'MINUTES'
                     {
-                    enumLiteral_2=(Token)match(input,49,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,50,FOLLOW_2); 
 
                     				current = grammarAccess.getMetricUnitAccess().getMINUTESEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getMetricUnitAccess().getMINUTESEnumLiteralDeclaration_2());
@@ -2665,12 +2689,12 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalAinl.g:1215:3: (enumLiteral_3= 'HOURS' )
+                    // InternalAinl.g:1223:3: (enumLiteral_3= 'HOURS' )
                     {
-                    // InternalAinl.g:1215:3: (enumLiteral_3= 'HOURS' )
-                    // InternalAinl.g:1216:4: enumLiteral_3= 'HOURS'
+                    // InternalAinl.g:1223:3: (enumLiteral_3= 'HOURS' )
+                    // InternalAinl.g:1224:4: enumLiteral_3= 'HOURS'
                     {
-                    enumLiteral_3=(Token)match(input,50,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,51,FOLLOW_2); 
 
                     				current = grammarAccess.getMetricUnitAccess().getHOURSEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getMetricUnitAccess().getHOURSEnumLiteralDeclaration_3());
@@ -2682,12 +2706,12 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalAinl.g:1223:3: (enumLiteral_4= 'TASKS' )
+                    // InternalAinl.g:1231:3: (enumLiteral_4= 'TASKS' )
                     {
-                    // InternalAinl.g:1223:3: (enumLiteral_4= 'TASKS' )
-                    // InternalAinl.g:1224:4: enumLiteral_4= 'TASKS'
+                    // InternalAinl.g:1231:3: (enumLiteral_4= 'TASKS' )
+                    // InternalAinl.g:1232:4: enumLiteral_4= 'TASKS'
                     {
-                    enumLiteral_4=(Token)match(input,51,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,52,FOLLOW_2); 
 
                     				current = grammarAccess.getMetricUnitAccess().getTASKSEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getMetricUnitAccess().getTASKSEnumLiteralDeclaration_4());
@@ -2699,12 +2723,12 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalAinl.g:1231:3: (enumLiteral_5= 'BYTES' )
+                    // InternalAinl.g:1239:3: (enumLiteral_5= 'BYTES' )
                     {
-                    // InternalAinl.g:1231:3: (enumLiteral_5= 'BYTES' )
-                    // InternalAinl.g:1232:4: enumLiteral_5= 'BYTES'
+                    // InternalAinl.g:1239:3: (enumLiteral_5= 'BYTES' )
+                    // InternalAinl.g:1240:4: enumLiteral_5= 'BYTES'
                     {
-                    enumLiteral_5=(Token)match(input,52,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,53,FOLLOW_2); 
 
                     				current = grammarAccess.getMetricUnitAccess().getBYTESEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getMetricUnitAccess().getBYTESEnumLiteralDeclaration_5());
@@ -2716,12 +2740,12 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalAinl.g:1239:3: (enumLiteral_6= 'MSGS' )
+                    // InternalAinl.g:1247:3: (enumLiteral_6= 'MSGS' )
                     {
-                    // InternalAinl.g:1239:3: (enumLiteral_6= 'MSGS' )
-                    // InternalAinl.g:1240:4: enumLiteral_6= 'MSGS'
+                    // InternalAinl.g:1247:3: (enumLiteral_6= 'MSGS' )
+                    // InternalAinl.g:1248:4: enumLiteral_6= 'MSGS'
                     {
-                    enumLiteral_6=(Token)match(input,53,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,54,FOLLOW_2); 
 
                     				current = grammarAccess.getMetricUnitAccess().getMSGSEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_6, grammarAccess.getMetricUnitAccess().getMSGSEnumLiteralDeclaration_6());
@@ -2755,7 +2779,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQAttribute"
-    // InternalAinl.g:1250:1: ruleQAttribute returns [Enumerator current=null] : ( (enumLiteral_0= 'AVAILABILITY' ) | (enumLiteral_1= 'PERFORMANCE' ) | (enumLiteral_2= 'MODIFIABILITY' ) | (enumLiteral_3= 'TESTABILITY' ) | (enumLiteral_4= 'SCALABILITY' ) ) ;
+    // InternalAinl.g:1258:1: ruleQAttribute returns [Enumerator current=null] : ( (enumLiteral_0= 'AVAILABILITY' ) | (enumLiteral_1= 'PERFORMANCE' ) | (enumLiteral_2= 'MODIFIABILITY' ) | (enumLiteral_3= 'TESTABILITY' ) | (enumLiteral_4= 'SCALABILITY' ) ) ;
     public final Enumerator ruleQAttribute() throws RecognitionException {
         Enumerator current = null;
 
@@ -2769,33 +2793,33 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAinl.g:1256:2: ( ( (enumLiteral_0= 'AVAILABILITY' ) | (enumLiteral_1= 'PERFORMANCE' ) | (enumLiteral_2= 'MODIFIABILITY' ) | (enumLiteral_3= 'TESTABILITY' ) | (enumLiteral_4= 'SCALABILITY' ) ) )
-            // InternalAinl.g:1257:2: ( (enumLiteral_0= 'AVAILABILITY' ) | (enumLiteral_1= 'PERFORMANCE' ) | (enumLiteral_2= 'MODIFIABILITY' ) | (enumLiteral_3= 'TESTABILITY' ) | (enumLiteral_4= 'SCALABILITY' ) )
+            // InternalAinl.g:1264:2: ( ( (enumLiteral_0= 'AVAILABILITY' ) | (enumLiteral_1= 'PERFORMANCE' ) | (enumLiteral_2= 'MODIFIABILITY' ) | (enumLiteral_3= 'TESTABILITY' ) | (enumLiteral_4= 'SCALABILITY' ) ) )
+            // InternalAinl.g:1265:2: ( (enumLiteral_0= 'AVAILABILITY' ) | (enumLiteral_1= 'PERFORMANCE' ) | (enumLiteral_2= 'MODIFIABILITY' ) | (enumLiteral_3= 'TESTABILITY' ) | (enumLiteral_4= 'SCALABILITY' ) )
             {
-            // InternalAinl.g:1257:2: ( (enumLiteral_0= 'AVAILABILITY' ) | (enumLiteral_1= 'PERFORMANCE' ) | (enumLiteral_2= 'MODIFIABILITY' ) | (enumLiteral_3= 'TESTABILITY' ) | (enumLiteral_4= 'SCALABILITY' ) )
+            // InternalAinl.g:1265:2: ( (enumLiteral_0= 'AVAILABILITY' ) | (enumLiteral_1= 'PERFORMANCE' ) | (enumLiteral_2= 'MODIFIABILITY' ) | (enumLiteral_3= 'TESTABILITY' ) | (enumLiteral_4= 'SCALABILITY' ) )
             int alt24=5;
             switch ( input.LA(1) ) {
-            case 54:
+            case 55:
                 {
                 alt24=1;
                 }
                 break;
-            case 55:
+            case 56:
                 {
                 alt24=2;
                 }
                 break;
-            case 56:
+            case 57:
                 {
                 alt24=3;
                 }
                 break;
-            case 57:
+            case 58:
                 {
                 alt24=4;
                 }
                 break;
-            case 58:
+            case 59:
                 {
                 alt24=5;
                 }
@@ -2809,12 +2833,12 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
             switch (alt24) {
                 case 1 :
-                    // InternalAinl.g:1258:3: (enumLiteral_0= 'AVAILABILITY' )
+                    // InternalAinl.g:1266:3: (enumLiteral_0= 'AVAILABILITY' )
                     {
-                    // InternalAinl.g:1258:3: (enumLiteral_0= 'AVAILABILITY' )
-                    // InternalAinl.g:1259:4: enumLiteral_0= 'AVAILABILITY'
+                    // InternalAinl.g:1266:3: (enumLiteral_0= 'AVAILABILITY' )
+                    // InternalAinl.g:1267:4: enumLiteral_0= 'AVAILABILITY'
                     {
-                    enumLiteral_0=(Token)match(input,54,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,55,FOLLOW_2); 
 
                     				current = grammarAccess.getQAttributeAccess().getAVAILABILITYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getQAttributeAccess().getAVAILABILITYEnumLiteralDeclaration_0());
@@ -2826,12 +2850,12 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalAinl.g:1266:3: (enumLiteral_1= 'PERFORMANCE' )
+                    // InternalAinl.g:1274:3: (enumLiteral_1= 'PERFORMANCE' )
                     {
-                    // InternalAinl.g:1266:3: (enumLiteral_1= 'PERFORMANCE' )
-                    // InternalAinl.g:1267:4: enumLiteral_1= 'PERFORMANCE'
+                    // InternalAinl.g:1274:3: (enumLiteral_1= 'PERFORMANCE' )
+                    // InternalAinl.g:1275:4: enumLiteral_1= 'PERFORMANCE'
                     {
-                    enumLiteral_1=(Token)match(input,55,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,56,FOLLOW_2); 
 
                     				current = grammarAccess.getQAttributeAccess().getPERFORMANCEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getQAttributeAccess().getPERFORMANCEEnumLiteralDeclaration_1());
@@ -2843,12 +2867,12 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalAinl.g:1274:3: (enumLiteral_2= 'MODIFIABILITY' )
+                    // InternalAinl.g:1282:3: (enumLiteral_2= 'MODIFIABILITY' )
                     {
-                    // InternalAinl.g:1274:3: (enumLiteral_2= 'MODIFIABILITY' )
-                    // InternalAinl.g:1275:4: enumLiteral_2= 'MODIFIABILITY'
+                    // InternalAinl.g:1282:3: (enumLiteral_2= 'MODIFIABILITY' )
+                    // InternalAinl.g:1283:4: enumLiteral_2= 'MODIFIABILITY'
                     {
-                    enumLiteral_2=(Token)match(input,56,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,57,FOLLOW_2); 
 
                     				current = grammarAccess.getQAttributeAccess().getMODIFIABILITYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getQAttributeAccess().getMODIFIABILITYEnumLiteralDeclaration_2());
@@ -2860,12 +2884,12 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalAinl.g:1282:3: (enumLiteral_3= 'TESTABILITY' )
+                    // InternalAinl.g:1290:3: (enumLiteral_3= 'TESTABILITY' )
                     {
-                    // InternalAinl.g:1282:3: (enumLiteral_3= 'TESTABILITY' )
-                    // InternalAinl.g:1283:4: enumLiteral_3= 'TESTABILITY'
+                    // InternalAinl.g:1290:3: (enumLiteral_3= 'TESTABILITY' )
+                    // InternalAinl.g:1291:4: enumLiteral_3= 'TESTABILITY'
                     {
-                    enumLiteral_3=(Token)match(input,57,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,58,FOLLOW_2); 
 
                     				current = grammarAccess.getQAttributeAccess().getTESTABILITYEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getQAttributeAccess().getTESTABILITYEnumLiteralDeclaration_3());
@@ -2877,12 +2901,12 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalAinl.g:1290:3: (enumLiteral_4= 'SCALABILITY' )
+                    // InternalAinl.g:1298:3: (enumLiteral_4= 'SCALABILITY' )
                     {
-                    // InternalAinl.g:1290:3: (enumLiteral_4= 'SCALABILITY' )
-                    // InternalAinl.g:1291:4: enumLiteral_4= 'SCALABILITY'
+                    // InternalAinl.g:1298:3: (enumLiteral_4= 'SCALABILITY' )
+                    // InternalAinl.g:1299:4: enumLiteral_4= 'SCALABILITY'
                     {
-                    enumLiteral_4=(Token)match(input,58,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,59,FOLLOW_2); 
 
                     				current = grammarAccess.getQAttributeAccess().getSCALABILITYEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getQAttributeAccess().getSCALABILITYEnumLiteralDeclaration_4());
@@ -2933,18 +2957,18 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x07C0000000000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0F80000000000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000030L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000700000000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000F00000000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000030000040L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x003F800000000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x007F000000000000L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000020000040L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000020000000L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000040L});

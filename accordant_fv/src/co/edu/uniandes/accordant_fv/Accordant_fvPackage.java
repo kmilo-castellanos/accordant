@@ -213,13 +213,22 @@ public interface Accordant_fvPackage extends EPackage {
 	int CONNECTOR__SPOINT = 8;
 
 	/**
+	 * The feature id for the '<em><b>Props</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__PROPS = 9;
+
+	/**
 	 * The number of structural features of the '<em>Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_FEATURE_COUNT = 9;
+	int CONNECTOR_FEATURE_COUNT = 10;
 
 	/**
 	 * The number of operations of the '<em>Connector</em>' class.
@@ -668,6 +677,15 @@ public interface Accordant_fvPackage extends EPackage {
 	int STREAM__SPOINT = CONNECTOR__SPOINT;
 
 	/**
+	 * The feature id for the '<em><b>Props</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STREAM__PROPS = CONNECTOR__PROPS;
+
+	/**
 	 * The number of structural features of the '<em>Stream</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -777,6 +795,15 @@ public interface Accordant_fvPackage extends EPackage {
 	int ADAPTOR__SPOINT = CONNECTOR__SPOINT;
 
 	/**
+	 * The feature id for the '<em><b>Props</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADAPTOR__PROPS = CONNECTOR__PROPS;
+
+	/**
 	 * The number of structural features of the '<em>Adaptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -884,6 +911,15 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @ordered
 	 */
 	int DISTRIBUTOR__SPOINT = CONNECTOR__SPOINT;
+
+	/**
+	 * The feature id for the '<em><b>Props</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISTRIBUTOR__PROPS = CONNECTOR__PROPS;
 
 	/**
 	 * The number of structural features of the '<em>Distributor</em>' class.
@@ -1104,6 +1140,15 @@ public interface Accordant_fvPackage extends EPackage {
 	int EVENT__SPOINT = CONNECTOR__SPOINT;
 
 	/**
+	 * The feature id for the '<em><b>Props</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT__PROPS = CONNECTOR__PROPS;
+
+	/**
 	 * The number of structural features of the '<em>Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1195,13 +1240,31 @@ public interface Accordant_fvPackage extends EPackage {
 	int SINK__FORMAT = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINK__TYPE = COMPONENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Props</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINK__PROPS = COMPONENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Sink</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SINK_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 2;
+	int SINK_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Sink</em>' class.
@@ -1348,6 +1411,15 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @ordered
 	 */
 	int ARBITRATOR__SPOINT = CONNECTOR__SPOINT;
+
+	/**
+	 * The feature id for the '<em><b>Props</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARBITRATOR__PROPS = CONNECTOR__PROPS;
 
 	/**
 	 * The number of structural features of the '<em>Arbitrator</em>' class.
@@ -1514,6 +1586,15 @@ public interface Accordant_fvPackage extends EPackage {
 	int PROCEDURE_CALL__SPOINT = CONNECTOR__SPOINT;
 
 	/**
+	 * The feature id for the '<em><b>Props</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCEDURE_CALL__PROPS = CONNECTOR__PROPS;
+
+	/**
 	 * The number of structural features of the '<em>Procedure Call</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1610,6 +1691,17 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @generated
 	 */
 	int ROLE_TYPE = 23;
+
+
+	/**
+	 * The meta object id for the '{@link co.edu.uniandes.accordant_fv.AccessType <em>Access Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see co.edu.uniandes.accordant_fv.AccessType
+	 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getAccessType()
+	 * @generated
+	 */
+	int ACCESS_TYPE = 24;
 
 
 	/**
@@ -1774,6 +1866,17 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConnector_Spoint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_fv.Connector#getProps <em>Props</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Props</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Connector#getProps()
+	 * @see #getConnector()
+	 * @generated
+	 */
+	EAttribute getConnector_Props();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_fv.Component <em>Component</em>}'.
@@ -2041,6 +2144,28 @@ public interface Accordant_fvPackage extends EPackage {
 	EAttribute getSink_Format();
 
 	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_fv.Sink#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Sink#getType()
+	 * @see #getSink()
+	 * @generated
+	 */
+	EAttribute getSink_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_fv.Sink#getProps <em>Props</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Props</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Sink#getProps()
+	 * @see #getSink()
+	 * @generated
+	 */
+	EAttribute getSink_Props();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_fv.Port <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2216,6 +2341,16 @@ public interface Accordant_fvPackage extends EPackage {
 	EEnum getRoleType();
 
 	/**
+	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_fv.AccessType <em>Access Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Access Type</em>'.
+	 * @see co.edu.uniandes.accordant_fv.AccessType
+	 * @generated
+	 */
+	EEnum getAccessType();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2361,6 +2496,14 @@ public interface Accordant_fvPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONNECTOR__SPOINT = eINSTANCE.getConnector_Spoint();
+
+		/**
+		 * The meta object literal for the '<em><b>Props</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONNECTOR__PROPS = eINSTANCE.getConnector_Props();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.impl.ComponentImpl <em>Component</em>}' class.
@@ -2583,6 +2726,22 @@ public interface Accordant_fvPackage extends EPackage {
 		EAttribute SINK__FORMAT = eINSTANCE.getSink_Format();
 
 		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SINK__TYPE = eINSTANCE.getSink_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Props</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SINK__PROPS = eINSTANCE.getSink_Props();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.impl.PortImpl <em>Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2741,6 +2900,16 @@ public interface Accordant_fvPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ROLE_TYPE = eINSTANCE.getRoleType();
+
+		/**
+		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.AccessType <em>Access Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see co.edu.uniandes.accordant_fv.AccessType
+		 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getAccessType()
+		 * @generated
+		 */
+		EEnum ACCESS_TYPE = eINSTANCE.getAccessType();
 
 	}
 
