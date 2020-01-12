@@ -11,7 +11,9 @@ InputPackage returns InputPackage:
 	'{'
 		'QScenarios' '{' scenarios+=QScenario  ("," scenarios+=QScenario)* '}'
 		('analyzedQScenarios' '{' analyzedQs+=AnalyzedQS  ("," analyzedQs+=AnalyzedQS)* '}')?
+		('constraints' '{' constraints+=Constraint  ("," constraints+=Constraint)* '}')?
 		'tactics' '{' tactics+=Tactic (',' tactics+=Tactic)* '}'
+		
 	'}';
 
 
@@ -42,6 +44,9 @@ enum MetricUnit returns MetricUnit:
 enum QAttribute returns QAttribute:
 				AVAILABILITY = 'AVAILABILITY' | PERFORMANCE = 'PERFORMANCE' | MODIFIABILITY = 'MODIFIABILITY' | TESTABILITY = 'TESTABILITY' | SCALABILITY = 'SCALABILITY';
 
+enum ConstraintType returns ConstraintType:
+				ARCH_STYLE = 'ARCH_STYLE' | CLOUD_PROV = 'CLOUD_PROV' | LICENSE = 'LICENSE' | PROC_MODEL = 'PROC_MODEL' | TECH_VENDOR = 'TECH_VENDOR';
+
 AnalyzedQS returns AnalyzedQS:
 	'AQS' 
 	name=ID 'of' qs=[QScenario]
@@ -59,7 +64,14 @@ SensitivityPoint returns SensitivityPoint:
 		('code' ':' code=EString)?
 		'tactics' '(' appliedTactics+=[Tactic] ( "," appliedTactics+=[Tactic])* ')' 
 	'}';
-
+	
+Constraint returns Constraint:
+	'Constraint' 
+	code=ID
+	'{'
+		('type' ':' type=ConstraintType '=' value=EString)?
+	'}';
+	
 Tactic returns Tactic:
 	{Tactic}
 	'Tactic'

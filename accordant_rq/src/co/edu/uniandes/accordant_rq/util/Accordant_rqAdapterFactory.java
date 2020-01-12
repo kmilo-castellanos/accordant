@@ -88,6 +88,10 @@ public class Accordant_rqAdapterFactory extends AdapterFactoryImpl {
 				return createAnalyzedQSAdapter();
 			}
 			@Override
+			public Adapter caseConstraint(Constraint object) {
+				return createConstraintAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -174,6 +178,20 @@ public class Accordant_rqAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAnalyzedQSAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link co.edu.uniandes.accordant_rq.Constraint <em>Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see co.edu.uniandes.accordant_rq.Constraint
+	 * @generated
+	 */
+	public Adapter createConstraintAdapter() {
 		return null;
 	}
 

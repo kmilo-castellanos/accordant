@@ -11,6 +11,8 @@
         eType="#//Tactic" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="analyzedQs" upperBound="-1"
         eType="#//AnalyzedQS" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"
+        eType="#//Constraint" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="QAMetric">
     <eLiterals name="THROUGHPUT" literal="THROUGHPUT"/>
@@ -76,5 +78,18 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="reasoning" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ConstraintType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConstraintType">
+    <eLiterals name="CLOUD_PROV"/>
+    <eLiterals name="PROC_MODEL"/>
+    <eLiterals name="LICENSE"/>
+    <eLiterals name="TECH_VENDOR"/>
+    <eLiterals name="ARCH_STYLE"/>
   </eClassifiers>
 </ecore:EPackage>

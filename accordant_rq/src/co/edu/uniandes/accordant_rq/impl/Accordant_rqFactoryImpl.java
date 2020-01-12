@@ -62,6 +62,7 @@ public class Accordant_rqFactoryImpl extends EFactoryImpl implements Accordant_r
 			case Accordant_rqPackage.SENSITIVITY_POINT: return createSensitivityPoint();
 			case Accordant_rqPackage.TACTIC: return createTactic();
 			case Accordant_rqPackage.ANALYZED_QS: return createAnalyzedQS();
+			case Accordant_rqPackage.CONSTRAINT: return createConstraint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,6 +82,8 @@ public class Accordant_rqFactoryImpl extends EFactoryImpl implements Accordant_r
 				return createMetricUnitFromString(eDataType, initialValue);
 			case Accordant_rqPackage.QATTRIBUTE:
 				return createQAttributeFromString(eDataType, initialValue);
+			case Accordant_rqPackage.CONSTRAINT_TYPE:
+				return createConstraintTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -100,6 +103,8 @@ public class Accordant_rqFactoryImpl extends EFactoryImpl implements Accordant_r
 				return convertMetricUnitToString(eDataType, instanceValue);
 			case Accordant_rqPackage.QATTRIBUTE:
 				return convertQAttributeToString(eDataType, instanceValue);
+			case Accordant_rqPackage.CONSTRAINT_TYPE:
+				return convertConstraintTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -160,6 +165,16 @@ public class Accordant_rqFactoryImpl extends EFactoryImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Constraint createConstraint() {
+		ConstraintImpl constraint = new ConstraintImpl();
+		return constraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public QAMetric createQAMetricFromString(EDataType eDataType, String initialValue) {
 		QAMetric result = QAMetric.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -212,6 +227,26 @@ public class Accordant_rqFactoryImpl extends EFactoryImpl implements Accordant_r
 	 * @generated
 	 */
 	public String convertQAttributeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConstraintType createConstraintTypeFromString(EDataType eDataType, String initialValue) {
+		ConstraintType result = ConstraintType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertConstraintTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

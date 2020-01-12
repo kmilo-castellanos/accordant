@@ -4,6 +4,7 @@ package co.edu.uniandes.accordant_rq.impl;
 
 import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
 import co.edu.uniandes.accordant_rq.AnalyzedQS;
+import co.edu.uniandes.accordant_rq.Constraint;
 import co.edu.uniandes.accordant_rq.InputPackage;
 import co.edu.uniandes.accordant_rq.QScenario;
 
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.InputPackageImpl#getScenarios <em>Scenarios</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.InputPackageImpl#getTactics <em>Tactics</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.InputPackageImpl#getAnalyzedQs <em>Analyzed Qs</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.impl.InputPackageImpl#getConstraints <em>Constraints</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,6 +89,16 @@ public class InputPackageImpl extends MinimalEObjectImpl.Container implements In
 	 * @ordered
 	 */
 	protected EList<AnalyzedQS> analyzedQs;
+
+	/**
+	 * The cached value of the '{@link #getConstraints() <em>Constraints</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConstraints()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Constraint> constraints;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,6 +181,18 @@ public class InputPackageImpl extends MinimalEObjectImpl.Container implements In
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Constraint> getConstraints() {
+		if (constraints == null) {
+			constraints = new EObjectContainmentEList<Constraint>(Constraint.class, this, Accordant_rqPackage.INPUT_PACKAGE__CONSTRAINTS);
+		}
+		return constraints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -178,6 +202,8 @@ public class InputPackageImpl extends MinimalEObjectImpl.Container implements In
 				return ((InternalEList<?>)getTactics()).basicRemove(otherEnd, msgs);
 			case Accordant_rqPackage.INPUT_PACKAGE__ANALYZED_QS:
 				return ((InternalEList<?>)getAnalyzedQs()).basicRemove(otherEnd, msgs);
+			case Accordant_rqPackage.INPUT_PACKAGE__CONSTRAINTS:
+				return ((InternalEList<?>)getConstraints()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -198,6 +224,8 @@ public class InputPackageImpl extends MinimalEObjectImpl.Container implements In
 				return getTactics();
 			case Accordant_rqPackage.INPUT_PACKAGE__ANALYZED_QS:
 				return getAnalyzedQs();
+			case Accordant_rqPackage.INPUT_PACKAGE__CONSTRAINTS:
+				return getConstraints();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -226,6 +254,10 @@ public class InputPackageImpl extends MinimalEObjectImpl.Container implements In
 				getAnalyzedQs().clear();
 				getAnalyzedQs().addAll((Collection<? extends AnalyzedQS>)newValue);
 				return;
+			case Accordant_rqPackage.INPUT_PACKAGE__CONSTRAINTS:
+				getConstraints().clear();
+				getConstraints().addAll((Collection<? extends Constraint>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -250,6 +282,9 @@ public class InputPackageImpl extends MinimalEObjectImpl.Container implements In
 			case Accordant_rqPackage.INPUT_PACKAGE__ANALYZED_QS:
 				getAnalyzedQs().clear();
 				return;
+			case Accordant_rqPackage.INPUT_PACKAGE__CONSTRAINTS:
+				getConstraints().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -270,6 +305,8 @@ public class InputPackageImpl extends MinimalEObjectImpl.Container implements In
 				return tactics != null && !tactics.isEmpty();
 			case Accordant_rqPackage.INPUT_PACKAGE__ANALYZED_QS:
 				return analyzedQs != null && !analyzedQs.isEmpty();
+			case Accordant_rqPackage.INPUT_PACKAGE__CONSTRAINTS:
+				return constraints != null && !constraints.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

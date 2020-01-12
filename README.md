@@ -4,7 +4,7 @@ This repository comprises eclipse (modeling) projects of ACCORDANT framework. Th
 ![ACCORDANT Process](http://sistemasproyectos.uniandes.edu.co/iniciativas/architlab/wp-content/uploads/sites/7/2019/11/process.png)
 
 
-## Accordant's domain-specific language (DSL) projects:
+## ACCORDANT's domain-specific language (DSL) projects:
 
 Architectural Inputs DSL
 * xtext.accordant.rq: Xtext Architectural Inputs specification, grammar, validators, and generators

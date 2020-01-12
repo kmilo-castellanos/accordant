@@ -5,6 +5,7 @@ package co.edu.uniandes.accordant_rq.serializer;
 
 import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
 import co.edu.uniandes.accordant_rq.AnalyzedQS;
+import co.edu.uniandes.accordant_rq.Constraint;
 import co.edu.uniandes.accordant_rq.InputPackage;
 import co.edu.uniandes.accordant_rq.QScenario;
 import co.edu.uniandes.accordant_rq.SensitivityPoint;
@@ -39,6 +40,9 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case Accordant_rqPackage.ANALYZED_QS:
 				sequence_AnalyzedQS(context, (AnalyzedQS) semanticObject); 
 				return; 
+			case Accordant_rqPackage.CONSTRAINT:
+				sequence_Constraint(context, (Constraint) semanticObject); 
+				return; 
 			case Accordant_rqPackage.INPUT_PACKAGE:
 				sequence_InputPackage(context, (InputPackage) semanticObject); 
 				return; 
@@ -70,6 +74,18 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Constraint returns Constraint
+	 *
+	 * Constraint:
+	 *     (code=ID (type=ConstraintType value=EString)?)
+	 */
+	protected void sequence_Constraint(ISerializationContext context, Constraint semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     InputPackage returns InputPackage
 	 *
 	 * Constraint:
@@ -78,6 +94,7 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         scenarios+=QScenario 
 	 *         scenarios+=QScenario* 
 	 *         (analyzedQs+=AnalyzedQS analyzedQs+=AnalyzedQS*)? 
+	 *         (constraints+=Constraint constraints+=Constraint*)? 
 	 *         tactics+=Tactic 
 	 *         tactics+=Tactic*
 	 *     )

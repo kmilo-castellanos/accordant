@@ -37,11 +37,14 @@ public class AinlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQAMetricAccess().getAlternatives(), "rule__QAMetric__Alternatives");
 					put(grammarAccess.getMetricUnitAccess().getAlternatives(), "rule__MetricUnit__Alternatives");
 					put(grammarAccess.getQAttributeAccess().getAlternatives(), "rule__QAttribute__Alternatives");
+					put(grammarAccess.getConstraintTypeAccess().getAlternatives(), "rule__ConstraintType__Alternatives");
 					put(grammarAccess.getInputPackageAccess().getGroup(), "rule__InputPackage__Group__0");
 					put(grammarAccess.getInputPackageAccess().getGroup_7(), "rule__InputPackage__Group_7__0");
 					put(grammarAccess.getInputPackageAccess().getGroup_9(), "rule__InputPackage__Group_9__0");
 					put(grammarAccess.getInputPackageAccess().getGroup_9_3(), "rule__InputPackage__Group_9_3__0");
-					put(grammarAccess.getInputPackageAccess().getGroup_13(), "rule__InputPackage__Group_13__0");
+					put(grammarAccess.getInputPackageAccess().getGroup_10(), "rule__InputPackage__Group_10__0");
+					put(grammarAccess.getInputPackageAccess().getGroup_10_3(), "rule__InputPackage__Group_10_3__0");
+					put(grammarAccess.getInputPackageAccess().getGroup_14(), "rule__InputPackage__Group_14__0");
 					put(grammarAccess.getQScenarioAccess().getGroup(), "rule__QScenario__Group__0");
 					put(grammarAccess.getEFloatAccess().getGroup(), "rule__EFloat__Group__0");
 					put(grammarAccess.getEFloatAccess().getGroup_4(), "rule__EFloat__Group_4__0");
@@ -52,6 +55,8 @@ public class AinlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSensitivityPointAccess().getGroup_4(), "rule__SensitivityPoint__Group_4__0");
 					put(grammarAccess.getSensitivityPointAccess().getGroup_5(), "rule__SensitivityPoint__Group_5__0");
 					put(grammarAccess.getSensitivityPointAccess().getGroup_9(), "rule__SensitivityPoint__Group_9__0");
+					put(grammarAccess.getConstraintAccess().getGroup(), "rule__Constraint__Group__0");
+					put(grammarAccess.getConstraintAccess().getGroup_3(), "rule__Constraint__Group_3__0");
 					put(grammarAccess.getTacticAccess().getGroup(), "rule__Tactic__Group__0");
 					put(grammarAccess.getTacticAccess().getGroup_4(), "rule__Tactic__Group_4__0");
 					put(grammarAccess.getTacticAccess().getGroup_5(), "rule__Tactic__Group_5__0");
@@ -63,8 +68,10 @@ public class AinlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInputPackageAccess().getScenariosAssignment_7_1(), "rule__InputPackage__ScenariosAssignment_7_1");
 					put(grammarAccess.getInputPackageAccess().getAnalyzedQsAssignment_9_2(), "rule__InputPackage__AnalyzedQsAssignment_9_2");
 					put(grammarAccess.getInputPackageAccess().getAnalyzedQsAssignment_9_3_1(), "rule__InputPackage__AnalyzedQsAssignment_9_3_1");
-					put(grammarAccess.getInputPackageAccess().getTacticsAssignment_12(), "rule__InputPackage__TacticsAssignment_12");
-					put(grammarAccess.getInputPackageAccess().getTacticsAssignment_13_1(), "rule__InputPackage__TacticsAssignment_13_1");
+					put(grammarAccess.getInputPackageAccess().getConstraintsAssignment_10_2(), "rule__InputPackage__ConstraintsAssignment_10_2");
+					put(grammarAccess.getInputPackageAccess().getConstraintsAssignment_10_3_1(), "rule__InputPackage__ConstraintsAssignment_10_3_1");
+					put(grammarAccess.getInputPackageAccess().getTacticsAssignment_13(), "rule__InputPackage__TacticsAssignment_13");
+					put(grammarAccess.getInputPackageAccess().getTacticsAssignment_14_1(), "rule__InputPackage__TacticsAssignment_14_1");
 					put(grammarAccess.getQScenarioAccess().getNameAssignment_1(), "rule__QScenario__NameAssignment_1");
 					put(grammarAccess.getQScenarioAccess().getQAttributeAssignment_5(), "rule__QScenario__QAttributeAssignment_5");
 					put(grammarAccess.getQScenarioAccess().getStimulusAssignment_8(), "rule__QScenario__StimulusAssignment_8");
@@ -84,6 +91,9 @@ public class AinlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSensitivityPointAccess().getCodeAssignment_5_2(), "rule__SensitivityPoint__CodeAssignment_5_2");
 					put(grammarAccess.getSensitivityPointAccess().getAppliedTacticsAssignment_8(), "rule__SensitivityPoint__AppliedTacticsAssignment_8");
 					put(grammarAccess.getSensitivityPointAccess().getAppliedTacticsAssignment_9_1(), "rule__SensitivityPoint__AppliedTacticsAssignment_9_1");
+					put(grammarAccess.getConstraintAccess().getCodeAssignment_1(), "rule__Constraint__CodeAssignment_1");
+					put(grammarAccess.getConstraintAccess().getTypeAssignment_3_2(), "rule__Constraint__TypeAssignment_3_2");
+					put(grammarAccess.getConstraintAccess().getValueAssignment_3_4(), "rule__Constraint__ValueAssignment_3_4");
 					put(grammarAccess.getTacticAccess().getNameAssignment_2(), "rule__Tactic__NameAssignment_2");
 					put(grammarAccess.getTacticAccess().getQAttributeAssignment_4_2(), "rule__Tactic__QAttributeAssignment_4_2");
 					put(grammarAccess.getTacticAccess().getRationaleAssignment_5_2(), "rule__Tactic__RationaleAssignment_5_2");

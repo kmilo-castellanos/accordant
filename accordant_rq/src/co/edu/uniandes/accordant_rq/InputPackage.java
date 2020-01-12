@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_rq.InputPackage#getScenarios <em>Scenarios</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.InputPackage#getTactics <em>Tactics</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.InputPackage#getAnalyzedQs <em>Analyzed Qs</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.InputPackage#getConstraints <em>Constraints</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getInputPackage()
@@ -98,5 +99,21 @@ public interface InputPackage extends EObject {
 	 * @generated
 	 */
 	EList<AnalyzedQS> getAnalyzedQs();
+
+	/**
+	 * Returns the value of the '<em><b>Constraints</b></em>' containment reference list.
+	 * The list contents are of type {@link co.edu.uniandes.accordant_rq.Constraint}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Constraints</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Constraints</em>' containment reference list.
+	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getInputPackage_Constraints()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Constraint> getConstraints();
 
 } // InputPackage

@@ -54,16 +54,26 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cAnalyzedQsAssignment_9_3_1 = (Assignment)cGroup_9_3.eContents().get(1);
 		private final RuleCall cAnalyzedQsAnalyzedQSParserRuleCall_9_3_1_0 = (RuleCall)cAnalyzedQsAssignment_9_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_9_4 = (Keyword)cGroup_9.eContents().get(4);
-		private final Keyword cTacticsKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cLeftCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Assignment cTacticsAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cTacticsTacticParserRuleCall_12_0 = (RuleCall)cTacticsAssignment_12.eContents().get(0);
-		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
-		private final Keyword cCommaKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
-		private final Assignment cTacticsAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
-		private final RuleCall cTacticsTacticParserRuleCall_13_1_0 = (RuleCall)cTacticsAssignment_13_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
+		private final Keyword cConstraintsKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
+		private final Assignment cConstraintsAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
+		private final RuleCall cConstraintsConstraintParserRuleCall_10_2_0 = (RuleCall)cConstraintsAssignment_10_2.eContents().get(0);
+		private final Group cGroup_10_3 = (Group)cGroup_10.eContents().get(3);
+		private final Keyword cCommaKeyword_10_3_0 = (Keyword)cGroup_10_3.eContents().get(0);
+		private final Assignment cConstraintsAssignment_10_3_1 = (Assignment)cGroup_10_3.eContents().get(1);
+		private final RuleCall cConstraintsConstraintParserRuleCall_10_3_1_0 = (RuleCall)cConstraintsAssignment_10_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_10_4 = (Keyword)cGroup_10.eContents().get(4);
+		private final Keyword cTacticsKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cLeftCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cTacticsAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cTacticsTacticParserRuleCall_13_0 = (RuleCall)cTacticsAssignment_13.eContents().get(0);
+		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
+		private final Keyword cCommaKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
+		private final Assignment cTacticsAssignment_14_1 = (Assignment)cGroup_14.eContents().get(1);
+		private final RuleCall cTacticsTacticParserRuleCall_14_1_0 = (RuleCall)cTacticsAssignment_14_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
 		//InputPackage:
 		//	{InputPackage}
@@ -71,14 +81,15 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 		//	name=ID
 		//	'{'
 		//	'QScenarios' '{' scenarios+=QScenario ("," scenarios+=QScenario)* '}' ('analyzedQScenarios' '{' analyzedQs+=AnalyzedQS
-		//	("," analyzedQs+=AnalyzedQS)* '}')?
+		//	("," analyzedQs+=AnalyzedQS)* '}')? ('constraints' '{' constraints+=Constraint ("," constraints+=Constraint)* '}')?
 		//	'tactics' '{' tactics+=Tactic (',' tactics+=Tactic)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{InputPackage} 'InputPackage' name=ID '{' 'QScenarios' '{' scenarios+=QScenario ("," scenarios+=QScenario)* '}'
-		//('analyzedQScenarios' '{' analyzedQs+=AnalyzedQS ("," analyzedQs+=AnalyzedQS)* '}')? 'tactics' '{' tactics+=Tactic (','
-		//tactics+=Tactic)* '}' '}'
+		//('analyzedQScenarios' '{' analyzedQs+=AnalyzedQS ("," analyzedQs+=AnalyzedQS)* '}')? ('constraints' '{'
+		//constraints+=Constraint ("," constraints+=Constraint)* '}')? 'tactics' '{' tactics+=Tactic (',' tactics+=Tactic)* '}'
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{InputPackage}
@@ -153,35 +164,65 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_9_4() { return cRightCurlyBracketKeyword_9_4; }
 		
-		//'tactics'
-		public Keyword getTacticsKeyword_10() { return cTacticsKeyword_10; }
+		//('constraints' '{' constraints+=Constraint ("," constraints+=Constraint)* '}')?
+		public Group getGroup_10() { return cGroup_10; }
+		
+		//'constraints'
+		public Keyword getConstraintsKeyword_10_0() { return cConstraintsKeyword_10_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_11() { return cLeftCurlyBracketKeyword_11; }
+		public Keyword getLeftCurlyBracketKeyword_10_1() { return cLeftCurlyBracketKeyword_10_1; }
 		
-		//tactics+=Tactic
-		public Assignment getTacticsAssignment_12() { return cTacticsAssignment_12; }
+		//constraints+=Constraint
+		public Assignment getConstraintsAssignment_10_2() { return cConstraintsAssignment_10_2; }
 		
-		//Tactic
-		public RuleCall getTacticsTacticParserRuleCall_12_0() { return cTacticsTacticParserRuleCall_12_0; }
+		//Constraint
+		public RuleCall getConstraintsConstraintParserRuleCall_10_2_0() { return cConstraintsConstraintParserRuleCall_10_2_0; }
 		
-		//(',' tactics+=Tactic)*
-		public Group getGroup_13() { return cGroup_13; }
+		//("," constraints+=Constraint)*
+		public Group getGroup_10_3() { return cGroup_10_3; }
 		
-		//','
-		public Keyword getCommaKeyword_13_0() { return cCommaKeyword_13_0; }
+		//","
+		public Keyword getCommaKeyword_10_3_0() { return cCommaKeyword_10_3_0; }
 		
-		//tactics+=Tactic
-		public Assignment getTacticsAssignment_13_1() { return cTacticsAssignment_13_1; }
+		//constraints+=Constraint
+		public Assignment getConstraintsAssignment_10_3_1() { return cConstraintsAssignment_10_3_1; }
 		
-		//Tactic
-		public RuleCall getTacticsTacticParserRuleCall_13_1_0() { return cTacticsTacticParserRuleCall_13_1_0; }
+		//Constraint
+		public RuleCall getConstraintsConstraintParserRuleCall_10_3_1_0() { return cConstraintsConstraintParserRuleCall_10_3_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
+		public Keyword getRightCurlyBracketKeyword_10_4() { return cRightCurlyBracketKeyword_10_4; }
+		
+		//'tactics'
+		public Keyword getTacticsKeyword_11() { return cTacticsKeyword_11; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_12() { return cLeftCurlyBracketKeyword_12; }
+		
+		//tactics+=Tactic
+		public Assignment getTacticsAssignment_13() { return cTacticsAssignment_13; }
+		
+		//Tactic
+		public RuleCall getTacticsTacticParserRuleCall_13_0() { return cTacticsTacticParserRuleCall_13_0; }
+		
+		//(',' tactics+=Tactic)*
+		public Group getGroup_14() { return cGroup_14; }
+		
+		//','
+		public Keyword getCommaKeyword_14_0() { return cCommaKeyword_14_0; }
+		
+		//tactics+=Tactic
+		public Assignment getTacticsAssignment_14_1() { return cTacticsAssignment_14_1; }
+		
+		//Tactic
+		public RuleCall getTacticsTacticParserRuleCall_14_1_0() { return cTacticsTacticParserRuleCall_14_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_16() { return cRightCurlyBracketKeyword_16; }
 	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.accordant_rq.Ainl.EString");
@@ -634,6 +675,72 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
+	public class ConstraintElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.accordant_rq.Ainl.Constraint");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cConstraintKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cCodeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCodeIDTerminalRuleCall_1_0 = (RuleCall)cCodeAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cTypeKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cTypeAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cTypeConstraintTypeEnumRuleCall_3_2_0 = (RuleCall)cTypeAssignment_3_2.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
+		private final Assignment cValueAssignment_3_4 = (Assignment)cGroup_3.eContents().get(4);
+		private final RuleCall cValueEStringParserRuleCall_3_4_0 = (RuleCall)cValueAssignment_3_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//Constraint:
+		//	'Constraint'
+		//	code=ID
+		//	'{' ('type' ':' type=ConstraintType '=' value=EString)?
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Constraint' code=ID '{' ('type' ':' type=ConstraintType '=' value=EString)? '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'Constraint'
+		public Keyword getConstraintKeyword_0() { return cConstraintKeyword_0; }
+		
+		//code=ID
+		public Assignment getCodeAssignment_1() { return cCodeAssignment_1; }
+		
+		//ID
+		public RuleCall getCodeIDTerminalRuleCall_1_0() { return cCodeIDTerminalRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//('type' ':' type=ConstraintType '=' value=EString)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'type'
+		public Keyword getTypeKeyword_3_0() { return cTypeKeyword_3_0; }
+		
+		//':'
+		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
+		
+		//type=ConstraintType
+		public Assignment getTypeAssignment_3_2() { return cTypeAssignment_3_2; }
+		
+		//ConstraintType
+		public RuleCall getTypeConstraintTypeEnumRuleCall_3_2_0() { return cTypeConstraintTypeEnumRuleCall_3_2_0; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_3_3() { return cEqualsSignKeyword_3_3; }
+		
+		//value=EString
+		public Assignment getValueAssignment_3_4() { return cValueAssignment_3_4; }
+		
+		//EString
+		public RuleCall getValueEStringParserRuleCall_3_4_0() { return cValueEStringParserRuleCall_3_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
 	public class TacticElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.accordant_rq.Ainl.Tactic");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -956,6 +1063,57 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 		//'SCALABILITY'
 		public Keyword getSCALABILITYSCALABILITYKeyword_4_0() { return cSCALABILITYSCALABILITYKeyword_4_0; }
 	}
+	public class ConstraintTypeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.accordant_rq.Ainl.ConstraintType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cARCH_STYLEEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cARCH_STYLEARCH_STYLEKeyword_0_0 = (Keyword)cARCH_STYLEEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cCLOUD_PROVEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cCLOUD_PROVCLOUD_PROVKeyword_1_0 = (Keyword)cCLOUD_PROVEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cLICENSEEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cLICENSELICENSEKeyword_2_0 = (Keyword)cLICENSEEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cPROC_MODELEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cPROC_MODELPROC_MODELKeyword_3_0 = (Keyword)cPROC_MODELEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cTECH_VENDOREnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cTECH_VENDORTECH_VENDORKeyword_4_0 = (Keyword)cTECH_VENDOREnumLiteralDeclaration_4.eContents().get(0);
+		
+		//enum ConstraintType:
+		//	ARCH_STYLE | CLOUD_PROV | LICENSE | PROC_MODEL | TECH_VENDOR;
+		public EnumRule getRule() { return rule; }
+		
+		//ARCH_STYLE | CLOUD_PROV | LICENSE | PROC_MODEL | TECH_VENDOR
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//ARCH_STYLE
+		public EnumLiteralDeclaration getARCH_STYLEEnumLiteralDeclaration_0() { return cARCH_STYLEEnumLiteralDeclaration_0; }
+		
+		//'ARCH_STYLE'
+		public Keyword getARCH_STYLEARCH_STYLEKeyword_0_0() { return cARCH_STYLEARCH_STYLEKeyword_0_0; }
+		
+		//CLOUD_PROV
+		public EnumLiteralDeclaration getCLOUD_PROVEnumLiteralDeclaration_1() { return cCLOUD_PROVEnumLiteralDeclaration_1; }
+		
+		//'CLOUD_PROV'
+		public Keyword getCLOUD_PROVCLOUD_PROVKeyword_1_0() { return cCLOUD_PROVCLOUD_PROVKeyword_1_0; }
+		
+		//LICENSE
+		public EnumLiteralDeclaration getLICENSEEnumLiteralDeclaration_2() { return cLICENSEEnumLiteralDeclaration_2; }
+		
+		//'LICENSE'
+		public Keyword getLICENSELICENSEKeyword_2_0() { return cLICENSELICENSEKeyword_2_0; }
+		
+		//PROC_MODEL
+		public EnumLiteralDeclaration getPROC_MODELEnumLiteralDeclaration_3() { return cPROC_MODELEnumLiteralDeclaration_3; }
+		
+		//'PROC_MODEL'
+		public Keyword getPROC_MODELPROC_MODELKeyword_3_0() { return cPROC_MODELPROC_MODELKeyword_3_0; }
+		
+		//TECH_VENDOR
+		public EnumLiteralDeclaration getTECH_VENDOREnumLiteralDeclaration_4() { return cTECH_VENDOREnumLiteralDeclaration_4; }
+		
+		//'TECH_VENDOR'
+		public Keyword getTECH_VENDORTECH_VENDORKeyword_4_0() { return cTECH_VENDORTECH_VENDORKeyword_4_0; }
+	}
 	
 	private final InputPackageElements pInputPackage;
 	private final EStringElements pEString;
@@ -964,8 +1122,10 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 	private final EFloatElements pEFloat;
 	private final MetricUnitElements eMetricUnit;
 	private final QAttributeElements eQAttribute;
+	private final ConstraintTypeElements eConstraintType;
 	private final AnalyzedQSElements pAnalyzedQS;
 	private final SensitivityPointElements pSensitivityPoint;
+	private final ConstraintElements pConstraint;
 	private final TacticElements pTactic;
 	private final EBooleanElements pEBoolean;
 	
@@ -985,8 +1145,10 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pEFloat = new EFloatElements();
 		this.eMetricUnit = new MetricUnitElements();
 		this.eQAttribute = new QAttributeElements();
+		this.eConstraintType = new ConstraintTypeElements();
 		this.pAnalyzedQS = new AnalyzedQSElements();
 		this.pSensitivityPoint = new SensitivityPointElements();
+		this.pConstraint = new ConstraintElements();
 		this.pTactic = new TacticElements();
 		this.pEBoolean = new EBooleanElements();
 	}
@@ -1024,7 +1186,7 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=ID
 	//	'{'
 	//	'QScenarios' '{' scenarios+=QScenario ("," scenarios+=QScenario)* '}' ('analyzedQScenarios' '{' analyzedQs+=AnalyzedQS
-	//	("," analyzedQs+=AnalyzedQS)* '}')?
+	//	("," analyzedQs+=AnalyzedQS)* '}')? ('constraints' '{' constraints+=Constraint ("," constraints+=Constraint)* '}')?
 	//	'tactics' '{' tactics+=Tactic (',' tactics+=Tactic)* '}'
 	//	'}';
 	public InputPackageElements getInputPackageAccess() {
@@ -1103,6 +1265,16 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 		return getQAttributeAccess().getRule();
 	}
 	
+	//enum ConstraintType:
+	//	ARCH_STYLE | CLOUD_PROV | LICENSE | PROC_MODEL | TECH_VENDOR;
+	public ConstraintTypeElements getConstraintTypeAccess() {
+		return eConstraintType;
+	}
+	
+	public EnumRule getConstraintTypeRule() {
+		return getConstraintTypeAccess().getRule();
+	}
+	
 	//AnalyzedQS:
 	//	'AQS'
 	//	name=ID 'of' qs=[QScenario]
@@ -1129,6 +1301,19 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getSensitivityPointRule() {
 		return getSensitivityPointAccess().getRule();
+	}
+	
+	//Constraint:
+	//	'Constraint'
+	//	code=ID
+	//	'{' ('type' ':' type=ConstraintType '=' value=EString)?
+	//	'}';
+	public ConstraintElements getConstraintAccess() {
+		return pConstraint;
+	}
+	
+	public ParserRule getConstraintRule() {
+		return getConstraintAccess().getRule();
 	}
 	
 	//Tactic:

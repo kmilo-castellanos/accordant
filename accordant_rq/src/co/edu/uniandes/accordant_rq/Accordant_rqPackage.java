@@ -104,13 +104,22 @@ public interface Accordant_rqPackage extends EPackage {
 	int INPUT_PACKAGE__ANALYZED_QS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PACKAGE__CONSTRAINTS = 4;
+
+	/**
 	 * The number of structural features of the '<em>Input Package</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_PACKAGE_FEATURE_COUNT = 4;
+	int INPUT_PACKAGE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Input Package</em>' class.
@@ -450,6 +459,61 @@ public interface Accordant_rqPackage extends EPackage {
 	int ANALYZED_QS_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link co.edu.uniandes.accordant_rq.impl.ConstraintImpl <em>Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see co.edu.uniandes.accordant_rq.impl.ConstraintImpl
+	 * @see co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl#getConstraint()
+	 * @generated
+	 */
+	int CONSTRAINT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT__CODE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT__TYPE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT__VALUE = 2;
+
+	/**
+	 * The number of structural features of the '<em>Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_rq.QAMetric <em>QA Metric</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -457,7 +521,7 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl#getQAMetric()
 	 * @generated
 	 */
-	int QA_METRIC = 5;
+	int QA_METRIC = 6;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_rq.MetricUnit <em>Metric Unit</em>}' enum.
@@ -467,7 +531,7 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl#getMetricUnit()
 	 * @generated
 	 */
-	int METRIC_UNIT = 6;
+	int METRIC_UNIT = 7;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_rq.QAttribute <em>QAttribute</em>}' enum.
@@ -477,7 +541,18 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl#getQAttribute()
 	 * @generated
 	 */
-	int QATTRIBUTE = 7;
+	int QATTRIBUTE = 8;
+
+
+	/**
+	 * The meta object id for the '{@link co.edu.uniandes.accordant_rq.ConstraintType <em>Constraint Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see co.edu.uniandes.accordant_rq.ConstraintType
+	 * @see co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl#getConstraintType()
+	 * @generated
+	 */
+	int CONSTRAINT_TYPE = 9;
 
 
 	/**
@@ -533,6 +608,17 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInputPackage_AnalyzedQs();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_rq.InputPackage#getConstraints <em>Constraints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Constraints</em>'.
+	 * @see co.edu.uniandes.accordant_rq.InputPackage#getConstraints()
+	 * @see #getInputPackage()
+	 * @generated
+	 */
+	EReference getInputPackage_Constraints();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_rq.QScenario <em>QScenario</em>}'.
@@ -839,6 +925,49 @@ public interface Accordant_rqPackage extends EPackage {
 	EAttribute getAnalyzedQS_Name();
 
 	/**
+	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_rq.Constraint <em>Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Constraint</em>'.
+	 * @see co.edu.uniandes.accordant_rq.Constraint
+	 * @generated
+	 */
+	EClass getConstraint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.Constraint#getCode <em>Code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Code</em>'.
+	 * @see co.edu.uniandes.accordant_rq.Constraint#getCode()
+	 * @see #getConstraint()
+	 * @generated
+	 */
+	EAttribute getConstraint_Code();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.Constraint#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see co.edu.uniandes.accordant_rq.Constraint#getType()
+	 * @see #getConstraint()
+	 * @generated
+	 */
+	EAttribute getConstraint_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.Constraint#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see co.edu.uniandes.accordant_rq.Constraint#getValue()
+	 * @see #getConstraint()
+	 * @generated
+	 */
+	EAttribute getConstraint_Value();
+
+	/**
 	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_rq.QAMetric <em>QA Metric</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -867,6 +996,16 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getQAttribute();
+
+	/**
+	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_rq.ConstraintType <em>Constraint Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Constraint Type</em>'.
+	 * @see co.edu.uniandes.accordant_rq.ConstraintType
+	 * @generated
+	 */
+	EEnum getConstraintType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -932,6 +1071,14 @@ public interface Accordant_rqPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INPUT_PACKAGE__ANALYZED_QS = eINSTANCE.getInputPackage_AnalyzedQs();
+
+		/**
+		 * The meta object literal for the '<em><b>Constraints</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INPUT_PACKAGE__CONSTRAINTS = eINSTANCE.getInputPackage_Constraints();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_rq.impl.QScenarioImpl <em>QScenario</em>}' class.
@@ -1166,6 +1313,40 @@ public interface Accordant_rqPackage extends EPackage {
 		EAttribute ANALYZED_QS__NAME = eINSTANCE.getAnalyzedQS_Name();
 
 		/**
+		 * The meta object literal for the '{@link co.edu.uniandes.accordant_rq.impl.ConstraintImpl <em>Constraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see co.edu.uniandes.accordant_rq.impl.ConstraintImpl
+		 * @see co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl#getConstraint()
+		 * @generated
+		 */
+		EClass CONSTRAINT = eINSTANCE.getConstraint();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSTRAINT__CODE = eINSTANCE.getConstraint_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSTRAINT__TYPE = eINSTANCE.getConstraint_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSTRAINT__VALUE = eINSTANCE.getConstraint_Value();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_rq.QAMetric <em>QA Metric</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1194,6 +1375,16 @@ public interface Accordant_rqPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum QATTRIBUTE = eINSTANCE.getQAttribute();
+
+		/**
+		 * The meta object literal for the '{@link co.edu.uniandes.accordant_rq.ConstraintType <em>Constraint Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see co.edu.uniandes.accordant_rq.ConstraintType
+		 * @see co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl#getConstraintType()
+		 * @generated
+		 */
+		EEnum CONSTRAINT_TYPE = eINSTANCE.getConstraintType();
 
 	}
 

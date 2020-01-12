@@ -5,6 +5,8 @@ package co.edu.uniandes.accordant_rq.impl;
 import co.edu.uniandes.accordant_rq.Accordant_rqFactory;
 import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
 import co.edu.uniandes.accordant_rq.AnalyzedQS;
+import co.edu.uniandes.accordant_rq.Constraint;
+import co.edu.uniandes.accordant_rq.ConstraintType;
 import co.edu.uniandes.accordant_rq.InputPackage;
 import co.edu.uniandes.accordant_rq.MetricUnit;
 import co.edu.uniandes.accordant_rq.QAMetric;
@@ -68,6 +70,13 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass constraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum qaMetricEEnum = null;
 
 	/**
@@ -83,6 +92,13 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * @generated
 	 */
 	private EEnum qAttributeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum constraintTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -188,6 +204,15 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 */
 	public EReference getInputPackage_AnalyzedQs() {
 		return (EReference)inputPackageEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInputPackage_Constraints() {
+		return (EReference)inputPackageEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -447,6 +472,42 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getConstraint() {
+		return constraintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConstraint_Code() {
+		return (EAttribute)constraintEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConstraint_Type() {
+		return (EAttribute)constraintEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConstraint_Value() {
+		return (EAttribute)constraintEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getQAMetric() {
 		return qaMetricEEnum;
 	}
@@ -467,6 +528,15 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 */
 	public EEnum getQAttribute() {
 		return qAttributeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getConstraintType() {
+		return constraintTypeEEnum;
 	}
 
 	/**
@@ -502,6 +572,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		createEReference(inputPackageEClass, INPUT_PACKAGE__SCENARIOS);
 		createEReference(inputPackageEClass, INPUT_PACKAGE__TACTICS);
 		createEReference(inputPackageEClass, INPUT_PACKAGE__ANALYZED_QS);
+		createEReference(inputPackageEClass, INPUT_PACKAGE__CONSTRAINTS);
 
 		qScenarioEClass = createEClass(QSCENARIO);
 		createEAttribute(qScenarioEClass, QSCENARIO__MEASURE);
@@ -535,10 +606,16 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		createEAttribute(analyzedQSEClass, ANALYZED_QS__REASONING);
 		createEAttribute(analyzedQSEClass, ANALYZED_QS__NAME);
 
+		constraintEClass = createEClass(CONSTRAINT);
+		createEAttribute(constraintEClass, CONSTRAINT__CODE);
+		createEAttribute(constraintEClass, CONSTRAINT__TYPE);
+		createEAttribute(constraintEClass, CONSTRAINT__VALUE);
+
 		// Create enums
 		qaMetricEEnum = createEEnum(QA_METRIC);
 		metricUnitEEnum = createEEnum(METRIC_UNIT);
 		qAttributeEEnum = createEEnum(QATTRIBUTE);
+		constraintTypeEEnum = createEEnum(CONSTRAINT_TYPE);
 	}
 
 	/**
@@ -576,6 +653,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		initEReference(getInputPackage_Scenarios(), this.getQScenario(), null, "scenarios", null, 1, -1, InputPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInputPackage_Tactics(), this.getTactic(), null, "tactics", null, 0, -1, InputPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInputPackage_AnalyzedQs(), this.getAnalyzedQS(), null, "analyzedQs", null, 0, -1, InputPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInputPackage_Constraints(), this.getConstraint(), null, "constraints", null, 0, -1, InputPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(qScenarioEClass, QScenario.class, "QScenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getQScenario_Measure(), this.getQAMetric(), "measure", null, 1, 1, QScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -609,6 +687,11 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		initEAttribute(getAnalyzedQS_Reasoning(), ecorePackage.getEString(), "reasoning", null, 0, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAnalyzedQS_Name(), ecorePackage.getEString(), "name", null, 1, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConstraint_Code(), ecorePackage.getEString(), "code", "", 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConstraint_Type(), this.getConstraintType(), "type", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConstraint_Value(), ecorePackage.getEString(), "value", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(qaMetricEEnum, QAMetric.class, "QAMetric");
 		addEEnumLiteral(qaMetricEEnum, QAMetric.THROUGHPUT);
@@ -631,6 +714,13 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		addEEnumLiteral(qAttributeEEnum, QAttribute.MODIFIABILITY);
 		addEEnumLiteral(qAttributeEEnum, QAttribute.TESTABILITY);
 		addEEnumLiteral(qAttributeEEnum, QAttribute.SCALABILITY);
+
+		initEEnum(constraintTypeEEnum, ConstraintType.class, "ConstraintType");
+		addEEnumLiteral(constraintTypeEEnum, ConstraintType.CLOUD_PROV);
+		addEEnumLiteral(constraintTypeEEnum, ConstraintType.PROC_MODEL);
+		addEEnumLiteral(constraintTypeEEnum, ConstraintType.LICENSE);
+		addEEnumLiteral(constraintTypeEEnum, ConstraintType.TECH_VENDOR);
+		addEEnumLiteral(constraintTypeEEnum, ConstraintType.ARCH_STYLE);
 
 		// Create resource
 		createResource(eNS_URI);
