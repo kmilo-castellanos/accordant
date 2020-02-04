@@ -27,11 +27,11 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 	
-	public class InputPackageElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.accordant_rq.Ainl.InputPackage");
+	public class ProjectElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.accordant_rq.Ainl.Project");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cInputPackageAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cInputPackageKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Action cProjectAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cProjectKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
@@ -75,9 +75,9 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
-		//InputPackage:
-		//	{InputPackage}
-		//	'InputPackage'
+		//Project:
+		//	{Project}
+		//	'Project'
 		//	name=ID
 		//	'{'
 		//	'QScenarios' '{' scenarios+=QScenario ("," scenarios+=QScenario)* '}' ('analyzedQScenarios' '{' analyzedQs+=AnalyzedQS
@@ -86,17 +86,17 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{InputPackage} 'InputPackage' name=ID '{' 'QScenarios' '{' scenarios+=QScenario ("," scenarios+=QScenario)* '}'
+		//{Project} 'Project' name=ID '{' 'QScenarios' '{' scenarios+=QScenario ("," scenarios+=QScenario)* '}'
 		//('analyzedQScenarios' '{' analyzedQs+=AnalyzedQS ("," analyzedQs+=AnalyzedQS)* '}')? ('constraints' '{'
 		//constraints+=Constraint ("," constraints+=Constraint)* '}')? 'tactics' '{' tactics+=Tactic (',' tactics+=Tactic)* '}'
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//{InputPackage}
-		public Action getInputPackageAction_0() { return cInputPackageAction_0; }
+		//{Project}
+		public Action getProjectAction_0() { return cProjectAction_0; }
 		
-		//'InputPackage'
-		public Keyword getInputPackageKeyword_1() { return cInputPackageKeyword_1; }
+		//'Project'
+		public Keyword getProjectKeyword_1() { return cProjectKeyword_1; }
 		
 		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
@@ -1115,7 +1115,7 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getTECH_VENDORTECH_VENDORKeyword_4_0() { return cTECH_VENDORTECH_VENDORKeyword_4_0; }
 	}
 	
-	private final InputPackageElements pInputPackage;
+	private final ProjectElements pProject;
 	private final EStringElements pEString;
 	private final QScenarioElements pQScenario;
 	private final QAMetricElements eQAMetric;
@@ -1138,7 +1138,7 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
-		this.pInputPackage = new InputPackageElements();
+		this.pProject = new ProjectElements();
 		this.pEString = new EStringElements();
 		this.pQScenario = new QScenarioElements();
 		this.eQAMetric = new QAMetricElements();
@@ -1180,21 +1180,21 @@ public class AinlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//InputPackage:
-	//	{InputPackage}
-	//	'InputPackage'
+	//Project:
+	//	{Project}
+	//	'Project'
 	//	name=ID
 	//	'{'
 	//	'QScenarios' '{' scenarios+=QScenario ("," scenarios+=QScenario)* '}' ('analyzedQScenarios' '{' analyzedQs+=AnalyzedQS
 	//	("," analyzedQs+=AnalyzedQS)* '}')? ('constraints' '{' constraints+=Constraint ("," constraints+=Constraint)* '}')?
 	//	'tactics' '{' tactics+=Tactic (',' tactics+=Tactic)* '}'
 	//	'}';
-	public InputPackageElements getInputPackageAccess() {
-		return pInputPackage;
+	public ProjectElements getProjectAccess() {
+		return pProject;
 	}
 	
-	public ParserRule getInputPackageRule() {
-		return getInputPackageAccess().getRule();
+	public ParserRule getProjectRule() {
+		return getProjectAccess().getRule();
 	}
 	
 	//EString:

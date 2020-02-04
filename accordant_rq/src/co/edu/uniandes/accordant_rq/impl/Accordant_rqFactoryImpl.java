@@ -57,7 +57,7 @@ public class Accordant_rqFactoryImpl extends EFactoryImpl implements Accordant_r
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case Accordant_rqPackage.INPUT_PACKAGE: return createInputPackage();
+			case Accordant_rqPackage.PROJECT: return createProject();
 			case Accordant_rqPackage.QSCENARIO: return createQScenario();
 			case Accordant_rqPackage.SENSITIVITY_POINT: return createSensitivityPoint();
 			case Accordant_rqPackage.TACTIC: return createTactic();
@@ -115,9 +115,9 @@ public class Accordant_rqFactoryImpl extends EFactoryImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InputPackage createInputPackage() {
-		InputPackageImpl inputPackage = new InputPackageImpl();
-		return inputPackage;
+	public Project createProject() {
+		ProjectImpl project = new ProjectImpl();
+		return project;
 	}
 
 	/**

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAfvlParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'FunctionalView'", "'use'", "'inputPackage'", "'{'", "'Components'", "','", "'}'", "'Connectors'", "'Port'", "':'", "'Role'", "'->'", "'Stream'", "'delivery'", "'sync'", "'notification'", "'buffering'", "'throughput'", "'props'", "'sensitivityPoint'", "'roles'", "'Adaptor'", "'Distributor'", "'Event'", "'ProcCall'", "'Transformer'", "'procModel'", "'pmml'", "'ports'", "'Estimator'", "'Ingestor'", "'type'", "'conn'", "'format'", "'Sink'", "'BEST_EFFORT'", "'AT_LEAST_ONE'", "'AT_MOST_ONE'", "'EXACTLY_ONE'", "'ASYNC'", "'SYNC'", "'REQUIRED'", "'PROVIDED'", "'OUT'", "'IN'", "'POLLED'", "'PUBSUB'", "'QUEUED'", "'CENTRAL'", "'BUFFERED'", "'UNBUFFERED'", "'ATOMIC'", "'HIGH_ORDER'", "'STREAM'", "'BATCH'", "'MICROBATCH'", "'HTTP'", "'DATABASE'", "'FILESYSTEM'", "'HDFS'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'FunctionalView'", "'use'", "'project'", "'{'", "'Components'", "','", "'}'", "'Connectors'", "'Port'", "':'", "'Role'", "'->'", "'Stream'", "'delivery'", "'sync'", "'notification'", "'buffering'", "'throughput'", "'props'", "'sensitivityPoint'", "'roles'", "'Adaptor'", "'Distributor'", "'Event'", "'ProcCall'", "'Transformer'", "'procModel'", "'pmml'", "'ports'", "'Estimator'", "'Ingestor'", "'type'", "'conn'", "'format'", "'Sink'", "'BEST_EFFORT'", "'AT_LEAST_ONE'", "'AT_MOST_ONE'", "'EXACTLY_ONE'", "'ASYNC'", "'SYNC'", "'REQUIRED'", "'PROVIDED'", "'OUT'", "'IN'", "'POLLED'", "'PUBSUB'", "'QUEUED'", "'CENTRAL'", "'BUFFERED'", "'UNBUFFERED'", "'ATOMIC'", "'HIGH_ORDER'", "'STREAM'", "'BATCH'", "'MICROBATCH'", "'HTTP'", "'DATABASE'", "'FILESYSTEM'", "'HDFS'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -169,7 +169,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFunctionalView"
-    // InternalAfvl.g:72:1: ruleFunctionalView returns [EObject current=null] : (otherlv_0= 'FunctionalView' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'use' otherlv_3= 'inputPackage' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' otherlv_6= 'Components' otherlv_7= '{' ( (lv_comps_8_0= ruleComponent ) ) (otherlv_9= ',' ( (lv_comps_10_0= ruleComponent ) ) )* otherlv_11= '}' otherlv_12= 'Connectors' otherlv_13= '{' ( (lv_conns_14_0= ruleConnector ) ) (otherlv_15= ',' ( (lv_conns_16_0= ruleConnector ) ) )* otherlv_17= '}' otherlv_18= '}' ) ;
+    // InternalAfvl.g:72:1: ruleFunctionalView returns [EObject current=null] : (otherlv_0= 'FunctionalView' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'use' otherlv_3= 'project' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' otherlv_6= 'Components' otherlv_7= '{' ( (lv_comps_8_0= ruleComponent ) ) (otherlv_9= ',' ( (lv_comps_10_0= ruleComponent ) ) )* otherlv_11= '}' otherlv_12= 'Connectors' otherlv_13= '{' ( (lv_conns_14_0= ruleConnector ) ) (otherlv_15= ',' ( (lv_conns_16_0= ruleConnector ) ) )* otherlv_17= '}' otherlv_18= '}' ) ;
     public final EObject ruleFunctionalView() throws RecognitionException {
         EObject current = null;
 
@@ -201,11 +201,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAfvl.g:78:2: ( (otherlv_0= 'FunctionalView' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'use' otherlv_3= 'inputPackage' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' otherlv_6= 'Components' otherlv_7= '{' ( (lv_comps_8_0= ruleComponent ) ) (otherlv_9= ',' ( (lv_comps_10_0= ruleComponent ) ) )* otherlv_11= '}' otherlv_12= 'Connectors' otherlv_13= '{' ( (lv_conns_14_0= ruleConnector ) ) (otherlv_15= ',' ( (lv_conns_16_0= ruleConnector ) ) )* otherlv_17= '}' otherlv_18= '}' ) )
-            // InternalAfvl.g:79:2: (otherlv_0= 'FunctionalView' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'use' otherlv_3= 'inputPackage' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' otherlv_6= 'Components' otherlv_7= '{' ( (lv_comps_8_0= ruleComponent ) ) (otherlv_9= ',' ( (lv_comps_10_0= ruleComponent ) ) )* otherlv_11= '}' otherlv_12= 'Connectors' otherlv_13= '{' ( (lv_conns_14_0= ruleConnector ) ) (otherlv_15= ',' ( (lv_conns_16_0= ruleConnector ) ) )* otherlv_17= '}' otherlv_18= '}' )
+            // InternalAfvl.g:78:2: ( (otherlv_0= 'FunctionalView' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'use' otherlv_3= 'project' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' otherlv_6= 'Components' otherlv_7= '{' ( (lv_comps_8_0= ruleComponent ) ) (otherlv_9= ',' ( (lv_comps_10_0= ruleComponent ) ) )* otherlv_11= '}' otherlv_12= 'Connectors' otherlv_13= '{' ( (lv_conns_14_0= ruleConnector ) ) (otherlv_15= ',' ( (lv_conns_16_0= ruleConnector ) ) )* otherlv_17= '}' otherlv_18= '}' ) )
+            // InternalAfvl.g:79:2: (otherlv_0= 'FunctionalView' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'use' otherlv_3= 'project' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' otherlv_6= 'Components' otherlv_7= '{' ( (lv_comps_8_0= ruleComponent ) ) (otherlv_9= ',' ( (lv_comps_10_0= ruleComponent ) ) )* otherlv_11= '}' otherlv_12= 'Connectors' otherlv_13= '{' ( (lv_conns_14_0= ruleConnector ) ) (otherlv_15= ',' ( (lv_conns_16_0= ruleConnector ) ) )* otherlv_17= '}' otherlv_18= '}' )
             {
-            // InternalAfvl.g:79:2: (otherlv_0= 'FunctionalView' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'use' otherlv_3= 'inputPackage' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' otherlv_6= 'Components' otherlv_7= '{' ( (lv_comps_8_0= ruleComponent ) ) (otherlv_9= ',' ( (lv_comps_10_0= ruleComponent ) ) )* otherlv_11= '}' otherlv_12= 'Connectors' otherlv_13= '{' ( (lv_conns_14_0= ruleConnector ) ) (otherlv_15= ',' ( (lv_conns_16_0= ruleConnector ) ) )* otherlv_17= '}' otherlv_18= '}' )
-            // InternalAfvl.g:80:3: otherlv_0= 'FunctionalView' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'use' otherlv_3= 'inputPackage' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' otherlv_6= 'Components' otherlv_7= '{' ( (lv_comps_8_0= ruleComponent ) ) (otherlv_9= ',' ( (lv_comps_10_0= ruleComponent ) ) )* otherlv_11= '}' otherlv_12= 'Connectors' otherlv_13= '{' ( (lv_conns_14_0= ruleConnector ) ) (otherlv_15= ',' ( (lv_conns_16_0= ruleConnector ) ) )* otherlv_17= '}' otherlv_18= '}'
+            // InternalAfvl.g:79:2: (otherlv_0= 'FunctionalView' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'use' otherlv_3= 'project' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' otherlv_6= 'Components' otherlv_7= '{' ( (lv_comps_8_0= ruleComponent ) ) (otherlv_9= ',' ( (lv_comps_10_0= ruleComponent ) ) )* otherlv_11= '}' otherlv_12= 'Connectors' otherlv_13= '{' ( (lv_conns_14_0= ruleConnector ) ) (otherlv_15= ',' ( (lv_conns_16_0= ruleConnector ) ) )* otherlv_17= '}' otherlv_18= '}' )
+            // InternalAfvl.g:80:3: otherlv_0= 'FunctionalView' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'use' otherlv_3= 'project' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' otherlv_6= 'Components' otherlv_7= '{' ( (lv_comps_8_0= ruleComponent ) ) (otherlv_9= ',' ( (lv_comps_10_0= ruleComponent ) ) )* otherlv_11= '}' otherlv_12= 'Connectors' otherlv_13= '{' ( (lv_conns_14_0= ruleConnector ) ) (otherlv_15= ',' ( (lv_conns_16_0= ruleConnector ) ) )* otherlv_17= '}' otherlv_18= '}'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_3); 
 
@@ -243,7 +243,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
             		
             otherlv_3=(Token)match(input,13,FOLLOW_3); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getFunctionalViewAccess().getInputPackageKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getFunctionalViewAccess().getProjectKeyword_3());
             		
             // InternalAfvl.g:110:3: ( (otherlv_4= RULE_ID ) )
             // InternalAfvl.g:111:4: (otherlv_4= RULE_ID )
@@ -258,7 +258,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
             				
             otherlv_4=(Token)match(input,RULE_ID,FOLLOW_6); 
 
-            					newLeafNode(otherlv_4, grammarAccess.getFunctionalViewAccess().getIpackageInputPackageCrossReference_4_0());
+            					newLeafNode(otherlv_4, grammarAccess.getFunctionalViewAccess().getProjectProjectCrossReference_4_0());
             				
 
             }

@@ -14,7 +14,7 @@
         eType="#//ServerlessEnv" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="artifacts" upperBound="-1"
         eType="#//Artifact" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ipackage" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//InputPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="project" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//Project"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fv" lowerBound="1" eType="ecore:EClass ../../accordant_fv/model/accordant_fv.ecore#//FunctionalView"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EventConnTech">

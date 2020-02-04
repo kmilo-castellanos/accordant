@@ -35,10 +35,10 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cUseKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cInputPackageKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cIpackageAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cIpackageInputPackageCrossReference_4_0 = (CrossReference)cIpackageAssignment_4.eContents().get(0);
-		private final RuleCall cIpackageInputPackageIDTerminalRuleCall_4_0_1 = (RuleCall)cIpackageInputPackageCrossReference_4_0.eContents().get(1);
+		private final Keyword cProjectKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cProjectAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cProjectProjectCrossReference_4_0 = (CrossReference)cProjectAssignment_4.eContents().get(0);
+		private final RuleCall cProjectProjectIDTerminalRuleCall_4_0_1 = (RuleCall)cProjectProjectCrossReference_4_0.eContents().get(1);
 		private final Keyword cUseKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Keyword cFunctionalViewKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cFvAssignment_7 = (Assignment)cGroup.eContents().get(7);
@@ -99,7 +99,7 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 		//DeploymentView:
 		//	'DeploymentView'
 		//	name=ID
-		//	'use' 'inputPackage' ipackage=[rq::InputPackage]
+		//	'use' 'project' project=[rq::Project]
 		//	'use' 'functionalView' fv=[fv::FunctionalView]
 		//	'{'
 		//	'artifacts' '{' artifacts+=Artifact (',' artifacts+=Artifact)* '}'
@@ -109,8 +109,8 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'DeploymentView' name=ID 'use' 'inputPackage' ipackage=[rq::InputPackage] 'use' 'functionalView' fv=[fv::FunctionalView]
-		//'{' 'artifacts' '{' artifacts+=Artifact (',' artifacts+=Artifact)* '}' 'devs' '{' devs+=Device (',' devs+=Device)* '}'
+		//'DeploymentView' name=ID 'use' 'project' project=[rq::Project] 'use' 'functionalView' fv=[fv::FunctionalView] '{'
+		//'artifacts' '{' artifacts+=Artifact (',' artifacts+=Artifact)* '}' 'devs' '{' devs+=Device (',' devs+=Device)* '}'
 		//'deployments' '{' deployments+=Deployment (',' deployments+=Deployment)* '}' ('services' '{' services+=Service (','
 		//services+=Service)* '}')? ('serverless' '{' serverless+=ServerlessEnv ("," serverless+=ServerlessEnv)* '}')? '}'
 		public Group getGroup() { return cGroup; }
@@ -127,17 +127,17 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 		//'use'
 		public Keyword getUseKeyword_2() { return cUseKeyword_2; }
 		
-		//'inputPackage'
-		public Keyword getInputPackageKeyword_3() { return cInputPackageKeyword_3; }
+		//'project'
+		public Keyword getProjectKeyword_3() { return cProjectKeyword_3; }
 		
-		//ipackage=[rq::InputPackage]
-		public Assignment getIpackageAssignment_4() { return cIpackageAssignment_4; }
+		//project=[rq::Project]
+		public Assignment getProjectAssignment_4() { return cProjectAssignment_4; }
 		
-		//[rq::InputPackage]
-		public CrossReference getIpackageInputPackageCrossReference_4_0() { return cIpackageInputPackageCrossReference_4_0; }
+		//[rq::Project]
+		public CrossReference getProjectProjectCrossReference_4_0() { return cProjectProjectCrossReference_4_0; }
 		
 		//ID
-		public RuleCall getIpackageInputPackageIDTerminalRuleCall_4_0_1() { return cIpackageInputPackageIDTerminalRuleCall_4_0_1; }
+		public RuleCall getProjectProjectIDTerminalRuleCall_4_0_1() { return cProjectProjectIDTerminalRuleCall_4_0_1; }
 		
 		//'use'
 		public Keyword getUseKeyword_5() { return cUseKeyword_5; }
@@ -1741,7 +1741,7 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 	//DeploymentView:
 	//	'DeploymentView'
 	//	name=ID
-	//	'use' 'inputPackage' ipackage=[rq::InputPackage]
+	//	'use' 'project' project=[rq::Project]
 	//	'use' 'functionalView' fv=[fv::FunctionalView]
 	//	'{'
 	//	'artifacts' '{' artifacts+=Artifact (',' artifacts+=Artifact)* '}'

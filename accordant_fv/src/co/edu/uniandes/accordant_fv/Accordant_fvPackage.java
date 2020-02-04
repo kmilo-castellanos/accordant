@@ -95,13 +95,13 @@ public interface Accordant_fvPackage extends EPackage {
 	int FUNCTIONAL_VIEW__COMPS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Ipackage</b></em>' reference.
+	 * The feature id for the '<em><b>Project</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTIONAL_VIEW__IPACKAGE = 3;
+	int FUNCTIONAL_VIEW__PROJECT = 3;
 
 	/**
 	 * The number of structural features of the '<em>Functional View</em>' class.
@@ -1748,15 +1748,15 @@ public interface Accordant_fvPackage extends EPackage {
 	EReference getFunctionalView_Comps();
 
 	/**
-	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_fv.FunctionalView#getIpackage <em>Ipackage</em>}'.
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_fv.FunctionalView#getProject <em>Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Ipackage</em>'.
-	 * @see co.edu.uniandes.accordant_fv.FunctionalView#getIpackage()
+	 * @return the meta object for the reference '<em>Project</em>'.
+	 * @see co.edu.uniandes.accordant_fv.FunctionalView#getProject()
 	 * @see #getFunctionalView()
 	 * @generated
 	 */
-	EReference getFunctionalView_Ipackage();
+	EReference getFunctionalView_Project();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_fv.Connector <em>Connector</em>}'.
@@ -2408,12 +2408,12 @@ public interface Accordant_fvPackage extends EPackage {
 		EReference FUNCTIONAL_VIEW__COMPS = eINSTANCE.getFunctionalView_Comps();
 
 		/**
-		 * The meta object literal for the '<em><b>Ipackage</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Project</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FUNCTIONAL_VIEW__IPACKAGE = eINSTANCE.getFunctionalView_Ipackage();
+		EReference FUNCTIONAL_VIEW__PROJECT = eINSTANCE.getFunctionalView_Project();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.impl.ConnectorImpl <em>Connector</em>}' class.

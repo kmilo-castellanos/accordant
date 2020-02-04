@@ -68,8 +68,8 @@ public class Accordant_rqAdapterFactory extends AdapterFactoryImpl {
 	protected Accordant_rqSwitch<Adapter> modelSwitch =
 		new Accordant_rqSwitch<Adapter>() {
 			@Override
-			public Adapter caseInputPackage(InputPackage object) {
-				return createInputPackageAdapter();
+			public Adapter caseProject(Project object) {
+				return createProjectAdapter();
 			}
 			@Override
 			public Adapter caseQScenario(QScenario object) {
@@ -112,16 +112,16 @@ public class Accordant_rqAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link co.edu.uniandes.accordant_rq.InputPackage <em>Input Package</em>}'.
+	 * Creates a new adapter for an object of class '{@link co.edu.uniandes.accordant_rq.Project <em>Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see co.edu.uniandes.accordant_rq.InputPackage
+	 * @see co.edu.uniandes.accordant_rq.Project
 	 * @generated
 	 */
-	public Adapter createInputPackageAdapter() {
+	public Adapter createProjectAdapter() {
 		return null;
 	}
 

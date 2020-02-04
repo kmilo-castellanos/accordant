@@ -122,13 +122,13 @@ public interface Accordant_dvPackage extends EPackage {
 	int DEPLOYMENT_VIEW__ARTIFACTS = 5;
 
 	/**
-	 * The feature id for the '<em><b>Ipackage</b></em>' reference.
+	 * The feature id for the '<em><b>Project</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOYMENT_VIEW__IPACKAGE = 6;
+	int DEPLOYMENT_VIEW__PROJECT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Fv</b></em>' reference.
@@ -1006,15 +1006,15 @@ public interface Accordant_dvPackage extends EPackage {
 	EReference getDeploymentView_Artifacts();
 
 	/**
-	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.DeploymentView#getIpackage <em>Ipackage</em>}'.
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.DeploymentView#getProject <em>Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Ipackage</em>'.
-	 * @see co.edu.uniandes.accordant_dv.DeploymentView#getIpackage()
+	 * @return the meta object for the reference '<em>Project</em>'.
+	 * @see co.edu.uniandes.accordant_dv.DeploymentView#getProject()
 	 * @see #getDeploymentView()
 	 * @generated
 	 */
-	EReference getDeploymentView_Ipackage();
+	EReference getDeploymentView_Project();
 
 	/**
 	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.DeploymentView#getFv <em>Fv</em>}'.
@@ -1820,12 +1820,12 @@ public interface Accordant_dvPackage extends EPackage {
 		EReference DEPLOYMENT_VIEW__ARTIFACTS = eINSTANCE.getDeploymentView_Artifacts();
 
 		/**
-		 * The meta object literal for the '<em><b>Ipackage</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Project</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEPLOYMENT_VIEW__IPACKAGE = eINSTANCE.getDeploymentView_Ipackage();
+		EReference DEPLOYMENT_VIEW__PROJECT = eINSTANCE.getDeploymentView_Project();
 
 		/**
 		 * The meta object literal for the '<em><b>Fv</b></em>' reference feature.

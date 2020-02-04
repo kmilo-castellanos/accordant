@@ -93,7 +93,7 @@ public class AdvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         ipackage=[InputPackage|ID] 
+	 *         project=[Project|ID] 
 	 *         fv=[FunctionalView|ID] 
 	 *         artifacts+=Artifact 
 	 *         artifacts+=Artifact* 

@@ -119,7 +119,7 @@ public class AfvlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSinkAccess().getGroup_10(), "rule__Sink__Group_10__0");
 					put(grammarAccess.getSinkAccess().getGroup_15(), "rule__Sink__Group_15__0");
 					put(grammarAccess.getFunctionalViewAccess().getNameAssignment_1(), "rule__FunctionalView__NameAssignment_1");
-					put(grammarAccess.getFunctionalViewAccess().getIpackageAssignment_4(), "rule__FunctionalView__IpackageAssignment_4");
+					put(grammarAccess.getFunctionalViewAccess().getProjectAssignment_4(), "rule__FunctionalView__ProjectAssignment_4");
 					put(grammarAccess.getFunctionalViewAccess().getCompsAssignment_8(), "rule__FunctionalView__CompsAssignment_8");
 					put(grammarAccess.getFunctionalViewAccess().getCompsAssignment_9_1(), "rule__FunctionalView__CompsAssignment_9_1");
 					put(grammarAccess.getFunctionalViewAccess().getConnsAssignment_13(), "rule__FunctionalView__ConnsAssignment_13");

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAdvlParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_FLOAT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'MEDIUM'", "'LARGE'", "'SMALL'", "'DeploymentView'", "'use'", "'inputPackage'", "'functionalView'", "'{'", "'artifacts'", "'}'", "'devs'", "'deployments'", "','", "'services'", "'serverless'", "'Device'", "'host'", "':'", "'type'", "'cpu'", "'storage'", "'memory'", "'Deployment'", "'pods'", "'replicas'", "'maxSurge'", "'maxUnavailable'", "'sensitivityPoint'", "'Pod'", "'envs'", "'device'", "'restartPolicy'", "'Service'", "'ports'", "'extAccess'", "'Port'", "'protocol'", "'target'", "'port'", "'exposes'", "'-'", "'ExecEnv'", "'deployedArtifacts'", "'image'", "'cpu_lim'", "'memory_lim'", "'cpu_req'", "'mem_req'", "'['", "']'", "'commands'", "'envVars'", "'ServerlessEnv'", "'provider'", "'timeout'", "'Artifact'", "'component'", "'connector'", "'props'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_FLOAT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'MEDIUM'", "'LARGE'", "'SMALL'", "'DeploymentView'", "'use'", "'project'", "'functionalView'", "'{'", "'artifacts'", "'}'", "'devs'", "'deployments'", "','", "'services'", "'serverless'", "'Device'", "'host'", "':'", "'type'", "'cpu'", "'storage'", "'memory'", "'Deployment'", "'pods'", "'replicas'", "'maxSurge'", "'maxUnavailable'", "'sensitivityPoint'", "'Pod'", "'envs'", "'device'", "'restartPolicy'", "'Service'", "'ports'", "'extAccess'", "'Port'", "'protocol'", "'target'", "'port'", "'exposes'", "'-'", "'ExecEnv'", "'deployedArtifacts'", "'image'", "'cpu_lim'", "'memory_lim'", "'cpu_req'", "'mem_req'", "'['", "']'", "'commands'", "'envVars'", "'ServerlessEnv'", "'provider'", "'timeout'", "'Artifact'", "'component'", "'connector'", "'props'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -1634,21 +1634,21 @@ public class InternalAdvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeploymentView__Group__3__Impl"
-    // InternalAdvl.g:534:1: rule__DeploymentView__Group__3__Impl : ( 'inputPackage' ) ;
+    // InternalAdvl.g:534:1: rule__DeploymentView__Group__3__Impl : ( 'project' ) ;
     public final void rule__DeploymentView__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAdvl.g:538:1: ( ( 'inputPackage' ) )
-            // InternalAdvl.g:539:1: ( 'inputPackage' )
+            // InternalAdvl.g:538:1: ( ( 'project' ) )
+            // InternalAdvl.g:539:1: ( 'project' )
             {
-            // InternalAdvl.g:539:1: ( 'inputPackage' )
-            // InternalAdvl.g:540:2: 'inputPackage'
+            // InternalAdvl.g:539:1: ( 'project' )
+            // InternalAdvl.g:540:2: 'project'
             {
-             before(grammarAccess.getDeploymentViewAccess().getInputPackageKeyword_3()); 
+             before(grammarAccess.getDeploymentViewAccess().getProjectKeyword_3()); 
             match(input,17,FOLLOW_2); 
-             after(grammarAccess.getDeploymentViewAccess().getInputPackageKeyword_3()); 
+             after(grammarAccess.getDeploymentViewAccess().getProjectKeyword_3()); 
 
             }
 
@@ -1709,31 +1709,31 @@ public class InternalAdvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DeploymentView__Group__4__Impl"
-    // InternalAdvl.g:561:1: rule__DeploymentView__Group__4__Impl : ( ( rule__DeploymentView__IpackageAssignment_4 ) ) ;
+    // InternalAdvl.g:561:1: rule__DeploymentView__Group__4__Impl : ( ( rule__DeploymentView__ProjectAssignment_4 ) ) ;
     public final void rule__DeploymentView__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAdvl.g:565:1: ( ( ( rule__DeploymentView__IpackageAssignment_4 ) ) )
-            // InternalAdvl.g:566:1: ( ( rule__DeploymentView__IpackageAssignment_4 ) )
+            // InternalAdvl.g:565:1: ( ( ( rule__DeploymentView__ProjectAssignment_4 ) ) )
+            // InternalAdvl.g:566:1: ( ( rule__DeploymentView__ProjectAssignment_4 ) )
             {
-            // InternalAdvl.g:566:1: ( ( rule__DeploymentView__IpackageAssignment_4 ) )
-            // InternalAdvl.g:567:2: ( rule__DeploymentView__IpackageAssignment_4 )
+            // InternalAdvl.g:566:1: ( ( rule__DeploymentView__ProjectAssignment_4 ) )
+            // InternalAdvl.g:567:2: ( rule__DeploymentView__ProjectAssignment_4 )
             {
-             before(grammarAccess.getDeploymentViewAccess().getIpackageAssignment_4()); 
-            // InternalAdvl.g:568:2: ( rule__DeploymentView__IpackageAssignment_4 )
-            // InternalAdvl.g:568:3: rule__DeploymentView__IpackageAssignment_4
+             before(grammarAccess.getDeploymentViewAccess().getProjectAssignment_4()); 
+            // InternalAdvl.g:568:2: ( rule__DeploymentView__ProjectAssignment_4 )
+            // InternalAdvl.g:568:3: rule__DeploymentView__ProjectAssignment_4
             {
             pushFollow(FOLLOW_2);
-            rule__DeploymentView__IpackageAssignment_4();
+            rule__DeploymentView__ProjectAssignment_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDeploymentViewAccess().getIpackageAssignment_4()); 
+             after(grammarAccess.getDeploymentViewAccess().getProjectAssignment_4()); 
 
             }
 
@@ -23584,9 +23584,9 @@ public class InternalAdvlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__DeploymentView__NameAssignment_1"
 
 
-    // $ANTLR start "rule__DeploymentView__IpackageAssignment_4"
-    // InternalAdvl.g:7804:1: rule__DeploymentView__IpackageAssignment_4 : ( ( RULE_ID ) ) ;
-    public final void rule__DeploymentView__IpackageAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__DeploymentView__ProjectAssignment_4"
+    // InternalAdvl.g:7804:1: rule__DeploymentView__ProjectAssignment_4 : ( ( RULE_ID ) ) ;
+    public final void rule__DeploymentView__ProjectAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -23597,17 +23597,17 @@ public class InternalAdvlParser extends AbstractInternalContentAssistParser {
             // InternalAdvl.g:7809:2: ( ( RULE_ID ) )
             // InternalAdvl.g:7810:3: ( RULE_ID )
             {
-             before(grammarAccess.getDeploymentViewAccess().getIpackageInputPackageCrossReference_4_0()); 
+             before(grammarAccess.getDeploymentViewAccess().getProjectProjectCrossReference_4_0()); 
             // InternalAdvl.g:7811:3: ( RULE_ID )
             // InternalAdvl.g:7812:4: RULE_ID
             {
-             before(grammarAccess.getDeploymentViewAccess().getIpackageInputPackageIDTerminalRuleCall_4_0_1()); 
+             before(grammarAccess.getDeploymentViewAccess().getProjectProjectIDTerminalRuleCall_4_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getDeploymentViewAccess().getIpackageInputPackageIDTerminalRuleCall_4_0_1()); 
+             after(grammarAccess.getDeploymentViewAccess().getProjectProjectIDTerminalRuleCall_4_0_1()); 
 
             }
 
-             after(grammarAccess.getDeploymentViewAccess().getIpackageInputPackageCrossReference_4_0()); 
+             after(grammarAccess.getDeploymentViewAccess().getProjectProjectCrossReference_4_0()); 
 
             }
 
@@ -23626,7 +23626,7 @@ public class InternalAdvlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__DeploymentView__IpackageAssignment_4"
+    // $ANTLR end "rule__DeploymentView__ProjectAssignment_4"
 
 
     // $ANTLR start "rule__DeploymentView__FvAssignment_7"

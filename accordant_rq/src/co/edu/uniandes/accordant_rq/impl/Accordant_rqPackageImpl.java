@@ -7,8 +7,8 @@ import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
 import co.edu.uniandes.accordant_rq.AnalyzedQS;
 import co.edu.uniandes.accordant_rq.Constraint;
 import co.edu.uniandes.accordant_rq.ConstraintType;
-import co.edu.uniandes.accordant_rq.InputPackage;
 import co.edu.uniandes.accordant_rq.MetricUnit;
+import co.edu.uniandes.accordant_rq.Project;
 import co.edu.uniandes.accordant_rq.QAMetric;
 import co.edu.uniandes.accordant_rq.QAttribute;
 import co.edu.uniandes.accordant_rq.QScenario;
@@ -35,7 +35,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass inputPackageEClass = null;
+	private EClass projectEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,8 +166,8 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getInputPackage() {
-		return inputPackageEClass;
+	public EClass getProject() {
+		return projectEClass;
 	}
 
 	/**
@@ -175,8 +175,8 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInputPackage_Name() {
-		return (EAttribute)inputPackageEClass.getEStructuralFeatures().get(0);
+	public EAttribute getProject_Name() {
+		return (EAttribute)projectEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -184,8 +184,8 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInputPackage_Scenarios() {
-		return (EReference)inputPackageEClass.getEStructuralFeatures().get(1);
+	public EReference getProject_Scenarios() {
+		return (EReference)projectEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -193,8 +193,8 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInputPackage_Tactics() {
-		return (EReference)inputPackageEClass.getEStructuralFeatures().get(2);
+	public EReference getProject_Tactics() {
+		return (EReference)projectEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -202,8 +202,8 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInputPackage_AnalyzedQs() {
-		return (EReference)inputPackageEClass.getEStructuralFeatures().get(3);
+	public EReference getProject_AnalyzedQs() {
+		return (EReference)projectEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -211,8 +211,8 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInputPackage_Constraints() {
-		return (EReference)inputPackageEClass.getEStructuralFeatures().get(4);
+	public EReference getProject_Constraints() {
+		return (EReference)projectEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -567,12 +567,12 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		isCreated = true;
 
 		// Create classes and their features
-		inputPackageEClass = createEClass(INPUT_PACKAGE);
-		createEAttribute(inputPackageEClass, INPUT_PACKAGE__NAME);
-		createEReference(inputPackageEClass, INPUT_PACKAGE__SCENARIOS);
-		createEReference(inputPackageEClass, INPUT_PACKAGE__TACTICS);
-		createEReference(inputPackageEClass, INPUT_PACKAGE__ANALYZED_QS);
-		createEReference(inputPackageEClass, INPUT_PACKAGE__CONSTRAINTS);
+		projectEClass = createEClass(PROJECT);
+		createEAttribute(projectEClass, PROJECT__NAME);
+		createEReference(projectEClass, PROJECT__SCENARIOS);
+		createEReference(projectEClass, PROJECT__TACTICS);
+		createEReference(projectEClass, PROJECT__ANALYZED_QS);
+		createEReference(projectEClass, PROJECT__CONSTRAINTS);
 
 		qScenarioEClass = createEClass(QSCENARIO);
 		createEAttribute(qScenarioEClass, QSCENARIO__MEASURE);
@@ -648,12 +648,12 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(inputPackageEClass, InputPackage.class, "InputPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInputPackage_Name(), ecorePackage.getEString(), "name", null, 1, 1, InputPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInputPackage_Scenarios(), this.getQScenario(), null, "scenarios", null, 1, -1, InputPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInputPackage_Tactics(), this.getTactic(), null, "tactics", null, 0, -1, InputPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInputPackage_AnalyzedQs(), this.getAnalyzedQS(), null, "analyzedQs", null, 0, -1, InputPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInputPackage_Constraints(), this.getConstraint(), null, "constraints", null, 0, -1, InputPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(projectEClass, Project.class, "Project", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getProject_Name(), ecorePackage.getEString(), "name", null, 1, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProject_Scenarios(), this.getQScenario(), null, "scenarios", null, 1, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProject_Tactics(), this.getTactic(), null, "tactics", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProject_AnalyzedQs(), this.getAnalyzedQS(), null, "analyzedQs", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProject_Constraints(), this.getConstraint(), null, "constraints", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(qScenarioEClass, QScenario.class, "QScenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getQScenario_Measure(), this.getQAMetric(), "measure", null, 1, 1, QScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

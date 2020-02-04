@@ -8,8 +8,8 @@
         eType="#//Connector" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="comps" lowerBound="1" upperBound="-1"
         eType="#//Component" containment="true" eOpposite="#//Component/funcView"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ipackage" lowerBound="1"
-        eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//InputPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="project" lowerBound="1"
+        eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//Project"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

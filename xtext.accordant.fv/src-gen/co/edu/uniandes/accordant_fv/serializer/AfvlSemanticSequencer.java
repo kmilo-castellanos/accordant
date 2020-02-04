@@ -181,7 +181,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         ipackage=[InputPackage|ID] 
+	 *         project=[Project|ID] 
 	 *         comps+=Component 
 	 *         comps+=Component* 
 	 *         conns+=Connector 

@@ -34,7 +34,7 @@ class AdvlScopeProvider extends AbstractAdvlScopeProvider {
 		if (context instanceof Deployment && reference == Accordant_dvPackage.Literals.DEPLOYMENT__SPOINT) {
 			val rootElement = EcoreUtil2.getContainerOfType(context, DeploymentView)
 			val pointList = <SensitivityPoint>newArrayList
-			val importedPackage = rootElement?.ipackage
+			val importedPackage = rootElement?.project
 			if (importedPackage !== null) {
 				for (points : importedPackage.analyzedQs.map[SPoints]) {
 					pointList += points
@@ -63,7 +63,7 @@ class AdvlScopeProvider extends AbstractAdvlScopeProvider {
 				return Scopes.scopeFor(connList)
 			} else if (reference == Accordant_dvPackage.Literals.ARTIFACT__SPOINT) {
 				val pointList = <SensitivityPoint>newArrayList
-				val importedPackage = rootElement?.ipackage
+				val importedPackage = rootElement?.project
 				if (importedPackage !== null) {
 					for (points : importedPackage.analyzedQs.map[SPoints]) {
 						pointList += points

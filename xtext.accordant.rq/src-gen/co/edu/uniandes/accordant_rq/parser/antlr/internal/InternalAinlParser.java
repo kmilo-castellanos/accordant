@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAinlParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'InputPackage'", "'{'", "'QScenarios'", "','", "'}'", "'analyzedQScenarios'", "'constraints'", "'tactics'", "'QS'", "'QA'", "':'", "'stimulus'", "'environment'", "'response'", "'measure'", "'between'", "'and'", "'in'", "'-'", "'.'", "'E'", "'e'", "'AQS'", "'of'", "'reasoning'", "'Sensitivity_Points'", "'SensitivityPoint'", "'isRisk'", "'rationale'", "'code'", "'('", "')'", "'Constraint'", "'type'", "'='", "'Tactic'", "'viewpoint'", "'THROUGHPUT'", "'LATENCY'", "'DEADLINE'", "'UPDATETIME'", "'MILLIS'", "'SECONDS'", "'MINUTES'", "'HOURS'", "'TASKS'", "'BYTES'", "'MSGS'", "'AVAILABILITY'", "'PERFORMANCE'", "'MODIFIABILITY'", "'TESTABILITY'", "'SCALABILITY'", "'ARCH_STYLE'", "'CLOUD_PROV'", "'LICENSE'", "'PROC_MODEL'", "'TECH_VENDOR'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Project'", "'{'", "'QScenarios'", "','", "'}'", "'analyzedQScenarios'", "'constraints'", "'tactics'", "'QS'", "'QA'", "':'", "'stimulus'", "'environment'", "'response'", "'measure'", "'between'", "'and'", "'in'", "'-'", "'.'", "'E'", "'e'", "'AQS'", "'of'", "'reasoning'", "'Sensitivity_Points'", "'SensitivityPoint'", "'isRisk'", "'rationale'", "'code'", "'('", "')'", "'Constraint'", "'type'", "'='", "'Tactic'", "'viewpoint'", "'THROUGHPUT'", "'LATENCY'", "'DEADLINE'", "'UPDATETIME'", "'MILLIS'", "'SECONDS'", "'MINUTES'", "'HOURS'", "'TASKS'", "'BYTES'", "'MSGS'", "'AVAILABILITY'", "'PERFORMANCE'", "'MODIFIABILITY'", "'TESTABILITY'", "'SCALABILITY'", "'ARCH_STYLE'", "'CLOUD_PROV'", "'LICENSE'", "'PROC_MODEL'", "'TECH_VENDOR'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -119,7 +119,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
         @Override
         protected String getFirstRuleName() {
-        	return "InputPackage";
+        	return "Project";
        	}
 
        	@Override
@@ -130,25 +130,25 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
 
 
-    // $ANTLR start "entryRuleInputPackage"
-    // InternalAinl.g:65:1: entryRuleInputPackage returns [EObject current=null] : iv_ruleInputPackage= ruleInputPackage EOF ;
-    public final EObject entryRuleInputPackage() throws RecognitionException {
+    // $ANTLR start "entryRuleProject"
+    // InternalAinl.g:65:1: entryRuleProject returns [EObject current=null] : iv_ruleProject= ruleProject EOF ;
+    public final EObject entryRuleProject() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleInputPackage = null;
+        EObject iv_ruleProject = null;
 
 
         try {
-            // InternalAinl.g:65:53: (iv_ruleInputPackage= ruleInputPackage EOF )
-            // InternalAinl.g:66:2: iv_ruleInputPackage= ruleInputPackage EOF
+            // InternalAinl.g:65:48: (iv_ruleProject= ruleProject EOF )
+            // InternalAinl.g:66:2: iv_ruleProject= ruleProject EOF
             {
-             newCompositeNode(grammarAccess.getInputPackageRule()); 
+             newCompositeNode(grammarAccess.getProjectRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleInputPackage=ruleInputPackage();
+            iv_ruleProject=ruleProject();
 
             state._fsp--;
 
-             current =iv_ruleInputPackage; 
+             current =iv_ruleProject; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -163,12 +163,12 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleInputPackage"
+    // $ANTLR end "entryRuleProject"
 
 
-    // $ANTLR start "ruleInputPackage"
-    // InternalAinl.g:72:1: ruleInputPackage returns [EObject current=null] : ( () otherlv_1= 'InputPackage' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' otherlv_4= 'QScenarios' otherlv_5= '{' ( (lv_scenarios_6_0= ruleQScenario ) ) (otherlv_7= ',' ( (lv_scenarios_8_0= ruleQScenario ) ) )* otherlv_9= '}' (otherlv_10= 'analyzedQScenarios' otherlv_11= '{' ( (lv_analyzedQs_12_0= ruleAnalyzedQS ) ) (otherlv_13= ',' ( (lv_analyzedQs_14_0= ruleAnalyzedQS ) ) )* otherlv_15= '}' )? (otherlv_16= 'constraints' otherlv_17= '{' ( (lv_constraints_18_0= ruleConstraint ) ) (otherlv_19= ',' ( (lv_constraints_20_0= ruleConstraint ) ) )* otherlv_21= '}' )? otherlv_22= 'tactics' otherlv_23= '{' ( (lv_tactics_24_0= ruleTactic ) ) (otherlv_25= ',' ( (lv_tactics_26_0= ruleTactic ) ) )* otherlv_27= '}' otherlv_28= '}' ) ;
-    public final EObject ruleInputPackage() throws RecognitionException {
+    // $ANTLR start "ruleProject"
+    // InternalAinl.g:72:1: ruleProject returns [EObject current=null] : ( () otherlv_1= 'Project' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' otherlv_4= 'QScenarios' otherlv_5= '{' ( (lv_scenarios_6_0= ruleQScenario ) ) (otherlv_7= ',' ( (lv_scenarios_8_0= ruleQScenario ) ) )* otherlv_9= '}' (otherlv_10= 'analyzedQScenarios' otherlv_11= '{' ( (lv_analyzedQs_12_0= ruleAnalyzedQS ) ) (otherlv_13= ',' ( (lv_analyzedQs_14_0= ruleAnalyzedQS ) ) )* otherlv_15= '}' )? (otherlv_16= 'constraints' otherlv_17= '{' ( (lv_constraints_18_0= ruleConstraint ) ) (otherlv_19= ',' ( (lv_constraints_20_0= ruleConstraint ) ) )* otherlv_21= '}' )? otherlv_22= 'tactics' otherlv_23= '{' ( (lv_tactics_24_0= ruleTactic ) ) (otherlv_25= ',' ( (lv_tactics_26_0= ruleTactic ) ) )* otherlv_27= '}' otherlv_28= '}' ) ;
+    public final EObject ruleProject() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
@@ -212,18 +212,18 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAinl.g:78:2: ( ( () otherlv_1= 'InputPackage' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' otherlv_4= 'QScenarios' otherlv_5= '{' ( (lv_scenarios_6_0= ruleQScenario ) ) (otherlv_7= ',' ( (lv_scenarios_8_0= ruleQScenario ) ) )* otherlv_9= '}' (otherlv_10= 'analyzedQScenarios' otherlv_11= '{' ( (lv_analyzedQs_12_0= ruleAnalyzedQS ) ) (otherlv_13= ',' ( (lv_analyzedQs_14_0= ruleAnalyzedQS ) ) )* otherlv_15= '}' )? (otherlv_16= 'constraints' otherlv_17= '{' ( (lv_constraints_18_0= ruleConstraint ) ) (otherlv_19= ',' ( (lv_constraints_20_0= ruleConstraint ) ) )* otherlv_21= '}' )? otherlv_22= 'tactics' otherlv_23= '{' ( (lv_tactics_24_0= ruleTactic ) ) (otherlv_25= ',' ( (lv_tactics_26_0= ruleTactic ) ) )* otherlv_27= '}' otherlv_28= '}' ) )
-            // InternalAinl.g:79:2: ( () otherlv_1= 'InputPackage' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' otherlv_4= 'QScenarios' otherlv_5= '{' ( (lv_scenarios_6_0= ruleQScenario ) ) (otherlv_7= ',' ( (lv_scenarios_8_0= ruleQScenario ) ) )* otherlv_9= '}' (otherlv_10= 'analyzedQScenarios' otherlv_11= '{' ( (lv_analyzedQs_12_0= ruleAnalyzedQS ) ) (otherlv_13= ',' ( (lv_analyzedQs_14_0= ruleAnalyzedQS ) ) )* otherlv_15= '}' )? (otherlv_16= 'constraints' otherlv_17= '{' ( (lv_constraints_18_0= ruleConstraint ) ) (otherlv_19= ',' ( (lv_constraints_20_0= ruleConstraint ) ) )* otherlv_21= '}' )? otherlv_22= 'tactics' otherlv_23= '{' ( (lv_tactics_24_0= ruleTactic ) ) (otherlv_25= ',' ( (lv_tactics_26_0= ruleTactic ) ) )* otherlv_27= '}' otherlv_28= '}' )
+            // InternalAinl.g:78:2: ( ( () otherlv_1= 'Project' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' otherlv_4= 'QScenarios' otherlv_5= '{' ( (lv_scenarios_6_0= ruleQScenario ) ) (otherlv_7= ',' ( (lv_scenarios_8_0= ruleQScenario ) ) )* otherlv_9= '}' (otherlv_10= 'analyzedQScenarios' otherlv_11= '{' ( (lv_analyzedQs_12_0= ruleAnalyzedQS ) ) (otherlv_13= ',' ( (lv_analyzedQs_14_0= ruleAnalyzedQS ) ) )* otherlv_15= '}' )? (otherlv_16= 'constraints' otherlv_17= '{' ( (lv_constraints_18_0= ruleConstraint ) ) (otherlv_19= ',' ( (lv_constraints_20_0= ruleConstraint ) ) )* otherlv_21= '}' )? otherlv_22= 'tactics' otherlv_23= '{' ( (lv_tactics_24_0= ruleTactic ) ) (otherlv_25= ',' ( (lv_tactics_26_0= ruleTactic ) ) )* otherlv_27= '}' otherlv_28= '}' ) )
+            // InternalAinl.g:79:2: ( () otherlv_1= 'Project' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' otherlv_4= 'QScenarios' otherlv_5= '{' ( (lv_scenarios_6_0= ruleQScenario ) ) (otherlv_7= ',' ( (lv_scenarios_8_0= ruleQScenario ) ) )* otherlv_9= '}' (otherlv_10= 'analyzedQScenarios' otherlv_11= '{' ( (lv_analyzedQs_12_0= ruleAnalyzedQS ) ) (otherlv_13= ',' ( (lv_analyzedQs_14_0= ruleAnalyzedQS ) ) )* otherlv_15= '}' )? (otherlv_16= 'constraints' otherlv_17= '{' ( (lv_constraints_18_0= ruleConstraint ) ) (otherlv_19= ',' ( (lv_constraints_20_0= ruleConstraint ) ) )* otherlv_21= '}' )? otherlv_22= 'tactics' otherlv_23= '{' ( (lv_tactics_24_0= ruleTactic ) ) (otherlv_25= ',' ( (lv_tactics_26_0= ruleTactic ) ) )* otherlv_27= '}' otherlv_28= '}' )
             {
-            // InternalAinl.g:79:2: ( () otherlv_1= 'InputPackage' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' otherlv_4= 'QScenarios' otherlv_5= '{' ( (lv_scenarios_6_0= ruleQScenario ) ) (otherlv_7= ',' ( (lv_scenarios_8_0= ruleQScenario ) ) )* otherlv_9= '}' (otherlv_10= 'analyzedQScenarios' otherlv_11= '{' ( (lv_analyzedQs_12_0= ruleAnalyzedQS ) ) (otherlv_13= ',' ( (lv_analyzedQs_14_0= ruleAnalyzedQS ) ) )* otherlv_15= '}' )? (otherlv_16= 'constraints' otherlv_17= '{' ( (lv_constraints_18_0= ruleConstraint ) ) (otherlv_19= ',' ( (lv_constraints_20_0= ruleConstraint ) ) )* otherlv_21= '}' )? otherlv_22= 'tactics' otherlv_23= '{' ( (lv_tactics_24_0= ruleTactic ) ) (otherlv_25= ',' ( (lv_tactics_26_0= ruleTactic ) ) )* otherlv_27= '}' otherlv_28= '}' )
-            // InternalAinl.g:80:3: () otherlv_1= 'InputPackage' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' otherlv_4= 'QScenarios' otherlv_5= '{' ( (lv_scenarios_6_0= ruleQScenario ) ) (otherlv_7= ',' ( (lv_scenarios_8_0= ruleQScenario ) ) )* otherlv_9= '}' (otherlv_10= 'analyzedQScenarios' otherlv_11= '{' ( (lv_analyzedQs_12_0= ruleAnalyzedQS ) ) (otherlv_13= ',' ( (lv_analyzedQs_14_0= ruleAnalyzedQS ) ) )* otherlv_15= '}' )? (otherlv_16= 'constraints' otherlv_17= '{' ( (lv_constraints_18_0= ruleConstraint ) ) (otherlv_19= ',' ( (lv_constraints_20_0= ruleConstraint ) ) )* otherlv_21= '}' )? otherlv_22= 'tactics' otherlv_23= '{' ( (lv_tactics_24_0= ruleTactic ) ) (otherlv_25= ',' ( (lv_tactics_26_0= ruleTactic ) ) )* otherlv_27= '}' otherlv_28= '}'
+            // InternalAinl.g:79:2: ( () otherlv_1= 'Project' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' otherlv_4= 'QScenarios' otherlv_5= '{' ( (lv_scenarios_6_0= ruleQScenario ) ) (otherlv_7= ',' ( (lv_scenarios_8_0= ruleQScenario ) ) )* otherlv_9= '}' (otherlv_10= 'analyzedQScenarios' otherlv_11= '{' ( (lv_analyzedQs_12_0= ruleAnalyzedQS ) ) (otherlv_13= ',' ( (lv_analyzedQs_14_0= ruleAnalyzedQS ) ) )* otherlv_15= '}' )? (otherlv_16= 'constraints' otherlv_17= '{' ( (lv_constraints_18_0= ruleConstraint ) ) (otherlv_19= ',' ( (lv_constraints_20_0= ruleConstraint ) ) )* otherlv_21= '}' )? otherlv_22= 'tactics' otherlv_23= '{' ( (lv_tactics_24_0= ruleTactic ) ) (otherlv_25= ',' ( (lv_tactics_26_0= ruleTactic ) ) )* otherlv_27= '}' otherlv_28= '}' )
+            // InternalAinl.g:80:3: () otherlv_1= 'Project' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' otherlv_4= 'QScenarios' otherlv_5= '{' ( (lv_scenarios_6_0= ruleQScenario ) ) (otherlv_7= ',' ( (lv_scenarios_8_0= ruleQScenario ) ) )* otherlv_9= '}' (otherlv_10= 'analyzedQScenarios' otherlv_11= '{' ( (lv_analyzedQs_12_0= ruleAnalyzedQS ) ) (otherlv_13= ',' ( (lv_analyzedQs_14_0= ruleAnalyzedQS ) ) )* otherlv_15= '}' )? (otherlv_16= 'constraints' otherlv_17= '{' ( (lv_constraints_18_0= ruleConstraint ) ) (otherlv_19= ',' ( (lv_constraints_20_0= ruleConstraint ) ) )* otherlv_21= '}' )? otherlv_22= 'tactics' otherlv_23= '{' ( (lv_tactics_24_0= ruleTactic ) ) (otherlv_25= ',' ( (lv_tactics_26_0= ruleTactic ) ) )* otherlv_27= '}' otherlv_28= '}'
             {
             // InternalAinl.g:80:3: ()
             // InternalAinl.g:81:4: 
             {
 
             				current = forceCreateModelElement(
-            					grammarAccess.getInputPackageAccess().getInputPackageAction_0(),
+            					grammarAccess.getProjectAccess().getProjectAction_0(),
             					current);
             			
 
@@ -231,7 +231,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
             otherlv_1=(Token)match(input,11,FOLLOW_3); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getInputPackageAccess().getInputPackageKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getProjectAccess().getProjectKeyword_1());
             		
             // InternalAinl.g:91:3: ( (lv_name_2_0= RULE_ID ) )
             // InternalAinl.g:92:4: (lv_name_2_0= RULE_ID )
@@ -241,11 +241,11 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
             {
             lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_4); 
 
-            					newLeafNode(lv_name_2_0, grammarAccess.getInputPackageAccess().getNameIDTerminalRuleCall_2_0());
+            					newLeafNode(lv_name_2_0, grammarAccess.getProjectAccess().getNameIDTerminalRuleCall_2_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getInputPackageRule());
+            						current = createModelElement(grammarAccess.getProjectRule());
             					}
             					setWithLastConsumed(
             						current,
@@ -261,15 +261,15 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
             otherlv_3=(Token)match(input,12,FOLLOW_5); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getInputPackageAccess().getLeftCurlyBracketKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getProjectAccess().getLeftCurlyBracketKeyword_3());
             		
             otherlv_4=(Token)match(input,13,FOLLOW_4); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getInputPackageAccess().getQScenariosKeyword_4());
+            			newLeafNode(otherlv_4, grammarAccess.getProjectAccess().getQScenariosKeyword_4());
             		
             otherlv_5=(Token)match(input,12,FOLLOW_6); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getInputPackageAccess().getLeftCurlyBracketKeyword_5());
+            			newLeafNode(otherlv_5, grammarAccess.getProjectAccess().getLeftCurlyBracketKeyword_5());
             		
             // InternalAinl.g:121:3: ( (lv_scenarios_6_0= ruleQScenario ) )
             // InternalAinl.g:122:4: (lv_scenarios_6_0= ruleQScenario )
@@ -278,7 +278,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
             // InternalAinl.g:123:5: lv_scenarios_6_0= ruleQScenario
             {
 
-            					newCompositeNode(grammarAccess.getInputPackageAccess().getScenariosQScenarioParserRuleCall_6_0());
+            					newCompositeNode(grammarAccess.getProjectAccess().getScenariosQScenarioParserRuleCall_6_0());
             				
             pushFollow(FOLLOW_7);
             lv_scenarios_6_0=ruleQScenario();
@@ -287,7 +287,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getInputPackageRule());
+            						current = createModelElementForParent(grammarAccess.getProjectRule());
             					}
             					add(
             						current,
@@ -319,7 +319,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
             	    {
             	    otherlv_7=(Token)match(input,14,FOLLOW_6); 
 
-            	    				newLeafNode(otherlv_7, grammarAccess.getInputPackageAccess().getCommaKeyword_7_0());
+            	    				newLeafNode(otherlv_7, grammarAccess.getProjectAccess().getCommaKeyword_7_0());
             	    			
             	    // InternalAinl.g:145:4: ( (lv_scenarios_8_0= ruleQScenario ) )
             	    // InternalAinl.g:146:5: (lv_scenarios_8_0= ruleQScenario )
@@ -328,7 +328,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
             	    // InternalAinl.g:147:6: lv_scenarios_8_0= ruleQScenario
             	    {
 
-            	    						newCompositeNode(grammarAccess.getInputPackageAccess().getScenariosQScenarioParserRuleCall_7_1_0());
+            	    						newCompositeNode(grammarAccess.getProjectAccess().getScenariosQScenarioParserRuleCall_7_1_0());
             	    					
             	    pushFollow(FOLLOW_7);
             	    lv_scenarios_8_0=ruleQScenario();
@@ -337,7 +337,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
 
             	    						if (current==null) {
-            	    							current = createModelElementForParent(grammarAccess.getInputPackageRule());
+            	    							current = createModelElementForParent(grammarAccess.getProjectRule());
             	    						}
             	    						add(
             	    							current,
@@ -363,7 +363,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
             otherlv_9=(Token)match(input,15,FOLLOW_8); 
 
-            			newLeafNode(otherlv_9, grammarAccess.getInputPackageAccess().getRightCurlyBracketKeyword_8());
+            			newLeafNode(otherlv_9, grammarAccess.getProjectAccess().getRightCurlyBracketKeyword_8());
             		
             // InternalAinl.g:169:3: (otherlv_10= 'analyzedQScenarios' otherlv_11= '{' ( (lv_analyzedQs_12_0= ruleAnalyzedQS ) ) (otherlv_13= ',' ( (lv_analyzedQs_14_0= ruleAnalyzedQS ) ) )* otherlv_15= '}' )?
             int alt3=2;
@@ -378,11 +378,11 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     {
                     otherlv_10=(Token)match(input,16,FOLLOW_4); 
 
-                    				newLeafNode(otherlv_10, grammarAccess.getInputPackageAccess().getAnalyzedQScenariosKeyword_9_0());
+                    				newLeafNode(otherlv_10, grammarAccess.getProjectAccess().getAnalyzedQScenariosKeyword_9_0());
                     			
                     otherlv_11=(Token)match(input,12,FOLLOW_9); 
 
-                    				newLeafNode(otherlv_11, grammarAccess.getInputPackageAccess().getLeftCurlyBracketKeyword_9_1());
+                    				newLeafNode(otherlv_11, grammarAccess.getProjectAccess().getLeftCurlyBracketKeyword_9_1());
                     			
                     // InternalAinl.g:178:4: ( (lv_analyzedQs_12_0= ruleAnalyzedQS ) )
                     // InternalAinl.g:179:5: (lv_analyzedQs_12_0= ruleAnalyzedQS )
@@ -391,7 +391,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     // InternalAinl.g:180:6: lv_analyzedQs_12_0= ruleAnalyzedQS
                     {
 
-                    						newCompositeNode(grammarAccess.getInputPackageAccess().getAnalyzedQsAnalyzedQSParserRuleCall_9_2_0());
+                    						newCompositeNode(grammarAccess.getProjectAccess().getAnalyzedQsAnalyzedQSParserRuleCall_9_2_0());
                     					
                     pushFollow(FOLLOW_7);
                     lv_analyzedQs_12_0=ruleAnalyzedQS();
@@ -400,7 +400,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
 
                     						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getInputPackageRule());
+                    							current = createModelElementForParent(grammarAccess.getProjectRule());
                     						}
                     						add(
                     							current,
@@ -432,7 +432,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     	    {
                     	    otherlv_13=(Token)match(input,14,FOLLOW_9); 
 
-                    	    					newLeafNode(otherlv_13, grammarAccess.getInputPackageAccess().getCommaKeyword_9_3_0());
+                    	    					newLeafNode(otherlv_13, grammarAccess.getProjectAccess().getCommaKeyword_9_3_0());
                     	    				
                     	    // InternalAinl.g:202:5: ( (lv_analyzedQs_14_0= ruleAnalyzedQS ) )
                     	    // InternalAinl.g:203:6: (lv_analyzedQs_14_0= ruleAnalyzedQS )
@@ -441,7 +441,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     	    // InternalAinl.g:204:7: lv_analyzedQs_14_0= ruleAnalyzedQS
                     	    {
 
-                    	    							newCompositeNode(grammarAccess.getInputPackageAccess().getAnalyzedQsAnalyzedQSParserRuleCall_9_3_1_0());
+                    	    							newCompositeNode(grammarAccess.getProjectAccess().getAnalyzedQsAnalyzedQSParserRuleCall_9_3_1_0());
                     	    						
                     	    pushFollow(FOLLOW_7);
                     	    lv_analyzedQs_14_0=ruleAnalyzedQS();
@@ -450,7 +450,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
 
                     	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getInputPackageRule());
+                    	    								current = createModelElementForParent(grammarAccess.getProjectRule());
                     	    							}
                     	    							add(
                     	    								current,
@@ -476,7 +476,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
                     otherlv_15=(Token)match(input,15,FOLLOW_10); 
 
-                    				newLeafNode(otherlv_15, grammarAccess.getInputPackageAccess().getRightCurlyBracketKeyword_9_4());
+                    				newLeafNode(otherlv_15, grammarAccess.getProjectAccess().getRightCurlyBracketKeyword_9_4());
                     			
 
                     }
@@ -497,11 +497,11 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     {
                     otherlv_16=(Token)match(input,17,FOLLOW_4); 
 
-                    				newLeafNode(otherlv_16, grammarAccess.getInputPackageAccess().getConstraintsKeyword_10_0());
+                    				newLeafNode(otherlv_16, grammarAccess.getProjectAccess().getConstraintsKeyword_10_0());
                     			
                     otherlv_17=(Token)match(input,12,FOLLOW_11); 
 
-                    				newLeafNode(otherlv_17, grammarAccess.getInputPackageAccess().getLeftCurlyBracketKeyword_10_1());
+                    				newLeafNode(otherlv_17, grammarAccess.getProjectAccess().getLeftCurlyBracketKeyword_10_1());
                     			
                     // InternalAinl.g:236:4: ( (lv_constraints_18_0= ruleConstraint ) )
                     // InternalAinl.g:237:5: (lv_constraints_18_0= ruleConstraint )
@@ -510,7 +510,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     // InternalAinl.g:238:6: lv_constraints_18_0= ruleConstraint
                     {
 
-                    						newCompositeNode(grammarAccess.getInputPackageAccess().getConstraintsConstraintParserRuleCall_10_2_0());
+                    						newCompositeNode(grammarAccess.getProjectAccess().getConstraintsConstraintParserRuleCall_10_2_0());
                     					
                     pushFollow(FOLLOW_7);
                     lv_constraints_18_0=ruleConstraint();
@@ -519,7 +519,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
 
                     						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getInputPackageRule());
+                    							current = createModelElementForParent(grammarAccess.getProjectRule());
                     						}
                     						add(
                     							current,
@@ -551,7 +551,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     	    {
                     	    otherlv_19=(Token)match(input,14,FOLLOW_11); 
 
-                    	    					newLeafNode(otherlv_19, grammarAccess.getInputPackageAccess().getCommaKeyword_10_3_0());
+                    	    					newLeafNode(otherlv_19, grammarAccess.getProjectAccess().getCommaKeyword_10_3_0());
                     	    				
                     	    // InternalAinl.g:260:5: ( (lv_constraints_20_0= ruleConstraint ) )
                     	    // InternalAinl.g:261:6: (lv_constraints_20_0= ruleConstraint )
@@ -560,7 +560,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
                     	    // InternalAinl.g:262:7: lv_constraints_20_0= ruleConstraint
                     	    {
 
-                    	    							newCompositeNode(grammarAccess.getInputPackageAccess().getConstraintsConstraintParserRuleCall_10_3_1_0());
+                    	    							newCompositeNode(grammarAccess.getProjectAccess().getConstraintsConstraintParserRuleCall_10_3_1_0());
                     	    						
                     	    pushFollow(FOLLOW_7);
                     	    lv_constraints_20_0=ruleConstraint();
@@ -569,7 +569,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
 
                     	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getInputPackageRule());
+                    	    								current = createModelElementForParent(grammarAccess.getProjectRule());
                     	    							}
                     	    							add(
                     	    								current,
@@ -595,7 +595,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
                     otherlv_21=(Token)match(input,15,FOLLOW_12); 
 
-                    				newLeafNode(otherlv_21, grammarAccess.getInputPackageAccess().getRightCurlyBracketKeyword_10_4());
+                    				newLeafNode(otherlv_21, grammarAccess.getProjectAccess().getRightCurlyBracketKeyword_10_4());
                     			
 
                     }
@@ -605,11 +605,11 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
             otherlv_22=(Token)match(input,18,FOLLOW_4); 
 
-            			newLeafNode(otherlv_22, grammarAccess.getInputPackageAccess().getTacticsKeyword_11());
+            			newLeafNode(otherlv_22, grammarAccess.getProjectAccess().getTacticsKeyword_11());
             		
             otherlv_23=(Token)match(input,12,FOLLOW_13); 
 
-            			newLeafNode(otherlv_23, grammarAccess.getInputPackageAccess().getLeftCurlyBracketKeyword_12());
+            			newLeafNode(otherlv_23, grammarAccess.getProjectAccess().getLeftCurlyBracketKeyword_12());
             		
             // InternalAinl.g:293:3: ( (lv_tactics_24_0= ruleTactic ) )
             // InternalAinl.g:294:4: (lv_tactics_24_0= ruleTactic )
@@ -618,7 +618,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
             // InternalAinl.g:295:5: lv_tactics_24_0= ruleTactic
             {
 
-            					newCompositeNode(grammarAccess.getInputPackageAccess().getTacticsTacticParserRuleCall_13_0());
+            					newCompositeNode(grammarAccess.getProjectAccess().getTacticsTacticParserRuleCall_13_0());
             				
             pushFollow(FOLLOW_7);
             lv_tactics_24_0=ruleTactic();
@@ -627,7 +627,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getInputPackageRule());
+            						current = createModelElementForParent(grammarAccess.getProjectRule());
             					}
             					add(
             						current,
@@ -659,7 +659,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
             	    {
             	    otherlv_25=(Token)match(input,14,FOLLOW_13); 
 
-            	    				newLeafNode(otherlv_25, grammarAccess.getInputPackageAccess().getCommaKeyword_14_0());
+            	    				newLeafNode(otherlv_25, grammarAccess.getProjectAccess().getCommaKeyword_14_0());
             	    			
             	    // InternalAinl.g:317:4: ( (lv_tactics_26_0= ruleTactic ) )
             	    // InternalAinl.g:318:5: (lv_tactics_26_0= ruleTactic )
@@ -668,7 +668,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
             	    // InternalAinl.g:319:6: lv_tactics_26_0= ruleTactic
             	    {
 
-            	    						newCompositeNode(grammarAccess.getInputPackageAccess().getTacticsTacticParserRuleCall_14_1_0());
+            	    						newCompositeNode(grammarAccess.getProjectAccess().getTacticsTacticParserRuleCall_14_1_0());
             	    					
             	    pushFollow(FOLLOW_7);
             	    lv_tactics_26_0=ruleTactic();
@@ -677,7 +677,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
 
             	    						if (current==null) {
-            	    							current = createModelElementForParent(grammarAccess.getInputPackageRule());
+            	    							current = createModelElementForParent(grammarAccess.getProjectRule());
             	    						}
             	    						add(
             	    							current,
@@ -703,11 +703,11 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
 
             otherlv_27=(Token)match(input,15,FOLLOW_14); 
 
-            			newLeafNode(otherlv_27, grammarAccess.getInputPackageAccess().getRightCurlyBracketKeyword_15());
+            			newLeafNode(otherlv_27, grammarAccess.getProjectAccess().getRightCurlyBracketKeyword_15());
             		
             otherlv_28=(Token)match(input,15,FOLLOW_2); 
 
-            			newLeafNode(otherlv_28, grammarAccess.getInputPackageAccess().getRightCurlyBracketKeyword_16());
+            			newLeafNode(otherlv_28, grammarAccess.getProjectAccess().getRightCurlyBracketKeyword_16());
             		
 
             }
@@ -728,7 +728,7 @@ public class InternalAinlParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleInputPackage"
+    // $ANTLR end "ruleProject"
 
 
     // $ANTLR start "entryRuleEString"

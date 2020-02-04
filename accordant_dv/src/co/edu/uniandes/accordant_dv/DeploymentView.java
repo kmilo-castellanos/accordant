@@ -3,7 +3,7 @@
 package co.edu.uniandes.accordant_dv;
 
 import co.edu.uniandes.accordant_fv.FunctionalView;
-import co.edu.uniandes.accordant_rq.InputPackage;
+import co.edu.uniandes.accordant_rq.Project;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.DeploymentView#getServices <em>Services</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.DeploymentView#getServerless <em>Serverless</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.DeploymentView#getArtifacts <em>Artifacts</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_dv.DeploymentView#getIpackage <em>Ipackage</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.DeploymentView#getProject <em>Project</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.DeploymentView#getFv <em>Fv</em>}</li>
  * </ul>
  *
@@ -139,30 +139,30 @@ public interface DeploymentView extends EObject {
 	EList<Artifact> getArtifacts();
 
 	/**
-	 * Returns the value of the '<em><b>Ipackage</b></em>' reference.
+	 * Returns the value of the '<em><b>Project</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ipackage</em>' reference isn't clear,
+	 * If the meaning of the '<em>Project</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ipackage</em>' reference.
-	 * @see #setIpackage(InputPackage)
-	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeploymentView_Ipackage()
+	 * @return the value of the '<em>Project</em>' reference.
+	 * @see #setProject(Project)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeploymentView_Project()
 	 * @model
 	 * @generated
 	 */
-	InputPackage getIpackage();
+	Project getProject();
 
 	/**
-	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.DeploymentView#getIpackage <em>Ipackage</em>}' reference.
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.DeploymentView#getProject <em>Project</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ipackage</em>' reference.
-	 * @see #getIpackage()
+	 * @param value the new value of the '<em>Project</em>' reference.
+	 * @see #getProject()
 	 * @generated
 	 */
-	void setIpackage(InputPackage value);
+	void setProject(Project value);
 
 	/**
 	 * Returns the value of the '<em><b>Fv</b></em>' reference.

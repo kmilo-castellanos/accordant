@@ -291,7 +291,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeploymentView_Ipackage() {
+	public EReference getDeploymentView_Project() {
 		return (EReference)deploymentViewEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -933,7 +933,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		createEReference(deploymentViewEClass, DEPLOYMENT_VIEW__SERVICES);
 		createEReference(deploymentViewEClass, DEPLOYMENT_VIEW__SERVERLESS);
 		createEReference(deploymentViewEClass, DEPLOYMENT_VIEW__ARTIFACTS);
-		createEReference(deploymentViewEClass, DEPLOYMENT_VIEW__IPACKAGE);
+		createEReference(deploymentViewEClass, DEPLOYMENT_VIEW__PROJECT);
 		createEReference(deploymentViewEClass, DEPLOYMENT_VIEW__FV);
 
 		deviceEClass = createEClass(DEVICE);
@@ -1055,7 +1055,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		initEReference(getDeploymentView_Services(), this.getService(), null, "services", null, 0, -1, DeploymentView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeploymentView_Serverless(), this.getServerlessEnv(), null, "serverless", null, 0, -1, DeploymentView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeploymentView_Artifacts(), this.getArtifact(), null, "artifacts", null, 0, -1, DeploymentView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeploymentView_Ipackage(), theAccordant_rqPackage.getInputPackage(), null, "ipackage", null, 0, 1, DeploymentView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeploymentView_Project(), theAccordant_rqPackage.getProject(), null, "project", null, 0, 1, DeploymentView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeploymentView_Fv(), theAccordant_fvPackage.getFunctionalView(), null, "fv", null, 1, 1, DeploymentView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

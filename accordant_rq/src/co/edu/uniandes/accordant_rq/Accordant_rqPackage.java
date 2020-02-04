@@ -58,14 +58,14 @@ public interface Accordant_rqPackage extends EPackage {
 	Accordant_rqPackage eINSTANCE = co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link co.edu.uniandes.accordant_rq.impl.InputPackageImpl <em>Input Package</em>}' class.
+	 * The meta object id for the '{@link co.edu.uniandes.accordant_rq.impl.ProjectImpl <em>Project</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see co.edu.uniandes.accordant_rq.impl.InputPackageImpl
-	 * @see co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl#getInputPackage()
+	 * @see co.edu.uniandes.accordant_rq.impl.ProjectImpl
+	 * @see co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl#getProject()
 	 * @generated
 	 */
-	int INPUT_PACKAGE = 0;
+	int PROJECT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -74,7 +74,7 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_PACKAGE__NAME = 0;
+	int PROJECT__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Scenarios</b></em>' containment reference list.
@@ -83,7 +83,7 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_PACKAGE__SCENARIOS = 1;
+	int PROJECT__SCENARIOS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Tactics</b></em>' containment reference list.
@@ -92,7 +92,7 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_PACKAGE__TACTICS = 2;
+	int PROJECT__TACTICS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Analyzed Qs</b></em>' containment reference list.
@@ -101,7 +101,7 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_PACKAGE__ANALYZED_QS = 3;
+	int PROJECT__ANALYZED_QS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
@@ -110,25 +110,25 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_PACKAGE__CONSTRAINTS = 4;
+	int PROJECT__CONSTRAINTS = 4;
 
 	/**
-	 * The number of structural features of the '<em>Input Package</em>' class.
+	 * The number of structural features of the '<em>Project</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_PACKAGE_FEATURE_COUNT = 5;
+	int PROJECT_FEATURE_COUNT = 5;
 
 	/**
-	 * The number of operations of the '<em>Input Package</em>' class.
+	 * The number of operations of the '<em>Project</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_PACKAGE_OPERATION_COUNT = 0;
+	int PROJECT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_rq.impl.QScenarioImpl <em>QScenario</em>}' class.
@@ -556,69 +556,69 @@ public interface Accordant_rqPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_rq.InputPackage <em>Input Package</em>}'.
+	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_rq.Project <em>Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Input Package</em>'.
-	 * @see co.edu.uniandes.accordant_rq.InputPackage
+	 * @return the meta object for class '<em>Project</em>'.
+	 * @see co.edu.uniandes.accordant_rq.Project
 	 * @generated
 	 */
-	EClass getInputPackage();
+	EClass getProject();
 
 	/**
-	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.InputPackage#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.Project#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see co.edu.uniandes.accordant_rq.InputPackage#getName()
-	 * @see #getInputPackage()
+	 * @see co.edu.uniandes.accordant_rq.Project#getName()
+	 * @see #getProject()
 	 * @generated
 	 */
-	EAttribute getInputPackage_Name();
+	EAttribute getProject_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_rq.InputPackage#getScenarios <em>Scenarios</em>}'.
+	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_rq.Project#getScenarios <em>Scenarios</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Scenarios</em>'.
-	 * @see co.edu.uniandes.accordant_rq.InputPackage#getScenarios()
-	 * @see #getInputPackage()
+	 * @see co.edu.uniandes.accordant_rq.Project#getScenarios()
+	 * @see #getProject()
 	 * @generated
 	 */
-	EReference getInputPackage_Scenarios();
+	EReference getProject_Scenarios();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_rq.InputPackage#getTactics <em>Tactics</em>}'.
+	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_rq.Project#getTactics <em>Tactics</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Tactics</em>'.
-	 * @see co.edu.uniandes.accordant_rq.InputPackage#getTactics()
-	 * @see #getInputPackage()
+	 * @see co.edu.uniandes.accordant_rq.Project#getTactics()
+	 * @see #getProject()
 	 * @generated
 	 */
-	EReference getInputPackage_Tactics();
+	EReference getProject_Tactics();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_rq.InputPackage#getAnalyzedQs <em>Analyzed Qs</em>}'.
+	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_rq.Project#getAnalyzedQs <em>Analyzed Qs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Analyzed Qs</em>'.
-	 * @see co.edu.uniandes.accordant_rq.InputPackage#getAnalyzedQs()
-	 * @see #getInputPackage()
+	 * @see co.edu.uniandes.accordant_rq.Project#getAnalyzedQs()
+	 * @see #getProject()
 	 * @generated
 	 */
-	EReference getInputPackage_AnalyzedQs();
+	EReference getProject_AnalyzedQs();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_rq.InputPackage#getConstraints <em>Constraints</em>}'.
+	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_rq.Project#getConstraints <em>Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Constraints</em>'.
-	 * @see co.edu.uniandes.accordant_rq.InputPackage#getConstraints()
-	 * @see #getInputPackage()
+	 * @see co.edu.uniandes.accordant_rq.Project#getConstraints()
+	 * @see #getProject()
 	 * @generated
 	 */
-	EReference getInputPackage_Constraints();
+	EReference getProject_Constraints();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_rq.QScenario <em>QScenario</em>}'.
@@ -1031,14 +1031,14 @@ public interface Accordant_rqPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link co.edu.uniandes.accordant_rq.impl.InputPackageImpl <em>Input Package</em>}' class.
+		 * The meta object literal for the '{@link co.edu.uniandes.accordant_rq.impl.ProjectImpl <em>Project</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see co.edu.uniandes.accordant_rq.impl.InputPackageImpl
-		 * @see co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl#getInputPackage()
+		 * @see co.edu.uniandes.accordant_rq.impl.ProjectImpl
+		 * @see co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl#getProject()
 		 * @generated
 		 */
-		EClass INPUT_PACKAGE = eINSTANCE.getInputPackage();
+		EClass PROJECT = eINSTANCE.getProject();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1046,7 +1046,7 @@ public interface Accordant_rqPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INPUT_PACKAGE__NAME = eINSTANCE.getInputPackage_Name();
+		EAttribute PROJECT__NAME = eINSTANCE.getProject_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Scenarios</b></em>' containment reference list feature.
@@ -1054,7 +1054,7 @@ public interface Accordant_rqPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INPUT_PACKAGE__SCENARIOS = eINSTANCE.getInputPackage_Scenarios();
+		EReference PROJECT__SCENARIOS = eINSTANCE.getProject_Scenarios();
 
 		/**
 		 * The meta object literal for the '<em><b>Tactics</b></em>' containment reference list feature.
@@ -1062,7 +1062,7 @@ public interface Accordant_rqPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INPUT_PACKAGE__TACTICS = eINSTANCE.getInputPackage_Tactics();
+		EReference PROJECT__TACTICS = eINSTANCE.getProject_Tactics();
 
 		/**
 		 * The meta object literal for the '<em><b>Analyzed Qs</b></em>' containment reference list feature.
@@ -1070,7 +1070,7 @@ public interface Accordant_rqPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INPUT_PACKAGE__ANALYZED_QS = eINSTANCE.getInputPackage_AnalyzedQs();
+		EReference PROJECT__ANALYZED_QS = eINSTANCE.getProject_AnalyzedQs();
 
 		/**
 		 * The meta object literal for the '<em><b>Constraints</b></em>' containment reference list feature.
@@ -1078,7 +1078,7 @@ public interface Accordant_rqPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INPUT_PACKAGE__CONSTRAINTS = eINSTANCE.getInputPackage_Constraints();
+		EReference PROJECT__CONSTRAINTS = eINSTANCE.getProject_Constraints();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_rq.impl.QScenarioImpl <em>QScenario</em>}' class.

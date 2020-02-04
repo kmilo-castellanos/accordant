@@ -11,7 +11,7 @@ import co.edu.uniandes.accordant_dv.ServerlessEnv;
 import co.edu.uniandes.accordant_dv.Service;
 
 import co.edu.uniandes.accordant_fv.FunctionalView;
-import co.edu.uniandes.accordant_rq.InputPackage;
+import co.edu.uniandes.accordant_rq.Project;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -42,7 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentViewImpl#getServices <em>Services</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentViewImpl#getServerless <em>Serverless</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentViewImpl#getArtifacts <em>Artifacts</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentViewImpl#getIpackage <em>Ipackage</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentViewImpl#getProject <em>Project</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentViewImpl#getFv <em>Fv</em>}</li>
  * </ul>
  *
@@ -120,14 +120,14 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	protected EList<Artifact> artifacts;
 
 	/**
-	 * The cached value of the '{@link #getIpackage() <em>Ipackage</em>}' reference.
+	 * The cached value of the '{@link #getProject() <em>Project</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIpackage()
+	 * @see #getProject()
 	 * @generated
 	 * @ordered
 	 */
-	protected InputPackage ipackage;
+	protected Project project;
 
 	/**
 	 * The cached value of the '{@link #getFv() <em>Fv</em>}' reference.
@@ -244,16 +244,16 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InputPackage getIpackage() {
-		if (ipackage != null && ipackage.eIsProxy()) {
-			InternalEObject oldIpackage = (InternalEObject)ipackage;
-			ipackage = (InputPackage)eResolveProxy(oldIpackage);
-			if (ipackage != oldIpackage) {
+	public Project getProject() {
+		if (project != null && project.eIsProxy()) {
+			InternalEObject oldProject = (InternalEObject)project;
+			project = (Project)eResolveProxy(oldProject);
+			if (project != oldProject) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_dvPackage.DEPLOYMENT_VIEW__IPACKAGE, oldIpackage, ipackage));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_dvPackage.DEPLOYMENT_VIEW__PROJECT, oldProject, project));
 			}
 		}
-		return ipackage;
+		return project;
 	}
 
 	/**
@@ -261,8 +261,8 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InputPackage basicGetIpackage() {
-		return ipackage;
+	public Project basicGetProject() {
+		return project;
 	}
 
 	/**
@@ -270,11 +270,11 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIpackage(InputPackage newIpackage) {
-		InputPackage oldIpackage = ipackage;
-		ipackage = newIpackage;
+	public void setProject(Project newProject) {
+		Project oldProject = project;
+		project = newProject;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.DEPLOYMENT_VIEW__IPACKAGE, oldIpackage, ipackage));
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.DEPLOYMENT_VIEW__PROJECT, oldProject, project));
 	}
 
 	/**
@@ -357,9 +357,9 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 				return getServerless();
 			case Accordant_dvPackage.DEPLOYMENT_VIEW__ARTIFACTS:
 				return getArtifacts();
-			case Accordant_dvPackage.DEPLOYMENT_VIEW__IPACKAGE:
-				if (resolve) return getIpackage();
-				return basicGetIpackage();
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__PROJECT:
+				if (resolve) return getProject();
+				return basicGetProject();
 			case Accordant_dvPackage.DEPLOYMENT_VIEW__FV:
 				if (resolve) return getFv();
 				return basicGetFv();
@@ -399,8 +399,8 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 				getArtifacts().clear();
 				getArtifacts().addAll((Collection<? extends Artifact>)newValue);
 				return;
-			case Accordant_dvPackage.DEPLOYMENT_VIEW__IPACKAGE:
-				setIpackage((InputPackage)newValue);
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__PROJECT:
+				setProject((Project)newValue);
 				return;
 			case Accordant_dvPackage.DEPLOYMENT_VIEW__FV:
 				setFv((FunctionalView)newValue);
@@ -435,8 +435,8 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 			case Accordant_dvPackage.DEPLOYMENT_VIEW__ARTIFACTS:
 				getArtifacts().clear();
 				return;
-			case Accordant_dvPackage.DEPLOYMENT_VIEW__IPACKAGE:
-				setIpackage((InputPackage)null);
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__PROJECT:
+				setProject((Project)null);
 				return;
 			case Accordant_dvPackage.DEPLOYMENT_VIEW__FV:
 				setFv((FunctionalView)null);
@@ -465,8 +465,8 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 				return serverless != null && !serverless.isEmpty();
 			case Accordant_dvPackage.DEPLOYMENT_VIEW__ARTIFACTS:
 				return artifacts != null && !artifacts.isEmpty();
-			case Accordant_dvPackage.DEPLOYMENT_VIEW__IPACKAGE:
-				return ipackage != null;
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__PROJECT:
+				return project != null;
 			case Accordant_dvPackage.DEPLOYMENT_VIEW__FV:
 				return fv != null;
 		}

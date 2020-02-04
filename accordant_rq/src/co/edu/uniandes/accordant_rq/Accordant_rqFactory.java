@@ -22,13 +22,13 @@ public interface Accordant_rqFactory extends EFactory {
 	Accordant_rqFactory eINSTANCE = co.edu.uniandes.accordant_rq.impl.Accordant_rqFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Input Package</em>'.
+	 * Returns a new object of class '<em>Project</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Input Package</em>'.
+	 * @return a new object of class '<em>Project</em>'.
 	 * @generated
 	 */
-	InputPackage createInputPackage();
+	Project createProject();
 
 	/**
 	 * Returns a new object of class '<em>QScenario</em>'.

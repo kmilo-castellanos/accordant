@@ -98,7 +98,7 @@ public class AdvlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getArtifactAccess().getGroup_3(), "rule__Artifact__Group_3__0");
 					put(grammarAccess.getArtifactAccess().getGroup_3_0(), "rule__Artifact__Group_3_0__0");
 					put(grammarAccess.getDeploymentViewAccess().getNameAssignment_1(), "rule__DeploymentView__NameAssignment_1");
-					put(grammarAccess.getDeploymentViewAccess().getIpackageAssignment_4(), "rule__DeploymentView__IpackageAssignment_4");
+					put(grammarAccess.getDeploymentViewAccess().getProjectAssignment_4(), "rule__DeploymentView__ProjectAssignment_4");
 					put(grammarAccess.getDeploymentViewAccess().getFvAssignment_7(), "rule__DeploymentView__FvAssignment_7");
 					put(grammarAccess.getDeploymentViewAccess().getArtifactsAssignment_11(), "rule__DeploymentView__ArtifactsAssignment_11");
 					put(grammarAccess.getDeploymentViewAccess().getArtifactsAssignment_12_1(), "rule__DeploymentView__ArtifactsAssignment_12_1");

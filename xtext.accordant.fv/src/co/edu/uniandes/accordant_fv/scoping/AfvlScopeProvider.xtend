@@ -42,7 +42,7 @@ class AfvlScopeProvider extends AbstractAfvlScopeProvider {
             )) {
 			val rootElement = EcoreUtil2.getContainerOfType(context, FunctionalView)
 			val pointList = <SensitivityPoint>newArrayList
-			val importedPackage = rootElement?.ipackage
+			val importedPackage = rootElement?.project
 			if (importedPackage !== null) {
 				for (points : importedPackage.analyzedQs.map[SPoints]) {
 					pointList += points
@@ -53,9 +53,9 @@ class AfvlScopeProvider extends AbstractAfvlScopeProvider {
             )) {
 			val rootElement = EcoreUtil2.getContainerOfType(context, FunctionalView)
 			val pointList = <SensitivityPoint>newArrayList
-			val importedPackage = rootElement?.ipackage
-			if (importedPackage !== null) {
-				for (points : importedPackage.analyzedQs.map[SPoints]) {
+			val project = rootElement?.project
+			if (project !== null) {
+				for (points : project.analyzedQs.map[SPoints]) {
 					pointList += points
 				}
 			}

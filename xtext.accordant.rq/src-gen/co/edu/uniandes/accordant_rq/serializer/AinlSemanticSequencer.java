@@ -6,7 +6,7 @@ package co.edu.uniandes.accordant_rq.serializer;
 import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
 import co.edu.uniandes.accordant_rq.AnalyzedQS;
 import co.edu.uniandes.accordant_rq.Constraint;
-import co.edu.uniandes.accordant_rq.InputPackage;
+import co.edu.uniandes.accordant_rq.Project;
 import co.edu.uniandes.accordant_rq.QScenario;
 import co.edu.uniandes.accordant_rq.SensitivityPoint;
 import co.edu.uniandes.accordant_rq.Tactic;
@@ -43,8 +43,8 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case Accordant_rqPackage.CONSTRAINT:
 				sequence_Constraint(context, (Constraint) semanticObject); 
 				return; 
-			case Accordant_rqPackage.INPUT_PACKAGE:
-				sequence_InputPackage(context, (InputPackage) semanticObject); 
+			case Accordant_rqPackage.PROJECT:
+				sequence_Project(context, (Project) semanticObject); 
 				return; 
 			case Accordant_rqPackage.QSCENARIO:
 				sequence_QScenario(context, (QScenario) semanticObject); 
@@ -86,7 +86,7 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     InputPackage returns InputPackage
+	 *     Project returns Project
 	 *
 	 * Constraint:
 	 *     (
@@ -99,7 +99,7 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         tactics+=Tactic*
 	 *     )
 	 */
-	protected void sequence_InputPackage(ISerializationContext context, InputPackage semanticObject) {
+	protected void sequence_Project(ISerializationContext context, Project semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

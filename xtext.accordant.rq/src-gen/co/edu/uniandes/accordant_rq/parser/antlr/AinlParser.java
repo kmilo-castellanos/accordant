@@ -27,7 +27,7 @@ public class AinlParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "InputPackage";
+		return "Project";
 	}
 
 	public AinlGrammarAccess getGrammarAccess() {

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAfvlParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'BEST_EFFORT'", "'AT_LEAST_ONE'", "'AT_MOST_ONE'", "'EXACTLY_ONE'", "'ASYNC'", "'SYNC'", "'REQUIRED'", "'PROVIDED'", "'OUT'", "'IN'", "'POLLED'", "'PUBSUB'", "'QUEUED'", "'CENTRAL'", "'BUFFERED'", "'UNBUFFERED'", "'ATOMIC'", "'HIGH_ORDER'", "'STREAM'", "'BATCH'", "'MICROBATCH'", "'HTTP'", "'DATABASE'", "'FILESYSTEM'", "'HDFS'", "'FunctionalView'", "'use'", "'inputPackage'", "'{'", "'Components'", "'}'", "'Connectors'", "','", "'Port'", "':'", "'Role'", "'->'", "'Stream'", "'roles'", "'delivery'", "'sync'", "'notification'", "'buffering'", "'throughput'", "'props'", "'sensitivityPoint'", "'Adaptor'", "'Distributor'", "'Event'", "'ProcCall'", "'Transformer'", "'ports'", "'procModel'", "'pmml'", "'Estimator'", "'Ingestor'", "'type'", "'conn'", "'format'", "'Sink'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'BEST_EFFORT'", "'AT_LEAST_ONE'", "'AT_MOST_ONE'", "'EXACTLY_ONE'", "'ASYNC'", "'SYNC'", "'REQUIRED'", "'PROVIDED'", "'OUT'", "'IN'", "'POLLED'", "'PUBSUB'", "'QUEUED'", "'CENTRAL'", "'BUFFERED'", "'UNBUFFERED'", "'ATOMIC'", "'HIGH_ORDER'", "'STREAM'", "'BATCH'", "'MICROBATCH'", "'HTTP'", "'DATABASE'", "'FILESYSTEM'", "'HDFS'", "'FunctionalView'", "'use'", "'project'", "'{'", "'Components'", "'}'", "'Connectors'", "','", "'Port'", "':'", "'Role'", "'->'", "'Stream'", "'roles'", "'delivery'", "'sync'", "'notification'", "'buffering'", "'throughput'", "'props'", "'sensitivityPoint'", "'Adaptor'", "'Distributor'", "'Event'", "'ProcCall'", "'Transformer'", "'ports'", "'procModel'", "'pmml'", "'Estimator'", "'Ingestor'", "'type'", "'conn'", "'format'", "'Sink'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -3282,21 +3282,21 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionalView__Group__3__Impl"
-    // InternalAfvl.g:988:1: rule__FunctionalView__Group__3__Impl : ( 'inputPackage' ) ;
+    // InternalAfvl.g:988:1: rule__FunctionalView__Group__3__Impl : ( 'project' ) ;
     public final void rule__FunctionalView__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:992:1: ( ( 'inputPackage' ) )
-            // InternalAfvl.g:993:1: ( 'inputPackage' )
+            // InternalAfvl.g:992:1: ( ( 'project' ) )
+            // InternalAfvl.g:993:1: ( 'project' )
             {
-            // InternalAfvl.g:993:1: ( 'inputPackage' )
-            // InternalAfvl.g:994:2: 'inputPackage'
+            // InternalAfvl.g:993:1: ( 'project' )
+            // InternalAfvl.g:994:2: 'project'
             {
-             before(grammarAccess.getFunctionalViewAccess().getInputPackageKeyword_3()); 
+             before(grammarAccess.getFunctionalViewAccess().getProjectKeyword_3()); 
             match(input,38,FOLLOW_2); 
-             after(grammarAccess.getFunctionalViewAccess().getInputPackageKeyword_3()); 
+             after(grammarAccess.getFunctionalViewAccess().getProjectKeyword_3()); 
 
             }
 
@@ -3357,31 +3357,31 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionalView__Group__4__Impl"
-    // InternalAfvl.g:1015:1: rule__FunctionalView__Group__4__Impl : ( ( rule__FunctionalView__IpackageAssignment_4 ) ) ;
+    // InternalAfvl.g:1015:1: rule__FunctionalView__Group__4__Impl : ( ( rule__FunctionalView__ProjectAssignment_4 ) ) ;
     public final void rule__FunctionalView__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:1019:1: ( ( ( rule__FunctionalView__IpackageAssignment_4 ) ) )
-            // InternalAfvl.g:1020:1: ( ( rule__FunctionalView__IpackageAssignment_4 ) )
+            // InternalAfvl.g:1019:1: ( ( ( rule__FunctionalView__ProjectAssignment_4 ) ) )
+            // InternalAfvl.g:1020:1: ( ( rule__FunctionalView__ProjectAssignment_4 ) )
             {
-            // InternalAfvl.g:1020:1: ( ( rule__FunctionalView__IpackageAssignment_4 ) )
-            // InternalAfvl.g:1021:2: ( rule__FunctionalView__IpackageAssignment_4 )
+            // InternalAfvl.g:1020:1: ( ( rule__FunctionalView__ProjectAssignment_4 ) )
+            // InternalAfvl.g:1021:2: ( rule__FunctionalView__ProjectAssignment_4 )
             {
-             before(grammarAccess.getFunctionalViewAccess().getIpackageAssignment_4()); 
-            // InternalAfvl.g:1022:2: ( rule__FunctionalView__IpackageAssignment_4 )
-            // InternalAfvl.g:1022:3: rule__FunctionalView__IpackageAssignment_4
+             before(grammarAccess.getFunctionalViewAccess().getProjectAssignment_4()); 
+            // InternalAfvl.g:1022:2: ( rule__FunctionalView__ProjectAssignment_4 )
+            // InternalAfvl.g:1022:3: rule__FunctionalView__ProjectAssignment_4
             {
             pushFollow(FOLLOW_2);
-            rule__FunctionalView__IpackageAssignment_4();
+            rule__FunctionalView__ProjectAssignment_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFunctionalViewAccess().getIpackageAssignment_4()); 
+             after(grammarAccess.getFunctionalViewAccess().getProjectAssignment_4()); 
 
             }
 
@@ -31172,9 +31172,9 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__FunctionalView__NameAssignment_1"
 
 
-    // $ANTLR start "rule__FunctionalView__IpackageAssignment_4"
-    // InternalAfvl.g:10333:1: rule__FunctionalView__IpackageAssignment_4 : ( ( RULE_ID ) ) ;
-    public final void rule__FunctionalView__IpackageAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__FunctionalView__ProjectAssignment_4"
+    // InternalAfvl.g:10333:1: rule__FunctionalView__ProjectAssignment_4 : ( ( RULE_ID ) ) ;
+    public final void rule__FunctionalView__ProjectAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -31185,17 +31185,17 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
             // InternalAfvl.g:10338:2: ( ( RULE_ID ) )
             // InternalAfvl.g:10339:3: ( RULE_ID )
             {
-             before(grammarAccess.getFunctionalViewAccess().getIpackageInputPackageCrossReference_4_0()); 
+             before(grammarAccess.getFunctionalViewAccess().getProjectProjectCrossReference_4_0()); 
             // InternalAfvl.g:10340:3: ( RULE_ID )
             // InternalAfvl.g:10341:4: RULE_ID
             {
-             before(grammarAccess.getFunctionalViewAccess().getIpackageInputPackageIDTerminalRuleCall_4_0_1()); 
+             before(grammarAccess.getFunctionalViewAccess().getProjectProjectIDTerminalRuleCall_4_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getFunctionalViewAccess().getIpackageInputPackageIDTerminalRuleCall_4_0_1()); 
+             after(grammarAccess.getFunctionalViewAccess().getProjectProjectIDTerminalRuleCall_4_0_1()); 
 
             }
 
-             after(grammarAccess.getFunctionalViewAccess().getIpackageInputPackageCrossReference_4_0()); 
+             after(grammarAccess.getFunctionalViewAccess().getProjectProjectCrossReference_4_0()); 
 
             }
 
@@ -31214,7 +31214,7 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FunctionalView__IpackageAssignment_4"
+    // $ANTLR end "rule__FunctionalView__ProjectAssignment_4"
 
 
     // $ANTLR start "rule__FunctionalView__CompsAssignment_8"

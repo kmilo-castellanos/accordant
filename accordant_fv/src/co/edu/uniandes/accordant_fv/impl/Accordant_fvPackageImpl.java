@@ -329,7 +329,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFunctionalView_Ipackage() {
+	public EReference getFunctionalView_Project() {
 		return (EReference)functionalViewEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -869,7 +869,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		createEAttribute(functionalViewEClass, FUNCTIONAL_VIEW__NAME);
 		createEReference(functionalViewEClass, FUNCTIONAL_VIEW__CONNS);
 		createEReference(functionalViewEClass, FUNCTIONAL_VIEW__COMPS);
-		createEReference(functionalViewEClass, FUNCTIONAL_VIEW__IPACKAGE);
+		createEReference(functionalViewEClass, FUNCTIONAL_VIEW__PROJECT);
 
 		connectorEClass = createEClass(CONNECTOR);
 		createEAttribute(connectorEClass, CONNECTOR__NAME);
@@ -993,7 +993,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		initEAttribute(getFunctionalView_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionalView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFunctionalView_Conns(), this.getConnector(), null, "conns", null, 1, -1, FunctionalView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFunctionalView_Comps(), this.getComponent(), this.getComponent_FuncView(), "comps", null, 1, -1, FunctionalView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFunctionalView_Ipackage(), theAccordant_rqPackage.getInputPackage(), null, "ipackage", null, 1, 1, FunctionalView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFunctionalView_Project(), theAccordant_rqPackage.getProject(), null, "project", null, 1, 1, FunctionalView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorEClass, Connector.class, "Connector", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConnector_Name(), ecorePackage.getEString(), "name", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

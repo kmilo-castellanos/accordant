@@ -596,7 +596,7 @@
   <element xmi:type="ecore:EPackage" href="accordant_fv.ecore#/"/>
   <edges xmi:type="notation:Connector" xmi:id="_hRXUYCrzEeiyhZsreJRi0w" type="4003" source="_hQrX4CrzEeiyhZsreJRi0w" target="_hQr--irzEeiyhZsreJRi0w">
     <children xmi:type="notation:DecorationNode" xmi:id="_hRXUYyrzEeiyhZsreJRi0w" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_hRXUZCrzEeiyhZsreJRi0w" x="32" y="12"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_hRXUZCrzEeiyhZsreJRi0w" x="22" y="7"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_hRXUZSrzEeiyhZsreJRi0w" type="6004">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_hRXUZirzEeiyhZsreJRi0w" y="-15"/>
