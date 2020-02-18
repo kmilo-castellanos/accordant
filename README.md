@@ -6,6 +6,13 @@ This repository comprises eclipse (modeling) projects of ACCORDANT framework. Th
 
 ## ACCORDANT's domain-specific language (DSL) projects:
 
+Metamodels
+* accordant_rq: Contains the ecore metamodel, diagram, and model java clases of architectural drivers
+* accordant_fv: Contains ecore metamodel, diagram, and model java clases of the functional view
+* accordant_dv: Contains ecore metamodel, diagram, and model java clases of the deployment view
+
+
+
 Architectural Inputs DSL
 * xtext.accordant.rq: Xtext Architectural Inputs specification, grammar, validators, and generators
 * xtext.accordant.rq.ide: Xtext functional view IDE
