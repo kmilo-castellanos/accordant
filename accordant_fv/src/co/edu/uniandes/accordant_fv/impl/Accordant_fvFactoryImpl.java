@@ -70,6 +70,7 @@ public class Accordant_fvFactoryImpl extends EFactoryImpl implements Accordant_f
 			case Accordant_fvPackage.ARBITRATOR: return createArbitrator();
 			case Accordant_fvPackage.ROLE: return createRole();
 			case Accordant_fvPackage.PROCEDURE_CALL: return createProcedureCall();
+			case Accordant_fvPackage.FIELD: return createField();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -101,6 +102,8 @@ public class Accordant_fvFactoryImpl extends EFactoryImpl implements Accordant_f
 				return createRoleTypeFromString(eDataType, initialValue);
 			case Accordant_fvPackage.ACCESS_TYPE:
 				return createAccessTypeFromString(eDataType, initialValue);
+			case Accordant_fvPackage.DTYPE:
+				return createDTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -132,6 +135,8 @@ public class Accordant_fvFactoryImpl extends EFactoryImpl implements Accordant_f
 				return convertRoleTypeToString(eDataType, instanceValue);
 			case Accordant_fvPackage.ACCESS_TYPE:
 				return convertAccessTypeToString(eDataType, instanceValue);
+			case Accordant_fvPackage.DTYPE:
+				return convertDTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -265,6 +270,16 @@ public class Accordant_fvFactoryImpl extends EFactoryImpl implements Accordant_f
 	public ProcedureCall createProcedureCall() {
 		ProcedureCallImpl procedureCall = new ProcedureCallImpl();
 		return procedureCall;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Field createField() {
+		FieldImpl field = new FieldImpl();
+		return field;
 	}
 
 	/**
@@ -444,6 +459,26 @@ public class Accordant_fvFactoryImpl extends EFactoryImpl implements Accordant_f
 	 * @generated
 	 */
 	public String convertAccessTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DType createDTypeFromString(EDataType eDataType, String initialValue) {
+		DType result = DType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

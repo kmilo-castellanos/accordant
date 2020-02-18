@@ -6,8 +6,7 @@ import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
 import co.edu.uniandes.accordant_dv.Deployment;
 import co.edu.uniandes.accordant_dv.Pod;
 
-import co.edu.uniandes.accordant_rq.SensitivityPoint;
-
+import co.edu.uniandes.accordant_rq.ArchDecision;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -38,7 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl#getMaxUnavail <em>Max Unavail</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl#getPods <em>Pods</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl#getStrategy <em>Strategy</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl#getSpoint <em>Spoint</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl#getDecision <em>Decision</em>}</li>
  * </ul>
  *
  * @generated
@@ -155,14 +154,14 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	protected String strategy = STRATEGY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSpoint() <em>Spoint</em>}' reference.
+	 * The cached value of the '{@link #getDecision() <em>Decision</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpoint()
+	 * @see #getDecision()
 	 * @generated
 	 * @ordered
 	 */
-	protected SensitivityPoint spoint;
+	protected ArchDecision decision;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -305,16 +304,16 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SensitivityPoint getSpoint() {
-		if (spoint != null && spoint.eIsProxy()) {
-			InternalEObject oldSpoint = (InternalEObject)spoint;
-			spoint = (SensitivityPoint)eResolveProxy(oldSpoint);
-			if (spoint != oldSpoint) {
+	public ArchDecision getDecision() {
+		if (decision != null && decision.eIsProxy()) {
+			InternalEObject oldDecision = (InternalEObject)decision;
+			decision = (ArchDecision)eResolveProxy(oldDecision);
+			if (decision != oldDecision) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_dvPackage.DEPLOYMENT__SPOINT, oldSpoint, spoint));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_dvPackage.DEPLOYMENT__DECISION, oldDecision, decision));
 			}
 		}
-		return spoint;
+		return decision;
 	}
 
 	/**
@@ -322,8 +321,8 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SensitivityPoint basicGetSpoint() {
-		return spoint;
+	public ArchDecision basicGetDecision() {
+		return decision;
 	}
 
 	/**
@@ -331,11 +330,11 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSpoint(SensitivityPoint newSpoint) {
-		SensitivityPoint oldSpoint = spoint;
-		spoint = newSpoint;
+	public void setDecision(ArchDecision newDecision) {
+		ArchDecision oldDecision = decision;
+		decision = newDecision;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.DEPLOYMENT__SPOINT, oldSpoint, spoint));
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.DEPLOYMENT__DECISION, oldDecision, decision));
 	}
 
 	/**
@@ -372,9 +371,9 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 				return getPods();
 			case Accordant_dvPackage.DEPLOYMENT__STRATEGY:
 				return getStrategy();
-			case Accordant_dvPackage.DEPLOYMENT__SPOINT:
-				if (resolve) return getSpoint();
-				return basicGetSpoint();
+			case Accordant_dvPackage.DEPLOYMENT__DECISION:
+				if (resolve) return getDecision();
+				return basicGetDecision();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -407,8 +406,8 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 			case Accordant_dvPackage.DEPLOYMENT__STRATEGY:
 				setStrategy((String)newValue);
 				return;
-			case Accordant_dvPackage.DEPLOYMENT__SPOINT:
-				setSpoint((SensitivityPoint)newValue);
+			case Accordant_dvPackage.DEPLOYMENT__DECISION:
+				setDecision((ArchDecision)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -440,8 +439,8 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 			case Accordant_dvPackage.DEPLOYMENT__STRATEGY:
 				setStrategy(STRATEGY_EDEFAULT);
 				return;
-			case Accordant_dvPackage.DEPLOYMENT__SPOINT:
-				setSpoint((SensitivityPoint)null);
+			case Accordant_dvPackage.DEPLOYMENT__DECISION:
+				setDecision((ArchDecision)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -467,8 +466,8 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 				return pods != null && !pods.isEmpty();
 			case Accordant_dvPackage.DEPLOYMENT__STRATEGY:
 				return STRATEGY_EDEFAULT == null ? strategy != null : !STRATEGY_EDEFAULT.equals(strategy);
-			case Accordant_dvPackage.DEPLOYMENT__SPOINT:
-				return spoint != null;
+			case Accordant_dvPackage.DEPLOYMENT__DECISION:
+				return decision != null;
 		}
 		return super.eIsSet(featureID);
 	}

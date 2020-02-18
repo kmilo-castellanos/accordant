@@ -2,7 +2,7 @@
  */
 package co.edu.uniandes.accordant_fv;
 
-import co.edu.uniandes.accordant_rq.SensitivityPoint;
+import co.edu.uniandes.accordant_rq.ArchDecision;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_fv.Connector#getThroughput <em>Throughput</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Connector#getRoles <em>Roles</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Connector#getProtocol <em>Protocol</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_fv.Connector#getSpoint <em>Spoint</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.Connector#getDecision <em>Decision</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Connector#getProps <em>Props</em>}</li>
  * </ul>
  *
@@ -247,30 +247,30 @@ public interface Connector extends EObject {
 	void setProtocol(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Spoint</b></em>' reference.
+	 * Returns the value of the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Spoint</em>' reference isn't clear,
+	 * If the meaning of the '<em>Decision</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Spoint</em>' reference.
-	 * @see #setSpoint(SensitivityPoint)
-	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getConnector_Spoint()
+	 * @return the value of the '<em>Decision</em>' reference.
+	 * @see #setDecision(ArchDecision)
+	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getConnector_Decision()
 	 * @model
 	 * @generated
 	 */
-	SensitivityPoint getSpoint();
+	ArchDecision getDecision();
 
 	/**
-	 * Sets the value of the '{@link co.edu.uniandes.accordant_fv.Connector#getSpoint <em>Spoint</em>}' reference.
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_fv.Connector#getDecision <em>Decision</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Spoint</em>' reference.
-	 * @see #getSpoint()
+	 * @param value the new value of the '<em>Decision</em>' reference.
+	 * @see #getDecision()
 	 * @generated
 	 */
-	void setSpoint(SensitivityPoint value);
+	void setDecision(ArchDecision value);
 
 	/**
 	 * Returns the value of the '<em><b>Props</b></em>' attribute.

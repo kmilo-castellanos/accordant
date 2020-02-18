@@ -2,7 +2,7 @@
  */
 package co.edu.uniandes.accordant_fv;
 
-import co.edu.uniandes.accordant_rq.SensitivityPoint;
+import co.edu.uniandes.accordant_rq.ArchDecision;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_fv.Component#getPorts <em>Ports</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Component#getProcModel <em>Proc Model</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Component#getFuncView <em>Func View</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_fv.Component#getSpoint <em>Spoint</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.Component#getDecision <em>Decision</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getComponent()
@@ -128,29 +128,29 @@ public interface Component extends EObject {
 	void setFuncView(FunctionalView value);
 
 	/**
-	 * Returns the value of the '<em><b>Spoint</b></em>' reference.
+	 * Returns the value of the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Spoint</em>' reference isn't clear,
+	 * If the meaning of the '<em>Decision</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Spoint</em>' reference.
-	 * @see #setSpoint(SensitivityPoint)
-	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getComponent_Spoint()
+	 * @return the value of the '<em>Decision</em>' reference.
+	 * @see #setDecision(ArchDecision)
+	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getComponent_Decision()
 	 * @model
 	 * @generated
 	 */
-	SensitivityPoint getSpoint();
+	ArchDecision getDecision();
 
 	/**
-	 * Sets the value of the '{@link co.edu.uniandes.accordant_fv.Component#getSpoint <em>Spoint</em>}' reference.
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_fv.Component#getDecision <em>Decision</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Spoint</em>' reference.
-	 * @see #getSpoint()
+	 * @param value the new value of the '<em>Decision</em>' reference.
+	 * @see #getDecision()
 	 * @generated
 	 */
-	void setSpoint(SensitivityPoint value);
+	void setDecision(ArchDecision value);
 
 } // Component

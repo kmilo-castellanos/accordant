@@ -65,28 +65,28 @@ public class AdvlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) 'Artifact' name=ID
 	 *     (rule start) (ambiguity) 'connector' ':' conn=[Connector|ID]
+	 *     (rule start) (ambiguity) 'decision' ':' decision=[ArchDecision|ID]
 	 *     (rule start) (ambiguity) 'props' ':' props=EString
-	 *     (rule start) (ambiguity) 'sensitivityPoint' ':' spoint=[SensitivityPoint|ID]
 	 *     (rule start) (ambiguity) (rule start)
 	 *     comp=[Component|ID] (ambiguity) 'Artifact' name=ID
 	 *     comp=[Component|ID] (ambiguity) 'connector' ':' conn=[Connector|ID]
+	 *     comp=[Component|ID] (ambiguity) 'decision' ':' decision=[ArchDecision|ID]
 	 *     comp=[Component|ID] (ambiguity) 'props' ':' props=EString
-	 *     comp=[Component|ID] (ambiguity) 'sensitivityPoint' ':' spoint=[SensitivityPoint|ID]
 	 *     comp=[Component|ID] (ambiguity) (rule end)
 	 *     conn=[Connector|ID] (ambiguity) 'Artifact' name=ID
 	 *     conn=[Connector|ID] (ambiguity) 'connector' ':' conn=[Connector|ID]
+	 *     conn=[Connector|ID] (ambiguity) 'decision' ':' decision=[ArchDecision|ID]
 	 *     conn=[Connector|ID] (ambiguity) 'props' ':' props=EString
-	 *     conn=[Connector|ID] (ambiguity) 'sensitivityPoint' ':' spoint=[SensitivityPoint|ID]
 	 *     conn=[Connector|ID] (ambiguity) (rule end)
 	 *     name=ID '{' (ambiguity) 'Artifact' name=ID
 	 *     name=ID '{' (ambiguity) 'connector' ':' conn=[Connector|ID]
+	 *     name=ID '{' (ambiguity) 'decision' ':' decision=[ArchDecision|ID]
 	 *     name=ID '{' (ambiguity) 'props' ':' props=EString
-	 *     name=ID '{' (ambiguity) 'sensitivityPoint' ':' spoint=[SensitivityPoint|ID]
 	 *     name=ID '{' (ambiguity) (rule end)
 	 *     props=EString (ambiguity) 'Artifact' name=ID
 	 *     props=EString (ambiguity) 'connector' ':' conn=[Connector|ID]
+	 *     props=EString (ambiguity) 'decision' ':' decision=[ArchDecision|ID]
 	 *     props=EString (ambiguity) 'props' ':' props=EString
-	 *     props=EString (ambiguity) 'sensitivityPoint' ':' spoint=[SensitivityPoint|ID]
 	 *     props=EString (ambiguity) (rule end)
 	 */
 	protected void emit_Artifact_RightCurlyBracketKeyword_3_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -99,11 +99,11 @@ public class AdvlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
-	 *     spoint=[SensitivityPoint|ID] (ambiguity) 'Artifact' name=ID
-	 *     spoint=[SensitivityPoint|ID] (ambiguity) 'connector' ':' conn=[Connector|ID]
-	 *     spoint=[SensitivityPoint|ID] (ambiguity) 'props' ':' props=EString
-	 *     spoint=[SensitivityPoint|ID] (ambiguity) 'sensitivityPoint' ':' spoint=[SensitivityPoint|ID]
-	 *     spoint=[SensitivityPoint|ID] (ambiguity) (rule end)
+	 *     decision=[ArchDecision|ID] (ambiguity) 'Artifact' name=ID
+	 *     decision=[ArchDecision|ID] (ambiguity) 'connector' ':' conn=[Connector|ID]
+	 *     decision=[ArchDecision|ID] (ambiguity) 'decision' ':' decision=[ArchDecision|ID]
+	 *     decision=[ArchDecision|ID] (ambiguity) 'props' ':' props=EString
+	 *     decision=[ArchDecision|ID] (ambiguity) (rule end)
 	 */
 	protected void emit_Artifact_RightCurlyBracketKeyword_3_1_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

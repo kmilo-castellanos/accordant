@@ -497,22 +497,22 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPodsPodParserRuleCall_9_1_0 = (RuleCall)cPodsAssignment_9_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
-		private final Keyword cSensitivityPointKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
+		private final Keyword cDecisionKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
 		private final Keyword cColonKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
-		private final Assignment cSpointAssignment_11_2 = (Assignment)cGroup_11.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_11_2_0 = (CrossReference)cSpointAssignment_11_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_11_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_11_2_0.eContents().get(1);
+		private final Assignment cDecisionAssignment_11_2 = (Assignment)cGroup_11.eContents().get(2);
+		private final CrossReference cDecisionArchDecisionCrossReference_11_2_0 = (CrossReference)cDecisionAssignment_11_2.eContents().get(0);
+		private final RuleCall cDecisionArchDecisionIDTerminalRuleCall_11_2_0_1 = (RuleCall)cDecisionArchDecisionCrossReference_11_2_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//Deployment:
 		//	'Deployment' name=ID
 		//	'{' ('replicas' ':' replicas=EInt)? ('maxSurge' ':' maxSurge=EInt)? ('maxUnavailable' ':' maxUnavail=EInt)?
-		//	'pods' '{' pods+=Pod (',' pods+=Pod)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	'pods' '{' pods+=Pod (',' pods+=Pod)* '}' ('decision' ':' decision=[rq::ArchDecision])?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Deployment' name=ID '{' ('replicas' ':' replicas=EInt)? ('maxSurge' ':' maxSurge=EInt)? ('maxUnavailable' ':'
-		//maxUnavail=EInt)? 'pods' '{' pods+=Pod (',' pods+=Pod)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? '}'
+		//maxUnavail=EInt)? 'pods' '{' pods+=Pod (',' pods+=Pod)* '}' ('decision' ':' decision=[rq::ArchDecision])? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Deployment'
@@ -599,23 +599,23 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 		
-		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//('decision' ':' decision=[rq::ArchDecision])?
 		public Group getGroup_11() { return cGroup_11; }
 		
-		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_11_0() { return cSensitivityPointKeyword_11_0; }
+		//'decision'
+		public Keyword getDecisionKeyword_11_0() { return cDecisionKeyword_11_0; }
 		
 		//':'
 		public Keyword getColonKeyword_11_1() { return cColonKeyword_11_1; }
 		
-		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_11_2() { return cSpointAssignment_11_2; }
+		//decision=[rq::ArchDecision]
+		public Assignment getDecisionAssignment_11_2() { return cDecisionAssignment_11_2; }
 		
-		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_11_2_0() { return cSpointSensitivityPointCrossReference_11_2_0; }
+		//[rq::ArchDecision]
+		public CrossReference getDecisionArchDecisionCrossReference_11_2_0() { return cDecisionArchDecisionCrossReference_11_2_0; }
 		
 		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_11_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_11_2_0_1; }
+		public RuleCall getDecisionArchDecisionIDTerminalRuleCall_11_2_0_1() { return cDecisionArchDecisionIDTerminalRuleCall_11_2_0_1; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
@@ -1521,23 +1521,23 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPropsEStringParserRuleCall_2_2_0 = (RuleCall)cPropsAssignment_2_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cUnorderedGroup.eContents().get(3);
 		private final Group cGroup_3_0 = (Group)cGroup_3.eContents().get(0);
-		private final Keyword cSensitivityPointKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
+		private final Keyword cDecisionKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
 		private final Keyword cColonKeyword_3_0_1 = (Keyword)cGroup_3_0.eContents().get(1);
-		private final Assignment cSpointAssignment_3_0_2 = (Assignment)cGroup_3_0.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_3_0_2_0 = (CrossReference)cSpointAssignment_3_0_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_3_0_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_3_0_2_0.eContents().get(1);
+		private final Assignment cDecisionAssignment_3_0_2 = (Assignment)cGroup_3_0.eContents().get(2);
+		private final CrossReference cDecisionArchDecisionCrossReference_3_0_2_0 = (CrossReference)cDecisionAssignment_3_0_2.eContents().get(0);
+		private final RuleCall cDecisionArchDecisionIDTerminalRuleCall_3_0_2_0_1 = (RuleCall)cDecisionArchDecisionCrossReference_3_0_2_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		
 		//Artifact:
 		//	'Artifact'
 		//	name=ID
 		//	'{' ('component' ':' comp=[fv::Component])? & ('connector' ':' conn=[fv::Connector])? & ('props' ':' props=EString)? &
-		//	('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	('decision' ':' decision=[rq::ArchDecision])?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Artifact' name=ID '{' ('component' ':' comp=[fv::Component])? & ('connector' ':' conn=[fv::Connector])? & ('props' ':'
-		//props=EString)? & ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? '}'
+		//props=EString)? & ('decision' ':' decision=[rq::ArchDecision])? '}'
 		public UnorderedGroup getUnorderedGroup() { return cUnorderedGroup; }
 		
 		//'Artifact' name=ID '{' ('component' ':' comp=[fv::Component])?
@@ -1606,26 +1606,26 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPropsEStringParserRuleCall_2_2_0() { return cPropsEStringParserRuleCall_2_2_0; }
 		
-		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? '}'
+		//('decision' ':' decision=[rq::ArchDecision])? '}'
 		public Group getGroup_3() { return cGroup_3; }
 		
-		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//('decision' ':' decision=[rq::ArchDecision])?
 		public Group getGroup_3_0() { return cGroup_3_0; }
 		
-		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_3_0_0() { return cSensitivityPointKeyword_3_0_0; }
+		//'decision'
+		public Keyword getDecisionKeyword_3_0_0() { return cDecisionKeyword_3_0_0; }
 		
 		//':'
 		public Keyword getColonKeyword_3_0_1() { return cColonKeyword_3_0_1; }
 		
-		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_3_0_2() { return cSpointAssignment_3_0_2; }
+		//decision=[rq::ArchDecision]
+		public Assignment getDecisionAssignment_3_0_2() { return cDecisionAssignment_3_0_2; }
 		
-		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_3_0_2_0() { return cSpointSensitivityPointCrossReference_3_0_2_0; }
+		//[rq::ArchDecision]
+		public CrossReference getDecisionArchDecisionCrossReference_3_0_2_0() { return cDecisionArchDecisionCrossReference_3_0_2_0; }
 		
 		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_3_0_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_3_0_2_0_1; }
+		public RuleCall getDecisionArchDecisionIDTerminalRuleCall_3_0_2_0_1() { return cDecisionArchDecisionIDTerminalRuleCall_3_0_2_0_1; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3_1() { return cRightCurlyBracketKeyword_3_1; }
@@ -1785,7 +1785,7 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 	//Deployment:
 	//	'Deployment' name=ID
 	//	'{' ('replicas' ':' replicas=EInt)? ('maxSurge' ':' maxSurge=EInt)? ('maxUnavailable' ':' maxUnavail=EInt)?
-	//	'pods' '{' pods+=Pod (',' pods+=Pod)* '}' ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	'pods' '{' pods+=Pod (',' pods+=Pod)* '}' ('decision' ':' decision=[rq::ArchDecision])?
 	//	'}';
 	public DeploymentElements getDeploymentAccess() {
 		return pDeployment;
@@ -1914,7 +1914,7 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 	//	'Artifact'
 	//	name=ID
 	//	'{' ('component' ':' comp=[fv::Component])? & ('connector' ':' conn=[fv::Connector])? & ('props' ':' props=EString)? &
-	//	('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	('decision' ':' decision=[rq::ArchDecision])?
 	//	'}';
 	public ArtifactElements getArtifactAccess() {
 		return pArtifact;

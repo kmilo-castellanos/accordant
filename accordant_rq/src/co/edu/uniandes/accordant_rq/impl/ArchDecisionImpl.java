@@ -3,15 +3,17 @@
 package co.edu.uniandes.accordant_rq.impl;
 
 import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
-import co.edu.uniandes.accordant_rq.SensitivityPoint;
+import co.edu.uniandes.accordant_rq.ArchDecision;
 import co.edu.uniandes.accordant_rq.Tactic;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -19,22 +21,23 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Sensitivity Point</b></em>'.
+ * An implementation of the model object '<em><b>Arch Decision</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl#getName <em>Name</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl#getRationale <em>Rationale</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl#getCode <em>Code</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl#getAppliedTactics <em>Applied Tactics</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl#isIsRisk <em>Is Risk</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.impl.ArchDecisionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.impl.ArchDecisionImpl#getRationale <em>Rationale</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.impl.ArchDecisionImpl#getCode <em>Code</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.impl.ArchDecisionImpl#getAppliedTactics <em>Applied Tactics</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.impl.ArchDecisionImpl#isIsRisk <em>Is Risk</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.impl.ArchDecisionImpl#isIsSensitivityPoint <em>Is Sensitivity Point</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SensitivityPointImpl extends MinimalEObjectImpl.Container implements SensitivityPoint {
+public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements ArchDecision {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -126,11 +129,31 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 	protected boolean isRisk = IS_RISK_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #isIsSensitivityPoint() <em>Is Sensitivity Point</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsSensitivityPoint()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_SENSITIVITY_POINT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsSensitivityPoint() <em>Is Sensitivity Point</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsSensitivityPoint()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isSensitivityPoint = IS_SENSITIVITY_POINT_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SensitivityPointImpl() {
+	protected ArchDecisionImpl() {
 		super();
 	}
 
@@ -141,7 +164,7 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Accordant_rqPackage.Literals.SENSITIVITY_POINT;
+		return Accordant_rqPackage.Literals.ARCH_DECISION;
 	}
 
 	/**
@@ -162,7 +185,7 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.SENSITIVITY_POINT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.ARCH_DECISION__NAME, oldName, name));
 	}
 
 	/**
@@ -183,7 +206,7 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 		String oldRationale = rationale;
 		rationale = newRationale;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.SENSITIVITY_POINT__RATIONALE, oldRationale, rationale));
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.ARCH_DECISION__RATIONALE, oldRationale, rationale));
 	}
 
 	/**
@@ -204,7 +227,7 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 		String oldCode = code;
 		code = newCode;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.SENSITIVITY_POINT__CODE, oldCode, code));
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.ARCH_DECISION__CODE, oldCode, code));
 	}
 
 	/**
@@ -214,7 +237,7 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 	 */
 	public EList<Tactic> getAppliedTactics() {
 		if (appliedTactics == null) {
-			appliedTactics = new EObjectResolvingEList<Tactic>(Tactic.class, this, Accordant_rqPackage.SENSITIVITY_POINT__APPLIED_TACTICS);
+			appliedTactics = new EObjectResolvingEList<Tactic>(Tactic.class, this, Accordant_rqPackage.ARCH_DECISION__APPLIED_TACTICS);
 		}
 		return appliedTactics;
 	}
@@ -237,7 +260,28 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 		boolean oldIsRisk = isRisk;
 		isRisk = newIsRisk;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.SENSITIVITY_POINT__IS_RISK, oldIsRisk, isRisk));
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.ARCH_DECISION__IS_RISK, oldIsRisk, isRisk));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsSensitivityPoint() {
+		return isSensitivityPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsSensitivityPoint(boolean newIsSensitivityPoint) {
+		boolean oldIsSensitivityPoint = isSensitivityPoint;
+		isSensitivityPoint = newIsSensitivityPoint;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.ARCH_DECISION__IS_SENSITIVITY_POINT, oldIsSensitivityPoint, isSensitivityPoint));
 	}
 
 	/**
@@ -248,16 +292,18 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Accordant_rqPackage.SENSITIVITY_POINT__NAME:
+			case Accordant_rqPackage.ARCH_DECISION__NAME:
 				return getName();
-			case Accordant_rqPackage.SENSITIVITY_POINT__RATIONALE:
+			case Accordant_rqPackage.ARCH_DECISION__RATIONALE:
 				return getRationale();
-			case Accordant_rqPackage.SENSITIVITY_POINT__CODE:
+			case Accordant_rqPackage.ARCH_DECISION__CODE:
 				return getCode();
-			case Accordant_rqPackage.SENSITIVITY_POINT__APPLIED_TACTICS:
+			case Accordant_rqPackage.ARCH_DECISION__APPLIED_TACTICS:
 				return getAppliedTactics();
-			case Accordant_rqPackage.SENSITIVITY_POINT__IS_RISK:
+			case Accordant_rqPackage.ARCH_DECISION__IS_RISK:
 				return isIsRisk();
+			case Accordant_rqPackage.ARCH_DECISION__IS_SENSITIVITY_POINT:
+				return isIsSensitivityPoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -271,21 +317,24 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Accordant_rqPackage.SENSITIVITY_POINT__NAME:
+			case Accordant_rqPackage.ARCH_DECISION__NAME:
 				setName((String)newValue);
 				return;
-			case Accordant_rqPackage.SENSITIVITY_POINT__RATIONALE:
+			case Accordant_rqPackage.ARCH_DECISION__RATIONALE:
 				setRationale((String)newValue);
 				return;
-			case Accordant_rqPackage.SENSITIVITY_POINT__CODE:
+			case Accordant_rqPackage.ARCH_DECISION__CODE:
 				setCode((String)newValue);
 				return;
-			case Accordant_rqPackage.SENSITIVITY_POINT__APPLIED_TACTICS:
+			case Accordant_rqPackage.ARCH_DECISION__APPLIED_TACTICS:
 				getAppliedTactics().clear();
 				getAppliedTactics().addAll((Collection<? extends Tactic>)newValue);
 				return;
-			case Accordant_rqPackage.SENSITIVITY_POINT__IS_RISK:
+			case Accordant_rqPackage.ARCH_DECISION__IS_RISK:
 				setIsRisk((Boolean)newValue);
+				return;
+			case Accordant_rqPackage.ARCH_DECISION__IS_SENSITIVITY_POINT:
+				setIsSensitivityPoint((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -299,20 +348,23 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Accordant_rqPackage.SENSITIVITY_POINT__NAME:
+			case Accordant_rqPackage.ARCH_DECISION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case Accordant_rqPackage.SENSITIVITY_POINT__RATIONALE:
+			case Accordant_rqPackage.ARCH_DECISION__RATIONALE:
 				setRationale(RATIONALE_EDEFAULT);
 				return;
-			case Accordant_rqPackage.SENSITIVITY_POINT__CODE:
+			case Accordant_rqPackage.ARCH_DECISION__CODE:
 				setCode(CODE_EDEFAULT);
 				return;
-			case Accordant_rqPackage.SENSITIVITY_POINT__APPLIED_TACTICS:
+			case Accordant_rqPackage.ARCH_DECISION__APPLIED_TACTICS:
 				getAppliedTactics().clear();
 				return;
-			case Accordant_rqPackage.SENSITIVITY_POINT__IS_RISK:
+			case Accordant_rqPackage.ARCH_DECISION__IS_RISK:
 				setIsRisk(IS_RISK_EDEFAULT);
+				return;
+			case Accordant_rqPackage.ARCH_DECISION__IS_SENSITIVITY_POINT:
+				setIsSensitivityPoint(IS_SENSITIVITY_POINT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -326,16 +378,18 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Accordant_rqPackage.SENSITIVITY_POINT__NAME:
+			case Accordant_rqPackage.ARCH_DECISION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case Accordant_rqPackage.SENSITIVITY_POINT__RATIONALE:
+			case Accordant_rqPackage.ARCH_DECISION__RATIONALE:
 				return RATIONALE_EDEFAULT == null ? rationale != null : !RATIONALE_EDEFAULT.equals(rationale);
-			case Accordant_rqPackage.SENSITIVITY_POINT__CODE:
+			case Accordant_rqPackage.ARCH_DECISION__CODE:
 				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
-			case Accordant_rqPackage.SENSITIVITY_POINT__APPLIED_TACTICS:
+			case Accordant_rqPackage.ARCH_DECISION__APPLIED_TACTICS:
 				return appliedTactics != null && !appliedTactics.isEmpty();
-			case Accordant_rqPackage.SENSITIVITY_POINT__IS_RISK:
+			case Accordant_rqPackage.ARCH_DECISION__IS_RISK:
 				return isRisk != IS_RISK_EDEFAULT;
+			case Accordant_rqPackage.ARCH_DECISION__IS_SENSITIVITY_POINT:
+				return isSensitivityPoint != IS_SENSITIVITY_POINT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -358,8 +412,10 @@ public class SensitivityPointImpl extends MinimalEObjectImpl.Container implement
 		result.append(code);
 		result.append(", isRisk: ");
 		result.append(isRisk);
+		result.append(", isSensitivityPoint: ");
+		result.append(isSensitivityPoint);
 		result.append(')');
 		return result.toString();
 	}
 
-} //SensitivityPointImpl
+} //ArchDecisionImpl

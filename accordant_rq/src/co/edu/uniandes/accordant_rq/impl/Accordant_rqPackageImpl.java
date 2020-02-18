@@ -5,6 +5,7 @@ package co.edu.uniandes.accordant_rq.impl;
 import co.edu.uniandes.accordant_rq.Accordant_rqFactory;
 import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
 import co.edu.uniandes.accordant_rq.AnalyzedQS;
+import co.edu.uniandes.accordant_rq.ArchDecision;
 import co.edu.uniandes.accordant_rq.Constraint;
 import co.edu.uniandes.accordant_rq.ConstraintType;
 import co.edu.uniandes.accordant_rq.MetricUnit;
@@ -12,7 +13,6 @@ import co.edu.uniandes.accordant_rq.Project;
 import co.edu.uniandes.accordant_rq.QAMetric;
 import co.edu.uniandes.accordant_rq.QAttribute;
 import co.edu.uniandes.accordant_rq.QScenario;
-import co.edu.uniandes.accordant_rq.SensitivityPoint;
 import co.edu.uniandes.accordant_rq.Tactic;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -49,7 +49,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass sensitivityPointEClass = null;
+	private EClass archDecisionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -310,8 +310,8 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSensitivityPoint() {
-		return sensitivityPointEClass;
+	public EClass getArchDecision() {
+		return archDecisionEClass;
 	}
 
 	/**
@@ -319,8 +319,8 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSensitivityPoint_Name() {
-		return (EAttribute)sensitivityPointEClass.getEStructuralFeatures().get(0);
+	public EAttribute getArchDecision_Name() {
+		return (EAttribute)archDecisionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -328,8 +328,8 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSensitivityPoint_Rationale() {
-		return (EAttribute)sensitivityPointEClass.getEStructuralFeatures().get(1);
+	public EAttribute getArchDecision_Rationale() {
+		return (EAttribute)archDecisionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -337,8 +337,8 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSensitivityPoint_Code() {
-		return (EAttribute)sensitivityPointEClass.getEStructuralFeatures().get(2);
+	public EAttribute getArchDecision_Code() {
+		return (EAttribute)archDecisionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -346,8 +346,8 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSensitivityPoint_AppliedTactics() {
-		return (EReference)sensitivityPointEClass.getEStructuralFeatures().get(3);
+	public EReference getArchDecision_AppliedTactics() {
+		return (EReference)archDecisionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -355,8 +355,17 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSensitivityPoint_IsRisk() {
-		return (EAttribute)sensitivityPointEClass.getEStructuralFeatures().get(4);
+	public EAttribute getArchDecision_IsRisk() {
+		return (EAttribute)archDecisionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getArchDecision_IsSensitivityPoint() {
+		return (EAttribute)archDecisionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -436,7 +445,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAnalyzedQS_SPoints() {
+	public EReference getAnalyzedQS_Decisions() {
 		return (EReference)analyzedQSEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -585,12 +594,13 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		createEAttribute(qScenarioEClass, QSCENARIO__NAME);
 		createEAttribute(qScenarioEClass, QSCENARIO__RESPONSE);
 
-		sensitivityPointEClass = createEClass(SENSITIVITY_POINT);
-		createEAttribute(sensitivityPointEClass, SENSITIVITY_POINT__NAME);
-		createEAttribute(sensitivityPointEClass, SENSITIVITY_POINT__RATIONALE);
-		createEAttribute(sensitivityPointEClass, SENSITIVITY_POINT__CODE);
-		createEReference(sensitivityPointEClass, SENSITIVITY_POINT__APPLIED_TACTICS);
-		createEAttribute(sensitivityPointEClass, SENSITIVITY_POINT__IS_RISK);
+		archDecisionEClass = createEClass(ARCH_DECISION);
+		createEAttribute(archDecisionEClass, ARCH_DECISION__NAME);
+		createEAttribute(archDecisionEClass, ARCH_DECISION__RATIONALE);
+		createEAttribute(archDecisionEClass, ARCH_DECISION__CODE);
+		createEReference(archDecisionEClass, ARCH_DECISION__APPLIED_TACTICS);
+		createEAttribute(archDecisionEClass, ARCH_DECISION__IS_RISK);
+		createEAttribute(archDecisionEClass, ARCH_DECISION__IS_SENSITIVITY_POINT);
 
 		tacticEClass = createEClass(TACTIC);
 		createEAttribute(tacticEClass, TACTIC__NAME);
@@ -601,7 +611,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		createEAttribute(tacticEClass, TACTIC__VIEWPOINT);
 
 		analyzedQSEClass = createEClass(ANALYZED_QS);
-		createEReference(analyzedQSEClass, ANALYZED_QS__SPOINTS);
+		createEReference(analyzedQSEClass, ANALYZED_QS__DECISIONS);
 		createEReference(analyzedQSEClass, ANALYZED_QS__QS);
 		createEAttribute(analyzedQSEClass, ANALYZED_QS__REASONING);
 		createEAttribute(analyzedQSEClass, ANALYZED_QS__NAME);
@@ -666,12 +676,13 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		initEAttribute(getQScenario_Name(), ecorePackage.getEString(), "name", null, 1, 1, QScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQScenario_Response(), ecorePackage.getEString(), "response", null, 0, 1, QScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(sensitivityPointEClass, SensitivityPoint.class, "SensitivityPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSensitivityPoint_Name(), ecorePackage.getEString(), "name", null, 0, 1, SensitivityPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSensitivityPoint_Rationale(), ecorePackage.getEString(), "rationale", null, 0, 1, SensitivityPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSensitivityPoint_Code(), ecorePackage.getEString(), "code", null, 0, 1, SensitivityPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSensitivityPoint_AppliedTactics(), this.getTactic(), null, "appliedTactics", null, 0, -1, SensitivityPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSensitivityPoint_IsRisk(), ecorePackage.getEBoolean(), "isRisk", null, 0, 1, SensitivityPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(archDecisionEClass, ArchDecision.class, "ArchDecision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getArchDecision_Name(), ecorePackage.getEString(), "name", null, 0, 1, ArchDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArchDecision_Rationale(), ecorePackage.getEString(), "rationale", null, 0, 1, ArchDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArchDecision_Code(), ecorePackage.getEString(), "code", null, 0, 1, ArchDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArchDecision_AppliedTactics(), this.getTactic(), null, "appliedTactics", null, 0, -1, ArchDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArchDecision_IsRisk(), ecorePackage.getEBoolean(), "isRisk", null, 0, 1, ArchDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArchDecision_IsSensitivityPoint(), ecorePackage.getEBoolean(), "isSensitivityPoint", null, 0, 1, ArchDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tacticEClass, Tactic.class, "Tactic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTactic_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tactic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -682,7 +693,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		initEAttribute(getTactic_Viewpoint(), ecorePackage.getEString(), "viewpoint", null, 0, 1, Tactic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(analyzedQSEClass, AnalyzedQS.class, "AnalyzedQS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnalyzedQS_SPoints(), this.getSensitivityPoint(), null, "sPoints", null, 0, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnalyzedQS_Decisions(), this.getArchDecision(), null, "decisions", null, 0, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnalyzedQS_Qs(), this.getQScenario(), null, "qs", null, 1, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAnalyzedQS_Reasoning(), ecorePackage.getEString(), "reasoning", null, 0, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAnalyzedQS_Name(), ecorePackage.getEString(), "name", null, 1, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

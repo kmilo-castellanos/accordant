@@ -78,9 +78,9 @@ public class Accordant_rqSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Accordant_rqPackage.SENSITIVITY_POINT: {
-				SensitivityPoint sensitivityPoint = (SensitivityPoint)theEObject;
-				T result = caseSensitivityPoint(sensitivityPoint);
+			case Accordant_rqPackage.ARCH_DECISION: {
+				ArchDecision archDecision = (ArchDecision)theEObject;
+				T result = caseArchDecision(archDecision);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -137,17 +137,17 @@ public class Accordant_rqSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Sensitivity Point</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Arch Decision</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Sensitivity Point</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Arch Decision</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSensitivityPoint(SensitivityPoint object) {
+	public T caseArchDecision(ArchDecision object) {
 		return null;
 	}
 

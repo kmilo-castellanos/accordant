@@ -132,6 +132,10 @@ public class Accordant_fvAdapterFactory extends AdapterFactoryImpl {
 				return createProcedureCallAdapter();
 			}
 			@Override
+			public Adapter caseField(Field object) {
+				return createFieldAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -372,6 +376,20 @@ public class Accordant_fvAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createProcedureCallAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link co.edu.uniandes.accordant_fv.Field <em>Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see co.edu.uniandes.accordant_fv.Field
+	 * @generated
+	 */
+	public Adapter createFieldAdapter() {
 		return null;
 	}
 

@@ -47,7 +47,7 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="response" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SensitivityPoint">
+  <eClassifiers xsi:type="ecore:EClass" name="ArchDecision">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rationale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -55,6 +55,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="appliedTactics" upperBound="-1"
         eType="#//Tactic"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRisk" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSensitivityPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Tactic">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -72,7 +73,7 @@
     <eLiterals name="SCALABILITY"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnalyzedQS">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sPoints" eType="#//SensitivityPoint"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decisions" eType="#//ArchDecision"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="qs" lowerBound="1" eType="#//QScenario"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="reasoning" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

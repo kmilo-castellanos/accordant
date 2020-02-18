@@ -240,14 +240,14 @@ public interface Accordant_rqPackage extends EPackage {
 	int QSCENARIO_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl <em>Sensitivity Point</em>}' class.
+	 * The meta object id for the '{@link co.edu.uniandes.accordant_rq.impl.ArchDecisionImpl <em>Arch Decision</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl
-	 * @see co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl#getSensitivityPoint()
+	 * @see co.edu.uniandes.accordant_rq.impl.ArchDecisionImpl
+	 * @see co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl#getArchDecision()
 	 * @generated
 	 */
-	int SENSITIVITY_POINT = 2;
+	int ARCH_DECISION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -256,7 +256,7 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSITIVITY_POINT__NAME = 0;
+	int ARCH_DECISION__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Rationale</b></em>' attribute.
@@ -265,7 +265,7 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSITIVITY_POINT__RATIONALE = 1;
+	int ARCH_DECISION__RATIONALE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
@@ -274,7 +274,7 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSITIVITY_POINT__CODE = 2;
+	int ARCH_DECISION__CODE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Applied Tactics</b></em>' reference list.
@@ -283,7 +283,7 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSITIVITY_POINT__APPLIED_TACTICS = 3;
+	int ARCH_DECISION__APPLIED_TACTICS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Is Risk</b></em>' attribute.
@@ -292,25 +292,34 @@ public interface Accordant_rqPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSITIVITY_POINT__IS_RISK = 4;
+	int ARCH_DECISION__IS_RISK = 4;
 
 	/**
-	 * The number of structural features of the '<em>Sensitivity Point</em>' class.
+	 * The feature id for the '<em><b>Is Sensitivity Point</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SENSITIVITY_POINT_FEATURE_COUNT = 5;
+	int ARCH_DECISION__IS_SENSITIVITY_POINT = 5;
 
 	/**
-	 * The number of operations of the '<em>Sensitivity Point</em>' class.
+	 * The number of structural features of the '<em>Arch Decision</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SENSITIVITY_POINT_OPERATION_COUNT = 0;
+	int ARCH_DECISION_FEATURE_COUNT = 6;
+
+	/**
+	 * The number of operations of the '<em>Arch Decision</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCH_DECISION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_rq.impl.TacticImpl <em>Tactic</em>}' class.
@@ -405,13 +414,13 @@ public interface Accordant_rqPackage extends EPackage {
 	int ANALYZED_QS = 4;
 
 	/**
-	 * The feature id for the '<em><b>SPoints</b></em>' containment reference.
+	 * The feature id for the '<em><b>Decisions</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYZED_QS__SPOINTS = 0;
+	int ANALYZED_QS__DECISIONS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Qs</b></em>' reference.
@@ -730,69 +739,80 @@ public interface Accordant_rqPackage extends EPackage {
 	EAttribute getQScenario_Response();
 
 	/**
-	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_rq.SensitivityPoint <em>Sensitivity Point</em>}'.
+	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_rq.ArchDecision <em>Arch Decision</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Sensitivity Point</em>'.
-	 * @see co.edu.uniandes.accordant_rq.SensitivityPoint
+	 * @return the meta object for class '<em>Arch Decision</em>'.
+	 * @see co.edu.uniandes.accordant_rq.ArchDecision
 	 * @generated
 	 */
-	EClass getSensitivityPoint();
+	EClass getArchDecision();
 
 	/**
-	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.ArchDecision#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see co.edu.uniandes.accordant_rq.SensitivityPoint#getName()
-	 * @see #getSensitivityPoint()
+	 * @see co.edu.uniandes.accordant_rq.ArchDecision#getName()
+	 * @see #getArchDecision()
 	 * @generated
 	 */
-	EAttribute getSensitivityPoint_Name();
+	EAttribute getArchDecision_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getRationale <em>Rationale</em>}'.
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.ArchDecision#getRationale <em>Rationale</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Rationale</em>'.
-	 * @see co.edu.uniandes.accordant_rq.SensitivityPoint#getRationale()
-	 * @see #getSensitivityPoint()
+	 * @see co.edu.uniandes.accordant_rq.ArchDecision#getRationale()
+	 * @see #getArchDecision()
 	 * @generated
 	 */
-	EAttribute getSensitivityPoint_Rationale();
+	EAttribute getArchDecision_Rationale();
 
 	/**
-	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getCode <em>Code</em>}'.
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.ArchDecision#getCode <em>Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Code</em>'.
-	 * @see co.edu.uniandes.accordant_rq.SensitivityPoint#getCode()
-	 * @see #getSensitivityPoint()
+	 * @see co.edu.uniandes.accordant_rq.ArchDecision#getCode()
+	 * @see #getArchDecision()
 	 * @generated
 	 */
-	EAttribute getSensitivityPoint_Code();
+	EAttribute getArchDecision_Code();
 
 	/**
-	 * Returns the meta object for the reference list '{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getAppliedTactics <em>Applied Tactics</em>}'.
+	 * Returns the meta object for the reference list '{@link co.edu.uniandes.accordant_rq.ArchDecision#getAppliedTactics <em>Applied Tactics</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Applied Tactics</em>'.
-	 * @see co.edu.uniandes.accordant_rq.SensitivityPoint#getAppliedTactics()
-	 * @see #getSensitivityPoint()
+	 * @see co.edu.uniandes.accordant_rq.ArchDecision#getAppliedTactics()
+	 * @see #getArchDecision()
 	 * @generated
 	 */
-	EReference getSensitivityPoint_AppliedTactics();
+	EReference getArchDecision_AppliedTactics();
 
 	/**
-	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.SensitivityPoint#isIsRisk <em>Is Risk</em>}'.
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.ArchDecision#isIsRisk <em>Is Risk</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Is Risk</em>'.
-	 * @see co.edu.uniandes.accordant_rq.SensitivityPoint#isIsRisk()
-	 * @see #getSensitivityPoint()
+	 * @see co.edu.uniandes.accordant_rq.ArchDecision#isIsRisk()
+	 * @see #getArchDecision()
 	 * @generated
 	 */
-	EAttribute getSensitivityPoint_IsRisk();
+	EAttribute getArchDecision_IsRisk();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_rq.ArchDecision#isIsSensitivityPoint <em>Is Sensitivity Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Sensitivity Point</em>'.
+	 * @see co.edu.uniandes.accordant_rq.ArchDecision#isIsSensitivityPoint()
+	 * @see #getArchDecision()
+	 * @generated
+	 */
+	EAttribute getArchDecision_IsSensitivityPoint();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_rq.Tactic <em>Tactic</em>}'.
@@ -881,15 +901,15 @@ public interface Accordant_rqPackage extends EPackage {
 	EClass getAnalyzedQS();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getSPoints <em>SPoints</em>}'.
+	 * Returns the meta object for the containment reference '{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getDecisions <em>Decisions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>SPoints</em>'.
-	 * @see co.edu.uniandes.accordant_rq.AnalyzedQS#getSPoints()
+	 * @return the meta object for the containment reference '<em>Decisions</em>'.
+	 * @see co.edu.uniandes.accordant_rq.AnalyzedQS#getDecisions()
 	 * @see #getAnalyzedQS()
 	 * @generated
 	 */
-	EReference getAnalyzedQS_SPoints();
+	EReference getAnalyzedQS_Decisions();
 
 	/**
 	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getQs <em>Qs</em>}'.
@@ -1163,14 +1183,14 @@ public interface Accordant_rqPackage extends EPackage {
 		EAttribute QSCENARIO__RESPONSE = eINSTANCE.getQScenario_Response();
 
 		/**
-		 * The meta object literal for the '{@link co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl <em>Sensitivity Point</em>}' class.
+		 * The meta object literal for the '{@link co.edu.uniandes.accordant_rq.impl.ArchDecisionImpl <em>Arch Decision</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see co.edu.uniandes.accordant_rq.impl.SensitivityPointImpl
-		 * @see co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl#getSensitivityPoint()
+		 * @see co.edu.uniandes.accordant_rq.impl.ArchDecisionImpl
+		 * @see co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl#getArchDecision()
 		 * @generated
 		 */
-		EClass SENSITIVITY_POINT = eINSTANCE.getSensitivityPoint();
+		EClass ARCH_DECISION = eINSTANCE.getArchDecision();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1178,7 +1198,7 @@ public interface Accordant_rqPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SENSITIVITY_POINT__NAME = eINSTANCE.getSensitivityPoint_Name();
+		EAttribute ARCH_DECISION__NAME = eINSTANCE.getArchDecision_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Rationale</b></em>' attribute feature.
@@ -1186,7 +1206,7 @@ public interface Accordant_rqPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SENSITIVITY_POINT__RATIONALE = eINSTANCE.getSensitivityPoint_Rationale();
+		EAttribute ARCH_DECISION__RATIONALE = eINSTANCE.getArchDecision_Rationale();
 
 		/**
 		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
@@ -1194,7 +1214,7 @@ public interface Accordant_rqPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SENSITIVITY_POINT__CODE = eINSTANCE.getSensitivityPoint_Code();
+		EAttribute ARCH_DECISION__CODE = eINSTANCE.getArchDecision_Code();
 
 		/**
 		 * The meta object literal for the '<em><b>Applied Tactics</b></em>' reference list feature.
@@ -1202,7 +1222,7 @@ public interface Accordant_rqPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SENSITIVITY_POINT__APPLIED_TACTICS = eINSTANCE.getSensitivityPoint_AppliedTactics();
+		EReference ARCH_DECISION__APPLIED_TACTICS = eINSTANCE.getArchDecision_AppliedTactics();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Risk</b></em>' attribute feature.
@@ -1210,7 +1230,15 @@ public interface Accordant_rqPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SENSITIVITY_POINT__IS_RISK = eINSTANCE.getSensitivityPoint_IsRisk();
+		EAttribute ARCH_DECISION__IS_RISK = eINSTANCE.getArchDecision_IsRisk();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Sensitivity Point</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARCH_DECISION__IS_SENSITIVITY_POINT = eINSTANCE.getArchDecision_IsSensitivityPoint();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_rq.impl.TacticImpl <em>Tactic</em>}' class.
@@ -1281,12 +1309,12 @@ public interface Accordant_rqPackage extends EPackage {
 		EClass ANALYZED_QS = eINSTANCE.getAnalyzedQS();
 
 		/**
-		 * The meta object literal for the '<em><b>SPoints</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Decisions</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ANALYZED_QS__SPOINTS = eINSTANCE.getAnalyzedQS_SPoints();
+		EReference ANALYZED_QS__DECISIONS = eINSTANCE.getAnalyzedQS_Decisions();
 
 		/**
 		 * The meta object literal for the '<em><b>Qs</b></em>' reference feature.

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAdvlParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_FLOAT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'MEDIUM'", "'LARGE'", "'SMALL'", "'DeploymentView'", "'use'", "'project'", "'functionalView'", "'{'", "'artifacts'", "'}'", "'devs'", "'deployments'", "','", "'services'", "'serverless'", "'Device'", "'host'", "':'", "'type'", "'cpu'", "'storage'", "'memory'", "'Deployment'", "'pods'", "'replicas'", "'maxSurge'", "'maxUnavailable'", "'sensitivityPoint'", "'Pod'", "'envs'", "'device'", "'restartPolicy'", "'Service'", "'ports'", "'extAccess'", "'Port'", "'protocol'", "'target'", "'port'", "'exposes'", "'-'", "'ExecEnv'", "'deployedArtifacts'", "'image'", "'cpu_lim'", "'memory_lim'", "'cpu_req'", "'mem_req'", "'['", "']'", "'commands'", "'envVars'", "'ServerlessEnv'", "'provider'", "'timeout'", "'Artifact'", "'component'", "'connector'", "'props'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_FLOAT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'MEDIUM'", "'LARGE'", "'SMALL'", "'DeploymentView'", "'use'", "'project'", "'functionalView'", "'{'", "'artifacts'", "'}'", "'devs'", "'deployments'", "','", "'services'", "'serverless'", "'Device'", "'host'", "':'", "'type'", "'cpu'", "'storage'", "'memory'", "'Deployment'", "'pods'", "'replicas'", "'maxSurge'", "'maxUnavailable'", "'decision'", "'Pod'", "'envs'", "'device'", "'restartPolicy'", "'Service'", "'ports'", "'extAccess'", "'Port'", "'protocol'", "'target'", "'port'", "'exposes'", "'-'", "'ExecEnv'", "'deployedArtifacts'", "'image'", "'cpu_lim'", "'memory_lim'", "'cpu_req'", "'mem_req'", "'['", "']'", "'commands'", "'envVars'", "'ServerlessEnv'", "'provider'", "'timeout'", "'Artifact'", "'component'", "'connector'", "'props'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -8785,21 +8785,21 @@ public class InternalAdvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Deployment__Group_11__0__Impl"
-    // InternalAdvl.g:2937:1: rule__Deployment__Group_11__0__Impl : ( 'sensitivityPoint' ) ;
+    // InternalAdvl.g:2937:1: rule__Deployment__Group_11__0__Impl : ( 'decision' ) ;
     public final void rule__Deployment__Group_11__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAdvl.g:2941:1: ( ( 'sensitivityPoint' ) )
-            // InternalAdvl.g:2942:1: ( 'sensitivityPoint' )
+            // InternalAdvl.g:2941:1: ( ( 'decision' ) )
+            // InternalAdvl.g:2942:1: ( 'decision' )
             {
-            // InternalAdvl.g:2942:1: ( 'sensitivityPoint' )
-            // InternalAdvl.g:2943:2: 'sensitivityPoint'
+            // InternalAdvl.g:2942:1: ( 'decision' )
+            // InternalAdvl.g:2943:2: 'decision'
             {
-             before(grammarAccess.getDeploymentAccess().getSensitivityPointKeyword_11_0()); 
+             before(grammarAccess.getDeploymentAccess().getDecisionKeyword_11_0()); 
             match(input,39,FOLLOW_2); 
-             after(grammarAccess.getDeploymentAccess().getSensitivityPointKeyword_11_0()); 
+             after(grammarAccess.getDeploymentAccess().getDecisionKeyword_11_0()); 
 
             }
 
@@ -8930,31 +8930,31 @@ public class InternalAdvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Deployment__Group_11__2__Impl"
-    // InternalAdvl.g:2990:1: rule__Deployment__Group_11__2__Impl : ( ( rule__Deployment__SpointAssignment_11_2 ) ) ;
+    // InternalAdvl.g:2990:1: rule__Deployment__Group_11__2__Impl : ( ( rule__Deployment__DecisionAssignment_11_2 ) ) ;
     public final void rule__Deployment__Group_11__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAdvl.g:2994:1: ( ( ( rule__Deployment__SpointAssignment_11_2 ) ) )
-            // InternalAdvl.g:2995:1: ( ( rule__Deployment__SpointAssignment_11_2 ) )
+            // InternalAdvl.g:2994:1: ( ( ( rule__Deployment__DecisionAssignment_11_2 ) ) )
+            // InternalAdvl.g:2995:1: ( ( rule__Deployment__DecisionAssignment_11_2 ) )
             {
-            // InternalAdvl.g:2995:1: ( ( rule__Deployment__SpointAssignment_11_2 ) )
-            // InternalAdvl.g:2996:2: ( rule__Deployment__SpointAssignment_11_2 )
+            // InternalAdvl.g:2995:1: ( ( rule__Deployment__DecisionAssignment_11_2 ) )
+            // InternalAdvl.g:2996:2: ( rule__Deployment__DecisionAssignment_11_2 )
             {
-             before(grammarAccess.getDeploymentAccess().getSpointAssignment_11_2()); 
-            // InternalAdvl.g:2997:2: ( rule__Deployment__SpointAssignment_11_2 )
-            // InternalAdvl.g:2997:3: rule__Deployment__SpointAssignment_11_2
+             before(grammarAccess.getDeploymentAccess().getDecisionAssignment_11_2()); 
+            // InternalAdvl.g:2997:2: ( rule__Deployment__DecisionAssignment_11_2 )
+            // InternalAdvl.g:2997:3: rule__Deployment__DecisionAssignment_11_2
             {
             pushFollow(FOLLOW_2);
-            rule__Deployment__SpointAssignment_11_2();
+            rule__Deployment__DecisionAssignment_11_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDeploymentAccess().getSpointAssignment_11_2()); 
+             after(grammarAccess.getDeploymentAccess().getDecisionAssignment_11_2()); 
 
             }
 
@@ -22174,21 +22174,21 @@ public class InternalAdvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Artifact__Group_3_0__0__Impl"
-    // InternalAdvl.g:7419:1: rule__Artifact__Group_3_0__0__Impl : ( 'sensitivityPoint' ) ;
+    // InternalAdvl.g:7419:1: rule__Artifact__Group_3_0__0__Impl : ( 'decision' ) ;
     public final void rule__Artifact__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAdvl.g:7423:1: ( ( 'sensitivityPoint' ) )
-            // InternalAdvl.g:7424:1: ( 'sensitivityPoint' )
+            // InternalAdvl.g:7423:1: ( ( 'decision' ) )
+            // InternalAdvl.g:7424:1: ( 'decision' )
             {
-            // InternalAdvl.g:7424:1: ( 'sensitivityPoint' )
-            // InternalAdvl.g:7425:2: 'sensitivityPoint'
+            // InternalAdvl.g:7424:1: ( 'decision' )
+            // InternalAdvl.g:7425:2: 'decision'
             {
-             before(grammarAccess.getArtifactAccess().getSensitivityPointKeyword_3_0_0()); 
+             before(grammarAccess.getArtifactAccess().getDecisionKeyword_3_0_0()); 
             match(input,39,FOLLOW_2); 
-             after(grammarAccess.getArtifactAccess().getSensitivityPointKeyword_3_0_0()); 
+             after(grammarAccess.getArtifactAccess().getDecisionKeyword_3_0_0()); 
 
             }
 
@@ -22319,31 +22319,31 @@ public class InternalAdvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Artifact__Group_3_0__2__Impl"
-    // InternalAdvl.g:7472:1: rule__Artifact__Group_3_0__2__Impl : ( ( rule__Artifact__SpointAssignment_3_0_2 ) ) ;
+    // InternalAdvl.g:7472:1: rule__Artifact__Group_3_0__2__Impl : ( ( rule__Artifact__DecisionAssignment_3_0_2 ) ) ;
     public final void rule__Artifact__Group_3_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAdvl.g:7476:1: ( ( ( rule__Artifact__SpointAssignment_3_0_2 ) ) )
-            // InternalAdvl.g:7477:1: ( ( rule__Artifact__SpointAssignment_3_0_2 ) )
+            // InternalAdvl.g:7476:1: ( ( ( rule__Artifact__DecisionAssignment_3_0_2 ) ) )
+            // InternalAdvl.g:7477:1: ( ( rule__Artifact__DecisionAssignment_3_0_2 ) )
             {
-            // InternalAdvl.g:7477:1: ( ( rule__Artifact__SpointAssignment_3_0_2 ) )
-            // InternalAdvl.g:7478:2: ( rule__Artifact__SpointAssignment_3_0_2 )
+            // InternalAdvl.g:7477:1: ( ( rule__Artifact__DecisionAssignment_3_0_2 ) )
+            // InternalAdvl.g:7478:2: ( rule__Artifact__DecisionAssignment_3_0_2 )
             {
-             before(grammarAccess.getArtifactAccess().getSpointAssignment_3_0_2()); 
-            // InternalAdvl.g:7479:2: ( rule__Artifact__SpointAssignment_3_0_2 )
-            // InternalAdvl.g:7479:3: rule__Artifact__SpointAssignment_3_0_2
+             before(grammarAccess.getArtifactAccess().getDecisionAssignment_3_0_2()); 
+            // InternalAdvl.g:7479:2: ( rule__Artifact__DecisionAssignment_3_0_2 )
+            // InternalAdvl.g:7479:3: rule__Artifact__DecisionAssignment_3_0_2
             {
             pushFollow(FOLLOW_2);
-            rule__Artifact__SpointAssignment_3_0_2();
+            rule__Artifact__DecisionAssignment_3_0_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getArtifactAccess().getSpointAssignment_3_0_2()); 
+             after(grammarAccess.getArtifactAccess().getDecisionAssignment_3_0_2()); 
 
             }
 
@@ -24568,9 +24568,9 @@ public class InternalAdvlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Deployment__PodsAssignment_9_1"
 
 
-    // $ANTLR start "rule__Deployment__SpointAssignment_11_2"
-    // InternalAdvl.g:8172:1: rule__Deployment__SpointAssignment_11_2 : ( ( RULE_ID ) ) ;
-    public final void rule__Deployment__SpointAssignment_11_2() throws RecognitionException {
+    // $ANTLR start "rule__Deployment__DecisionAssignment_11_2"
+    // InternalAdvl.g:8172:1: rule__Deployment__DecisionAssignment_11_2 : ( ( RULE_ID ) ) ;
+    public final void rule__Deployment__DecisionAssignment_11_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -24581,17 +24581,17 @@ public class InternalAdvlParser extends AbstractInternalContentAssistParser {
             // InternalAdvl.g:8177:2: ( ( RULE_ID ) )
             // InternalAdvl.g:8178:3: ( RULE_ID )
             {
-             before(grammarAccess.getDeploymentAccess().getSpointSensitivityPointCrossReference_11_2_0()); 
+             before(grammarAccess.getDeploymentAccess().getDecisionArchDecisionCrossReference_11_2_0()); 
             // InternalAdvl.g:8179:3: ( RULE_ID )
             // InternalAdvl.g:8180:4: RULE_ID
             {
-             before(grammarAccess.getDeploymentAccess().getSpointSensitivityPointIDTerminalRuleCall_11_2_0_1()); 
+             before(grammarAccess.getDeploymentAccess().getDecisionArchDecisionIDTerminalRuleCall_11_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getDeploymentAccess().getSpointSensitivityPointIDTerminalRuleCall_11_2_0_1()); 
+             after(grammarAccess.getDeploymentAccess().getDecisionArchDecisionIDTerminalRuleCall_11_2_0_1()); 
 
             }
 
-             after(grammarAccess.getDeploymentAccess().getSpointSensitivityPointCrossReference_11_2_0()); 
+             after(grammarAccess.getDeploymentAccess().getDecisionArchDecisionCrossReference_11_2_0()); 
 
             }
 
@@ -24610,7 +24610,7 @@ public class InternalAdvlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Deployment__SpointAssignment_11_2"
+    // $ANTLR end "rule__Deployment__DecisionAssignment_11_2"
 
 
     // $ANTLR start "rule__Pod__NameAssignment_1"
@@ -26298,9 +26298,9 @@ public class InternalAdvlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Artifact__PropsAssignment_2_2"
 
 
-    // $ANTLR start "rule__Artifact__SpointAssignment_3_0_2"
-    // InternalAdvl.g:8834:1: rule__Artifact__SpointAssignment_3_0_2 : ( ( RULE_ID ) ) ;
-    public final void rule__Artifact__SpointAssignment_3_0_2() throws RecognitionException {
+    // $ANTLR start "rule__Artifact__DecisionAssignment_3_0_2"
+    // InternalAdvl.g:8834:1: rule__Artifact__DecisionAssignment_3_0_2 : ( ( RULE_ID ) ) ;
+    public final void rule__Artifact__DecisionAssignment_3_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -26311,17 +26311,17 @@ public class InternalAdvlParser extends AbstractInternalContentAssistParser {
             // InternalAdvl.g:8839:2: ( ( RULE_ID ) )
             // InternalAdvl.g:8840:3: ( RULE_ID )
             {
-             before(grammarAccess.getArtifactAccess().getSpointSensitivityPointCrossReference_3_0_2_0()); 
+             before(grammarAccess.getArtifactAccess().getDecisionArchDecisionCrossReference_3_0_2_0()); 
             // InternalAdvl.g:8841:3: ( RULE_ID )
             // InternalAdvl.g:8842:4: RULE_ID
             {
-             before(grammarAccess.getArtifactAccess().getSpointSensitivityPointIDTerminalRuleCall_3_0_2_0_1()); 
+             before(grammarAccess.getArtifactAccess().getDecisionArchDecisionIDTerminalRuleCall_3_0_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getArtifactAccess().getSpointSensitivityPointIDTerminalRuleCall_3_0_2_0_1()); 
+             after(grammarAccess.getArtifactAccess().getDecisionArchDecisionIDTerminalRuleCall_3_0_2_0_1()); 
 
             }
 
-             after(grammarAccess.getArtifactAccess().getSpointSensitivityPointCrossReference_3_0_2_0()); 
+             after(grammarAccess.getArtifactAccess().getDecisionArchDecisionCrossReference_3_0_2_0()); 
 
             }
 
@@ -26340,7 +26340,7 @@ public class InternalAdvlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Artifact__SpointAssignment_3_0_2"
+    // $ANTLR end "rule__Artifact__DecisionAssignment_3_0_2"
 
     // Delegated rules
 

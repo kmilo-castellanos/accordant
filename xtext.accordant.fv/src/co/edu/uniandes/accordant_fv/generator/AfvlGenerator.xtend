@@ -13,7 +13,7 @@ import co.edu.uniandes.accordant_fv.Estimator
 import java.net.URL
 import org.jpmml.model.PMMLUtil
 import org.dmg.pmml.DataType
-import co.edu.uniandes.accordant_rq.SensitivityPoint
+import co.edu.uniandes.accordant_rq.ArchDecision
 import co.edu.uniandes.accordant_rq.AnalyzedQS
 
 /**
@@ -107,7 +107,7 @@ class AfvlGenerator extends AbstractGenerator {
 				Dataset<Row> resultDs = pmmlTransformer.transform(inputDs);
 				
 				//TODO add output connector code
-				«logMetric(estimator.spoint)»
+				«logMetric(estimator.decision)»
 				resultDs.coalesce(1).write().option("header", "true").mode("overwrite")
 												.csv("out/«formatJavaClassName(estimator.name)».csv");
 												
@@ -134,11 +134,11 @@ class AfvlGenerator extends AbstractGenerator {
 		return struct;
 	}
 
-	def logMetric(SensitivityPoint spoint) {
+	def logMetric(ArchDecision decision) {
 		var logging = "//log(";
-		if (spoint !== null && spoint.eContainer!==null) {
-			val aqs = spoint.eContainer as AnalyzedQS;
-			logging +=aqs.qs.measure+","+aqs.qs.minValue+","+aqs.qs.maxValue+","+aqs.qs.unit+");"
+		if (decision !== null && decision.eContainer!==null) {
+			val aqs = decision.eContainer as AnalyzedQS;
+			logging +=aqs.qs.measure+","+aqs.qs.minValue+","+aqs.qs.maxValue+","+aqs.qs.unit+");" 
 		}
 		return logging;
 	}

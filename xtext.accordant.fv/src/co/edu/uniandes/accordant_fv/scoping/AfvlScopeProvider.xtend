@@ -12,7 +12,7 @@ import co.edu.uniandes.accordant_fv.Role
 import co.edu.uniandes.accordant_fv.Port
 import co.edu.uniandes.accordant_fv.Component
 import co.edu.uniandes.accordant_fv.FunctionalView
-import co.edu.uniandes.accordant_rq.SensitivityPoint
+import co.edu.uniandes.accordant_rq.ArchDecision
 import co.edu.uniandes.accordant_fv.Connector
 
 /**
@@ -38,24 +38,24 @@ class AfvlScopeProvider extends AbstractAfvlScopeProvider {
 			val candidates = EcoreUtil2.getAllContentsOfType(rootElement, Port)
 			// Create IEObjectDescriptions and puts them into an IScope instance
 			return Scopes.scopeFor(candidates)
-		} else if (context instanceof Component && (reference == Accordant_fvPackage.Literals.COMPONENT__SPOINT
+		} else if (context instanceof Component && (reference == Accordant_fvPackage.Literals.COMPONENT__DECISION
             )) {
 			val rootElement = EcoreUtil2.getContainerOfType(context, FunctionalView)
-			val pointList = <SensitivityPoint>newArrayList
+			val decisionList = <ArchDecision>newArrayList
 			val importedPackage = rootElement?.project
 			if (importedPackage !== null) {
-				for (points : importedPackage.analyzedQs.map[SPoints]) {
-					pointList += points
+				for (d : importedPackage.analyzedQs.map[decisions]) {
+					decisionList += d
 				}
 			}
-			return Scopes.scopeFor(pointList)
-		}else if (context instanceof Connector && (reference == Accordant_fvPackage.Literals.CONNECTOR__SPOINT
+			return Scopes.scopeFor(decisionList)
+		}else if (context instanceof Connector && (reference == Accordant_fvPackage.Literals.CONNECTOR__DECISION
             )) {
 			val rootElement = EcoreUtil2.getContainerOfType(context, FunctionalView)
-			val pointList = <SensitivityPoint>newArrayList
+			val pointList = <ArchDecision>newArrayList
 			val project = rootElement?.project
 			if (project !== null) {
-				for (points : project.analyzedQs.map[SPoints]) {
+				for (points : project.analyzedQs.map[decisions]) {
 					pointList += points
 				}
 			}

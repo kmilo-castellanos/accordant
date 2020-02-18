@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAdvlParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_FLOAT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'DeploymentView'", "'use'", "'project'", "'functionalView'", "'{'", "'artifacts'", "','", "'}'", "'devs'", "'deployments'", "'services'", "'serverless'", "'Device'", "'host'", "':'", "'type'", "'cpu'", "'storage'", "'memory'", "'Deployment'", "'replicas'", "'maxSurge'", "'maxUnavailable'", "'pods'", "'sensitivityPoint'", "'Pod'", "'device'", "'restartPolicy'", "'envs'", "'Service'", "'extAccess'", "'ports'", "'Port'", "'protocol'", "'target'", "'port'", "'exposes'", "'-'", "'ExecEnv'", "'deployedArtifacts'", "'image'", "'cpu_lim'", "'memory_lim'", "'cpu_req'", "'mem_req'", "'['", "']'", "'commands'", "'envVars'", "'ServerlessEnv'", "'provider'", "'timeout'", "'Artifact'", "'component'", "'connector'", "'props'", "'MEDIUM'", "'LARGE'", "'SMALL'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_FLOAT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'DeploymentView'", "'use'", "'project'", "'functionalView'", "'{'", "'artifacts'", "','", "'}'", "'devs'", "'deployments'", "'services'", "'serverless'", "'Device'", "'host'", "':'", "'type'", "'cpu'", "'storage'", "'memory'", "'Deployment'", "'replicas'", "'maxSurge'", "'maxUnavailable'", "'pods'", "'decision'", "'Pod'", "'device'", "'restartPolicy'", "'envs'", "'Service'", "'extAccess'", "'ports'", "'Port'", "'protocol'", "'target'", "'port'", "'exposes'", "'-'", "'ExecEnv'", "'deployedArtifacts'", "'image'", "'cpu_lim'", "'memory_lim'", "'cpu_req'", "'mem_req'", "'['", "']'", "'commands'", "'envVars'", "'ServerlessEnv'", "'provider'", "'timeout'", "'Artifact'", "'component'", "'connector'", "'props'", "'MEDIUM'", "'LARGE'", "'SMALL'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -1689,7 +1689,7 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDeployment"
-    // InternalAdvl.g:737:1: ruleDeployment returns [EObject current=null] : (otherlv_0= 'Deployment' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'replicas' otherlv_4= ':' ( (lv_replicas_5_0= ruleEInt ) ) )? (otherlv_6= 'maxSurge' otherlv_7= ':' ( (lv_maxSurge_8_0= ruleEInt ) ) )? (otherlv_9= 'maxUnavailable' otherlv_10= ':' ( (lv_maxUnavail_11_0= ruleEInt ) ) )? otherlv_12= 'pods' otherlv_13= '{' ( (lv_pods_14_0= rulePod ) ) (otherlv_15= ',' ( (lv_pods_16_0= rulePod ) ) )* otherlv_17= '}' (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= '}' ) ;
+    // InternalAdvl.g:737:1: ruleDeployment returns [EObject current=null] : (otherlv_0= 'Deployment' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'replicas' otherlv_4= ':' ( (lv_replicas_5_0= ruleEInt ) ) )? (otherlv_6= 'maxSurge' otherlv_7= ':' ( (lv_maxSurge_8_0= ruleEInt ) ) )? (otherlv_9= 'maxUnavailable' otherlv_10= ':' ( (lv_maxUnavail_11_0= ruleEInt ) ) )? otherlv_12= 'pods' otherlv_13= '{' ( (lv_pods_14_0= rulePod ) ) (otherlv_15= ',' ( (lv_pods_16_0= rulePod ) ) )* otherlv_17= '}' (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= '}' ) ;
     public final EObject ruleDeployment() throws RecognitionException {
         EObject current = null;
 
@@ -1725,11 +1725,11 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAdvl.g:743:2: ( (otherlv_0= 'Deployment' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'replicas' otherlv_4= ':' ( (lv_replicas_5_0= ruleEInt ) ) )? (otherlv_6= 'maxSurge' otherlv_7= ':' ( (lv_maxSurge_8_0= ruleEInt ) ) )? (otherlv_9= 'maxUnavailable' otherlv_10= ':' ( (lv_maxUnavail_11_0= ruleEInt ) ) )? otherlv_12= 'pods' otherlv_13= '{' ( (lv_pods_14_0= rulePod ) ) (otherlv_15= ',' ( (lv_pods_16_0= rulePod ) ) )* otherlv_17= '}' (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= '}' ) )
-            // InternalAdvl.g:744:2: (otherlv_0= 'Deployment' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'replicas' otherlv_4= ':' ( (lv_replicas_5_0= ruleEInt ) ) )? (otherlv_6= 'maxSurge' otherlv_7= ':' ( (lv_maxSurge_8_0= ruleEInt ) ) )? (otherlv_9= 'maxUnavailable' otherlv_10= ':' ( (lv_maxUnavail_11_0= ruleEInt ) ) )? otherlv_12= 'pods' otherlv_13= '{' ( (lv_pods_14_0= rulePod ) ) (otherlv_15= ',' ( (lv_pods_16_0= rulePod ) ) )* otherlv_17= '}' (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= '}' )
+            // InternalAdvl.g:743:2: ( (otherlv_0= 'Deployment' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'replicas' otherlv_4= ':' ( (lv_replicas_5_0= ruleEInt ) ) )? (otherlv_6= 'maxSurge' otherlv_7= ':' ( (lv_maxSurge_8_0= ruleEInt ) ) )? (otherlv_9= 'maxUnavailable' otherlv_10= ':' ( (lv_maxUnavail_11_0= ruleEInt ) ) )? otherlv_12= 'pods' otherlv_13= '{' ( (lv_pods_14_0= rulePod ) ) (otherlv_15= ',' ( (lv_pods_16_0= rulePod ) ) )* otherlv_17= '}' (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= '}' ) )
+            // InternalAdvl.g:744:2: (otherlv_0= 'Deployment' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'replicas' otherlv_4= ':' ( (lv_replicas_5_0= ruleEInt ) ) )? (otherlv_6= 'maxSurge' otherlv_7= ':' ( (lv_maxSurge_8_0= ruleEInt ) ) )? (otherlv_9= 'maxUnavailable' otherlv_10= ':' ( (lv_maxUnavail_11_0= ruleEInt ) ) )? otherlv_12= 'pods' otherlv_13= '{' ( (lv_pods_14_0= rulePod ) ) (otherlv_15= ',' ( (lv_pods_16_0= rulePod ) ) )* otherlv_17= '}' (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= '}' )
             {
-            // InternalAdvl.g:744:2: (otherlv_0= 'Deployment' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'replicas' otherlv_4= ':' ( (lv_replicas_5_0= ruleEInt ) ) )? (otherlv_6= 'maxSurge' otherlv_7= ':' ( (lv_maxSurge_8_0= ruleEInt ) ) )? (otherlv_9= 'maxUnavailable' otherlv_10= ':' ( (lv_maxUnavail_11_0= ruleEInt ) ) )? otherlv_12= 'pods' otherlv_13= '{' ( (lv_pods_14_0= rulePod ) ) (otherlv_15= ',' ( (lv_pods_16_0= rulePod ) ) )* otherlv_17= '}' (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= '}' )
-            // InternalAdvl.g:745:3: otherlv_0= 'Deployment' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'replicas' otherlv_4= ':' ( (lv_replicas_5_0= ruleEInt ) ) )? (otherlv_6= 'maxSurge' otherlv_7= ':' ( (lv_maxSurge_8_0= ruleEInt ) ) )? (otherlv_9= 'maxUnavailable' otherlv_10= ':' ( (lv_maxUnavail_11_0= ruleEInt ) ) )? otherlv_12= 'pods' otherlv_13= '{' ( (lv_pods_14_0= rulePod ) ) (otherlv_15= ',' ( (lv_pods_16_0= rulePod ) ) )* otherlv_17= '}' (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= '}'
+            // InternalAdvl.g:744:2: (otherlv_0= 'Deployment' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'replicas' otherlv_4= ':' ( (lv_replicas_5_0= ruleEInt ) ) )? (otherlv_6= 'maxSurge' otherlv_7= ':' ( (lv_maxSurge_8_0= ruleEInt ) ) )? (otherlv_9= 'maxUnavailable' otherlv_10= ':' ( (lv_maxUnavail_11_0= ruleEInt ) ) )? otherlv_12= 'pods' otherlv_13= '{' ( (lv_pods_14_0= rulePod ) ) (otherlv_15= ',' ( (lv_pods_16_0= rulePod ) ) )* otherlv_17= '}' (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= '}' )
+            // InternalAdvl.g:745:3: otherlv_0= 'Deployment' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'replicas' otherlv_4= ':' ( (lv_replicas_5_0= ruleEInt ) ) )? (otherlv_6= 'maxSurge' otherlv_7= ':' ( (lv_maxSurge_8_0= ruleEInt ) ) )? (otherlv_9= 'maxUnavailable' otherlv_10= ':' ( (lv_maxUnavail_11_0= ruleEInt ) ) )? otherlv_12= 'pods' otherlv_13= '{' ( (lv_pods_14_0= rulePod ) ) (otherlv_15= ',' ( (lv_pods_16_0= rulePod ) ) )* otherlv_17= '}' (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= '}'
             {
             otherlv_0=(Token)match(input,31,FOLLOW_3); 
 
@@ -2035,7 +2035,7 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_17, grammarAccess.getDeploymentAccess().getRightCurlyBracketKeyword_10());
             		
-            // InternalAdvl.g:914:3: (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )?
+            // InternalAdvl.g:914:3: (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -2044,11 +2044,11 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
             }
             switch (alt16) {
                 case 1 :
-                    // InternalAdvl.g:915:4: otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) )
+                    // InternalAdvl.g:915:4: otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) )
                     {
                     otherlv_18=(Token)match(input,36,FOLLOW_21); 
 
-                    				newLeafNode(otherlv_18, grammarAccess.getDeploymentAccess().getSensitivityPointKeyword_11_0());
+                    				newLeafNode(otherlv_18, grammarAccess.getDeploymentAccess().getDecisionKeyword_11_0());
                     			
                     otherlv_19=(Token)match(input,26,FOLLOW_3); 
 
@@ -2067,7 +2067,7 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
                     					
                     otherlv_20=(Token)match(input,RULE_ID,FOLLOW_19); 
 
-                    						newLeafNode(otherlv_20, grammarAccess.getDeploymentAccess().getSpointSensitivityPointCrossReference_11_2_0());
+                    						newLeafNode(otherlv_20, grammarAccess.getDeploymentAccess().getDecisionArchDecisionCrossReference_11_2_0());
                     					
 
                     }
@@ -4878,7 +4878,7 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArtifact"
-    // InternalAdvl.g:2176:1: ruleArtifact returns [EObject current=null] : ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) ) ) ;
+    // InternalAdvl.g:2176:1: ruleArtifact returns [EObject current=null] : ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) ) ) ;
     public final EObject ruleArtifact() throws RecognitionException {
         EObject current = null;
 
@@ -4904,22 +4904,22 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAdvl.g:2182:2: ( ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) ) ) )
-            // InternalAdvl.g:2183:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) ) )
+            // InternalAdvl.g:2182:2: ( ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) ) ) )
+            // InternalAdvl.g:2183:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) ) )
             {
-            // InternalAdvl.g:2183:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) ) )
-            // InternalAdvl.g:2184:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) )
+            // InternalAdvl.g:2183:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) ) )
+            // InternalAdvl.g:2184:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) )
             {
-            // InternalAdvl.g:2184:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) )
-            // InternalAdvl.g:2185:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?)
+            // InternalAdvl.g:2184:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) )
+            // InternalAdvl.g:2185:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?)
             {
              
             			  getUnorderedGroupHelper().enter(grammarAccess.getArtifactAccess().getUnorderedGroup());
             			
-            // InternalAdvl.g:2188:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?)
-            // InternalAdvl.g:2189:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?
+            // InternalAdvl.g:2188:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?)
+            // InternalAdvl.g:2189:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?
             {
-            // InternalAdvl.g:2189:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+
+            // InternalAdvl.g:2189:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+
             int cnt50=0;
             loop50:
             do {
@@ -5225,30 +5225,30 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalAdvl.g:2320:3: ({...}? => ( ({...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) )
+            	    // InternalAdvl.g:2320:3: ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) )
             	    {
-            	    // InternalAdvl.g:2320:3: ({...}? => ( ({...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) )
-            	    // InternalAdvl.g:2321:4: {...}? => ( ({...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) )
+            	    // InternalAdvl.g:2320:3: ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) )
+            	    // InternalAdvl.g:2321:4: {...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getArtifactAccess().getUnorderedGroup(), 3) ) {
             	        throw new FailedPredicateException(input, "ruleArtifact", "getUnorderedGroupHelper().canSelect(grammarAccess.getArtifactAccess().getUnorderedGroup(), 3)");
             	    }
-            	    // InternalAdvl.g:2321:102: ( ({...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) )
-            	    // InternalAdvl.g:2322:5: ({...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) )
+            	    // InternalAdvl.g:2321:102: ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) )
+            	    // InternalAdvl.g:2322:5: ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) )
             	    {
 
             	    					getUnorderedGroupHelper().select(grammarAccess.getArtifactAccess().getUnorderedGroup(), 3);
             	    				
-            	    // InternalAdvl.g:2325:8: ({...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) )
-            	    // InternalAdvl.g:2325:9: {...}? => ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' )
+            	    // InternalAdvl.g:2325:8: ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) )
+            	    // InternalAdvl.g:2325:9: {...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleArtifact", "true");
             	    }
-            	    // InternalAdvl.g:2325:18: ( (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' )
-            	    // InternalAdvl.g:2325:19: (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}'
+            	    // InternalAdvl.g:2325:18: ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' )
+            	    // InternalAdvl.g:2325:19: (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}'
             	    {
-            	    // InternalAdvl.g:2325:19: (otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )?
+            	    // InternalAdvl.g:2325:19: (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )?
             	    int alt49=2;
             	    int LA49_0 = input.LA(1);
 
@@ -5257,11 +5257,11 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt49) {
             	        case 1 :
-            	            // InternalAdvl.g:2326:9: otherlv_13= 'sensitivityPoint' otherlv_14= ':' ( (otherlv_15= RULE_ID ) )
+            	            // InternalAdvl.g:2326:9: otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) )
             	            {
             	            otherlv_13=(Token)match(input,36,FOLLOW_21); 
 
-            	            									newLeafNode(otherlv_13, grammarAccess.getArtifactAccess().getSensitivityPointKeyword_3_0_0());
+            	            									newLeafNode(otherlv_13, grammarAccess.getArtifactAccess().getDecisionKeyword_3_0_0());
             	            								
             	            otherlv_14=(Token)match(input,26,FOLLOW_3); 
 
@@ -5280,7 +5280,7 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
             	            										
             	            otherlv_15=(Token)match(input,RULE_ID,FOLLOW_19); 
 
-            	            											newLeafNode(otherlv_15, grammarAccess.getArtifactAccess().getSpointSensitivityPointCrossReference_3_0_2_0());
+            	            											newLeafNode(otherlv_15, grammarAccess.getArtifactAccess().getDecisionArchDecisionCrossReference_3_0_2_0());
             	            										
 
             	            }

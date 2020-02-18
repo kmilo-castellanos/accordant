@@ -413,13 +413,13 @@ public interface Accordant_dvPackage extends EPackage {
 	int ARTIFACT__CONN = 3;
 
 	/**
-	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * The feature id for the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT__SPOINT = 4;
+	int ARTIFACT__DECISION = 4;
 
 	/**
 	 * The number of structural features of the '<em>Artifact</em>' class.
@@ -504,13 +504,13 @@ public interface Accordant_dvPackage extends EPackage {
 	int DEPLOYMENT__STRATEGY = 5;
 
 	/**
-	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * The feature id for the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOYMENT__SPOINT = 6;
+	int DEPLOYMENT__DECISION = 6;
 
 	/**
 	 * The number of structural features of the '<em>Deployment</em>' class.
@@ -1289,15 +1289,15 @@ public interface Accordant_dvPackage extends EPackage {
 	EReference getArtifact_Conn();
 
 	/**
-	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.Artifact#getSpoint <em>Spoint</em>}'.
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.Artifact#getDecision <em>Decision</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Spoint</em>'.
-	 * @see co.edu.uniandes.accordant_dv.Artifact#getSpoint()
+	 * @return the meta object for the reference '<em>Decision</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Artifact#getDecision()
 	 * @see #getArtifact()
 	 * @generated
 	 */
-	EReference getArtifact_Spoint();
+	EReference getArtifact_Decision();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.Deployment <em>Deployment</em>}'.
@@ -1376,15 +1376,15 @@ public interface Accordant_dvPackage extends EPackage {
 	EAttribute getDeployment_Strategy();
 
 	/**
-	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.Deployment#getSpoint <em>Spoint</em>}'.
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.Deployment#getDecision <em>Decision</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Spoint</em>'.
-	 * @see co.edu.uniandes.accordant_dv.Deployment#getSpoint()
+	 * @return the meta object for the reference '<em>Decision</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Deployment#getDecision()
 	 * @see #getDeployment()
 	 * @generated
 	 */
-	EReference getDeployment_Spoint();
+	EReference getDeployment_Decision();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.Pod <em>Pod</em>}'.
@@ -2034,12 +2034,12 @@ public interface Accordant_dvPackage extends EPackage {
 		EReference ARTIFACT__CONN = eINSTANCE.getArtifact_Conn();
 
 		/**
-		 * The meta object literal for the '<em><b>Spoint</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Decision</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ARTIFACT__SPOINT = eINSTANCE.getArtifact_Spoint();
+		EReference ARTIFACT__DECISION = eINSTANCE.getArtifact_Decision();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl <em>Deployment</em>}' class.
@@ -2100,12 +2100,12 @@ public interface Accordant_dvPackage extends EPackage {
 		EAttribute DEPLOYMENT__STRATEGY = eINSTANCE.getDeployment_Strategy();
 
 		/**
-		 * The meta object literal for the '<em><b>Spoint</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Decision</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEPLOYMENT__SPOINT = eINSTANCE.getDeployment_Spoint();
+		EReference DEPLOYMENT__DECISION = eINSTANCE.getDeployment_Decision();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.PodImpl <em>Pod</em>}' class.

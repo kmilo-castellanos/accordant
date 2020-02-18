@@ -79,7 +79,7 @@ public class AdvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Artifact returns Artifact
 	 *
 	 * Constraint:
-	 *     ((conn=[Connector|ID] | props=EString | spoint=[SensitivityPoint|ID])? (name=ID comp=[Component|ID]?)?)+
+	 *     ((conn=[Connector|ID] | props=EString | decision=[ArchDecision|ID])? (name=ID comp=[Component|ID]?)?)+
 	 */
 	protected void sequence_Artifact(ISerializationContext context, Artifact semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -122,7 +122,7 @@ public class AdvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         maxUnavail=EInt? 
 	 *         pods+=Pod 
 	 *         pods+=Pod* 
-	 *         spoint=[SensitivityPoint|ID]?
+	 *         decision=[ArchDecision|ID]?
 	 *     )
 	 */
 	protected void sequence_Deployment(ISerializationContext context, Deployment semanticObject) {

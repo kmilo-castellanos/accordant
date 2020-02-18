@@ -8,7 +8,7 @@ import co.edu.uniandes.accordant_fv.FunctionalView;
 import co.edu.uniandes.accordant_fv.Port;
 import co.edu.uniandes.accordant_fv.ProcessingModel;
 
-import co.edu.uniandes.accordant_rq.SensitivityPoint;
+import co.edu.uniandes.accordant_rq.ArchDecision;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -38,7 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.ComponentImpl#getPorts <em>Ports</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.ComponentImpl#getProcModel <em>Proc Model</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.ComponentImpl#getFuncView <em>Func View</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_fv.impl.ComponentImpl#getSpoint <em>Spoint</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.impl.ComponentImpl#getDecision <em>Decision</em>}</li>
  * </ul>
  *
  * @generated
@@ -95,14 +95,14 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 	protected ProcessingModel procModel = PROC_MODEL_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSpoint() <em>Spoint</em>}' reference.
+	 * The cached value of the '{@link #getDecision() <em>Decision</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpoint()
+	 * @see #getDecision()
 	 * @generated
 	 * @ordered
 	 */
-	protected SensitivityPoint spoint;
+	protected ArchDecision decision;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,16 +223,16 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SensitivityPoint getSpoint() {
-		if (spoint != null && spoint.eIsProxy()) {
-			InternalEObject oldSpoint = (InternalEObject)spoint;
-			spoint = (SensitivityPoint)eResolveProxy(oldSpoint);
-			if (spoint != oldSpoint) {
+	public ArchDecision getDecision() {
+		if (decision != null && decision.eIsProxy()) {
+			InternalEObject oldDecision = (InternalEObject)decision;
+			decision = (ArchDecision)eResolveProxy(oldDecision);
+			if (decision != oldDecision) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_fvPackage.COMPONENT__SPOINT, oldSpoint, spoint));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_fvPackage.COMPONENT__DECISION, oldDecision, decision));
 			}
 		}
-		return spoint;
+		return decision;
 	}
 
 	/**
@@ -240,8 +240,8 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SensitivityPoint basicGetSpoint() {
-		return spoint;
+	public ArchDecision basicGetDecision() {
+		return decision;
 	}
 
 	/**
@@ -249,11 +249,11 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSpoint(SensitivityPoint newSpoint) {
-		SensitivityPoint oldSpoint = spoint;
-		spoint = newSpoint;
+	public void setDecision(ArchDecision newDecision) {
+		ArchDecision oldDecision = decision;
+		decision = newDecision;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.COMPONENT__SPOINT, oldSpoint, spoint));
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.COMPONENT__DECISION, oldDecision, decision));
 	}
 
 	/**
@@ -318,9 +318,9 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 				return getProcModel();
 			case Accordant_fvPackage.COMPONENT__FUNC_VIEW:
 				return getFuncView();
-			case Accordant_fvPackage.COMPONENT__SPOINT:
-				if (resolve) return getSpoint();
-				return basicGetSpoint();
+			case Accordant_fvPackage.COMPONENT__DECISION:
+				if (resolve) return getDecision();
+				return basicGetDecision();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -347,8 +347,8 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 			case Accordant_fvPackage.COMPONENT__FUNC_VIEW:
 				setFuncView((FunctionalView)newValue);
 				return;
-			case Accordant_fvPackage.COMPONENT__SPOINT:
-				setSpoint((SensitivityPoint)newValue);
+			case Accordant_fvPackage.COMPONENT__DECISION:
+				setDecision((ArchDecision)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -374,8 +374,8 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 			case Accordant_fvPackage.COMPONENT__FUNC_VIEW:
 				setFuncView((FunctionalView)null);
 				return;
-			case Accordant_fvPackage.COMPONENT__SPOINT:
-				setSpoint((SensitivityPoint)null);
+			case Accordant_fvPackage.COMPONENT__DECISION:
+				setDecision((ArchDecision)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -397,8 +397,8 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 				return procModel != PROC_MODEL_EDEFAULT;
 			case Accordant_fvPackage.COMPONENT__FUNC_VIEW:
 				return getFuncView() != null;
-			case Accordant_fvPackage.COMPONENT__SPOINT:
-				return spoint != null;
+			case Accordant_fvPackage.COMPONENT__DECISION:
+				return decision != null;
 		}
 		return super.eIsSet(featureID);
 	}

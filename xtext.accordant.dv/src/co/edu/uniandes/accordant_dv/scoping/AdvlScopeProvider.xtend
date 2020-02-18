@@ -13,11 +13,7 @@ import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.emf.ecore.EObject
 import co.edu.uniandes.accordant_dv.Artifact
 import org.eclipse.xtext.scoping.Scopes
-import co.edu.uniandes.accordant_dv.ExecEnvironment
-import co.edu.uniandes.accordant_rq.InputPackage
-import org.eclipse.xtext.scoping.IScope
-import org.eclipse.xtext.naming.QualifiedName;
-import co.edu.uniandes.accordant_rq.SensitivityPoint
+import co.edu.uniandes.accordant_rq.ArchDecision
 import co.edu.uniandes.accordant_dv.Deployment
 import co.edu.uniandes.accordant_fv.Component
 import co.edu.uniandes.accordant_fv.Connector
@@ -31,16 +27,16 @@ import co.edu.uniandes.accordant_fv.Connector
 class AdvlScopeProvider extends AbstractAdvlScopeProvider {
 
 	override getScope(EObject context, EReference reference) {
-		if (context instanceof Deployment && reference == Accordant_dvPackage.Literals.DEPLOYMENT__SPOINT) {
+		if (context instanceof Deployment && reference == Accordant_dvPackage.Literals.DEPLOYMENT__DECISION) {
 			val rootElement = EcoreUtil2.getContainerOfType(context, DeploymentView)
-			val pointList = <SensitivityPoint>newArrayList
+			val decisionList = <ArchDecision>newArrayList
 			val importedPackage = rootElement?.project
 			if (importedPackage !== null) {
-				for (points : importedPackage.analyzedQs.map[SPoints]) {
-					pointList += points
+				for (points : importedPackage.analyzedQs.map[decisions]) {
+					decisionList += points
 				}
 			}
-			return Scopes.scopeFor(pointList)
+			return Scopes.scopeFor(decisionList)
 		} else if (context instanceof Artifact) {
 			val rootElement = EcoreUtil2.getContainerOfType(context, DeploymentView)
 			if (reference == Accordant_dvPackage.Literals.ARTIFACT__COMP) {
@@ -61,15 +57,15 @@ class AdvlScopeProvider extends AbstractAdvlScopeProvider {
 					}
 				}
 				return Scopes.scopeFor(connList)
-			} else if (reference == Accordant_dvPackage.Literals.ARTIFACT__SPOINT) {
-				val pointList = <SensitivityPoint>newArrayList
+			} else if (reference == Accordant_dvPackage.Literals.ARTIFACT__DECISION) {
+				val decisionList = <ArchDecision>newArrayList
 				val importedPackage = rootElement?.project
 				if (importedPackage !== null) {
-					for (points : importedPackage.analyzedQs.map[SPoints]) {
-						pointList += points
+					for (d : importedPackage.analyzedQs.map[decisions]) {
+						decisionList += d
 					}
 				}
-				return Scopes.scopeFor(pointList)
+				return Scopes.scopeFor(decisionList)
 			}
 		}
 		return super.getScope(context, reference);

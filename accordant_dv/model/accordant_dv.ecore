@@ -78,7 +78,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="props" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="comp" eType="ecore:EClass ../../accordant_fv/model/accordant_fv.ecore#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="conn" eType="ecore:EClass ../../accordant_fv/model/accordant_fv.ecore#//Connector"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="spoint" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//SensitivityPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decision" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//ArchDecision"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Deployment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -88,7 +88,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="pods" lowerBound="1" upperBound="-1"
         eType="#//Pod" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="strategy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="spoint" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//SensitivityPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decision" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//ArchDecision"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pod">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

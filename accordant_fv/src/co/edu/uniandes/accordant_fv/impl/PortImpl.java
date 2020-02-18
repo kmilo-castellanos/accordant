@@ -3,13 +3,16 @@
 package co.edu.uniandes.accordant_fv.impl;
 
 import co.edu.uniandes.accordant_fv.Accordant_fvPackage;
+import co.edu.uniandes.accordant_fv.Field;
 import co.edu.uniandes.accordant_fv.Port;
 import co.edu.uniandes.accordant_fv.PortType;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -23,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.PortImpl#getType <em>Type</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.PortImpl#getName <em>Name</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.impl.PortImpl#getFields <em>Fields</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +71,16 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected Field fields;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,6 +148,63 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Field getFields() {
+		return fields;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetFields(Field newFields, NotificationChain msgs) {
+		Field oldFields = fields;
+		fields = newFields;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.PORT__FIELDS, oldFields, newFields);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFields(Field newFields) {
+		if (newFields != fields) {
+			NotificationChain msgs = null;
+			if (fields != null)
+				msgs = ((InternalEObject)fields).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Accordant_fvPackage.PORT__FIELDS, null, msgs);
+			if (newFields != null)
+				msgs = ((InternalEObject)newFields).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Accordant_fvPackage.PORT__FIELDS, null, msgs);
+			msgs = basicSetFields(newFields, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.PORT__FIELDS, newFields, newFields));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_fvPackage.PORT__FIELDS:
+				return basicSetFields(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -141,6 +212,8 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 				return getType();
 			case Accordant_fvPackage.PORT__NAME:
 				return getName();
+			case Accordant_fvPackage.PORT__FIELDS:
+				return getFields();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,6 +231,9 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 				return;
 			case Accordant_fvPackage.PORT__NAME:
 				setName((String)newValue);
+				return;
+			case Accordant_fvPackage.PORT__FIELDS:
+				setFields((Field)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -177,6 +253,9 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 			case Accordant_fvPackage.PORT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case Accordant_fvPackage.PORT__FIELDS:
+				setFields((Field)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -193,6 +272,8 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 				return type != TYPE_EDEFAULT;
 			case Accordant_fvPackage.PORT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case Accordant_fvPackage.PORT__FIELDS:
+				return fields != null;
 		}
 		return super.eIsSet(featureID);
 	}

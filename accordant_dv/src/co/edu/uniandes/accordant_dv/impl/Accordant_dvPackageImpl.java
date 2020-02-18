@@ -525,7 +525,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArtifact_Spoint() {
+	public EReference getArtifact_Decision() {
 		return (EReference)artifactEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -597,7 +597,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeployment_Spoint() {
+	public EReference getDeployment_Decision() {
 		return (EReference)deploymentEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -962,7 +962,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		createEAttribute(artifactEClass, ARTIFACT__PROPS);
 		createEReference(artifactEClass, ARTIFACT__COMP);
 		createEReference(artifactEClass, ARTIFACT__CONN);
-		createEReference(artifactEClass, ARTIFACT__SPOINT);
+		createEReference(artifactEClass, ARTIFACT__DECISION);
 
 		deploymentEClass = createEClass(DEPLOYMENT);
 		createEAttribute(deploymentEClass, DEPLOYMENT__NAME);
@@ -971,7 +971,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		createEAttribute(deploymentEClass, DEPLOYMENT__MAX_UNAVAIL);
 		createEReference(deploymentEClass, DEPLOYMENT__PODS);
 		createEAttribute(deploymentEClass, DEPLOYMENT__STRATEGY);
-		createEReference(deploymentEClass, DEPLOYMENT__SPOINT);
+		createEReference(deploymentEClass, DEPLOYMENT__DECISION);
 
 		podEClass = createEClass(POD);
 		createEAttribute(podEClass, POD__NAME);
@@ -1084,7 +1084,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		initEAttribute(getArtifact_Props(), ecorePackage.getEString(), "props", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArtifact_Comp(), theAccordant_fvPackage.getComponent(), null, "comp", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArtifact_Conn(), theAccordant_fvPackage.getConnector(), null, "conn", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArtifact_Spoint(), theAccordant_rqPackage.getSensitivityPoint(), null, "spoint", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArtifact_Decision(), theAccordant_rqPackage.getArchDecision(), null, "decision", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deploymentEClass, Deployment.class, "Deployment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDeployment_Name(), ecorePackage.getEString(), "name", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1093,7 +1093,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		initEAttribute(getDeployment_MaxUnavail(), ecorePackage.getEInt(), "maxUnavail", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeployment_Pods(), this.getPod(), null, "pods", null, 1, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeployment_Strategy(), ecorePackage.getEString(), "strategy", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeployment_Spoint(), theAccordant_rqPackage.getSensitivityPoint(), null, "spoint", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeployment_Decision(), theAccordant_rqPackage.getArchDecision(), null, "decision", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(podEClass, Pod.class, "Pod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPod_Name(), ecorePackage.getEString(), "name", null, 0, 1, Pod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

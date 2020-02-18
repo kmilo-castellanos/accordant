@@ -5,10 +5,10 @@ package co.edu.uniandes.accordant_rq.serializer;
 
 import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
 import co.edu.uniandes.accordant_rq.AnalyzedQS;
+import co.edu.uniandes.accordant_rq.ArchDecision;
 import co.edu.uniandes.accordant_rq.Constraint;
 import co.edu.uniandes.accordant_rq.Project;
 import co.edu.uniandes.accordant_rq.QScenario;
-import co.edu.uniandes.accordant_rq.SensitivityPoint;
 import co.edu.uniandes.accordant_rq.Tactic;
 import co.edu.uniandes.accordant_rq.services.AinlGrammarAccess;
 import com.google.inject.Inject;
@@ -40,6 +40,9 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case Accordant_rqPackage.ANALYZED_QS:
 				sequence_AnalyzedQS(context, (AnalyzedQS) semanticObject); 
 				return; 
+			case Accordant_rqPackage.ARCH_DECISION:
+				sequence_ArchDecision(context, (ArchDecision) semanticObject); 
+				return; 
 			case Accordant_rqPackage.CONSTRAINT:
 				sequence_Constraint(context, (Constraint) semanticObject); 
 				return; 
@@ -48,9 +51,6 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case Accordant_rqPackage.QSCENARIO:
 				sequence_QScenario(context, (QScenario) semanticObject); 
-				return; 
-			case Accordant_rqPackage.SENSITIVITY_POINT:
-				sequence_SensitivityPoint(context, (SensitivityPoint) semanticObject); 
 				return; 
 			case Accordant_rqPackage.TACTIC:
 				sequence_Tactic(context, (Tactic) semanticObject); 
@@ -65,9 +65,29 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     AnalyzedQS returns AnalyzedQS
 	 *
 	 * Constraint:
-	 *     (name=ID qs=[QScenario|ID] reasoning=EString? sPoints=SensitivityPoint?)
+	 *     (name=ID qs=[QScenario|ID] reasoning=EString? decisions=ArchDecision?)
 	 */
 	protected void sequence_AnalyzedQS(ISerializationContext context, AnalyzedQS semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ArchDecision returns ArchDecision
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=ID 
+	 *         isRisk?='isRisk'? 
+	 *         isSensitivityPoint?='isSensitivityPoint'? 
+	 *         rationale=EString? 
+	 *         code=EString? 
+	 *         appliedTactics+=[Tactic|ID] 
+	 *         appliedTactics+=[Tactic|ID]*
+	 *     )
+	 */
+	protected void sequence_ArchDecision(ISerializationContext context, ArchDecision semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -153,25 +173,6 @@ public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		feeder.accept(grammarAccess.getQScenarioAccess().getMaxValueEFloatParserRuleCall_21_0(), semanticObject.getMaxValue());
 		feeder.accept(grammarAccess.getQScenarioAccess().getUnitMetricUnitEnumRuleCall_23_0(), semanticObject.getUnit());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     SensitivityPoint returns SensitivityPoint
-	 *
-	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         isRisk?='isRisk'? 
-	 *         rationale=EString? 
-	 *         code=EString? 
-	 *         appliedTactics+=[Tactic|ID] 
-	 *         appliedTactics+=[Tactic|ID]*
-	 *     )
-	 */
-	protected void sequence_SensitivityPoint(ISerializationContext context, SensitivityPoint semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

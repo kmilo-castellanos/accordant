@@ -52,14 +52,15 @@ AnalyzedQS returns AnalyzedQS:
 	name=ID 'of' qs=[QScenario]
 	'{'
 		('reasoning' ':' reasoning=EString)?
-		('Sensitivity_Points' '{' sPoints=SensitivityPoint '}' )?
+		('ArchDecisions' '{' decisions=ArchDecision '}' )?
 	'}';
 
-SensitivityPoint returns SensitivityPoint:
-	'SensitivityPoint'
+ArchDecision returns ArchDecision:
+	'Decision'
 	name=ID
 	'{'
 		(isRisk?='isRisk')?
+		(isSensitivityPoint?='isSensitivityPoint')?
 		('rationale' ':' rationale=EString)?
 		('code' ':' code=EString)?
 		'tactics' '(' appliedTactics+=[Tactic] ( "," appliedTactics+=[Tactic])* ')' 

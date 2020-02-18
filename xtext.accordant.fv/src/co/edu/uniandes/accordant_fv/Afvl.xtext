@@ -72,7 +72,7 @@ Stream returns Stream:
 		('buffering' ':' buffering=Buffering)?
 		('throughput' ':' throughput=Throughput)?
 		('props' ':' props=EString)?		
-		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		('decision' ':' decision=[rq::ArchDecision])?
 		'roles' ':' '{' roles+=Role ( "," roles+=Role)* '}' 
 	'}';
 
@@ -86,7 +86,7 @@ Adaptor returns Adaptor:
 		('buffering' ':' buffering=Buffering)? 
 		('throughput' ':' throughput=Throughput)? 
 		('props' ':' props=EString)?		
-		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		('decision' ':' decision=[rq::ArchDecision])?
 		'roles' '{' roles+=Role ( "," roles+=Role)* '}' 
 	'}';
 
@@ -100,7 +100,7 @@ Distributor returns Distributor:
 		('buffering' ':' buffering=Buffering)?
 		('throughput' ':' throughput=Throughput)?
 		('props' ':' props=EString)?		
-		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		('decision' ':' decision=[rq::ArchDecision])?
 		'roles' '{' roles+=Role ( "," roles+=Role)* '}'
 	'}';
 
@@ -114,7 +114,7 @@ Event returns Event:
 		('buffering' ':' buffering=Buffering)?
 		('throughput' ':' throughput=Throughput)?
 		('props' ':' props=EString)?		
-		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		('decision' ':' decision=[rq::ArchDecision])?
 		'roles' ':' '{' roles+=Role ( "," roles+=Role)* '}' 
 	'}';
 
@@ -128,7 +128,7 @@ ProcedureCall returns ProcedureCall:
 		('buffering' ':' buffering=Buffering)?
 		('throughput' ':' throughput=Throughput)?
 		('props' ':' props=EString)?		
-		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		('decision' ':' decision=[rq::ArchDecision])?
 		'roles' ':' '{' roles+=Role ( "," roles+=Role)* '}' 
 	'}';
 
@@ -144,7 +144,7 @@ Transformer returns Transformer:
 	'{'
 		('procModel' ':' procModel=ProcessingModel)?
 		('pmml' ':' pmml=EString)?
-		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		('decision' ':' decision=[rq::ArchDecision])?
 		'ports' ':' '{' ports+=Port ( "," ports+=Port)* '}' 
 	'}';
 
@@ -154,7 +154,7 @@ Estimator returns Estimator:
 	'{'
 		('procModel' ':' procModel=ProcessingModel)?
 		('pmml' ':' pmml=EString)?
-		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		('decision' ':' decision=[rq::ArchDecision])?
 		'ports' ':' '{' ports+=Port ( "," ports+=Port)* '}' 
 	'}';
 
@@ -167,7 +167,7 @@ Ingestor returns Ingestor:
 		('conn' ':' conn=EString)?
 		('format' ':' format=EString)?
 		('props' ':' props=EString)?
-		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		('decision' ':' decision=[rq::ArchDecision])?
 		'ports' ':' '{' ports+=Port ( "," ports+=Port)* '}' 
 	'}';
  
@@ -180,6 +180,6 @@ Sink returns Sink:
 		('conn' ':' conn=EString)?
 		('format' ':' format=EString)?
 		('props' ':' props=EString)?
-		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		('decision' ':' decision=[rq::ArchDecision])?
 		'ports' ':' '{' ports+=Port ( "," ports+=Port)* '}'  
 	'}';

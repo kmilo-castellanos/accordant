@@ -122,7 +122,7 @@ public class AdvlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDeploymentAccess().getMaxUnavailAssignment_5_2(), "rule__Deployment__MaxUnavailAssignment_5_2");
 					put(grammarAccess.getDeploymentAccess().getPodsAssignment_8(), "rule__Deployment__PodsAssignment_8");
 					put(grammarAccess.getDeploymentAccess().getPodsAssignment_9_1(), "rule__Deployment__PodsAssignment_9_1");
-					put(grammarAccess.getDeploymentAccess().getSpointAssignment_11_2(), "rule__Deployment__SpointAssignment_11_2");
+					put(grammarAccess.getDeploymentAccess().getDecisionAssignment_11_2(), "rule__Deployment__DecisionAssignment_11_2");
 					put(grammarAccess.getPodAccess().getNameAssignment_1(), "rule__Pod__NameAssignment_1");
 					put(grammarAccess.getPodAccess().getHostAssignment_3_2(), "rule__Pod__HostAssignment_3_2");
 					put(grammarAccess.getPodAccess().getNodeAssignment_4_2(), "rule__Pod__NodeAssignment_4_2");
@@ -164,7 +164,7 @@ public class AdvlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getArtifactAccess().getCompAssignment_0_3_2(), "rule__Artifact__CompAssignment_0_3_2");
 					put(grammarAccess.getArtifactAccess().getConnAssignment_1_2(), "rule__Artifact__ConnAssignment_1_2");
 					put(grammarAccess.getArtifactAccess().getPropsAssignment_2_2(), "rule__Artifact__PropsAssignment_2_2");
-					put(grammarAccess.getArtifactAccess().getSpointAssignment_3_0_2(), "rule__Artifact__SpointAssignment_3_0_2");
+					put(grammarAccess.getArtifactAccess().getDecisionAssignment_3_0_2(), "rule__Artifact__DecisionAssignment_3_0_2");
 					put(grammarAccess.getDeviceAccess().getUnorderedGroup(), "rule__Device__UnorderedGroup");
 					put(grammarAccess.getArtifactAccess().getUnorderedGroup(), "rule__Artifact__UnorderedGroup");
 				}

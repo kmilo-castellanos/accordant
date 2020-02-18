@@ -59,7 +59,7 @@ public class Accordant_rqFactoryImpl extends EFactoryImpl implements Accordant_r
 		switch (eClass.getClassifierID()) {
 			case Accordant_rqPackage.PROJECT: return createProject();
 			case Accordant_rqPackage.QSCENARIO: return createQScenario();
-			case Accordant_rqPackage.SENSITIVITY_POINT: return createSensitivityPoint();
+			case Accordant_rqPackage.ARCH_DECISION: return createArchDecision();
 			case Accordant_rqPackage.TACTIC: return createTactic();
 			case Accordant_rqPackage.ANALYZED_QS: return createAnalyzedQS();
 			case Accordant_rqPackage.CONSTRAINT: return createConstraint();
@@ -135,9 +135,9 @@ public class Accordant_rqFactoryImpl extends EFactoryImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SensitivityPoint createSensitivityPoint() {
-		SensitivityPointImpl sensitivityPoint = new SensitivityPointImpl();
-		return sensitivityPoint;
+	public ArchDecision createArchDecision() {
+		ArchDecisionImpl archDecision = new ArchDecisionImpl();
+		return archDecision;
 	}
 
 	/**

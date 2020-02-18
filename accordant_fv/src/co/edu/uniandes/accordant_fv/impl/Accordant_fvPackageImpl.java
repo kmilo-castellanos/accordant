@@ -11,10 +11,12 @@ import co.edu.uniandes.accordant_fv.Arbitrator;
 import co.edu.uniandes.accordant_fv.Buffering;
 import co.edu.uniandes.accordant_fv.Component;
 import co.edu.uniandes.accordant_fv.Connector;
+import co.edu.uniandes.accordant_fv.DType;
 import co.edu.uniandes.accordant_fv.DeliveryModel;
 import co.edu.uniandes.accordant_fv.Distributor;
 import co.edu.uniandes.accordant_fv.Estimator;
 import co.edu.uniandes.accordant_fv.Event;
+import co.edu.uniandes.accordant_fv.Field;
 import co.edu.uniandes.accordant_fv.FunctionalView;
 import co.edu.uniandes.accordant_fv.Ingestor;
 import co.edu.uniandes.accordant_fv.NotificationModel;
@@ -164,6 +166,13 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass fieldEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum processingModelEEnum = null;
 
 	/**
@@ -221,6 +230,13 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 	 * @generated
 	 */
 	private EEnum accessTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum dTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -419,7 +435,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConnector_Spoint() {
+	public EReference getConnector_Decision() {
 		return (EReference)connectorEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -482,7 +498,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponent_Spoint() {
+	public EReference getComponent_Decision() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -707,6 +723,15 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPort_Fields() {
+		return (EReference)portEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getArbitrator() {
 		return arbitratorEClass;
 	}
@@ -754,6 +779,42 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 	 */
 	public EClass getProcedureCall() {
 		return procedureCallEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getField() {
+		return fieldEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getField_Name() {
+		return (EAttribute)fieldEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getField_Dtype() {
+		return (EAttribute)fieldEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getField_Order() {
+		return (EAttribute)fieldEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -842,6 +903,15 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getDType() {
+		return dTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Accordant_fvFactory getAccordant_fvFactory() {
 		return (Accordant_fvFactory)getEFactoryInstance();
 	}
@@ -880,7 +950,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		createEAttribute(connectorEClass, CONNECTOR__THROUGHPUT);
 		createEReference(connectorEClass, CONNECTOR__ROLES);
 		createEAttribute(connectorEClass, CONNECTOR__PROTOCOL);
-		createEReference(connectorEClass, CONNECTOR__SPOINT);
+		createEReference(connectorEClass, CONNECTOR__DECISION);
 		createEAttribute(connectorEClass, CONNECTOR__PROPS);
 
 		componentEClass = createEClass(COMPONENT);
@@ -888,7 +958,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		createEReference(componentEClass, COMPONENT__PORTS);
 		createEAttribute(componentEClass, COMPONENT__PROC_MODEL);
 		createEReference(componentEClass, COMPONENT__FUNC_VIEW);
-		createEReference(componentEClass, COMPONENT__SPOINT);
+		createEReference(componentEClass, COMPONENT__DECISION);
 
 		transformerEClass = createEClass(TRANSFORMER);
 		createEAttribute(transformerEClass, TRANSFORMER__SQL_EXP);
@@ -923,6 +993,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		portEClass = createEClass(PORT);
 		createEAttribute(portEClass, PORT__TYPE);
 		createEAttribute(portEClass, PORT__NAME);
+		createEReference(portEClass, PORT__FIELDS);
 
 		arbitratorEClass = createEClass(ARBITRATOR);
 
@@ -932,6 +1003,11 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		createEReference(roleEClass, ROLE__PORT);
 
 		procedureCallEClass = createEClass(PROCEDURE_CALL);
+
+		fieldEClass = createEClass(FIELD);
+		createEAttribute(fieldEClass, FIELD__NAME);
+		createEAttribute(fieldEClass, FIELD__DTYPE);
+		createEAttribute(fieldEClass, FIELD__ORDER);
 
 		// Create enums
 		processingModelEEnum = createEEnum(PROCESSING_MODEL);
@@ -943,6 +1019,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		portTypeEEnum = createEEnum(PORT_TYPE);
 		roleTypeEEnum = createEEnum(ROLE_TYPE);
 		accessTypeEEnum = createEEnum(ACCESS_TYPE);
+		dTypeEEnum = createEEnum(DTYPE);
 	}
 
 	/**
@@ -1004,7 +1081,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		initEAttribute(getConnector_Throughput(), this.getThroughput(), "throughput", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnector_Roles(), this.getRole(), null, "roles", null, 1, -1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConnector_Protocol(), ecorePackage.getEString(), "protocol", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnector_Spoint(), theAccordant_rqPackage.getSensitivityPoint(), null, "spoint", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnector_Decision(), theAccordant_rqPackage.getArchDecision(), null, "decision", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConnector_Props(), ecorePackage.getEString(), "props", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1012,7 +1089,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		initEReference(getComponent_Ports(), this.getPort(), null, "ports", null, 1, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_ProcModel(), this.getProcessingModel(), "procModel", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_FuncView(), this.getFunctionalView(), this.getFunctionalView_Comps(), "funcView", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_Spoint(), theAccordant_rqPackage.getSensitivityPoint(), null, "spoint", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_Decision(), theAccordant_rqPackage.getArchDecision(), null, "decision", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transformerEClass, Transformer.class, "Transformer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTransformer_SqlExp(), ecorePackage.getEString(), "sqlExp", null, 0, 1, Transformer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1047,6 +1124,7 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPort_Type(), this.getPortType(), "type", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPort_Name(), ecorePackage.getEString(), "name", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPort_Fields(), this.getField(), null, "fields", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(arbitratorEClass, Arbitrator.class, "Arbitrator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1056,6 +1134,11 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		initEReference(getRole_Port(), this.getPort(), null, "port", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(procedureCallEClass, ProcedureCall.class, "ProcedureCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getField_Name(), ecorePackage.getEString(), "name", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getField_Dtype(), ecorePackage.getEString(), "dtype", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getField_Order(), ecorePackage.getEShort(), "order", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(processingModelEEnum, ProcessingModel.class, "ProcessingModel");
@@ -1100,6 +1183,17 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 		addEEnumLiteral(accessTypeEEnum, AccessType.HDFS);
 		addEEnumLiteral(accessTypeEEnum, AccessType.DATABASE);
 		addEEnumLiteral(accessTypeEEnum, AccessType.FILESYSTEM);
+
+		initEEnum(dTypeEEnum, DType.class, "DType");
+		addEEnumLiteral(dTypeEEnum, DType.STRING);
+		addEEnumLiteral(dTypeEEnum, DType.INT);
+		addEEnumLiteral(dTypeEEnum, DType.FLOAT);
+		addEEnumLiteral(dTypeEEnum, DType.DOUBLE);
+		addEEnumLiteral(dTypeEEnum, DType.DATE);
+		addEEnumLiteral(dTypeEEnum, DType.BOOLEAN);
+		addEEnumLiteral(dTypeEEnum, DType.BLOB);
+		addEEnumLiteral(dTypeEEnum, DType.BYTE);
+		addEEnumLiteral(dTypeEEnum, DType.LONG);
 
 		// Create resource
 		createResource(eNS_URI);

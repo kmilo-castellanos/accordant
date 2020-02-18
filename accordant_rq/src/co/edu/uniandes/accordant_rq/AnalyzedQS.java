@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getSPoints <em>SPoints</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getDecisions <em>Decisions</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getQs <em>Qs</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getReasoning <em>Reasoning</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getName <em>Name</em>}</li>
@@ -25,30 +25,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface AnalyzedQS extends EObject {
 	/**
-	 * Returns the value of the '<em><b>SPoints</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Decisions</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>SPoints</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Decisions</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>SPoints</em>' containment reference.
-	 * @see #setSPoints(SensitivityPoint)
-	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getAnalyzedQS_SPoints()
+	 * @return the value of the '<em>Decisions</em>' containment reference.
+	 * @see #setDecisions(ArchDecision)
+	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getAnalyzedQS_Decisions()
 	 * @model containment="true"
 	 * @generated
 	 */
-	SensitivityPoint getSPoints();
+	ArchDecision getDecisions();
 
 	/**
-	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getSPoints <em>SPoints</em>}' containment reference.
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getDecisions <em>Decisions</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>SPoints</em>' containment reference.
-	 * @see #getSPoints()
+	 * @param value the new value of the '<em>Decisions</em>' containment reference.
+	 * @see #getDecisions()
 	 * @generated
 	 */
-	void setSPoints(SensitivityPoint value);
+	void setDecisions(ArchDecision value);
 
 	/**
 	 * Returns the value of the '<em><b>Qs</b></em>' reference.

@@ -52,7 +52,7 @@ Deployment returns Deployment:
 		('maxSurge' ':' maxSurge=EInt)?
 		('maxUnavailable' ':' maxUnavail=EInt)?
 		'pods' '{' pods+=Pod ( ',' pods+=Pod)* '}'
-		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		('decision' ':' decision=[rq::ArchDecision])?
 		
 	'}';
 
@@ -134,7 +134,7 @@ Artifact returns Artifact:
 		('component' ':' comp=[fv::Component])? &
 		('connector' ':' conn=[fv::Connector])? &
 		('props' ':' props=EString)? &
-		('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		('decision' ':' decision=[rq::ArchDecision])?
 	'}';
 
 

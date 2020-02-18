@@ -11,7 +11,7 @@ import co.edu.uniandes.accordant_fv.Role;
 import co.edu.uniandes.accordant_fv.SyncType;
 import co.edu.uniandes.accordant_fv.Throughput;
 
-import co.edu.uniandes.accordant_rq.SensitivityPoint;
+import co.edu.uniandes.accordant_rq.ArchDecision;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -44,7 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.ConnectorImpl#getThroughput <em>Throughput</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.ConnectorImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.ConnectorImpl#getProtocol <em>Protocol</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_fv.impl.ConnectorImpl#getSpoint <em>Spoint</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.impl.ConnectorImpl#getDecision <em>Decision</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.ConnectorImpl#getProps <em>Props</em>}</li>
  * </ul>
  *
@@ -202,14 +202,14 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 	protected String protocol = PROTOCOL_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSpoint() <em>Spoint</em>}' reference.
+	 * The cached value of the '{@link #getDecision() <em>Decision</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpoint()
+	 * @see #getDecision()
 	 * @generated
 	 * @ordered
 	 */
-	protected SensitivityPoint spoint;
+	protected ArchDecision decision;
 
 	/**
 	 * The default value of the '{@link #getProps() <em>Props</em>}' attribute.
@@ -414,16 +414,16 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SensitivityPoint getSpoint() {
-		if (spoint != null && spoint.eIsProxy()) {
-			InternalEObject oldSpoint = (InternalEObject)spoint;
-			spoint = (SensitivityPoint)eResolveProxy(oldSpoint);
-			if (spoint != oldSpoint) {
+	public ArchDecision getDecision() {
+		if (decision != null && decision.eIsProxy()) {
+			InternalEObject oldDecision = (InternalEObject)decision;
+			decision = (ArchDecision)eResolveProxy(oldDecision);
+			if (decision != oldDecision) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_fvPackage.CONNECTOR__SPOINT, oldSpoint, spoint));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_fvPackage.CONNECTOR__DECISION, oldDecision, decision));
 			}
 		}
-		return spoint;
+		return decision;
 	}
 
 	/**
@@ -431,8 +431,8 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SensitivityPoint basicGetSpoint() {
-		return spoint;
+	public ArchDecision basicGetDecision() {
+		return decision;
 	}
 
 	/**
@@ -440,11 +440,11 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSpoint(SensitivityPoint newSpoint) {
-		SensitivityPoint oldSpoint = spoint;
-		spoint = newSpoint;
+	public void setDecision(ArchDecision newDecision) {
+		ArchDecision oldDecision = decision;
+		decision = newDecision;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.CONNECTOR__SPOINT, oldSpoint, spoint));
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.CONNECTOR__DECISION, oldDecision, decision));
 	}
 
 	/**
@@ -506,9 +506,9 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 				return getRoles();
 			case Accordant_fvPackage.CONNECTOR__PROTOCOL:
 				return getProtocol();
-			case Accordant_fvPackage.CONNECTOR__SPOINT:
-				if (resolve) return getSpoint();
-				return basicGetSpoint();
+			case Accordant_fvPackage.CONNECTOR__DECISION:
+				if (resolve) return getDecision();
+				return basicGetDecision();
 			case Accordant_fvPackage.CONNECTOR__PROPS:
 				return getProps();
 		}
@@ -549,8 +549,8 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 			case Accordant_fvPackage.CONNECTOR__PROTOCOL:
 				setProtocol((String)newValue);
 				return;
-			case Accordant_fvPackage.CONNECTOR__SPOINT:
-				setSpoint((SensitivityPoint)newValue);
+			case Accordant_fvPackage.CONNECTOR__DECISION:
+				setDecision((ArchDecision)newValue);
 				return;
 			case Accordant_fvPackage.CONNECTOR__PROPS:
 				setProps((String)newValue);
@@ -591,8 +591,8 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 			case Accordant_fvPackage.CONNECTOR__PROTOCOL:
 				setProtocol(PROTOCOL_EDEFAULT);
 				return;
-			case Accordant_fvPackage.CONNECTOR__SPOINT:
-				setSpoint((SensitivityPoint)null);
+			case Accordant_fvPackage.CONNECTOR__DECISION:
+				setDecision((ArchDecision)null);
 				return;
 			case Accordant_fvPackage.CONNECTOR__PROPS:
 				setProps(PROPS_EDEFAULT);
@@ -625,8 +625,8 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 				return roles != null && !roles.isEmpty();
 			case Accordant_fvPackage.CONNECTOR__PROTOCOL:
 				return PROTOCOL_EDEFAULT == null ? protocol != null : !PROTOCOL_EDEFAULT.equals(protocol);
-			case Accordant_fvPackage.CONNECTOR__SPOINT:
-				return spoint != null;
+			case Accordant_fvPackage.CONNECTOR__DECISION:
+				return decision != null;
 			case Accordant_fvPackage.CONNECTOR__PROPS:
 				return PROPS_EDEFAULT == null ? props != null : !PROPS_EDEFAULT.equals(props);
 		}

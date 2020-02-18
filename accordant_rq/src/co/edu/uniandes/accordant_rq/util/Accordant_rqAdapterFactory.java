@@ -76,8 +76,8 @@ public class Accordant_rqAdapterFactory extends AdapterFactoryImpl {
 				return createQScenarioAdapter();
 			}
 			@Override
-			public Adapter caseSensitivityPoint(SensitivityPoint object) {
-				return createSensitivityPointAdapter();
+			public Adapter caseArchDecision(ArchDecision object) {
+				return createArchDecisionAdapter();
 			}
 			@Override
 			public Adapter caseTactic(Tactic object) {
@@ -140,16 +140,16 @@ public class Accordant_rqAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link co.edu.uniandes.accordant_rq.SensitivityPoint <em>Sensitivity Point</em>}'.
+	 * Creates a new adapter for an object of class '{@link co.edu.uniandes.accordant_rq.ArchDecision <em>Arch Decision</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see co.edu.uniandes.accordant_rq.SensitivityPoint
+	 * @see co.edu.uniandes.accordant_rq.ArchDecision
 	 * @generated
 	 */
-	public Adapter createSensitivityPointAdapter() {
+	public Adapter createArchDecisionAdapter() {
 		return null;
 	}
 

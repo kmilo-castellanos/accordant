@@ -22,7 +22,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="1" upperBound="-1"
         eType="#//Role" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="protocol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="spoint" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//SensitivityPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decision" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//ArchDecision"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="props" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
@@ -33,7 +33,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="procModel" eType="#//ProcessingModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="funcView" eType="#//FunctionalView"
         eOpposite="#//FunctionalView/comps"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="spoint" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//SensitivityPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decision" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//ArchDecision"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transformer" eSuperTypes="#//AnalyticsComponent">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sqlExp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -66,6 +66,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PortType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" eType="#//Field"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ProcessingModel">
     <eLiterals name="STREAM" value="2" literal="STREAM"/>
@@ -117,5 +119,22 @@
     <eLiterals name="HDFS" value="1"/>
     <eLiterals name="DATABASE" value="2"/>
     <eLiterals name="FILESYSTEM" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Field">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DType">
+    <eLiterals name="STRING"/>
+    <eLiterals name="INT" value="1"/>
+    <eLiterals name="FLOAT" value="2"/>
+    <eLiterals name="DOUBLE" value="3"/>
+    <eLiterals name="DATE" value="4"/>
+    <eLiterals name="BOOLEAN" value="5"/>
+    <eLiterals name="BLOB" value="6"/>
+    <eLiterals name="BYTE" value="7"/>
+    <eLiterals name="LONG" value="8"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -204,13 +204,13 @@ public interface Accordant_fvPackage extends EPackage {
 	int CONNECTOR__PROTOCOL = 7;
 
 	/**
-	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * The feature id for the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR__SPOINT = 8;
+	int CONNECTOR__DECISION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' attribute.
@@ -286,13 +286,13 @@ public interface Accordant_fvPackage extends EPackage {
 	int COMPONENT__FUNC_VIEW = 3;
 
 	/**
-	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * The feature id for the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__SPOINT = 4;
+	int COMPONENT__DECISION = 4;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -359,13 +359,13 @@ public interface Accordant_fvPackage extends EPackage {
 	int ANALYTICS_COMPONENT__FUNC_VIEW = COMPONENT__FUNC_VIEW;
 
 	/**
-	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * The feature id for the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYTICS_COMPONENT__SPOINT = COMPONENT__SPOINT;
+	int ANALYTICS_COMPONENT__DECISION = COMPONENT__DECISION;
 
 	/**
 	 * The feature id for the '<em><b>Pmml</b></em>' attribute.
@@ -441,13 +441,13 @@ public interface Accordant_fvPackage extends EPackage {
 	int TRANSFORMER__FUNC_VIEW = ANALYTICS_COMPONENT__FUNC_VIEW;
 
 	/**
-	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * The feature id for the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSFORMER__SPOINT = ANALYTICS_COMPONENT__SPOINT;
+	int TRANSFORMER__DECISION = ANALYTICS_COMPONENT__DECISION;
 
 	/**
 	 * The feature id for the '<em><b>Pmml</b></em>' attribute.
@@ -550,13 +550,13 @@ public interface Accordant_fvPackage extends EPackage {
 	int ESTIMATOR__FUNC_VIEW = ANALYTICS_COMPONENT__FUNC_VIEW;
 
 	/**
-	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * The feature id for the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ESTIMATOR__SPOINT = ANALYTICS_COMPONENT__SPOINT;
+	int ESTIMATOR__DECISION = ANALYTICS_COMPONENT__DECISION;
 
 	/**
 	 * The feature id for the '<em><b>Pmml</b></em>' attribute.
@@ -668,13 +668,13 @@ public interface Accordant_fvPackage extends EPackage {
 	int STREAM__PROTOCOL = CONNECTOR__PROTOCOL;
 
 	/**
-	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * The feature id for the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STREAM__SPOINT = CONNECTOR__SPOINT;
+	int STREAM__DECISION = CONNECTOR__DECISION;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' attribute.
@@ -786,13 +786,13 @@ public interface Accordant_fvPackage extends EPackage {
 	int ADAPTOR__PROTOCOL = CONNECTOR__PROTOCOL;
 
 	/**
-	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * The feature id for the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADAPTOR__SPOINT = CONNECTOR__SPOINT;
+	int ADAPTOR__DECISION = CONNECTOR__DECISION;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' attribute.
@@ -904,13 +904,13 @@ public interface Accordant_fvPackage extends EPackage {
 	int DISTRIBUTOR__PROTOCOL = CONNECTOR__PROTOCOL;
 
 	/**
-	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * The feature id for the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISTRIBUTOR__SPOINT = CONNECTOR__SPOINT;
+	int DISTRIBUTOR__DECISION = CONNECTOR__DECISION;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' attribute.
@@ -986,13 +986,13 @@ public interface Accordant_fvPackage extends EPackage {
 	int INGESTOR__FUNC_VIEW = COMPONENT__FUNC_VIEW;
 
 	/**
-	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * The feature id for the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INGESTOR__SPOINT = COMPONENT__SPOINT;
+	int INGESTOR__DECISION = COMPONENT__DECISION;
 
 	/**
 	 * The feature id for the '<em><b>Conn</b></em>' attribute.
@@ -1131,13 +1131,13 @@ public interface Accordant_fvPackage extends EPackage {
 	int EVENT__PROTOCOL = CONNECTOR__PROTOCOL;
 
 	/**
-	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * The feature id for the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT__SPOINT = CONNECTOR__SPOINT;
+	int EVENT__DECISION = CONNECTOR__DECISION;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' attribute.
@@ -1213,13 +1213,13 @@ public interface Accordant_fvPackage extends EPackage {
 	int SINK__FUNC_VIEW = COMPONENT__FUNC_VIEW;
 
 	/**
-	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * The feature id for the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SINK__SPOINT = COMPONENT__SPOINT;
+	int SINK__DECISION = COMPONENT__DECISION;
 
 	/**
 	 * The feature id for the '<em><b>Conn</b></em>' attribute.
@@ -1304,13 +1304,22 @@ public interface Accordant_fvPackage extends EPackage {
 	int PORT__NAME = 1;
 
 	/**
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__FIELDS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = 2;
+	int PORT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Port</em>' class.
@@ -1404,13 +1413,13 @@ public interface Accordant_fvPackage extends EPackage {
 	int ARBITRATOR__PROTOCOL = CONNECTOR__PROTOCOL;
 
 	/**
-	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * The feature id for the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARBITRATOR__SPOINT = CONNECTOR__SPOINT;
+	int ARBITRATOR__DECISION = CONNECTOR__DECISION;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' attribute.
@@ -1577,13 +1586,13 @@ public interface Accordant_fvPackage extends EPackage {
 	int PROCEDURE_CALL__PROTOCOL = CONNECTOR__PROTOCOL;
 
 	/**
-	 * The feature id for the '<em><b>Spoint</b></em>' reference.
+	 * The feature id for the '<em><b>Decision</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_CALL__SPOINT = CONNECTOR__SPOINT;
+	int PROCEDURE_CALL__DECISION = CONNECTOR__DECISION;
 
 	/**
 	 * The feature id for the '<em><b>Props</b></em>' attribute.
@@ -1613,6 +1622,61 @@ public interface Accordant_fvPackage extends EPackage {
 	int PROCEDURE_CALL_OPERATION_COUNT = CONNECTOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link co.edu.uniandes.accordant_fv.impl.FieldImpl <em>Field</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see co.edu.uniandes.accordant_fv.impl.FieldImpl
+	 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getField()
+	 * @generated
+	 */
+	int FIELD = 16;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Dtype</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__DTYPE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Order</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__ORDER = 2;
+
+	/**
+	 * The number of structural features of the '<em>Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_fv.ProcessingModel <em>Processing Model</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1620,7 +1684,7 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getProcessingModel()
 	 * @generated
 	 */
-	int PROCESSING_MODEL = 16;
+	int PROCESSING_MODEL = 17;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_fv.DeliveryModel <em>Delivery Model</em>}' enum.
@@ -1630,7 +1694,7 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getDeliveryModel()
 	 * @generated
 	 */
-	int DELIVERY_MODEL = 17;
+	int DELIVERY_MODEL = 18;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_fv.SyncType <em>Sync Type</em>}' enum.
@@ -1640,7 +1704,7 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getSyncType()
 	 * @generated
 	 */
-	int SYNC_TYPE = 18;
+	int SYNC_TYPE = 19;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_fv.NotificationModel <em>Notification Model</em>}' enum.
@@ -1650,7 +1714,7 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getNotificationModel()
 	 * @generated
 	 */
-	int NOTIFICATION_MODEL = 19;
+	int NOTIFICATION_MODEL = 20;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_fv.Buffering <em>Buffering</em>}' enum.
@@ -1660,7 +1724,7 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getBuffering()
 	 * @generated
 	 */
-	int BUFFERING = 20;
+	int BUFFERING = 21;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_fv.Throughput <em>Throughput</em>}' enum.
@@ -1670,7 +1734,7 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getThroughput()
 	 * @generated
 	 */
-	int THROUGHPUT = 21;
+	int THROUGHPUT = 22;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_fv.PortType <em>Port Type</em>}' enum.
@@ -1680,7 +1744,7 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getPortType()
 	 * @generated
 	 */
-	int PORT_TYPE = 22;
+	int PORT_TYPE = 23;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_fv.RoleType <em>Role Type</em>}' enum.
@@ -1690,7 +1754,7 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getRoleType()
 	 * @generated
 	 */
-	int ROLE_TYPE = 23;
+	int ROLE_TYPE = 24;
 
 
 	/**
@@ -1701,7 +1765,18 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getAccessType()
 	 * @generated
 	 */
-	int ACCESS_TYPE = 24;
+	int ACCESS_TYPE = 25;
+
+
+	/**
+	 * The meta object id for the '{@link co.edu.uniandes.accordant_fv.DType <em>DType</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see co.edu.uniandes.accordant_fv.DType
+	 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getDType()
+	 * @generated
+	 */
+	int DTYPE = 26;
 
 
 	/**
@@ -1857,15 +1932,15 @@ public interface Accordant_fvPackage extends EPackage {
 	EAttribute getConnector_Protocol();
 
 	/**
-	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_fv.Connector#getSpoint <em>Spoint</em>}'.
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_fv.Connector#getDecision <em>Decision</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Spoint</em>'.
-	 * @see co.edu.uniandes.accordant_fv.Connector#getSpoint()
+	 * @return the meta object for the reference '<em>Decision</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Connector#getDecision()
 	 * @see #getConnector()
 	 * @generated
 	 */
-	EReference getConnector_Spoint();
+	EReference getConnector_Decision();
 
 	/**
 	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_fv.Connector#getProps <em>Props</em>}'.
@@ -1933,15 +2008,15 @@ public interface Accordant_fvPackage extends EPackage {
 	EReference getComponent_FuncView();
 
 	/**
-	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_fv.Component#getSpoint <em>Spoint</em>}'.
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_fv.Component#getDecision <em>Decision</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Spoint</em>'.
-	 * @see co.edu.uniandes.accordant_fv.Component#getSpoint()
+	 * @return the meta object for the reference '<em>Decision</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Component#getDecision()
 	 * @see #getComponent()
 	 * @generated
 	 */
-	EReference getComponent_Spoint();
+	EReference getComponent_Decision();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_fv.Transformer <em>Transformer</em>}'.
@@ -2198,6 +2273,17 @@ public interface Accordant_fvPackage extends EPackage {
 	EAttribute getPort_Name();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link co.edu.uniandes.accordant_fv.Port#getFields <em>Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Fields</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Port#getFields()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EReference getPort_Fields();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_fv.Arbitrator <em>Arbitrator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2259,6 +2345,49 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getProcedureCall();
+
+	/**
+	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_fv.Field <em>Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Field</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Field
+	 * @generated
+	 */
+	EClass getField();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_fv.Field#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Field#getName()
+	 * @see #getField()
+	 * @generated
+	 */
+	EAttribute getField_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_fv.Field#getDtype <em>Dtype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Dtype</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Field#getDtype()
+	 * @see #getField()
+	 * @generated
+	 */
+	EAttribute getField_Dtype();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_fv.Field#getOrder <em>Order</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Order</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Field#getOrder()
+	 * @see #getField()
+	 * @generated
+	 */
+	EAttribute getField_Order();
 
 	/**
 	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_fv.ProcessingModel <em>Processing Model</em>}'.
@@ -2349,6 +2478,16 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getAccessType();
+
+	/**
+	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_fv.DType <em>DType</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>DType</em>'.
+	 * @see co.edu.uniandes.accordant_fv.DType
+	 * @generated
+	 */
+	EEnum getDType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2490,12 +2629,12 @@ public interface Accordant_fvPackage extends EPackage {
 		EAttribute CONNECTOR__PROTOCOL = eINSTANCE.getConnector_Protocol();
 
 		/**
-		 * The meta object literal for the '<em><b>Spoint</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Decision</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTOR__SPOINT = eINSTANCE.getConnector_Spoint();
+		EReference CONNECTOR__DECISION = eINSTANCE.getConnector_Decision();
 
 		/**
 		 * The meta object literal for the '<em><b>Props</b></em>' attribute feature.
@@ -2548,12 +2687,12 @@ public interface Accordant_fvPackage extends EPackage {
 		EReference COMPONENT__FUNC_VIEW = eINSTANCE.getComponent_FuncView();
 
 		/**
-		 * The meta object literal for the '<em><b>Spoint</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Decision</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT__SPOINT = eINSTANCE.getComponent_Spoint();
+		EReference COMPONENT__DECISION = eINSTANCE.getComponent_Decision();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.impl.TransformerImpl <em>Transformer</em>}' class.
@@ -2768,6 +2907,14 @@ public interface Accordant_fvPackage extends EPackage {
 		EAttribute PORT__NAME = eINSTANCE.getPort_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT__FIELDS = eINSTANCE.getPort_Fields();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.impl.ArbitratorImpl <em>Arbitrator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2820,6 +2967,40 @@ public interface Accordant_fvPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PROCEDURE_CALL = eINSTANCE.getProcedureCall();
+
+		/**
+		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.impl.FieldImpl <em>Field</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see co.edu.uniandes.accordant_fv.impl.FieldImpl
+		 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getField()
+		 * @generated
+		 */
+		EClass FIELD = eINSTANCE.getField();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIELD__NAME = eINSTANCE.getField_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Dtype</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIELD__DTYPE = eINSTANCE.getField_Dtype();
+
+		/**
+		 * The meta object literal for the '<em><b>Order</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIELD__ORDER = eINSTANCE.getField_Order();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.ProcessingModel <em>Processing Model</em>}' enum.
@@ -2910,6 +3091,16 @@ public interface Accordant_fvPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ACCESS_TYPE = eINSTANCE.getAccessType();
+
+		/**
+		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.DType <em>DType</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see co.edu.uniandes.accordant_fv.DType
+		 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getDType()
+		 * @generated
+		 */
+		EEnum DTYPE = eINSTANCE.getDType();
 
 	}
 

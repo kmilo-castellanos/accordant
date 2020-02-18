@@ -40,13 +40,13 @@ public interface Accordant_rqFactory extends EFactory {
 	QScenario createQScenario();
 
 	/**
-	 * Returns a new object of class '<em>Sensitivity Point</em>'.
+	 * Returns a new object of class '<em>Arch Decision</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Sensitivity Point</em>'.
+	 * @return a new object of class '<em>Arch Decision</em>'.
 	 * @generated
 	 */
-	SensitivityPoint createSensitivityPoint();
+	ArchDecision createArchDecision();
 
 	/**
 	 * Returns a new object of class '<em>Tactic</em>'.
