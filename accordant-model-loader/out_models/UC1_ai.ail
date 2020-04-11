@@ -12,10 +12,10 @@
   <tactics name="Scheduling Policy" qAttribute="PERFORMANCE"/>
   <tactics name="Runtime Registration" qAttribute="MODIFIABILITY"/>
   <analyzedQs qs="UC1_QS1" name="UC1_QS1">
-    <decisions code="Dec 1" appliedTactics="//@tactics.2" isSensitivityPoint="true"/>
+    <decisions name="Dec1" rationale="Rational D1" code="Dec1" appliedTactics="//@tactics.2" isSensitivityPoint="true"/>
   </analyzedQs>
   <analyzedQs qs="UC1_QS2" name="UC1_QS2">
-    <decisions code="Dec 2" appliedTactics="//@tactics.6" isSensitivityPoint="true"/>
+    <decisions name="Dec2" rationale="Rationale D2" code="Dec2" appliedTactics="//@tactics.6" isSensitivityPoint="true"/>
   </analyzedQs>
   <constraints code="UC1-OpenSource" value="Licensing = OpenSource"/>
   <constraints code="Const 2" value="IaaS"/>

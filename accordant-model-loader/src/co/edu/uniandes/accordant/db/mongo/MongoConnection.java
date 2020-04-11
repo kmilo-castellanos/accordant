@@ -13,15 +13,11 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
-import co.edu.uniandes.accordant.model.ModelLoader;
-import co.edu.uniandes.accordant_rq.Constraint;
-import co.edu.uniandes.accordant_rq.Project;
 
 public class MongoConnection {
 
 	private MongoClient mongoClient;
 	private MongoDatabase database;
-	private ModelLoader loader = ModelLoader.getInstance();
 
 	public MongoConnection(String mongoString) {
 		super();
@@ -106,12 +102,14 @@ public class MongoConnection {
 		List<Document> list = new ArrayList<Document>();
 		MongoCollection<Document> collection = database.getCollection("ArchModels");
 		MongoCursor<Document> cursor = collection.find(eq("project", projectName)).iterator();
+		System.out.println("models of "+projectName+":"+cursor.hasNext());
+
 		while (cursor.hasNext()) {
 			list.add(cursor.next());
 			// System.out.println(doc.toJson());
 		}
 		cursor.close();
-		return null;
+		return list;
 	}
 
 	public List<Document> getQScenarios(String projectName) {
