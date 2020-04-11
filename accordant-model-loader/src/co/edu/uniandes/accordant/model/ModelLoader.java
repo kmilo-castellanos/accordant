@@ -23,7 +23,11 @@ import co.edu.uniandes.accordant_fv.Estimator;
 import co.edu.uniandes.accordant_fv.Event;
 import co.edu.uniandes.accordant_fv.FunctionalView;
 import co.edu.uniandes.accordant_fv.Ingestor;
+import co.edu.uniandes.accordant_fv.Port;
+import co.edu.uniandes.accordant_fv.PortType;
 import co.edu.uniandes.accordant_fv.ProcedureCall;
+import co.edu.uniandes.accordant_fv.Role;
+import co.edu.uniandes.accordant_fv.RoleType;
 import co.edu.uniandes.accordant_fv.Sink;
 import co.edu.uniandes.accordant_fv.Stream;
 import co.edu.uniandes.accordant_fv.Transformer;
@@ -41,7 +45,12 @@ public class ModelLoader {
 	private Accordant_rqFactory factory;
 	private Accordant_fvFactory fvFactory;
 
+	// private Resource fvResource;
+	// private Resource rqResource;
 	private Resource resource;
+
+	ResourceSet resourceSet;
+
 	private String outputPath;
 
 	private static final String INGESTOR = "Ingestor";
@@ -76,13 +85,14 @@ public class ModelLoader {
 	public void loadData(String projecName, MongoConnection conn, String outputPath) {
 
 		this.outputPath = outputPath;
-
+		int fvCounter = 0;
+		int dvCounter = 0;
 		try {
 
 			List<String> projects = conn.getProjects(projecName);
 			if (projects != null) {
 				for (String projectName : projects) {
-					String modelName = createRQModel(projectName);
+					resource = createRQModel(projectName);
 					Project project = createProject(projectName);
 					List<Document> tactics = conn.getTactics();
 					HashMap<String, Tactic> tacticsMap = new HashMap<String, Tactic>();
@@ -114,68 +124,85 @@ public class ModelLoader {
 							if (decisions != null) {
 								for (Document ddoc : decisions) {
 									ArchDecision dec = createArchDecision(ddoc);
-									dec.getAppliedTactics().add(tacticsMap.get(ddoc.getString("tactic")));
+									if (ddoc.getString("tactic") != null) {
+										
+										dec.getAppliedTactics().add(tacticsMap.get(Util.formatName(ddoc.getString("tactic"))));
+									}
 									decisionsMap.put(dec.getCode(), dec);
 									aqs.setDecisions(dec);
+
 								}
 							}
 						}
 					}
-					storeModel();
+					storeModel(resource);
 
 					List<Document> models = conn.getModels(projectName);
+
 					if (models != null) {
 						for (Document mdoc : models) {
 							if (mdoc.getString("view").equals("Functional")) {
-								createFVModel(project, decisionsMap, mdoc);
+								resource = createFVModel(project, decisionsMap, mdoc);
+								fvCounter++;
 							}
+							storeModel(resource);
 						}
 					}
 				}
 
 				System.out.println("Loading process finished successfully");
 				System.out.println("Number of Projects: " + projects.size());
+				System.out.println("Number of Functional View Models: " + fvCounter);
+				System.out.println("Number of Deployment View Models: " + dvCounter);
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public String createRQModel(String projectName) throws Exception {
+	public Resource createRQModel(String projectName) throws Exception {
 
-		String modelName = projectName + "_ai";
+		String modelName = Util.formatName(projectName) + "_ai";
 
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
-		m.put("ail", new XMIResourceFactoryImpl());
+		m.put("xmi", new XMIResourceFactoryImpl());
 
-		ResourceSet resourceSet = new ResourceSetImpl();
-		resource = resourceSet.createResource(
-				URI.createURI(outputPath != null ? outputPath + "/out_models/" : "out_models/" + modelName + ".ail"));
-		return modelName;
+		resourceSet = new ResourceSetImpl();
+		resource = resourceSet.createResource(URI.createURI(outputPath != null ? outputPath + "/" : modelName + ".xmi"));
+		return resource;
 	}
 
-	public String createFVModel(Project rqProject, HashMap<String, ArchDecision> decisionsMap, Document mdoc)
+	public Resource createFVModel(Project rqProject, HashMap<String, ArchDecision> decisionsMap, Document mdoc)
 			throws Exception {
 
-		String modelName = rqProject.getName() + "_" + mdoc.getString("name") + "_fv";
+		String modelName = Util.formatName(rqProject.getName()) + "_" + Util.formatName(mdoc.getString("name")) + "_fv";
 
-		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-		Map<String, Object> m = reg.getExtensionToFactoryMap();
-		m.put("afl", new XMIResourceFactoryImpl());
-
-		ResourceSet resourceSet = new ResourceSetImpl();
-		resource = resourceSet.createResource(
-				URI.createURI(outputPath != null ? outputPath + "/out_models/" : "out_models/" + modelName + ".afl"));
+		/*
+		 * Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+		 * 
+		 * Map<String, Object> m = reg.getExtensionToFactoryMap(); m.put("xmi", new
+		 * XMIResourceFactoryImpl());
+		 */
+		resource = resourceSet.createResource(URI.createURI(outputPath != null ? outputPath + "/" : modelName + ".xmi"));
+		// Map<URI, URI> uriMap = resourceSet.getURIConverter().getURIMap();
+		// File dir = new File("");
+		// URI physicalURI = URI.createFileURI(dir.getAbsolutePath()).appendSegment("");
+		// uriMap.put(rqResource.getURI(), physicalURI);
+		// System.out.println(uriMap.values());
+		// fvResource.load(uriMap);
+		// fvResource.load();;
 
 		FunctionalView fv = createFunctionalView(rqProject);
 		try {
 			if (mdoc.getString("xml") != null && !mdoc.getString("xml").isEmpty()) {
 				MxGraph mxgraph = new MxGraph(mdoc.getString("xml"));
 				NodeList objectNodes = mxgraph.getObjectNodes();
+				HashMap<String, Component> compMap = new HashMap<String, Component>();
+				HashMap<String, Connector> connMap = new HashMap<String, Connector>();
+
 				if (objectNodes != null) {
-					HashMap<String, Component> compMap = new HashMap<String, Component>();
-					HashMap<String, Connector> connMap = new HashMap<String, Connector>();
 
 					for (int i = 0; i < objectNodes.getLength(); i++) {
 						Node oNode = objectNodes.item(i);
@@ -185,11 +212,11 @@ public class ModelLoader {
 							Element objectElement = (Element) oNode;
 							String eclass = objectElement.getAttribute("class");
 							String id = objectElement.getAttribute("id");
-							String name = objectElement.getAttribute("name");
-							System.out.println("element: " + eclass + ", " + id + ", " + name);
+							// String name = objectElement.getAttribute("name");
+							// System.out.println("element: " + eclass + ", " + id + ", " + name);
 							if (eclass != null) {
-								if (eclass.equals(ModelLoader.INGESTOR) || eclass.equals(ModelLoader.SINK) || eclass.equals(ModelLoader.TRANSFORMER)
-										|| eclass.equals(ModelLoader.ESTIMATOR)) {
+								if (eclass.equals(ModelLoader.INGESTOR) || eclass.equals(ModelLoader.SINK)
+										|| eclass.equals(ModelLoader.TRANSFORMER) || eclass.equals(ModelLoader.ESTIMATOR)) {
 									// Components
 									if (eclass.equals(ModelLoader.INGESTOR)) {
 										comp = createIngestor(objectElement);
@@ -208,7 +235,8 @@ public class ModelLoader {
 											comp.setDecision(dec);
 										}
 									}
-								} else if (eclass.equals(ModelLoader.EVENT) || eclass.equals(ModelLoader.PROCALL) || eclass.equals(ModelLoader.STREAM)) {
+								} else if (eclass.equals(ModelLoader.EVENT) || eclass.equals(ModelLoader.PROCALL)
+										|| eclass.equals(ModelLoader.STREAM)) {
 									// Connnectors
 									if (eclass.equals(ModelLoader.EVENT)) {
 										conn = createEvent(objectElement);
@@ -225,25 +253,39 @@ public class ModelLoader {
 											conn.setDecision(dec);
 										}
 									}
+								} else if (eclass.equals(ModelLoader.PORT)) {
+									// Ports and Roles
+									//NodeList mxCells = objectElement.getElementsByTagName("mxCell");
+									processEdge(objectElement, connMap, compMap);
+									//for (int g = 0; g < mxCells.getLength(); g++) {
+									//	Node mxCell = mxCells.item(g);
+									//	if (mxCell.getNodeType() == Node.ELEMENT_NODE) {
+									//		Element el = (Element) mxCell;
+									//		
+									//	}
+									//}
 								}
 							}
 						}
 					}
 				}
+				List<Element> edges = mxgraph.getEdges();
+				for (int e = 0; edges != null && e < edges.size(); e++) {
+					processEdge(edges.get(e), connMap, compMap);
+				}
 			}
-			System.out.println("Total Componentes de FV:" + fv.getComps().size());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		storeModel();
+		// storeModel(resource);
 
-		return modelName;
+		return resource;
 	}
 
 	public FunctionalView createFunctionalView(Project rqProject) throws Exception {
 		FunctionalView fv = fvFactory.createFunctionalView();
-		fv.setName(rqProject.getName() + "FVModel");
+		fv.setName(Util.formatName(rqProject.getName()) + "FVModel");
 		fv.setProject(rqProject);
 		resource.getContents().add(fv);
 		return fv;
@@ -251,18 +293,18 @@ public class ModelLoader {
 
 	public Project createProject(String projectName) throws Exception {
 		project = factory.createProject();
-		project.setName(projectName);
+		project.setName(Util.formatName(projectName));
 		resource.getContents().add(project);
 		return project;
 	}
 
-	public void storeModel() throws Exception {
+	public void storeModel(Resource resource) throws Exception {
 		resource.save(Collections.EMPTY_MAP);
 	}
 
 	public QScenario createQScenario(Document doc) {
 		QScenario qs = factory.createQScenario();
-		qs.setName(doc.getString("name"));
+		qs.setName(Util.formatName(doc.getString("name")));
 		qs.setEnvironment(doc.getString("environment"));
 		qs.setMaxValue(doc.getInteger("maxVal") != null ? doc.getInteger("maxVal").floatValue() : null);
 		qs.setMinValue(doc.getInteger("minVal") != null ? doc.getInteger("minVal").floatValue() : null);
@@ -276,7 +318,7 @@ public class ModelLoader {
 
 	public AnalyzedQS createAQScenario(Document doc) {
 		AnalyzedQS aqs = factory.createAnalyzedQS();
-		aqs.setName(doc.getString("name"));
+		aqs.setName("A_" + Util.formatName(doc.getString("name")));
 		aqs.setReasoning(doc.getString("rationale"));
 		return aqs;
 	}
@@ -291,8 +333,8 @@ public class ModelLoader {
 
 	public ArchDecision createArchDecision(Document doc) {
 		ArchDecision dec = factory.createArchDecision();
-		dec.setCode(doc.getString("name"));
-		dec.setName(doc.getString("name"));
+		dec.setCode(Util.formatName(doc.getString("name")));
+		dec.setName(Util.formatName(doc.getString("name")));
 		dec.setRationale(doc.getString("rationale"));
 		dec.setIsRisk(doc.getString("risk") != null ? true : false);
 		dec.setIsSensitivityPoint(doc.getString("sensitivity") != null ? true : false);
@@ -301,14 +343,72 @@ public class ModelLoader {
 
 	public Tactic createTactic(Document doc) {
 		Tactic tac = factory.createTactic();
-		tac.setName(doc.getString("name"));
+		tac.setName(Util.formatName(doc.getString("name")));
 		tac.setQAttribute(Util.parseQAttribute(doc.getString("qa")));
 		return tac;
 	}
 
+	public void processEdge(Element elm, HashMap<String, Connector> connMap, HashMap<String, Component> compMap) {
+		Element edgeCell = null;
+		String fields=null;
+		if(elm.getAttribute("edge")!=null && elm.getAttribute("edge").equals("1")) {
+			edgeCell=elm;
+		}else {
+			edgeCell=(Element) elm.getElementsByTagName("mxCell").item(0);
+			fields=elm.getAttribute("fields");
+			System.out.println("Port "+elm.getAttribute("label")+"-> fields:"+fields);
+		}
+		String source = edgeCell.getAttribute("source");
+		String target = edgeCell.getAttribute("target");
+		Component comp=null;
+		Connector conn=null;
+		Port port=null;
+		Role role=null;
+		if (connMap.containsKey(source)) {
+			comp = compMap.get(target);
+			conn = connMap.get(source);
+			port = createPort(Util.formatName(comp.getName()) + "_from_" + Util.formatName(conn.getName()), false);
+			role = createRole(Util.formatName(conn.getName()) + "_out_" + Util.formatName(comp.getName()), false);
+		} else if (compMap.containsKey(source)) {
+			comp = compMap.get(source);
+			conn = connMap.get(target);
+			port = createPort(Util.formatName(comp.getName()) + "_to_" + Util.formatName(conn.getName()),
+					true);
+			role = createRole(Util.formatName(conn.getName()) + "_in_" + Util.formatName(comp.getName()), true);
+		}
+		role.setPort(port);
+		comp.getPorts().add(port);
+		conn.getRoles().add(role);
+		if(fields!=null && !fields.isEmpty()) {
+			//TODO crear fields
+		}
+	}
+
+	public Port createPort(String name, Boolean provided) {
+		Port p = fvFactory.createPort();
+		p.setName(Util.formatName(name));
+		if (provided) {
+			p.setType(PortType.PROVIDED);
+		} else {
+			p.setType(PortType.REQUIRED);
+		}
+		return p;
+	}
+
+	public Role createRole(String name, Boolean in) {
+		Role r = fvFactory.createRole();
+		r.setName(Util.formatName(name));
+		if (in) {
+			r.setType(RoleType.IN);
+		} else {
+			r.setType(RoleType.OUT);
+		}
+		return r;
+	}
+
 	private Component createIngestor(Element el) {
 		Ingestor ing = fvFactory.createIngestor();
-		ing.setName(el.getAttribute("label"));
+		ing.setName(Util.formatName(el.getAttribute("label")));
 		ing.setConn(el.getAttribute("connection"));
 		ing.setProcModel(Util.parseProcModel(el.getAttribute("procModel")));
 		ing.setFormat(el.getAttribute("format"));
@@ -319,7 +419,7 @@ public class ModelLoader {
 
 	private Component createSink(Element el) {
 		Sink sin = fvFactory.createSink();
-		sin.setName(el.getAttribute("label"));
+		sin.setName(Util.formatName(el.getAttribute("label")));
 		sin.setConn(el.getAttribute("connection"));
 		sin.setProcModel(Util.parseProcModel(el.getAttribute("procModel")));
 		sin.setFormat(el.getAttribute("format"));
@@ -330,7 +430,7 @@ public class ModelLoader {
 
 	private Component createTransformer(Element el) {
 		Transformer tra = fvFactory.createTransformer();
-		tra.setName(el.getAttribute("label"));
+		tra.setName(Util.formatName(el.getAttribute("label")));
 		tra.setCodeRepo(el.getAttribute("sourceRepository"));
 		tra.setLambdaExp(el.getAttribute("lambdaExpression"));
 		tra.setPmml(el.getAttribute("pmmlFile"));
@@ -341,7 +441,7 @@ public class ModelLoader {
 
 	private Component createEstimator(Element el) {
 		Estimator est = fvFactory.createEstimator();
-		est.setName(el.getAttribute("label"));
+		est.setName(Util.formatName(el.getAttribute("label")));
 		est.setPmml(el.getAttribute("pmmlFile"));
 		est.setProcModel(Util.parseProcModel(el.getAttribute("procModel")));
 		return est;
@@ -349,7 +449,7 @@ public class ModelLoader {
 
 	private Connector createProcCall(Element el) {
 		ProcedureCall pc = fvFactory.createProcedureCall();
-		pc.setName(el.getAttribute("label"));
+		pc.setName(Util.formatName(el.getAttribute("label")));
 		pc.setDelivery(Util.parseDelivery(el.getAttribute("delivery")));
 		pc.setBuffering(Util.parseBuffering(el.getAttribute("buffering")));
 		pc.setNotification(Util.parseNotification(el.getAttribute("notification")));
@@ -362,7 +462,7 @@ public class ModelLoader {
 
 	private Connector createStream(Element el) {
 		Stream stream = fvFactory.createStream();
-		stream.setName(el.getAttribute("label"));
+		stream.setName(Util.formatName(el.getAttribute("label")));
 		stream.setDelivery(Util.parseDelivery(el.getAttribute("delivery")));
 		stream.setBuffering(Util.parseBuffering(el.getAttribute("buffering")));
 		stream.setNotification(Util.parseNotification(el.getAttribute("notification")));
@@ -375,7 +475,7 @@ public class ModelLoader {
 
 	private Connector createEvent(Element el) {
 		Event evt = fvFactory.createEvent();
-		evt.setName(el.getAttribute("label"));
+		evt.setName(Util.formatName(el.getAttribute("label")));
 		evt.setDelivery(Util.parseDelivery(el.getAttribute("delivery")));
 		evt.setBuffering(Util.parseBuffering(el.getAttribute("buffering")));
 		evt.setNotification(Util.parseNotification(el.getAttribute("notification")));

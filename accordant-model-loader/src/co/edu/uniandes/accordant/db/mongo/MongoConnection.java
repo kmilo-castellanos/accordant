@@ -102,7 +102,6 @@ public class MongoConnection {
 		List<Document> list = new ArrayList<Document>();
 		MongoCollection<Document> collection = database.getCollection("ArchModels");
 		MongoCursor<Document> cursor = collection.find(eq("project", projectName)).iterator();
-		System.out.println("models of "+projectName+":"+cursor.hasNext());
 
 		while (cursor.hasNext()) {
 			list.add(cursor.next());

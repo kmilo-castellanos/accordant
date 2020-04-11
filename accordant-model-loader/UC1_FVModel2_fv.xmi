@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<accordant_fv:FunctionalView xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:accordant_fv="http://uniandes.accordant.functional" name="UC1FVModel">
+  <conns xsi:type="accordant_fv:Event" name="queue1" protocol="" props="">
+    <roles name="queue1_out_Analytics" port="Analytics_from_queue1"/>
+    <roles type="IN" name="queue1_in_Ingestor" port="Ingestor_to_queue1"/>
+  </conns>
+  <conns xsi:type="accordant_fv:Event" name="queue2" protocol="" props="">
+    <roles type="IN" name="queue2_in_Analytics" port="Analytics_to_queue2"/>
+    <roles name="queue2_out_Sink" port="Sink_from_queue2"/>
+  </conns>
+  <comps xsi:type="accordant_fv:Ingestor" name="Ingestor" conn="" format="" props="">
+    <ports type="PROVIDED" name="Ingestor_to_queue1"/>
+  </comps>
+  <comps xsi:type="accordant_fv:Estimator" name="Analytics" pmml="">
+    <ports type="PROVIDED" name="Analytics_to_queue2"/>
+    <ports name="Analytics_from_queue1"/>
+  </comps>
+  <comps xsi:type="accordant_fv:Sink" name="Sink" conn="" format="">
+    <ports name="Sink_from_queue2"/>
+  </comps>
+  <project href="UC1_ai.xmi#UC1"/>
+</accordant_fv:FunctionalView>

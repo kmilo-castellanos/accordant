@@ -35,6 +35,11 @@ public class Util {
 		return mId.group(1);
 	}
 	
+	public static String formatName(String name) {
+		return name!=null? name.replaceAll(" ", "_"):null;
+	}
+
+	
 	public static String[] getValuesMatch(String pattern, String text) {
 		Pattern r = Pattern.compile(pattern);
 		Matcher m = r.matcher(text);
