@@ -5,7 +5,7 @@ This importer migrates from ArchiAndes' projects, constraints, quality scenarios
 To run this importer, execute:
 
 ```
-$ java -jar accordant-model-loader.jar  <project_name>* <mongoConn> <outputPaht>
+$ java -jar accordant-model-loader.jar  <project_name>* <mongo_Conn> <output_Paht>
 
 ```
-Where <project_name> corresponds to the project name in ArchiAndes to be imported. The argument <mongoConn> is the mongodb connection string (by default: 'mongodb://127.0.0.1:3001/'). And <outputPaht> is the path where models (.xmi) will be generated (by default is the local folder).
+Where <project_name> corresponds to the project name in ArchiAndes to be imported. The argument <mongo_Conn> is the mongodb connection string (by default: 'mongodb://127.0.0.1:3001/'). And <output_Paht> is the path where models (.xmi) will be generated (by default is the local folder).
