@@ -21,6 +21,7 @@ import co.edu.uniandes.accordant_fv.Component;
 import co.edu.uniandes.accordant_fv.Connector;
 import co.edu.uniandes.accordant_fv.Estimator;
 import co.edu.uniandes.accordant_fv.Event;
+import co.edu.uniandes.accordant_fv.Field;
 import co.edu.uniandes.accordant_fv.FunctionalView;
 import co.edu.uniandes.accordant_fv.Ingestor;
 import co.edu.uniandes.accordant_fv.Port;
@@ -350,13 +351,13 @@ public class ModelLoader {
 
 	public void processEdge(Element elm, HashMap<String, Connector> connMap, HashMap<String, Component> compMap) {
 		Element edgeCell = null;
-		String fields=null;
+		String fieldsAttr=null;
 		if(elm.getAttribute("edge")!=null && elm.getAttribute("edge").equals("1")) {
 			edgeCell=elm;
 		}else {
 			edgeCell=(Element) elm.getElementsByTagName("mxCell").item(0);
-			fields=elm.getAttribute("fields");
-			System.out.println("Port "+elm.getAttribute("label")+"-> fields:"+fields);
+			fieldsAttr=elm.getAttribute("fields");
+			//System.out.println("Port "+elm.getAttribute("label")+"-> fields:"+fieldsAttr);
 		}
 		String source = edgeCell.getAttribute("source");
 		String target = edgeCell.getAttribute("target");
@@ -379,7 +380,24 @@ public class ModelLoader {
 		role.setPort(port);
 		comp.getPorts().add(port);
 		conn.getRoles().add(role);
-		if(fields!=null && !fields.isEmpty()) {
+		if(fieldsAttr!=null && !fieldsAttr.isEmpty()) {
+			String fields[]=fieldsAttr.split(",");
+			if(fields!=null && fields.length>0) {
+				for(short pos=0;pos<fields.length;pos++) {
+					String field= fields[pos];
+					Field f = fvFactory.createField();
+					if(field.split(":").length>1) {
+						f.setName(field.split(":")[0].trim());
+						f.setDtype(field.split(":")[1].trim());
+					}else {
+						f.setName(field.trim());
+						f.setDtype("Undefined");
+					}
+					f.setOrder(pos);
+					port.getFields().add(f);
+
+				}
+			}
 			//TODO crear fields
 		}
 	}

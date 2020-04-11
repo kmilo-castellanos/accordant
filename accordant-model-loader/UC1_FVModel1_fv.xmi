@@ -13,11 +13,19 @@
     <roles name="pcall_3_out_Sink" port="Sink_from_pcall_3"/>
   </conns>
   <comps xsi:type="accordant_fv:Ingestor" name="Ingestor" conn="" format="" props="">
-    <ports type="PROVIDED" name="Ingestor_to_pcall_1"/>
+    <ports type="PROVIDED" name="Ingestor_to_pcall_1">
+      <fields name="name" dtype="String"/>
+      <fields name="type" dtype="Number" order="1"/>
+      <fields name="date" dtype="Date" order="2"/>
+    </ports>
   </comps>
   <comps xsi:type="accordant_fv:Transformer" name="Transformer" procModel="BATCH" pmml="" sqlExp="" lambdaExp="" codeRepo="">
     <ports name="Transformer_from_pcall_1"/>
-    <ports type="PROVIDED" name="Transformer_to_pcall_2"/>
+    <ports type="PROVIDED" name="Transformer_to_pcall_2">
+      <fields name="place" dtype="String"/>
+      <fields name="date" dtype="Date" order="1"/>
+      <fields name="amount" dtype="Number" order="2"/>
+    </ports>
     <decision href="UC1_ai.xmi#Dec1"/>
   </comps>
   <comps xsi:type="accordant_fv:Estimator" name="Estimator" procModel="BATCH" pmml="Dtree.pmml">

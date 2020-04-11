@@ -45,13 +45,23 @@ public class MxGraph {
 				Element cellElement = (Element) cell;
 				String edge = cellElement.getAttribute("edge");
 				Node parent = cellElement.getParentNode();
-				// String id = cellElement.getAttribute("id"); 
-				// String source = cellElement.getAttribute("source");
-				// String target = cellElement.getAttribute("target");
-				if (edge != null && edge.equals("1") && parent != null && parent.getNodeName() == "root") {
-					if (edges==null)
-						edges=new ArrayList<Element>();
-					edges.add(cellElement);
+				Element parentEl = (Element) parent;
+				String id = cellElement.getAttribute("id");
+				String source = cellElement.getAttribute("source");
+				String target = cellElement.getAttribute("target");
+				//System.out.println("Edge " + id + "," + source + "->" + target + "," + parent.getNodeName() + ", class:"
+				//		+ parentEl.getAttribute("class"));
+				if (edge != null && edge.equals("1") && parent != null
+						&& (!parent.getNodeName().equals("object") || !parentEl.getAttribute("class").equals("Port"))) {
+					if (edges == null)
+						edges = new ArrayList<Element>();
+					if(parent.getNodeName().equals("object")) {
+						edges.add(parentEl);
+					}else {
+						edges.add(cellElement);
+					}
+					//System.out.println("Edge " + id + "," + source + "->" + target + "," + parent.getNodeName() + ", class:"
+					//		+ parentEl.getAttribute("class"));
 					// System.out.println("Edge "+id+":"+source+"->"+target);
 				}
 			}

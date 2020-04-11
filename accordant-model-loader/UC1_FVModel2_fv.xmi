@@ -12,8 +12,14 @@
     <ports type="PROVIDED" name="Ingestor_to_queue1"/>
   </comps>
   <comps xsi:type="accordant_fv:Estimator" name="Analytics" pmml="">
-    <ports type="PROVIDED" name="Analytics_to_queue2"/>
-    <ports name="Analytics_from_queue1"/>
+    <ports type="PROVIDED" name="Analytics_to_queue2">
+      <fields name="test" dtype="Undefined"/>
+      <fields name="test2" dtype="Undefined" order="1"/>
+    </ports>
+    <ports name="Analytics_from_queue1">
+      <fields name="name" dtype="Undefined"/>
+      <fields name="class" dtype="Undefined" order="1"/>
+    </ports>
   </comps>
   <comps xsi:type="accordant_fv:Sink" name="Sink" conn="" format="">
     <ports name="Sink_from_queue2"/>
