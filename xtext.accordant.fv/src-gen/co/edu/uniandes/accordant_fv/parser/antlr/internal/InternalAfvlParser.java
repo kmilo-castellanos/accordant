@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAfvlParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'FunctionalView'", "'use'", "'project'", "'{'", "'Components'", "','", "'}'", "'Connectors'", "'Port'", "':'", "'Role'", "'->'", "'Stream'", "'delivery'", "'sync'", "'notification'", "'buffering'", "'throughput'", "'props'", "'sensitivityPoint'", "'roles'", "'Adaptor'", "'Distributor'", "'Event'", "'ProcCall'", "'Transformer'", "'procModel'", "'pmml'", "'ports'", "'Estimator'", "'Ingestor'", "'type'", "'conn'", "'format'", "'Sink'", "'BEST_EFFORT'", "'AT_LEAST_ONE'", "'AT_MOST_ONE'", "'EXACTLY_ONE'", "'ASYNC'", "'SYNC'", "'REQUIRED'", "'PROVIDED'", "'OUT'", "'IN'", "'POLLED'", "'PUBSUB'", "'QUEUED'", "'CENTRAL'", "'BUFFERED'", "'UNBUFFERED'", "'ATOMIC'", "'HIGH_ORDER'", "'STREAM'", "'BATCH'", "'MICROBATCH'", "'HTTP'", "'DATABASE'", "'FILESYSTEM'", "'HDFS'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'FunctionalView'", "'use'", "'project'", "'{'", "'Components'", "','", "'}'", "'Connectors'", "'Port'", "':'", "'Role'", "'->'", "'Stream'", "'delivery'", "'sync'", "'notification'", "'buffering'", "'throughput'", "'props'", "'decision'", "'roles'", "'Adaptor'", "'Distributor'", "'Event'", "'ProcCall'", "'Transformer'", "'procModel'", "'pmml'", "'ports'", "'Estimator'", "'Ingestor'", "'type'", "'conn'", "'format'", "'Sink'", "'BEST_EFFORT'", "'AT_LEAST_ONE'", "'AT_MOST_ONE'", "'EXACTLY_ONE'", "'ASYNC'", "'SYNC'", "'REQUIRED'", "'PROVIDED'", "'OUT'", "'IN'", "'POLLED'", "'PUBSUB'", "'QUEUED'", "'CENTRAL'", "'BUFFERED'", "'UNBUFFERED'", "'ATOMIC'", "'HIGH_ORDER'", "'STREAM'", "'BATCH'", "'MICROBATCH'", "'HTTP'", "'DATABASE'", "'FILESYSTEM'", "'HDFS'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -1412,7 +1412,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStream"
-    // InternalAfvl.g:564:1: ruleStream returns [EObject current=null] : (otherlv_0= 'Stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' ) ;
+    // InternalAfvl.g:564:1: ruleStream returns [EObject current=null] : (otherlv_0= 'Stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' ) ;
     public final EObject ruleStream() throws RecognitionException {
         EObject current = null;
 
@@ -1461,11 +1461,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAfvl.g:570:2: ( (otherlv_0= 'Stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' ) )
-            // InternalAfvl.g:571:2: (otherlv_0= 'Stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' )
+            // InternalAfvl.g:570:2: ( (otherlv_0= 'Stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' ) )
+            // InternalAfvl.g:571:2: (otherlv_0= 'Stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' )
             {
-            // InternalAfvl.g:571:2: (otherlv_0= 'Stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' )
-            // InternalAfvl.g:572:3: otherlv_0= 'Stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}'
+            // InternalAfvl.g:571:2: (otherlv_0= 'Stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' )
+            // InternalAfvl.g:572:3: otherlv_0= 'Stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}'
             {
             otherlv_0=(Token)match(input,23,FOLLOW_3); 
 
@@ -1837,7 +1837,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalAfvl.g:772:3: (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )?
+            // InternalAfvl.g:772:3: (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -1846,11 +1846,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalAfvl.g:773:4: otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) )
+                    // InternalAfvl.g:773:4: otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) )
                     {
                     otherlv_21=(Token)match(input,30,FOLLOW_13); 
 
-                    				newLeafNode(otherlv_21, grammarAccess.getStreamAccess().getSensitivityPointKeyword_9_0());
+                    				newLeafNode(otherlv_21, grammarAccess.getStreamAccess().getDecisionKeyword_9_0());
                     			
                     otherlv_22=(Token)match(input,20,FOLLOW_3); 
 
@@ -1869,7 +1869,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
                     					
                     otherlv_23=(Token)match(input,RULE_ID,FOLLOW_31); 
 
-                    						newLeafNode(otherlv_23, grammarAccess.getStreamAccess().getSpointSensitivityPointCrossReference_9_2_0());
+                    						newLeafNode(otherlv_23, grammarAccess.getStreamAccess().getDecisionArchDecisionCrossReference_9_2_0());
                     					
 
                     }
@@ -2052,7 +2052,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAdaptor"
-    // InternalAfvl.g:870:1: ruleAdaptor returns [EObject current=null] : (otherlv_0= 'Adaptor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) )? ) (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}' ) ;
+    // InternalAfvl.g:870:1: ruleAdaptor returns [EObject current=null] : (otherlv_0= 'Adaptor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) )? ) (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}' ) ;
     public final EObject ruleAdaptor() throws RecognitionException {
         EObject current = null;
 
@@ -2100,11 +2100,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAfvl.g:876:2: ( (otherlv_0= 'Adaptor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) )? ) (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}' ) )
-            // InternalAfvl.g:877:2: (otherlv_0= 'Adaptor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) )? ) (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}' )
+            // InternalAfvl.g:876:2: ( (otherlv_0= 'Adaptor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) )? ) (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}' ) )
+            // InternalAfvl.g:877:2: (otherlv_0= 'Adaptor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) )? ) (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}' )
             {
-            // InternalAfvl.g:877:2: (otherlv_0= 'Adaptor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) )? ) (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}' )
-            // InternalAfvl.g:878:3: otherlv_0= 'Adaptor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) )? ) (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}'
+            // InternalAfvl.g:877:2: (otherlv_0= 'Adaptor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) )? ) (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}' )
+            // InternalAfvl.g:878:3: otherlv_0= 'Adaptor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) )? ) (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}'
             {
             otherlv_0=(Token)match(input,32,FOLLOW_3); 
 
@@ -2476,7 +2476,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalAfvl.g:1078:3: (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )?
+            // InternalAfvl.g:1078:3: (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )?
             int alt23=2;
             int LA23_0 = input.LA(1);
 
@@ -2485,11 +2485,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
             }
             switch (alt23) {
                 case 1 :
-                    // InternalAfvl.g:1079:4: otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) )
+                    // InternalAfvl.g:1079:4: otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) )
                     {
                     otherlv_21=(Token)match(input,30,FOLLOW_13); 
 
-                    				newLeafNode(otherlv_21, grammarAccess.getAdaptorAccess().getSensitivityPointKeyword_9_0());
+                    				newLeafNode(otherlv_21, grammarAccess.getAdaptorAccess().getDecisionKeyword_9_0());
                     			
                     otherlv_22=(Token)match(input,20,FOLLOW_3); 
 
@@ -2508,7 +2508,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
                     					
                     otherlv_23=(Token)match(input,RULE_ID,FOLLOW_31); 
 
-                    						newLeafNode(otherlv_23, grammarAccess.getAdaptorAccess().getSpointSensitivityPointCrossReference_9_2_0());
+                    						newLeafNode(otherlv_23, grammarAccess.getAdaptorAccess().getDecisionArchDecisionCrossReference_9_2_0());
                     					
 
                     }
@@ -2687,7 +2687,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDistributor"
-    // InternalAfvl.g:1172:1: ruleDistributor returns [EObject current=null] : (otherlv_0= 'Distributor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}' ) ;
+    // InternalAfvl.g:1172:1: ruleDistributor returns [EObject current=null] : (otherlv_0= 'Distributor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}' ) ;
     public final EObject ruleDistributor() throws RecognitionException {
         EObject current = null;
 
@@ -2735,11 +2735,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAfvl.g:1178:2: ( (otherlv_0= 'Distributor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}' ) )
-            // InternalAfvl.g:1179:2: (otherlv_0= 'Distributor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}' )
+            // InternalAfvl.g:1178:2: ( (otherlv_0= 'Distributor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}' ) )
+            // InternalAfvl.g:1179:2: (otherlv_0= 'Distributor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}' )
             {
-            // InternalAfvl.g:1179:2: (otherlv_0= 'Distributor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}' )
-            // InternalAfvl.g:1180:3: otherlv_0= 'Distributor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}'
+            // InternalAfvl.g:1179:2: (otherlv_0= 'Distributor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}' )
+            // InternalAfvl.g:1180:3: otherlv_0= 'Distributor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= '{' ( (lv_roles_26_0= ruleRole ) ) (otherlv_27= ',' ( (lv_roles_28_0= ruleRole ) ) )* otherlv_29= '}' otherlv_30= '}'
             {
             otherlv_0=(Token)match(input,33,FOLLOW_3); 
 
@@ -3111,7 +3111,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalAfvl.g:1380:3: (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )?
+            // InternalAfvl.g:1380:3: (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )?
             int alt31=2;
             int LA31_0 = input.LA(1);
 
@@ -3120,11 +3120,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
             }
             switch (alt31) {
                 case 1 :
-                    // InternalAfvl.g:1381:4: otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) )
+                    // InternalAfvl.g:1381:4: otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) )
                     {
                     otherlv_21=(Token)match(input,30,FOLLOW_13); 
 
-                    				newLeafNode(otherlv_21, grammarAccess.getDistributorAccess().getSensitivityPointKeyword_9_0());
+                    				newLeafNode(otherlv_21, grammarAccess.getDistributorAccess().getDecisionKeyword_9_0());
                     			
                     otherlv_22=(Token)match(input,20,FOLLOW_3); 
 
@@ -3143,7 +3143,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
                     					
                     otherlv_23=(Token)match(input,RULE_ID,FOLLOW_31); 
 
-                    						newLeafNode(otherlv_23, grammarAccess.getDistributorAccess().getSpointSensitivityPointCrossReference_9_2_0());
+                    						newLeafNode(otherlv_23, grammarAccess.getDistributorAccess().getDecisionArchDecisionCrossReference_9_2_0());
                     					
 
                     }
@@ -3322,7 +3322,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEvent"
-    // InternalAfvl.g:1474:1: ruleEvent returns [EObject current=null] : (otherlv_0= 'Event' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' ) ;
+    // InternalAfvl.g:1474:1: ruleEvent returns [EObject current=null] : (otherlv_0= 'Event' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' ) ;
     public final EObject ruleEvent() throws RecognitionException {
         EObject current = null;
 
@@ -3371,11 +3371,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAfvl.g:1480:2: ( (otherlv_0= 'Event' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' ) )
-            // InternalAfvl.g:1481:2: (otherlv_0= 'Event' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' )
+            // InternalAfvl.g:1480:2: ( (otherlv_0= 'Event' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' ) )
+            // InternalAfvl.g:1481:2: (otherlv_0= 'Event' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' )
             {
-            // InternalAfvl.g:1481:2: (otherlv_0= 'Event' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' )
-            // InternalAfvl.g:1482:3: otherlv_0= 'Event' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}'
+            // InternalAfvl.g:1481:2: (otherlv_0= 'Event' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' )
+            // InternalAfvl.g:1482:3: otherlv_0= 'Event' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}'
             {
             otherlv_0=(Token)match(input,34,FOLLOW_3); 
 
@@ -3747,7 +3747,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalAfvl.g:1682:3: (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )?
+            // InternalAfvl.g:1682:3: (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )?
             int alt39=2;
             int LA39_0 = input.LA(1);
 
@@ -3756,11 +3756,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
             }
             switch (alt39) {
                 case 1 :
-                    // InternalAfvl.g:1683:4: otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) )
+                    // InternalAfvl.g:1683:4: otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) )
                     {
                     otherlv_21=(Token)match(input,30,FOLLOW_13); 
 
-                    				newLeafNode(otherlv_21, grammarAccess.getEventAccess().getSensitivityPointKeyword_9_0());
+                    				newLeafNode(otherlv_21, grammarAccess.getEventAccess().getDecisionKeyword_9_0());
                     			
                     otherlv_22=(Token)match(input,20,FOLLOW_3); 
 
@@ -3779,7 +3779,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
                     					
                     otherlv_23=(Token)match(input,RULE_ID,FOLLOW_31); 
 
-                    						newLeafNode(otherlv_23, grammarAccess.getEventAccess().getSpointSensitivityPointCrossReference_9_2_0());
+                    						newLeafNode(otherlv_23, grammarAccess.getEventAccess().getDecisionArchDecisionCrossReference_9_2_0());
                     					
 
                     }
@@ -3962,7 +3962,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProcedureCall"
-    // InternalAfvl.g:1780:1: ruleProcedureCall returns [EObject current=null] : (otherlv_0= 'ProcCall' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' ) ;
+    // InternalAfvl.g:1780:1: ruleProcedureCall returns [EObject current=null] : (otherlv_0= 'ProcCall' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' ) ;
     public final EObject ruleProcedureCall() throws RecognitionException {
         EObject current = null;
 
@@ -4011,11 +4011,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAfvl.g:1786:2: ( (otherlv_0= 'ProcCall' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' ) )
-            // InternalAfvl.g:1787:2: (otherlv_0= 'ProcCall' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' )
+            // InternalAfvl.g:1786:2: ( (otherlv_0= 'ProcCall' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' ) )
+            // InternalAfvl.g:1787:2: (otherlv_0= 'ProcCall' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' )
             {
-            // InternalAfvl.g:1787:2: (otherlv_0= 'ProcCall' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' )
-            // InternalAfvl.g:1788:3: otherlv_0= 'ProcCall' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}'
+            // InternalAfvl.g:1787:2: (otherlv_0= 'ProcCall' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}' )
+            // InternalAfvl.g:1788:3: otherlv_0= 'ProcCall' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'delivery' otherlv_4= ':' ( (lv_delivery_5_0= ruleDeliveryModel ) ) )? (otherlv_6= 'sync' otherlv_7= ':' ( (lv_synct_8_0= ruleSyncType ) ) )? (otherlv_9= 'notification' otherlv_10= ':' ( (lv_notification_11_0= ruleNotificationModel ) ) )? (otherlv_12= 'buffering' otherlv_13= ':' ( (lv_buffering_14_0= ruleBuffering ) ) )? (otherlv_15= 'throughput' otherlv_16= ':' ( (lv_throughput_17_0= ruleThroughput ) ) )? (otherlv_18= 'props' otherlv_19= ':' ( (lv_props_20_0= ruleEString ) ) )? (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )? otherlv_24= 'roles' otherlv_25= ':' otherlv_26= '{' ( (lv_roles_27_0= ruleRole ) ) (otherlv_28= ',' ( (lv_roles_29_0= ruleRole ) ) )* otherlv_30= '}' otherlv_31= '}'
             {
             otherlv_0=(Token)match(input,35,FOLLOW_3); 
 
@@ -4387,7 +4387,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalAfvl.g:1988:3: (otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )?
+            // InternalAfvl.g:1988:3: (otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) ) )?
             int alt47=2;
             int LA47_0 = input.LA(1);
 
@@ -4396,11 +4396,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
             }
             switch (alt47) {
                 case 1 :
-                    // InternalAfvl.g:1989:4: otherlv_21= 'sensitivityPoint' otherlv_22= ':' ( (otherlv_23= RULE_ID ) )
+                    // InternalAfvl.g:1989:4: otherlv_21= 'decision' otherlv_22= ':' ( (otherlv_23= RULE_ID ) )
                     {
                     otherlv_21=(Token)match(input,30,FOLLOW_13); 
 
-                    				newLeafNode(otherlv_21, grammarAccess.getProcedureCallAccess().getSensitivityPointKeyword_9_0());
+                    				newLeafNode(otherlv_21, grammarAccess.getProcedureCallAccess().getDecisionKeyword_9_0());
                     			
                     otherlv_22=(Token)match(input,20,FOLLOW_3); 
 
@@ -4419,7 +4419,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
                     					
                     otherlv_23=(Token)match(input,RULE_ID,FOLLOW_31); 
 
-                    						newLeafNode(otherlv_23, grammarAccess.getProcedureCallAccess().getSpointSensitivityPointCrossReference_9_2_0());
+                    						newLeafNode(otherlv_23, grammarAccess.getProcedureCallAccess().getDecisionArchDecisionCrossReference_9_2_0());
                     					
 
                     }
@@ -4602,7 +4602,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransformer"
-    // InternalAfvl.g:2086:1: ruleTransformer returns [EObject current=null] : (otherlv_0= 'Transformer' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'sensitivityPoint' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}' ) ;
+    // InternalAfvl.g:2086:1: ruleTransformer returns [EObject current=null] : (otherlv_0= 'Transformer' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'decision' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}' ) ;
     public final EObject ruleTransformer() throws RecognitionException {
         EObject current = null;
 
@@ -4635,11 +4635,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAfvl.g:2092:2: ( (otherlv_0= 'Transformer' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'sensitivityPoint' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}' ) )
-            // InternalAfvl.g:2093:2: (otherlv_0= 'Transformer' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'sensitivityPoint' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}' )
+            // InternalAfvl.g:2092:2: ( (otherlv_0= 'Transformer' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'decision' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}' ) )
+            // InternalAfvl.g:2093:2: (otherlv_0= 'Transformer' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'decision' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}' )
             {
-            // InternalAfvl.g:2093:2: (otherlv_0= 'Transformer' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'sensitivityPoint' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}' )
-            // InternalAfvl.g:2094:3: otherlv_0= 'Transformer' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'sensitivityPoint' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}'
+            // InternalAfvl.g:2093:2: (otherlv_0= 'Transformer' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'decision' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}' )
+            // InternalAfvl.g:2094:3: otherlv_0= 'Transformer' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'decision' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}'
             {
             otherlv_0=(Token)match(input,36,FOLLOW_3); 
 
@@ -4787,7 +4787,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalAfvl.g:2178:3: (otherlv_9= 'sensitivityPoint' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )?
+            // InternalAfvl.g:2178:3: (otherlv_9= 'decision' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )?
             int alt51=2;
             int LA51_0 = input.LA(1);
 
@@ -4796,11 +4796,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
             }
             switch (alt51) {
                 case 1 :
-                    // InternalAfvl.g:2179:4: otherlv_9= 'sensitivityPoint' otherlv_10= ':' ( (otherlv_11= RULE_ID ) )
+                    // InternalAfvl.g:2179:4: otherlv_9= 'decision' otherlv_10= ':' ( (otherlv_11= RULE_ID ) )
                     {
                     otherlv_9=(Token)match(input,30,FOLLOW_13); 
 
-                    				newLeafNode(otherlv_9, grammarAccess.getTransformerAccess().getSensitivityPointKeyword_5_0());
+                    				newLeafNode(otherlv_9, grammarAccess.getTransformerAccess().getDecisionKeyword_5_0());
                     			
                     otherlv_10=(Token)match(input,20,FOLLOW_3); 
 
@@ -4819,7 +4819,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
                     					
                     otherlv_11=(Token)match(input,RULE_ID,FOLLOW_39); 
 
-                    						newLeafNode(otherlv_11, grammarAccess.getTransformerAccess().getSpointSensitivityPointCrossReference_5_2_0());
+                    						newLeafNode(otherlv_11, grammarAccess.getTransformerAccess().getDecisionArchDecisionCrossReference_5_2_0());
                     					
 
                     }
@@ -5002,7 +5002,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEstimator"
-    // InternalAfvl.g:2276:1: ruleEstimator returns [EObject current=null] : (otherlv_0= 'Estimator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'sensitivityPoint' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}' ) ;
+    // InternalAfvl.g:2276:1: ruleEstimator returns [EObject current=null] : (otherlv_0= 'Estimator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'decision' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}' ) ;
     public final EObject ruleEstimator() throws RecognitionException {
         EObject current = null;
 
@@ -5035,11 +5035,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAfvl.g:2282:2: ( (otherlv_0= 'Estimator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'sensitivityPoint' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}' ) )
-            // InternalAfvl.g:2283:2: (otherlv_0= 'Estimator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'sensitivityPoint' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}' )
+            // InternalAfvl.g:2282:2: ( (otherlv_0= 'Estimator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'decision' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}' ) )
+            // InternalAfvl.g:2283:2: (otherlv_0= 'Estimator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'decision' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}' )
             {
-            // InternalAfvl.g:2283:2: (otherlv_0= 'Estimator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'sensitivityPoint' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}' )
-            // InternalAfvl.g:2284:3: otherlv_0= 'Estimator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'sensitivityPoint' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}'
+            // InternalAfvl.g:2283:2: (otherlv_0= 'Estimator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'decision' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}' )
+            // InternalAfvl.g:2284:3: otherlv_0= 'Estimator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'procModel' otherlv_4= ':' ( (lv_procModel_5_0= ruleProcessingModel ) ) )? (otherlv_6= 'pmml' otherlv_7= ':' ( (lv_pmml_8_0= ruleEString ) ) )? (otherlv_9= 'decision' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )? otherlv_12= 'ports' otherlv_13= ':' otherlv_14= '{' ( (lv_ports_15_0= rulePort ) ) (otherlv_16= ',' ( (lv_ports_17_0= rulePort ) ) )* otherlv_18= '}' otherlv_19= '}'
             {
             otherlv_0=(Token)match(input,40,FOLLOW_3); 
 
@@ -5187,7 +5187,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalAfvl.g:2368:3: (otherlv_9= 'sensitivityPoint' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )?
+            // InternalAfvl.g:2368:3: (otherlv_9= 'decision' otherlv_10= ':' ( (otherlv_11= RULE_ID ) ) )?
             int alt55=2;
             int LA55_0 = input.LA(1);
 
@@ -5196,11 +5196,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
             }
             switch (alt55) {
                 case 1 :
-                    // InternalAfvl.g:2369:4: otherlv_9= 'sensitivityPoint' otherlv_10= ':' ( (otherlv_11= RULE_ID ) )
+                    // InternalAfvl.g:2369:4: otherlv_9= 'decision' otherlv_10= ':' ( (otherlv_11= RULE_ID ) )
                     {
                     otherlv_9=(Token)match(input,30,FOLLOW_13); 
 
-                    				newLeafNode(otherlv_9, grammarAccess.getEstimatorAccess().getSensitivityPointKeyword_5_0());
+                    				newLeafNode(otherlv_9, grammarAccess.getEstimatorAccess().getDecisionKeyword_5_0());
                     			
                     otherlv_10=(Token)match(input,20,FOLLOW_3); 
 
@@ -5219,7 +5219,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
                     					
                     otherlv_11=(Token)match(input,RULE_ID,FOLLOW_39); 
 
-                    						newLeafNode(otherlv_11, grammarAccess.getEstimatorAccess().getSpointSensitivityPointCrossReference_5_2_0());
+                    						newLeafNode(otherlv_11, grammarAccess.getEstimatorAccess().getDecisionArchDecisionCrossReference_5_2_0());
                     					
 
                     }
@@ -5402,7 +5402,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIngestor"
-    // InternalAfvl.g:2466:1: ruleIngestor returns [EObject current=null] : (otherlv_0= 'Ingestor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}' ) ;
+    // InternalAfvl.g:2466:1: ruleIngestor returns [EObject current=null] : (otherlv_0= 'Ingestor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}' ) ;
     public final EObject ruleIngestor() throws RecognitionException {
         EObject current = null;
 
@@ -5447,11 +5447,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAfvl.g:2472:2: ( (otherlv_0= 'Ingestor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}' ) )
-            // InternalAfvl.g:2473:2: (otherlv_0= 'Ingestor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}' )
+            // InternalAfvl.g:2472:2: ( (otherlv_0= 'Ingestor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}' ) )
+            // InternalAfvl.g:2473:2: (otherlv_0= 'Ingestor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}' )
             {
-            // InternalAfvl.g:2473:2: (otherlv_0= 'Ingestor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}' )
-            // InternalAfvl.g:2474:3: otherlv_0= 'Ingestor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}'
+            // InternalAfvl.g:2473:2: (otherlv_0= 'Ingestor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}' )
+            // InternalAfvl.g:2474:3: otherlv_0= 'Ingestor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}'
             {
             otherlv_0=(Token)match(input,41,FOLLOW_3); 
 
@@ -5750,7 +5750,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalAfvl.g:2643:3: (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )?
+            // InternalAfvl.g:2643:3: (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )?
             int alt61=2;
             int LA61_0 = input.LA(1);
 
@@ -5759,11 +5759,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
             }
             switch (alt61) {
                 case 1 :
-                    // InternalAfvl.g:2644:4: otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) )
+                    // InternalAfvl.g:2644:4: otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) )
                     {
                     otherlv_18=(Token)match(input,30,FOLLOW_13); 
 
-                    				newLeafNode(otherlv_18, grammarAccess.getIngestorAccess().getSensitivityPointKeyword_10_0());
+                    				newLeafNode(otherlv_18, grammarAccess.getIngestorAccess().getDecisionKeyword_10_0());
                     			
                     otherlv_19=(Token)match(input,20,FOLLOW_3); 
 
@@ -5782,7 +5782,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
                     					
                     otherlv_20=(Token)match(input,RULE_ID,FOLLOW_39); 
 
-                    						newLeafNode(otherlv_20, grammarAccess.getIngestorAccess().getSpointSensitivityPointCrossReference_10_2_0());
+                    						newLeafNode(otherlv_20, grammarAccess.getIngestorAccess().getDecisionArchDecisionCrossReference_10_2_0());
                     					
 
                     }
@@ -5965,7 +5965,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSink"
-    // InternalAfvl.g:2741:1: ruleSink returns [EObject current=null] : (otherlv_0= 'Sink' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}' ) ;
+    // InternalAfvl.g:2741:1: ruleSink returns [EObject current=null] : (otherlv_0= 'Sink' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}' ) ;
     public final EObject ruleSink() throws RecognitionException {
         EObject current = null;
 
@@ -6010,11 +6010,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAfvl.g:2747:2: ( (otherlv_0= 'Sink' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}' ) )
-            // InternalAfvl.g:2748:2: (otherlv_0= 'Sink' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}' )
+            // InternalAfvl.g:2747:2: ( (otherlv_0= 'Sink' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}' ) )
+            // InternalAfvl.g:2748:2: (otherlv_0= 'Sink' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}' )
             {
-            // InternalAfvl.g:2748:2: (otherlv_0= 'Sink' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}' )
-            // InternalAfvl.g:2749:3: otherlv_0= 'Sink' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}'
+            // InternalAfvl.g:2748:2: (otherlv_0= 'Sink' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}' )
+            // InternalAfvl.g:2749:3: otherlv_0= 'Sink' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleAccessType ) ) (otherlv_6= 'procModel' otherlv_7= ':' ( (lv_procModel_8_0= ruleProcessingModel ) ) )? (otherlv_9= 'conn' otherlv_10= ':' ( (lv_conn_11_0= ruleEString ) ) )? (otherlv_12= 'format' otherlv_13= ':' ( (lv_format_14_0= ruleEString ) ) )? (otherlv_15= 'props' otherlv_16= ':' ( (lv_props_17_0= ruleEString ) ) )? (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )? otherlv_21= 'ports' otherlv_22= ':' otherlv_23= '{' ( (lv_ports_24_0= rulePort ) ) (otherlv_25= ',' ( (lv_ports_26_0= rulePort ) ) )* otherlv_27= '}' otherlv_28= '}'
             {
             otherlv_0=(Token)match(input,45,FOLLOW_3); 
 
@@ -6313,7 +6313,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalAfvl.g:2918:3: (otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )?
+            // InternalAfvl.g:2918:3: (otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) ) )?
             int alt67=2;
             int LA67_0 = input.LA(1);
 
@@ -6322,11 +6322,11 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
             }
             switch (alt67) {
                 case 1 :
-                    // InternalAfvl.g:2919:4: otherlv_18= 'sensitivityPoint' otherlv_19= ':' ( (otherlv_20= RULE_ID ) )
+                    // InternalAfvl.g:2919:4: otherlv_18= 'decision' otherlv_19= ':' ( (otherlv_20= RULE_ID ) )
                     {
                     otherlv_18=(Token)match(input,30,FOLLOW_13); 
 
-                    				newLeafNode(otherlv_18, grammarAccess.getSinkAccess().getSensitivityPointKeyword_10_0());
+                    				newLeafNode(otherlv_18, grammarAccess.getSinkAccess().getDecisionKeyword_10_0());
                     			
                     otherlv_19=(Token)match(input,20,FOLLOW_3); 
 
@@ -6345,7 +6345,7 @@ public class InternalAfvlParser extends AbstractInternalAntlrParser {
                     					
                     otherlv_20=(Token)match(input,RULE_ID,FOLLOW_39); 
 
-                    						newLeafNode(otherlv_20, grammarAccess.getSinkAccess().getSpointSensitivityPointCrossReference_10_2_0());
+                    						newLeafNode(otherlv_20, grammarAccess.getSinkAccess().getDecisionArchDecisionCrossReference_10_2_0());
                     					
 
                     }

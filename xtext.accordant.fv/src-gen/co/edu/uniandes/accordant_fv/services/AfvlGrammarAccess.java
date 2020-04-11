@@ -387,11 +387,11 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPropsAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
 		private final RuleCall cPropsEStringParserRuleCall_8_2_0 = (RuleCall)cPropsAssignment_8_2.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cSensitivityPointKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cDecisionKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
 		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
-		private final Assignment cSpointAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_9_2_0 = (CrossReference)cSpointAssignment_9_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_9_2_0.eContents().get(1);
+		private final Assignment cDecisionAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final CrossReference cDecisionArchDecisionCrossReference_9_2_0 = (CrossReference)cDecisionAssignment_9_2.eContents().get(0);
+		private final RuleCall cDecisionArchDecisionIDTerminalRuleCall_9_2_0_1 = (RuleCall)cDecisionArchDecisionCrossReference_9_2_0.eContents().get(1);
 		private final Keyword cRolesKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Keyword cColonKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Keyword cLeftCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
@@ -410,14 +410,14 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//	name=ID
 		//	'{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 		//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-		//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])?
 		//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Stream' name=ID '{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 		//notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-		//('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? 'roles' ':' '{' roles+=Role (","
+		//('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])? 'roles' ':' '{' roles+=Role (","
 		//roles+=Role)* '}' '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -523,23 +523,23 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPropsEStringParserRuleCall_8_2_0() { return cPropsEStringParserRuleCall_8_2_0; }
 		
-		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//('decision' ':' decision=[rq::ArchDecision])?
 		public Group getGroup_9() { return cGroup_9; }
 		
-		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_9_0() { return cSensitivityPointKeyword_9_0; }
+		//'decision'
+		public Keyword getDecisionKeyword_9_0() { return cDecisionKeyword_9_0; }
 		
 		//':'
 		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 		
-		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_9_2() { return cSpointAssignment_9_2; }
+		//decision=[rq::ArchDecision]
+		public Assignment getDecisionAssignment_9_2() { return cDecisionAssignment_9_2; }
 		
-		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_9_2_0() { return cSpointSensitivityPointCrossReference_9_2_0; }
+		//[rq::ArchDecision]
+		public CrossReference getDecisionArchDecisionCrossReference_9_2_0() { return cDecisionArchDecisionCrossReference_9_2_0; }
 		
 		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1; }
+		public RuleCall getDecisionArchDecisionIDTerminalRuleCall_9_2_0_1() { return cDecisionArchDecisionIDTerminalRuleCall_9_2_0_1; }
 		
 		//'roles'
 		public Keyword getRolesKeyword_10() { return cRolesKeyword_10; }
@@ -612,11 +612,11 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPropsAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
 		private final RuleCall cPropsEStringParserRuleCall_8_2_0 = (RuleCall)cPropsAssignment_8_2.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cSensitivityPointKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cDecisionKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
 		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
-		private final Assignment cSpointAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_9_2_0 = (CrossReference)cSpointAssignment_9_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_9_2_0.eContents().get(1);
+		private final Assignment cDecisionAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final CrossReference cDecisionArchDecisionCrossReference_9_2_0 = (CrossReference)cDecisionAssignment_9_2.eContents().get(0);
+		private final RuleCall cDecisionArchDecisionIDTerminalRuleCall_9_2_0_1 = (RuleCall)cDecisionArchDecisionCrossReference_9_2_0.eContents().get(1);
 		private final Keyword cRolesKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Keyword cLeftCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Assignment cRolesAssignment_12 = (Assignment)cGroup.eContents().get(12);
@@ -633,15 +633,15 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//	name=ID
 		//	'{' ('delivery' ':' delivery=DeliveryModel?) ('sync' ':' synct=SyncType)? ('notification' ':'
 		//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-		//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])?
 		//	'roles' '{' roles+=Role ("," roles+=Role)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Adaptor' name=ID '{' ('delivery' ':' delivery=DeliveryModel?) ('sync' ':' synct=SyncType)? ('notification' ':'
 		//notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-		//('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? 'roles' '{' roles+=Role (","
-		//roles+=Role)* '}' '}'
+		//('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])? 'roles' '{' roles+=Role ("," roles+=Role)*
+		//'}' '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Adaptor'
@@ -746,23 +746,23 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPropsEStringParserRuleCall_8_2_0() { return cPropsEStringParserRuleCall_8_2_0; }
 		
-		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//('decision' ':' decision=[rq::ArchDecision])?
 		public Group getGroup_9() { return cGroup_9; }
 		
-		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_9_0() { return cSensitivityPointKeyword_9_0; }
+		//'decision'
+		public Keyword getDecisionKeyword_9_0() { return cDecisionKeyword_9_0; }
 		
 		//':'
 		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 		
-		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_9_2() { return cSpointAssignment_9_2; }
+		//decision=[rq::ArchDecision]
+		public Assignment getDecisionAssignment_9_2() { return cDecisionAssignment_9_2; }
 		
-		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_9_2_0() { return cSpointSensitivityPointCrossReference_9_2_0; }
+		//[rq::ArchDecision]
+		public CrossReference getDecisionArchDecisionCrossReference_9_2_0() { return cDecisionArchDecisionCrossReference_9_2_0; }
 		
 		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1; }
+		public RuleCall getDecisionArchDecisionIDTerminalRuleCall_9_2_0_1() { return cDecisionArchDecisionIDTerminalRuleCall_9_2_0_1; }
 		
 		//'roles'
 		public Keyword getRolesKeyword_10() { return cRolesKeyword_10; }
@@ -832,11 +832,11 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPropsAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
 		private final RuleCall cPropsEStringParserRuleCall_8_2_0 = (RuleCall)cPropsAssignment_8_2.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cSensitivityPointKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cDecisionKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
 		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
-		private final Assignment cSpointAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_9_2_0 = (CrossReference)cSpointAssignment_9_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_9_2_0.eContents().get(1);
+		private final Assignment cDecisionAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final CrossReference cDecisionArchDecisionCrossReference_9_2_0 = (CrossReference)cDecisionAssignment_9_2.eContents().get(0);
+		private final RuleCall cDecisionArchDecisionIDTerminalRuleCall_9_2_0_1 = (RuleCall)cDecisionArchDecisionCrossReference_9_2_0.eContents().get(1);
 		private final Keyword cRolesKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Keyword cLeftCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Assignment cRolesAssignment_12 = (Assignment)cGroup.eContents().get(12);
@@ -853,15 +853,15 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//	name=ID
 		//	'{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 		//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-		//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])?
 		//	'roles' '{' roles+=Role ("," roles+=Role)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Distributor' name=ID '{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 		//notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-		//('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? 'roles' '{' roles+=Role (","
-		//roles+=Role)* '}' '}'
+		//('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])? 'roles' '{' roles+=Role ("," roles+=Role)*
+		//'}' '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Distributor'
@@ -966,23 +966,23 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPropsEStringParserRuleCall_8_2_0() { return cPropsEStringParserRuleCall_8_2_0; }
 		
-		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//('decision' ':' decision=[rq::ArchDecision])?
 		public Group getGroup_9() { return cGroup_9; }
 		
-		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_9_0() { return cSensitivityPointKeyword_9_0; }
+		//'decision'
+		public Keyword getDecisionKeyword_9_0() { return cDecisionKeyword_9_0; }
 		
 		//':'
 		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 		
-		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_9_2() { return cSpointAssignment_9_2; }
+		//decision=[rq::ArchDecision]
+		public Assignment getDecisionAssignment_9_2() { return cDecisionAssignment_9_2; }
 		
-		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_9_2_0() { return cSpointSensitivityPointCrossReference_9_2_0; }
+		//[rq::ArchDecision]
+		public CrossReference getDecisionArchDecisionCrossReference_9_2_0() { return cDecisionArchDecisionCrossReference_9_2_0; }
 		
 		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1; }
+		public RuleCall getDecisionArchDecisionIDTerminalRuleCall_9_2_0_1() { return cDecisionArchDecisionIDTerminalRuleCall_9_2_0_1; }
 		
 		//'roles'
 		public Keyword getRolesKeyword_10() { return cRolesKeyword_10; }
@@ -1052,11 +1052,11 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPropsAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
 		private final RuleCall cPropsEStringParserRuleCall_8_2_0 = (RuleCall)cPropsAssignment_8_2.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cSensitivityPointKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cDecisionKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
 		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
-		private final Assignment cSpointAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_9_2_0 = (CrossReference)cSpointAssignment_9_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_9_2_0.eContents().get(1);
+		private final Assignment cDecisionAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final CrossReference cDecisionArchDecisionCrossReference_9_2_0 = (CrossReference)cDecisionAssignment_9_2.eContents().get(0);
+		private final RuleCall cDecisionArchDecisionIDTerminalRuleCall_9_2_0_1 = (RuleCall)cDecisionArchDecisionCrossReference_9_2_0.eContents().get(1);
 		private final Keyword cRolesKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Keyword cColonKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Keyword cLeftCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
@@ -1074,14 +1074,14 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//	name=ID
 		//	'{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 		//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-		//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])?
 		//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Event' name=ID '{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 		//notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-		//('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? 'roles' ':' '{' roles+=Role (","
+		//('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])? 'roles' ':' '{' roles+=Role (","
 		//roles+=Role)* '}' '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -1187,23 +1187,23 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPropsEStringParserRuleCall_8_2_0() { return cPropsEStringParserRuleCall_8_2_0; }
 		
-		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//('decision' ':' decision=[rq::ArchDecision])?
 		public Group getGroup_9() { return cGroup_9; }
 		
-		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_9_0() { return cSensitivityPointKeyword_9_0; }
+		//'decision'
+		public Keyword getDecisionKeyword_9_0() { return cDecisionKeyword_9_0; }
 		
 		//':'
 		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 		
-		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_9_2() { return cSpointAssignment_9_2; }
+		//decision=[rq::ArchDecision]
+		public Assignment getDecisionAssignment_9_2() { return cDecisionAssignment_9_2; }
 		
-		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_9_2_0() { return cSpointSensitivityPointCrossReference_9_2_0; }
+		//[rq::ArchDecision]
+		public CrossReference getDecisionArchDecisionCrossReference_9_2_0() { return cDecisionArchDecisionCrossReference_9_2_0; }
 		
 		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1; }
+		public RuleCall getDecisionArchDecisionIDTerminalRuleCall_9_2_0_1() { return cDecisionArchDecisionIDTerminalRuleCall_9_2_0_1; }
 		
 		//'roles'
 		public Keyword getRolesKeyword_10() { return cRolesKeyword_10; }
@@ -1276,11 +1276,11 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPropsAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
 		private final RuleCall cPropsEStringParserRuleCall_8_2_0 = (RuleCall)cPropsAssignment_8_2.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cSensitivityPointKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cDecisionKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
 		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
-		private final Assignment cSpointAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_9_2_0 = (CrossReference)cSpointAssignment_9_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_9_2_0.eContents().get(1);
+		private final Assignment cDecisionAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final CrossReference cDecisionArchDecisionCrossReference_9_2_0 = (CrossReference)cDecisionAssignment_9_2.eContents().get(0);
+		private final RuleCall cDecisionArchDecisionIDTerminalRuleCall_9_2_0_1 = (RuleCall)cDecisionArchDecisionCrossReference_9_2_0.eContents().get(1);
 		private final Keyword cRolesKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Keyword cColonKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Keyword cLeftCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
@@ -1298,14 +1298,14 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//	name=ID
 		//	'{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 		//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-		//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])?
 		//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ProcCall' name=ID '{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 		//notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-		//('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])? 'roles' ':' '{' roles+=Role (","
+		//('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])? 'roles' ':' '{' roles+=Role (","
 		//roles+=Role)* '}' '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -1411,23 +1411,23 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPropsEStringParserRuleCall_8_2_0() { return cPropsEStringParserRuleCall_8_2_0; }
 		
-		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//('decision' ':' decision=[rq::ArchDecision])?
 		public Group getGroup_9() { return cGroup_9; }
 		
-		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_9_0() { return cSensitivityPointKeyword_9_0; }
+		//'decision'
+		public Keyword getDecisionKeyword_9_0() { return cDecisionKeyword_9_0; }
 		
 		//':'
 		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 		
-		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_9_2() { return cSpointAssignment_9_2; }
+		//decision=[rq::ArchDecision]
+		public Assignment getDecisionAssignment_9_2() { return cDecisionAssignment_9_2; }
 		
-		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_9_2_0() { return cSpointSensitivityPointCrossReference_9_2_0; }
+		//[rq::ArchDecision]
+		public CrossReference getDecisionArchDecisionCrossReference_9_2_0() { return cDecisionArchDecisionCrossReference_9_2_0; }
 		
 		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_9_2_0_1; }
+		public RuleCall getDecisionArchDecisionIDTerminalRuleCall_9_2_0_1() { return cDecisionArchDecisionIDTerminalRuleCall_9_2_0_1; }
 		
 		//'roles'
 		public Keyword getRolesKeyword_10() { return cRolesKeyword_10; }
@@ -1480,11 +1480,11 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPmmlAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
 		private final RuleCall cPmmlEStringParserRuleCall_4_2_0 = (RuleCall)cPmmlAssignment_4_2.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cSensitivityPointKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cDecisionKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cSpointAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_5_2_0 = (CrossReference)cSpointAssignment_5_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_5_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_5_2_0.eContents().get(1);
+		private final Assignment cDecisionAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final CrossReference cDecisionArchDecisionCrossReference_5_2_0 = (CrossReference)cDecisionAssignment_5_2.eContents().get(0);
+		private final RuleCall cDecisionArchDecisionIDTerminalRuleCall_5_2_0_1 = (RuleCall)cDecisionArchDecisionCrossReference_5_2_0.eContents().get(1);
 		private final Keyword cPortsKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
@@ -1500,14 +1500,14 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//Transformer:
 		//	'Transformer'
 		//	name=ID
-		//	'{' ('procModel' ':' procModel=ProcessingModel)? ('pmml' ':' pmml=EString)? ('sensitivityPoint' ':'
-		//	spoint=[rq::SensitivityPoint])?
+		//	'{' ('procModel' ':' procModel=ProcessingModel)? ('pmml' ':' pmml=EString)? ('decision' ':'
+		//	decision=[rq::ArchDecision])?
 		//	'ports' ':' '{' ports+=Port ("," ports+=Port)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Transformer' name=ID '{' ('procModel' ':' procModel=ProcessingModel)? ('pmml' ':' pmml=EString)? ('sensitivityPoint'
-		//':' spoint=[rq::SensitivityPoint])? 'ports' ':' '{' ports+=Port ("," ports+=Port)* '}' '}'
+		//'Transformer' name=ID '{' ('procModel' ':' procModel=ProcessingModel)? ('pmml' ':' pmml=EString)? ('decision' ':'
+		//decision=[rq::ArchDecision])? 'ports' ':' '{' ports+=Port ("," ports+=Port)* '}' '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Transformer'
@@ -1552,23 +1552,23 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPmmlEStringParserRuleCall_4_2_0() { return cPmmlEStringParserRuleCall_4_2_0; }
 		
-		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//('decision' ':' decision=[rq::ArchDecision])?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_5_0() { return cSensitivityPointKeyword_5_0; }
+		//'decision'
+		public Keyword getDecisionKeyword_5_0() { return cDecisionKeyword_5_0; }
 		
 		//':'
 		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
 		
-		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_5_2() { return cSpointAssignment_5_2; }
+		//decision=[rq::ArchDecision]
+		public Assignment getDecisionAssignment_5_2() { return cDecisionAssignment_5_2; }
 		
-		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_5_2_0() { return cSpointSensitivityPointCrossReference_5_2_0; }
+		//[rq::ArchDecision]
+		public CrossReference getDecisionArchDecisionCrossReference_5_2_0() { return cDecisionArchDecisionCrossReference_5_2_0; }
 		
 		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_5_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_5_2_0_1; }
+		public RuleCall getDecisionArchDecisionIDTerminalRuleCall_5_2_0_1() { return cDecisionArchDecisionIDTerminalRuleCall_5_2_0_1; }
 		
 		//'ports'
 		public Keyword getPortsKeyword_6() { return cPortsKeyword_6; }
@@ -1621,11 +1621,11 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPmmlAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
 		private final RuleCall cPmmlEStringParserRuleCall_4_2_0 = (RuleCall)cPmmlAssignment_4_2.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cSensitivityPointKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cDecisionKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cSpointAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_5_2_0 = (CrossReference)cSpointAssignment_5_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_5_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_5_2_0.eContents().get(1);
+		private final Assignment cDecisionAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final CrossReference cDecisionArchDecisionCrossReference_5_2_0 = (CrossReference)cDecisionAssignment_5_2.eContents().get(0);
+		private final RuleCall cDecisionArchDecisionIDTerminalRuleCall_5_2_0_1 = (RuleCall)cDecisionArchDecisionCrossReference_5_2_0.eContents().get(1);
 		private final Keyword cPortsKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
@@ -1641,14 +1641,14 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//Estimator:
 		//	'Estimator'
 		//	name=ID
-		//	'{' ('procModel' ':' procModel=ProcessingModel)? ('pmml' ':' pmml=EString)? ('sensitivityPoint' ':'
-		//	spoint=[rq::SensitivityPoint])?
+		//	'{' ('procModel' ':' procModel=ProcessingModel)? ('pmml' ':' pmml=EString)? ('decision' ':'
+		//	decision=[rq::ArchDecision])?
 		//	'ports' ':' '{' ports+=Port ("," ports+=Port)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Estimator' name=ID '{' ('procModel' ':' procModel=ProcessingModel)? ('pmml' ':' pmml=EString)? ('sensitivityPoint' ':'
-		//spoint=[rq::SensitivityPoint])? 'ports' ':' '{' ports+=Port ("," ports+=Port)* '}' '}'
+		//'Estimator' name=ID '{' ('procModel' ':' procModel=ProcessingModel)? ('pmml' ':' pmml=EString)? ('decision' ':'
+		//decision=[rq::ArchDecision])? 'ports' ':' '{' ports+=Port ("," ports+=Port)* '}' '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Estimator'
@@ -1693,23 +1693,23 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPmmlEStringParserRuleCall_4_2_0() { return cPmmlEStringParserRuleCall_4_2_0; }
 		
-		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//('decision' ':' decision=[rq::ArchDecision])?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_5_0() { return cSensitivityPointKeyword_5_0; }
+		//'decision'
+		public Keyword getDecisionKeyword_5_0() { return cDecisionKeyword_5_0; }
 		
 		//':'
 		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
 		
-		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_5_2() { return cSpointAssignment_5_2; }
+		//decision=[rq::ArchDecision]
+		public Assignment getDecisionAssignment_5_2() { return cDecisionAssignment_5_2; }
 		
-		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_5_2_0() { return cSpointSensitivityPointCrossReference_5_2_0; }
+		//[rq::ArchDecision]
+		public CrossReference getDecisionArchDecisionCrossReference_5_2_0() { return cDecisionArchDecisionCrossReference_5_2_0; }
 		
 		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_5_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_5_2_0_1; }
+		public RuleCall getDecisionArchDecisionIDTerminalRuleCall_5_2_0_1() { return cDecisionArchDecisionIDTerminalRuleCall_5_2_0_1; }
 		
 		//'ports'
 		public Keyword getPortsKeyword_6() { return cPortsKeyword_6; }
@@ -1776,11 +1776,11 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPropsAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
 		private final RuleCall cPropsEStringParserRuleCall_9_2_0 = (RuleCall)cPropsAssignment_9_2.eContents().get(0);
 		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cSensitivityPointKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Keyword cDecisionKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
 		private final Keyword cColonKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
-		private final Assignment cSpointAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_10_2_0 = (CrossReference)cSpointAssignment_10_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_10_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_10_2_0.eContents().get(1);
+		private final Assignment cDecisionAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
+		private final CrossReference cDecisionArchDecisionCrossReference_10_2_0 = (CrossReference)cDecisionAssignment_10_2.eContents().get(0);
+		private final RuleCall cDecisionArchDecisionIDTerminalRuleCall_10_2_0_1 = (RuleCall)cDecisionArchDecisionCrossReference_10_2_0.eContents().get(1);
 		private final Keyword cPortsKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Keyword cColonKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		private final Keyword cLeftCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
@@ -1798,14 +1798,14 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//	name=ID
 		//	'{'
 		//	'type' ':' type=AccessType ('procModel' ':' procModel=ProcessingModel)? ('conn' ':' conn=EString)? ('format' ':'
-		//	format=EString)? ('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	format=EString)? ('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])?
 		//	'ports' ':' '{' ports+=Port ("," ports+=Port)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Ingestor' name=ID '{' 'type' ':' type=AccessType ('procModel' ':' procModel=ProcessingModel)? ('conn' ':'
-		//conn=EString)? ('format' ':' format=EString)? ('props' ':' props=EString)? ('sensitivityPoint' ':'
-		//spoint=[rq::SensitivityPoint])? 'ports' ':' '{' ports+=Port ("," ports+=Port)* '}' '}'
+		//conn=EString)? ('format' ':' format=EString)? ('props' ':' props=EString)? ('decision' ':'
+		//decision=[rq::ArchDecision])? 'ports' ':' '{' ports+=Port ("," ports+=Port)* '}' '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Ingestor'
@@ -1892,23 +1892,23 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPropsEStringParserRuleCall_9_2_0() { return cPropsEStringParserRuleCall_9_2_0; }
 		
-		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//('decision' ':' decision=[rq::ArchDecision])?
 		public Group getGroup_10() { return cGroup_10; }
 		
-		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_10_0() { return cSensitivityPointKeyword_10_0; }
+		//'decision'
+		public Keyword getDecisionKeyword_10_0() { return cDecisionKeyword_10_0; }
 		
 		//':'
 		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
 		
-		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_10_2() { return cSpointAssignment_10_2; }
+		//decision=[rq::ArchDecision]
+		public Assignment getDecisionAssignment_10_2() { return cDecisionAssignment_10_2; }
 		
-		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_10_2_0() { return cSpointSensitivityPointCrossReference_10_2_0; }
+		//[rq::ArchDecision]
+		public CrossReference getDecisionArchDecisionCrossReference_10_2_0() { return cDecisionArchDecisionCrossReference_10_2_0; }
 		
 		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_10_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_10_2_0_1; }
+		public RuleCall getDecisionArchDecisionIDTerminalRuleCall_10_2_0_1() { return cDecisionArchDecisionIDTerminalRuleCall_10_2_0_1; }
 		
 		//'ports'
 		public Keyword getPortsKeyword_11() { return cPortsKeyword_11; }
@@ -1975,11 +1975,11 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPropsAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
 		private final RuleCall cPropsEStringParserRuleCall_9_2_0 = (RuleCall)cPropsAssignment_9_2.eContents().get(0);
 		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cSensitivityPointKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Keyword cDecisionKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
 		private final Keyword cColonKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
-		private final Assignment cSpointAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
-		private final CrossReference cSpointSensitivityPointCrossReference_10_2_0 = (CrossReference)cSpointAssignment_10_2.eContents().get(0);
-		private final RuleCall cSpointSensitivityPointIDTerminalRuleCall_10_2_0_1 = (RuleCall)cSpointSensitivityPointCrossReference_10_2_0.eContents().get(1);
+		private final Assignment cDecisionAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
+		private final CrossReference cDecisionArchDecisionCrossReference_10_2_0 = (CrossReference)cDecisionAssignment_10_2.eContents().get(0);
+		private final RuleCall cDecisionArchDecisionIDTerminalRuleCall_10_2_0_1 = (RuleCall)cDecisionArchDecisionCrossReference_10_2_0.eContents().get(1);
 		private final Keyword cPortsKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Keyword cColonKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		private final Keyword cLeftCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
@@ -1997,14 +1997,14 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//	name=ID
 		//	'{'
 		//	'type' ':' type=AccessType ('procModel' ':' procModel=ProcessingModel)? ('conn' ':' conn=EString)? ('format' ':'
-		//	format=EString)? ('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//	format=EString)? ('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])?
 		//	'ports' ':' '{' ports+=Port ("," ports+=Port)* '}'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Sink' name=ID '{' 'type' ':' type=AccessType ('procModel' ':' procModel=ProcessingModel)? ('conn' ':' conn=EString)?
-		//('format' ':' format=EString)? ('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
-		//'ports' ':' '{' ports+=Port ("," ports+=Port)* '}' '}'
+		//('format' ':' format=EString)? ('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])? 'ports' ':'
+		//'{' ports+=Port ("," ports+=Port)* '}' '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Sink'
@@ -2091,23 +2091,23 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPropsEStringParserRuleCall_9_2_0() { return cPropsEStringParserRuleCall_9_2_0; }
 		
-		//('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+		//('decision' ':' decision=[rq::ArchDecision])?
 		public Group getGroup_10() { return cGroup_10; }
 		
-		//'sensitivityPoint'
-		public Keyword getSensitivityPointKeyword_10_0() { return cSensitivityPointKeyword_10_0; }
+		//'decision'
+		public Keyword getDecisionKeyword_10_0() { return cDecisionKeyword_10_0; }
 		
 		//':'
 		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
 		
-		//spoint=[rq::SensitivityPoint]
-		public Assignment getSpointAssignment_10_2() { return cSpointAssignment_10_2; }
+		//decision=[rq::ArchDecision]
+		public Assignment getDecisionAssignment_10_2() { return cDecisionAssignment_10_2; }
 		
-		//[rq::SensitivityPoint]
-		public CrossReference getSpointSensitivityPointCrossReference_10_2_0() { return cSpointSensitivityPointCrossReference_10_2_0; }
+		//[rq::ArchDecision]
+		public CrossReference getDecisionArchDecisionCrossReference_10_2_0() { return cDecisionArchDecisionCrossReference_10_2_0; }
 		
 		//ID
-		public RuleCall getSpointSensitivityPointIDTerminalRuleCall_10_2_0_1() { return cSpointSensitivityPointIDTerminalRuleCall_10_2_0_1; }
+		public RuleCall getDecisionArchDecisionIDTerminalRuleCall_10_2_0_1() { return cDecisionArchDecisionIDTerminalRuleCall_10_2_0_1; }
 		
 		//'ports'
 		public Keyword getPortsKeyword_11() { return cPortsKeyword_11; }
@@ -2686,7 +2686,7 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=ID
 	//	'{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 	//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-	//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])?
 	//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}'
 	//	'}';
 	public StreamElements getStreamAccess() {
@@ -2702,7 +2702,7 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=ID
 	//	'{' ('delivery' ':' delivery=DeliveryModel?) ('sync' ':' synct=SyncType)? ('notification' ':'
 	//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-	//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])?
 	//	'roles' '{' roles+=Role ("," roles+=Role)* '}'
 	//	'}';
 	public AdaptorElements getAdaptorAccess() {
@@ -2718,7 +2718,7 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=ID
 	//	'{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 	//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-	//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])?
 	//	'roles' '{' roles+=Role ("," roles+=Role)* '}'
 	//	'}';
 	public DistributorElements getDistributorAccess() {
@@ -2734,7 +2734,7 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=ID
 	//	'{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 	//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-	//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])?
 	//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}'
 	//	'}';
 	public EventElements getEventAccess() {
@@ -2750,7 +2750,7 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=ID
 	//	'{' ('delivery' ':' delivery=DeliveryModel)? ('sync' ':' synct=SyncType)? ('notification' ':'
 	//	notification=NotificationModel)? ('buffering' ':' buffering=Buffering)? ('throughput' ':' throughput=Throughput)?
-	//	('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])?
 	//	'roles' ':' '{' roles+=Role ("," roles+=Role)* '}'
 	//	'}';
 	public ProcedureCallElements getProcedureCallAccess() {
@@ -2784,8 +2784,8 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	//Transformer:
 	//	'Transformer'
 	//	name=ID
-	//	'{' ('procModel' ':' procModel=ProcessingModel)? ('pmml' ':' pmml=EString)? ('sensitivityPoint' ':'
-	//	spoint=[rq::SensitivityPoint])?
+	//	'{' ('procModel' ':' procModel=ProcessingModel)? ('pmml' ':' pmml=EString)? ('decision' ':'
+	//	decision=[rq::ArchDecision])?
 	//	'ports' ':' '{' ports+=Port ("," ports+=Port)* '}'
 	//	'}';
 	public TransformerElements getTransformerAccess() {
@@ -2799,8 +2799,8 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	//Estimator:
 	//	'Estimator'
 	//	name=ID
-	//	'{' ('procModel' ':' procModel=ProcessingModel)? ('pmml' ':' pmml=EString)? ('sensitivityPoint' ':'
-	//	spoint=[rq::SensitivityPoint])?
+	//	'{' ('procModel' ':' procModel=ProcessingModel)? ('pmml' ':' pmml=EString)? ('decision' ':'
+	//	decision=[rq::ArchDecision])?
 	//	'ports' ':' '{' ports+=Port ("," ports+=Port)* '}'
 	//	'}';
 	public EstimatorElements getEstimatorAccess() {
@@ -2816,7 +2816,7 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=ID
 	//	'{'
 	//	'type' ':' type=AccessType ('procModel' ':' procModel=ProcessingModel)? ('conn' ':' conn=EString)? ('format' ':'
-	//	format=EString)? ('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	format=EString)? ('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])?
 	//	'ports' ':' '{' ports+=Port ("," ports+=Port)* '}'
 	//	'}';
 	public IngestorElements getIngestorAccess() {
@@ -2832,7 +2832,7 @@ public class AfvlGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=ID
 	//	'{'
 	//	'type' ':' type=AccessType ('procModel' ':' procModel=ProcessingModel)? ('conn' ':' conn=EString)? ('format' ':'
-	//	format=EString)? ('props' ':' props=EString)? ('sensitivityPoint' ':' spoint=[rq::SensitivityPoint])?
+	//	format=EString)? ('props' ':' props=EString)? ('decision' ':' decision=[rq::ArchDecision])?
 	//	'ports' ':' '{' ports+=Port ("," ports+=Port)* '}'
 	//	'}';
 	public SinkElements getSinkAccess() {

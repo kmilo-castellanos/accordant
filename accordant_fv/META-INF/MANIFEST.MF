@@ -9,7 +9,10 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: co.edu.uniandes.accordant_fv,
  co.edu.uniandes.accordant_fv.impl,
- co.edu.uniandes.accordant_fv.util
+ co.edu.uniandes.accordant_fv.util,
+ co.edu.uniandes.accordant_rq,
+ co.edu.uniandes.accordant_rq.impl,
+ co.edu.uniandes.accordant_rq.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.core.runtime,
  accordant_rq;bundle-version="0.1.0"

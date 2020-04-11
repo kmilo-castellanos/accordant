@@ -1304,7 +1304,7 @@ public interface Accordant_fvPackage extends EPackage {
 	int PORT__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Fields</b></em>' containment reference.
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2273,10 +2273,10 @@ public interface Accordant_fvPackage extends EPackage {
 	EAttribute getPort_Name();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link co.edu.uniandes.accordant_fv.Port#getFields <em>Fields</em>}'.
+	 * Returns the meta object for the containment reference list '{@link co.edu.uniandes.accordant_fv.Port#getFields <em>Fields</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Fields</em>'.
+	 * @return the meta object for the containment reference list '<em>Fields</em>'.
 	 * @see co.edu.uniandes.accordant_fv.Port#getFields()
 	 * @see #getPort()
 	 * @generated
@@ -2907,7 +2907,7 @@ public interface Accordant_fvPackage extends EPackage {
 		EAttribute PORT__NAME = eINSTANCE.getPort_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAfvlParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'BEST_EFFORT'", "'AT_LEAST_ONE'", "'AT_MOST_ONE'", "'EXACTLY_ONE'", "'ASYNC'", "'SYNC'", "'REQUIRED'", "'PROVIDED'", "'OUT'", "'IN'", "'POLLED'", "'PUBSUB'", "'QUEUED'", "'CENTRAL'", "'BUFFERED'", "'UNBUFFERED'", "'ATOMIC'", "'HIGH_ORDER'", "'STREAM'", "'BATCH'", "'MICROBATCH'", "'HTTP'", "'DATABASE'", "'FILESYSTEM'", "'HDFS'", "'FunctionalView'", "'use'", "'project'", "'{'", "'Components'", "'}'", "'Connectors'", "','", "'Port'", "':'", "'Role'", "'->'", "'Stream'", "'roles'", "'delivery'", "'sync'", "'notification'", "'buffering'", "'throughput'", "'props'", "'sensitivityPoint'", "'Adaptor'", "'Distributor'", "'Event'", "'ProcCall'", "'Transformer'", "'ports'", "'procModel'", "'pmml'", "'Estimator'", "'Ingestor'", "'type'", "'conn'", "'format'", "'Sink'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'BEST_EFFORT'", "'AT_LEAST_ONE'", "'AT_MOST_ONE'", "'EXACTLY_ONE'", "'ASYNC'", "'SYNC'", "'REQUIRED'", "'PROVIDED'", "'OUT'", "'IN'", "'POLLED'", "'PUBSUB'", "'QUEUED'", "'CENTRAL'", "'BUFFERED'", "'UNBUFFERED'", "'ATOMIC'", "'HIGH_ORDER'", "'STREAM'", "'BATCH'", "'MICROBATCH'", "'HTTP'", "'DATABASE'", "'FILESYSTEM'", "'HDFS'", "'FunctionalView'", "'use'", "'project'", "'{'", "'Components'", "'}'", "'Connectors'", "','", "'Port'", "':'", "'Role'", "'->'", "'Stream'", "'roles'", "'delivery'", "'sync'", "'notification'", "'buffering'", "'throughput'", "'props'", "'decision'", "'Adaptor'", "'Distributor'", "'Event'", "'ProcCall'", "'Transformer'", "'ports'", "'procModel'", "'pmml'", "'Estimator'", "'Ingestor'", "'type'", "'conn'", "'format'", "'Sink'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -8541,21 +8541,21 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Stream__Group_9__0__Impl"
-    // InternalAfvl.g:2743:1: rule__Stream__Group_9__0__Impl : ( 'sensitivityPoint' ) ;
+    // InternalAfvl.g:2743:1: rule__Stream__Group_9__0__Impl : ( 'decision' ) ;
     public final void rule__Stream__Group_9__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:2747:1: ( ( 'sensitivityPoint' ) )
-            // InternalAfvl.g:2748:1: ( 'sensitivityPoint' )
+            // InternalAfvl.g:2747:1: ( ( 'decision' ) )
+            // InternalAfvl.g:2748:1: ( 'decision' )
             {
-            // InternalAfvl.g:2748:1: ( 'sensitivityPoint' )
-            // InternalAfvl.g:2749:2: 'sensitivityPoint'
+            // InternalAfvl.g:2748:1: ( 'decision' )
+            // InternalAfvl.g:2749:2: 'decision'
             {
-             before(grammarAccess.getStreamAccess().getSensitivityPointKeyword_9_0()); 
+             before(grammarAccess.getStreamAccess().getDecisionKeyword_9_0()); 
             match(input,56,FOLLOW_2); 
-             after(grammarAccess.getStreamAccess().getSensitivityPointKeyword_9_0()); 
+             after(grammarAccess.getStreamAccess().getDecisionKeyword_9_0()); 
 
             }
 
@@ -8686,31 +8686,31 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Stream__Group_9__2__Impl"
-    // InternalAfvl.g:2796:1: rule__Stream__Group_9__2__Impl : ( ( rule__Stream__SpointAssignment_9_2 ) ) ;
+    // InternalAfvl.g:2796:1: rule__Stream__Group_9__2__Impl : ( ( rule__Stream__DecisionAssignment_9_2 ) ) ;
     public final void rule__Stream__Group_9__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:2800:1: ( ( ( rule__Stream__SpointAssignment_9_2 ) ) )
-            // InternalAfvl.g:2801:1: ( ( rule__Stream__SpointAssignment_9_2 ) )
+            // InternalAfvl.g:2800:1: ( ( ( rule__Stream__DecisionAssignment_9_2 ) ) )
+            // InternalAfvl.g:2801:1: ( ( rule__Stream__DecisionAssignment_9_2 ) )
             {
-            // InternalAfvl.g:2801:1: ( ( rule__Stream__SpointAssignment_9_2 ) )
-            // InternalAfvl.g:2802:2: ( rule__Stream__SpointAssignment_9_2 )
+            // InternalAfvl.g:2801:1: ( ( rule__Stream__DecisionAssignment_9_2 ) )
+            // InternalAfvl.g:2802:2: ( rule__Stream__DecisionAssignment_9_2 )
             {
-             before(grammarAccess.getStreamAccess().getSpointAssignment_9_2()); 
-            // InternalAfvl.g:2803:2: ( rule__Stream__SpointAssignment_9_2 )
-            // InternalAfvl.g:2803:3: rule__Stream__SpointAssignment_9_2
+             before(grammarAccess.getStreamAccess().getDecisionAssignment_9_2()); 
+            // InternalAfvl.g:2803:2: ( rule__Stream__DecisionAssignment_9_2 )
+            // InternalAfvl.g:2803:3: rule__Stream__DecisionAssignment_9_2
             {
             pushFollow(FOLLOW_2);
-            rule__Stream__SpointAssignment_9_2();
+            rule__Stream__DecisionAssignment_9_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getStreamAccess().getSpointAssignment_9_2()); 
+             after(grammarAccess.getStreamAccess().getDecisionAssignment_9_2()); 
 
             }
 
@@ -11696,21 +11696,21 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Adaptor__Group_9__0__Impl"
-    // InternalAfvl.g:3796:1: rule__Adaptor__Group_9__0__Impl : ( 'sensitivityPoint' ) ;
+    // InternalAfvl.g:3796:1: rule__Adaptor__Group_9__0__Impl : ( 'decision' ) ;
     public final void rule__Adaptor__Group_9__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:3800:1: ( ( 'sensitivityPoint' ) )
-            // InternalAfvl.g:3801:1: ( 'sensitivityPoint' )
+            // InternalAfvl.g:3800:1: ( ( 'decision' ) )
+            // InternalAfvl.g:3801:1: ( 'decision' )
             {
-            // InternalAfvl.g:3801:1: ( 'sensitivityPoint' )
-            // InternalAfvl.g:3802:2: 'sensitivityPoint'
+            // InternalAfvl.g:3801:1: ( 'decision' )
+            // InternalAfvl.g:3802:2: 'decision'
             {
-             before(grammarAccess.getAdaptorAccess().getSensitivityPointKeyword_9_0()); 
+             before(grammarAccess.getAdaptorAccess().getDecisionKeyword_9_0()); 
             match(input,56,FOLLOW_2); 
-             after(grammarAccess.getAdaptorAccess().getSensitivityPointKeyword_9_0()); 
+             after(grammarAccess.getAdaptorAccess().getDecisionKeyword_9_0()); 
 
             }
 
@@ -11841,31 +11841,31 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Adaptor__Group_9__2__Impl"
-    // InternalAfvl.g:3849:1: rule__Adaptor__Group_9__2__Impl : ( ( rule__Adaptor__SpointAssignment_9_2 ) ) ;
+    // InternalAfvl.g:3849:1: rule__Adaptor__Group_9__2__Impl : ( ( rule__Adaptor__DecisionAssignment_9_2 ) ) ;
     public final void rule__Adaptor__Group_9__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:3853:1: ( ( ( rule__Adaptor__SpointAssignment_9_2 ) ) )
-            // InternalAfvl.g:3854:1: ( ( rule__Adaptor__SpointAssignment_9_2 ) )
+            // InternalAfvl.g:3853:1: ( ( ( rule__Adaptor__DecisionAssignment_9_2 ) ) )
+            // InternalAfvl.g:3854:1: ( ( rule__Adaptor__DecisionAssignment_9_2 ) )
             {
-            // InternalAfvl.g:3854:1: ( ( rule__Adaptor__SpointAssignment_9_2 ) )
-            // InternalAfvl.g:3855:2: ( rule__Adaptor__SpointAssignment_9_2 )
+            // InternalAfvl.g:3854:1: ( ( rule__Adaptor__DecisionAssignment_9_2 ) )
+            // InternalAfvl.g:3855:2: ( rule__Adaptor__DecisionAssignment_9_2 )
             {
-             before(grammarAccess.getAdaptorAccess().getSpointAssignment_9_2()); 
-            // InternalAfvl.g:3856:2: ( rule__Adaptor__SpointAssignment_9_2 )
-            // InternalAfvl.g:3856:3: rule__Adaptor__SpointAssignment_9_2
+             before(grammarAccess.getAdaptorAccess().getDecisionAssignment_9_2()); 
+            // InternalAfvl.g:3856:2: ( rule__Adaptor__DecisionAssignment_9_2 )
+            // InternalAfvl.g:3856:3: rule__Adaptor__DecisionAssignment_9_2
             {
             pushFollow(FOLLOW_2);
-            rule__Adaptor__SpointAssignment_9_2();
+            rule__Adaptor__DecisionAssignment_9_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAdaptorAccess().getSpointAssignment_9_2()); 
+             after(grammarAccess.getAdaptorAccess().getDecisionAssignment_9_2()); 
 
             }
 
@@ -14851,21 +14851,21 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Distributor__Group_9__0__Impl"
-    // InternalAfvl.g:4849:1: rule__Distributor__Group_9__0__Impl : ( 'sensitivityPoint' ) ;
+    // InternalAfvl.g:4849:1: rule__Distributor__Group_9__0__Impl : ( 'decision' ) ;
     public final void rule__Distributor__Group_9__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:4853:1: ( ( 'sensitivityPoint' ) )
-            // InternalAfvl.g:4854:1: ( 'sensitivityPoint' )
+            // InternalAfvl.g:4853:1: ( ( 'decision' ) )
+            // InternalAfvl.g:4854:1: ( 'decision' )
             {
-            // InternalAfvl.g:4854:1: ( 'sensitivityPoint' )
-            // InternalAfvl.g:4855:2: 'sensitivityPoint'
+            // InternalAfvl.g:4854:1: ( 'decision' )
+            // InternalAfvl.g:4855:2: 'decision'
             {
-             before(grammarAccess.getDistributorAccess().getSensitivityPointKeyword_9_0()); 
+             before(grammarAccess.getDistributorAccess().getDecisionKeyword_9_0()); 
             match(input,56,FOLLOW_2); 
-             after(grammarAccess.getDistributorAccess().getSensitivityPointKeyword_9_0()); 
+             after(grammarAccess.getDistributorAccess().getDecisionKeyword_9_0()); 
 
             }
 
@@ -14996,31 +14996,31 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Distributor__Group_9__2__Impl"
-    // InternalAfvl.g:4902:1: rule__Distributor__Group_9__2__Impl : ( ( rule__Distributor__SpointAssignment_9_2 ) ) ;
+    // InternalAfvl.g:4902:1: rule__Distributor__Group_9__2__Impl : ( ( rule__Distributor__DecisionAssignment_9_2 ) ) ;
     public final void rule__Distributor__Group_9__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:4906:1: ( ( ( rule__Distributor__SpointAssignment_9_2 ) ) )
-            // InternalAfvl.g:4907:1: ( ( rule__Distributor__SpointAssignment_9_2 ) )
+            // InternalAfvl.g:4906:1: ( ( ( rule__Distributor__DecisionAssignment_9_2 ) ) )
+            // InternalAfvl.g:4907:1: ( ( rule__Distributor__DecisionAssignment_9_2 ) )
             {
-            // InternalAfvl.g:4907:1: ( ( rule__Distributor__SpointAssignment_9_2 ) )
-            // InternalAfvl.g:4908:2: ( rule__Distributor__SpointAssignment_9_2 )
+            // InternalAfvl.g:4907:1: ( ( rule__Distributor__DecisionAssignment_9_2 ) )
+            // InternalAfvl.g:4908:2: ( rule__Distributor__DecisionAssignment_9_2 )
             {
-             before(grammarAccess.getDistributorAccess().getSpointAssignment_9_2()); 
-            // InternalAfvl.g:4909:2: ( rule__Distributor__SpointAssignment_9_2 )
-            // InternalAfvl.g:4909:3: rule__Distributor__SpointAssignment_9_2
+             before(grammarAccess.getDistributorAccess().getDecisionAssignment_9_2()); 
+            // InternalAfvl.g:4909:2: ( rule__Distributor__DecisionAssignment_9_2 )
+            // InternalAfvl.g:4909:3: rule__Distributor__DecisionAssignment_9_2
             {
             pushFollow(FOLLOW_2);
-            rule__Distributor__SpointAssignment_9_2();
+            rule__Distributor__DecisionAssignment_9_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDistributorAccess().getSpointAssignment_9_2()); 
+             after(grammarAccess.getDistributorAccess().getDecisionAssignment_9_2()); 
 
             }
 
@@ -18081,21 +18081,21 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group_9__0__Impl"
-    // InternalAfvl.g:5929:1: rule__Event__Group_9__0__Impl : ( 'sensitivityPoint' ) ;
+    // InternalAfvl.g:5929:1: rule__Event__Group_9__0__Impl : ( 'decision' ) ;
     public final void rule__Event__Group_9__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:5933:1: ( ( 'sensitivityPoint' ) )
-            // InternalAfvl.g:5934:1: ( 'sensitivityPoint' )
+            // InternalAfvl.g:5933:1: ( ( 'decision' ) )
+            // InternalAfvl.g:5934:1: ( 'decision' )
             {
-            // InternalAfvl.g:5934:1: ( 'sensitivityPoint' )
-            // InternalAfvl.g:5935:2: 'sensitivityPoint'
+            // InternalAfvl.g:5934:1: ( 'decision' )
+            // InternalAfvl.g:5935:2: 'decision'
             {
-             before(grammarAccess.getEventAccess().getSensitivityPointKeyword_9_0()); 
+             before(grammarAccess.getEventAccess().getDecisionKeyword_9_0()); 
             match(input,56,FOLLOW_2); 
-             after(grammarAccess.getEventAccess().getSensitivityPointKeyword_9_0()); 
+             after(grammarAccess.getEventAccess().getDecisionKeyword_9_0()); 
 
             }
 
@@ -18226,31 +18226,31 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group_9__2__Impl"
-    // InternalAfvl.g:5982:1: rule__Event__Group_9__2__Impl : ( ( rule__Event__SpointAssignment_9_2 ) ) ;
+    // InternalAfvl.g:5982:1: rule__Event__Group_9__2__Impl : ( ( rule__Event__DecisionAssignment_9_2 ) ) ;
     public final void rule__Event__Group_9__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:5986:1: ( ( ( rule__Event__SpointAssignment_9_2 ) ) )
-            // InternalAfvl.g:5987:1: ( ( rule__Event__SpointAssignment_9_2 ) )
+            // InternalAfvl.g:5986:1: ( ( ( rule__Event__DecisionAssignment_9_2 ) ) )
+            // InternalAfvl.g:5987:1: ( ( rule__Event__DecisionAssignment_9_2 ) )
             {
-            // InternalAfvl.g:5987:1: ( ( rule__Event__SpointAssignment_9_2 ) )
-            // InternalAfvl.g:5988:2: ( rule__Event__SpointAssignment_9_2 )
+            // InternalAfvl.g:5987:1: ( ( rule__Event__DecisionAssignment_9_2 ) )
+            // InternalAfvl.g:5988:2: ( rule__Event__DecisionAssignment_9_2 )
             {
-             before(grammarAccess.getEventAccess().getSpointAssignment_9_2()); 
-            // InternalAfvl.g:5989:2: ( rule__Event__SpointAssignment_9_2 )
-            // InternalAfvl.g:5989:3: rule__Event__SpointAssignment_9_2
+             before(grammarAccess.getEventAccess().getDecisionAssignment_9_2()); 
+            // InternalAfvl.g:5989:2: ( rule__Event__DecisionAssignment_9_2 )
+            // InternalAfvl.g:5989:3: rule__Event__DecisionAssignment_9_2
             {
             pushFollow(FOLLOW_2);
-            rule__Event__SpointAssignment_9_2();
+            rule__Event__DecisionAssignment_9_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEventAccess().getSpointAssignment_9_2()); 
+             after(grammarAccess.getEventAccess().getDecisionAssignment_9_2()); 
 
             }
 
@@ -21311,21 +21311,21 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProcedureCall__Group_9__0__Impl"
-    // InternalAfvl.g:7009:1: rule__ProcedureCall__Group_9__0__Impl : ( 'sensitivityPoint' ) ;
+    // InternalAfvl.g:7009:1: rule__ProcedureCall__Group_9__0__Impl : ( 'decision' ) ;
     public final void rule__ProcedureCall__Group_9__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:7013:1: ( ( 'sensitivityPoint' ) )
-            // InternalAfvl.g:7014:1: ( 'sensitivityPoint' )
+            // InternalAfvl.g:7013:1: ( ( 'decision' ) )
+            // InternalAfvl.g:7014:1: ( 'decision' )
             {
-            // InternalAfvl.g:7014:1: ( 'sensitivityPoint' )
-            // InternalAfvl.g:7015:2: 'sensitivityPoint'
+            // InternalAfvl.g:7014:1: ( 'decision' )
+            // InternalAfvl.g:7015:2: 'decision'
             {
-             before(grammarAccess.getProcedureCallAccess().getSensitivityPointKeyword_9_0()); 
+             before(grammarAccess.getProcedureCallAccess().getDecisionKeyword_9_0()); 
             match(input,56,FOLLOW_2); 
-             after(grammarAccess.getProcedureCallAccess().getSensitivityPointKeyword_9_0()); 
+             after(grammarAccess.getProcedureCallAccess().getDecisionKeyword_9_0()); 
 
             }
 
@@ -21456,31 +21456,31 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProcedureCall__Group_9__2__Impl"
-    // InternalAfvl.g:7062:1: rule__ProcedureCall__Group_9__2__Impl : ( ( rule__ProcedureCall__SpointAssignment_9_2 ) ) ;
+    // InternalAfvl.g:7062:1: rule__ProcedureCall__Group_9__2__Impl : ( ( rule__ProcedureCall__DecisionAssignment_9_2 ) ) ;
     public final void rule__ProcedureCall__Group_9__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:7066:1: ( ( ( rule__ProcedureCall__SpointAssignment_9_2 ) ) )
-            // InternalAfvl.g:7067:1: ( ( rule__ProcedureCall__SpointAssignment_9_2 ) )
+            // InternalAfvl.g:7066:1: ( ( ( rule__ProcedureCall__DecisionAssignment_9_2 ) ) )
+            // InternalAfvl.g:7067:1: ( ( rule__ProcedureCall__DecisionAssignment_9_2 ) )
             {
-            // InternalAfvl.g:7067:1: ( ( rule__ProcedureCall__SpointAssignment_9_2 ) )
-            // InternalAfvl.g:7068:2: ( rule__ProcedureCall__SpointAssignment_9_2 )
+            // InternalAfvl.g:7067:1: ( ( rule__ProcedureCall__DecisionAssignment_9_2 ) )
+            // InternalAfvl.g:7068:2: ( rule__ProcedureCall__DecisionAssignment_9_2 )
             {
-             before(grammarAccess.getProcedureCallAccess().getSpointAssignment_9_2()); 
-            // InternalAfvl.g:7069:2: ( rule__ProcedureCall__SpointAssignment_9_2 )
-            // InternalAfvl.g:7069:3: rule__ProcedureCall__SpointAssignment_9_2
+             before(grammarAccess.getProcedureCallAccess().getDecisionAssignment_9_2()); 
+            // InternalAfvl.g:7069:2: ( rule__ProcedureCall__DecisionAssignment_9_2 )
+            // InternalAfvl.g:7069:3: rule__ProcedureCall__DecisionAssignment_9_2
             {
             pushFollow(FOLLOW_2);
-            rule__ProcedureCall__SpointAssignment_9_2();
+            rule__ProcedureCall__DecisionAssignment_9_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getProcedureCallAccess().getSpointAssignment_9_2()); 
+             after(grammarAccess.getProcedureCallAccess().getDecisionAssignment_9_2()); 
 
             }
 
@@ -23237,21 +23237,21 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transformer__Group_5__0__Impl"
-    // InternalAfvl.g:7657:1: rule__Transformer__Group_5__0__Impl : ( 'sensitivityPoint' ) ;
+    // InternalAfvl.g:7657:1: rule__Transformer__Group_5__0__Impl : ( 'decision' ) ;
     public final void rule__Transformer__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:7661:1: ( ( 'sensitivityPoint' ) )
-            // InternalAfvl.g:7662:1: ( 'sensitivityPoint' )
+            // InternalAfvl.g:7661:1: ( ( 'decision' ) )
+            // InternalAfvl.g:7662:1: ( 'decision' )
             {
-            // InternalAfvl.g:7662:1: ( 'sensitivityPoint' )
-            // InternalAfvl.g:7663:2: 'sensitivityPoint'
+            // InternalAfvl.g:7662:1: ( 'decision' )
+            // InternalAfvl.g:7663:2: 'decision'
             {
-             before(grammarAccess.getTransformerAccess().getSensitivityPointKeyword_5_0()); 
+             before(grammarAccess.getTransformerAccess().getDecisionKeyword_5_0()); 
             match(input,56,FOLLOW_2); 
-             after(grammarAccess.getTransformerAccess().getSensitivityPointKeyword_5_0()); 
+             after(grammarAccess.getTransformerAccess().getDecisionKeyword_5_0()); 
 
             }
 
@@ -23382,31 +23382,31 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transformer__Group_5__2__Impl"
-    // InternalAfvl.g:7710:1: rule__Transformer__Group_5__2__Impl : ( ( rule__Transformer__SpointAssignment_5_2 ) ) ;
+    // InternalAfvl.g:7710:1: rule__Transformer__Group_5__2__Impl : ( ( rule__Transformer__DecisionAssignment_5_2 ) ) ;
     public final void rule__Transformer__Group_5__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:7714:1: ( ( ( rule__Transformer__SpointAssignment_5_2 ) ) )
-            // InternalAfvl.g:7715:1: ( ( rule__Transformer__SpointAssignment_5_2 ) )
+            // InternalAfvl.g:7714:1: ( ( ( rule__Transformer__DecisionAssignment_5_2 ) ) )
+            // InternalAfvl.g:7715:1: ( ( rule__Transformer__DecisionAssignment_5_2 ) )
             {
-            // InternalAfvl.g:7715:1: ( ( rule__Transformer__SpointAssignment_5_2 ) )
-            // InternalAfvl.g:7716:2: ( rule__Transformer__SpointAssignment_5_2 )
+            // InternalAfvl.g:7715:1: ( ( rule__Transformer__DecisionAssignment_5_2 ) )
+            // InternalAfvl.g:7716:2: ( rule__Transformer__DecisionAssignment_5_2 )
             {
-             before(grammarAccess.getTransformerAccess().getSpointAssignment_5_2()); 
-            // InternalAfvl.g:7717:2: ( rule__Transformer__SpointAssignment_5_2 )
-            // InternalAfvl.g:7717:3: rule__Transformer__SpointAssignment_5_2
+             before(grammarAccess.getTransformerAccess().getDecisionAssignment_5_2()); 
+            // InternalAfvl.g:7717:2: ( rule__Transformer__DecisionAssignment_5_2 )
+            // InternalAfvl.g:7717:3: rule__Transformer__DecisionAssignment_5_2
             {
             pushFollow(FOLLOW_2);
-            rule__Transformer__SpointAssignment_5_2();
+            rule__Transformer__DecisionAssignment_5_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTransformerAccess().getSpointAssignment_5_2()); 
+             after(grammarAccess.getTransformerAccess().getDecisionAssignment_5_2()); 
 
             }
 
@@ -25163,21 +25163,21 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Estimator__Group_5__0__Impl"
-    // InternalAfvl.g:8305:1: rule__Estimator__Group_5__0__Impl : ( 'sensitivityPoint' ) ;
+    // InternalAfvl.g:8305:1: rule__Estimator__Group_5__0__Impl : ( 'decision' ) ;
     public final void rule__Estimator__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:8309:1: ( ( 'sensitivityPoint' ) )
-            // InternalAfvl.g:8310:1: ( 'sensitivityPoint' )
+            // InternalAfvl.g:8309:1: ( ( 'decision' ) )
+            // InternalAfvl.g:8310:1: ( 'decision' )
             {
-            // InternalAfvl.g:8310:1: ( 'sensitivityPoint' )
-            // InternalAfvl.g:8311:2: 'sensitivityPoint'
+            // InternalAfvl.g:8310:1: ( 'decision' )
+            // InternalAfvl.g:8311:2: 'decision'
             {
-             before(grammarAccess.getEstimatorAccess().getSensitivityPointKeyword_5_0()); 
+             before(grammarAccess.getEstimatorAccess().getDecisionKeyword_5_0()); 
             match(input,56,FOLLOW_2); 
-             after(grammarAccess.getEstimatorAccess().getSensitivityPointKeyword_5_0()); 
+             after(grammarAccess.getEstimatorAccess().getDecisionKeyword_5_0()); 
 
             }
 
@@ -25308,31 +25308,31 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Estimator__Group_5__2__Impl"
-    // InternalAfvl.g:8358:1: rule__Estimator__Group_5__2__Impl : ( ( rule__Estimator__SpointAssignment_5_2 ) ) ;
+    // InternalAfvl.g:8358:1: rule__Estimator__Group_5__2__Impl : ( ( rule__Estimator__DecisionAssignment_5_2 ) ) ;
     public final void rule__Estimator__Group_5__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:8362:1: ( ( ( rule__Estimator__SpointAssignment_5_2 ) ) )
-            // InternalAfvl.g:8363:1: ( ( rule__Estimator__SpointAssignment_5_2 ) )
+            // InternalAfvl.g:8362:1: ( ( ( rule__Estimator__DecisionAssignment_5_2 ) ) )
+            // InternalAfvl.g:8363:1: ( ( rule__Estimator__DecisionAssignment_5_2 ) )
             {
-            // InternalAfvl.g:8363:1: ( ( rule__Estimator__SpointAssignment_5_2 ) )
-            // InternalAfvl.g:8364:2: ( rule__Estimator__SpointAssignment_5_2 )
+            // InternalAfvl.g:8363:1: ( ( rule__Estimator__DecisionAssignment_5_2 ) )
+            // InternalAfvl.g:8364:2: ( rule__Estimator__DecisionAssignment_5_2 )
             {
-             before(grammarAccess.getEstimatorAccess().getSpointAssignment_5_2()); 
-            // InternalAfvl.g:8365:2: ( rule__Estimator__SpointAssignment_5_2 )
-            // InternalAfvl.g:8365:3: rule__Estimator__SpointAssignment_5_2
+             before(grammarAccess.getEstimatorAccess().getDecisionAssignment_5_2()); 
+            // InternalAfvl.g:8365:2: ( rule__Estimator__DecisionAssignment_5_2 )
+            // InternalAfvl.g:8365:3: rule__Estimator__DecisionAssignment_5_2
             {
             pushFollow(FOLLOW_2);
-            rule__Estimator__SpointAssignment_5_2();
+            rule__Estimator__DecisionAssignment_5_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEstimatorAccess().getSpointAssignment_5_2()); 
+             after(grammarAccess.getEstimatorAccess().getDecisionAssignment_5_2()); 
 
             }
 
@@ -27976,21 +27976,21 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ingestor__Group_10__0__Impl"
-    // InternalAfvl.g:9250:1: rule__Ingestor__Group_10__0__Impl : ( 'sensitivityPoint' ) ;
+    // InternalAfvl.g:9250:1: rule__Ingestor__Group_10__0__Impl : ( 'decision' ) ;
     public final void rule__Ingestor__Group_10__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:9254:1: ( ( 'sensitivityPoint' ) )
-            // InternalAfvl.g:9255:1: ( 'sensitivityPoint' )
+            // InternalAfvl.g:9254:1: ( ( 'decision' ) )
+            // InternalAfvl.g:9255:1: ( 'decision' )
             {
-            // InternalAfvl.g:9255:1: ( 'sensitivityPoint' )
-            // InternalAfvl.g:9256:2: 'sensitivityPoint'
+            // InternalAfvl.g:9255:1: ( 'decision' )
+            // InternalAfvl.g:9256:2: 'decision'
             {
-             before(grammarAccess.getIngestorAccess().getSensitivityPointKeyword_10_0()); 
+             before(grammarAccess.getIngestorAccess().getDecisionKeyword_10_0()); 
             match(input,56,FOLLOW_2); 
-             after(grammarAccess.getIngestorAccess().getSensitivityPointKeyword_10_0()); 
+             after(grammarAccess.getIngestorAccess().getDecisionKeyword_10_0()); 
 
             }
 
@@ -28121,31 +28121,31 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ingestor__Group_10__2__Impl"
-    // InternalAfvl.g:9303:1: rule__Ingestor__Group_10__2__Impl : ( ( rule__Ingestor__SpointAssignment_10_2 ) ) ;
+    // InternalAfvl.g:9303:1: rule__Ingestor__Group_10__2__Impl : ( ( rule__Ingestor__DecisionAssignment_10_2 ) ) ;
     public final void rule__Ingestor__Group_10__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:9307:1: ( ( ( rule__Ingestor__SpointAssignment_10_2 ) ) )
-            // InternalAfvl.g:9308:1: ( ( rule__Ingestor__SpointAssignment_10_2 ) )
+            // InternalAfvl.g:9307:1: ( ( ( rule__Ingestor__DecisionAssignment_10_2 ) ) )
+            // InternalAfvl.g:9308:1: ( ( rule__Ingestor__DecisionAssignment_10_2 ) )
             {
-            // InternalAfvl.g:9308:1: ( ( rule__Ingestor__SpointAssignment_10_2 ) )
-            // InternalAfvl.g:9309:2: ( rule__Ingestor__SpointAssignment_10_2 )
+            // InternalAfvl.g:9308:1: ( ( rule__Ingestor__DecisionAssignment_10_2 ) )
+            // InternalAfvl.g:9309:2: ( rule__Ingestor__DecisionAssignment_10_2 )
             {
-             before(grammarAccess.getIngestorAccess().getSpointAssignment_10_2()); 
-            // InternalAfvl.g:9310:2: ( rule__Ingestor__SpointAssignment_10_2 )
-            // InternalAfvl.g:9310:3: rule__Ingestor__SpointAssignment_10_2
+             before(grammarAccess.getIngestorAccess().getDecisionAssignment_10_2()); 
+            // InternalAfvl.g:9310:2: ( rule__Ingestor__DecisionAssignment_10_2 )
+            // InternalAfvl.g:9310:3: rule__Ingestor__DecisionAssignment_10_2
             {
             pushFollow(FOLLOW_2);
-            rule__Ingestor__SpointAssignment_10_2();
+            rule__Ingestor__DecisionAssignment_10_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getIngestorAccess().getSpointAssignment_10_2()); 
+             after(grammarAccess.getIngestorAccess().getDecisionAssignment_10_2()); 
 
             }
 
@@ -30789,21 +30789,21 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Sink__Group_10__0__Impl"
-    // InternalAfvl.g:10195:1: rule__Sink__Group_10__0__Impl : ( 'sensitivityPoint' ) ;
+    // InternalAfvl.g:10195:1: rule__Sink__Group_10__0__Impl : ( 'decision' ) ;
     public final void rule__Sink__Group_10__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:10199:1: ( ( 'sensitivityPoint' ) )
-            // InternalAfvl.g:10200:1: ( 'sensitivityPoint' )
+            // InternalAfvl.g:10199:1: ( ( 'decision' ) )
+            // InternalAfvl.g:10200:1: ( 'decision' )
             {
-            // InternalAfvl.g:10200:1: ( 'sensitivityPoint' )
-            // InternalAfvl.g:10201:2: 'sensitivityPoint'
+            // InternalAfvl.g:10200:1: ( 'decision' )
+            // InternalAfvl.g:10201:2: 'decision'
             {
-             before(grammarAccess.getSinkAccess().getSensitivityPointKeyword_10_0()); 
+             before(grammarAccess.getSinkAccess().getDecisionKeyword_10_0()); 
             match(input,56,FOLLOW_2); 
-             after(grammarAccess.getSinkAccess().getSensitivityPointKeyword_10_0()); 
+             after(grammarAccess.getSinkAccess().getDecisionKeyword_10_0()); 
 
             }
 
@@ -30934,31 +30934,31 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Sink__Group_10__2__Impl"
-    // InternalAfvl.g:10248:1: rule__Sink__Group_10__2__Impl : ( ( rule__Sink__SpointAssignment_10_2 ) ) ;
+    // InternalAfvl.g:10248:1: rule__Sink__Group_10__2__Impl : ( ( rule__Sink__DecisionAssignment_10_2 ) ) ;
     public final void rule__Sink__Group_10__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAfvl.g:10252:1: ( ( ( rule__Sink__SpointAssignment_10_2 ) ) )
-            // InternalAfvl.g:10253:1: ( ( rule__Sink__SpointAssignment_10_2 ) )
+            // InternalAfvl.g:10252:1: ( ( ( rule__Sink__DecisionAssignment_10_2 ) ) )
+            // InternalAfvl.g:10253:1: ( ( rule__Sink__DecisionAssignment_10_2 ) )
             {
-            // InternalAfvl.g:10253:1: ( ( rule__Sink__SpointAssignment_10_2 ) )
-            // InternalAfvl.g:10254:2: ( rule__Sink__SpointAssignment_10_2 )
+            // InternalAfvl.g:10253:1: ( ( rule__Sink__DecisionAssignment_10_2 ) )
+            // InternalAfvl.g:10254:2: ( rule__Sink__DecisionAssignment_10_2 )
             {
-             before(grammarAccess.getSinkAccess().getSpointAssignment_10_2()); 
-            // InternalAfvl.g:10255:2: ( rule__Sink__SpointAssignment_10_2 )
-            // InternalAfvl.g:10255:3: rule__Sink__SpointAssignment_10_2
+             before(grammarAccess.getSinkAccess().getDecisionAssignment_10_2()); 
+            // InternalAfvl.g:10255:2: ( rule__Sink__DecisionAssignment_10_2 )
+            // InternalAfvl.g:10255:3: rule__Sink__DecisionAssignment_10_2
             {
             pushFollow(FOLLOW_2);
-            rule__Sink__SpointAssignment_10_2();
+            rule__Sink__DecisionAssignment_10_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSinkAccess().getSpointAssignment_10_2()); 
+             after(grammarAccess.getSinkAccess().getDecisionAssignment_10_2()); 
 
             }
 
@@ -31865,9 +31865,9 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Stream__PropsAssignment_8_2"
 
 
-    // $ANTLR start "rule__Stream__SpointAssignment_9_2"
-    // InternalAfvl.g:10596:1: rule__Stream__SpointAssignment_9_2 : ( ( RULE_ID ) ) ;
-    public final void rule__Stream__SpointAssignment_9_2() throws RecognitionException {
+    // $ANTLR start "rule__Stream__DecisionAssignment_9_2"
+    // InternalAfvl.g:10596:1: rule__Stream__DecisionAssignment_9_2 : ( ( RULE_ID ) ) ;
+    public final void rule__Stream__DecisionAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -31878,17 +31878,17 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
             // InternalAfvl.g:10601:2: ( ( RULE_ID ) )
             // InternalAfvl.g:10602:3: ( RULE_ID )
             {
-             before(grammarAccess.getStreamAccess().getSpointSensitivityPointCrossReference_9_2_0()); 
+             before(grammarAccess.getStreamAccess().getDecisionArchDecisionCrossReference_9_2_0()); 
             // InternalAfvl.g:10603:3: ( RULE_ID )
             // InternalAfvl.g:10604:4: RULE_ID
             {
-             before(grammarAccess.getStreamAccess().getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1()); 
+             before(grammarAccess.getStreamAccess().getDecisionArchDecisionIDTerminalRuleCall_9_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getStreamAccess().getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1()); 
+             after(grammarAccess.getStreamAccess().getDecisionArchDecisionIDTerminalRuleCall_9_2_0_1()); 
 
             }
 
-             after(grammarAccess.getStreamAccess().getSpointSensitivityPointCrossReference_9_2_0()); 
+             after(grammarAccess.getStreamAccess().getDecisionArchDecisionCrossReference_9_2_0()); 
 
             }
 
@@ -31907,7 +31907,7 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Stream__SpointAssignment_9_2"
+    // $ANTLR end "rule__Stream__DecisionAssignment_9_2"
 
 
     // $ANTLR start "rule__Stream__RolesAssignment_13"
@@ -32275,9 +32275,9 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Adaptor__PropsAssignment_8_2"
 
 
-    // $ANTLR start "rule__Adaptor__SpointAssignment_9_2"
-    // InternalAfvl.g:10750:1: rule__Adaptor__SpointAssignment_9_2 : ( ( RULE_ID ) ) ;
-    public final void rule__Adaptor__SpointAssignment_9_2() throws RecognitionException {
+    // $ANTLR start "rule__Adaptor__DecisionAssignment_9_2"
+    // InternalAfvl.g:10750:1: rule__Adaptor__DecisionAssignment_9_2 : ( ( RULE_ID ) ) ;
+    public final void rule__Adaptor__DecisionAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -32288,17 +32288,17 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
             // InternalAfvl.g:10755:2: ( ( RULE_ID ) )
             // InternalAfvl.g:10756:3: ( RULE_ID )
             {
-             before(grammarAccess.getAdaptorAccess().getSpointSensitivityPointCrossReference_9_2_0()); 
+             before(grammarAccess.getAdaptorAccess().getDecisionArchDecisionCrossReference_9_2_0()); 
             // InternalAfvl.g:10757:3: ( RULE_ID )
             // InternalAfvl.g:10758:4: RULE_ID
             {
-             before(grammarAccess.getAdaptorAccess().getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1()); 
+             before(grammarAccess.getAdaptorAccess().getDecisionArchDecisionIDTerminalRuleCall_9_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getAdaptorAccess().getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1()); 
+             after(grammarAccess.getAdaptorAccess().getDecisionArchDecisionIDTerminalRuleCall_9_2_0_1()); 
 
             }
 
-             after(grammarAccess.getAdaptorAccess().getSpointSensitivityPointCrossReference_9_2_0()); 
+             after(grammarAccess.getAdaptorAccess().getDecisionArchDecisionCrossReference_9_2_0()); 
 
             }
 
@@ -32317,7 +32317,7 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Adaptor__SpointAssignment_9_2"
+    // $ANTLR end "rule__Adaptor__DecisionAssignment_9_2"
 
 
     // $ANTLR start "rule__Adaptor__RolesAssignment_12"
@@ -32685,9 +32685,9 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Distributor__PropsAssignment_8_2"
 
 
-    // $ANTLR start "rule__Distributor__SpointAssignment_9_2"
-    // InternalAfvl.g:10904:1: rule__Distributor__SpointAssignment_9_2 : ( ( RULE_ID ) ) ;
-    public final void rule__Distributor__SpointAssignment_9_2() throws RecognitionException {
+    // $ANTLR start "rule__Distributor__DecisionAssignment_9_2"
+    // InternalAfvl.g:10904:1: rule__Distributor__DecisionAssignment_9_2 : ( ( RULE_ID ) ) ;
+    public final void rule__Distributor__DecisionAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -32698,17 +32698,17 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
             // InternalAfvl.g:10909:2: ( ( RULE_ID ) )
             // InternalAfvl.g:10910:3: ( RULE_ID )
             {
-             before(grammarAccess.getDistributorAccess().getSpointSensitivityPointCrossReference_9_2_0()); 
+             before(grammarAccess.getDistributorAccess().getDecisionArchDecisionCrossReference_9_2_0()); 
             // InternalAfvl.g:10911:3: ( RULE_ID )
             // InternalAfvl.g:10912:4: RULE_ID
             {
-             before(grammarAccess.getDistributorAccess().getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1()); 
+             before(grammarAccess.getDistributorAccess().getDecisionArchDecisionIDTerminalRuleCall_9_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getDistributorAccess().getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1()); 
+             after(grammarAccess.getDistributorAccess().getDecisionArchDecisionIDTerminalRuleCall_9_2_0_1()); 
 
             }
 
-             after(grammarAccess.getDistributorAccess().getSpointSensitivityPointCrossReference_9_2_0()); 
+             after(grammarAccess.getDistributorAccess().getDecisionArchDecisionCrossReference_9_2_0()); 
 
             }
 
@@ -32727,7 +32727,7 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Distributor__SpointAssignment_9_2"
+    // $ANTLR end "rule__Distributor__DecisionAssignment_9_2"
 
 
     // $ANTLR start "rule__Distributor__RolesAssignment_12"
@@ -33095,9 +33095,9 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Event__PropsAssignment_8_2"
 
 
-    // $ANTLR start "rule__Event__SpointAssignment_9_2"
-    // InternalAfvl.g:11058:1: rule__Event__SpointAssignment_9_2 : ( ( RULE_ID ) ) ;
-    public final void rule__Event__SpointAssignment_9_2() throws RecognitionException {
+    // $ANTLR start "rule__Event__DecisionAssignment_9_2"
+    // InternalAfvl.g:11058:1: rule__Event__DecisionAssignment_9_2 : ( ( RULE_ID ) ) ;
+    public final void rule__Event__DecisionAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -33108,17 +33108,17 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
             // InternalAfvl.g:11063:2: ( ( RULE_ID ) )
             // InternalAfvl.g:11064:3: ( RULE_ID )
             {
-             before(grammarAccess.getEventAccess().getSpointSensitivityPointCrossReference_9_2_0()); 
+             before(grammarAccess.getEventAccess().getDecisionArchDecisionCrossReference_9_2_0()); 
             // InternalAfvl.g:11065:3: ( RULE_ID )
             // InternalAfvl.g:11066:4: RULE_ID
             {
-             before(grammarAccess.getEventAccess().getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1()); 
+             before(grammarAccess.getEventAccess().getDecisionArchDecisionIDTerminalRuleCall_9_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getEventAccess().getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1()); 
+             after(grammarAccess.getEventAccess().getDecisionArchDecisionIDTerminalRuleCall_9_2_0_1()); 
 
             }
 
-             after(grammarAccess.getEventAccess().getSpointSensitivityPointCrossReference_9_2_0()); 
+             after(grammarAccess.getEventAccess().getDecisionArchDecisionCrossReference_9_2_0()); 
 
             }
 
@@ -33137,7 +33137,7 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Event__SpointAssignment_9_2"
+    // $ANTLR end "rule__Event__DecisionAssignment_9_2"
 
 
     // $ANTLR start "rule__Event__RolesAssignment_13"
@@ -33505,9 +33505,9 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ProcedureCall__PropsAssignment_8_2"
 
 
-    // $ANTLR start "rule__ProcedureCall__SpointAssignment_9_2"
-    // InternalAfvl.g:11212:1: rule__ProcedureCall__SpointAssignment_9_2 : ( ( RULE_ID ) ) ;
-    public final void rule__ProcedureCall__SpointAssignment_9_2() throws RecognitionException {
+    // $ANTLR start "rule__ProcedureCall__DecisionAssignment_9_2"
+    // InternalAfvl.g:11212:1: rule__ProcedureCall__DecisionAssignment_9_2 : ( ( RULE_ID ) ) ;
+    public final void rule__ProcedureCall__DecisionAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -33518,17 +33518,17 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
             // InternalAfvl.g:11217:2: ( ( RULE_ID ) )
             // InternalAfvl.g:11218:3: ( RULE_ID )
             {
-             before(grammarAccess.getProcedureCallAccess().getSpointSensitivityPointCrossReference_9_2_0()); 
+             before(grammarAccess.getProcedureCallAccess().getDecisionArchDecisionCrossReference_9_2_0()); 
             // InternalAfvl.g:11219:3: ( RULE_ID )
             // InternalAfvl.g:11220:4: RULE_ID
             {
-             before(grammarAccess.getProcedureCallAccess().getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1()); 
+             before(grammarAccess.getProcedureCallAccess().getDecisionArchDecisionIDTerminalRuleCall_9_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getProcedureCallAccess().getSpointSensitivityPointIDTerminalRuleCall_9_2_0_1()); 
+             after(grammarAccess.getProcedureCallAccess().getDecisionArchDecisionIDTerminalRuleCall_9_2_0_1()); 
 
             }
 
-             after(grammarAccess.getProcedureCallAccess().getSpointSensitivityPointCrossReference_9_2_0()); 
+             after(grammarAccess.getProcedureCallAccess().getDecisionArchDecisionCrossReference_9_2_0()); 
 
             }
 
@@ -33547,7 +33547,7 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ProcedureCall__SpointAssignment_9_2"
+    // $ANTLR end "rule__ProcedureCall__DecisionAssignment_9_2"
 
 
     // $ANTLR start "rule__ProcedureCall__RolesAssignment_13"
@@ -33751,9 +33751,9 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Transformer__PmmlAssignment_4_2"
 
 
-    // $ANTLR start "rule__Transformer__SpointAssignment_5_2"
-    // InternalAfvl.g:11306:1: rule__Transformer__SpointAssignment_5_2 : ( ( RULE_ID ) ) ;
-    public final void rule__Transformer__SpointAssignment_5_2() throws RecognitionException {
+    // $ANTLR start "rule__Transformer__DecisionAssignment_5_2"
+    // InternalAfvl.g:11306:1: rule__Transformer__DecisionAssignment_5_2 : ( ( RULE_ID ) ) ;
+    public final void rule__Transformer__DecisionAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -33764,17 +33764,17 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
             // InternalAfvl.g:11311:2: ( ( RULE_ID ) )
             // InternalAfvl.g:11312:3: ( RULE_ID )
             {
-             before(grammarAccess.getTransformerAccess().getSpointSensitivityPointCrossReference_5_2_0()); 
+             before(grammarAccess.getTransformerAccess().getDecisionArchDecisionCrossReference_5_2_0()); 
             // InternalAfvl.g:11313:3: ( RULE_ID )
             // InternalAfvl.g:11314:4: RULE_ID
             {
-             before(grammarAccess.getTransformerAccess().getSpointSensitivityPointIDTerminalRuleCall_5_2_0_1()); 
+             before(grammarAccess.getTransformerAccess().getDecisionArchDecisionIDTerminalRuleCall_5_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getTransformerAccess().getSpointSensitivityPointIDTerminalRuleCall_5_2_0_1()); 
+             after(grammarAccess.getTransformerAccess().getDecisionArchDecisionIDTerminalRuleCall_5_2_0_1()); 
 
             }
 
-             after(grammarAccess.getTransformerAccess().getSpointSensitivityPointCrossReference_5_2_0()); 
+             after(grammarAccess.getTransformerAccess().getDecisionArchDecisionCrossReference_5_2_0()); 
 
             }
 
@@ -33793,7 +33793,7 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Transformer__SpointAssignment_5_2"
+    // $ANTLR end "rule__Transformer__DecisionAssignment_5_2"
 
 
     // $ANTLR start "rule__Transformer__PortsAssignment_9"
@@ -33997,9 +33997,9 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Estimator__PmmlAssignment_4_2"
 
 
-    // $ANTLR start "rule__Estimator__SpointAssignment_5_2"
-    // InternalAfvl.g:11400:1: rule__Estimator__SpointAssignment_5_2 : ( ( RULE_ID ) ) ;
-    public final void rule__Estimator__SpointAssignment_5_2() throws RecognitionException {
+    // $ANTLR start "rule__Estimator__DecisionAssignment_5_2"
+    // InternalAfvl.g:11400:1: rule__Estimator__DecisionAssignment_5_2 : ( ( RULE_ID ) ) ;
+    public final void rule__Estimator__DecisionAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -34010,17 +34010,17 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
             // InternalAfvl.g:11405:2: ( ( RULE_ID ) )
             // InternalAfvl.g:11406:3: ( RULE_ID )
             {
-             before(grammarAccess.getEstimatorAccess().getSpointSensitivityPointCrossReference_5_2_0()); 
+             before(grammarAccess.getEstimatorAccess().getDecisionArchDecisionCrossReference_5_2_0()); 
             // InternalAfvl.g:11407:3: ( RULE_ID )
             // InternalAfvl.g:11408:4: RULE_ID
             {
-             before(grammarAccess.getEstimatorAccess().getSpointSensitivityPointIDTerminalRuleCall_5_2_0_1()); 
+             before(grammarAccess.getEstimatorAccess().getDecisionArchDecisionIDTerminalRuleCall_5_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getEstimatorAccess().getSpointSensitivityPointIDTerminalRuleCall_5_2_0_1()); 
+             after(grammarAccess.getEstimatorAccess().getDecisionArchDecisionIDTerminalRuleCall_5_2_0_1()); 
 
             }
 
-             after(grammarAccess.getEstimatorAccess().getSpointSensitivityPointCrossReference_5_2_0()); 
+             after(grammarAccess.getEstimatorAccess().getDecisionArchDecisionCrossReference_5_2_0()); 
 
             }
 
@@ -34039,7 +34039,7 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Estimator__SpointAssignment_5_2"
+    // $ANTLR end "rule__Estimator__DecisionAssignment_5_2"
 
 
     // $ANTLR start "rule__Estimator__PortsAssignment_9"
@@ -34366,9 +34366,9 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Ingestor__PropsAssignment_9_2"
 
 
-    // $ANTLR start "rule__Ingestor__SpointAssignment_10_2"
-    // InternalAfvl.g:11539:1: rule__Ingestor__SpointAssignment_10_2 : ( ( RULE_ID ) ) ;
-    public final void rule__Ingestor__SpointAssignment_10_2() throws RecognitionException {
+    // $ANTLR start "rule__Ingestor__DecisionAssignment_10_2"
+    // InternalAfvl.g:11539:1: rule__Ingestor__DecisionAssignment_10_2 : ( ( RULE_ID ) ) ;
+    public final void rule__Ingestor__DecisionAssignment_10_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -34379,17 +34379,17 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
             // InternalAfvl.g:11544:2: ( ( RULE_ID ) )
             // InternalAfvl.g:11545:3: ( RULE_ID )
             {
-             before(grammarAccess.getIngestorAccess().getSpointSensitivityPointCrossReference_10_2_0()); 
+             before(grammarAccess.getIngestorAccess().getDecisionArchDecisionCrossReference_10_2_0()); 
             // InternalAfvl.g:11546:3: ( RULE_ID )
             // InternalAfvl.g:11547:4: RULE_ID
             {
-             before(grammarAccess.getIngestorAccess().getSpointSensitivityPointIDTerminalRuleCall_10_2_0_1()); 
+             before(grammarAccess.getIngestorAccess().getDecisionArchDecisionIDTerminalRuleCall_10_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getIngestorAccess().getSpointSensitivityPointIDTerminalRuleCall_10_2_0_1()); 
+             after(grammarAccess.getIngestorAccess().getDecisionArchDecisionIDTerminalRuleCall_10_2_0_1()); 
 
             }
 
-             after(grammarAccess.getIngestorAccess().getSpointSensitivityPointCrossReference_10_2_0()); 
+             after(grammarAccess.getIngestorAccess().getDecisionArchDecisionCrossReference_10_2_0()); 
 
             }
 
@@ -34408,7 +34408,7 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Ingestor__SpointAssignment_10_2"
+    // $ANTLR end "rule__Ingestor__DecisionAssignment_10_2"
 
 
     // $ANTLR start "rule__Ingestor__PortsAssignment_14"
@@ -34735,9 +34735,9 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Sink__PropsAssignment_9_2"
 
 
-    // $ANTLR start "rule__Sink__SpointAssignment_10_2"
-    // InternalAfvl.g:11678:1: rule__Sink__SpointAssignment_10_2 : ( ( RULE_ID ) ) ;
-    public final void rule__Sink__SpointAssignment_10_2() throws RecognitionException {
+    // $ANTLR start "rule__Sink__DecisionAssignment_10_2"
+    // InternalAfvl.g:11678:1: rule__Sink__DecisionAssignment_10_2 : ( ( RULE_ID ) ) ;
+    public final void rule__Sink__DecisionAssignment_10_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -34748,17 +34748,17 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
             // InternalAfvl.g:11683:2: ( ( RULE_ID ) )
             // InternalAfvl.g:11684:3: ( RULE_ID )
             {
-             before(grammarAccess.getSinkAccess().getSpointSensitivityPointCrossReference_10_2_0()); 
+             before(grammarAccess.getSinkAccess().getDecisionArchDecisionCrossReference_10_2_0()); 
             // InternalAfvl.g:11685:3: ( RULE_ID )
             // InternalAfvl.g:11686:4: RULE_ID
             {
-             before(grammarAccess.getSinkAccess().getSpointSensitivityPointIDTerminalRuleCall_10_2_0_1()); 
+             before(grammarAccess.getSinkAccess().getDecisionArchDecisionIDTerminalRuleCall_10_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getSinkAccess().getSpointSensitivityPointIDTerminalRuleCall_10_2_0_1()); 
+             after(grammarAccess.getSinkAccess().getDecisionArchDecisionIDTerminalRuleCall_10_2_0_1()); 
 
             }
 
-             after(grammarAccess.getSinkAccess().getSpointSensitivityPointCrossReference_10_2_0()); 
+             after(grammarAccess.getSinkAccess().getDecisionArchDecisionCrossReference_10_2_0()); 
 
             }
 
@@ -34777,7 +34777,7 @@ public class InternalAfvlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Sink__SpointAssignment_10_2"
+    // $ANTLR end "rule__Sink__DecisionAssignment_10_2"
 
 
     // $ANTLR start "rule__Sink__PortsAssignment_14"

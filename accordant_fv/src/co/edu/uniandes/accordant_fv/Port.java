@@ -2,6 +2,7 @@
  */
 package co.edu.uniandes.accordant_fv;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -79,29 +80,19 @@ public interface Port extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Fields</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Fields</b></em>' containment reference list.
+	 * The list contents are of type {@link co.edu.uniandes.accordant_fv.Field}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fields</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fields</em>' containment reference.
-	 * @see #setFields(Field)
+	 * @return the value of the '<em>Fields</em>' containment reference list.
 	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getPort_Fields()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Field getFields();
-
-	/**
-	 * Sets the value of the '{@link co.edu.uniandes.accordant_fv.Port#getFields <em>Fields</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fields</em>' containment reference.
-	 * @see #getFields()
-	 * @generated
-	 */
-	void setFields(Field value);
+	EList<Field> getFields();
 
 } // Port

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<accordant_rq:Project
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:accordant_rq="http://uniandes.accordant.requirement"
+    xsi:schemaLocation="http://uniandes.accordant.requirement accordant_rq.ecore"
+    name="UC1">
+  <scenarios
+      stimulus="stim1"
+      environment="env"
+      name="QS1_UC1"
+      response="res1"/>
+  <scenarios
+      stimulus="stim2"
+      environment="env2"
+      name="QS2"
+      response="resp"/>
+  <analyzedQs
+      qs="QS2"
+      reasoning=""
+      name="AQS2">
+    <decisions
+        name="Dec2"
+        rationale=""
+        code="Dec2"/>
+  </analyzedQs>
+  <analyzedQs
+      qs="QS1_UC1"
+      name="AQS1">
+    <decisions
+        name="Dec1"
+        code="Dec1"/>
+  </analyzedQs>
+</accordant_rq:Project>

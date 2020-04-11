@@ -3,6 +3,7 @@
   <semanticResources>accordant_rq.ecore</semanticResources>
   <semanticResources>accordant_rq.genmodel</semanticResources>
   <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+  <semanticResources>UC1_Test.xmi</semanticResources>
   <ownedViews xmi:type="viewpoint:DView" xmi:id="_38fAkD1XEemoav2aadtf3Q">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
   </ownedViews>

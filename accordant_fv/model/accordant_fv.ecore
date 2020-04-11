@@ -66,8 +66,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PortType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" eType="#//Field"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="#//Field" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ProcessingModel">
     <eLiterals name="STREAM" value="2" literal="STREAM"/>

@@ -96,7 +96,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         buffering=Buffering? 
 	 *         throughput=Throughput? 
 	 *         props=EString? 
-	 *         spoint=[SensitivityPoint|ID]? 
+	 *         decision=[ArchDecision|ID]? 
 	 *         roles+=Role 
 	 *         roles+=Role*
 	 *     )
@@ -120,7 +120,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         buffering=Buffering? 
 	 *         throughput=Throughput? 
 	 *         props=EString? 
-	 *         spoint=[SensitivityPoint|ID]? 
+	 *         decision=[ArchDecision|ID]? 
 	 *         roles+=Role 
 	 *         roles+=Role*
 	 *     )
@@ -140,7 +140,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         name=ID 
 	 *         procModel=ProcessingModel? 
 	 *         pmml=EString? 
-	 *         spoint=[SensitivityPoint|ID]? 
+	 *         decision=[ArchDecision|ID]? 
 	 *         ports+=Port 
 	 *         ports+=Port*
 	 *     )
@@ -164,7 +164,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         buffering=Buffering? 
 	 *         throughput=Throughput? 
 	 *         props=EString? 
-	 *         spoint=[SensitivityPoint|ID]? 
+	 *         decision=[ArchDecision|ID]? 
 	 *         roles+=Role 
 	 *         roles+=Role*
 	 *     )
@@ -206,7 +206,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         conn=EString? 
 	 *         format=EString? 
 	 *         props=EString? 
-	 *         spoint=[SensitivityPoint|ID]? 
+	 *         decision=[ArchDecision|ID]? 
 	 *         ports+=Port 
 	 *         ports+=Port*
 	 *     )
@@ -242,7 +242,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         buffering=Buffering? 
 	 *         throughput=Throughput? 
 	 *         props=EString? 
-	 *         spoint=[SensitivityPoint|ID]? 
+	 *         decision=[ArchDecision|ID]? 
 	 *         roles+=Role 
 	 *         roles+=Role*
 	 *     )
@@ -277,7 +277,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         conn=EString? 
 	 *         format=EString? 
 	 *         props=EString? 
-	 *         spoint=[SensitivityPoint|ID]? 
+	 *         decision=[ArchDecision|ID]? 
 	 *         ports+=Port 
 	 *         ports+=Port*
 	 *     )
@@ -301,7 +301,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         buffering=Buffering? 
 	 *         throughput=Throughput? 
 	 *         props=EString? 
-	 *         spoint=[SensitivityPoint|ID]? 
+	 *         decision=[ArchDecision|ID]? 
 	 *         roles+=Role 
 	 *         roles+=Role*
 	 *     )
@@ -321,7 +321,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         name=ID 
 	 *         procModel=ProcessingModel? 
 	 *         pmml=EString? 
-	 *         spoint=[SensitivityPoint|ID]? 
+	 *         decision=[ArchDecision|ID]? 
 	 *         ports+=Port 
 	 *         ports+=Port*
 	 *     )

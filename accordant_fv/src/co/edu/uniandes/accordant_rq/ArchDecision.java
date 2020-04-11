@@ -8,25 +8,26 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Sensitivity Point</b></em>'.
+ * A representation of the model object '<em><b>Arch Decision</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getName <em>Name</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getRationale <em>Rationale</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getCode <em>Code</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getAppliedTactics <em>Applied Tactics</em>}</li>
- *   <li>{@link co.edu.uniandes.accordant_rq.SensitivityPoint#isIsRisk <em>Is Risk</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.ArchDecision#getName <em>Name</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.ArchDecision#getRationale <em>Rationale</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.ArchDecision#getCode <em>Code</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.ArchDecision#getAppliedTactics <em>Applied Tactics</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.ArchDecision#isIsRisk <em>Is Risk</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.ArchDecision#isIsSensitivityPoint <em>Is Sensitivity Point</em>}</li>
  * </ul>
  *
- * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getSensitivityPoint()
+ * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getArchDecision()
  * @model
  * @generated
  */
-public interface SensitivityPoint extends EObject {
+public interface ArchDecision extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -37,14 +38,14 @@ public interface SensitivityPoint extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getSensitivityPoint_Name()
+	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getArchDecision_Name()
 	 * @model id="true"
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.ArchDecision#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -63,14 +64,14 @@ public interface SensitivityPoint extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Rationale</em>' attribute.
 	 * @see #setRationale(String)
-	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getSensitivityPoint_Rationale()
+	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getArchDecision_Rationale()
 	 * @model
 	 * @generated
 	 */
 	String getRationale();
 
 	/**
-	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getRationale <em>Rationale</em>}' attribute.
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.ArchDecision#getRationale <em>Rationale</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Rationale</em>' attribute.
@@ -89,14 +90,14 @@ public interface SensitivityPoint extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(String)
-	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getSensitivityPoint_Code()
+	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getArchDecision_Code()
 	 * @model
 	 * @generated
 	 */
 	String getCode();
 
 	/**
-	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.SensitivityPoint#getCode <em>Code</em>}' attribute.
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.ArchDecision#getCode <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Code</em>' attribute.
@@ -115,7 +116,7 @@ public interface SensitivityPoint extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Applied Tactics</em>' reference list.
-	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getSensitivityPoint_AppliedTactics()
+	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getArchDecision_AppliedTactics()
 	 * @model
 	 * @generated
 	 */
@@ -131,14 +132,14 @@ public interface SensitivityPoint extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Risk</em>' attribute.
 	 * @see #setIsRisk(boolean)
-	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getSensitivityPoint_IsRisk()
+	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getArchDecision_IsRisk()
 	 * @model
 	 * @generated
 	 */
 	boolean isIsRisk();
 
 	/**
-	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.SensitivityPoint#isIsRisk <em>Is Risk</em>}' attribute.
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.ArchDecision#isIsRisk <em>Is Risk</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Is Risk</em>' attribute.
@@ -147,4 +148,30 @@ public interface SensitivityPoint extends EObject {
 	 */
 	void setIsRisk(boolean value);
 
-} // SensitivityPoint
+	/**
+	 * Returns the value of the '<em><b>Is Sensitivity Point</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Sensitivity Point</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Sensitivity Point</em>' attribute.
+	 * @see #setIsSensitivityPoint(boolean)
+	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getArchDecision_IsSensitivityPoint()
+	 * @model
+	 * @generated
+	 */
+	boolean isIsSensitivityPoint();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.ArchDecision#isIsSensitivityPoint <em>Is Sensitivity Point</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Sensitivity Point</em>' attribute.
+	 * @see #isIsSensitivityPoint()
+	 * @generated
+	 */
+	void setIsSensitivityPoint(boolean value);
+
+} // ArchDecision
