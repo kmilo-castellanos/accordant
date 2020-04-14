@@ -1,0 +1,27 @@
+
+import 'accordant_fv.ecore'
+
+package accordant_fv
+
+
+
+	/*context FunctionalView
+
+	inv EQProcessingModel('Connected Components must have the same processing models'):
+	
+	Tuple {
+		status = self.comps -> forAll(c1, c2 |  c1<>c2 implies c1.procModel=c2.procModel),
+		severity = null
+	}.status*/
+	
+	context Connector
+
+	inv EQProcessingModels('Components connected through '+self.name+ ' are using different processing models, they require a connector Adaptor to interoperate.'):
+	
+	Tuple {
+		status = self.oclIsTypeOf(Adaptor) or (self.roles.port.oclContainer().oclAsType(Component) -> forAll(c1,c2 | c1<>c2 implies c1.procModel=c2.procModel
+		)),
+		severity = null 
+	}.status
+
+endpackage

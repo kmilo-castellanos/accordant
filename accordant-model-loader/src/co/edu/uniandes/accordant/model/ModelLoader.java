@@ -56,7 +56,7 @@ public class ModelLoader {
 
 	private static final String INGESTOR = "Ingestor";
 	private static final String SINK = "Sink";
-	private static final String ESTIMATOR = "Analytics";
+	private static final String ESTIMATOR = "Estimator";
 	private static final String TRANSFORMER = "Transformer";
 
 	private static final String EVENT = "Event";
