@@ -20,7 +20,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="buffering" eType="#//Buffering"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="throughput" eType="#//Throughput"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="1" upperBound="-1"
-        eType="#//Role" containment="true"/>
+        eType="#//Role" containment="true" eOpposite="#//Role/conn"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="protocol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="decision" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//ArchDecision"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="props" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -29,7 +29,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ports" lowerBound="1" upperBound="-1"
-        eType="#//Port" containment="true"/>
+        eType="#//Port" containment="true" eOpposite="#//Port/comp"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="procModel" eType="#//ProcessingModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="funcView" eType="#//FunctionalView"
         eOpposite="#//FunctionalView/comps"/>
@@ -68,6 +68,9 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
         eType="#//Field" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" eType="#//Role" eOpposite="#//Role/port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comp" eType="#//Component"
+        eOpposite="#//Component/ports"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ProcessingModel">
     <eLiterals name="STREAM" value="2" literal="STREAM"/>
@@ -107,7 +110,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//RoleType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//Port" eOpposite="#//Port/role"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conn" lowerBound="1" eType="#//Connector"
+        eOpposite="#//Connector/roles"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RoleType">
     <eLiterals name="OUT"/>

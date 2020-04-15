@@ -3,25 +3,64 @@ import 'accordant_fv.ecore'
 
 package accordant_fv
 
+	context FunctionalView
 
+	inv IngestorRequired('BDA pipeline requires an Ingestor component'):
+	Tuple{status = self.comps->exists(c | c.oclIsTypeOf(Ingestor)), severity = null}.status
 
-	/*context FunctionalView
+	inv SinkRequired('A BDA pipeline requires a Sink component'):
+	Tuple{status = self.comps->select(oclIsTypeOf(Sink))->size() > 0, severity = null}.status
 
-	inv EQProcessingModel('Connected Components must have the same processing models'):
-	
-	Tuple {
-		status = self.comps -> forAll(c1, c2 |  c1<>c2 implies c1.procModel=c2.procModel),
-		severity = null
-	}.status*/
-	
 	context Connector
 
-	inv EQProcessingModels('Components connected through '+self.name+ ' are using different processing models, they require a connector Adaptor to interoperate.'):
+	inv
+	ProcessingModelsMistmach('Components connected through connector "' + self.name + '" are using different processing models, they require a connector Adaptor to interoperate.'):
+	Tuple{status = self.oclIsTypeOf(Adaptor) or (self.roles.port.oclContainer().oclAsType(Component)->forAll(c1, c2 |
+			c1 <> c2 implies c1.procModel = c2.procModel)), severity = null}.status
+
+	inv InOutConnectorRoles('Connector"' + self.name + '" must have input and output role:'):
+	Tuple{status = self.roles->forAll(r1, r2 | r1 <> r2 implies r1.type <> r2.type), severity = null}.status
+
+	context Component
 	
-	Tuple {
-		status = self.oclIsTypeOf(Adaptor) or (self.roles.port.oclContainer().oclAsType(Component) -> forAll(c1,c2 | c1<>c2 implies c1.procModel=c2.procModel
-		)),
-		severity = null 
+	def : connectedComps () : Sequence(Component) =
+	ports->select(p : Port | p.type = PortType::PROVIDED).role.conn.roles.port->select(p : Port |
+			p.type = PortType::REQUIRED).comp
+	
+
+	inv SelfConnection('Component"' + self.name + '" cannot have a self-connection.'):
+	Tuple{status = self.ports->select(p : Port | p.type = PortType::PROVIDED).role.conn.roles.port->select(p : Port |
+			p.type = PortType::REQUIRED).comp->excludes(self), severity = null}.status
+
+	inv AcyclicProvPipeline('Component"' + self.name + '" has cyclic connection.'):
+	Tuple{status = self.connectedComps()->closure( cp | cp.connectedComps() )->excludes(self), severity = null}.status
+
+/*
+	 * inv
+	 * AcyclicProvPipeline('The BDA pipeline cannot contain cycles.'):
+	 * Tuple{status = self.ports.role->select(r:Role | r.type=RoleType::IN).oclContainer().ports
+	 * 
+	 * severity=null
+	 * }.status
+	 */
+
+			/*inv
+	AcyclicProvPipeline('The BDA pipeline cannot contain cycles.'):
+	Tuple{status = self.ports.role->select(r:Role | r.type=RoleType::IN).oclContainer().ports
+		
+		severity=null
 	}.status
+	*/
+
+	context Role
+
+	inv
+	RolesPortsMismatch('Role"' + self.name + '" is type ' + self.type.toString() + ', it must be attached to ports type: ' + (if
+		self.type = RoleType::OUT then 'REQUIRED'
+	else 'PROVIDED'
+	endif)):
+	Tuple{status =
+		(self.port.type = PortType::PROVIDED and self.type = RoleType::IN) or (self.port.type = PortType::REQUIRED and self.type = RoleType::OUT),
+		severity = null}.status
 
 endpackage

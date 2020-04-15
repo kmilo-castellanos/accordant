@@ -3,17 +3,20 @@
 package co.edu.uniandes.accordant_fv.impl;
 
 import co.edu.uniandes.accordant_fv.Accordant_fvPackage;
+import co.edu.uniandes.accordant_fv.Connector;
 import co.edu.uniandes.accordant_fv.Port;
 import co.edu.uniandes.accordant_fv.Role;
 import co.edu.uniandes.accordant_fv.RoleType;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.RoleImpl#getType <em>Type</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.RoleImpl#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.RoleImpl#getPort <em>Port</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.impl.RoleImpl#getConn <em>Conn</em>}</li>
  * </ul>
  *
  * @generated
@@ -173,11 +177,124 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPort(Port newPort) {
+	public NotificationChain basicSetPort(Port newPort, NotificationChain msgs) {
 		Port oldPort = port;
 		port = newPort;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.ROLE__PORT, oldPort, port));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.ROLE__PORT, oldPort, newPort);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPort(Port newPort) {
+		if (newPort != port) {
+			NotificationChain msgs = null;
+			if (port != null)
+				msgs = ((InternalEObject)port).eInverseRemove(this, Accordant_fvPackage.PORT__ROLE, Port.class, msgs);
+			if (newPort != null)
+				msgs = ((InternalEObject)newPort).eInverseAdd(this, Accordant_fvPackage.PORT__ROLE, Port.class, msgs);
+			msgs = basicSetPort(newPort, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.ROLE__PORT, newPort, newPort));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Connector getConn() {
+		if (eContainerFeatureID() != Accordant_fvPackage.ROLE__CONN) return null;
+		return (Connector)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetConn(Connector newConn, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newConn, Accordant_fvPackage.ROLE__CONN, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConn(Connector newConn) {
+		if (newConn != eInternalContainer() || (eContainerFeatureID() != Accordant_fvPackage.ROLE__CONN && newConn != null)) {
+			if (EcoreUtil.isAncestor(this, newConn))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newConn != null)
+				msgs = ((InternalEObject)newConn).eInverseAdd(this, Accordant_fvPackage.CONNECTOR__ROLES, Connector.class, msgs);
+			msgs = basicSetConn(newConn, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.ROLE__CONN, newConn, newConn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_fvPackage.ROLE__PORT:
+				if (port != null)
+					msgs = ((InternalEObject)port).eInverseRemove(this, Accordant_fvPackage.PORT__ROLE, Port.class, msgs);
+				return basicSetPort((Port)otherEnd, msgs);
+			case Accordant_fvPackage.ROLE__CONN:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetConn((Connector)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_fvPackage.ROLE__PORT:
+				return basicSetPort(null, msgs);
+			case Accordant_fvPackage.ROLE__CONN:
+				return basicSetConn(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case Accordant_fvPackage.ROLE__CONN:
+				return eInternalContainer().eInverseRemove(this, Accordant_fvPackage.CONNECTOR__ROLES, Connector.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -195,6 +312,8 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 			case Accordant_fvPackage.ROLE__PORT:
 				if (resolve) return getPort();
 				return basicGetPort();
+			case Accordant_fvPackage.ROLE__CONN:
+				return getConn();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -215,6 +334,9 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 				return;
 			case Accordant_fvPackage.ROLE__PORT:
 				setPort((Port)newValue);
+				return;
+			case Accordant_fvPackage.ROLE__CONN:
+				setConn((Connector)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -237,6 +359,9 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 			case Accordant_fvPackage.ROLE__PORT:
 				setPort((Port)null);
 				return;
+			case Accordant_fvPackage.ROLE__CONN:
+				setConn((Connector)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -255,6 +380,8 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case Accordant_fvPackage.ROLE__PORT:
 				return port != null;
+			case Accordant_fvPackage.ROLE__CONN:
+				return getConn() != null;
 		}
 		return super.eIsSet(featureID);
 	}

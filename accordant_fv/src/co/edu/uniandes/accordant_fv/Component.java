@@ -57,6 +57,7 @@ public interface Component extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
 	 * The list contents are of type {@link co.edu.uniandes.accordant_fv.Port}.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_fv.Port#getComp <em>Comp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ports</em>' containment reference list isn't clear,
@@ -65,7 +66,8 @@ public interface Component extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ports</em>' containment reference list.
 	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getComponent_Ports()
-	 * @model containment="true" required="true"
+	 * @see co.edu.uniandes.accordant_fv.Port#getComp
+	 * @model opposite="comp" containment="true" required="true"
 	 * @generated
 	 */
 	EList<Port> getPorts();

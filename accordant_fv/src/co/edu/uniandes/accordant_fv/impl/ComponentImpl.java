@@ -21,8 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -151,7 +150,7 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public EList<Port> getPorts() {
 		if (ports == null) {
-			ports = new EObjectContainmentEList<Port>(Port.class, this, Accordant_fvPackage.COMPONENT__PORTS);
+			ports = new EObjectContainmentWithInverseEList<Port>(Port.class, this, Accordant_fvPackage.COMPONENT__PORTS, Accordant_fvPackage.PORT__COMP);
 		}
 		return ports;
 	}
@@ -261,9 +260,12 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case Accordant_fvPackage.COMPONENT__PORTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPorts()).basicAdd(otherEnd, msgs);
 			case Accordant_fvPackage.COMPONENT__FUNC_VIEW:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);

@@ -1313,13 +1313,31 @@ public interface Accordant_fvPackage extends EPackage {
 	int PORT__FIELDS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Role</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__ROLE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Comp</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__COMP = 4;
+
+	/**
 	 * The number of structural features of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = 3;
+	int PORT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Port</em>' class.
@@ -1486,13 +1504,22 @@ public interface Accordant_fvPackage extends EPackage {
 	int ROLE__PORT = 2;
 
 	/**
+	 * The feature id for the '<em><b>Conn</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__CONN = 3;
+
+	/**
 	 * The number of structural features of the '<em>Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = 3;
+	int ROLE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Role</em>' class.
@@ -2284,6 +2311,28 @@ public interface Accordant_fvPackage extends EPackage {
 	EReference getPort_Fields();
 
 	/**
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_fv.Port#getRole <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Role</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Port#getRole()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EReference getPort_Role();
+
+	/**
+	 * Returns the meta object for the container reference '{@link co.edu.uniandes.accordant_fv.Port#getComp <em>Comp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Comp</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Port#getComp()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EReference getPort_Comp();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_fv.Arbitrator <em>Arbitrator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2335,6 +2384,17 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRole_Port();
+
+	/**
+	 * Returns the meta object for the container reference '{@link co.edu.uniandes.accordant_fv.Role#getConn <em>Conn</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Conn</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Role#getConn()
+	 * @see #getRole()
+	 * @generated
+	 */
+	EReference getRole_Conn();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_fv.ProcedureCall <em>Procedure Call</em>}'.
@@ -2915,6 +2975,22 @@ public interface Accordant_fvPackage extends EPackage {
 		EReference PORT__FIELDS = eINSTANCE.getPort_Fields();
 
 		/**
+		 * The meta object literal for the '<em><b>Role</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT__ROLE = eINSTANCE.getPort_Role();
+
+		/**
+		 * The meta object literal for the '<em><b>Comp</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT__COMP = eINSTANCE.getPort_Comp();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.impl.ArbitratorImpl <em>Arbitrator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2957,6 +3033,14 @@ public interface Accordant_fvPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROLE__PORT = eINSTANCE.getRole_Port();
+
+		/**
+		 * The meta object literal for the '<em><b>Conn</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE__CONN = eINSTANCE.getRole_Conn();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.impl.ProcedureCallImpl <em>Procedure Call</em>}' class.

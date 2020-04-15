@@ -24,8 +24,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -383,7 +382,7 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public EList<Role> getRoles() {
 		if (roles == null) {
-			roles = new EObjectContainmentEList<Role>(Role.class, this, Accordant_fvPackage.CONNECTOR__ROLES);
+			roles = new EObjectContainmentWithInverseEList<Role>(Role.class, this, Accordant_fvPackage.CONNECTOR__ROLES, Accordant_fvPackage.ROLE__CONN);
 		}
 		return roles;
 	}
@@ -466,6 +465,21 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 		props = newProps;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.CONNECTOR__PROPS, oldProps, props));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_fvPackage.CONNECTOR__ROLES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRoles()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

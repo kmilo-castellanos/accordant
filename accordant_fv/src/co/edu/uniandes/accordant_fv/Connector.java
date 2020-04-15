@@ -207,6 +207,7 @@ public interface Connector extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Roles</b></em>' containment reference list.
 	 * The list contents are of type {@link co.edu.uniandes.accordant_fv.Role}.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_fv.Role#getConn <em>Conn</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Roles</em>' containment reference list isn't clear,
@@ -215,7 +216,8 @@ public interface Connector extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Roles</em>' containment reference list.
 	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getConnector_Roles()
-	 * @model containment="true" required="true"
+	 * @see co.edu.uniandes.accordant_fv.Role#getConn
+	 * @model opposite="conn" containment="true" required="true"
 	 * @generated
 	 */
 	EList<Role> getRoles();

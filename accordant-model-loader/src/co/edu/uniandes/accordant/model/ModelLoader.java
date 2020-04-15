@@ -368,12 +368,12 @@ public class ModelLoader {
 		if (connMap.containsKey(source)) {
 			comp = compMap.get(target);
 			conn = connMap.get(source);
-			port = createPort(Util.formatName(comp.getName()) + "_from_" + Util.formatName(conn.getName()), false);
+			port = createPort(Util.formatName(comp.getName()) + "_req_" + Util.formatName(conn.getName()), false);
 			role = createRole(Util.formatName(conn.getName()) + "_out_" + Util.formatName(comp.getName()), false);
 		} else if (compMap.containsKey(source)) {
 			comp = compMap.get(source);
 			conn = connMap.get(target);
-			port = createPort(Util.formatName(comp.getName()) + "_to_" + Util.formatName(conn.getName()),
+			port = createPort(Util.formatName(comp.getName()) + "_prov_" + Util.formatName(conn.getName()),
 					true);
 			role = createRole(Util.formatName(conn.getName()) + "_in_" + Util.formatName(comp.getName()), true);
 		}

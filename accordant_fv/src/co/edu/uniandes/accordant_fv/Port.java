@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_fv.Port#getType <em>Type</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Port#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Port#getFields <em>Fields</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.Port#getRole <em>Role</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.Port#getComp <em>Comp</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getPort()
@@ -94,5 +96,61 @@ public interface Port extends EObject {
 	 * @generated
 	 */
 	EList<Field> getFields();
+
+	/**
+	 * Returns the value of the '<em><b>Role</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_fv.Role#getPort <em>Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Role</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Role</em>' reference.
+	 * @see #setRole(Role)
+	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getPort_Role()
+	 * @see co.edu.uniandes.accordant_fv.Role#getPort
+	 * @model opposite="port"
+	 * @generated
+	 */
+	Role getRole();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_fv.Port#getRole <em>Role</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Role</em>' reference.
+	 * @see #getRole()
+	 * @generated
+	 */
+	void setRole(Role value);
+
+	/**
+	 * Returns the value of the '<em><b>Comp</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_fv.Component#getPorts <em>Ports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Comp</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Comp</em>' container reference.
+	 * @see #setComp(Component)
+	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getPort_Comp()
+	 * @see co.edu.uniandes.accordant_fv.Component#getPorts
+	 * @model opposite="ports" transient="false"
+	 * @generated
+	 */
+	Component getComp();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_fv.Port#getComp <em>Comp</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Comp</em>' container reference.
+	 * @see #getComp()
+	 * @generated
+	 */
+	void setComp(Component value);
 
 } // Port

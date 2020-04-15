@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_fv.Role#getType <em>Type</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Role#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Role#getPort <em>Port</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.Role#getConn <em>Conn</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getRole()
@@ -80,6 +81,7 @@ public interface Role extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Port</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_fv.Port#getRole <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Port</em>' reference isn't clear,
@@ -89,7 +91,8 @@ public interface Role extends EObject {
 	 * @return the value of the '<em>Port</em>' reference.
 	 * @see #setPort(Port)
 	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getRole_Port()
-	 * @model
+	 * @see co.edu.uniandes.accordant_fv.Port#getRole
+	 * @model opposite="role"
 	 * @generated
 	 */
 	Port getPort();
@@ -103,5 +106,33 @@ public interface Role extends EObject {
 	 * @generated
 	 */
 	void setPort(Port value);
+
+	/**
+	 * Returns the value of the '<em><b>Conn</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_fv.Connector#getRoles <em>Roles</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Conn</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Conn</em>' container reference.
+	 * @see #setConn(Connector)
+	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getRole_Conn()
+	 * @see co.edu.uniandes.accordant_fv.Connector#getRoles
+	 * @model opposite="roles" required="true" transient="false"
+	 * @generated
+	 */
+	Connector getConn();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_fv.Role#getConn <em>Conn</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Conn</em>' container reference.
+	 * @see #getConn()
+	 * @generated
+	 */
+	void setConn(Connector value);
 
 } // Role
