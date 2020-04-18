@@ -4,6 +4,7 @@ package co.edu.uniandes.accordant_fv.impl;
 
 import co.edu.uniandes.accordant_fv.Accordant_fvPackage;
 import co.edu.uniandes.accordant_fv.Component;
+import co.edu.uniandes.accordant_fv.DeliveryGuarantee;
 import co.edu.uniandes.accordant_fv.FunctionalView;
 import co.edu.uniandes.accordant_fv.Port;
 import co.edu.uniandes.accordant_fv.ProcessingModel;
@@ -38,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.ComponentImpl#getProcModel <em>Proc Model</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.ComponentImpl#getFuncView <em>Func View</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.ComponentImpl#getDecision <em>Decision</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.impl.ComponentImpl#getDelivery <em>Delivery</em>}</li>
  * </ul>
  *
  * @generated
@@ -102,6 +104,26 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected ArchDecision decision;
+
+	/**
+	 * The default value of the '{@link #getDelivery() <em>Delivery</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDelivery()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final DeliveryGuarantee DELIVERY_EDEFAULT = DeliveryGuarantee.BEST_EFFORT;
+
+	/**
+	 * The cached value of the '{@link #getDelivery() <em>Delivery</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDelivery()
+	 * @generated
+	 * @ordered
+	 */
+	protected DeliveryGuarantee delivery = DELIVERY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -260,6 +282,27 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DeliveryGuarantee getDelivery() {
+		return delivery;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDelivery(DeliveryGuarantee newDelivery) {
+		DeliveryGuarantee oldDelivery = delivery;
+		delivery = newDelivery == null ? DELIVERY_EDEFAULT : newDelivery;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.COMPONENT__DELIVERY, oldDelivery, delivery));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -323,6 +366,8 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 			case Accordant_fvPackage.COMPONENT__DECISION:
 				if (resolve) return getDecision();
 				return basicGetDecision();
+			case Accordant_fvPackage.COMPONENT__DELIVERY:
+				return getDelivery();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -352,6 +397,9 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 			case Accordant_fvPackage.COMPONENT__DECISION:
 				setDecision((ArchDecision)newValue);
 				return;
+			case Accordant_fvPackage.COMPONENT__DELIVERY:
+				setDelivery((DeliveryGuarantee)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -379,6 +427,9 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 			case Accordant_fvPackage.COMPONENT__DECISION:
 				setDecision((ArchDecision)null);
 				return;
+			case Accordant_fvPackage.COMPONENT__DELIVERY:
+				setDelivery(DELIVERY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -401,6 +452,8 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 				return getFuncView() != null;
 			case Accordant_fvPackage.COMPONENT__DECISION:
 				return decision != null;
+			case Accordant_fvPackage.COMPONENT__DELIVERY:
+				return delivery != DELIVERY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -419,6 +472,8 @@ public abstract class ComponentImpl extends MinimalEObjectImpl.Container impleme
 		result.append(name);
 		result.append(", procModel: ");
 		result.append(procModel);
+		result.append(", delivery: ");
+		result.append(delivery);
 		result.append(')');
 		return result.toString();
 	}

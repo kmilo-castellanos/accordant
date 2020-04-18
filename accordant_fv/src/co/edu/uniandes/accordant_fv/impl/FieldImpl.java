@@ -5,12 +5,16 @@ package co.edu.uniandes.accordant_fv.impl;
 import co.edu.uniandes.accordant_fv.Accordant_fvPackage;
 import co.edu.uniandes.accordant_fv.Field;
 
+import co.edu.uniandes.accordant_fv.Port;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.FieldImpl#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.FieldImpl#getDtype <em>Dtype</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.impl.FieldImpl#getOrder <em>Order</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.impl.FieldImpl#getPortowner <em>Portowner</em>}</li>
  * </ul>
  *
  * @generated
@@ -175,6 +180,91 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Port getPortowner() {
+		if (eContainerFeatureID() != Accordant_fvPackage.FIELD__PORTOWNER) return null;
+		return (Port)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPortowner(Port newPortowner, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newPortowner, Accordant_fvPackage.FIELD__PORTOWNER, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPortowner(Port newPortowner) {
+		if (newPortowner != eInternalContainer() || (eContainerFeatureID() != Accordant_fvPackage.FIELD__PORTOWNER && newPortowner != null)) {
+			if (EcoreUtil.isAncestor(this, newPortowner))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newPortowner != null)
+				msgs = ((InternalEObject)newPortowner).eInverseAdd(this, Accordant_fvPackage.PORT__FIELDS, Port.class, msgs);
+			msgs = basicSetPortowner(newPortowner, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.FIELD__PORTOWNER, newPortowner, newPortowner));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_fvPackage.FIELD__PORTOWNER:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetPortowner((Port)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_fvPackage.FIELD__PORTOWNER:
+				return basicSetPortowner(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case Accordant_fvPackage.FIELD__PORTOWNER:
+				return eInternalContainer().eInverseRemove(this, Accordant_fvPackage.PORT__FIELDS, Port.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -184,6 +274,8 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 				return getDtype();
 			case Accordant_fvPackage.FIELD__ORDER:
 				return getOrder();
+			case Accordant_fvPackage.FIELD__PORTOWNER:
+				return getPortowner();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,6 +296,9 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 				return;
 			case Accordant_fvPackage.FIELD__ORDER:
 				setOrder((Short)newValue);
+				return;
+			case Accordant_fvPackage.FIELD__PORTOWNER:
+				setPortowner((Port)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,6 +321,9 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 			case Accordant_fvPackage.FIELD__ORDER:
 				setOrder(ORDER_EDEFAULT);
 				return;
+			case Accordant_fvPackage.FIELD__PORTOWNER:
+				setPortowner((Port)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -244,6 +342,8 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 				return DTYPE_EDEFAULT == null ? dtype != null : !DTYPE_EDEFAULT.equals(dtype);
 			case Accordant_fvPackage.FIELD__ORDER:
 				return order != ORDER_EDEFAULT;
+			case Accordant_fvPackage.FIELD__PORTOWNER:
+				return getPortowner() != null;
 		}
 		return super.eIsSet(featureID);
 	}

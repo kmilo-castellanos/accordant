@@ -39,7 +39,7 @@ Role returns Role:
 	{Role}
 	'Role' name=ID ':' type=RoleType? '->' port=[Port]? ; 
 
-enum DeliveryModel returns DeliveryModel:
+enum DeliveryGuarantee returns DeliveryGuarantee:
 				BEST_EFFORT = 'BEST_EFFORT' | AT_LEAST_ONE = 'AT_LEAST_ONE' | AT_MOST_ONE = 'AT_MOST_ONE' | EXACTLY_ONE = 'EXACTLY_ONE';
 
 enum SyncType returns SyncType:
@@ -66,7 +66,7 @@ Stream returns Stream:
 	'Stream'
 	name=ID
 	'{'
-		('delivery' ':' delivery=DeliveryModel)?
+		('delivery' ':' delivery=DeliveryGuarantee)?
 		('sync' ':' synct=SyncType)?
 		('notification' ':' notification=NotificationModel)?
 		('buffering' ':' buffering=Buffering)?
@@ -80,7 +80,7 @@ Adaptor returns Adaptor:
 	'Adaptor'
 	name=ID
 	'{'
-		('delivery' ':' delivery=DeliveryModel?) 
+		('delivery' ':' delivery=DeliveryGuarantee?) 
 		('sync' ':' synct=SyncType)? 
 		('notification' ':' notification=NotificationModel)? 
 		('buffering' ':' buffering=Buffering)? 
@@ -94,7 +94,7 @@ Distributor returns Distributor:
 	'Distributor'
 	name=ID
 	'{'
-		('delivery' ':' delivery=DeliveryModel)?
+		('delivery' ':' delivery=DeliveryGuarantee)?
 		('sync' ':' synct=SyncType)?
 		('notification' ':' notification=NotificationModel)?
 		('buffering' ':' buffering=Buffering)?
@@ -108,7 +108,7 @@ Event returns Event:
 	'Event'
 	name=ID 
 	'{'
-		('delivery' ':' delivery=DeliveryModel)?
+		('delivery' ':' delivery=DeliveryGuarantee)?
 		('sync' ':' synct=SyncType)? 
 		('notification' ':' notification=NotificationModel)?
 		('buffering' ':' buffering=Buffering)?
@@ -122,7 +122,7 @@ ProcedureCall returns ProcedureCall:
 	'ProcCall'
 	name=ID 
 	'{'
-		('delivery' ':' delivery=DeliveryModel)?
+		('delivery' ':' delivery=DeliveryGuarantee)?
 		('sync' ':' synct=SyncType)?
 		('notification' ':' notification=NotificationModel)?
 		('buffering' ':' buffering=Buffering)?
@@ -143,6 +143,7 @@ Transformer returns Transformer:
 	name=ID
 	'{'
 		('procModel' ':' procModel=ProcessingModel)?
+		('delivery' ':' delivery=DeliveryGuarantee)?
 		('pmml' ':' pmml=EString)?
 		('decision' ':' decision=[rq::ArchDecision])?
 		'ports' ':' '{' ports+=Port ( "," ports+=Port)* '}' 
@@ -153,6 +154,7 @@ Estimator returns Estimator:
 	name=ID
 	'{'
 		('procModel' ':' procModel=ProcessingModel)?
+		('delivery' ':' delivery=DeliveryGuarantee)?
 		('pmml' ':' pmml=EString)?
 		('decision' ':' decision=[rq::ArchDecision])?
 		'ports' ':' '{' ports+=Port ( "," ports+=Port)* '}' 
@@ -164,6 +166,7 @@ Ingestor returns Ingestor:
 	'{'
 		'type' ':' type=AccessType
 		('procModel' ':' procModel=ProcessingModel)?
+		('delivery' ':' delivery=DeliveryGuarantee)?
 		('conn' ':' conn=EString)?
 		('format' ':' format=EString)?
 		('props' ':' props=EString)?
@@ -177,6 +180,7 @@ Sink returns Sink:
 	'{'
 		'type' ':' type=AccessType
 		('procModel' ':' procModel=ProcessingModel)?
+		('delivery' ':' delivery=DeliveryGuarantee)?
 		('conn' ':' conn=EString)?
 		('format' ':' format=EString)?
 		('props' ':' props=EString)?

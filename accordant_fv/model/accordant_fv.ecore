@@ -14,7 +14,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="delivery" eType="#//DeliveryModel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="delivery" eType="#//DeliveryGuarantee"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="synct" eType="#//SyncType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="notification" eType="#//NotificationModel"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="buffering" eType="#//Buffering"/>
@@ -34,6 +34,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="funcView" eType="#//FunctionalView"
         eOpposite="#//FunctionalView/comps"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="decision" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//ArchDecision"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="delivery" eType="#//DeliveryGuarantee"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transformer" eSuperTypes="#//AnalyticsComponent">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sqlExp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -67,7 +68,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
-        eType="#//Field" containment="true"/>
+        eType="#//Field" derived="true" containment="true" eOpposite="#//Field/portowner"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="role" eType="#//Role" eOpposite="#//Role/port"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="comp" eType="#//Component"
         eOpposite="#//Component/ports"/>
@@ -77,7 +78,7 @@
     <eLiterals name="BATCH" literal="BATCH"/>
     <eLiterals name="MICROBATCH" value="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="DeliveryModel">
+  <eClassifiers xsi:type="ecore:EEnum" name="DeliveryGuarantee">
     <eLiterals name="BEST_EFFORT"/>
     <eLiterals name="AT_LEAST_ONE" value="1"/>
     <eLiterals name="AT_MOST_ONE" value="2"/>
@@ -130,6 +131,8 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portowner" lowerBound="1"
+        eType="#//Port" eOpposite="#//Port/fields"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DType">
     <eLiterals name="STRING"/>

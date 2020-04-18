@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.bson.Document;
+import org.dmg.pmml.DataField;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -17,6 +18,7 @@ import org.w3c.dom.NodeList;
 
 import co.edu.uniandes.accordant.db.mongo.MongoConnection;
 import co.edu.uniandes.accordant_fv.Accordant_fvFactory;
+import co.edu.uniandes.accordant_fv.AnalyticsComponent;
 import co.edu.uniandes.accordant_fv.Component;
 import co.edu.uniandes.accordant_fv.Connector;
 import co.edu.uniandes.accordant_fv.Estimator;
@@ -398,7 +400,22 @@ public class ModelLoader {
 
 				}
 			}
-			//TODO crear fields
+			
+		}
+		if(comp instanceof AnalyticsComponent) {
+			AnalyticsComponent analyticComp=(AnalyticsComponent)comp;
+			if(analyticComp!=null && analyticComp.getPmml()!=null && !analyticComp.getPmml().isEmpty()) {
+				List<String[]> fields = Util.getPMMLFields(analyticComp.getPmml());
+				short forder=0;
+				for(String[] field:fields) {
+						Field f=fvFactory.createField();
+						f.setName(field[0]);
+						f.setDtype(field[1]);
+						f.setOrder(forder);
+						forder++;
+						port.getFields().add(f);
+				}
+			}
 		}
 	}
 
@@ -429,6 +446,7 @@ public class ModelLoader {
 		ing.setName(Util.formatName(el.getAttribute("label")));
 		ing.setConn(el.getAttribute("connection"));
 		ing.setProcModel(Util.parseProcModel(el.getAttribute("procModel")));
+		ing.setDelivery(Util.parseDelivery(el.getAttribute("delivery")));
 		ing.setFormat(el.getAttribute("format"));
 		ing.setProps(el.getAttribute("props"));
 		ing.setType(Util.parseAccessType(el.getAttribute("accessType")));

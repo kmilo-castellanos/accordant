@@ -86,8 +86,8 @@ public class Accordant_fvFactoryImpl extends EFactoryImpl implements Accordant_f
 		switch (eDataType.getClassifierID()) {
 			case Accordant_fvPackage.PROCESSING_MODEL:
 				return createProcessingModelFromString(eDataType, initialValue);
-			case Accordant_fvPackage.DELIVERY_MODEL:
-				return createDeliveryModelFromString(eDataType, initialValue);
+			case Accordant_fvPackage.DELIVERY_GUARANTEE:
+				return createDeliveryGuaranteeFromString(eDataType, initialValue);
 			case Accordant_fvPackage.SYNC_TYPE:
 				return createSyncTypeFromString(eDataType, initialValue);
 			case Accordant_fvPackage.NOTIFICATION_MODEL:
@@ -119,8 +119,8 @@ public class Accordant_fvFactoryImpl extends EFactoryImpl implements Accordant_f
 		switch (eDataType.getClassifierID()) {
 			case Accordant_fvPackage.PROCESSING_MODEL:
 				return convertProcessingModelToString(eDataType, instanceValue);
-			case Accordant_fvPackage.DELIVERY_MODEL:
-				return convertDeliveryModelToString(eDataType, instanceValue);
+			case Accordant_fvPackage.DELIVERY_GUARANTEE:
+				return convertDeliveryGuaranteeToString(eDataType, instanceValue);
 			case Accordant_fvPackage.SYNC_TYPE:
 				return convertSyncTypeToString(eDataType, instanceValue);
 			case Accordant_fvPackage.NOTIFICATION_MODEL:
@@ -307,8 +307,8 @@ public class Accordant_fvFactoryImpl extends EFactoryImpl implements Accordant_f
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DeliveryModel createDeliveryModelFromString(EDataType eDataType, String initialValue) {
-		DeliveryModel result = DeliveryModel.get(initialValue);
+	public DeliveryGuarantee createDeliveryGuaranteeFromString(EDataType eDataType, String initialValue) {
+		DeliveryGuarantee result = DeliveryGuarantee.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -318,7 +318,7 @@ public class Accordant_fvFactoryImpl extends EFactoryImpl implements Accordant_f
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertDeliveryModelToString(EDataType eDataType, Object instanceValue) {
+	public String convertDeliveryGuaranteeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_fv.Component#getProcModel <em>Proc Model</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Component#getFuncView <em>Func View</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Component#getDecision <em>Decision</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.Component#getDelivery <em>Delivery</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getComponent()
@@ -154,5 +155,34 @@ public interface Component extends EObject {
 	 * @generated
 	 */
 	void setDecision(ArchDecision value);
+
+	/**
+	 * Returns the value of the '<em><b>Delivery</b></em>' attribute.
+	 * The literals are from the enumeration {@link co.edu.uniandes.accordant_fv.DeliveryGuarantee}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Delivery</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Delivery</em>' attribute.
+	 * @see co.edu.uniandes.accordant_fv.DeliveryGuarantee
+	 * @see #setDelivery(DeliveryGuarantee)
+	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getComponent_Delivery()
+	 * @model
+	 * @generated
+	 */
+	DeliveryGuarantee getDelivery();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_fv.Component#getDelivery <em>Delivery</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Delivery</em>' attribute.
+	 * @see co.edu.uniandes.accordant_fv.DeliveryGuarantee
+	 * @see #getDelivery()
+	 * @generated
+	 */
+	void setDelivery(DeliveryGuarantee value);
 
 } // Component

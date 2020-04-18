@@ -1,22 +1,35 @@
 package co.edu.uniandes.accordant.model;
 
 import java.io.BufferedReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import org.jpmml.model.PMMLUtil;
+import org.dmg.pmml.DataDictionary;
+import org.dmg.pmml.DataField;
+import org.dmg.pmml.DataType;
+import org.dmg.pmml.PMML;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.xml.bind.JAXBException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 import co.edu.uniandes.accordant_fv.AccessType;
 import co.edu.uniandes.accordant_fv.Buffering;
-import co.edu.uniandes.accordant_fv.DeliveryModel;
+import co.edu.uniandes.accordant_fv.DeliveryGuarantee;
+import co.edu.uniandes.accordant_fv.Field;
 import co.edu.uniandes.accordant_fv.NotificationModel;
 import co.edu.uniandes.accordant_fv.ProcessingModel;
 import co.edu.uniandes.accordant_fv.SyncType;
@@ -95,6 +108,38 @@ public class Util {
 	}
 	
 	
+	public static Document parseXML(InputSource xmlSource) throws Exception{
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder = factory.newDocumentBuilder();
+		Document doc = builder.parse(xmlSource);
+		return doc;
+	}
+	
+	public static List<String[]> getPMMLFields(String urlPMML)  {
+			try {
+				System.out.println("URLPMML: "+urlPMML);
+				URL url = new URL(urlPMML);
+				InputStream input =	url.openStream();
+				PMML model;
+				model = PMMLUtil.unmarshal(input);
+				if (model != null) {
+					List<String[]> fields= new ArrayList<String[]>();
+					DataDictionary dataDict = model.getDataDictionary();
+					for (DataField pmmlfield : dataDict.getDataFields()) {
+						String name = pmmlfield.getName().getValue();
+						String dtype= parseDTypes(pmmlfield.getDataType());
+						fields.add(new String[]{name,dtype});
+					}
+					return fields;
+				}
+				input.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return null;
+	}		
+	
+	
 
 	public static NotificationModel parseNotification(String notModel) {
 		if ("CENTRAL".equalsIgnoreCase(notModel)) {
@@ -137,15 +182,15 @@ public class Util {
 		return null;
 	}
 	
-	public static DeliveryModel parseDelivery(String delivery) {
+	public static DeliveryGuarantee parseDelivery(String delivery) {
 		if ("BestEffort".equalsIgnoreCase(delivery)) {
-			return DeliveryModel.BEST_EFFORT;
+			return DeliveryGuarantee.BEST_EFFORT;
 		} else if ("AtLeastOne".equalsIgnoreCase(delivery)) {
-			return DeliveryModel.AT_LEAST_ONE;
+			return DeliveryGuarantee.AT_LEAST_ONE;
 		} else if ("AtMostOne".equalsIgnoreCase(delivery)) {
-			return DeliveryModel.AT_MOST_ONE;
+			return DeliveryGuarantee.AT_MOST_ONE;
 		}else if ("ExactlyOne".equalsIgnoreCase(delivery)) {
-			return DeliveryModel.EXACTLY_ONE;
+			return DeliveryGuarantee.EXACTLY_ONE;
 		}
 		return null;
 	}
@@ -231,6 +276,17 @@ public class Util {
 			return ConstraintType.PROC_MODEL;
 		}
 		return null;
+	}
+	
+	public static String parseDTypes(DataType datatype) {
+		switch (datatype.name()) {
+      	case "FLOAT": return "Float";
+			case "INTEGER": return"Integer";
+			case "DOUBLE": return"Double";
+			case "BOOLEAN":return "Boolean";
+			case "DATE":return "Date";
+			default: return "String";
+		}
 	}
 	
 }

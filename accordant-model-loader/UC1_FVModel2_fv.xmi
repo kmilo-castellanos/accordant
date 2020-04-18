@@ -1,28 +1,38 @@
 <?xml version="1.0" encoding="ASCII"?>
 <accordant_fv:FunctionalView xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:accordant_fv="http://uniandes.accordant.functional" name="UC1FVModel">
   <conns xsi:type="accordant_fv:Event" name="queue1" protocol="" props="">
-    <roles name="queue1_out_Analytics" port="Analytics_from_queue1"/>
-    <roles type="IN" name="queue1_in_Ingestor" port="Ingestor_to_queue1"/>
+    <roles name="queue1_out_Analytics" port="Analytics_req_queue1"/>
+    <roles type="IN" name="queue1_in_Ingestor" port="Ingestor_prov_queue1"/>
   </conns>
   <conns xsi:type="accordant_fv:Event" name="queue2" protocol="" props="">
-    <roles type="IN" name="queue2_in_Analytics" port="Analytics_to_queue2"/>
-    <roles name="queue2_out_Sink" port="Sink_from_queue2"/>
+    <roles type="IN" name="queue2_in_Analytics" port="Analytics_prov_queue2"/>
+    <roles name="queue2_out_Sink" port="Sink_req_queue2"/>
   </conns>
   <comps xsi:type="accordant_fv:Ingestor" name="Ingestor" conn="" format="" props="">
-    <ports type="PROVIDED" name="Ingestor_to_queue1"/>
+    <ports type="PROVIDED" name="Ingestor_prov_queue1" role="queue1_in_Ingestor"/>
   </comps>
-  <comps xsi:type="accordant_fv:Estimator" name="Analytics" pmml="">
-    <ports type="PROVIDED" name="Analytics_to_queue2">
-      <fields name="test" dtype="Undefined"/>
-      <fields name="test2" dtype="Undefined" order="1"/>
+  <comps xsi:type="accordant_fv:Estimator" name="Analytics" pmml="https://raw.githubusercontent.com/kmilo-castellanos/accordant-usecases/master/enso/pmml-models/ElNinoPolReg.pmml">
+    <ports type="PROVIDED" name="Analytics_prov_queue2" role="queue2_in_Analytics">
+      <fields name="latitude" dtype="Double"/>
+      <fields name="longitude" dtype="Double" order="1"/>
+      <fields name="zon_winds" dtype="Double" order="2"/>
+      <fields name="mer_winds" dtype="Double" order="3"/>
+      <fields name="humidity" dtype="Double" order="4"/>
+      <fields name="airtemp" dtype="Double" order="5"/>
+      <fields name="s_s_temp" dtype="Double" order="6"/>
     </ports>
-    <ports name="Analytics_from_queue1">
-      <fields name="name" dtype="Undefined"/>
-      <fields name="class" dtype="Undefined" order="1"/>
+    <ports name="Analytics_req_queue1" role="queue1_out_Analytics">
+      <fields name="latitude" dtype="Double"/>
+      <fields name="longitude" dtype="Double" order="1"/>
+      <fields name="zon_winds" dtype="Double" order="2"/>
+      <fields name="mer_winds" dtype="Double" order="3"/>
+      <fields name="humidity" dtype="Double" order="4"/>
+      <fields name="airtemp" dtype="Double" order="5"/>
+      <fields name="s_s_temp" dtype="Double" order="6"/>
     </ports>
   </comps>
   <comps xsi:type="accordant_fv:Sink" name="Sink" conn="" format="">
-    <ports name="Sink_from_queue2"/>
+    <ports name="Sink_req_queue2" role="queue2_out_Sink"/>
   </comps>
   <project href="UC1_ai.xmi#UC1"/>
 </accordant_fv:FunctionalView>

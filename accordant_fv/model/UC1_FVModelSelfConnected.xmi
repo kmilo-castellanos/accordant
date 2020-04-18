@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ASCII"?>
+<accordant_fv:FunctionalView
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:accordant_fv="http://uniandes.accordant.functional"
+    name="UC1FVModel2">
+  <conns xsi:type="accordant_fv:ProcedureCall"
+      name="pcall_1"
+      protocol=""
+      props="">
+    <roles type="IN"
+        name="pcall_1_in_Ingestor"
+        port="Ingestor_to_pcall_1"/>
+    <roles name="pcall_1_out_Transformer"
+        port="Estimator_from_pcall_2"/>
+  </conns>
+  <conns xsi:type="accordant_fv:ProcedureCall"
+      name="pcall_2"
+      protocol=""
+      props="">
+    <roles type="IN"
+        name="pcall_2_in_est"
+        port="Estimator_to_pcall_3"/>
+    <roles name="out_sink"
+        port="Sink_from_pcall_3"/>
+  </conns>
+  <conns xsi:type="accordant_fv:Event"
+      name="cyclic_conn"
+      props="">
+    <roles name="cyclic-out"
+        port="cyclic-req"/>
+    <roles type="IN"
+        name="cyclic-in"
+        port="cyclic2-prov"/>
+  </conns>
+  <conns xsi:type="accordant_fv:Event"
+      name="cyclic-conn2">
+    <roles name="cyclic2-out"
+        port="cyclic2-req"/>
+    <roles type="IN"
+        name="cyclic2-in"
+        port="cyclic-prov"/>
+  </conns>
+  <comps xsi:type="accordant_fv:Ingestor"
+      name="Ingestor"
+      procModel="BATCH"
+      conn=""
+      format=""
+      props="">
+    <ports type="PROVIDED"
+        name="Ingestor_to_pcall_1"
+        role="pcall_1_in_Ingestor">
+      <fields
+          name="name"
+          dtype="String"/>
+      <fields
+          name="type"
+          dtype="Number"
+          order="1"/>
+      <fields
+          name="date2"
+          dtype="Date"
+          order="2"/>
+    </ports>
+  </comps>
+  <comps xsi:type="accordant_fv:Estimator"
+      name="Estimator"
+      procModel="BATCH"
+      pmml="Dtree.pmml">
+    <ports name="Estimator_from_pcall_2"
+        role="pcall_1_out_Transformer"/>
+    <ports type="PROVIDED"
+        name="Estimator_to_pcall_3"
+        role="pcall_2_in_est"/>
+    <decision
+        href="UC1_ai.xmi#Dec1"/>
+  </comps>
+  <comps xsi:type="accordant_fv:Sink"
+      name="Sink"
+      procModel="BATCH"
+      conn=""
+      format="">
+    <ports name="Sink_from_pcall_3"
+        role="out_sink"/>
+  </comps>
+  <comps xsi:type="accordant_fv:Estimator"
+      name="Cyclic">
+    <ports name="cyclic-req"
+        role="cyclic-out"/>
+    <ports type="PROVIDED"
+        name="cyclic-prov"
+        role="cyclic2-in"/>
+  </comps>
+  <comps xsi:type="accordant_fv:Estimator"
+      name="Cyclic 2">
+    <ports name="cyclic2-req"
+        role="cyclic2-out"/>
+    <ports type="PROVIDED"
+        name="cyclic2-prov"
+        role="cyclic-in"/>
+  </comps>
+  <project href="UC1_ai.xmi#UC1"/>
+</accordant_fv:FunctionalView>

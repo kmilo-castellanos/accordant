@@ -5,7 +5,7 @@ package co.edu.uniandes.accordant_fv.impl;
 import co.edu.uniandes.accordant_fv.Accordant_fvPackage;
 import co.edu.uniandes.accordant_fv.Buffering;
 import co.edu.uniandes.accordant_fv.Connector;
-import co.edu.uniandes.accordant_fv.DeliveryModel;
+import co.edu.uniandes.accordant_fv.DeliveryGuarantee;
 import co.edu.uniandes.accordant_fv.NotificationModel;
 import co.edu.uniandes.accordant_fv.Role;
 import co.edu.uniandes.accordant_fv.SyncType;
@@ -78,7 +78,7 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected static final DeliveryModel DELIVERY_EDEFAULT = DeliveryModel.BEST_EFFORT;
+	protected static final DeliveryGuarantee DELIVERY_EDEFAULT = DeliveryGuarantee.BEST_EFFORT;
 
 	/**
 	 * The cached value of the '{@link #getDelivery() <em>Delivery</em>}' attribute.
@@ -88,7 +88,7 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected DeliveryModel delivery = DELIVERY_EDEFAULT;
+	protected DeliveryGuarantee delivery = DELIVERY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSynct() <em>Synct</em>}' attribute.
@@ -275,7 +275,7 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DeliveryModel getDelivery() {
+	public DeliveryGuarantee getDelivery() {
 		return delivery;
 	}
 
@@ -284,8 +284,8 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDelivery(DeliveryModel newDelivery) {
-		DeliveryModel oldDelivery = delivery;
+	public void setDelivery(DeliveryGuarantee newDelivery) {
+		DeliveryGuarantee oldDelivery = delivery;
 		delivery = newDelivery == null ? DELIVERY_EDEFAULT : newDelivery;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_fvPackage.CONNECTOR__DELIVERY, oldDelivery, delivery));
@@ -542,7 +542,7 @@ public abstract class ConnectorImpl extends MinimalEObjectImpl.Container impleme
 				setName((String)newValue);
 				return;
 			case Accordant_fvPackage.CONNECTOR__DELIVERY:
-				setDelivery((DeliveryModel)newValue);
+				setDelivery((DeliveryGuarantee)newValue);
 				return;
 			case Accordant_fvPackage.CONNECTOR__SYNCT:
 				setSynct((SyncType)newValue);

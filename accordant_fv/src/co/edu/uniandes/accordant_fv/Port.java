@@ -84,6 +84,7 @@ public interface Port extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Fields</b></em>' containment reference list.
 	 * The list contents are of type {@link co.edu.uniandes.accordant_fv.Field}.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_fv.Field#getPortowner <em>Portowner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fields</em>' containment reference isn't clear,
@@ -92,7 +93,8 @@ public interface Port extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fields</em>' containment reference list.
 	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getPort_Fields()
-	 * @model containment="true"
+	 * @see co.edu.uniandes.accordant_fv.Field#getPortowner
+	 * @model opposite="portowner" containment="true" derived="true"
 	 * @generated
 	 */
 	EList<Field> getFields();

@@ -10,14 +10,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Delivery Model</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Delivery Guarantee</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getDeliveryModel()
+ * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getDeliveryGuarantee()
  * @model
  * @generated
  */
-public enum DeliveryModel implements Enumerator {
+public enum DeliveryGuarantee implements Enumerator {
 	/**
 	 * The '<em><b>BEST EFFORT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -119,13 +119,13 @@ public enum DeliveryModel implements Enumerator {
 	public static final int EXACTLY_ONE_VALUE = 3;
 
 	/**
-	 * An array of all the '<em><b>Delivery Model</b></em>' enumerators.
+	 * An array of all the '<em><b>Delivery Guarantee</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final DeliveryModel[] VALUES_ARRAY =
-		new DeliveryModel[] {
+	private static final DeliveryGuarantee[] VALUES_ARRAY =
+		new DeliveryGuarantee[] {
 			BEST_EFFORT,
 			AT_LEAST_ONE,
 			AT_MOST_ONE,
@@ -133,24 +133,24 @@ public enum DeliveryModel implements Enumerator {
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Delivery Model</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Delivery Guarantee</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<DeliveryModel> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<DeliveryGuarantee> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Delivery Model</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Delivery Guarantee</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static DeliveryModel get(String literal) {
+	public static DeliveryGuarantee get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			DeliveryModel result = VALUES_ARRAY[i];
+			DeliveryGuarantee result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -159,16 +159,16 @@ public enum DeliveryModel implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Delivery Model</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Delivery Guarantee</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static DeliveryModel getByName(String name) {
+	public static DeliveryGuarantee getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			DeliveryModel result = VALUES_ARRAY[i];
+			DeliveryGuarantee result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -177,14 +177,14 @@ public enum DeliveryModel implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Delivery Model</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Delivery Guarantee</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static DeliveryModel get(int value) {
+	public static DeliveryGuarantee get(int value) {
 		switch (value) {
 			case BEST_EFFORT_VALUE: return BEST_EFFORT;
 			case AT_LEAST_ONE_VALUE: return AT_LEAST_ONE;
@@ -221,7 +221,7 @@ public enum DeliveryModel implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private DeliveryModel(int value, String name, String literal) {
+	private DeliveryGuarantee(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -265,4 +265,4 @@ public enum DeliveryModel implements Enumerator {
 		return literal;
 	}
 	
-} //DeliveryModel
+} //DeliveryGuarantee

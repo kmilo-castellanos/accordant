@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_fv.Field#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Field#getDtype <em>Dtype</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_fv.Field#getOrder <em>Order</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_fv.Field#getPortowner <em>Portowner</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getField()
@@ -100,5 +101,33 @@ public interface Field extends EObject {
 	 * @generated
 	 */
 	void setOrder(short value);
+
+	/**
+	 * Returns the value of the '<em><b>Portowner</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_fv.Port#getFields <em>Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Portowner</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Portowner</em>' container reference.
+	 * @see #setPortowner(Port)
+	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getField_Portowner()
+	 * @see co.edu.uniandes.accordant_fv.Port#getFields
+	 * @model opposite="fields" required="true" transient="false"
+	 * @generated
+	 */
+	Port getPortowner();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_fv.Field#getPortowner <em>Portowner</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Portowner</em>' container reference.
+	 * @see #getPortowner()
+	 * @generated
+	 */
+	void setPortowner(Port value);
 
 } // Field

@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -169,7 +169,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	 */
 	public EList<Field> getFields() {
 		if (fields == null) {
-			fields = new EObjectContainmentEList<Field>(Field.class, this, Accordant_fvPackage.PORT__FIELDS);
+			fields = new EObjectContainmentWithInverseEList<Field>(Field.class, this, Accordant_fvPackage.PORT__FIELDS, Accordant_fvPackage.FIELD__PORTOWNER);
 		}
 		return fields;
 	}
@@ -280,9 +280,12 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case Accordant_fvPackage.PORT__FIELDS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFields()).basicAdd(otherEnd, msgs);
 			case Accordant_fvPackage.PORT__ROLE:
 				if (role != null)
 					msgs = ((InternalEObject)role).eInverseRemove(this, Accordant_fvPackage.ROLE__PORT, Role.class, msgs);

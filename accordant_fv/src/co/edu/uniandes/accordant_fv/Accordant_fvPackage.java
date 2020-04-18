@@ -295,13 +295,22 @@ public interface Accordant_fvPackage extends EPackage {
 	int COMPONENT__DECISION = 4;
 
 	/**
+	 * The feature id for the '<em><b>Delivery</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__DELIVERY = 5;
+
+	/**
 	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = 5;
+	int COMPONENT_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Component</em>' class.
@@ -366,6 +375,15 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @ordered
 	 */
 	int ANALYTICS_COMPONENT__DECISION = COMPONENT__DECISION;
+
+	/**
+	 * The feature id for the '<em><b>Delivery</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYTICS_COMPONENT__DELIVERY = COMPONENT__DELIVERY;
 
 	/**
 	 * The feature id for the '<em><b>Pmml</b></em>' attribute.
@@ -448,6 +466,15 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @ordered
 	 */
 	int TRANSFORMER__DECISION = ANALYTICS_COMPONENT__DECISION;
+
+	/**
+	 * The feature id for the '<em><b>Delivery</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSFORMER__DELIVERY = ANALYTICS_COMPONENT__DELIVERY;
 
 	/**
 	 * The feature id for the '<em><b>Pmml</b></em>' attribute.
@@ -557,6 +584,15 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @ordered
 	 */
 	int ESTIMATOR__DECISION = ANALYTICS_COMPONENT__DECISION;
+
+	/**
+	 * The feature id for the '<em><b>Delivery</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESTIMATOR__DELIVERY = ANALYTICS_COMPONENT__DELIVERY;
 
 	/**
 	 * The feature id for the '<em><b>Pmml</b></em>' attribute.
@@ -995,6 +1031,15 @@ public interface Accordant_fvPackage extends EPackage {
 	int INGESTOR__DECISION = COMPONENT__DECISION;
 
 	/**
+	 * The feature id for the '<em><b>Delivery</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INGESTOR__DELIVERY = COMPONENT__DELIVERY;
+
+	/**
 	 * The feature id for the '<em><b>Conn</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1220,6 +1265,15 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @ordered
 	 */
 	int SINK__DECISION = COMPONENT__DECISION;
+
+	/**
+	 * The feature id for the '<em><b>Delivery</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINK__DELIVERY = COMPONENT__DELIVERY;
 
 	/**
 	 * The feature id for the '<em><b>Conn</b></em>' attribute.
@@ -1686,13 +1740,22 @@ public interface Accordant_fvPackage extends EPackage {
 	int FIELD__ORDER = 2;
 
 	/**
+	 * The feature id for the '<em><b>Portowner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__PORTOWNER = 3;
+
+	/**
 	 * The number of structural features of the '<em>Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_FEATURE_COUNT = 3;
+	int FIELD_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Field</em>' class.
@@ -1714,14 +1777,14 @@ public interface Accordant_fvPackage extends EPackage {
 	int PROCESSING_MODEL = 17;
 
 	/**
-	 * The meta object id for the '{@link co.edu.uniandes.accordant_fv.DeliveryModel <em>Delivery Model</em>}' enum.
+	 * The meta object id for the '{@link co.edu.uniandes.accordant_fv.DeliveryGuarantee <em>Delivery Guarantee</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see co.edu.uniandes.accordant_fv.DeliveryModel
-	 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getDeliveryModel()
+	 * @see co.edu.uniandes.accordant_fv.DeliveryGuarantee
+	 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getDeliveryGuarantee()
 	 * @generated
 	 */
-	int DELIVERY_MODEL = 18;
+	int DELIVERY_GUARANTEE = 18;
 
 	/**
 	 * The meta object id for the '{@link co.edu.uniandes.accordant_fv.SyncType <em>Sync Type</em>}' enum.
@@ -2044,6 +2107,17 @@ public interface Accordant_fvPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponent_Decision();
+
+	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_fv.Component#getDelivery <em>Delivery</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Delivery</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Component#getDelivery()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EAttribute getComponent_Delivery();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_fv.Transformer <em>Transformer</em>}'.
@@ -2450,6 +2524,17 @@ public interface Accordant_fvPackage extends EPackage {
 	EAttribute getField_Order();
 
 	/**
+	 * Returns the meta object for the container reference '{@link co.edu.uniandes.accordant_fv.Field#getPortowner <em>Portowner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Portowner</em>'.
+	 * @see co.edu.uniandes.accordant_fv.Field#getPortowner()
+	 * @see #getField()
+	 * @generated
+	 */
+	EReference getField_Portowner();
+
+	/**
 	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_fv.ProcessingModel <em>Processing Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2460,14 +2545,14 @@ public interface Accordant_fvPackage extends EPackage {
 	EEnum getProcessingModel();
 
 	/**
-	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_fv.DeliveryModel <em>Delivery Model</em>}'.
+	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_fv.DeliveryGuarantee <em>Delivery Guarantee</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Delivery Model</em>'.
-	 * @see co.edu.uniandes.accordant_fv.DeliveryModel
+	 * @return the meta object for enum '<em>Delivery Guarantee</em>'.
+	 * @see co.edu.uniandes.accordant_fv.DeliveryGuarantee
 	 * @generated
 	 */
-	EEnum getDeliveryModel();
+	EEnum getDeliveryGuarantee();
 
 	/**
 	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_fv.SyncType <em>Sync Type</em>}'.
@@ -2753,6 +2838,14 @@ public interface Accordant_fvPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT__DECISION = eINSTANCE.getComponent_Decision();
+
+		/**
+		 * The meta object literal for the '<em><b>Delivery</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT__DELIVERY = eINSTANCE.getComponent_Delivery();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.impl.TransformerImpl <em>Transformer</em>}' class.
@@ -3087,6 +3180,14 @@ public interface Accordant_fvPackage extends EPackage {
 		EAttribute FIELD__ORDER = eINSTANCE.getField_Order();
 
 		/**
+		 * The meta object literal for the '<em><b>Portowner</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FIELD__PORTOWNER = eINSTANCE.getField_Portowner();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.ProcessingModel <em>Processing Model</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3097,14 +3198,14 @@ public interface Accordant_fvPackage extends EPackage {
 		EEnum PROCESSING_MODEL = eINSTANCE.getProcessingModel();
 
 		/**
-		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.DeliveryModel <em>Delivery Model</em>}' enum.
+		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.DeliveryGuarantee <em>Delivery Guarantee</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see co.edu.uniandes.accordant_fv.DeliveryModel
-		 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getDeliveryModel()
+		 * @see co.edu.uniandes.accordant_fv.DeliveryGuarantee
+		 * @see co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl#getDeliveryGuarantee()
 		 * @generated
 		 */
-		EEnum DELIVERY_MODEL = eINSTANCE.getDeliveryModel();
+		EEnum DELIVERY_GUARANTEE = eINSTANCE.getDeliveryGuarantee();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_fv.SyncType <em>Sync Type</em>}' enum.

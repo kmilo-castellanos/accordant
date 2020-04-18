@@ -61,7 +61,7 @@ public interface Connector extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Delivery</b></em>' attribute.
-	 * The literals are from the enumeration {@link co.edu.uniandes.accordant_fv.DeliveryModel}.
+	 * The literals are from the enumeration {@link co.edu.uniandes.accordant_fv.DeliveryGuarantee}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Delivery</em>' attribute isn't clear,
@@ -69,24 +69,24 @@ public interface Connector extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Delivery</em>' attribute.
-	 * @see co.edu.uniandes.accordant_fv.DeliveryModel
-	 * @see #setDelivery(DeliveryModel)
+	 * @see co.edu.uniandes.accordant_fv.DeliveryGuarantee
+	 * @see #setDelivery(DeliveryGuarantee)
 	 * @see co.edu.uniandes.accordant_fv.Accordant_fvPackage#getConnector_Delivery()
 	 * @model
 	 * @generated
 	 */
-	DeliveryModel getDelivery();
+	DeliveryGuarantee getDelivery();
 
 	/**
 	 * Sets the value of the '{@link co.edu.uniandes.accordant_fv.Connector#getDelivery <em>Delivery</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Delivery</em>' attribute.
-	 * @see co.edu.uniandes.accordant_fv.DeliveryModel
+	 * @see co.edu.uniandes.accordant_fv.DeliveryGuarantee
 	 * @see #getDelivery()
 	 * @generated
 	 */
-	void setDelivery(DeliveryModel value);
+	void setDelivery(DeliveryGuarantee value);
 
 	/**
 	 * Returns the value of the '<em><b>Synct</b></em>' attribute.
