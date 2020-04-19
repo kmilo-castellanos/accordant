@@ -15,7 +15,7 @@ package accordant_fv
 	inv F12('Components delivery guarantee must match.'):
 	Tuple{status = self.comps->forAll(c1, c2 | c1.delivery = c2.delivery), severity = null}.status
 
-	inv FI1('All components must match with input processing models constraints:'):
+	inv IF1('All components must match with input processing models constraints:'):
 	Tuple{status =
 		self.project.constraints->select(type = rq::accordant_rq::ConstraintType::PROC_MODEL)->isEmpty() or 
 		self.project.constraints->
@@ -24,7 +24,15 @@ package accordant_fv
 			collect(procModel.getValue())->asSet()
 		),severity=null}.status
 		
+	
+	inv IF2('All significant architectural decisions must be reflected in components and/or connectors:'):
+	Tuple{status =
+		self.project.analyzedQs.decisions->select(d:rq::accordant_rq::ArchDecision | d.isSensitivityPoint)->isEmpty() or 
+		self.comps->select(decision<>null).decision->union(self.conns->select(decision<>null).decision)->asSet()->
+		includesAll(self.project.analyzedQs.decisions->select(d:rq::accordant_rq::ArchDecision | d.isSensitivityPoint)->asSet()),
+		severity=null}.status
 		
+	
 	context Ingestor
 
 	inv F3('Ingestor ' + name + ' must have some provided port and no required port'):

@@ -55,6 +55,8 @@
           dtype="Date"
           order="2"/>
     </ports>
+    <decision
+        href="UC1_ai.xmi#Dec2"/>
   </comps>
   <comps xsi:type="accordant_fv:Transformer"
       name="Transformer"
