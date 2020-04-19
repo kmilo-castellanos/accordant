@@ -69,7 +69,19 @@
       procModel="BATCH"
       pmml="Dtree.pmml">
     <ports name="Estimator_from_pcall_2"
-        role="pcall_1_out_Transformer"/>
+        role="pcall_1_out_Transformer">
+      <fields
+          name="name1"
+          dtype="String"/>
+      <fields
+          name="kind"
+          dtype="Number"
+          order="1"/>
+      <fields
+          name="endDate"
+          dtype="Date"
+          order="3"/>
+    </ports>
     <ports type="PROVIDED"
         name="Estimator_to_pcall_3"
         role="pcall_2_in_est"/>

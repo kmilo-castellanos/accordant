@@ -29,8 +29,7 @@
       name="BatchToStream"
       props="">
     <roles type="IN"
-        name="est_in_sink"
-        port="Estimator_to_pcall_3"/>
+        name="est_in_sink"/>
     <roles name="est_out_sink"
         port="Sink_from_pcall_3"/>
     <roles name="wrong_role"
@@ -43,7 +42,8 @@
       format=""
       props="">
     <ports type="PROVIDED"
-        name="Ingestor_to_pcall_1">
+        name="Ingestor_to_pcall_1"
+        role="pcall_1_in_Ingestor">
       <fields
           name="name"
           dtype="String"/>
@@ -64,9 +64,11 @@
       sqlExp=""
       lambdaExp=""
       codeRepo="">
-    <ports name="Transformer_from_pcall_1"/>
+    <ports name="Transformer_from_pcall_1"
+        role="pcall_1_out_Transformer"/>
     <ports type="PROVIDED"
-        name="Transformer_to_pcall_2">
+        name="Transformer_to_pcall_2"
+        role="pcall_2_in_Transformer">
       <fields
           name="place"
           dtype="String"/>
@@ -86,9 +88,11 @@
       name="Estimator"
       procModel="BATCH"
       pmml="Dtree.pmml">
-    <ports name="Estimator_from_pcall_2"/>
+    <ports name="Estimator_from_pcall_2"
+        role="pcall_2_out_Estimator"/>
     <ports type="PROVIDED"
-        name="Estimator_to_pcall_3"/>
+        name="Estimator_to_pcall_3"
+        role="wrong_role"/>
     <decision
         href="UC1_ai.xmi#Dec1"/>
   </comps>
@@ -96,7 +100,8 @@
       name="Sink"
       conn=""
       format="">
-    <ports name="Sink_from_pcall_3"/>
+    <ports name="Sink_from_pcall_3"
+        role="est_out_sink"/>
   </comps>
   <project href="UC1_ai.xmi#UC1"/>
 </accordant_fv:FunctionalView>

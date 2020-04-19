@@ -1,63 +1,75 @@
-
 import 'accordant_fv.ecore'
 
 package accordant_fv
 
 	context FunctionalView
 
-	inv F1('A BDA pipeline requires an Ingestor component'):
+	inv 
+	F1('A BDA pipeline requires an Ingestor component'):
 	Tuple{status = self.comps->exists(c | c.oclIsTypeOf(Ingestor)), severity = null}.status
 
-	inv F2('A BDA pipeline requires a Sink component'):
-	Tuple{status = self.comps->select(oclIsTypeOf(Sink))->size() > 0, severity = null}.status
+	inv 
+	F2('A BDA pipeline requires a Sink component'):
+	Tuple{status = self.comps->exists(c | c.oclIsTypeOf(Sink)), severity = null}.status
 
-	inv F12('Components delivery guarantee must match.'):
+	inv 
+	F12('Components delivery guarantee must match.'):
 	Tuple{status = self.comps->forAll(c1, c2 | c1.delivery = c2.delivery), severity = null}.status
 
-	inv F13('Connectors delivery guarantee mus match.'):
-	Tuple{status = self.conns->forAll(c1, c2 | c1.delivery = c2.delivery), severity = null}.status
-
+	
 	context Ingestor
 
-	inv F3('Ingestor ' + name + ' must have some provided port and no required port'):
+	inv 
+	F3('Ingestor ' + name + ' must have some provided port and no required port'):
 	Tuple{status = ports->exists(p | p.type = PortType::PROVIDED) and not ports->exists(p | p.type = PortType::REQUIRED),
 		severity = null}.status
 
 	context Sink
 
-	inv F4('Sink' + name + ' must have some required port and no provided port'):
+	inv 
+	F4('Sink' + name + ' must have some required port and no provided port'):
 	Tuple{status = not ports->exists(p | p.type = PortType::PROVIDED) and ports->exists(p | p.type = PortType::REQUIRED),
 		severity = null}.status
 
 	context AnalyticsComponent
 
-	inv F5('An analytics component must have provided and required ports'):
+	inv 
+	F5('An analytics component must have provided and required ports'):
 	Tuple{status = ports->exists(p | p.type = PortType::PROVIDED) and ports->exists(p |
 			p.type = PortType::REQUIRED)->size() > 0, severity = null}.status
 
 	context Connector
 
-	inv F6('Connector"' + self.name + '" must have input and output role:'):
-	Tuple{status = self.roles->forAll(r1, r2 | r1 <> r2 implies r1.type <> r2.type), severity = null}.status
+	inv 
+	F6('Connector"' + self.name + '" must have input and output role:'):
+	Tuple{status = self.roles->exists(ro:Role | ro.type=RoleType::OUT) and 
+		self.roles->exists(ro:Role | ro.type=RoleType::IN), severity = null
+	}.status
 
 	inv
 	F11('Components connected through connector "' + self.name + '" are using different processing models, they require a connector Adaptor to interoperate.'):
 	Tuple{status = self.oclIsTypeOf(Adaptor) or (self.roles.port.comp->forAll(c1, c2 |
 			c1 <> c2 implies c1.procModel = c2.procModel)), severity = null}.status
 
-	context Component
 
+	context Component
+	
 	def:
 	connectedComps():
 	Sequence(Component) = ports->select(p : Port | p.type = PortType::PROVIDED).role.conn.roles.port->select(p : Port |
 		p.type = PortType::REQUIRED).comp
 
+
 	inv F9('Component" ' + self.name + '" cannot have a self-connection.'):
-	Tuple{status = self.ports->select(p : Port | p.type = PortType::PROVIDED).role.conn.roles.port->select(p : Port |
-			p.type = PortType::REQUIRED).comp->excludes(self), severity = null}.status
+	Tuple{status = (self.ports->select(p : Port | p.type = PortType::PROVIDED).role->first()->isEmpty()) or
+		(self.ports->select(p : Port | p.type = PortType::PROVIDED).role.conn.roles.port->select(p : Port |
+			p.oclIsUndefined()=false and p.type = PortType::REQUIRED).comp->excludes(self)), severity = null}.status
 
 	inv F10('Component" ' + self.name + '" has cyclic connection.'):
-	Tuple{status = self.connectedComps()->closure(cp | cp.connectedComps())->excludes(self), severity = null}.status
+	Tuple{status = (self.connectedComps()->oclIsInvalid() or 
+		self.connectedComps()->closure(cp | cp.connectedComps())->oclIsInvalid()) or
+		self.connectedComps()->closure(cp | cp.connectedComps())->excludes(self), severity = null
+	}.status
 
 	context Port
 
@@ -77,15 +89,15 @@ package accordant_fv
 
 	inv 
 	F14('Port " ' + self.name + '" fields must match'):
-	Tuple{status = self.connectedPorts()->forAll( p1 | p1.fieldsSetMatch(self) ), severity = null}.status
+	Tuple{status = not self.role->notEmpty() or (self.connectedPorts()->forAll( p1 | not p1.fields->isEmpty() and not self.fields->isEmpty() implies p1.fieldsSetMatch(self) )), severity = null}.status
 
 	context Role
-
-	inv F13('Role"' + self.name + '" is type ' + self.type.toString() + ', it must be attached to ports type: ' + (if
-		self.type = RoleType::OUT then 'REQUIRED'
-	else 'PROVIDED'
+	
+	inv 
+	F13('Role"' + self.name + '" is type ' + self.type.toString() + ', it must be attached to ports type: ' + (if
+		self.type = RoleType::OUT then 'REQUIRED' else 'PROVIDED'
 	endif)):
-	Tuple{status =
+	Tuple{status = self.port->isEmpty() or 
 		(self.port.type = PortType::PROVIDED and self.type = RoleType::IN) or (self.port.type = PortType::REQUIRED and self.type = RoleType::OUT),
 		severity = null}.status
 

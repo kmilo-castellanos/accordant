@@ -71,7 +71,8 @@
           order="2"/>
       <fields
           name="nameS"
-          dtype="String"/>
+          dtype="String"
+          order="3"/>
       <fields
           name="kind"
           dtype="Number"
