@@ -67,10 +67,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="QAttribute">
     <eLiterals name="AVAILABILITY" literal="AVAILABILITY"/>
-    <eLiterals name="PERFORMANCE"/>
-    <eLiterals name="MODIFIABILITY"/>
-    <eLiterals name="TESTABILITY"/>
-    <eLiterals name="SCALABILITY"/>
+    <eLiterals name="PERFORMANCE" value="1"/>
+    <eLiterals name="MODIFIABILITY" value="2"/>
+    <eLiterals name="TESTABILITY" value="3"/>
+    <eLiterals name="SCALABILITY" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnalyzedQS">
     <eStructuralFeatures xsi:type="ecore:EReference" name="decisions" eType="#//ArchDecision"
@@ -88,9 +88,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ConstraintType">
     <eLiterals name="CLOUD_PROV"/>
-    <eLiterals name="PROC_MODEL"/>
-    <eLiterals name="LICENSE"/>
-    <eLiterals name="TECH_VENDOR"/>
-    <eLiterals name="ARCH_STYLE"/>
+    <eLiterals name="PROC_MODEL" value="1"/>
+    <eLiterals name="LICENSE" value="2"/>
+    <eLiterals name="TECH_VENDOR" value="3"/>
+    <eLiterals name="ARCH_STYLE" value="4"/>
   </eClassifiers>
 </ecore:EPackage>

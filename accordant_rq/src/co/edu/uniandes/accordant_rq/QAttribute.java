@@ -36,7 +36,7 @@ public enum QAttribute implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PERFORMANCE(0, "PERFORMANCE", "PERFORMANCE"),
+	PERFORMANCE(1, "PERFORMANCE", "PERFORMANCE"),
 
 	/**
 	 * The '<em><b>MODIFIABILITY</b></em>' literal object.
@@ -46,7 +46,7 @@ public enum QAttribute implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MODIFIABILITY(0, "MODIFIABILITY", "MODIFIABILITY"),
+	MODIFIABILITY(2, "MODIFIABILITY", "MODIFIABILITY"),
 
 	/**
 	 * The '<em><b>TESTABILITY</b></em>' literal object.
@@ -56,7 +56,7 @@ public enum QAttribute implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TESTABILITY(0, "TESTABILITY", "TESTABILITY"),
+	TESTABILITY(3, "TESTABILITY", "TESTABILITY"),
 
 	/**
 	 * The '<em><b>SCALABILITY</b></em>' literal object.
@@ -66,7 +66,7 @@ public enum QAttribute implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SCALABILITY(0, "SCALABILITY", "SCALABILITY");
+	SCALABILITY(4, "SCALABILITY", "SCALABILITY");
 
 	/**
 	 * The '<em><b>AVAILABILITY</b></em>' literal value.
@@ -96,7 +96,7 @@ public enum QAttribute implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PERFORMANCE_VALUE = 0;
+	public static final int PERFORMANCE_VALUE = 1;
 
 	/**
 	 * The '<em><b>MODIFIABILITY</b></em>' literal value.
@@ -111,7 +111,7 @@ public enum QAttribute implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MODIFIABILITY_VALUE = 0;
+	public static final int MODIFIABILITY_VALUE = 2;
 
 	/**
 	 * The '<em><b>TESTABILITY</b></em>' literal value.
@@ -126,7 +126,7 @@ public enum QAttribute implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TESTABILITY_VALUE = 0;
+	public static final int TESTABILITY_VALUE = 3;
 
 	/**
 	 * The '<em><b>SCALABILITY</b></em>' literal value.
@@ -141,7 +141,7 @@ public enum QAttribute implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SCALABILITY_VALUE = 0;
+	public static final int SCALABILITY_VALUE = 4;
 
 	/**
 	 * An array of all the '<em><b>QAttribute</b></em>' enumerators.
@@ -213,6 +213,10 @@ public enum QAttribute implements Enumerator {
 	public static QAttribute get(int value) {
 		switch (value) {
 			case AVAILABILITY_VALUE: return AVAILABILITY;
+			case PERFORMANCE_VALUE: return PERFORMANCE;
+			case MODIFIABILITY_VALUE: return MODIFIABILITY;
+			case TESTABILITY_VALUE: return TESTABILITY;
+			case SCALABILITY_VALUE: return SCALABILITY;
 		}
 		return null;
 	}

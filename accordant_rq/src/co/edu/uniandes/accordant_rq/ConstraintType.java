@@ -36,7 +36,7 @@ public enum ConstraintType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PROC_MODEL(0, "PROC_MODEL", "PROC_MODEL"),
+	PROC_MODEL(1, "PROC_MODEL", "PROC_MODEL"),
 
 	/**
 	 * The '<em><b>LICENSE</b></em>' literal object.
@@ -46,7 +46,7 @@ public enum ConstraintType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LICENSE(0, "LICENSE", "LICENSE"),
+	LICENSE(2, "LICENSE", "LICENSE"),
 
 	/**
 	 * The '<em><b>TECH VENDOR</b></em>' literal object.
@@ -56,7 +56,7 @@ public enum ConstraintType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TECH_VENDOR(0, "TECH_VENDOR", "TECH_VENDOR"),
+	TECH_VENDOR(3, "TECH_VENDOR", "TECH_VENDOR"),
 
 	/**
 	 * The '<em><b>ARCH STYLE</b></em>' literal object.
@@ -66,7 +66,7 @@ public enum ConstraintType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ARCH_STYLE(0, "ARCH_STYLE", "ARCH_STYLE");
+	ARCH_STYLE(4, "ARCH_STYLE", "ARCH_STYLE");
 
 	/**
 	 * The '<em><b>CLOUD PROV</b></em>' literal value.
@@ -96,7 +96,7 @@ public enum ConstraintType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PROC_MODEL_VALUE = 0;
+	public static final int PROC_MODEL_VALUE = 1;
 
 	/**
 	 * The '<em><b>LICENSE</b></em>' literal value.
@@ -111,7 +111,7 @@ public enum ConstraintType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LICENSE_VALUE = 0;
+	public static final int LICENSE_VALUE = 2;
 
 	/**
 	 * The '<em><b>TECH VENDOR</b></em>' literal value.
@@ -126,7 +126,7 @@ public enum ConstraintType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TECH_VENDOR_VALUE = 0;
+	public static final int TECH_VENDOR_VALUE = 3;
 
 	/**
 	 * The '<em><b>ARCH STYLE</b></em>' literal value.
@@ -141,7 +141,7 @@ public enum ConstraintType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ARCH_STYLE_VALUE = 0;
+	public static final int ARCH_STYLE_VALUE = 4;
 
 	/**
 	 * An array of all the '<em><b>Constraint Type</b></em>' enumerators.
@@ -213,6 +213,10 @@ public enum ConstraintType implements Enumerator {
 	public static ConstraintType get(int value) {
 		switch (value) {
 			case CLOUD_PROV_VALUE: return CLOUD_PROV;
+			case PROC_MODEL_VALUE: return PROC_MODEL;
+			case LICENSE_VALUE: return LICENSE;
+			case TECH_VENDOR_VALUE: return TECH_VENDOR;
+			case ARCH_STYLE_VALUE: return ARCH_STYLE;
 		}
 		return null;
 	}

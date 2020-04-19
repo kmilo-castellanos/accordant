@@ -64,12 +64,17 @@
   </analyzedQs>
   <constraints
       code="UC1-OpenSource"
-      value="Licensing = OpenSource"/>
+      type="LICENSE"
+      value="OPENSOURCE"/>
   <constraints
-      code="Const 2"
-      value="IaaS"/>
+      code="AWSCloudProvider"
+      value="AWS"/>
   <constraints
-      code="2313"
+      code="BATCH"
       type="PROC_MODEL"
       value="BATCH"/>
+  <constraints
+      code="procsModelStream"
+      type="PROC_MODEL"
+      value="STREAM"/>
 </accordant_rq:Project>
