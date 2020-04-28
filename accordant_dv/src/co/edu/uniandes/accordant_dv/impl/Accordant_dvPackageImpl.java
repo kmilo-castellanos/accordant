@@ -182,7 +182,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link Accordant_dvPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -196,13 +196,16 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		if (isInited) return (Accordant_dvPackage)EPackage.Registry.INSTANCE.getEPackage(Accordant_dvPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Accordant_dvPackageImpl theAccordant_dvPackage = (Accordant_dvPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof Accordant_dvPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new Accordant_dvPackageImpl());
+		Object registeredAccordant_dvPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		Accordant_dvPackageImpl theAccordant_dvPackage = registeredAccordant_dvPackage instanceof Accordant_dvPackageImpl ? (Accordant_dvPackageImpl)registeredAccordant_dvPackage : new Accordant_dvPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Accordant_rqPackageImpl theAccordant_rqPackage = (Accordant_rqPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI) instanceof Accordant_rqPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI) : Accordant_rqPackage.eINSTANCE);
-		Accordant_fvPackageImpl theAccordant_fvPackage = (Accordant_fvPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Accordant_fvPackage.eNS_URI) instanceof Accordant_fvPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Accordant_fvPackage.eNS_URI) : Accordant_fvPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI);
+		Accordant_rqPackageImpl theAccordant_rqPackage = (Accordant_rqPackageImpl)(registeredPackage instanceof Accordant_rqPackageImpl ? registeredPackage : Accordant_rqPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Accordant_fvPackage.eNS_URI);
+		Accordant_fvPackageImpl theAccordant_fvPackage = (Accordant_fvPackageImpl)(registeredPackage instanceof Accordant_fvPackageImpl ? registeredPackage : Accordant_fvPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAccordant_dvPackage.createPackageContents();
@@ -217,7 +220,6 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		// Mark meta-data to indicate it can't be changed
 		theAccordant_dvPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(Accordant_dvPackage.eNS_URI, theAccordant_dvPackage);
 		return theAccordant_dvPackage;
@@ -228,6 +230,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDeploymentView() {
 		return deploymentViewEClass;
 	}
@@ -237,6 +240,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDeploymentView_Name() {
 		return (EAttribute)deploymentViewEClass.getEStructuralFeatures().get(0);
 	}
@@ -246,6 +250,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeploymentView_Devs() {
 		return (EReference)deploymentViewEClass.getEStructuralFeatures().get(1);
 	}
@@ -255,6 +260,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeploymentView_Deployments() {
 		return (EReference)deploymentViewEClass.getEStructuralFeatures().get(2);
 	}
@@ -264,6 +270,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeploymentView_Services() {
 		return (EReference)deploymentViewEClass.getEStructuralFeatures().get(3);
 	}
@@ -273,6 +280,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeploymentView_Serverless() {
 		return (EReference)deploymentViewEClass.getEStructuralFeatures().get(4);
 	}
@@ -282,6 +290,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeploymentView_Artifacts() {
 		return (EReference)deploymentViewEClass.getEStructuralFeatures().get(5);
 	}
@@ -291,6 +300,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeploymentView_Project() {
 		return (EReference)deploymentViewEClass.getEStructuralFeatures().get(6);
 	}
@@ -300,6 +310,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeploymentView_Fv() {
 		return (EReference)deploymentViewEClass.getEStructuralFeatures().get(7);
 	}
@@ -309,6 +320,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDevice() {
 		return deviceEClass;
 	}
@@ -318,6 +330,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDevice_Host() {
 		return (EAttribute)deviceEClass.getEStructuralFeatures().get(0);
 	}
@@ -327,6 +340,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDevice_Type() {
 		return (EAttribute)deviceEClass.getEStructuralFeatures().get(1);
 	}
@@ -336,6 +350,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDevice_Cpu() {
 		return (EAttribute)deviceEClass.getEStructuralFeatures().get(2);
 	}
@@ -345,6 +360,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDevice_Storage() {
 		return (EAttribute)deviceEClass.getEStructuralFeatures().get(3);
 	}
@@ -354,6 +370,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDevice_Mem() {
 		return (EAttribute)deviceEClass.getEStructuralFeatures().get(4);
 	}
@@ -363,6 +380,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDevice_Name() {
 		return (EAttribute)deviceEClass.getEStructuralFeatures().get(5);
 	}
@@ -372,6 +390,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDevice_Os() {
 		return (EAttribute)deviceEClass.getEStructuralFeatures().get(6);
 	}
@@ -381,6 +400,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getExecEnvironment() {
 		return execEnvironmentEClass;
 	}
@@ -390,6 +410,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExecEnvironment_Name() {
 		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(0);
 	}
@@ -399,6 +420,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExecEnvironment_Cpu_req() {
 		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(1);
 	}
@@ -408,6 +430,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExecEnvironment_Mem_req() {
 		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(2);
 	}
@@ -417,6 +440,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExecEnvironment_Cpu_lim() {
 		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(3);
 	}
@@ -426,6 +450,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExecEnvironment_Mem_lim() {
 		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(4);
 	}
@@ -435,6 +460,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExecEnvironment_Image() {
 		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(5);
 	}
@@ -444,6 +470,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExecEnvironment_Ports() {
 		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(6);
 	}
@@ -453,6 +480,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getExecEnvironment_Vars() {
 		return (EReference)execEnvironmentEClass.getEStructuralFeatures().get(7);
 	}
@@ -462,6 +490,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExecEnvironment_Commands() {
 		return (EAttribute)execEnvironmentEClass.getEStructuralFeatures().get(8);
 	}
@@ -471,6 +500,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getExecEnvironment_PaasArts() {
 		return (EReference)execEnvironmentEClass.getEStructuralFeatures().get(9);
 	}
@@ -480,6 +510,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getArtifact() {
 		return artifactEClass;
 	}
@@ -489,6 +520,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getArtifact_Name() {
 		return (EAttribute)artifactEClass.getEStructuralFeatures().get(0);
 	}
@@ -498,6 +530,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getArtifact_Props() {
 		return (EAttribute)artifactEClass.getEStructuralFeatures().get(1);
 	}
@@ -507,6 +540,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getArtifact_Comp() {
 		return (EReference)artifactEClass.getEStructuralFeatures().get(2);
 	}
@@ -516,6 +550,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getArtifact_Conn() {
 		return (EReference)artifactEClass.getEStructuralFeatures().get(3);
 	}
@@ -525,6 +560,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getArtifact_Decision() {
 		return (EReference)artifactEClass.getEStructuralFeatures().get(4);
 	}
@@ -534,6 +570,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getArtifact_Technology() {
 		return (EAttribute)artifactEClass.getEStructuralFeatures().get(5);
 	}
@@ -543,6 +580,27 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EReference getArtifact_PaasEnv() {
+		return (EReference)artifactEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getArtifact_SaasEnv() {
+		return (EReference)artifactEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getDeployment() {
 		return deploymentEClass;
 	}
@@ -552,6 +610,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDeployment_Name() {
 		return (EAttribute)deploymentEClass.getEStructuralFeatures().get(0);
 	}
@@ -561,6 +620,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDeployment_Replicas() {
 		return (EAttribute)deploymentEClass.getEStructuralFeatures().get(1);
 	}
@@ -570,6 +630,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDeployment_MaxSurge() {
 		return (EAttribute)deploymentEClass.getEStructuralFeatures().get(2);
 	}
@@ -579,6 +640,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDeployment_MaxUnavail() {
 		return (EAttribute)deploymentEClass.getEStructuralFeatures().get(3);
 	}
@@ -588,6 +650,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeployment_Pods() {
 		return (EReference)deploymentEClass.getEStructuralFeatures().get(4);
 	}
@@ -597,6 +660,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDeployment_Strategy() {
 		return (EAttribute)deploymentEClass.getEStructuralFeatures().get(5);
 	}
@@ -606,6 +670,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeployment_Decision() {
 		return (EReference)deploymentEClass.getEStructuralFeatures().get(6);
 	}
@@ -615,6 +680,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPod() {
 		return podEClass;
 	}
@@ -624,6 +690,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPod_Name() {
 		return (EAttribute)podEClass.getEStructuralFeatures().get(0);
 	}
@@ -633,6 +700,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPod_Host() {
 		return (EAttribute)podEClass.getEStructuralFeatures().get(1);
 	}
@@ -642,6 +710,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPod_RestartPolicy() {
 		return (EAttribute)podEClass.getEStructuralFeatures().get(2);
 	}
@@ -651,6 +720,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPod_Envs() {
 		return (EReference)podEClass.getEStructuralFeatures().get(3);
 	}
@@ -660,6 +730,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPod_Node() {
 		return (EReference)podEClass.getEStructuralFeatures().get(4);
 	}
@@ -669,6 +740,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEnvVar() {
 		return envVarEClass;
 	}
@@ -678,6 +750,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEnvVar_Name() {
 		return (EAttribute)envVarEClass.getEStructuralFeatures().get(0);
 	}
@@ -687,6 +760,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEnvVar_Value() {
 		return (EAttribute)envVarEClass.getEStructuralFeatures().get(1);
 	}
@@ -696,6 +770,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getService() {
 		return serviceEClass;
 	}
@@ -705,6 +780,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getService_Name() {
 		return (EAttribute)serviceEClass.getEStructuralFeatures().get(0);
 	}
@@ -714,6 +790,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getService_Ports() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(1);
 	}
@@ -723,6 +800,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getService_Type() {
 		return (EAttribute)serviceEClass.getEStructuralFeatures().get(2);
 	}
@@ -732,6 +810,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getService_ExtAccess() {
 		return (EAttribute)serviceEClass.getEStructuralFeatures().get(3);
 	}
@@ -741,6 +820,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getExposedPort() {
 		return exposedPortEClass;
 	}
@@ -750,6 +830,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExposedPort_Name() {
 		return (EAttribute)exposedPortEClass.getEStructuralFeatures().get(0);
 	}
@@ -759,6 +840,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExposedPort_Protocol() {
 		return (EAttribute)exposedPortEClass.getEStructuralFeatures().get(1);
 	}
@@ -768,6 +850,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExposedPort_Target() {
 		return (EAttribute)exposedPortEClass.getEStructuralFeatures().get(2);
 	}
@@ -777,6 +860,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExposedPort_Port() {
 		return (EAttribute)exposedPortEClass.getEStructuralFeatures().get(3);
 	}
@@ -786,6 +870,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getExposedPort_Exposes() {
 		return (EReference)exposedPortEClass.getEStructuralFeatures().get(4);
 	}
@@ -795,6 +880,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getServerlessEnv() {
 		return serverlessEnvEClass;
 	}
@@ -804,6 +890,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServerlessEnv_Provider() {
 		return (EAttribute)serverlessEnvEClass.getEStructuralFeatures().get(0);
 	}
@@ -813,6 +900,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServerlessEnv_Timeout() {
 		return (EAttribute)serverlessEnvEClass.getEStructuralFeatures().get(1);
 	}
@@ -822,6 +910,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServerlessEnv_Memory() {
 		return (EAttribute)serverlessEnvEClass.getEStructuralFeatures().get(2);
 	}
@@ -831,6 +920,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServerlessEnv_Name() {
 		return (EAttribute)serverlessEnvEClass.getEStructuralFeatures().get(3);
 	}
@@ -840,6 +930,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServerlessEnv_Props() {
 		return (EAttribute)serverlessEnvEClass.getEStructuralFeatures().get(4);
 	}
@@ -849,6 +940,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getServerlessEnv_SaasArts() {
 		return (EReference)serverlessEnvEClass.getEStructuralFeatures().get(5);
 	}
@@ -858,6 +950,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getEventConnTech() {
 		return eventConnTechEEnum;
 	}
@@ -867,6 +960,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getIngestorTech() {
 		return ingestorTechEEnum;
 	}
@@ -876,6 +970,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getSinkTech() {
 		return sinkTechEEnum;
 	}
@@ -885,6 +980,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getEstimatorTech() {
 		return estimatorTechEEnum;
 	}
@@ -894,6 +990,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getTransformerTech() {
 		return transformerTechEEnum;
 	}
@@ -903,6 +1000,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getTypeDevice() {
 		return typeDeviceEEnum;
 	}
@@ -912,6 +1010,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Accordant_dvFactory getAccordant_dvFactory() {
 		return (Accordant_dvFactory)getEFactoryInstance();
 	}
@@ -973,6 +1072,8 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		createEReference(artifactEClass, ARTIFACT__CONN);
 		createEReference(artifactEClass, ARTIFACT__DECISION);
 		createEAttribute(artifactEClass, ARTIFACT__TECHNOLOGY);
+		createEReference(artifactEClass, ARTIFACT__PAAS_ENV);
+		createEReference(artifactEClass, ARTIFACT__SAAS_ENV);
 
 		deploymentEClass = createEClass(DEPLOYMENT);
 		createEAttribute(deploymentEClass, DEPLOYMENT__NAME);
@@ -1087,7 +1188,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		initEAttribute(getExecEnvironment_Ports(), ecorePackage.getEInt(), "ports", null, 0, -1, ExecEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExecEnvironment_Vars(), this.getEnvVar(), null, "vars", null, 0, -1, ExecEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExecEnvironment_Commands(), ecorePackage.getEString(), "commands", null, 0, -1, ExecEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExecEnvironment_PaasArts(), this.getArtifact(), null, "PaasArts", null, 0, -1, ExecEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExecEnvironment_PaasArts(), this.getArtifact(), this.getArtifact_PaasEnv(), "PaasArts", null, 0, -1, ExecEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(artifactEClass, Artifact.class, "Artifact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArtifact_Name(), ecorePackage.getEString(), "name", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1096,6 +1197,8 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		initEReference(getArtifact_Conn(), theAccordant_fvPackage.getConnector(), null, "conn", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArtifact_Decision(), theAccordant_rqPackage.getArchDecision(), null, "decision", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArtifact_Technology(), ecorePackage.getEString(), "technology", null, 1, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArtifact_PaasEnv(), this.getExecEnvironment(), this.getExecEnvironment_PaasArts(), "paasEnv", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArtifact_SaasEnv(), this.getServerlessEnv(), this.getServerlessEnv_SaasArts(), "saasEnv", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deploymentEClass, Deployment.class, "Deployment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDeployment_Name(), ecorePackage.getEString(), "name", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1136,7 +1239,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		initEAttribute(getServerlessEnv_Memory(), ecorePackage.getEFloat(), "memory", null, 0, 1, ServerlessEnv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerlessEnv_Name(), ecorePackage.getEString(), "name", null, 0, 1, ServerlessEnv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerlessEnv_Props(), ecorePackage.getEString(), "props", null, 0, 1, ServerlessEnv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getServerlessEnv_SaasArts(), this.getArtifact(), null, "SaasArts", null, 0, -1, ServerlessEnv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServerlessEnv_SaasArts(), this.getArtifact(), this.getArtifact_SaasEnv(), "SaasArts", null, 0, -1, ServerlessEnv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(eventConnTechEEnum, EventConnTech.class, "EventConnTech");

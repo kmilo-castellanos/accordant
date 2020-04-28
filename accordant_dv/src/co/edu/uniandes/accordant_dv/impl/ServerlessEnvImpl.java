@@ -9,12 +9,15 @@ import co.edu.uniandes.accordant_dv.ServerlessEnv;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -169,6 +172,7 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getProvider() {
 		return provider;
 	}
@@ -178,6 +182,7 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProvider(String newProvider) {
 		String oldProvider = provider;
 		provider = newProvider;
@@ -190,6 +195,7 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getTimeout() {
 		return timeout;
 	}
@@ -199,6 +205,7 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTimeout(int newTimeout) {
 		int oldTimeout = timeout;
 		timeout = newTimeout;
@@ -211,6 +218,7 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getMemory() {
 		return memory;
 	}
@@ -220,6 +228,7 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMemory(float newMemory) {
 		float oldMemory = memory;
 		memory = newMemory;
@@ -232,6 +241,7 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -241,6 +251,7 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -253,6 +264,7 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getProps() {
 		return props;
 	}
@@ -262,6 +274,7 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProps(String newProps) {
 		String oldProps = props;
 		props = newProps;
@@ -274,11 +287,41 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Artifact> getSaasArts() {
 		if (saasArts == null) {
-			saasArts = new EObjectResolvingEList<Artifact>(Artifact.class, this, Accordant_dvPackage.SERVERLESS_ENV__SAAS_ARTS);
+			saasArts = new EObjectWithInverseResolvingEList<Artifact>(Artifact.class, this, Accordant_dvPackage.SERVERLESS_ENV__SAAS_ARTS, Accordant_dvPackage.ARTIFACT__SAAS_ENV);
 		}
 		return saasArts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_dvPackage.SERVERLESS_ENV__SAAS_ARTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSaasArts()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_dvPackage.SERVERLESS_ENV__SAAS_ARTS:
+				return ((InternalEList<?>)getSaasArts()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -400,7 +443,7 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (provider: ");
 		result.append(provider);
 		result.append(", timeout: ");

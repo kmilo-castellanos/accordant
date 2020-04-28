@@ -110,7 +110,8 @@
   <artifacts
       name="adsb-ingestor"
       props=""
-      technology="Flume">
+      technology="Flume"
+      paasEnv="FlumeAgentEnv">
     <comp xsi:type="accordant_fv:Ingestor"
         href="FV1_ok.xmi#ADSB Ingestor"/>
     <decision
@@ -119,13 +120,15 @@
   <artifacts
       name="adsb-transf"
       props=""
-      technology="Spark">
+      technology="Spark"
+      paasEnv="SparkMEnv">
     <comp xsi:type="accordant_fv:Transformer"
         href="FV1_ok.xmi#ABSB Formater"/>
   </artifacts>
   <artifacts
       name="nmac-estimator"
-      technology="Spark">
+      technology="Spark"
+      paasEnv="SparkMEnv">
     <comp xsi:type="accordant_fv:Estimator"
         href="FV1_ok.xmi#NMAC Estimator"/>
     <decision
@@ -133,25 +136,29 @@
   </artifacts>
   <artifacts
       name="nmac-sink"
-      technology="Flume">
+      technology="Flume"
+      paasEnv="FlumeSinkEnv">
     <comp xsi:type="accordant_fv:Sink"
         href="FV1_ok.xmi#NMAC Sink"/>
   </artifacts>
   <artifacts
       name="kafka-in"
-      technology="Kafka">
+      technology="Kafka"
+      paasEnv="kafkaEnv">
     <conn xsi:type="accordant_fv:Stream"
         href="FV1_ok.xmi#Broker-In"/>
   </artifacts>
   <artifacts
       name="kafka-mid"
-      technology="Kafka">
+      technology="Kafka"
+      paasEnv="kafkaEnv">
     <conn xsi:type="accordant_fv:Stream"
         href="FV1_ok.xmi#Broker-mid"/>
   </artifacts>
   <artifacts
       name="kafka-out"
-      technology="Kafka">
+      technology="Kafka"
+      paasEnv="kafkaEnv">
     <conn xsi:type="accordant_fv:Stream"
         href="FV1_ok.xmi#Broker-out"/>
   </artifacts>

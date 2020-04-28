@@ -431,13 +431,31 @@ public interface Accordant_dvPackage extends EPackage {
 	int ARTIFACT__TECHNOLOGY = 5;
 
 	/**
+	 * The feature id for the '<em><b>Paas Env</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT__PAAS_ENV = 6;
+
+	/**
+	 * The feature id for the '<em><b>Saas Env</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT__SAAS_ENV = 7;
+
+	/**
 	 * The number of structural features of the '<em>Artifact</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT_FEATURE_COUNT = 6;
+	int ARTIFACT_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Artifact</em>' class.
@@ -1320,6 +1338,28 @@ public interface Accordant_dvPackage extends EPackage {
 	EAttribute getArtifact_Technology();
 
 	/**
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.Artifact#getPaasEnv <em>Paas Env</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Paas Env</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Artifact#getPaasEnv()
+	 * @see #getArtifact()
+	 * @generated
+	 */
+	EReference getArtifact_PaasEnv();
+
+	/**
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.Artifact#getSaasEnv <em>Saas Env</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Saas Env</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Artifact#getSaasEnv()
+	 * @see #getArtifact()
+	 * @generated
+	 */
+	EReference getArtifact_SaasEnv();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.Deployment <em>Deployment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2068,6 +2108,22 @@ public interface Accordant_dvPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ARTIFACT__TECHNOLOGY = eINSTANCE.getArtifact_Technology();
+
+		/**
+		 * The meta object literal for the '<em><b>Paas Env</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARTIFACT__PAAS_ENV = eINSTANCE.getArtifact_PaasEnv();
+
+		/**
+		 * The meta object literal for the '<em><b>Saas Env</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARTIFACT__SAAS_ENV = eINSTANCE.getArtifact_SaasEnv();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl <em>Deployment</em>}' class.

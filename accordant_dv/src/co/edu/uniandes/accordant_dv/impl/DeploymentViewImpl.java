@@ -163,6 +163,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -172,6 +173,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -184,6 +186,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Device> getDevs() {
 		if (devs == null) {
 			devs = new EObjectContainmentEList<Device>(Device.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__DEVS);
@@ -196,6 +199,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Deployment> getDeployments() {
 		if (deployments == null) {
 			deployments = new EObjectContainmentEList<Deployment>(Deployment.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__DEPLOYMENTS);
@@ -208,6 +212,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Service> getServices() {
 		if (services == null) {
 			services = new EObjectContainmentEList<Service>(Service.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__SERVICES);
@@ -220,6 +225,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ServerlessEnv> getServerless() {
 		if (serverless == null) {
 			serverless = new EObjectContainmentEList<ServerlessEnv>(ServerlessEnv.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__SERVERLESS);
@@ -232,6 +238,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Artifact> getArtifacts() {
 		if (artifacts == null) {
 			artifacts = new EObjectContainmentEList<Artifact>(Artifact.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__ARTIFACTS);
@@ -244,6 +251,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Project getProject() {
 		if (project != null && project.eIsProxy()) {
 			InternalEObject oldProject = (InternalEObject)project;
@@ -270,6 +278,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProject(Project newProject) {
 		Project oldProject = project;
 		project = newProject;
@@ -282,6 +291,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FunctionalView getFv() {
 		if (fv != null && fv.eIsProxy()) {
 			InternalEObject oldFv = (InternalEObject)fv;
@@ -308,6 +318,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFv(FunctionalView newFv) {
 		FunctionalView oldFv = fv;
 		fv = newFv;
@@ -482,7 +493,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

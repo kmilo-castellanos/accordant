@@ -22,6 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getConn <em>Conn</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getDecision <em>Decision</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getTechnology <em>Technology</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getPaasEnv <em>Paas Env</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getSaasEnv <em>Saas Env</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getArtifact()
@@ -184,5 +186,53 @@ public interface Artifact extends EObject {
 	 * @generated
 	 */
 	void setTechnology(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Paas Env</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getPaasArts <em>Paas Arts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Paas Env</em>' reference.
+	 * @see #setPaasEnv(ExecEnvironment)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getArtifact_PaasEnv()
+	 * @see co.edu.uniandes.accordant_dv.ExecEnvironment#getPaasArts
+	 * @model opposite="PaasArts"
+	 * @generated
+	 */
+	ExecEnvironment getPaasEnv();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.Artifact#getPaasEnv <em>Paas Env</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Paas Env</em>' reference.
+	 * @see #getPaasEnv()
+	 * @generated
+	 */
+	void setPaasEnv(ExecEnvironment value);
+
+	/**
+	 * Returns the value of the '<em><b>Saas Env</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getSaasArts <em>Saas Arts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Saas Env</em>' reference.
+	 * @see #setSaasEnv(ServerlessEnv)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getArtifact_SaasEnv()
+	 * @see co.edu.uniandes.accordant_dv.ServerlessEnv#getSaasArts
+	 * @model opposite="SaasArts"
+	 * @generated
+	 */
+	ServerlessEnv getSaasEnv();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.Artifact#getSaasEnv <em>Saas Env</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Saas Env</em>' reference.
+	 * @see #getSaasEnv()
+	 * @generated
+	 */
+	void setSaasEnv(ServerlessEnv value);
 
 } // Artifact

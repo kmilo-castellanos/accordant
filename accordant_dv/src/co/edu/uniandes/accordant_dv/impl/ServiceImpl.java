@@ -133,6 +133,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -142,6 +143,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -154,6 +156,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ExposedPort> getPorts() {
 		if (ports == null) {
 			ports = new EObjectContainmentEList<ExposedPort>(ExposedPort.class, this, Accordant_dvPackage.SERVICE__PORTS);
@@ -166,6 +169,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getType() {
 		return type;
 	}
@@ -175,6 +179,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
@@ -187,6 +192,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getExtAccess() {
 		return extAccess;
 	}
@@ -196,6 +202,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExtAccess(String newExtAccess) {
 		String oldExtAccess = extAccess;
 		extAccess = newExtAccess;
@@ -316,7 +323,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", type: ");

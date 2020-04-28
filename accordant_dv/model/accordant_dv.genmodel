@@ -34,6 +34,8 @@
       <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//TypeDevice/MEDIUM"/>
       <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//TypeDevice/LARGE"/>
       <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//TypeDevice/SMALL"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//TypeDevice/MICRO"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//TypeDevice/XLARGE"/>
     </genEnums>
     <genClasses ecoreClass="accordant_dv.ecore#//DeploymentView">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//DeploymentView/name"/>
@@ -72,6 +74,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//Artifact/comp"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//Artifact/conn"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//Artifact/decision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Artifact/technology"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//Artifact/paasEnv"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//Artifact/saasEnv"/>
     </genClasses>
     <genClasses ecoreClass="accordant_dv.ecore#//Deployment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Deployment/name"/>
@@ -197,11 +202,11 @@
       <genEnumLiterals ecoreEnumLiteral="../../accordant_fv/model/accordant_fv.ecore#//ProcessingModel/BATCH"/>
       <genEnumLiterals ecoreEnumLiteral="../../accordant_fv/model/accordant_fv.ecore#//ProcessingModel/MICROBATCH"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../accordant_fv/model/accordant_fv.ecore#//DeliveryModel">
-      <genEnumLiterals ecoreEnumLiteral="../../accordant_fv/model/accordant_fv.ecore#//DeliveryModel/BEST_EFFORT"/>
-      <genEnumLiterals ecoreEnumLiteral="../../accordant_fv/model/accordant_fv.ecore#//DeliveryModel/AT_LEAST_ONE"/>
-      <genEnumLiterals ecoreEnumLiteral="../../accordant_fv/model/accordant_fv.ecore#//DeliveryModel/AT_MOST_ONE"/>
-      <genEnumLiterals ecoreEnumLiteral="../../accordant_fv/model/accordant_fv.ecore#//DeliveryModel/EXACTLY_ONE"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../accordant_fv/model/accordant_fv.ecore#//DeliveryGuarantee">
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_fv/model/accordant_fv.ecore#//DeliveryGuarantee/BEST_EFFORT"/>
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_fv/model/accordant_fv.ecore#//DeliveryGuarantee/AT_LEAST_ONE"/>
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_fv/model/accordant_fv.ecore#//DeliveryGuarantee/AT_MOST_ONE"/>
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_fv/model/accordant_fv.ecore#//DeliveryGuarantee/EXACTLY_ONE"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../accordant_fv/model/accordant_fv.ecore#//SyncType">
       <genEnumLiterals ecoreEnumLiteral="../../accordant_fv/model/accordant_fv.ecore#//SyncType/ASYNC"/>
@@ -270,6 +275,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_fv/model/accordant_fv.ecore#//Component/procModel"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../accordant_fv/model/accordant_fv.ecore#//Component/funcView"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../accordant_fv/model/accordant_fv.ecore#//Component/decision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_fv/model/accordant_fv.ecore#//Component/delivery"/>
     </genClasses>
     <genClasses ecoreClass="../../accordant_fv/model/accordant_fv.ecore#//Transformer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_fv/model/accordant_fv.ecore#//Transformer/sqlExp"/>
@@ -300,18 +306,22 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_fv/model/accordant_fv.ecore#//Port/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_fv/model/accordant_fv.ecore#//Port/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../accordant_fv/model/accordant_fv.ecore#//Port/fields"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../accordant_fv/model/accordant_fv.ecore#//Port/role"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../accordant_fv/model/accordant_fv.ecore#//Port/comp"/>
     </genClasses>
     <genClasses ecoreClass="../../accordant_fv/model/accordant_fv.ecore#//Arbitrator"/>
     <genClasses ecoreClass="../../accordant_fv/model/accordant_fv.ecore#//Role">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_fv/model/accordant_fv.ecore#//Role/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_fv/model/accordant_fv.ecore#//Role/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../accordant_fv/model/accordant_fv.ecore#//Role/port"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../accordant_fv/model/accordant_fv.ecore#//Role/conn"/>
     </genClasses>
     <genClasses ecoreClass="../../accordant_fv/model/accordant_fv.ecore#//ProcedureCall"/>
     <genClasses ecoreClass="../../accordant_fv/model/accordant_fv.ecore#//Field">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_fv/model/accordant_fv.ecore#//Field/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_fv/model/accordant_fv.ecore#//Field/dtype"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_fv/model/accordant_fv.ecore#//Field/order"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../accordant_fv/model/accordant_fv.ecore#//Field/portowner"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

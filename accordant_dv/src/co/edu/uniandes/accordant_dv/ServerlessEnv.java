@@ -160,6 +160,7 @@ public interface ServerlessEnv extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Saas Arts</b></em>' reference list.
 	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.Artifact}.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.Artifact#getSaasEnv <em>Saas Env</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Saas Arts</em>' reference list isn't clear,
@@ -168,7 +169,8 @@ public interface ServerlessEnv extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Saas Arts</em>' reference list.
 	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getServerlessEnv_SaasArts()
-	 * @model
+	 * @see co.edu.uniandes.accordant_dv.Artifact#getSaasEnv
+	 * @model opposite="saasEnv"
 	 * @generated
 	 */
 	EList<Artifact> getSaasArts();

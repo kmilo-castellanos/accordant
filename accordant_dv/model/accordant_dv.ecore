@@ -72,7 +72,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="commands" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="PaasArts" upperBound="-1"
-        eType="#//Artifact"/>
+        eType="#//Artifact" eOpposite="#//Artifact/paasEnv"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Artifact">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -83,6 +83,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="decision" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//ArchDecision"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="technology" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paasEnv" eType="#//ExecEnvironment"
+        eOpposite="#//ExecEnvironment/PaasArts"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="saasEnv" eType="#//ServerlessEnv"
+        eOpposite="#//ServerlessEnv/SaasArts"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Deployment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -130,6 +134,6 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="props" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SaasArts" upperBound="-1"
-        eType="#//Artifact"/>
+        eType="#//Artifact" eOpposite="#//Artifact/saasEnv"/>
   </eClassifiers>
 </ecore:EPackage>

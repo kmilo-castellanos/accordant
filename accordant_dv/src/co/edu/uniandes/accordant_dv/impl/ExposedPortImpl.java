@@ -151,6 +151,7 @@ public class ExposedPortImpl extends MinimalEObjectImpl.Container implements Exp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -160,6 +161,7 @@ public class ExposedPortImpl extends MinimalEObjectImpl.Container implements Exp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -172,6 +174,7 @@ public class ExposedPortImpl extends MinimalEObjectImpl.Container implements Exp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getProtocol() {
 		return protocol;
 	}
@@ -181,6 +184,7 @@ public class ExposedPortImpl extends MinimalEObjectImpl.Container implements Exp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProtocol(String newProtocol) {
 		String oldProtocol = protocol;
 		protocol = newProtocol;
@@ -193,6 +197,7 @@ public class ExposedPortImpl extends MinimalEObjectImpl.Container implements Exp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTarget() {
 		return target;
 	}
@@ -202,6 +207,7 @@ public class ExposedPortImpl extends MinimalEObjectImpl.Container implements Exp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTarget(String newTarget) {
 		String oldTarget = target;
 		target = newTarget;
@@ -214,6 +220,7 @@ public class ExposedPortImpl extends MinimalEObjectImpl.Container implements Exp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getPort() {
 		return port;
 	}
@@ -223,6 +230,7 @@ public class ExposedPortImpl extends MinimalEObjectImpl.Container implements Exp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPort(int newPort) {
 		int oldPort = port;
 		port = newPort;
@@ -235,6 +243,7 @@ public class ExposedPortImpl extends MinimalEObjectImpl.Container implements Exp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Pod> getExposes() {
 		if (exposes == null) {
 			exposes = new EObjectResolvingEList<Pod>(Pod.class, this, Accordant_dvPackage.EXPOSED_PORT__EXPOSES);
@@ -351,7 +360,7 @@ public class ExposedPortImpl extends MinimalEObjectImpl.Container implements Exp
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", protocol: ");

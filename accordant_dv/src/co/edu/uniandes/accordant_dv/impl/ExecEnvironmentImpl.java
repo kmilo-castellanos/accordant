@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -232,6 +232,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -241,6 +242,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -253,6 +255,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getCpu_req() {
 		return cpu_req;
 	}
@@ -262,6 +265,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCpu_req(float newCpu_req) {
 		float oldCpu_req = cpu_req;
 		cpu_req = newCpu_req;
@@ -274,6 +278,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getMem_req() {
 		return mem_req;
 	}
@@ -283,6 +288,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMem_req(int newMem_req) {
 		int oldMem_req = mem_req;
 		mem_req = newMem_req;
@@ -295,6 +301,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getCpu_lim() {
 		return cpu_lim;
 	}
@@ -304,6 +311,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCpu_lim(float newCpu_lim) {
 		float oldCpu_lim = cpu_lim;
 		cpu_lim = newCpu_lim;
@@ -316,6 +324,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getMem_lim() {
 		return mem_lim;
 	}
@@ -325,6 +334,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMem_lim(int newMem_lim) {
 		int oldMem_lim = mem_lim;
 		mem_lim = newMem_lim;
@@ -337,6 +347,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getImage() {
 		return image;
 	}
@@ -346,6 +357,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setImage(String newImage) {
 		String oldImage = image;
 		image = newImage;
@@ -358,6 +370,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Integer> getPorts() {
 		if (ports == null) {
 			ports = new EDataTypeUniqueEList<Integer>(Integer.class, this, Accordant_dvPackage.EXEC_ENVIRONMENT__PORTS);
@@ -370,6 +383,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<EnvVar> getVars() {
 		if (vars == null) {
 			vars = new EObjectContainmentEList<EnvVar>(EnvVar.class, this, Accordant_dvPackage.EXEC_ENVIRONMENT__VARS);
@@ -382,6 +396,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<String> getCommands() {
 		if (commands == null) {
 			commands = new EDataTypeUniqueEList<String>(String.class, this, Accordant_dvPackage.EXEC_ENVIRONMENT__COMMANDS);
@@ -394,11 +409,27 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Artifact> getPaasArts() {
 		if (paasArts == null) {
-			paasArts = new EObjectResolvingEList<Artifact>(Artifact.class, this, Accordant_dvPackage.EXEC_ENVIRONMENT__PAAS_ARTS);
+			paasArts = new EObjectWithInverseResolvingEList<Artifact>(Artifact.class, this, Accordant_dvPackage.EXEC_ENVIRONMENT__PAAS_ARTS, Accordant_dvPackage.ARTIFACT__PAAS_ENV);
 		}
 		return paasArts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_dvPackage.EXEC_ENVIRONMENT__PAAS_ARTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPaasArts()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -411,6 +442,8 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__VARS:
 				return ((InternalEList<?>)getVars()).basicRemove(otherEnd, msgs);
+			case Accordant_dvPackage.EXEC_ENVIRONMENT__PAAS_ARTS:
+				return ((InternalEList<?>)getPaasArts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -577,7 +610,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", cpu_req: ");

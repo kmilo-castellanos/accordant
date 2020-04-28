@@ -145,6 +145,7 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -154,6 +155,7 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -166,6 +168,7 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getHost() {
 		return host;
 	}
@@ -175,6 +178,7 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHost(String newHost) {
 		String oldHost = host;
 		host = newHost;
@@ -187,6 +191,7 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRestartPolicy() {
 		return restartPolicy;
 	}
@@ -196,6 +201,7 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRestartPolicy(String newRestartPolicy) {
 		String oldRestartPolicy = restartPolicy;
 		restartPolicy = newRestartPolicy;
@@ -208,6 +214,7 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ExecEnvironment> getEnvs() {
 		if (envs == null) {
 			envs = new EObjectContainmentEList<ExecEnvironment>(ExecEnvironment.class, this, Accordant_dvPackage.POD__ENVS);
@@ -220,6 +227,7 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Device getNode() {
 		if (node != null && node.eIsProxy()) {
 			InternalEObject oldNode = (InternalEObject)node;
@@ -246,6 +254,7 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNode(Device newNode) {
 		Device oldNode = node;
 		node = newNode;
@@ -377,7 +386,7 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", host: ");

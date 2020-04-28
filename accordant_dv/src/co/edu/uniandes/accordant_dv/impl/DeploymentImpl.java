@@ -187,6 +187,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -196,6 +197,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -208,6 +210,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getReplicas() {
 		return replicas;
 	}
@@ -217,6 +220,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReplicas(int newReplicas) {
 		int oldReplicas = replicas;
 		replicas = newReplicas;
@@ -229,6 +233,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getMaxSurge() {
 		return maxSurge;
 	}
@@ -238,6 +243,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMaxSurge(int newMaxSurge) {
 		int oldMaxSurge = maxSurge;
 		maxSurge = newMaxSurge;
@@ -250,6 +256,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getMaxUnavail() {
 		return maxUnavail;
 	}
@@ -259,6 +266,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMaxUnavail(int newMaxUnavail) {
 		int oldMaxUnavail = maxUnavail;
 		maxUnavail = newMaxUnavail;
@@ -271,6 +279,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Pod> getPods() {
 		if (pods == null) {
 			pods = new EObjectContainmentEList<Pod>(Pod.class, this, Accordant_dvPackage.DEPLOYMENT__PODS);
@@ -283,6 +292,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getStrategy() {
 		return strategy;
 	}
@@ -292,6 +302,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStrategy(String newStrategy) {
 		String oldStrategy = strategy;
 		strategy = newStrategy;
@@ -304,6 +315,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ArchDecision getDecision() {
 		if (decision != null && decision.eIsProxy()) {
 			InternalEObject oldDecision = (InternalEObject)decision;
@@ -330,6 +342,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDecision(ArchDecision newDecision) {
 		ArchDecision oldDecision = decision;
 		decision = newDecision;
@@ -481,7 +494,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", replicas: ");

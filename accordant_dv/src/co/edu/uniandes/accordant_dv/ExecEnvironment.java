@@ -239,6 +239,7 @@ public interface ExecEnvironment extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Paas Arts</b></em>' reference list.
 	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.Artifact}.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.Artifact#getPaasEnv <em>Paas Env</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Paas Arts</em>' reference list isn't clear,
@@ -247,7 +248,8 @@ public interface ExecEnvironment extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Paas Arts</em>' reference list.
 	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getExecEnvironment_PaasArts()
-	 * @model
+	 * @see co.edu.uniandes.accordant_dv.Artifact#getPaasEnv
+	 * @model opposite="paasEnv"
 	 * @generated
 	 */
 	EList<Artifact> getPaasArts();

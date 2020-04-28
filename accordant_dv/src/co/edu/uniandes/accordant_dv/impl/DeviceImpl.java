@@ -197,6 +197,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getHost() {
 		return host;
 	}
@@ -206,6 +207,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHost(String newHost) {
 		String oldHost = host;
 		host = newHost;
@@ -218,6 +220,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TypeDevice getType() {
 		return type;
 	}
@@ -227,6 +230,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(TypeDevice newType) {
 		TypeDevice oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
@@ -239,6 +243,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getCpu() {
 		return cpu;
 	}
@@ -248,6 +253,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCpu(int newCpu) {
 		int oldCpu = cpu;
 		cpu = newCpu;
@@ -260,6 +266,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getStorage() {
 		return storage;
 	}
@@ -269,6 +276,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStorage(int newStorage) {
 		int oldStorage = storage;
 		storage = newStorage;
@@ -281,6 +289,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getMem() {
 		return mem;
 	}
@@ -290,6 +299,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMem(int newMem) {
 		int oldMem = mem;
 		mem = newMem;
@@ -302,6 +312,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -311,6 +322,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -323,6 +335,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getOs() {
 		return os;
 	}
@@ -332,6 +345,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOs(String newOs) {
 		String oldOs = os;
 		os = newOs;
@@ -466,7 +480,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (host: ");
 		result.append(host);
 		result.append(", type: ");
