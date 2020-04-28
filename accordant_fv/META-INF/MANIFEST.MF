@@ -11,6 +11,6 @@ Export-Package: co.edu.uniandes.accordant_fv,
  co.edu.uniandes.accordant_fv.impl,
  co.edu.uniandes.accordant_fv.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.core.runtime,
- accordant_rq;bundle-version="0.1.0"
+ org.eclipse.core.runtime;visibility:=reexport,
+ accordant_rq;bundle-version="0.1.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

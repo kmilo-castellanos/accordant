@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<accordant_rq:Project
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:accordant_rq="http://uniandes.accordant.requirement"
+    xsi:schemaLocation="http://uniandes.accordant.requirement accordant_rq.ecore"
+    name="test">
+  <scenarios/>
+</accordant_rq:Project>

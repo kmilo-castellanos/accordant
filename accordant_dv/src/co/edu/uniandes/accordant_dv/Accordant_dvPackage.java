@@ -422,13 +422,22 @@ public interface Accordant_dvPackage extends EPackage {
 	int ARTIFACT__DECISION = 4;
 
 	/**
+	 * The feature id for the '<em><b>Technology</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT__TECHNOLOGY = 5;
+
+	/**
 	 * The number of structural features of the '<em>Artifact</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT_FEATURE_COUNT = 5;
+	int ARTIFACT_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Artifact</em>' class.
@@ -1300,6 +1309,17 @@ public interface Accordant_dvPackage extends EPackage {
 	EReference getArtifact_Decision();
 
 	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_dv.Artifact#getTechnology <em>Technology</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Technology</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Artifact#getTechnology()
+	 * @see #getArtifact()
+	 * @generated
+	 */
+	EAttribute getArtifact_Technology();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.Deployment <em>Deployment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2040,6 +2060,14 @@ public interface Accordant_dvPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ARTIFACT__DECISION = eINSTANCE.getArtifact_Decision();
+
+		/**
+		 * The meta object literal for the '<em><b>Technology</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARTIFACT__TECHNOLOGY = eINSTANCE.getArtifact_Technology();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl <em>Deployment</em>}' class.

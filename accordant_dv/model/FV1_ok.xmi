@@ -4,7 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:accordant_fv="http://uniandes.accordant.functional"
-    name="UC1FVModel2">
+    name="FV1OK">
   <conns xsi:type="accordant_fv:ProcedureCall"
       name="pcall_1"
       protocol=""
@@ -24,8 +24,15 @@
         port="Transformer_to_pcall_2"/>
     <roles name="pcall_2_out_Estimator"
         port="Estimator_from_pcall_2"/>
-    <decision
-        href="UC1_ai.xmi#Dec2"/>
+  </conns>
+  <conns xsi:type="accordant_fv:Adaptor"
+      name="BatchToStream"
+      props="">
+    <roles type="IN"
+        name="est_in_sink"
+        port="Estimator_to_pcall_3"/>
+    <roles name="est_out_sink"
+        port="Sink_from_pcall_3"/>
   </conns>
   <comps xsi:type="accordant_fv:Ingestor"
       name="Ingestor"
@@ -35,7 +42,21 @@
       props="">
     <ports type="PROVIDED"
         name="Ingestor_to_pcall_1"
-        role="pcall_1_in_Ingestor"/>
+        role="pcall_1_in_Ingestor">
+      <fields
+          name="name"
+          dtype="String"/>
+      <fields
+          name="type"
+          dtype="Number"
+          order="1"/>
+      <fields
+          name="date2"
+          dtype="Date"
+          order="2"/>
+    </ports>
+    <decision
+        href="UC1_ai.xmi#Dec2"/>
   </comps>
   <comps xsi:type="accordant_fv:Transformer"
       name="Transformer"
@@ -45,10 +66,35 @@
       lambdaExp=""
       codeRepo="">
     <ports name="Transformer_from_pcall_1"
-        role="pcall_1_out_Transformer"/>
+        role="pcall_1_out_Transformer">
+      <fields
+          name="startDate"
+          dtype="Date"
+          order="3"/>
+      <fields
+          name="nameS"
+          dtype="String"
+          order="1"/>
+      <fields
+          name="kind"
+          dtype="Number"
+          order="2"/>
+    </ports>
     <ports type="PROVIDED"
         name="Transformer_to_pcall_2"
-        role="pcall_2_in_Transformer"/>
+        role="pcall_2_in_Transformer">
+      <fields
+          name="place"
+          dtype="String"/>
+      <fields
+          name="date"
+          dtype="Date"
+          order="1"/>
+      <fields
+          name="amount"
+          dtype="Number"
+          order="2"/>
+    </ports>
     <decision
         href="UC1_ai.xmi#Dec1"/>
   </comps>
@@ -59,9 +105,17 @@
     <ports name="Estimator_from_pcall_2"
         role="pcall_2_out_Estimator"/>
     <ports type="PROVIDED"
-        name="Estimator_to_pcall_3"/>
+        name="Estimator_to_pcall_3"
+        role="est_in_sink"/>
     <decision
         href="UC1_ai.xmi#Dec1"/>
+  </comps>
+  <comps xsi:type="accordant_fv:Sink"
+      name="Sink"
+      conn=""
+      format="">
+    <ports name="Sink_from_pcall_3"
+        role="est_out_sink"/>
   </comps>
   <project href="UC1_ai.xmi#UC1"/>
 </accordant_fv:FunctionalView>

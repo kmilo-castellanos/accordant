@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getComp <em>Comp</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getConn <em>Conn</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getDecision <em>Decision</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getTechnology <em>Technology</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getArtifact()
@@ -157,5 +158,31 @@ public interface Artifact extends EObject {
 	 * @generated
 	 */
 	void setDecision(ArchDecision value);
+
+	/**
+	 * Returns the value of the '<em><b>Technology</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Technology</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Technology</em>' attribute.
+	 * @see #setTechnology(String)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getArtifact_Technology()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getTechnology();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.Artifact#getTechnology <em>Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Technology</em>' attribute.
+	 * @see #getTechnology()
+	 * @generated
+	 */
+	void setTechnology(String value);
 
 } // Artifact

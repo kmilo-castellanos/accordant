@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getComp <em>Comp</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getConn <em>Conn</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getDecision <em>Decision</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getTechnology <em>Technology</em>}</li>
  * </ul>
  *
  * @generated
@@ -102,6 +103,26 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 * @ordered
 	 */
 	protected ArchDecision decision;
+
+	/**
+	 * The default value of the '{@link #getTechnology() <em>Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TECHNOLOGY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTechnology() <em>Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected String technology = TECHNOLOGY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -283,6 +304,27 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getTechnology() {
+		return technology;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTechnology(String newTechnology) {
+		String oldTechnology = technology;
+		technology = newTechnology;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.ARTIFACT__TECHNOLOGY, oldTechnology, technology));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -299,6 +341,8 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 			case Accordant_dvPackage.ARTIFACT__DECISION:
 				if (resolve) return getDecision();
 				return basicGetDecision();
+			case Accordant_dvPackage.ARTIFACT__TECHNOLOGY:
+				return getTechnology();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -325,6 +369,9 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 				return;
 			case Accordant_dvPackage.ARTIFACT__DECISION:
 				setDecision((ArchDecision)newValue);
+				return;
+			case Accordant_dvPackage.ARTIFACT__TECHNOLOGY:
+				setTechnology((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -353,6 +400,9 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 			case Accordant_dvPackage.ARTIFACT__DECISION:
 				setDecision((ArchDecision)null);
 				return;
+			case Accordant_dvPackage.ARTIFACT__TECHNOLOGY:
+				setTechnology(TECHNOLOGY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -375,6 +425,8 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 				return conn != null;
 			case Accordant_dvPackage.ARTIFACT__DECISION:
 				return decision != null;
+			case Accordant_dvPackage.ARTIFACT__TECHNOLOGY:
+				return TECHNOLOGY_EDEFAULT == null ? technology != null : !TECHNOLOGY_EDEFAULT.equals(technology);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -393,6 +445,8 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 		result.append(name);
 		result.append(", props: ");
 		result.append(props);
+		result.append(", technology: ");
+		result.append(technology);
 		result.append(')');
 		return result.toString();
 	}

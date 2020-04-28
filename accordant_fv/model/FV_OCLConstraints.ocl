@@ -42,7 +42,7 @@ package accordant_fv
 	context Sink
 
 	inv F4('Sink' + name + ' must have some required port and no provided port'):
-	Tuple{status = not ports->exists(p | p.type = PortType::PROVIDED) and ports->exists(p | p.type = PortType::REQUIRED),
+	Tuple{status =  ports->exists(p | p.type = PortType::REQUIRED) and not ports->exists(p | p.type = PortType::PROVIDED) ,
 		severity = null}.status
 
 	context AnalyticsComponent
@@ -96,9 +96,9 @@ package accordant_fv
 	Boolean = self.fields->sortedBy(order)->collect(f : Field | f.dtype) = p1.fields->sortedBy(order)->collect(f1 : Field
 		| f1.dtype)
 
-	inv F14('Port " ' + self.name + '" fields must match'):
-	Tuple{status = not self.role->notEmpty() or (self.connectedPorts()->forAll(p1 | not p1.fields->isEmpty() and not
-			self.fields->isEmpty() implies p1.fieldsSetMatch(self))), severity = null}.status
+	inv F14('Port " ' + self.name + '" must be compatible'):
+	Tuple{status =  self.role->isEmpty() or (self.connectedPorts()->forAll(p1 | p1.fields->notEmpty() and
+			self.fields->notEmpty() implies p1.fieldsSetMatch(self))), severity = null}.status
 
 	context Role
 

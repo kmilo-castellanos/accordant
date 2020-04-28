@@ -79,6 +79,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="comp" eType="ecore:EClass ../../accordant_fv/model/accordant_fv.ecore#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="conn" eType="ecore:EClass ../../accordant_fv/model/accordant_fv.ecore#//Connector"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="decision" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//ArchDecision"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="technology" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Deployment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

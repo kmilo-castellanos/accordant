@@ -10,8 +10,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: co.edu.uniandes.accordant_dv,
  co.edu.uniandes.accordant_dv.impl,
  co.edu.uniandes.accordant_dv.util
-Require-Bundle: org.eclipse.core.runtime,
+Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  accordant_fv;bundle-version="0.1.0";visibility:=reexport,
- accordant_rq;bundle-version="0.1.0"
+ accordant_rq;bundle-version="0.1.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

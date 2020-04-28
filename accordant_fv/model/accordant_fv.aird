@@ -6,6 +6,12 @@
   <semanticResources>accordant_fv.ecore</semanticResources>
   <semanticResources>accordant_fv.genmodel</semanticResources>
   <semanticResources>platform:/resource/accordant_rq/model/accordant_rq.ecore</semanticResources>
+  <semanticResources>Input-FV_OCLFile.ocl</semanticResources>
+  <semanticResources>Input-FV_OCLFile.ocl.oclas</semanticResources>
+  <semanticResources>http://www.eclipse.org/ocl/2015/Pivot</semanticResources>
+  <semanticResources>accordant_fv.ecore.oclas</semanticResources>
+  <semanticResources>platform:/resource/accordant_rq/model/accordant_rq.ecore.oclas</semanticResources>
+  <semanticResources>http://www.eclipse.org/ocl/2015/Library.oclas</semanticResources>
   <ownedViews xmi:type="viewpoint:DView" xmi:id="_-b_KoMtIEeiK-MPy7Mpvlg">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
   </ownedViews>

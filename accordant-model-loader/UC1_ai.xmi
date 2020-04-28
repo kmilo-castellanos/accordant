@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<accordant_rq:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:accordant_rq="http://uniandes.accordant.requirement" name="UC1">
+<accordant_rq:Project xmi:version="2.0" 
+xmlns:xmi="http://www.omg.org/XMI" xmlns:accordant_rq="http://uniandes.accordant.requirement" xsi:schemaLocation="http://uniandes.accordant.requirement accordant_rq.ecore" name="UC1">
   <scenarios measure="DEADLINE" minValue="55.0" maxValue="60.0" unit="MINUTES" qAttribute="PERFORMANCE" stimulus="Scheduled job for clustering of NMAC events" environment="Normal mode" name="UC1_QS1" response="The system must predict NMAC events in less than one hour"/>
   <scenarios measure="LATENCY" minValue="2.0" maxValue="10.0" unit="MINUTES" qAttribute="PERFORMANCE" stimulus="Stiml" environment="Env2" name="UC1_QS2" response="Resp2"/>
   <tactics name="Increase_Available_Resources" qAttribute="PERFORMANCE"/>
