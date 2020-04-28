@@ -26,7 +26,7 @@ public enum TypeDevice implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MEDIUM(0, "MEDIUM", "SINGLE"),
+	MEDIUM(2, "MEDIUM", "MEDIUM"),
 
 	/**
 	 * The '<em><b>LARGE</b></em>' literal object.
@@ -36,7 +36,7 @@ public enum TypeDevice implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LARGE(1, "LARGE", "LARGE"),
+	LARGE(3, "LARGE", "LARGE"),
 
 	/**
 	 * The '<em><b>SMALL</b></em>' literal object.
@@ -46,7 +46,23 @@ public enum TypeDevice implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SMALL(0, "SMALL", "SMALL");
+	SMALL(1, "SMALL", "SMALL"), /**
+	 * The '<em><b>MICRO</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MICRO_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MICRO(0, "MICRO", "MICRO"), /**
+	 * The '<em><b>XLARGE</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #XLARGE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	XLARGE(4, "XLARGE", "XLARGE");
 
 	/**
 	 * The '<em><b>MEDIUM</b></em>' literal value.
@@ -57,11 +73,11 @@ public enum TypeDevice implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MEDIUM
-	 * @model literal="SINGLE"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEDIUM_VALUE = 0;
+	public static final int MEDIUM_VALUE = 2;
 
 	/**
 	 * The '<em><b>LARGE</b></em>' literal value.
@@ -76,7 +92,7 @@ public enum TypeDevice implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LARGE_VALUE = 1;
+	public static final int LARGE_VALUE = 3;
 
 	/**
 	 * The '<em><b>SMALL</b></em>' literal value.
@@ -91,7 +107,37 @@ public enum TypeDevice implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SMALL_VALUE = 0;
+	public static final int SMALL_VALUE = 1;
+
+	/**
+	 * The '<em><b>MICRO</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>MICRO</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #MICRO
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MICRO_VALUE = 0;
+
+	/**
+	 * The '<em><b>XLARGE</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>XLARGE</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #XLARGE
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int XLARGE_VALUE = 4;
 
 	/**
 	 * An array of all the '<em><b>Type Device</b></em>' enumerators.
@@ -104,6 +150,8 @@ public enum TypeDevice implements Enumerator {
 			MEDIUM,
 			LARGE,
 			SMALL,
+			MICRO,
+			XLARGE,
 		};
 
 	/**
@@ -162,6 +210,9 @@ public enum TypeDevice implements Enumerator {
 		switch (value) {
 			case MEDIUM_VALUE: return MEDIUM;
 			case LARGE_VALUE: return LARGE;
+			case SMALL_VALUE: return SMALL;
+			case MICRO_VALUE: return MICRO;
+			case XLARGE_VALUE: return XLARGE;
 		}
 		return null;
 	}

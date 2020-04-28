@@ -13,6 +13,16 @@
     <semanticResources>http://www.eclipse.org/emf/2002/GenModel</semanticResources>
     <semanticResources>platform:/resource/accordant_rq/model/accordant_rq.ecore</semanticResources>
     <semanticResources>DV1_ok.xmi</semanticResources>
+    <semanticResources>http://www.eclipse.org/ocl/2015/Pivot</semanticResources>
+    <semanticResources>accordant_dv.ecore.oclas</semanticResources>
+    <semanticResources>http://www.eclipse.org/ocl/2015/Library.oclas</semanticResources>
+    <semanticResources>UC1_ai.xmi</semanticResources>
+    <semanticResources>platform:/resource/accordant_rq/model/accordant_rq.genmodel</semanticResources>
+    <semanticResources>FV1_ok.xmi</semanticResources>
+    <semanticResources>DVConstraints.ecore</semanticResources>
+    <semanticResources>DV_Constraints.oclstdlib</semanticResources>
+    <semanticResources>DV_Constraints.oclstdlib.oclas</semanticResources>
+    <semanticResources>internal_list;;//of_meta-type_names</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_DM_9cCvmEeiyhZsreJRi0w">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_Ds0F8CvmEeiyhZsreJRi0w" name="bdarchops_dv class diagram" repPath="#_DspG0CvmEeiyhZsreJRi0w">

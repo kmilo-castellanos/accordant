@@ -4,10 +4,157 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:accordant_dv="http://uniandes.accordant.deployment"
-    xsi:schemaLocation="http://uniandes.accordant.deployment accordant_dv.ecore"
+    xmlns:accordant_fv="http://uniandes.accordant.functional"
+    xsi:schemaLocation="http://uniandes.accordant.deployment accordant_dv.ecore http://uniandes.accordant.functional ../../accordant_fv/model/accordant_fv.ecore"
     name="DV1_OK">
-   <project href="UC1_ai.xmi#UC1"/>
-   <fv href="FV1_ok.xmi#FV1OK"/>
-   
+  <devs host="a"
+      cpu="8"
+      storage="200"
+      mem="6"
+      name="master"
+      os="Ubuntu"/>
+  <devs host="s"
+      cpu="8"
+      storage="200"
+      mem="6"
+      name="slave"
+      os="Ubuntu"/>
+  <devs host="dataaccess"
+      cpu="8"
+      storage="200"
+      mem="8"
+      name="dataaccess"
+      os="Ubuntu"/>
+  <devs host="broker"
+      type="LARGE"
+      cpu="8"
+      storage="600"
+      mem="16"
+      name="broker"
+      os="Ubuntu"/>
+  <deployments
+      name="sparkMasterDep"
+      replicas="1">
+    <pods name="sparkMasterPod"
+        restartPolicy=""
+        node="master">
+      <envs
+          name="SparkMEnv"
+          cpu_req="0.8"
+          image="ramhiser/spark:2.0.1"
+          PaasArts="adsb-transf nmac-estimator">
+        <ports>7077</ports>
+        <ports>8080</ports>
+        <commands>/spark-master</commands>
+      </envs>
+    </pods>
+    <decision
+        href="UC1_ai.xmi#Dec1"/>
+  </deployments>
+  <deployments
+      name="sparkWorkerDep"
+      replicas="3">
+    <pods name="sparkWorkerPod"
+        node="slave">
+      <envs
+          name="SparkWEnv"
+          cpu_req="0.3"
+          image="ramhiser/spark:2.0.1">
+        <ports>8081</ports>
+        <commands>/spark-worker</commands>
+      </envs>
+    </pods>
+    <decision
+        href="UC1_ai.xmi#Dec1"/>
+  </deployments>
+  <deployments
+      name="kafkaDep"
+      replicas="3">
+    <pods name="kafkaPod"
+        node="broker">
+      <envs
+          name="kafkaEnv"
+          cpu_req="0.3"
+          image="bitnami/kafka"
+          PaasArts="kafka-in kafka-mid kafka-out">
+        <ports>9092</ports>
+      </envs>
+    </pods>
+    <decision
+        href="UC1_ai.xmi#Dec1"/>
+  </deployments>
+  <deployments
+      name="flumeDep"
+      replicas="2">
+    <pods name="FlumeSinkPod"
+        node="dataaccess">
+      <envs
+          name="FlumeSinkEnv"
+          cpu_req="0.3"
+          image="bde2020/flume"
+          PaasArts="nmac-sink">
+        <ports>8020</ports>
+      </envs>
+    </pods>
+    <pods name="FlumeIngPod"
+        node="dataaccess">
+      <envs
+          name="FlumeAgentEnv"
+          cpu_req="0.3"
+          image="bde2020/flume"
+          PaasArts="adsb-ingestor">
+        <ports>41414</ports>
+      </envs>
+    </pods>
+  </deployments>
+  <artifacts
+      name="adsb-ingestor"
+      props=""
+      technology="Flume">
+    <comp xsi:type="accordant_fv:Ingestor"
+        href="FV1_ok.xmi#ADSB Ingestor"/>
+    <decision
+        href="UC1_ai.xmi#Dec1"/>
+  </artifacts>
+  <artifacts
+      name="adsb-transf"
+      props=""
+      technology="Spark">
+    <comp xsi:type="accordant_fv:Transformer"
+        href="FV1_ok.xmi#ABSB Formater"/>
+  </artifacts>
+  <artifacts
+      name="nmac-estimator"
+      technology="Spark">
+    <comp xsi:type="accordant_fv:Estimator"
+        href="FV1_ok.xmi#NMAC Estimator"/>
+    <decision
+        href="UC1_ai.xmi#Dec1"/>
+  </artifacts>
+  <artifacts
+      name="nmac-sink"
+      technology="Flume">
+    <comp xsi:type="accordant_fv:Sink"
+        href="FV1_ok.xmi#NMAC Sink"/>
+  </artifacts>
+  <artifacts
+      name="kafka-in"
+      technology="Kafka">
+    <conn xsi:type="accordant_fv:Stream"
+        href="FV1_ok.xmi#Broker-In"/>
+  </artifacts>
+  <artifacts
+      name="kafka-mid"
+      technology="Kafka">
+    <conn xsi:type="accordant_fv:Stream"
+        href="FV1_ok.xmi#Broker-mid"/>
+  </artifacts>
+  <artifacts
+      name="kafka-out"
+      technology="Kafka">
+    <conn xsi:type="accordant_fv:Stream"
+        href="FV1_ok.xmi#Broker-out"/>
+  </artifacts>
+  <project href="UC1_ai.xmi#UC1"/>
+  <fv href="FV1_ok.xmi#FV1OK"/>
 </accordant_dv:DeploymentView>
- 

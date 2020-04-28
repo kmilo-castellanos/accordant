@@ -51,9 +51,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="os" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TypeDevice">
-    <eLiterals name="MEDIUM" literal="SINGLE"/>
-    <eLiterals name="LARGE" value="1"/>
-    <eLiterals name="SMALL"/>
+    <eLiterals name="MEDIUM" value="2" literal="MEDIUM"/>
+    <eLiterals name="LARGE" value="3"/>
+    <eLiterals name="SMALL" value="1"/>
+    <eLiterals name="MICRO"/>
+    <eLiterals name="XLARGE" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExecEnvironment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

@@ -1166,6 +1166,8 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		addEEnumLiteral(typeDeviceEEnum, TypeDevice.MEDIUM);
 		addEEnumLiteral(typeDeviceEEnum, TypeDevice.LARGE);
 		addEEnumLiteral(typeDeviceEEnum, TypeDevice.SMALL);
+		addEEnumLiteral(typeDeviceEEnum, TypeDevice.MICRO);
+		addEEnumLiteral(typeDeviceEEnum, TypeDevice.XLARGE);
 
 		// Create resource
 		createResource(eNS_URI);

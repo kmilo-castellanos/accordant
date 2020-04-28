@@ -194,6 +194,14 @@
         <element xmi:type="ecore:EEnumLiteral" href="accordant_dv.ecore#//TypeDevice/SMALL"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Ryvz0fgTEei_sfB9m4nSPg"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_OMOS0IlYEeqN28eNO1m-Tw" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="accordant_dv.ecore#//TypeDevice/MICRO"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_OMOS0YlYEeqN28eNO1m-Tw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_StEn0IlYEeqN28eNO1m-Tw" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="accordant_dv.ecore#//TypeDevice/XLARGE"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_StEn0YlYEeqN28eNO1m-Tw"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_q2K-QixuEeiyhZsreJRi0w"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_q2K-QyxuEeiyhZsreJRi0w"/>
     </children>
