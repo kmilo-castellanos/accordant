@@ -1,0 +1,11 @@
+import 'accordant_dv.ecore'
+package accordant_dv
+
+context Artifact
+
+inv D2('Artifact "'+name+'" must be deployed'):
+	Tuple{status=self.paasEnv<> null or self.saasEnv<>null
+		,severity=null
+	}.status
+
+endpackage
