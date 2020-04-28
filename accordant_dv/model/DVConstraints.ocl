@@ -1,4 +1,8 @@
 import 'accordant_dv.ecore'
+import rq : '/resource/accordant_rq/model/accordant_rq.ecore'
+import fv : '/resource/accordant_fv/model/accordant_fv.ecore'
+
+
 package accordant_dv
 
 context Artifact
@@ -7,5 +11,24 @@ inv D2('Artifact "'+name+'" must be deployed'):
 	Tuple{status=self.paasEnv<> null or self.saasEnv<>null
 		,severity=null
 	}.status
+
+context DeploymentView
+
+
+inv ID6('All significant architectural decisions must be reflected in deployment artifacts'):
+	Tuple{status =
+		self.project.analyzedQs.decisions->select(d:rq::accordant_rq::ArchDecision | d.isSensitivityPoint)->isEmpty() or 
+		self.artifacts->select(decision<>null).decision->union(self.deployments->select(decision<>null).decision)->asSet()->
+		includesAll(self.project.analyzedQs.decisions->select(d:rq::accordant_rq::ArchDecision | d.isSensitivityPoint)->asSet()),
+		severity=null}.status
+
+inv FD2('All components and connectors must be mapped to deployment artifacts'):
+	Tuple{status =
+		(self.artifacts->select(comp<>null).comp->asSet()->
+		includesAll(self.fv.comps->asSet())) and
+		(self.artifacts->select(conn<>null).conn->asSet()->
+		includesAll(self.fv.conns->asSet())),
+		severity=null}.status
+
 
 endpackage
