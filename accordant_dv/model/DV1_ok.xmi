@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<accordant_dv:DeploymentView
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:accordant_dv="http://uniandes.accordant.deployment"
+    xsi:schemaLocation="http://uniandes.accordant.deployment accordant_dv.ecore"
+    name="DV1_OK">
+   <project href="UC1_ai.xmi#UC1"/>
+   <fv href="FV1_ok.xmi#FV1OK"/>
+   
+</accordant_dv:DeploymentView>
+ 
