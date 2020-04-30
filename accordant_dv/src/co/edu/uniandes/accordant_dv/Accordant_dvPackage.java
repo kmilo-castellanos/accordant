@@ -540,13 +540,22 @@ public interface Accordant_dvPackage extends EPackage {
 	int DEPLOYMENT__DECISION = 6;
 
 	/**
+	 * The feature id for the '<em><b>Model</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOYMENT__MODEL = 7;
+
+	/**
 	 * The number of structural features of the '<em>Deployment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOYMENT_FEATURE_COUNT = 7;
+	int DEPLOYMENT_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Deployment</em>' class.
@@ -954,6 +963,17 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 */
 	int TYPE_DEVICE = 15;
+
+
+	/**
+	 * The meta object id for the '{@link co.edu.uniandes.accordant_dv.DeploymentModel <em>Deployment Model</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see co.edu.uniandes.accordant_dv.DeploymentModel
+	 * @see co.edu.uniandes.accordant_dv.impl.Accordant_dvPackageImpl#getDeploymentModel()
+	 * @generated
+	 */
+	int DEPLOYMENT_MODEL = 16;
 
 
 	/**
@@ -1447,6 +1467,17 @@ public interface Accordant_dvPackage extends EPackage {
 	EReference getDeployment_Decision();
 
 	/**
+	 * Returns the meta object for the attribute '{@link co.edu.uniandes.accordant_dv.Deployment#getModel <em>Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Model</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Deployment#getModel()
+	 * @see #getDeployment()
+	 * @generated
+	 */
+	EAttribute getDeployment_Model();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.Pod <em>Pod</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1797,6 +1828,16 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getTypeDevice();
+
+	/**
+	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_dv.DeploymentModel <em>Deployment Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Deployment Model</em>'.
+	 * @see co.edu.uniandes.accordant_dv.DeploymentModel
+	 * @generated
+	 */
+	EEnum getDeploymentModel();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2192,6 +2233,14 @@ public interface Accordant_dvPackage extends EPackage {
 		EReference DEPLOYMENT__DECISION = eINSTANCE.getDeployment_Decision();
 
 		/**
+		 * The meta object literal for the '<em><b>Model</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEPLOYMENT__MODEL = eINSTANCE.getDeployment_Model();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.PodImpl <em>Pod</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2476,6 +2525,16 @@ public interface Accordant_dvPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum TYPE_DEVICE = eINSTANCE.getTypeDevice();
+
+		/**
+		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.DeploymentModel <em>Deployment Model</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see co.edu.uniandes.accordant_dv.DeploymentModel
+		 * @see co.edu.uniandes.accordant_dv.impl.Accordant_dvPackageImpl#getDeploymentModel()
+		 * @generated
+		 */
+		EEnum DEPLOYMENT_MODEL = eINSTANCE.getDeploymentModel();
 
 	}
 

@@ -6,6 +6,7 @@ import co.edu.uniandes.accordant_dv.Accordant_dvFactory;
 import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
 import co.edu.uniandes.accordant_dv.Artifact;
 import co.edu.uniandes.accordant_dv.Deployment;
+import co.edu.uniandes.accordant_dv.DeploymentModel;
 import co.edu.uniandes.accordant_dv.DeploymentView;
 import co.edu.uniandes.accordant_dv.Device;
 import co.edu.uniandes.accordant_dv.EnvVar;
@@ -155,6 +156,13 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	private EEnum typeDeviceEEnum = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum deploymentModelEEnum = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -182,7 +190,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 *
+	 * 
 	 * <p>This method is used to initialize {@link Accordant_dvPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -196,16 +204,13 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		if (isInited) return (Accordant_dvPackage)EPackage.Registry.INSTANCE.getEPackage(Accordant_dvPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredAccordant_dvPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		Accordant_dvPackageImpl theAccordant_dvPackage = registeredAccordant_dvPackage instanceof Accordant_dvPackageImpl ? (Accordant_dvPackageImpl)registeredAccordant_dvPackage : new Accordant_dvPackageImpl();
+		Accordant_dvPackageImpl theAccordant_dvPackage = (Accordant_dvPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof Accordant_dvPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new Accordant_dvPackageImpl());
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI);
-		Accordant_rqPackageImpl theAccordant_rqPackage = (Accordant_rqPackageImpl)(registeredPackage instanceof Accordant_rqPackageImpl ? registeredPackage : Accordant_rqPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Accordant_fvPackage.eNS_URI);
-		Accordant_fvPackageImpl theAccordant_fvPackage = (Accordant_fvPackageImpl)(registeredPackage instanceof Accordant_fvPackageImpl ? registeredPackage : Accordant_fvPackage.eINSTANCE);
+		Accordant_rqPackageImpl theAccordant_rqPackage = (Accordant_rqPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI) instanceof Accordant_rqPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI) : Accordant_rqPackage.eINSTANCE);
+		Accordant_fvPackageImpl theAccordant_fvPackage = (Accordant_fvPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Accordant_fvPackage.eNS_URI) instanceof Accordant_fvPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Accordant_fvPackage.eNS_URI) : Accordant_fvPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAccordant_dvPackage.createPackageContents();
@@ -220,6 +225,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		// Mark meta-data to indicate it can't be changed
 		theAccordant_dvPackage.freeze();
 
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(Accordant_dvPackage.eNS_URI, theAccordant_dvPackage);
 		return theAccordant_dvPackage;
@@ -680,6 +686,15 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDeployment_Model() {
+		return (EAttribute)deploymentEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EClass getPod() {
 		return podEClass;
@@ -1010,6 +1025,15 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getDeploymentModel() {
+		return deploymentModelEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Accordant_dvFactory getAccordant_dvFactory() {
 		return (Accordant_dvFactory)getEFactoryInstance();
@@ -1083,6 +1107,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		createEReference(deploymentEClass, DEPLOYMENT__PODS);
 		createEAttribute(deploymentEClass, DEPLOYMENT__STRATEGY);
 		createEReference(deploymentEClass, DEPLOYMENT__DECISION);
+		createEAttribute(deploymentEClass, DEPLOYMENT__MODEL);
 
 		podEClass = createEClass(POD);
 		createEAttribute(podEClass, POD__NAME);
@@ -1123,6 +1148,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		estimatorTechEEnum = createEEnum(ESTIMATOR_TECH);
 		transformerTechEEnum = createEEnum(TRANSFORMER_TECH);
 		typeDeviceEEnum = createEEnum(TYPE_DEVICE);
+		deploymentModelEEnum = createEEnum(DEPLOYMENT_MODEL);
 	}
 
 	/**
@@ -1208,6 +1234,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		initEReference(getDeployment_Pods(), this.getPod(), null, "pods", null, 1, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeployment_Strategy(), ecorePackage.getEString(), "strategy", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeployment_Decision(), theAccordant_rqPackage.getArchDecision(), null, "decision", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeployment_Model(), this.getDeploymentModel(), "model", null, 1, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(podEClass, Pod.class, "Pod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPod_Name(), ecorePackage.getEString(), "name", null, 0, 1, Pod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1271,6 +1298,11 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		addEEnumLiteral(typeDeviceEEnum, TypeDevice.SMALL);
 		addEEnumLiteral(typeDeviceEEnum, TypeDevice.MICRO);
 		addEEnumLiteral(typeDeviceEEnum, TypeDevice.XLARGE);
+
+		initEEnum(deploymentModelEEnum, DeploymentModel.class, "DeploymentModel");
+		addEEnumLiteral(deploymentModelEEnum, DeploymentModel.ONPREMISES);
+		addEEnumLiteral(deploymentModelEEnum, DeploymentModel.CLOUD);
+		addEEnumLiteral(deploymentModelEEnum, DeploymentModel.HYBRID);
 
 		// Create resource
 		createResource(eNS_URI);

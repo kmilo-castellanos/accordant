@@ -66,7 +66,15 @@ public enum ConstraintType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ARCH_STYLE(4, "ARCH_STYLE", "ARCH_STYLE");
+	ARCH_STYLE(4, "ARCH_STYLE", "ARCH_STYLE"), /**
+	 * The '<em><b>DEPLOYMENT MODEL</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DEPLOYMENT_MODEL_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	DEPLOYMENT_MODEL(5, "DEPLOYMENT_MODEL", "DEPLOYMENT_MODEL");
 
 	/**
 	 * The '<em><b>CLOUD PROV</b></em>' literal value.
@@ -144,6 +152,21 @@ public enum ConstraintType implements Enumerator {
 	public static final int ARCH_STYLE_VALUE = 4;
 
 	/**
+	 * The '<em><b>DEPLOYMENT MODEL</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>DEPLOYMENT MODEL</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #DEPLOYMENT_MODEL
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DEPLOYMENT_MODEL_VALUE = 5;
+
+	/**
 	 * An array of all the '<em><b>Constraint Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -156,6 +179,7 @@ public enum ConstraintType implements Enumerator {
 			LICENSE,
 			TECH_VENDOR,
 			ARCH_STYLE,
+			DEPLOYMENT_MODEL,
 		};
 
 	/**
@@ -217,6 +241,7 @@ public enum ConstraintType implements Enumerator {
 			case LICENSE_VALUE: return LICENSE;
 			case TECH_VENDOR_VALUE: return TECH_VENDOR;
 			case ARCH_STYLE_VALUE: return ARCH_STYLE;
+			case DEPLOYMENT_MODEL_VALUE: return DEPLOYMENT_MODEL;
 		}
 		return null;
 	}

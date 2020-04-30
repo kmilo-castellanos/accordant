@@ -34,7 +34,8 @@
       os="Ubuntu"/>
   <deployments
       name="sparkMasterDep"
-      replicas="1">
+      replicas="1"
+      model="CLOUD">
     <pods name="sparkMasterPod"
         restartPolicy=""
         node="master">
@@ -53,7 +54,8 @@
   </deployments>
   <deployments
       name="sparkWorkerDep"
-      replicas="3">
+      replicas="3"
+      model="CLOUD">
     <pods name="sparkWorkerPod"
         node="slave">
       <envs
@@ -69,7 +71,8 @@
   </deployments>
   <deployments
       name="kafkaDep"
-      replicas="3">
+      replicas="3"
+      model="CLOUD">
     <pods name="kafkaPod"
         node="broker">
       <envs
@@ -85,7 +88,8 @@
   </deployments>
   <deployments
       name="flumeDep"
-      replicas="2">
+      replicas="2"
+      model="CLOUD">
     <pods name="FlumeSinkPod"
         node="dataaccess">
       <envs
@@ -106,6 +110,8 @@
         <ports>41414</ports>
       </envs>
     </pods>
+    <decision
+        href="UC1_ai.xmi#Dec2"/>
   </deployments>
   <artifacts
       name="adsb-ingestor"

@@ -97,6 +97,7 @@
         eType="#//Pod" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="strategy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="decision" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//ArchDecision"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" lowerBound="1" eType="#//DeploymentModel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pod">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -135,5 +136,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="props" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SaasArts" upperBound="-1"
         eType="#//Artifact" eOpposite="#//Artifact/saasEnv"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DeploymentModel">
+    <eLiterals name="ONPREMISES" literal="ONPREMISES"/>
+    <eLiterals name="CLOUD" value="1"/>
+    <eLiterals name="HYBRID" value="2"/>
   </eClassifiers>
 </ecore:EPackage>

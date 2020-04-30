@@ -92,6 +92,8 @@ public class Accordant_dvFactoryImpl extends EFactoryImpl implements Accordant_d
 				return createTransformerTechFromString(eDataType, initialValue);
 			case Accordant_dvPackage.TYPE_DEVICE:
 				return createTypeDeviceFromString(eDataType, initialValue);
+			case Accordant_dvPackage.DEPLOYMENT_MODEL:
+				return createDeploymentModelFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -117,6 +119,8 @@ public class Accordant_dvFactoryImpl extends EFactoryImpl implements Accordant_d
 				return convertTransformerTechToString(eDataType, instanceValue);
 			case Accordant_dvPackage.TYPE_DEVICE:
 				return convertTypeDeviceToString(eDataType, instanceValue);
+			case Accordant_dvPackage.DEPLOYMENT_MODEL:
+				return convertDeploymentModelToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -349,6 +353,26 @@ public class Accordant_dvFactoryImpl extends EFactoryImpl implements Accordant_d
 	 * @generated
 	 */
 	public String convertTypeDeviceToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DeploymentModel createDeploymentModelFromString(EDataType eDataType, String initialValue) {
+		DeploymentModel result = DeploymentModel.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDeploymentModelToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

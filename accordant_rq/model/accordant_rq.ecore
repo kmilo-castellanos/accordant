@@ -92,5 +92,6 @@
     <eLiterals name="LICENSE" value="2"/>
     <eLiterals name="TECH_VENDOR" value="3"/>
     <eLiterals name="ARCH_STYLE" value="4"/>
+    <eLiterals name="DEPLOYMENT_MODEL" value="5" literal="DEPLOYMENT_MODEL"/>
   </eClassifiers>
 </ecore:EPackage>

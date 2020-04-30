@@ -732,6 +732,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		addEEnumLiteral(constraintTypeEEnum, ConstraintType.LICENSE);
 		addEEnumLiteral(constraintTypeEEnum, ConstraintType.TECH_VENDOR);
 		addEEnumLiteral(constraintTypeEEnum, ConstraintType.ARCH_STYLE);
+		addEEnumLiteral(constraintTypeEEnum, ConstraintType.DEPLOYMENT_MODEL);
 
 		// Create resource
 		createResource(eNS_URI);

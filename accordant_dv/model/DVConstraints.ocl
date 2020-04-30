@@ -15,6 +15,16 @@ inv D2('Artifact "'+name+'" must be deployed'):
 context DeploymentView
 
 
+inv ID4('All deployments must match with input cloud models constraints'):
+	Tuple{status =
+		self.project.constraints->select(type = rq::accordant_rq::ConstraintType::DEPLOYMENT_MODEL)->isEmpty() or 
+		self.project.constraints->
+		select(type = rq::accordant_rq::ConstraintType::DEPLOYMENT_MODEL)->collect(value)->asSet()->
+		includesAll(self.deployments->
+			collect(model.getValue())->asSet()
+		),severity=null}.status
+		
+
 inv ID6('All significant architectural decisions must be reflected in deployment artifacts'):
 	Tuple{status =
 		self.project.analyzedQs.decisions->select(d:rq::accordant_rq::ArchDecision | d.isSensitivityPoint)->isEmpty() or 
@@ -30,5 +40,9 @@ inv FD2('All components and connectors must be mapped to deployment artifacts'):
 		includesAll(self.fv.conns->asSet())),
 		severity=null}.status
 
+context DeploymentModel
+	def:
+	getValue():
+	String = self.toString().substring(self.toString().lastIndexOf('::')+2, self.toString().size())
 
 endpackage

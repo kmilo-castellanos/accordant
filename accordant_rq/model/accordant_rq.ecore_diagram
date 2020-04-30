@@ -307,6 +307,10 @@
         <element xmi:type="ecore:EEnumLiteral" href="accordant_rq.ecore#//ConstraintType/ARCH_STYLE"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_jL4a8TLlEeqL3uuO5KHRkw"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_rEEpIIsfEeqZp7TNxpmahQ" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="accordant_rq.ecore#//ConstraintType/DEPLOYMENT_MODEL"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_rEEpIYsfEeqZp7TNxpmahQ"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_zRLgAjLkEeqL3uuO5KHRkw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_zRLgAzLkEeqL3uuO5KHRkw"/>
     </children>
@@ -315,7 +319,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_zRLgBjLkEeqL3uuO5KHRkw"/>
     </children>
     <element xmi:type="ecore:EEnum" href="accordant_rq.ecore#//ConstraintType"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zRK48TLkEeqL3uuO5KHRkw" x="-12" y="176" width="117" height="117"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zRK48TLkEeqL3uuO5KHRkw" x="-28" y="184" width="125" height="125"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_gitUYUc0EemtVtH8Gkx1aA"/>
   <element xmi:type="ecore:EPackage" href="accordant_rq.ecore#/"/>

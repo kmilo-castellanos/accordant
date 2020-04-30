@@ -4,6 +4,7 @@ package co.edu.uniandes.accordant_dv.impl;
 
 import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
 import co.edu.uniandes.accordant_dv.Deployment;
+import co.edu.uniandes.accordant_dv.DeploymentModel;
 import co.edu.uniandes.accordant_dv.Pod;
 
 import co.edu.uniandes.accordant_rq.ArchDecision;
@@ -38,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl#getPods <em>Pods</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl#getStrategy <em>Strategy</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl#getDecision <em>Decision</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl#getModel <em>Model</em>}</li>
  * </ul>
  *
  * @generated
@@ -162,6 +164,26 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * @ordered
 	 */
 	protected ArchDecision decision;
+
+	/**
+	 * The default value of the '{@link #getModel() <em>Model</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getModel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final DeploymentModel MODEL_EDEFAULT = DeploymentModel.ONPREMISES;
+
+	/**
+	 * The cached value of the '{@link #getModel() <em>Model</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getModel()
+	 * @generated
+	 * @ordered
+	 */
+	protected DeploymentModel model = MODEL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -355,6 +377,27 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DeploymentModel getModel() {
+		return model;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setModel(DeploymentModel newModel) {
+		DeploymentModel oldModel = model;
+		model = newModel == null ? MODEL_EDEFAULT : newModel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.DEPLOYMENT__MODEL, oldModel, model));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -387,6 +430,8 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 			case Accordant_dvPackage.DEPLOYMENT__DECISION:
 				if (resolve) return getDecision();
 				return basicGetDecision();
+			case Accordant_dvPackage.DEPLOYMENT__MODEL:
+				return getModel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -422,6 +467,9 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 			case Accordant_dvPackage.DEPLOYMENT__DECISION:
 				setDecision((ArchDecision)newValue);
 				return;
+			case Accordant_dvPackage.DEPLOYMENT__MODEL:
+				setModel((DeploymentModel)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -455,6 +503,9 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 			case Accordant_dvPackage.DEPLOYMENT__DECISION:
 				setDecision((ArchDecision)null);
 				return;
+			case Accordant_dvPackage.DEPLOYMENT__MODEL:
+				setModel(MODEL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -481,6 +532,8 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 				return STRATEGY_EDEFAULT == null ? strategy != null : !STRATEGY_EDEFAULT.equals(strategy);
 			case Accordant_dvPackage.DEPLOYMENT__DECISION:
 				return decision != null;
+			case Accordant_dvPackage.DEPLOYMENT__MODEL:
+				return model != MODEL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -494,7 +547,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", replicas: ");
@@ -505,6 +558,8 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 		result.append(maxUnavail);
 		result.append(", strategy: ");
 		result.append(strategy);
+		result.append(", model: ");
+		result.append(model);
 		result.append(')');
 		return result.toString();
 	}

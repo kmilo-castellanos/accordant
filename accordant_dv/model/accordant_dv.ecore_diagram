@@ -309,6 +309,10 @@
         <element xmi:type="ecore:EAttribute" href="accordant_dv.ecore#//Deployment/strategy"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_hD6qIfdKEei_sfB9m4nSPg"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_xlNXsIsbEeqXz-d9JLJymw" type="3001">
+        <element xmi:type="ecore:EAttribute" href="accordant_dv.ecore#//Deployment/model"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_xlNXsYsbEeqXz-d9JLJymw"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_NwOAYvaQEeiBOtpWYDSraA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_NwOAY_aQEeiBOtpWYDSraA"/>
     </children>
@@ -321,7 +325,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_NwOAafaQEeiBOtpWYDSraA"/>
     </children>
     <element xmi:type="ecore:EClass" href="accordant_dv.ecore#//Deployment"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NwJu8faQEeiBOtpWYDSraA" x="392" y="188"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NwJu8faQEeiBOtpWYDSraA" x="392" y="188" width="109" height="133"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_2xiHwPc3Eei_sfB9m4nSPg" type="2001" fontName=".AppleSystemUIFont">
     <children xmi:type="notation:DecorationNode" xmi:id="_2xiu0Pc3Eei_sfB9m4nSPg" type="5001"/>
@@ -476,6 +480,31 @@
     <element xmi:type="ecore:EClass" href="accordant_dv.ecore#//ServerlessEnv"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rBn4cXJkEemF0qqkSpxkLQ" x="276" y="264" height="93"/>
   </children>
+  <children xmi:type="notation:Shape" xmi:id="_XYLDEIsbEeqXz-d9JLJymw" type="2005" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:DecorationNode" xmi:id="_XYMRMIsbEeqXz-d9JLJymw" type="5005"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_XYMRMYsbEeqXz-d9JLJymw" type="7011">
+      <children xmi:type="notation:Node" xmi:id="_ZL6RkIsbEeqXz-d9JLJymw" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="accordant_dv.ecore#//DeploymentModel/ONPREMISES"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ZL6RkYsbEeqXz-d9JLJymw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_cjMWcIsbEeqXz-d9JLJymw" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="accordant_dv.ecore#//DeploymentModel/CLOUD"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_cjMWcYsbEeqXz-d9JLJymw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_jGXIgIsbEeqXz-d9JLJymw" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="accordant_dv.ecore#//DeploymentModel/HYBRID"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_jGXIgYsbEeqXz-d9JLJymw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_XYMRMosbEeqXz-d9JLJymw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_XYMRM4sbEeqXz-d9JLJymw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_XYMRNIsbEeqXz-d9JLJymw" type="7012">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_XYMRNYsbEeqXz-d9JLJymw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_XYMRNosbEeqXz-d9JLJymw"/>
+    </children>
+    <element xmi:type="ecore:EEnum" href="accordant_dv.ecore#//DeploymentModel"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XYLDEYsbEeqXz-d9JLJymw" x="631" y="507"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_784o0SvEEeiyhZsreJRi0w"/>
   <element xmi:type="ecore:EPackage" href="accordant_dv.ecore#/"/>
   <edges xmi:type="notation:Connector" xmi:id="_GFzsQCxXEeiyhZsreJRi0w" type="4003" source="_7_a_cCvEEeiyhZsreJRi0w" target="_Gph2ECvjEeiyhZsreJRi0w">
@@ -493,10 +522,10 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_RrQa8DqFEeitBr7VCsF4lw" type="4003" source="_NwJu8PaQEeiBOtpWYDSraA" target="_2xiHwPc3Eei_sfB9m4nSPg">
     <children xmi:type="notation:DecorationNode" xmi:id="_RrRCADqFEeitBr7VCsF4lw" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_RrRCATqFEeitBr7VCsF4lw" x="-25" y="-14"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_RrRCATqFEeitBr7VCsF4lw" x="-17" y="-11"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_RrRCAjqFEeitBr7VCsF4lw" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_RrRCAzqFEeitBr7VCsF4lw" x="-56" y="14"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_RrRCAzqFEeitBr7VCsF4lw" x="-48" y="9"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_RrQa8TqFEeitBr7VCsF4lw" fontName=".AppleSystemUIFont"/>
     <element xmi:type="ecore:EReference" href="accordant_dv.ecore#//Deployment/pods"/>

@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.Deployment#getPods <em>Pods</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Deployment#getStrategy <em>Strategy</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Deployment#getDecision <em>Decision</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.Deployment#getModel <em>Model</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeployment()
@@ -201,5 +202,34 @@ public interface Deployment extends EObject {
 	 * @generated
 	 */
 	void setDecision(ArchDecision value);
+
+	/**
+	 * Returns the value of the '<em><b>Model</b></em>' attribute.
+	 * The literals are from the enumeration {@link co.edu.uniandes.accordant_dv.DeploymentModel}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Model</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Model</em>' attribute.
+	 * @see co.edu.uniandes.accordant_dv.DeploymentModel
+	 * @see #setModel(DeploymentModel)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeployment_Model()
+	 * @model required="true"
+	 * @generated
+	 */
+	DeploymentModel getModel();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.Deployment#getModel <em>Model</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Model</em>' attribute.
+	 * @see co.edu.uniandes.accordant_dv.DeploymentModel
+	 * @see #getModel()
+	 * @generated
+	 */
+	void setModel(DeploymentModel value);
 
 } // Deployment
