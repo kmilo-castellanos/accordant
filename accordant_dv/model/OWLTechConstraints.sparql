@@ -1,0 +1,32 @@
+#ID1
+SELECT DISTINCT ?tech WHERE {
+?tech rdf:type accowl:Technology 
+. ?tech accowl:hasTechLicense ?license
+. ?license rdf:type ?ltype
+. ?ltype rdfs:subClassOf accowl:?License
+. FILTER ( ?tech IN (?techlist) )
+}
+
+
+#ID2
+SELECT DISTINCT ?tech WHERE {
+?tech rdf:type accowl:Technology 
+. ?tech accowl:hasTechFeature accowl:?processingModel
+. FILTER ( ?tech IN (?techlist) )
+}
+
+#ID3
+SELECT DISTINCT ?tech WHERE {
+?tech rdf:type accowl:Technology 
+. ?tech accowl:hasTechFeature accowl:?deliveryGuarantee
+. FILTER ( ?tech IN (?techlist) )
+}
+
+#FD3
+SELECT DISTINCT ?tech1 ?tech2 WHERE {
+?tech1 rdf:type accowl:Technology
+. ?tech2 rdf:type accowl:Technology 
+. ?tech1 accowl:techCompatibleWith ?tech2
+. FILTER ( ?tech1=accowl:?t1 && ?tech2=accowl:?t2 )
+}
+
