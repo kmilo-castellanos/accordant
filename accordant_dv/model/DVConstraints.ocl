@@ -12,6 +12,13 @@ inv D2('Artifact "'+name+'" must be deployed'):
 		,severity=null
 	}.status
 
+def:
+	supportsQS(a2:Artifact):
+	Boolean = self.comp.decision.aqs.qs.measure <> a2.comp.decision.aqs.qs.measure
+	or (self.comp.decision.aqs.qs.measure = a2.comp.decision.aqs.qs.measure
+	implies self.comp.decision.aqs.qs.minValue*self.paasEnv.podOwner.deplOwner.replicas >=
+	a2.comp.decision.aqs.qs.minValue*a2.paasEnv.podOwner.deplOwner.replicas)
+
 context DeploymentView
 
 
@@ -24,6 +31,14 @@ inv ID4('All deployments must match with input cloud models constraints'):
 			collect(model.getValue())->asSet()
 		),severity=null}.status
 		
+ 
+inv ID5('All provided QS must match with required QS between connected components'):
+	Tuple{status =
+		self.artifacts->forAll(a1,a2:Artifact| a1<>a2 and a1.comp<>null and a2.comp<>null 
+		and a1.comp.decision<>null and a2.comp.decision<>null 
+		and a1.comp.provides(a2.comp) implies a1.supportsQS(a2))
+		,severity=null}.status
+
 
 inv ID6('All significant architectural decisions must be reflected in deployment artifacts'):
 	Tuple{status =
@@ -40,9 +55,42 @@ inv FD2('All components and connectors must be mapped to deployment artifacts'):
 		includesAll(self.fv.conns->asSet())),
 		severity=null}.status
 
+
+context Device
+
+inv D3a('All Computing nodes resources must support the containers requirements. CPU requeriments ('+(((self.pods.getTotalRequiredCPU()->sum())*100).round()/100).toString()+') exced capacity of Device "'+name+'".'):
+	Tuple{status = ((self.pods.getTotalRequiredCPU()->sum())*100).round()/100 <= 0.9,
+		severity=null}.status
+		
+inv D3b('All Computing nodes resources must support the containers requirements. Memory requeriments ('+(self.pods.getTotalRequiredMemory()->sum()).toString()+
+	') exced capacity of Device "'+name+'" ('+mem.toString()+').'):
+	Tuple{status = self.pods.getTotalRequiredMemory()->sum() < mem,
+		severity=null}.status
+
+
 context DeploymentModel
 	def:
 	getValue():
 	String = self.toString().substring(self.toString().lastIndexOf('::')+2, self.toString().size())
+
+context Pod
+	def:
+	getTotalRequiredMemory():
+	Integer = self.envs.mem_req->sum() * self.deplOwner.replicas
+
+	def:
+	getTotalRequiredCPU():
+	Real = self.envs.cpu_req->sum() * self.deplOwner.replicas
+
+endpackage
+
+package accordant_fv
+
+context Component
+
+	def:
+	provides(c2:Component):
+	Boolean = self.ports->select(p : Port | p.type = PortType::PROVIDED).role.conn.roles.port->
+	select(p : Port | p.type = PortType::REQUIRED).comp->includes(c2)
 
 endpackage

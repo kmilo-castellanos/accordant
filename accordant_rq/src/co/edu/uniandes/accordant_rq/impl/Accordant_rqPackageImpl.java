@@ -128,7 +128,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link Accordant_rqPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -142,7 +142,8 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		if (isInited) return (Accordant_rqPackage)EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Accordant_rqPackageImpl theAccordant_rqPackage = (Accordant_rqPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof Accordant_rqPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new Accordant_rqPackageImpl());
+		Object registeredAccordant_rqPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		Accordant_rqPackageImpl theAccordant_rqPackage = registeredAccordant_rqPackage instanceof Accordant_rqPackageImpl ? (Accordant_rqPackageImpl)registeredAccordant_rqPackage : new Accordant_rqPackageImpl();
 
 		isInited = true;
 
@@ -155,7 +156,6 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		// Mark meta-data to indicate it can't be changed
 		theAccordant_rqPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(Accordant_rqPackage.eNS_URI, theAccordant_rqPackage);
 		return theAccordant_rqPackage;
@@ -166,6 +166,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getProject() {
 		return projectEClass;
 	}
@@ -175,6 +176,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProject_Name() {
 		return (EAttribute)projectEClass.getEStructuralFeatures().get(0);
 	}
@@ -184,6 +186,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProject_Scenarios() {
 		return (EReference)projectEClass.getEStructuralFeatures().get(1);
 	}
@@ -193,6 +196,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProject_Tactics() {
 		return (EReference)projectEClass.getEStructuralFeatures().get(2);
 	}
@@ -202,6 +206,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProject_AnalyzedQs() {
 		return (EReference)projectEClass.getEStructuralFeatures().get(3);
 	}
@@ -211,6 +216,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProject_Constraints() {
 		return (EReference)projectEClass.getEStructuralFeatures().get(4);
 	}
@@ -220,6 +226,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getQScenario() {
 		return qScenarioEClass;
 	}
@@ -229,6 +236,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getQScenario_Measure() {
 		return (EAttribute)qScenarioEClass.getEStructuralFeatures().get(0);
 	}
@@ -238,6 +246,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getQScenario_MinValue() {
 		return (EAttribute)qScenarioEClass.getEStructuralFeatures().get(1);
 	}
@@ -247,6 +256,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getQScenario_MaxValue() {
 		return (EAttribute)qScenarioEClass.getEStructuralFeatures().get(2);
 	}
@@ -256,6 +266,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getQScenario_Unit() {
 		return (EAttribute)qScenarioEClass.getEStructuralFeatures().get(3);
 	}
@@ -265,6 +276,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getQScenario_QAttribute() {
 		return (EAttribute)qScenarioEClass.getEStructuralFeatures().get(4);
 	}
@@ -274,6 +286,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getQScenario_Stimulus() {
 		return (EAttribute)qScenarioEClass.getEStructuralFeatures().get(5);
 	}
@@ -283,6 +296,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getQScenario_Environment() {
 		return (EAttribute)qScenarioEClass.getEStructuralFeatures().get(6);
 	}
@@ -292,6 +306,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getQScenario_Name() {
 		return (EAttribute)qScenarioEClass.getEStructuralFeatures().get(7);
 	}
@@ -301,6 +316,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getQScenario_Response() {
 		return (EAttribute)qScenarioEClass.getEStructuralFeatures().get(8);
 	}
@@ -310,6 +326,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getArchDecision() {
 		return archDecisionEClass;
 	}
@@ -319,6 +336,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getArchDecision_Name() {
 		return (EAttribute)archDecisionEClass.getEStructuralFeatures().get(0);
 	}
@@ -328,6 +346,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getArchDecision_Rationale() {
 		return (EAttribute)archDecisionEClass.getEStructuralFeatures().get(1);
 	}
@@ -337,6 +356,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getArchDecision_Code() {
 		return (EAttribute)archDecisionEClass.getEStructuralFeatures().get(2);
 	}
@@ -346,6 +366,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getArchDecision_AppliedTactics() {
 		return (EReference)archDecisionEClass.getEStructuralFeatures().get(3);
 	}
@@ -355,6 +376,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getArchDecision_IsRisk() {
 		return (EAttribute)archDecisionEClass.getEStructuralFeatures().get(4);
 	}
@@ -364,6 +386,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getArchDecision_IsSensitivityPoint() {
 		return (EAttribute)archDecisionEClass.getEStructuralFeatures().get(5);
 	}
@@ -373,6 +396,17 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EReference getArchDecision_Aqs() {
+		return (EReference)archDecisionEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTactic() {
 		return tacticEClass;
 	}
@@ -382,6 +416,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTactic_Name() {
 		return (EAttribute)tacticEClass.getEStructuralFeatures().get(0);
 	}
@@ -391,6 +426,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTactic_QAttribute() {
 		return (EAttribute)tacticEClass.getEStructuralFeatures().get(1);
 	}
@@ -400,6 +436,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTactic_Rationale() {
 		return (EAttribute)tacticEClass.getEStructuralFeatures().get(2);
 	}
@@ -409,6 +446,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTactic_Stimulus() {
 		return (EAttribute)tacticEClass.getEStructuralFeatures().get(3);
 	}
@@ -418,6 +456,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTactic_Response() {
 		return (EAttribute)tacticEClass.getEStructuralFeatures().get(4);
 	}
@@ -427,6 +466,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTactic_Viewpoint() {
 		return (EAttribute)tacticEClass.getEStructuralFeatures().get(5);
 	}
@@ -436,6 +476,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAnalyzedQS() {
 		return analyzedQSEClass;
 	}
@@ -445,6 +486,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAnalyzedQS_Decisions() {
 		return (EReference)analyzedQSEClass.getEStructuralFeatures().get(0);
 	}
@@ -454,6 +496,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAnalyzedQS_Qs() {
 		return (EReference)analyzedQSEClass.getEStructuralFeatures().get(1);
 	}
@@ -463,6 +506,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAnalyzedQS_Reasoning() {
 		return (EAttribute)analyzedQSEClass.getEStructuralFeatures().get(2);
 	}
@@ -472,6 +516,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAnalyzedQS_Name() {
 		return (EAttribute)analyzedQSEClass.getEStructuralFeatures().get(3);
 	}
@@ -481,6 +526,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConstraint() {
 		return constraintEClass;
 	}
@@ -490,6 +536,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConstraint_Code() {
 		return (EAttribute)constraintEClass.getEStructuralFeatures().get(0);
 	}
@@ -499,6 +546,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConstraint_Type() {
 		return (EAttribute)constraintEClass.getEStructuralFeatures().get(1);
 	}
@@ -508,6 +556,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConstraint_Value() {
 		return (EAttribute)constraintEClass.getEStructuralFeatures().get(2);
 	}
@@ -517,6 +566,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getQAMetric() {
 		return qaMetricEEnum;
 	}
@@ -526,6 +576,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getMetricUnit() {
 		return metricUnitEEnum;
 	}
@@ -535,6 +586,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getQAttribute() {
 		return qAttributeEEnum;
 	}
@@ -544,6 +596,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getConstraintType() {
 		return constraintTypeEEnum;
 	}
@@ -553,6 +606,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Accordant_rqFactory getAccordant_rqFactory() {
 		return (Accordant_rqFactory)getEFactoryInstance();
 	}
@@ -601,6 +655,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		createEReference(archDecisionEClass, ARCH_DECISION__APPLIED_TACTICS);
 		createEAttribute(archDecisionEClass, ARCH_DECISION__IS_RISK);
 		createEAttribute(archDecisionEClass, ARCH_DECISION__IS_SENSITIVITY_POINT);
+		createEReference(archDecisionEClass, ARCH_DECISION__AQS);
 
 		tacticEClass = createEClass(TACTIC);
 		createEAttribute(tacticEClass, TACTIC__NAME);
@@ -683,6 +738,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		initEReference(getArchDecision_AppliedTactics(), this.getTactic(), null, "appliedTactics", null, 0, -1, ArchDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArchDecision_IsRisk(), ecorePackage.getEBoolean(), "isRisk", null, 0, 1, ArchDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArchDecision_IsSensitivityPoint(), ecorePackage.getEBoolean(), "isSensitivityPoint", null, 0, 1, ArchDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArchDecision_Aqs(), this.getAnalyzedQS(), this.getAnalyzedQS_Decisions(), "aqs", null, 1, 1, ArchDecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tacticEClass, Tactic.class, "Tactic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTactic_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tactic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -693,7 +749,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		initEAttribute(getTactic_Viewpoint(), ecorePackage.getEString(), "viewpoint", null, 0, 1, Tactic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(analyzedQSEClass, AnalyzedQS.class, "AnalyzedQS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnalyzedQS_Decisions(), this.getArchDecision(), null, "decisions", null, 0, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnalyzedQS_Decisions(), this.getArchDecision(), this.getArchDecision_Aqs(), "decisions", null, 0, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnalyzedQS_Qs(), this.getQScenario(), null, "qs", null, 1, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAnalyzedQS_Reasoning(), ecorePackage.getEString(), "reasoning", null, 0, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAnalyzedQS_Name(), ecorePackage.getEString(), "name", null, 1, 1, AnalyzedQS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -127,6 +127,7 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -136,6 +137,7 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -148,6 +150,7 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<QScenario> getScenarios() {
 		if (scenarios == null) {
 			scenarios = new EObjectContainmentEList<QScenario>(QScenario.class, this, Accordant_rqPackage.PROJECT__SCENARIOS);
@@ -160,6 +163,7 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Tactic> getTactics() {
 		if (tactics == null) {
 			tactics = new EObjectContainmentEList<Tactic>(Tactic.class, this, Accordant_rqPackage.PROJECT__TACTICS);
@@ -172,6 +176,7 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AnalyzedQS> getAnalyzedQs() {
 		if (analyzedQs == null) {
 			analyzedQs = new EObjectContainmentEList<AnalyzedQS>(AnalyzedQS.class, this, Accordant_rqPackage.PROJECT__ANALYZED_QS);
@@ -184,6 +189,7 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Constraint> getConstraints() {
 		if (constraints == null) {
 			constraints = new EObjectContainmentEList<Constraint>(Constraint.class, this, Accordant_rqPackage.PROJECT__CONSTRAINTS);
@@ -323,7 +329,7 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

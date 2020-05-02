@@ -3,6 +3,7 @@
 package co.edu.uniandes.accordant_rq.impl;
 
 import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
+import co.edu.uniandes.accordant_rq.AnalyzedQS;
 import co.edu.uniandes.accordant_rq.ArchDecision;
 import co.edu.uniandes.accordant_rq.Tactic;
 
@@ -10,14 +11,17 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,6 +37,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.ArchDecisionImpl#getAppliedTactics <em>Applied Tactics</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.ArchDecisionImpl#isIsRisk <em>Is Risk</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.impl.ArchDecisionImpl#isIsSensitivityPoint <em>Is Sensitivity Point</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.impl.ArchDecisionImpl#getAqs <em>Aqs</em>}</li>
  * </ul>
  *
  * @generated
@@ -172,6 +177,7 @@ public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements Ar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -181,6 +187,7 @@ public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements Ar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -193,6 +200,7 @@ public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements Ar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRationale() {
 		return rationale;
 	}
@@ -202,6 +210,7 @@ public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements Ar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRationale(String newRationale) {
 		String oldRationale = rationale;
 		rationale = newRationale;
@@ -214,6 +223,7 @@ public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements Ar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCode() {
 		return code;
 	}
@@ -223,6 +233,7 @@ public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements Ar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
@@ -235,6 +246,7 @@ public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements Ar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Tactic> getAppliedTactics() {
 		if (appliedTactics == null) {
 			appliedTactics = new EObjectResolvingEList<Tactic>(Tactic.class, this, Accordant_rqPackage.ARCH_DECISION__APPLIED_TACTICS);
@@ -247,6 +259,7 @@ public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements Ar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsRisk() {
 		return isRisk;
 	}
@@ -256,6 +269,7 @@ public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements Ar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsRisk(boolean newIsRisk) {
 		boolean oldIsRisk = isRisk;
 		isRisk = newIsRisk;
@@ -268,6 +282,7 @@ public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements Ar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsSensitivityPoint() {
 		return isSensitivityPoint;
 	}
@@ -277,11 +292,99 @@ public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements Ar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsSensitivityPoint(boolean newIsSensitivityPoint) {
 		boolean oldIsSensitivityPoint = isSensitivityPoint;
 		isSensitivityPoint = newIsSensitivityPoint;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.ARCH_DECISION__IS_SENSITIVITY_POINT, oldIsSensitivityPoint, isSensitivityPoint));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AnalyzedQS getAqs() {
+		if (eContainerFeatureID() != Accordant_rqPackage.ARCH_DECISION__AQS) return null;
+		return (AnalyzedQS)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAqs(AnalyzedQS newAqs, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newAqs, Accordant_rqPackage.ARCH_DECISION__AQS, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAqs(AnalyzedQS newAqs) {
+		if (newAqs != eInternalContainer() || (eContainerFeatureID() != Accordant_rqPackage.ARCH_DECISION__AQS && newAqs != null)) {
+			if (EcoreUtil.isAncestor(this, newAqs))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newAqs != null)
+				msgs = ((InternalEObject)newAqs).eInverseAdd(this, Accordant_rqPackage.ANALYZED_QS__DECISIONS, AnalyzedQS.class, msgs);
+			msgs = basicSetAqs(newAqs, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.ARCH_DECISION__AQS, newAqs, newAqs));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_rqPackage.ARCH_DECISION__AQS:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetAqs((AnalyzedQS)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_rqPackage.ARCH_DECISION__AQS:
+				return basicSetAqs(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case Accordant_rqPackage.ARCH_DECISION__AQS:
+				return eInternalContainer().eInverseRemove(this, Accordant_rqPackage.ANALYZED_QS__DECISIONS, AnalyzedQS.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -304,6 +407,8 @@ public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements Ar
 				return isIsRisk();
 			case Accordant_rqPackage.ARCH_DECISION__IS_SENSITIVITY_POINT:
 				return isIsSensitivityPoint();
+			case Accordant_rqPackage.ARCH_DECISION__AQS:
+				return getAqs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -336,6 +441,9 @@ public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements Ar
 			case Accordant_rqPackage.ARCH_DECISION__IS_SENSITIVITY_POINT:
 				setIsSensitivityPoint((Boolean)newValue);
 				return;
+			case Accordant_rqPackage.ARCH_DECISION__AQS:
+				setAqs((AnalyzedQS)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -366,6 +474,9 @@ public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements Ar
 			case Accordant_rqPackage.ARCH_DECISION__IS_SENSITIVITY_POINT:
 				setIsSensitivityPoint(IS_SENSITIVITY_POINT_EDEFAULT);
 				return;
+			case Accordant_rqPackage.ARCH_DECISION__AQS:
+				setAqs((AnalyzedQS)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -390,6 +501,8 @@ public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements Ar
 				return isRisk != IS_RISK_EDEFAULT;
 			case Accordant_rqPackage.ARCH_DECISION__IS_SENSITIVITY_POINT:
 				return isSensitivityPoint != IS_SENSITIVITY_POINT_EDEFAULT;
+			case Accordant_rqPackage.ARCH_DECISION__AQS:
+				return getAqs() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -403,7 +516,7 @@ public class ArchDecisionImpl extends MinimalEObjectImpl.Container implements Ar
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", rationale: ");

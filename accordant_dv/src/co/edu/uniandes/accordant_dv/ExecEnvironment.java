@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getVars <em>Vars</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getCommands <em>Commands</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getPaasArts <em>Paas Arts</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getPodOwner <em>Pod Owner</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getExecEnvironment()
@@ -253,5 +254,29 @@ public interface ExecEnvironment extends EObject {
 	 * @generated
 	 */
 	EList<Artifact> getPaasArts();
+
+	/**
+	 * Returns the value of the '<em><b>Pod Owner</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.Pod#getEnvs <em>Envs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pod Owner</em>' container reference.
+	 * @see #setPodOwner(Pod)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getExecEnvironment_PodOwner()
+	 * @see co.edu.uniandes.accordant_dv.Pod#getEnvs
+	 * @model opposite="envs" required="true" transient="false"
+	 * @generated
+	 */
+	Pod getPodOwner();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getPodOwner <em>Pod Owner</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pod Owner</em>' container reference.
+	 * @see #getPodOwner()
+	 * @generated
+	 */
+	void setPodOwner(Pod value);
 
 } // ExecEnvironment

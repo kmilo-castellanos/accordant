@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_rq.ArchDecision#getAppliedTactics <em>Applied Tactics</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.ArchDecision#isIsRisk <em>Is Risk</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_rq.ArchDecision#isIsSensitivityPoint <em>Is Sensitivity Point</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_rq.ArchDecision#getAqs <em>Aqs</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getArchDecision()
@@ -173,5 +174,29 @@ public interface ArchDecision extends EObject {
 	 * @generated
 	 */
 	void setIsSensitivityPoint(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Aqs</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_rq.AnalyzedQS#getDecisions <em>Decisions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Aqs</em>' container reference.
+	 * @see #setAqs(AnalyzedQS)
+	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getArchDecision_Aqs()
+	 * @see co.edu.uniandes.accordant_rq.AnalyzedQS#getDecisions
+	 * @model opposite="decisions" required="true" transient="false"
+	 * @generated
+	 */
+	AnalyzedQS getAqs();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_rq.ArchDecision#getAqs <em>Aqs</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Aqs</em>' container reference.
+	 * @see #getAqs()
+	 * @generated
+	 */
+	void setAqs(AnalyzedQS value);
 
 } // ArchDecision

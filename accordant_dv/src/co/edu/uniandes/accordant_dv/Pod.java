@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.Pod#getRestartPolicy <em>Restart Policy</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Pod#getEnvs <em>Envs</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Pod#getNode <em>Node</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.Pod#getDeplOwner <em>Depl Owner</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getPod()
@@ -108,6 +109,7 @@ public interface Pod extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Envs</b></em>' containment reference list.
 	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.ExecEnvironment}.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getPodOwner <em>Pod Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Envs</em>' containment reference list isn't clear,
@@ -116,13 +118,15 @@ public interface Pod extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Envs</em>' containment reference list.
 	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getPod_Envs()
-	 * @model containment="true" required="true"
+	 * @see co.edu.uniandes.accordant_dv.ExecEnvironment#getPodOwner
+	 * @model opposite="podOwner" containment="true" required="true"
 	 * @generated
 	 */
 	EList<ExecEnvironment> getEnvs();
 
 	/**
 	 * Returns the value of the '<em><b>Node</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.Device#getPods <em>Pods</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Node</em>' reference isn't clear,
@@ -132,7 +136,8 @@ public interface Pod extends EObject {
 	 * @return the value of the '<em>Node</em>' reference.
 	 * @see #setNode(Device)
 	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getPod_Node()
-	 * @model
+	 * @see co.edu.uniandes.accordant_dv.Device#getPods
+	 * @model opposite="pods"
 	 * @generated
 	 */
 	Device getNode();
@@ -146,5 +151,29 @@ public interface Pod extends EObject {
 	 * @generated
 	 */
 	void setNode(Device value);
+
+	/**
+	 * Returns the value of the '<em><b>Depl Owner</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.Deployment#getPods <em>Pods</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Depl Owner</em>' container reference.
+	 * @see #setDeplOwner(Deployment)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getPod_DeplOwner()
+	 * @see co.edu.uniandes.accordant_dv.Deployment#getPods
+	 * @model opposite="pods" required="true" transient="false"
+	 * @generated
+	 */
+	Deployment getDeplOwner();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.Pod#getDeplOwner <em>Depl Owner</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Depl Owner</em>' container reference.
+	 * @see #getDeplOwner()
+	 * @generated
+	 */
+	void setDeplOwner(Deployment value);
 
 } // Pod

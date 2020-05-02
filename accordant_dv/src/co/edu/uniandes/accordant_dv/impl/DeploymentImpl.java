@@ -20,8 +20,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -304,7 +303,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	@Override
 	public EList<Pod> getPods() {
 		if (pods == null) {
-			pods = new EObjectContainmentEList<Pod>(Pod.class, this, Accordant_dvPackage.DEPLOYMENT__PODS);
+			pods = new EObjectContainmentWithInverseEList<Pod>(Pod.class, this, Accordant_dvPackage.DEPLOYMENT__PODS, Accordant_dvPackage.POD__DEPL_OWNER);
 		}
 		return pods;
 	}
@@ -377,6 +376,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeploymentModel getModel() {
 		return model;
 	}
@@ -386,11 +386,27 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setModel(DeploymentModel newModel) {
 		DeploymentModel oldModel = model;
 		model = newModel == null ? MODEL_EDEFAULT : newModel;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.DEPLOYMENT__MODEL, oldModel, model));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_dvPackage.DEPLOYMENT__PODS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPods()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -547,7 +563,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", replicas: ");

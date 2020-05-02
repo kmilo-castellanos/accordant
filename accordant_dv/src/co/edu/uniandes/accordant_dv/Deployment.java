@@ -138,6 +138,7 @@ public interface Deployment extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Pods</b></em>' containment reference list.
 	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.Pod}.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.Pod#getDeplOwner <em>Depl Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Pods</em>' containment reference list isn't clear,
@@ -146,7 +147,8 @@ public interface Deployment extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Pods</em>' containment reference list.
 	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeployment_Pods()
-	 * @model containment="true" required="true"
+	 * @see co.edu.uniandes.accordant_dv.Pod#getDeplOwner
+	 * @model opposite="deplOwner" containment="true" required="true"
 	 * @generated
 	 */
 	EList<Pod> getPods();

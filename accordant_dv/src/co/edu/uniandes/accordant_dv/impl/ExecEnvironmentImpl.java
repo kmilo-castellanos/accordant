@@ -7,6 +7,7 @@ import co.edu.uniandes.accordant_dv.Artifact;
 import co.edu.uniandes.accordant_dv.EnvVar;
 import co.edu.uniandes.accordant_dv.ExecEnvironment;
 
+import co.edu.uniandes.accordant_dv.Pod;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -43,6 +45,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ExecEnvironmentImpl#getVars <em>Vars</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ExecEnvironmentImpl#getCommands <em>Commands</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ExecEnvironmentImpl#getPaasArts <em>Paas Arts</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.ExecEnvironmentImpl#getPodOwner <em>Pod Owner</em>}</li>
  * </ul>
  *
  * @generated
@@ -422,12 +425,59 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Pod getPodOwner() {
+		if (eContainerFeatureID() != Accordant_dvPackage.EXEC_ENVIRONMENT__POD_OWNER) return null;
+		return (Pod)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPodOwner(Pod newPodOwner, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newPodOwner, Accordant_dvPackage.EXEC_ENVIRONMENT__POD_OWNER, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPodOwner(Pod newPodOwner) {
+		if (newPodOwner != eInternalContainer() || (eContainerFeatureID() != Accordant_dvPackage.EXEC_ENVIRONMENT__POD_OWNER && newPodOwner != null)) {
+			if (EcoreUtil.isAncestor(this, newPodOwner))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newPodOwner != null)
+				msgs = ((InternalEObject)newPodOwner).eInverseAdd(this, Accordant_dvPackage.POD__ENVS, Pod.class, msgs);
+			msgs = basicSetPodOwner(newPodOwner, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.EXEC_ENVIRONMENT__POD_OWNER, newPodOwner, newPodOwner));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__PAAS_ARTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPaasArts()).basicAdd(otherEnd, msgs);
+			case Accordant_dvPackage.EXEC_ENVIRONMENT__POD_OWNER:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetPodOwner((Pod)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -444,8 +494,24 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 				return ((InternalEList<?>)getVars()).basicRemove(otherEnd, msgs);
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__PAAS_ARTS:
 				return ((InternalEList<?>)getPaasArts()).basicRemove(otherEnd, msgs);
+			case Accordant_dvPackage.EXEC_ENVIRONMENT__POD_OWNER:
+				return basicSetPodOwner(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case Accordant_dvPackage.EXEC_ENVIRONMENT__POD_OWNER:
+				return eInternalContainer().eInverseRemove(this, Accordant_dvPackage.POD__ENVS, Pod.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -476,6 +542,8 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 				return getCommands();
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__PAAS_ARTS:
 				return getPaasArts();
+			case Accordant_dvPackage.EXEC_ENVIRONMENT__POD_OWNER:
+				return getPodOwner();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -523,6 +591,9 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 				getPaasArts().clear();
 				getPaasArts().addAll((Collection<? extends Artifact>)newValue);
 				return;
+			case Accordant_dvPackage.EXEC_ENVIRONMENT__POD_OWNER:
+				setPodOwner((Pod)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -565,6 +636,9 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__PAAS_ARTS:
 				getPaasArts().clear();
 				return;
+			case Accordant_dvPackage.EXEC_ENVIRONMENT__POD_OWNER:
+				setPodOwner((Pod)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -597,6 +671,8 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 				return commands != null && !commands.isEmpty();
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__PAAS_ARTS:
 				return paasArts != null && !paasArts.isEmpty();
+			case Accordant_dvPackage.EXEC_ENVIRONMENT__POD_OWNER:
+				return getPodOwner() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -610,7 +686,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", cpu_req: ");

@@ -231,13 +231,22 @@ public interface Accordant_dvPackage extends EPackage {
 	int DEVICE__OS = 6;
 
 	/**
+	 * The feature id for the '<em><b>Pods</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE__PODS = 7;
+
+	/**
 	 * The number of structural features of the '<em>Device</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_FEATURE_COUNT = 7;
+	int DEVICE_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Device</em>' class.
@@ -349,13 +358,22 @@ public interface Accordant_dvPackage extends EPackage {
 	int EXEC_ENVIRONMENT__PAAS_ARTS = 9;
 
 	/**
+	 * The feature id for the '<em><b>Pod Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXEC_ENVIRONMENT__POD_OWNER = 10;
+
+	/**
 	 * The number of structural features of the '<em>Exec Environment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXEC_ENVIRONMENT_FEATURE_COUNT = 10;
+	int EXEC_ENVIRONMENT_FEATURE_COUNT = 11;
 
 	/**
 	 * The number of operations of the '<em>Exec Environment</em>' class.
@@ -622,13 +640,22 @@ public interface Accordant_dvPackage extends EPackage {
 	int POD__NODE = 4;
 
 	/**
+	 * The feature id for the '<em><b>Depl Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POD__DEPL_OWNER = 5;
+
+	/**
 	 * The number of structural features of the '<em>Pod</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POD_FEATURE_COUNT = 5;
+	int POD_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Pod</em>' class.
@@ -1162,6 +1189,17 @@ public interface Accordant_dvPackage extends EPackage {
 	EAttribute getDevice_Os();
 
 	/**
+	 * Returns the meta object for the reference list '{@link co.edu.uniandes.accordant_dv.Device#getPods <em>Pods</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Pods</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Device#getPods()
+	 * @see #getDevice()
+	 * @generated
+	 */
+	EReference getDevice_Pods();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.ExecEnvironment <em>Exec Environment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1280,6 +1318,17 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getExecEnvironment_PaasArts();
+
+	/**
+	 * Returns the meta object for the container reference '{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getPodOwner <em>Pod Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Pod Owner</em>'.
+	 * @see co.edu.uniandes.accordant_dv.ExecEnvironment#getPodOwner()
+	 * @see #getExecEnvironment()
+	 * @generated
+	 */
+	EReference getExecEnvironment_PodOwner();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.Artifact <em>Artifact</em>}'.
@@ -1541,6 +1590,17 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPod_Node();
+
+	/**
+	 * Returns the meta object for the container reference '{@link co.edu.uniandes.accordant_dv.Pod#getDeplOwner <em>Depl Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Depl Owner</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Pod#getDeplOwner()
+	 * @see #getPod()
+	 * @generated
+	 */
+	EReference getPod_DeplOwner();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.EnvVar <em>Env Var</em>}'.
@@ -2003,6 +2063,14 @@ public interface Accordant_dvPackage extends EPackage {
 		EAttribute DEVICE__OS = eINSTANCE.getDevice_Os();
 
 		/**
+		 * The meta object literal for the '<em><b>Pods</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE__PODS = eINSTANCE.getDevice_Pods();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.ExecEnvironmentImpl <em>Exec Environment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2091,6 +2159,14 @@ public interface Accordant_dvPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EXEC_ENVIRONMENT__PAAS_ARTS = eINSTANCE.getExecEnvironment_PaasArts();
+
+		/**
+		 * The meta object literal for the '<em><b>Pod Owner</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXEC_ENVIRONMENT__POD_OWNER = eINSTANCE.getExecEnvironment_PodOwner();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl <em>Artifact</em>}' class.
@@ -2289,6 +2365,14 @@ public interface Accordant_dvPackage extends EPackage {
 		 * @generated
 		 */
 		EReference POD__NODE = eINSTANCE.getPod_Node();
+
+		/**
+		 * The meta object literal for the '<em><b>Depl Owner</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference POD__DEPL_OWNER = eINSTANCE.getPod_DeplOwner();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.EnvVarImpl <em>Env Var</em>}' class.

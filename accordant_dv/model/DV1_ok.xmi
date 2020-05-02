@@ -12,26 +12,37 @@
       storage="200"
       mem="6"
       name="master"
-      os="Ubuntu"/>
+      os="Ubuntu"
+      pods="sparkMasterPod"/>
   <devs host="s"
       cpu="8"
       storage="200"
       mem="6"
       name="slave"
-      os="Ubuntu"/>
+      os="Ubuntu"
+      pods="sparkWorkerPod"/>
   <devs host="dataaccess"
       cpu="8"
       storage="200"
       mem="8"
       name="dataaccess"
-      os="Ubuntu"/>
+      os="Ubuntu"
+      pods="FlumeIngPod"/>
   <devs host="broker"
       type="LARGE"
       cpu="8"
       storage="600"
       mem="16"
       name="broker"
-      os="Ubuntu"/>
+      os="Ubuntu"
+      pods="kafkaPod"/>
+  <devs host="dataaccess2"
+      cpu="8"
+      storage="200"
+      mem="8"
+      name="dataaccess2"
+      os="Ubuntu"
+      pods="FlumeSinkPod"/>
   <deployments
       name="sparkMasterDep"
       replicas="1"
@@ -42,8 +53,8 @@
       <envs
           name="SparkMEnv"
           cpu_req="0.8"
-          image="ramhiser/spark:2.0.1"
-          PaasArts="adsb-transf nmac-estimator">
+          mem_req="2"
+          image="ramhiser/spark:2.0.1">
         <ports>7077</ports>
         <ports>8080</ports>
         <commands>/spark-master</commands>
@@ -61,13 +72,14 @@
       <envs
           name="SparkWEnv"
           cpu_req="0.3"
-          image="ramhiser/spark:2.0.1">
+          image="ramhiser/spark:2.0.1"
+          PaasArts="adsb-transf nmac-estimator">
         <ports>8081</ports>
         <commands>/spark-worker</commands>
       </envs>
     </pods>
     <decision
-        href="UC1_ai.xmi#Dec1"/>
+        href="UC1_ai.xmi#Dec2"/>
   </deployments>
   <deployments
       name="kafkaDep"
@@ -84,14 +96,14 @@
       </envs>
     </pods>
     <decision
-        href="UC1_ai.xmi#Dec1"/>
+        href="UC1_ai.xmi#Dec2"/>
   </deployments>
   <deployments
       name="flumeDep"
       replicas="2"
       model="CLOUD">
     <pods name="FlumeSinkPod"
-        node="dataaccess">
+        node="dataaccess2">
       <envs
           name="FlumeSinkEnv"
           cpu_req="0.3"
@@ -111,7 +123,7 @@
       </envs>
     </pods>
     <decision
-        href="UC1_ai.xmi#Dec2"/>
+        href="UC1_ai.xmi#Dec3"/>
   </deployments>
   <artifacts
       name="adsb-ingestor"
@@ -127,14 +139,14 @@
       name="adsb-transf"
       props=""
       technology="Spark"
-      paasEnv="SparkMEnv">
+      paasEnv="SparkWEnv">
     <comp xsi:type="accordant_fv:Transformer"
         href="FV1_ok.xmi#ABSB Formater"/>
   </artifacts>
   <artifacts
       name="nmac-estimator"
       technology="Spark"
-      paasEnv="SparkMEnv">
+      paasEnv="SparkWEnv">
     <comp xsi:type="accordant_fv:Estimator"
         href="FV1_ok.xmi#NMAC Estimator"/>
     <decision

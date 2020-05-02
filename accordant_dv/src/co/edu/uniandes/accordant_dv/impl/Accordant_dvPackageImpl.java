@@ -190,7 +190,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link Accordant_dvPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -204,13 +204,16 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		if (isInited) return (Accordant_dvPackage)EPackage.Registry.INSTANCE.getEPackage(Accordant_dvPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Accordant_dvPackageImpl theAccordant_dvPackage = (Accordant_dvPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof Accordant_dvPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new Accordant_dvPackageImpl());
+		Object registeredAccordant_dvPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		Accordant_dvPackageImpl theAccordant_dvPackage = registeredAccordant_dvPackage instanceof Accordant_dvPackageImpl ? (Accordant_dvPackageImpl)registeredAccordant_dvPackage : new Accordant_dvPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Accordant_rqPackageImpl theAccordant_rqPackage = (Accordant_rqPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI) instanceof Accordant_rqPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI) : Accordant_rqPackage.eINSTANCE);
-		Accordant_fvPackageImpl theAccordant_fvPackage = (Accordant_fvPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Accordant_fvPackage.eNS_URI) instanceof Accordant_fvPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Accordant_fvPackage.eNS_URI) : Accordant_fvPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI);
+		Accordant_rqPackageImpl theAccordant_rqPackage = (Accordant_rqPackageImpl)(registeredPackage instanceof Accordant_rqPackageImpl ? registeredPackage : Accordant_rqPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Accordant_fvPackage.eNS_URI);
+		Accordant_fvPackageImpl theAccordant_fvPackage = (Accordant_fvPackageImpl)(registeredPackage instanceof Accordant_fvPackageImpl ? registeredPackage : Accordant_fvPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAccordant_dvPackage.createPackageContents();
@@ -225,7 +228,6 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		// Mark meta-data to indicate it can't be changed
 		theAccordant_dvPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(Accordant_dvPackage.eNS_URI, theAccordant_dvPackage);
 		return theAccordant_dvPackage;
@@ -407,6 +409,16 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * @generated
 	 */
 	@Override
+	public EReference getDevice_Pods() {
+		return (EReference)deviceEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getExecEnvironment() {
 		return execEnvironmentEClass;
 	}
@@ -509,6 +521,16 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	@Override
 	public EReference getExecEnvironment_PaasArts() {
 		return (EReference)execEnvironmentEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getExecEnvironment_PodOwner() {
+		return (EReference)execEnvironmentEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -686,6 +708,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDeployment_Model() {
 		return (EAttribute)deploymentEClass.getEStructuralFeatures().get(7);
 	}
@@ -748,6 +771,16 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	@Override
 	public EReference getPod_Node() {
 		return (EReference)podEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPod_DeplOwner() {
+		return (EReference)podEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1025,6 +1058,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getDeploymentModel() {
 		return deploymentModelEEnum;
 	}
@@ -1076,6 +1110,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		createEAttribute(deviceEClass, DEVICE__MEM);
 		createEAttribute(deviceEClass, DEVICE__NAME);
 		createEAttribute(deviceEClass, DEVICE__OS);
+		createEReference(deviceEClass, DEVICE__PODS);
 
 		execEnvironmentEClass = createEClass(EXEC_ENVIRONMENT);
 		createEAttribute(execEnvironmentEClass, EXEC_ENVIRONMENT__NAME);
@@ -1088,6 +1123,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		createEReference(execEnvironmentEClass, EXEC_ENVIRONMENT__VARS);
 		createEAttribute(execEnvironmentEClass, EXEC_ENVIRONMENT__COMMANDS);
 		createEReference(execEnvironmentEClass, EXEC_ENVIRONMENT__PAAS_ARTS);
+		createEReference(execEnvironmentEClass, EXEC_ENVIRONMENT__POD_OWNER);
 
 		artifactEClass = createEClass(ARTIFACT);
 		createEAttribute(artifactEClass, ARTIFACT__NAME);
@@ -1115,6 +1151,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		createEAttribute(podEClass, POD__RESTART_POLICY);
 		createEReference(podEClass, POD__ENVS);
 		createEReference(podEClass, POD__NODE);
+		createEReference(podEClass, POD__DEPL_OWNER);
 
 		envVarEClass = createEClass(ENV_VAR);
 		createEAttribute(envVarEClass, ENV_VAR__NAME);
@@ -1203,6 +1240,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		initEAttribute(getDevice_Mem(), ecorePackage.getEInt(), "mem", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDevice_Name(), ecorePackage.getEString(), "name", null, 1, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDevice_Os(), ecorePackage.getEString(), "os", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDevice_Pods(), this.getPod(), this.getPod_Node(), "pods", null, 0, -1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(execEnvironmentEClass, ExecEnvironment.class, "ExecEnvironment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getExecEnvironment_Name(), ecorePackage.getEString(), "name", null, 0, 1, ExecEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1215,6 +1253,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		initEReference(getExecEnvironment_Vars(), this.getEnvVar(), null, "vars", null, 0, -1, ExecEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExecEnvironment_Commands(), ecorePackage.getEString(), "commands", null, 0, -1, ExecEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExecEnvironment_PaasArts(), this.getArtifact(), this.getArtifact_PaasEnv(), "PaasArts", null, 0, -1, ExecEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExecEnvironment_PodOwner(), this.getPod(), this.getPod_Envs(), "podOwner", null, 1, 1, ExecEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(artifactEClass, Artifact.class, "Artifact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArtifact_Name(), ecorePackage.getEString(), "name", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1231,7 +1270,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		initEAttribute(getDeployment_Replicas(), ecorePackage.getEInt(), "replicas", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeployment_MaxSurge(), ecorePackage.getEInt(), "maxSurge", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeployment_MaxUnavail(), ecorePackage.getEInt(), "maxUnavail", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeployment_Pods(), this.getPod(), null, "pods", null, 1, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeployment_Pods(), this.getPod(), this.getPod_DeplOwner(), "pods", null, 1, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeployment_Strategy(), ecorePackage.getEString(), "strategy", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeployment_Decision(), theAccordant_rqPackage.getArchDecision(), null, "decision", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeployment_Model(), this.getDeploymentModel(), "model", null, 1, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1240,8 +1279,9 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		initEAttribute(getPod_Name(), ecorePackage.getEString(), "name", null, 0, 1, Pod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPod_Host(), ecorePackage.getEString(), "host", null, 0, 1, Pod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPod_RestartPolicy(), ecorePackage.getEString(), "restartPolicy", null, 0, 1, Pod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPod_Envs(), this.getExecEnvironment(), null, "envs", null, 1, -1, Pod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPod_Node(), this.getDevice(), null, "node", null, 0, 1, Pod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPod_Envs(), this.getExecEnvironment(), this.getExecEnvironment_PodOwner(), "envs", null, 1, -1, Pod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPod_Node(), this.getDevice(), this.getDevice_Pods(), "node", null, 0, 1, Pod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPod_DeplOwner(), this.getDeployment(), this.getDeployment_Pods(), "deplOwner", null, 1, 1, Pod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(envVarEClass, EnvVar.class, "EnvVar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEnvVar_Name(), ecorePackage.getEString(), "name", null, 0, 1, EnvVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

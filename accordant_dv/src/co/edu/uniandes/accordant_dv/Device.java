@@ -2,6 +2,7 @@
  */
 package co.edu.uniandes.accordant_dv;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -20,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.Device#getMem <em>Mem</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Device#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Device#getOs <em>Os</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.Device#getPods <em>Pods</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDevice()
@@ -211,5 +213,19 @@ public interface Device extends EObject {
 	 * @generated
 	 */
 	void setOs(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Pods</b></em>' reference list.
+	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.Pod}.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.Pod#getNode <em>Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pods</em>' reference list.
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDevice_Pods()
+	 * @see co.edu.uniandes.accordant_dv.Pod#getNode
+	 * @model opposite="node"
+	 * @generated
+	 */
+	EList<Pod> getPods();
 
 } // Device

@@ -115,6 +115,7 @@ public class Accordant_rqFactoryImpl extends EFactoryImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Project createProject() {
 		ProjectImpl project = new ProjectImpl();
 		return project;
@@ -125,6 +126,7 @@ public class Accordant_rqFactoryImpl extends EFactoryImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QScenario createQScenario() {
 		QScenarioImpl qScenario = new QScenarioImpl();
 		return qScenario;
@@ -135,6 +137,7 @@ public class Accordant_rqFactoryImpl extends EFactoryImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ArchDecision createArchDecision() {
 		ArchDecisionImpl archDecision = new ArchDecisionImpl();
 		return archDecision;
@@ -145,6 +148,7 @@ public class Accordant_rqFactoryImpl extends EFactoryImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Tactic createTactic() {
 		TacticImpl tactic = new TacticImpl();
 		return tactic;
@@ -155,6 +159,7 @@ public class Accordant_rqFactoryImpl extends EFactoryImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AnalyzedQS createAnalyzedQS() {
 		AnalyzedQSImpl analyzedQS = new AnalyzedQSImpl();
 		return analyzedQS;
@@ -165,6 +170,7 @@ public class Accordant_rqFactoryImpl extends EFactoryImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Constraint createConstraint() {
 		ConstraintImpl constraint = new ConstraintImpl();
 		return constraint;
@@ -255,6 +261,7 @@ public class Accordant_rqFactoryImpl extends EFactoryImpl implements Accordant_r
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Accordant_rqPackage getAccordant_rqPackage() {
 		return (Accordant_rqPackage)getEPackage();
 	}

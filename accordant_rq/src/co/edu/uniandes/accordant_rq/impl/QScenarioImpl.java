@@ -239,6 +239,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QAMetric getMeasure() {
 		return measure;
 	}
@@ -248,6 +249,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMeasure(QAMetric newMeasure) {
 		QAMetric oldMeasure = measure;
 		measure = newMeasure == null ? MEASURE_EDEFAULT : newMeasure;
@@ -260,6 +262,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getMinValue() {
 		return minValue;
 	}
@@ -269,6 +272,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMinValue(float newMinValue) {
 		float oldMinValue = minValue;
 		minValue = newMinValue;
@@ -281,6 +285,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getMaxValue() {
 		return maxValue;
 	}
@@ -290,6 +295,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMaxValue(float newMaxValue) {
 		float oldMaxValue = maxValue;
 		maxValue = newMaxValue;
@@ -302,6 +308,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MetricUnit getUnit() {
 		return unit;
 	}
@@ -311,6 +318,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUnit(MetricUnit newUnit) {
 		MetricUnit oldUnit = unit;
 		unit = newUnit == null ? UNIT_EDEFAULT : newUnit;
@@ -323,6 +331,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QAttribute getQAttribute() {
 		return qAttribute;
 	}
@@ -332,6 +341,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setQAttribute(QAttribute newQAttribute) {
 		QAttribute oldQAttribute = qAttribute;
 		qAttribute = newQAttribute == null ? QATTRIBUTE_EDEFAULT : newQAttribute;
@@ -344,6 +354,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getStimulus() {
 		return stimulus;
 	}
@@ -353,6 +364,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStimulus(String newStimulus) {
 		String oldStimulus = stimulus;
 		stimulus = newStimulus;
@@ -365,6 +377,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getEnvironment() {
 		return environment;
 	}
@@ -374,6 +387,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEnvironment(String newEnvironment) {
 		String oldEnvironment = environment;
 		environment = newEnvironment;
@@ -386,6 +400,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -395,6 +410,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -407,6 +423,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getResponse() {
 		return response;
 	}
@@ -416,6 +433,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setResponse(String newResponse) {
 		String oldResponse = response;
 		response = newResponse;
@@ -570,7 +588,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (measure: ");
 		result.append(measure);
 		result.append(", minValue: ");

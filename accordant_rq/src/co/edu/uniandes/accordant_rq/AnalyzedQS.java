@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface AnalyzedQS extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Decisions</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_rq.ArchDecision#getAqs <em>Aqs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Decisions</em>' containment reference isn't clear,
@@ -35,7 +36,8 @@ public interface AnalyzedQS extends EObject {
 	 * @return the value of the '<em>Decisions</em>' containment reference.
 	 * @see #setDecisions(ArchDecision)
 	 * @see co.edu.uniandes.accordant_rq.Accordant_rqPackage#getAnalyzedQS_Decisions()
-	 * @model containment="true"
+	 * @see co.edu.uniandes.accordant_rq.ArchDecision#getAqs
+	 * @model opposite="aqs" containment="true"
 	 * @generated
 	 */
 	ArchDecision getDecisions();

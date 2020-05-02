@@ -304,13 +304,22 @@ public interface Accordant_rqPackage extends EPackage {
 	int ARCH_DECISION__IS_SENSITIVITY_POINT = 5;
 
 	/**
+	 * The feature id for the '<em><b>Aqs</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCH_DECISION__AQS = 6;
+
+	/**
 	 * The number of structural features of the '<em>Arch Decision</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARCH_DECISION_FEATURE_COUNT = 6;
+	int ARCH_DECISION_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Arch Decision</em>' class.
@@ -815,6 +824,17 @@ public interface Accordant_rqPackage extends EPackage {
 	EAttribute getArchDecision_IsSensitivityPoint();
 
 	/**
+	 * Returns the meta object for the container reference '{@link co.edu.uniandes.accordant_rq.ArchDecision#getAqs <em>Aqs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Aqs</em>'.
+	 * @see co.edu.uniandes.accordant_rq.ArchDecision#getAqs()
+	 * @see #getArchDecision()
+	 * @generated
+	 */
+	EReference getArchDecision_Aqs();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_rq.Tactic <em>Tactic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1239,6 +1259,14 @@ public interface Accordant_rqPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ARCH_DECISION__IS_SENSITIVITY_POINT = eINSTANCE.getArchDecision_IsSensitivityPoint();
+
+		/**
+		 * The meta object literal for the '<em><b>Aqs</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARCH_DECISION__AQS = eINSTANCE.getArchDecision_Aqs();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_rq.impl.TacticImpl <em>Tactic</em>}' class.

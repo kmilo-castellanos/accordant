@@ -116,6 +116,7 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ArchDecision getDecisions() {
 		return decisions;
 	}
@@ -140,13 +141,14 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDecisions(ArchDecision newDecisions) {
 		if (newDecisions != decisions) {
 			NotificationChain msgs = null;
 			if (decisions != null)
-				msgs = ((InternalEObject)decisions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Accordant_rqPackage.ANALYZED_QS__DECISIONS, null, msgs);
+				msgs = ((InternalEObject)decisions).eInverseRemove(this, Accordant_rqPackage.ARCH_DECISION__AQS, ArchDecision.class, msgs);
 			if (newDecisions != null)
-				msgs = ((InternalEObject)newDecisions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Accordant_rqPackage.ANALYZED_QS__DECISIONS, null, msgs);
+				msgs = ((InternalEObject)newDecisions).eInverseAdd(this, Accordant_rqPackage.ARCH_DECISION__AQS, ArchDecision.class, msgs);
 			msgs = basicSetDecisions(newDecisions, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -159,6 +161,7 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QScenario getQs() {
 		if (qs != null && qs.eIsProxy()) {
 			InternalEObject oldQs = (InternalEObject)qs;
@@ -185,6 +188,7 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setQs(QScenario newQs) {
 		QScenario oldQs = qs;
 		qs = newQs;
@@ -197,6 +201,7 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getReasoning() {
 		return reasoning;
 	}
@@ -206,6 +211,7 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReasoning(String newReasoning) {
 		String oldReasoning = reasoning;
 		reasoning = newReasoning;
@@ -218,6 +224,7 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -227,11 +234,28 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_rqPackage.ANALYZED_QS__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_rqPackage.ANALYZED_QS__DECISIONS:
+				if (decisions != null)
+					msgs = ((InternalEObject)decisions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Accordant_rqPackage.ANALYZED_QS__DECISIONS, null, msgs);
+				return basicSetDecisions((ArchDecision)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -346,7 +370,7 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (reasoning: ");
 		result.append(reasoning);
 		result.append(", name: ");

@@ -4,14 +4,21 @@ package co.edu.uniandes.accordant_dv.impl;
 
 import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
 import co.edu.uniandes.accordant_dv.Device;
+import co.edu.uniandes.accordant_dv.Pod;
 import co.edu.uniandes.accordant_dv.TypeDevice;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,6 +35,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeviceImpl#getMem <em>Mem</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeviceImpl#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeviceImpl#getOs <em>Os</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeviceImpl#getPods <em>Pods</em>}</li>
  * </ul>
  *
  * @generated
@@ -172,6 +180,16 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * @ordered
 	 */
 	protected String os = OS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPods() <em>Pods</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPods()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Pod> pods;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -359,6 +377,48 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * @generated
 	 */
 	@Override
+	public EList<Pod> getPods() {
+		if (pods == null) {
+			pods = new EObjectWithInverseResolvingEList<Pod>(Pod.class, this, Accordant_dvPackage.DEVICE__PODS, Accordant_dvPackage.POD__NODE);
+		}
+		return pods;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_dvPackage.DEVICE__PODS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPods()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_dvPackage.DEVICE__PODS:
+				return ((InternalEList<?>)getPods()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Accordant_dvPackage.DEVICE__HOST:
@@ -375,6 +435,8 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 				return getName();
 			case Accordant_dvPackage.DEVICE__OS:
 				return getOs();
+			case Accordant_dvPackage.DEVICE__PODS:
+				return getPods();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -384,6 +446,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -407,6 +470,10 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 				return;
 			case Accordant_dvPackage.DEVICE__OS:
 				setOs((String)newValue);
+				return;
+			case Accordant_dvPackage.DEVICE__PODS:
+				getPods().clear();
+				getPods().addAll((Collection<? extends Pod>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -441,6 +508,9 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 			case Accordant_dvPackage.DEVICE__OS:
 				setOs(OS_EDEFAULT);
 				return;
+			case Accordant_dvPackage.DEVICE__PODS:
+				getPods().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -467,6 +537,8 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case Accordant_dvPackage.DEVICE__OS:
 				return OS_EDEFAULT == null ? os != null : !OS_EDEFAULT.equals(os);
+			case Accordant_dvPackage.DEVICE__PODS:
+				return pods != null && !pods.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -480,7 +552,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (host: ");
 		result.append(host);
 		result.append(", type: ");

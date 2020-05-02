@@ -37,6 +37,11 @@
       <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//TypeDevice/MICRO"/>
       <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//TypeDevice/XLARGE"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="accordant_dv.ecore#//DeploymentModel">
+      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//DeploymentModel/ONPREMISES"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//DeploymentModel/CLOUD"/>
+      <genEnumLiterals ecoreEnumLiteral="accordant_dv.ecore#//DeploymentModel/HYBRID"/>
+    </genEnums>
     <genClasses ecoreClass="accordant_dv.ecore#//DeploymentView">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//DeploymentView/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//DeploymentView/devs"/>
@@ -55,6 +60,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Device/mem"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Device/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Device/os"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//Device/pods"/>
     </genClasses>
     <genClasses ecoreClass="accordant_dv.ecore#//ExecEnvironment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//ExecEnvironment/name"/>
@@ -67,6 +73,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//ExecEnvironment/vars"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//ExecEnvironment/commands"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//ExecEnvironment/PaasArts"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference accordant_dv.ecore#//ExecEnvironment/podOwner"/>
     </genClasses>
     <genClasses ecoreClass="accordant_dv.ecore#//Artifact">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Artifact/name"/>
@@ -86,6 +93,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//Deployment/pods"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Deployment/strategy"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//Deployment/decision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Deployment/model"/>
     </genClasses>
     <genClasses ecoreClass="accordant_dv.ecore#//Pod">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Pod/name"/>
@@ -93,6 +101,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//Pod/restartPolicy"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//Pod/envs"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference accordant_dv.ecore#//Pod/node"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference accordant_dv.ecore#//Pod/deplOwner"/>
     </genClasses>
     <genClasses ecoreClass="accordant_dv.ecore#//EnvVar">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute accordant_dv.ecore#//EnvVar/name"/>
@@ -149,6 +158,7 @@
       <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//ConstraintType/LICENSE"/>
       <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//ConstraintType/TECH_VENDOR"/>
       <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//ConstraintType/ARCH_STYLE"/>
+      <genEnumLiterals ecoreEnumLiteral="../../accordant_rq/model/accordant_rq.ecore#//ConstraintType/DEPLOYMENT_MODEL"/>
     </genEnums>
     <genClasses ecoreClass="../../accordant_rq/model/accordant_rq.ecore#//Project">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//Project/name"/>
@@ -175,6 +185,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../accordant_rq/model/accordant_rq.ecore#//ArchDecision/appliedTactics"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//ArchDecision/isRisk"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//ArchDecision/isSensitivityPoint"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../accordant_rq/model/accordant_rq.ecore#//ArchDecision/aqs"/>
     </genClasses>
     <genClasses ecoreClass="../../accordant_rq/model/accordant_rq.ecore#//Tactic">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../accordant_rq/model/accordant_rq.ecore#//Tactic/name"/>

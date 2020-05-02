@@ -49,6 +49,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="os" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pods" upperBound="-1" eType="#//Pod"
+        eOpposite="#//Pod/node"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TypeDevice">
     <eLiterals name="MEDIUM" value="2" literal="MEDIUM"/>
@@ -73,6 +75,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="PaasArts" upperBound="-1"
         eType="#//Artifact" eOpposite="#//Artifact/paasEnv"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="podOwner" lowerBound="1"
+        eType="#//Pod" eOpposite="#//Pod/envs"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Artifact">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -94,7 +98,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSurge" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxUnavail" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pods" lowerBound="1" upperBound="-1"
-        eType="#//Pod" containment="true"/>
+        eType="#//Pod" containment="true" eOpposite="#//Pod/deplOwner"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="strategy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="decision" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//ArchDecision"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" lowerBound="1" eType="#//DeploymentModel"/>
@@ -105,8 +109,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="host" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="restartPolicy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="envs" lowerBound="1" upperBound="-1"
-        eType="#//ExecEnvironment" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="node" eType="#//Device"/>
+        eType="#//ExecEnvironment" containment="true" eOpposite="#//ExecEnvironment/podOwner"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node" eType="#//Device"
+        eOpposite="#//Device/pods"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deplOwner" lowerBound="1"
+        eType="#//Deployment" eOpposite="#//Deployment/pods"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnvVar">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

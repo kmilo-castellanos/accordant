@@ -173,6 +173,7 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -182,6 +183,7 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -194,6 +196,7 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QAttribute getQAttribute() {
 		return qAttribute;
 	}
@@ -203,6 +206,7 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setQAttribute(QAttribute newQAttribute) {
 		QAttribute oldQAttribute = qAttribute;
 		qAttribute = newQAttribute == null ? QATTRIBUTE_EDEFAULT : newQAttribute;
@@ -215,6 +219,7 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRationale() {
 		return rationale;
 	}
@@ -224,6 +229,7 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRationale(String newRationale) {
 		String oldRationale = rationale;
 		rationale = newRationale;
@@ -236,6 +242,7 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getStimulus() {
 		return stimulus;
 	}
@@ -245,6 +252,7 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStimulus(String newStimulus) {
 		String oldStimulus = stimulus;
 		stimulus = newStimulus;
@@ -257,6 +265,7 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getResponse() {
 		return response;
 	}
@@ -266,6 +275,7 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setResponse(String newResponse) {
 		String oldResponse = response;
 		response = newResponse;
@@ -278,6 +288,7 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getViewpoint() {
 		return viewpoint;
 	}
@@ -287,6 +298,7 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setViewpoint(String newViewpoint) {
 		String oldViewpoint = viewpoint;
 		viewpoint = newViewpoint;
@@ -412,7 +424,7 @@ public class TacticImpl extends MinimalEObjectImpl.Container implements Tactic {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", qAttribute: ");
