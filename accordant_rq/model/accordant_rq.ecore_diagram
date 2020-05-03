@@ -311,6 +311,10 @@
         <element xmi:type="ecore:EEnumLiteral" href="accordant_rq.ecore#//ConstraintType/DEPLOYMENT_MODEL"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_rEEpIYsfEeqZp7TNxpmahQ"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_VxsmwI2HEeqMgIo0-VeRtQ" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="accordant_rq.ecore#//ConstraintType/DELIVERY_GUARANTEE"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_VxsmwY2HEeqMgIo0-VeRtQ"/>
+      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_zRLgAjLkEeqL3uuO5KHRkw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_zRLgAzLkEeqL3uuO5KHRkw"/>
     </children>

@@ -95,5 +95,6 @@
     <eLiterals name="TECH_VENDOR" value="3"/>
     <eLiterals name="ARCH_STYLE" value="4"/>
     <eLiterals name="DEPLOYMENT_MODEL" value="5" literal="DEPLOYMENT_MODEL"/>
+    <eLiterals name="DELIVERY_GUARANTEE" value="6" literal="DELIVERY_GUARANTEE"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -370,7 +370,7 @@ public class AnalyzedQSImpl extends MinimalEObjectImpl.Container implements Anal
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (reasoning: ");
 		result.append(reasoning);
 		result.append(", name: ");

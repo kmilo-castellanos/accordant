@@ -128,7 +128,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 *
+	 * 
 	 * <p>This method is used to initialize {@link Accordant_rqPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -142,8 +142,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		if (isInited) return (Accordant_rqPackage)EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredAccordant_rqPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		Accordant_rqPackageImpl theAccordant_rqPackage = registeredAccordant_rqPackage instanceof Accordant_rqPackageImpl ? (Accordant_rqPackageImpl)registeredAccordant_rqPackage : new Accordant_rqPackageImpl();
+		Accordant_rqPackageImpl theAccordant_rqPackage = (Accordant_rqPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof Accordant_rqPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new Accordant_rqPackageImpl());
 
 		isInited = true;
 
@@ -156,6 +155,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		// Mark meta-data to indicate it can't be changed
 		theAccordant_rqPackage.freeze();
 
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(Accordant_rqPackage.eNS_URI, theAccordant_rqPackage);
 		return theAccordant_rqPackage;
@@ -789,6 +789,7 @@ public class Accordant_rqPackageImpl extends EPackageImpl implements Accordant_r
 		addEEnumLiteral(constraintTypeEEnum, ConstraintType.TECH_VENDOR);
 		addEEnumLiteral(constraintTypeEEnum, ConstraintType.ARCH_STYLE);
 		addEEnumLiteral(constraintTypeEEnum, ConstraintType.DEPLOYMENT_MODEL);
+		addEEnumLiteral(constraintTypeEEnum, ConstraintType.DELIVERY_GUARANTEE);
 
 		// Create resource
 		createResource(eNS_URI);

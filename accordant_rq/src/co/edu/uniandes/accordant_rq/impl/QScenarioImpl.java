@@ -588,7 +588,7 @@ public class QScenarioImpl extends MinimalEObjectImpl.Container implements QScen
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (measure: ");
 		result.append(measure);
 		result.append(", minValue: ");

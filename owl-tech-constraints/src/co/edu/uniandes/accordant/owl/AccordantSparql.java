@@ -3,6 +3,10 @@ package co.edu.uniandes.accordant.owl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.query.*;
@@ -43,10 +47,33 @@ public class AccordantSparql  {
 	 */
 	public static void main(String[] args) {
 		AccordantSparql sparqlQuery= new AccordantSparql();
-		sparqlQuery.executeQuery("ID1");
-		sparqlQuery.executeQuery("ID2");
-		sparqlQuery.executeQuery("ID3");
-		sparqlQuery.executeQuery("FD3");
+		
+		List<String[]> params = new ArrayList<String[]>();
+
+		//ID1 All selected technologies must match with input license constraints
+		params.add(new String[]{"<licenseKind>","accowl:Non-Proprietary"});
+		params.add(new String[]{"<tech>","accowl:Spark"});
+		sparqlQuery.executeQuery("ID1",params);
+		
+		//ID2 All selected technologies must match with input model processing constraints
+		params = new ArrayList<String[]>();
+		params.add(new String[]{"<processingModel>","accowl:Batch"});
+		params.add(new String[]{"<techList>","accowl:Spark, accowl:Flume, accowl:Kafka"});
+		sparqlQuery.executeQuery("ID2",params);
+		
+		//ID3 All selected technologies must match with input delivery guarantee constraints
+		params = new ArrayList<String[]>();
+		params.add(new String[]{"<deliveryGuarantee>","accowl:ExactlyOnce"});
+		params.add(new String[]{"<techList>","accowl:Spark, accowl:Flume, accowl:Kafka"});
+		sparqlQuery.executeQuery("ID3",params);
+		
+		
+		//FD3 All connected component and connectors technologies must be compatible
+		params = new ArrayList<String[]>();
+		params.add(new String[]{"<tech2>","accowl:Storm"});
+		params.add(new String[]{"<tech1>","accowl:Kafka"});
+		sparqlQuery.executeQuery("FD3",params);
+		
 	}
 	
 	private void initializeOntology() {
@@ -54,12 +81,16 @@ public class AccordantSparql  {
 		loadData();
 	}
 
-	public void executeQuery(String constraint) {
+	public List<String> executeQuery(String constraintKey, List<String[]> params) {
 
-		
-		System.out.println("### executeQuery ->"+constraint);
-		showQuery(model,
-				this.prefix + 	cCatalog.getQuery(constraint));
+		String queryTemplate = this.prefix + 	cCatalog.getQuery(constraintKey);
+		for(String[] param : params) {
+			queryTemplate= SparqlUtil.replaceParams(queryTemplate.toString(), param[0], param[1]);
+		}	
+		System.out.println("### executeQuery ->"+constraintKey);
+		System.out.println("### Query Detail ->"+queryTemplate);
+
+		return getResults(model,queryTemplate);
 	}
 
 	protected OntModel getModel() {
@@ -72,11 +103,34 @@ public class AccordantSparql  {
 				+"PREFIX bigowl: <http://www.khaos.uma.es/perception/bigowl#> \n"
 				+ "PREFIX rdfs: <" + RDFS.getURI() + "> \n" 
 				+ "PREFIX owl: <"+ OWL.getURI() + "> \n"
-				+	"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
-				+ "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>";
+				+	"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n"
+				+ "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> \n";
+	}
+	
+	
+	protected List<String> getResults(Model m, String q) {
+		Query query = QueryFactory.create(q);
+		QueryExecution qexec = QueryExecutionFactory.create(query, m);
+		
+		try {
+			ResultSet results = qexec.execSelect();
+			QuerySolution qs=null;
+			List<String> result=null;
+			if(results.hasNext()) {
+				result = new ArrayList<String>();
+			}
+			while(results.hasNext()) {
+				 qs=results.next();
+				 result.add(qs.toString());
+			}
+			return result;
+		} finally {
+			qexec.close();
+		}
+
 	}
 
-	protected void showQuery(Model m, String q) {
+	protected void showResults(Model m, String q) {
 		Query query = QueryFactory.create(q);
 		QueryExecution qexec = QueryExecutionFactory.create(query, m);
 		
@@ -93,15 +147,4 @@ public class AccordantSparql  {
 		}
 
 	}
-
-	
-	
-	/***********************************/
-	/* Internal implementation methods */
-	/***********************************/
-
-	/***********************************/
-	/* Inner class definitions */
-	/***********************************/
-
 }
