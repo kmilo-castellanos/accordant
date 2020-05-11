@@ -10,6 +10,6 @@
 	<classpathentry kind="lib" path="lib/mongodb-driver-core-3.12.2.jar"/>
 	<classpathentry kind="lib" path="lib/mongodb-driver-sync-3.12.2.jar"/>
 	<classpathentry kind="lib" path="lib/pmml-model-1.4.15.jar"/>
-	<classpathentry kind="lib" path="lib/accordant-mms3.jar"/>
+	<classpathentry kind="lib" path="lib/accordant-mms4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

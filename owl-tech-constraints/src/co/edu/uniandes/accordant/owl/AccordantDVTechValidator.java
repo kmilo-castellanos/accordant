@@ -1,40 +1,22 @@
 package co.edu.uniandes.accordant.owl;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
-import org.apache.jena.query.QuerySolution;
-import org.apache.jena.query.ResultSet;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
 import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
 import co.edu.uniandes.accordant_dv.Artifact;
 import co.edu.uniandes.accordant_dv.DeploymentView;
-import co.edu.uniandes.accordant_fv.Accordant_fvPackage;
 import co.edu.uniandes.accordant_fv.Component;
 import co.edu.uniandes.accordant_fv.Connector;
-import co.edu.uniandes.accordant_fv.FunctionalView;
 import co.edu.uniandes.accordant_fv.Port;
-//import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
-import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
 import co.edu.uniandes.accordant_rq.Constraint;
 import co.edu.uniandes.accordant_rq.ConstraintType;
 
@@ -56,10 +38,6 @@ public class AccordantDVTechValidator {
 			m.put("xmi", new XMIResourceFactoryImpl());
 
 			resourceSet = new ResourceSetImpl();
-			// resourceSet.getPackageRegistry().put(Accordant_rqPackage.eNS_URI,
-			// Accordant_rqPackage.eINSTANCE);
-			// resourceSet.getPackageRegistry().put(Accordant_fvPackage.eNS_URI,
-			// Accordant_fvPackage.eINSTANCE);
 			resourceSet.getPackageRegistry().put(Accordant_dvPackage.eNS_URI, Accordant_dvPackage.eINSTANCE);
 			resourceDV = resourceSet.getResource(URI.createURI(fileName), true);
 

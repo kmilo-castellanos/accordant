@@ -133,6 +133,7 @@ Artifact returns Artifact:
 	'{'
 		('component' ':' comp=[fv::Component])? &
 		('connector' ':' conn=[fv::Connector])? &
+		('technology' ':' technology=EString) &
 		('props' ':' props=EString)? &
 		('decision' ':' decision=[rq::ArchDecision])?
 	'}';

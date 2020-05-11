@@ -33,7 +33,6 @@ import co.edu.uniandes.accordant_fv.Throughput;
 import co.edu.uniandes.accordant_fv.Transformer;
 
 import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
-import co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -284,16 +283,14 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 
 		isInited = true;
 
-		// Obtain or create and register interdependencies
-		Accordant_rqPackageImpl theAccordant_rqPackage = (Accordant_rqPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI) instanceof Accordant_rqPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI) : Accordant_rqPackage.eINSTANCE);
+		// Initialize simple dependencies
+		Accordant_rqPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theAccordant_fvPackage.createPackageContents();
-		theAccordant_rqPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAccordant_fvPackage.initializePackageContents();
-		theAccordant_rqPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAccordant_fvPackage.freeze();
@@ -1203,9 +1200,9 @@ public class Accordant_fvPackageImpl extends EPackageImpl implements Accordant_f
 
 		initEEnum(deliveryGuaranteeEEnum, DeliveryGuarantee.class, "DeliveryGuarantee");
 		addEEnumLiteral(deliveryGuaranteeEEnum, DeliveryGuarantee.BEST_EFFORT);
-		addEEnumLiteral(deliveryGuaranteeEEnum, DeliveryGuarantee.AT_LEAST_ONE);
-		addEEnumLiteral(deliveryGuaranteeEEnum, DeliveryGuarantee.AT_MOST_ONE);
-		addEEnumLiteral(deliveryGuaranteeEEnum, DeliveryGuarantee.EXACTLY_ONE);
+		addEEnumLiteral(deliveryGuaranteeEEnum, DeliveryGuarantee.AT_LEAST_ONCE);
+		addEEnumLiteral(deliveryGuaranteeEEnum, DeliveryGuarantee.AT_MOST_ONCE);
+		addEEnumLiteral(deliveryGuaranteeEEnum, DeliveryGuarantee.EXACTLY_ONCE);
 
 		initEEnum(syncTypeEEnum, SyncType.class, "SyncType");
 		addEEnumLiteral(syncTypeEEnum, SyncType.ASYNC);

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAdvlParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_FLOAT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'DeploymentView'", "'use'", "'project'", "'functionalView'", "'{'", "'artifacts'", "','", "'}'", "'devs'", "'deployments'", "'services'", "'serverless'", "'Device'", "'host'", "':'", "'type'", "'cpu'", "'storage'", "'memory'", "'Deployment'", "'replicas'", "'maxSurge'", "'maxUnavailable'", "'pods'", "'decision'", "'Pod'", "'device'", "'restartPolicy'", "'envs'", "'Service'", "'extAccess'", "'ports'", "'Port'", "'protocol'", "'target'", "'port'", "'exposes'", "'-'", "'ExecEnv'", "'deployedArtifacts'", "'image'", "'cpu_lim'", "'memory_lim'", "'cpu_req'", "'mem_req'", "'['", "']'", "'commands'", "'envVars'", "'ServerlessEnv'", "'provider'", "'timeout'", "'Artifact'", "'component'", "'connector'", "'props'", "'MEDIUM'", "'LARGE'", "'SMALL'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_FLOAT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'DeploymentView'", "'use'", "'project'", "'functionalView'", "'{'", "'artifacts'", "','", "'}'", "'devs'", "'deployments'", "'services'", "'serverless'", "'Device'", "'host'", "':'", "'type'", "'cpu'", "'storage'", "'memory'", "'Deployment'", "'replicas'", "'maxSurge'", "'maxUnavailable'", "'pods'", "'decision'", "'Pod'", "'device'", "'restartPolicy'", "'envs'", "'Service'", "'extAccess'", "'ports'", "'Port'", "'protocol'", "'target'", "'port'", "'exposes'", "'-'", "'ExecEnv'", "'deployedArtifacts'", "'image'", "'cpu_lim'", "'memory_lim'", "'cpu_req'", "'mem_req'", "'['", "']'", "'commands'", "'envVars'", "'ServerlessEnv'", "'provider'", "'timeout'", "'Artifact'", "'component'", "'connector'", "'technology'", "'props'", "'MEDIUM'", "'LARGE'", "'SMALL'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -66,6 +66,7 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
     public static final int T__21=21;
     public static final int T__65=65;
     public static final int T__70=70;
+    public static final int T__71=71;
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=9;
     public static final int T__37=37;
@@ -4878,7 +4879,7 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArtifact"
-    // InternalAdvl.g:2176:1: ruleArtifact returns [EObject current=null] : ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) ) ) ;
+    // InternalAdvl.g:2176:1: ruleArtifact returns [EObject current=null] : ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' ) ) ) ) )+ {...}?) ) ) ;
     public final EObject ruleArtifact() throws RecognitionException {
         EObject current = null;
 
@@ -4895,42 +4896,46 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
         Token otherlv_11=null;
         Token otherlv_13=null;
         Token otherlv_14=null;
-        Token otherlv_15=null;
         Token otherlv_16=null;
-        AntlrDatatypeRuleToken lv_props_12_0 = null;
+        Token otherlv_17=null;
+        Token otherlv_18=null;
+        Token otherlv_19=null;
+        AntlrDatatypeRuleToken lv_technology_12_0 = null;
+
+        AntlrDatatypeRuleToken lv_props_15_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalAdvl.g:2182:2: ( ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) ) ) )
-            // InternalAdvl.g:2183:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) ) )
+            // InternalAdvl.g:2182:2: ( ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' ) ) ) ) )+ {...}?) ) ) )
+            // InternalAdvl.g:2183:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' ) ) ) ) )+ {...}?) ) )
             {
-            // InternalAdvl.g:2183:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) ) )
-            // InternalAdvl.g:2184:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) )
+            // InternalAdvl.g:2183:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' ) ) ) ) )+ {...}?) ) )
+            // InternalAdvl.g:2184:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' ) ) ) ) )+ {...}?) )
             {
-            // InternalAdvl.g:2184:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?) )
-            // InternalAdvl.g:2185:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?)
+            // InternalAdvl.g:2184:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' ) ) ) ) )+ {...}?) )
+            // InternalAdvl.g:2185:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' ) ) ) ) )+ {...}?)
             {
              
             			  getUnorderedGroupHelper().enter(grammarAccess.getArtifactAccess().getUnorderedGroup());
             			
-            // InternalAdvl.g:2188:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?)
-            // InternalAdvl.g:2189:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+ {...}?
+            // InternalAdvl.g:2188:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' ) ) ) ) )+ {...}?)
+            // InternalAdvl.g:2189:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' ) ) ) ) )+ {...}?
             {
-            // InternalAdvl.g:2189:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) ) )+
+            // InternalAdvl.g:2189:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Artifact' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'component' otherlv_5= ':' ( (otherlv_6= RULE_ID ) ) )? ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'connector' otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' ) ) ) ) )+
             int cnt50=0;
             loop50:
             do {
-                int alt50=5;
+                int alt50=6;
                 int LA50_0 = input.LA(1);
 
                 if ( (LA50_0==19) ) {
                     int LA50_2 = input.LA(2);
 
-                    if ( ( LA50_2 == EOF || LA50_2 >= 18 && LA50_2 <= 19 || LA50_2 == 36 || LA50_2 == 64 || LA50_2 >= 66 && LA50_2 <= 67 ) && getUnorderedGroupHelper().canSelect(grammarAccess.getArtifactAccess().getUnorderedGroup(), 3) ) {
-                        alt50=4;
+                    if ( ( LA50_2 == EOF || LA50_2 >= 18 && LA50_2 <= 19 || LA50_2 == 36 || LA50_2 == 64 || LA50_2 >= 66 && LA50_2 <= 68 ) && getUnorderedGroupHelper().canSelect(grammarAccess.getArtifactAccess().getUnorderedGroup(), 4) ) {
+                        alt50=5;
                     }
 
 
@@ -4944,8 +4949,11 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
                 else if ( LA50_0 == 67 && getUnorderedGroupHelper().canSelect(grammarAccess.getArtifactAccess().getUnorderedGroup(), 2) ) {
                     alt50=3;
                 }
-                else if ( LA50_0 == 36 && getUnorderedGroupHelper().canSelect(grammarAccess.getArtifactAccess().getUnorderedGroup(), 3) ) {
+                else if ( LA50_0 == 68 && getUnorderedGroupHelper().canSelect(grammarAccess.getArtifactAccess().getUnorderedGroup(), 3) ) {
                     alt50=4;
+                }
+                else if ( LA50_0 == 36 && getUnorderedGroupHelper().canSelect(grammarAccess.getArtifactAccess().getUnorderedGroup(), 4) ) {
+                    alt50=5;
                 }
 
 
@@ -5144,48 +5152,48 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalAdvl.g:2282:3: ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) )
+            	    // InternalAdvl.g:2282:3: ({...}? => ( ({...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) ) ) ) )
             	    {
-            	    // InternalAdvl.g:2282:3: ({...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) ) )
-            	    // InternalAdvl.g:2283:4: {...}? => ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) )
+            	    // InternalAdvl.g:2282:3: ({...}? => ( ({...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) ) ) ) )
+            	    // InternalAdvl.g:2283:4: {...}? => ( ({...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getArtifactAccess().getUnorderedGroup(), 2) ) {
             	        throw new FailedPredicateException(input, "ruleArtifact", "getUnorderedGroupHelper().canSelect(grammarAccess.getArtifactAccess().getUnorderedGroup(), 2)");
             	    }
-            	    // InternalAdvl.g:2283:102: ( ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) ) )
-            	    // InternalAdvl.g:2284:5: ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) )
+            	    // InternalAdvl.g:2283:102: ( ({...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) ) ) )
+            	    // InternalAdvl.g:2284:5: ({...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) ) )
             	    {
 
             	    					getUnorderedGroupHelper().select(grammarAccess.getArtifactAccess().getUnorderedGroup(), 2);
             	    				
-            	    // InternalAdvl.g:2287:8: ({...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) ) )
-            	    // InternalAdvl.g:2287:9: {...}? => (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) )
+            	    // InternalAdvl.g:2287:8: ({...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) ) )
+            	    // InternalAdvl.g:2287:9: {...}? => (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleArtifact", "true");
             	    }
-            	    // InternalAdvl.g:2287:18: (otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) ) )
-            	    // InternalAdvl.g:2287:19: otherlv_10= 'props' otherlv_11= ':' ( (lv_props_12_0= ruleEString ) )
+            	    // InternalAdvl.g:2287:18: (otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) ) )
+            	    // InternalAdvl.g:2287:19: otherlv_10= 'technology' otherlv_11= ':' ( (lv_technology_12_0= ruleEString ) )
             	    {
             	    otherlv_10=(Token)match(input,67,FOLLOW_21); 
 
-            	    								newLeafNode(otherlv_10, grammarAccess.getArtifactAccess().getPropsKeyword_2_0());
+            	    								newLeafNode(otherlv_10, grammarAccess.getArtifactAccess().getTechnologyKeyword_2_0());
             	    							
             	    otherlv_11=(Token)match(input,26,FOLLOW_22); 
 
             	    								newLeafNode(otherlv_11, grammarAccess.getArtifactAccess().getColonKeyword_2_1());
             	    							
-            	    // InternalAdvl.g:2295:8: ( (lv_props_12_0= ruleEString ) )
-            	    // InternalAdvl.g:2296:9: (lv_props_12_0= ruleEString )
+            	    // InternalAdvl.g:2295:8: ( (lv_technology_12_0= ruleEString ) )
+            	    // InternalAdvl.g:2296:9: (lv_technology_12_0= ruleEString )
             	    {
-            	    // InternalAdvl.g:2296:9: (lv_props_12_0= ruleEString )
-            	    // InternalAdvl.g:2297:10: lv_props_12_0= ruleEString
+            	    // InternalAdvl.g:2296:9: (lv_technology_12_0= ruleEString )
+            	    // InternalAdvl.g:2297:10: lv_technology_12_0= ruleEString
             	    {
 
-            	    										newCompositeNode(grammarAccess.getArtifactAccess().getPropsEStringParserRuleCall_2_2_0());
+            	    										newCompositeNode(grammarAccess.getArtifactAccess().getTechnologyEStringParserRuleCall_2_2_0());
             	    									
             	    pushFollow(FOLLOW_64);
-            	    lv_props_12_0=ruleEString();
+            	    lv_technology_12_0=ruleEString();
 
             	    state._fsp--;
 
@@ -5195,8 +5203,8 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
             	    										}
             	    										set(
             	    											current,
-            	    											"props",
-            	    											lv_props_12_0,
+            	    											"technology",
+            	    											lv_technology_12_0,
             	    											"co.edu.uniandes.accordant_dv.Advl.EString");
             	    										afterParserOrEnumRuleCall();
             	    									
@@ -5225,30 +5233,111 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalAdvl.g:2320:3: ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) )
+            	    // InternalAdvl.g:2320:3: ({...}? => ( ({...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) ) ) ) )
             	    {
-            	    // InternalAdvl.g:2320:3: ({...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) ) )
-            	    // InternalAdvl.g:2321:4: {...}? => ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) )
+            	    // InternalAdvl.g:2320:3: ({...}? => ( ({...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) ) ) ) )
+            	    // InternalAdvl.g:2321:4: {...}? => ( ({...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getArtifactAccess().getUnorderedGroup(), 3) ) {
             	        throw new FailedPredicateException(input, "ruleArtifact", "getUnorderedGroupHelper().canSelect(grammarAccess.getArtifactAccess().getUnorderedGroup(), 3)");
             	    }
-            	    // InternalAdvl.g:2321:102: ( ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) ) )
-            	    // InternalAdvl.g:2322:5: ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) )
+            	    // InternalAdvl.g:2321:102: ( ({...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) ) ) )
+            	    // InternalAdvl.g:2322:5: ({...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) ) )
             	    {
 
             	    					getUnorderedGroupHelper().select(grammarAccess.getArtifactAccess().getUnorderedGroup(), 3);
             	    				
-            	    // InternalAdvl.g:2325:8: ({...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' ) )
-            	    // InternalAdvl.g:2325:9: {...}? => ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' )
+            	    // InternalAdvl.g:2325:8: ({...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) ) )
+            	    // InternalAdvl.g:2325:9: {...}? => (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleArtifact", "true");
             	    }
-            	    // InternalAdvl.g:2325:18: ( (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}' )
-            	    // InternalAdvl.g:2325:19: (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )? otherlv_16= '}'
+            	    // InternalAdvl.g:2325:18: (otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) ) )
+            	    // InternalAdvl.g:2325:19: otherlv_13= 'props' otherlv_14= ':' ( (lv_props_15_0= ruleEString ) )
             	    {
-            	    // InternalAdvl.g:2325:19: (otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) ) )?
+            	    otherlv_13=(Token)match(input,68,FOLLOW_21); 
+
+            	    								newLeafNode(otherlv_13, grammarAccess.getArtifactAccess().getPropsKeyword_3_0());
+            	    							
+            	    otherlv_14=(Token)match(input,26,FOLLOW_22); 
+
+            	    								newLeafNode(otherlv_14, grammarAccess.getArtifactAccess().getColonKeyword_3_1());
+            	    							
+            	    // InternalAdvl.g:2333:8: ( (lv_props_15_0= ruleEString ) )
+            	    // InternalAdvl.g:2334:9: (lv_props_15_0= ruleEString )
+            	    {
+            	    // InternalAdvl.g:2334:9: (lv_props_15_0= ruleEString )
+            	    // InternalAdvl.g:2335:10: lv_props_15_0= ruleEString
+            	    {
+
+            	    										newCompositeNode(grammarAccess.getArtifactAccess().getPropsEStringParserRuleCall_3_2_0());
+            	    									
+            	    pushFollow(FOLLOW_64);
+            	    lv_props_15_0=ruleEString();
+
+            	    state._fsp--;
+
+
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getArtifactRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"props",
+            	    											lv_props_15_0,
+            	    											"co.edu.uniandes.accordant_dv.Advl.EString");
+            	    										afterParserOrEnumRuleCall();
+            	    									
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+            	     
+            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getArtifactAccess().getUnorderedGroup());
+            	    				
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 5 :
+            	    // InternalAdvl.g:2358:3: ({...}? => ( ({...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' ) ) ) )
+            	    {
+            	    // InternalAdvl.g:2358:3: ({...}? => ( ({...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' ) ) ) )
+            	    // InternalAdvl.g:2359:4: {...}? => ( ({...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getArtifactAccess().getUnorderedGroup(), 4) ) {
+            	        throw new FailedPredicateException(input, "ruleArtifact", "getUnorderedGroupHelper().canSelect(grammarAccess.getArtifactAccess().getUnorderedGroup(), 4)");
+            	    }
+            	    // InternalAdvl.g:2359:102: ( ({...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' ) ) )
+            	    // InternalAdvl.g:2360:5: ({...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' ) )
+            	    {
+
+            	    					getUnorderedGroupHelper().select(grammarAccess.getArtifactAccess().getUnorderedGroup(), 4);
+            	    				
+            	    // InternalAdvl.g:2363:8: ({...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' ) )
+            	    // InternalAdvl.g:2363:9: {...}? => ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleArtifact", "true");
+            	    }
+            	    // InternalAdvl.g:2363:18: ( (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}' )
+            	    // InternalAdvl.g:2363:19: (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )? otherlv_19= '}'
+            	    {
+            	    // InternalAdvl.g:2363:19: (otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) ) )?
             	    int alt49=2;
             	    int LA49_0 = input.LA(1);
 
@@ -5257,30 +5346,30 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt49) {
             	        case 1 :
-            	            // InternalAdvl.g:2326:9: otherlv_13= 'decision' otherlv_14= ':' ( (otherlv_15= RULE_ID ) )
+            	            // InternalAdvl.g:2364:9: otherlv_16= 'decision' otherlv_17= ':' ( (otherlv_18= RULE_ID ) )
             	            {
-            	            otherlv_13=(Token)match(input,36,FOLLOW_21); 
+            	            otherlv_16=(Token)match(input,36,FOLLOW_21); 
 
-            	            									newLeafNode(otherlv_13, grammarAccess.getArtifactAccess().getDecisionKeyword_3_0_0());
+            	            									newLeafNode(otherlv_16, grammarAccess.getArtifactAccess().getDecisionKeyword_4_0_0());
             	            								
-            	            otherlv_14=(Token)match(input,26,FOLLOW_3); 
+            	            otherlv_17=(Token)match(input,26,FOLLOW_3); 
 
-            	            									newLeafNode(otherlv_14, grammarAccess.getArtifactAccess().getColonKeyword_3_0_1());
+            	            									newLeafNode(otherlv_17, grammarAccess.getArtifactAccess().getColonKeyword_4_0_1());
             	            								
-            	            // InternalAdvl.g:2334:9: ( (otherlv_15= RULE_ID ) )
-            	            // InternalAdvl.g:2335:10: (otherlv_15= RULE_ID )
+            	            // InternalAdvl.g:2372:9: ( (otherlv_18= RULE_ID ) )
+            	            // InternalAdvl.g:2373:10: (otherlv_18= RULE_ID )
             	            {
-            	            // InternalAdvl.g:2335:10: (otherlv_15= RULE_ID )
-            	            // InternalAdvl.g:2336:11: otherlv_15= RULE_ID
+            	            // InternalAdvl.g:2373:10: (otherlv_18= RULE_ID )
+            	            // InternalAdvl.g:2374:11: otherlv_18= RULE_ID
             	            {
 
             	            											if (current==null) {
             	            												current = createModelElement(grammarAccess.getArtifactRule());
             	            											}
             	            										
-            	            otherlv_15=(Token)match(input,RULE_ID,FOLLOW_19); 
+            	            otherlv_18=(Token)match(input,RULE_ID,FOLLOW_19); 
 
-            	            											newLeafNode(otherlv_15, grammarAccess.getArtifactAccess().getDecisionArchDecisionCrossReference_3_0_2_0());
+            	            											newLeafNode(otherlv_18, grammarAccess.getArtifactAccess().getDecisionArchDecisionCrossReference_4_0_2_0());
             	            										
 
             	            }
@@ -5294,9 +5383,9 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_16=(Token)match(input,19,FOLLOW_64); 
+            	    otherlv_19=(Token)match(input,19,FOLLOW_64); 
 
-            	    								newLeafNode(otherlv_16, grammarAccess.getArtifactAccess().getRightCurlyBracketKeyword_3_1());
+            	    								newLeafNode(otherlv_19, grammarAccess.getArtifactAccess().getRightCurlyBracketKeyword_4_1());
             	    							
 
             	    }
@@ -5361,7 +5450,7 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTypeDevice"
-    // InternalAdvl.g:2369:1: ruleTypeDevice returns [Enumerator current=null] : ( (enumLiteral_0= 'MEDIUM' ) | (enumLiteral_1= 'LARGE' ) | (enumLiteral_2= 'SMALL' ) ) ;
+    // InternalAdvl.g:2407:1: ruleTypeDevice returns [Enumerator current=null] : ( (enumLiteral_0= 'MEDIUM' ) | (enumLiteral_1= 'LARGE' ) | (enumLiteral_2= 'SMALL' ) ) ;
     public final Enumerator ruleTypeDevice() throws RecognitionException {
         Enumerator current = null;
 
@@ -5373,23 +5462,23 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAdvl.g:2375:2: ( ( (enumLiteral_0= 'MEDIUM' ) | (enumLiteral_1= 'LARGE' ) | (enumLiteral_2= 'SMALL' ) ) )
-            // InternalAdvl.g:2376:2: ( (enumLiteral_0= 'MEDIUM' ) | (enumLiteral_1= 'LARGE' ) | (enumLiteral_2= 'SMALL' ) )
+            // InternalAdvl.g:2413:2: ( ( (enumLiteral_0= 'MEDIUM' ) | (enumLiteral_1= 'LARGE' ) | (enumLiteral_2= 'SMALL' ) ) )
+            // InternalAdvl.g:2414:2: ( (enumLiteral_0= 'MEDIUM' ) | (enumLiteral_1= 'LARGE' ) | (enumLiteral_2= 'SMALL' ) )
             {
-            // InternalAdvl.g:2376:2: ( (enumLiteral_0= 'MEDIUM' ) | (enumLiteral_1= 'LARGE' ) | (enumLiteral_2= 'SMALL' ) )
+            // InternalAdvl.g:2414:2: ( (enumLiteral_0= 'MEDIUM' ) | (enumLiteral_1= 'LARGE' ) | (enumLiteral_2= 'SMALL' ) )
             int alt51=3;
             switch ( input.LA(1) ) {
-            case 68:
+            case 69:
                 {
                 alt51=1;
                 }
                 break;
-            case 69:
+            case 70:
                 {
                 alt51=2;
                 }
                 break;
-            case 70:
+            case 71:
                 {
                 alt51=3;
                 }
@@ -5403,12 +5492,12 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
 
             switch (alt51) {
                 case 1 :
-                    // InternalAdvl.g:2377:3: (enumLiteral_0= 'MEDIUM' )
+                    // InternalAdvl.g:2415:3: (enumLiteral_0= 'MEDIUM' )
                     {
-                    // InternalAdvl.g:2377:3: (enumLiteral_0= 'MEDIUM' )
-                    // InternalAdvl.g:2378:4: enumLiteral_0= 'MEDIUM'
+                    // InternalAdvl.g:2415:3: (enumLiteral_0= 'MEDIUM' )
+                    // InternalAdvl.g:2416:4: enumLiteral_0= 'MEDIUM'
                     {
-                    enumLiteral_0=(Token)match(input,68,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,69,FOLLOW_2); 
 
                     				current = grammarAccess.getTypeDeviceAccess().getMEDIUMEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getTypeDeviceAccess().getMEDIUMEnumLiteralDeclaration_0());
@@ -5420,12 +5509,12 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalAdvl.g:2385:3: (enumLiteral_1= 'LARGE' )
+                    // InternalAdvl.g:2423:3: (enumLiteral_1= 'LARGE' )
                     {
-                    // InternalAdvl.g:2385:3: (enumLiteral_1= 'LARGE' )
-                    // InternalAdvl.g:2386:4: enumLiteral_1= 'LARGE'
+                    // InternalAdvl.g:2423:3: (enumLiteral_1= 'LARGE' )
+                    // InternalAdvl.g:2424:4: enumLiteral_1= 'LARGE'
                     {
-                    enumLiteral_1=(Token)match(input,69,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,70,FOLLOW_2); 
 
                     				current = grammarAccess.getTypeDeviceAccess().getLARGEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getTypeDeviceAccess().getLARGEEnumLiteralDeclaration_1());
@@ -5437,12 +5526,12 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalAdvl.g:2393:3: (enumLiteral_2= 'SMALL' )
+                    // InternalAdvl.g:2431:3: (enumLiteral_2= 'SMALL' )
                     {
-                    // InternalAdvl.g:2393:3: (enumLiteral_2= 'SMALL' )
-                    // InternalAdvl.g:2394:4: enumLiteral_2= 'SMALL'
+                    // InternalAdvl.g:2431:3: (enumLiteral_2= 'SMALL' )
+                    // InternalAdvl.g:2432:4: enumLiteral_2= 'SMALL'
                     {
-                    enumLiteral_2=(Token)match(input,70,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,71,FOLLOW_2); 
 
                     				current = grammarAccess.getTypeDeviceAccess().getSMALLEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getTypeDeviceAccess().getSMALLEnumLiteralDeclaration_2());
@@ -5487,7 +5576,7 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000001000080000L,0x000000000000000DL});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000001000080000L,0x000000000000001DL});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000000000C0000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000079080000L});
@@ -5502,7 +5591,7 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000030L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000079080002L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000070L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000000L,0x00000000000000E0L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0002000000000040L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000F00000000L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000E00000000L});
@@ -5541,7 +5630,7 @@ public class InternalAdvlParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_60 = new BitSet(new long[]{0xC000000040080000L});
     public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x8000000040080000L});
     public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x8000000000080000L});
-    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000001000080002L,0x000000000000000FL});
-    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000001000080002L,0x000000000000000DL});
+    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000001000080002L,0x000000000000001FL});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000001000080002L,0x000000000000001DL});
 
 }

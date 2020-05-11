@@ -24,6 +24,6 @@
 	<classpathentry kind="lib" path="lib/org.eclipse.emf.common-2.17.0.jar"/>
 	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore-2.20.0.jar"/>
 	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore.xmi-2.16.0.jar"/>
-	<classpathentry kind="lib" path="lib/accordant-mms3.jar"/>
+	<classpathentry kind="lib" path="lib/accordant-mms4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

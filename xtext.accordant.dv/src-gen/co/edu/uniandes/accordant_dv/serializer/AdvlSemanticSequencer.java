@@ -79,7 +79,7 @@ public class AdvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Artifact returns Artifact
 	 *
 	 * Constraint:
-	 *     ((conn=[Connector|ID] | props=EString | decision=[ArchDecision|ID])? (name=ID comp=[Component|ID]?)?)+
+	 *     ((conn=[Connector|ID] | technology=EString | props=EString | decision=[ArchDecision|ID])? (name=ID comp=[Component|ID]?)?)+
 	 */
 	protected void sequence_Artifact(ISerializationContext context, Artifact semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

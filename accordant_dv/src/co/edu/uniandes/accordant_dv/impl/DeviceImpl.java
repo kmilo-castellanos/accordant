@@ -552,7 +552,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (host: ");
 		result.append(host);
 		result.append(", type: ");

@@ -20,16 +20,16 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class AdvlSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected AdvlGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Artifact_RightCurlyBracketKeyword_3_1_a;
-	protected AbstractElementAlias match_Artifact_RightCurlyBracketKeyword_3_1_p;
+	protected AbstractElementAlias match_Artifact_RightCurlyBracketKeyword_4_1_a;
+	protected AbstractElementAlias match_Artifact_RightCurlyBracketKeyword_4_1_p;
 	protected AbstractElementAlias match_Device_RightCurlyBracketKeyword_4_1_a;
 	protected AbstractElementAlias match_Device_RightCurlyBracketKeyword_4_1_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (AdvlGrammarAccess) access;
-		match_Artifact_RightCurlyBracketKeyword_3_1_a = new TokenAlias(true, true, grammarAccess.getArtifactAccess().getRightCurlyBracketKeyword_3_1());
-		match_Artifact_RightCurlyBracketKeyword_3_1_p = new TokenAlias(true, false, grammarAccess.getArtifactAccess().getRightCurlyBracketKeyword_3_1());
+		match_Artifact_RightCurlyBracketKeyword_4_1_a = new TokenAlias(true, true, grammarAccess.getArtifactAccess().getRightCurlyBracketKeyword_4_1());
+		match_Artifact_RightCurlyBracketKeyword_4_1_p = new TokenAlias(true, false, grammarAccess.getArtifactAccess().getRightCurlyBracketKeyword_4_1());
 		match_Device_RightCurlyBracketKeyword_4_1_a = new TokenAlias(true, true, grammarAccess.getDeviceAccess().getRightCurlyBracketKeyword_4_1());
 		match_Device_RightCurlyBracketKeyword_4_1_p = new TokenAlias(true, false, grammarAccess.getDeviceAccess().getRightCurlyBracketKeyword_4_1());
 	}
@@ -46,10 +46,10 @@ public class AdvlSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Artifact_RightCurlyBracketKeyword_3_1_a.equals(syntax))
-				emit_Artifact_RightCurlyBracketKeyword_3_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Artifact_RightCurlyBracketKeyword_3_1_p.equals(syntax))
-				emit_Artifact_RightCurlyBracketKeyword_3_1_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Artifact_RightCurlyBracketKeyword_4_1_a.equals(syntax))
+				emit_Artifact_RightCurlyBracketKeyword_4_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Artifact_RightCurlyBracketKeyword_4_1_p.equals(syntax))
+				emit_Artifact_RightCurlyBracketKeyword_4_1_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Device_RightCurlyBracketKeyword_4_1_a.equals(syntax))
 				emit_Device_RightCurlyBracketKeyword_4_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Device_RightCurlyBracketKeyword_4_1_p.equals(syntax))
@@ -67,29 +67,40 @@ public class AdvlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) 'connector' ':' conn=[Connector|ID]
 	 *     (rule start) (ambiguity) 'decision' ':' decision=[ArchDecision|ID]
 	 *     (rule start) (ambiguity) 'props' ':' props=EString
+	 *     (rule start) (ambiguity) 'technology' ':' technology=EString
 	 *     (rule start) (ambiguity) (rule start)
 	 *     comp=[Component|ID] (ambiguity) 'Artifact' name=ID
 	 *     comp=[Component|ID] (ambiguity) 'connector' ':' conn=[Connector|ID]
 	 *     comp=[Component|ID] (ambiguity) 'decision' ':' decision=[ArchDecision|ID]
 	 *     comp=[Component|ID] (ambiguity) 'props' ':' props=EString
+	 *     comp=[Component|ID] (ambiguity) 'technology' ':' technology=EString
 	 *     comp=[Component|ID] (ambiguity) (rule end)
 	 *     conn=[Connector|ID] (ambiguity) 'Artifact' name=ID
 	 *     conn=[Connector|ID] (ambiguity) 'connector' ':' conn=[Connector|ID]
 	 *     conn=[Connector|ID] (ambiguity) 'decision' ':' decision=[ArchDecision|ID]
 	 *     conn=[Connector|ID] (ambiguity) 'props' ':' props=EString
+	 *     conn=[Connector|ID] (ambiguity) 'technology' ':' technology=EString
 	 *     conn=[Connector|ID] (ambiguity) (rule end)
 	 *     name=ID '{' (ambiguity) 'Artifact' name=ID
 	 *     name=ID '{' (ambiguity) 'connector' ':' conn=[Connector|ID]
 	 *     name=ID '{' (ambiguity) 'decision' ':' decision=[ArchDecision|ID]
 	 *     name=ID '{' (ambiguity) 'props' ':' props=EString
+	 *     name=ID '{' (ambiguity) 'technology' ':' technology=EString
 	 *     name=ID '{' (ambiguity) (rule end)
 	 *     props=EString (ambiguity) 'Artifact' name=ID
 	 *     props=EString (ambiguity) 'connector' ':' conn=[Connector|ID]
 	 *     props=EString (ambiguity) 'decision' ':' decision=[ArchDecision|ID]
 	 *     props=EString (ambiguity) 'props' ':' props=EString
+	 *     props=EString (ambiguity) 'technology' ':' technology=EString
 	 *     props=EString (ambiguity) (rule end)
+	 *     technology=EString (ambiguity) 'Artifact' name=ID
+	 *     technology=EString (ambiguity) 'connector' ':' conn=[Connector|ID]
+	 *     technology=EString (ambiguity) 'decision' ':' decision=[ArchDecision|ID]
+	 *     technology=EString (ambiguity) 'props' ':' props=EString
+	 *     technology=EString (ambiguity) 'technology' ':' technology=EString
+	 *     technology=EString (ambiguity) (rule end)
 	 */
-	protected void emit_Artifact_RightCurlyBracketKeyword_3_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Artifact_RightCurlyBracketKeyword_4_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -103,9 +114,10 @@ public class AdvlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     decision=[ArchDecision|ID] (ambiguity) 'connector' ':' conn=[Connector|ID]
 	 *     decision=[ArchDecision|ID] (ambiguity) 'decision' ':' decision=[ArchDecision|ID]
 	 *     decision=[ArchDecision|ID] (ambiguity) 'props' ':' props=EString
+	 *     decision=[ArchDecision|ID] (ambiguity) 'technology' ':' technology=EString
 	 *     decision=[ArchDecision|ID] (ambiguity) (rule end)
 	 */
-	protected void emit_Artifact_RightCurlyBracketKeyword_3_1_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Artifact_RightCurlyBracketKeyword_4_1_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -96,7 +96,8 @@ public class AdvlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getArtifactAccess().getGroup_1(), "rule__Artifact__Group_1__0");
 					put(grammarAccess.getArtifactAccess().getGroup_2(), "rule__Artifact__Group_2__0");
 					put(grammarAccess.getArtifactAccess().getGroup_3(), "rule__Artifact__Group_3__0");
-					put(grammarAccess.getArtifactAccess().getGroup_3_0(), "rule__Artifact__Group_3_0__0");
+					put(grammarAccess.getArtifactAccess().getGroup_4(), "rule__Artifact__Group_4__0");
+					put(grammarAccess.getArtifactAccess().getGroup_4_0(), "rule__Artifact__Group_4_0__0");
 					put(grammarAccess.getDeploymentViewAccess().getNameAssignment_1(), "rule__DeploymentView__NameAssignment_1");
 					put(grammarAccess.getDeploymentViewAccess().getProjectAssignment_4(), "rule__DeploymentView__ProjectAssignment_4");
 					put(grammarAccess.getDeploymentViewAccess().getFvAssignment_7(), "rule__DeploymentView__FvAssignment_7");
@@ -163,8 +164,9 @@ public class AdvlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getArtifactAccess().getNameAssignment_0_1(), "rule__Artifact__NameAssignment_0_1");
 					put(grammarAccess.getArtifactAccess().getCompAssignment_0_3_2(), "rule__Artifact__CompAssignment_0_3_2");
 					put(grammarAccess.getArtifactAccess().getConnAssignment_1_2(), "rule__Artifact__ConnAssignment_1_2");
-					put(grammarAccess.getArtifactAccess().getPropsAssignment_2_2(), "rule__Artifact__PropsAssignment_2_2");
-					put(grammarAccess.getArtifactAccess().getDecisionAssignment_3_0_2(), "rule__Artifact__DecisionAssignment_3_0_2");
+					put(grammarAccess.getArtifactAccess().getTechnologyAssignment_2_2(), "rule__Artifact__TechnologyAssignment_2_2");
+					put(grammarAccess.getArtifactAccess().getPropsAssignment_3_2(), "rule__Artifact__PropsAssignment_3_2");
+					put(grammarAccess.getArtifactAccess().getDecisionAssignment_4_0_2(), "rule__Artifact__DecisionAssignment_4_0_2");
 					put(grammarAccess.getDeviceAccess().getUnorderedGroup(), "rule__Device__UnorderedGroup");
 					put(grammarAccess.getArtifactAccess().getUnorderedGroup(), "rule__Artifact__UnorderedGroup");
 				}

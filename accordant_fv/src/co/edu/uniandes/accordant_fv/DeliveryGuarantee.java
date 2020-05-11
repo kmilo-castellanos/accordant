@@ -29,34 +29,30 @@ public enum DeliveryGuarantee implements Enumerator {
 	BEST_EFFORT(0, "BEST_EFFORT", "BEST_EFFORT"),
 
 	/**
-	 * The '<em><b>AT LEAST ONE</b></em>' literal object.
+	 * The '<em><b>AT LEAST ONCE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #AT_LEAST_ONE_VALUE
+	 * @see #AT_LEAST_ONCE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	AT_LEAST_ONE(1, "AT_LEAST_ONE", "AT_LEAST_ONE"),
-
-	/**
-	 * The '<em><b>AT MOST ONE</b></em>' literal object.
+	AT_LEAST_ONCE(1, "AT_LEAST_ONCE", "AT_LEAST_ONCE"), /**
+	 * The '<em><b>AT MOST ONCE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #AT_MOST_ONE_VALUE
+	 * @see #AT_MOST_ONCE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	AT_MOST_ONE(2, "AT_MOST_ONE", "AT_MOST_ONE"),
-
-	/**
-	 * The '<em><b>EXACTLY ONE</b></em>' literal object.
+	AT_MOST_ONCE(2, "AT_MOST_ONCE", "AT_MOST_ONCE"), /**
+	 * The '<em><b>EXACTLY ONCE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #EXACTLY_ONE_VALUE
+	 * @see #EXACTLY_ONCE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	EXACTLY_ONE(3, "EXACTLY_ONE", "EXACTLY_ONE");
+	EXACTLY_ONCE(3, "EXACTLY_ONCE", "EXACTLY_ONCE");
 
 	/**
 	 * The '<em><b>BEST EFFORT</b></em>' literal value.
@@ -74,49 +70,49 @@ public enum DeliveryGuarantee implements Enumerator {
 	public static final int BEST_EFFORT_VALUE = 0;
 
 	/**
-	 * The '<em><b>AT LEAST ONE</b></em>' literal value.
+	 * The '<em><b>AT LEAST ONCE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>AT LEAST ONE</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>AT LEAST ONCE</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #AT_LEAST_ONE
+	 * @see #AT_LEAST_ONCE
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int AT_LEAST_ONE_VALUE = 1;
+	public static final int AT_LEAST_ONCE_VALUE = 1;
 
 	/**
-	 * The '<em><b>AT MOST ONE</b></em>' literal value.
+	 * The '<em><b>AT MOST ONCE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>AT MOST ONE</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>AT MOST ONCE</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #AT_MOST_ONE
+	 * @see #AT_MOST_ONCE
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int AT_MOST_ONE_VALUE = 2;
+	public static final int AT_MOST_ONCE_VALUE = 2;
 
 	/**
-	 * The '<em><b>EXACTLY ONE</b></em>' literal value.
+	 * The '<em><b>EXACTLY ONCE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>EXACTLY ONE</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>EXACTLY ONCE</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #EXACTLY_ONE
+	 * @see #EXACTLY_ONCE
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EXACTLY_ONE_VALUE = 3;
+	public static final int EXACTLY_ONCE_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Delivery Guarantee</b></em>' enumerators.
@@ -127,9 +123,9 @@ public enum DeliveryGuarantee implements Enumerator {
 	private static final DeliveryGuarantee[] VALUES_ARRAY =
 		new DeliveryGuarantee[] {
 			BEST_EFFORT,
-			AT_LEAST_ONE,
-			AT_MOST_ONE,
-			EXACTLY_ONE,
+			AT_LEAST_ONCE,
+			AT_MOST_ONCE,
+			EXACTLY_ONCE,
 		};
 
 	/**
@@ -187,9 +183,9 @@ public enum DeliveryGuarantee implements Enumerator {
 	public static DeliveryGuarantee get(int value) {
 		switch (value) {
 			case BEST_EFFORT_VALUE: return BEST_EFFORT;
-			case AT_LEAST_ONE_VALUE: return AT_LEAST_ONE;
-			case AT_MOST_ONE_VALUE: return AT_MOST_ONE;
-			case EXACTLY_ONE_VALUE: return EXACTLY_ONE;
+			case AT_LEAST_ONCE_VALUE: return AT_LEAST_ONCE;
+			case AT_MOST_ONCE_VALUE: return AT_MOST_ONCE;
+			case EXACTLY_ONCE_VALUE: return EXACTLY_ONCE;
 		}
 		return null;
 	}

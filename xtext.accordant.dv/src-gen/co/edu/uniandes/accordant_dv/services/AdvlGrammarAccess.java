@@ -1515,29 +1515,34 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cConnConnectorCrossReference_1_2_0 = (CrossReference)cConnAssignment_1_2.eContents().get(0);
 		private final RuleCall cConnConnectorIDTerminalRuleCall_1_2_0_1 = (RuleCall)cConnConnectorCrossReference_1_2_0.eContents().get(1);
 		private final Group cGroup_2 = (Group)cUnorderedGroup.eContents().get(2);
-		private final Keyword cPropsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cTechnologyKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
-		private final Assignment cPropsAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cPropsEStringParserRuleCall_2_2_0 = (RuleCall)cPropsAssignment_2_2.eContents().get(0);
+		private final Assignment cTechnologyAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cTechnologyEStringParserRuleCall_2_2_0 = (RuleCall)cTechnologyAssignment_2_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cUnorderedGroup.eContents().get(3);
-		private final Group cGroup_3_0 = (Group)cGroup_3.eContents().get(0);
-		private final Keyword cDecisionKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
-		private final Keyword cColonKeyword_3_0_1 = (Keyword)cGroup_3_0.eContents().get(1);
-		private final Assignment cDecisionAssignment_3_0_2 = (Assignment)cGroup_3_0.eContents().get(2);
-		private final CrossReference cDecisionArchDecisionCrossReference_3_0_2_0 = (CrossReference)cDecisionAssignment_3_0_2.eContents().get(0);
-		private final RuleCall cDecisionArchDecisionIDTerminalRuleCall_3_0_2_0_1 = (RuleCall)cDecisionArchDecisionCrossReference_3_0_2_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Keyword cPropsKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cPropsAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cPropsEStringParserRuleCall_3_2_0 = (RuleCall)cPropsAssignment_3_2.eContents().get(0);
+		private final Group cGroup_4 = (Group)cUnorderedGroup.eContents().get(4);
+		private final Group cGroup_4_0 = (Group)cGroup_4.eContents().get(0);
+		private final Keyword cDecisionKeyword_4_0_0 = (Keyword)cGroup_4_0.eContents().get(0);
+		private final Keyword cColonKeyword_4_0_1 = (Keyword)cGroup_4_0.eContents().get(1);
+		private final Assignment cDecisionAssignment_4_0_2 = (Assignment)cGroup_4_0.eContents().get(2);
+		private final CrossReference cDecisionArchDecisionCrossReference_4_0_2_0 = (CrossReference)cDecisionAssignment_4_0_2.eContents().get(0);
+		private final RuleCall cDecisionArchDecisionIDTerminalRuleCall_4_0_2_0_1 = (RuleCall)cDecisionArchDecisionCrossReference_4_0_2_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
 		
 		//Artifact:
 		//	'Artifact'
 		//	name=ID
-		//	'{' ('component' ':' comp=[fv::Component])? & ('connector' ':' conn=[fv::Connector])? & ('props' ':' props=EString)? &
-		//	('decision' ':' decision=[rq::ArchDecision])?
+		//	'{' ('component' ':' comp=[fv::Component])? & ('connector' ':' conn=[fv::Connector])? & 'technology' ':'
+		//	technology=EString & ('props' ':' props=EString)? & ('decision' ':' decision=[rq::ArchDecision])?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Artifact' name=ID '{' ('component' ':' comp=[fv::Component])? & ('connector' ':' conn=[fv::Connector])? & ('props' ':'
-		//props=EString)? & ('decision' ':' decision=[rq::ArchDecision])? '}'
+		//'Artifact' name=ID '{' ('component' ':' comp=[fv::Component])? & ('connector' ':' conn=[fv::Connector])? & 'technology'
+		//':' technology=EString & ('props' ':' props=EString)? & ('decision' ':' decision=[rq::ArchDecision])? '}'
 		public UnorderedGroup getUnorderedGroup() { return cUnorderedGroup; }
 		
 		//'Artifact' name=ID '{' ('component' ':' comp=[fv::Component])?
@@ -1591,44 +1596,59 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getConnConnectorIDTerminalRuleCall_1_2_0_1() { return cConnConnectorIDTerminalRuleCall_1_2_0_1; }
 		
-		//('props' ':' props=EString)?
+		//'technology' ':' technology=EString
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//'props'
-		public Keyword getPropsKeyword_2_0() { return cPropsKeyword_2_0; }
+		//'technology'
+		public Keyword getTechnologyKeyword_2_0() { return cTechnologyKeyword_2_0; }
 		
 		//':'
 		public Keyword getColonKeyword_2_1() { return cColonKeyword_2_1; }
 		
-		//props=EString
-		public Assignment getPropsAssignment_2_2() { return cPropsAssignment_2_2; }
+		//technology=EString
+		public Assignment getTechnologyAssignment_2_2() { return cTechnologyAssignment_2_2; }
 		
 		//EString
-		public RuleCall getPropsEStringParserRuleCall_2_2_0() { return cPropsEStringParserRuleCall_2_2_0; }
+		public RuleCall getTechnologyEStringParserRuleCall_2_2_0() { return cTechnologyEStringParserRuleCall_2_2_0; }
 		
-		//('decision' ':' decision=[rq::ArchDecision])? '}'
+		//('props' ':' props=EString)?
 		public Group getGroup_3() { return cGroup_3; }
 		
-		//('decision' ':' decision=[rq::ArchDecision])?
-		public Group getGroup_3_0() { return cGroup_3_0; }
-		
-		//'decision'
-		public Keyword getDecisionKeyword_3_0_0() { return cDecisionKeyword_3_0_0; }
+		//'props'
+		public Keyword getPropsKeyword_3_0() { return cPropsKeyword_3_0; }
 		
 		//':'
-		public Keyword getColonKeyword_3_0_1() { return cColonKeyword_3_0_1; }
+		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
+		
+		//props=EString
+		public Assignment getPropsAssignment_3_2() { return cPropsAssignment_3_2; }
+		
+		//EString
+		public RuleCall getPropsEStringParserRuleCall_3_2_0() { return cPropsEStringParserRuleCall_3_2_0; }
+		
+		//('decision' ':' decision=[rq::ArchDecision])? '}'
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//('decision' ':' decision=[rq::ArchDecision])?
+		public Group getGroup_4_0() { return cGroup_4_0; }
+		
+		//'decision'
+		public Keyword getDecisionKeyword_4_0_0() { return cDecisionKeyword_4_0_0; }
+		
+		//':'
+		public Keyword getColonKeyword_4_0_1() { return cColonKeyword_4_0_1; }
 		
 		//decision=[rq::ArchDecision]
-		public Assignment getDecisionAssignment_3_0_2() { return cDecisionAssignment_3_0_2; }
+		public Assignment getDecisionAssignment_4_0_2() { return cDecisionAssignment_4_0_2; }
 		
 		//[rq::ArchDecision]
-		public CrossReference getDecisionArchDecisionCrossReference_3_0_2_0() { return cDecisionArchDecisionCrossReference_3_0_2_0; }
+		public CrossReference getDecisionArchDecisionCrossReference_4_0_2_0() { return cDecisionArchDecisionCrossReference_4_0_2_0; }
 		
 		//ID
-		public RuleCall getDecisionArchDecisionIDTerminalRuleCall_3_0_2_0_1() { return cDecisionArchDecisionIDTerminalRuleCall_3_0_2_0_1; }
+		public RuleCall getDecisionArchDecisionIDTerminalRuleCall_4_0_2_0_1() { return cDecisionArchDecisionIDTerminalRuleCall_4_0_2_0_1; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_3_1() { return cRightCurlyBracketKeyword_3_1; }
+		public Keyword getRightCurlyBracketKeyword_4_1() { return cRightCurlyBracketKeyword_4_1; }
 	}
 	
 	public class TypeDeviceElements extends AbstractEnumRuleElementFinder {
@@ -1913,8 +1933,8 @@ public class AdvlGrammarAccess extends AbstractGrammarElementFinder {
 	//Artifact:
 	//	'Artifact'
 	//	name=ID
-	//	'{' ('component' ':' comp=[fv::Component])? & ('connector' ':' conn=[fv::Connector])? & ('props' ':' props=EString)? &
-	//	('decision' ':' decision=[rq::ArchDecision])?
+	//	'{' ('component' ':' comp=[fv::Component])? & ('connector' ':' conn=[fv::Connector])? & 'technology' ':'
+	//	technology=EString & ('props' ':' props=EString)? & ('decision' ':' decision=[rq::ArchDecision])?
 	//	'}';
 	public ArtifactElements getArtifactAccess() {
 		return pArtifact;

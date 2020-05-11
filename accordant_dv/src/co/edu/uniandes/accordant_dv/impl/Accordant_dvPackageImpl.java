@@ -23,11 +23,7 @@ import co.edu.uniandes.accordant_dv.TransformerTech;
 import co.edu.uniandes.accordant_dv.TypeDevice;
 
 import co.edu.uniandes.accordant_fv.Accordant_fvPackage;
-import co.edu.uniandes.accordant_fv.impl.Accordant_fvPackageImpl;
 import co.edu.uniandes.accordant_rq.Accordant_rqPackage;
-
-import co.edu.uniandes.accordant_rq.impl.Accordant_rqPackageImpl;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -190,7 +186,7 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 *
+	 * 
 	 * <p>This method is used to initialize {@link Accordant_dvPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -204,30 +200,24 @@ public class Accordant_dvPackageImpl extends EPackageImpl implements Accordant_d
 		if (isInited) return (Accordant_dvPackage)EPackage.Registry.INSTANCE.getEPackage(Accordant_dvPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredAccordant_dvPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		Accordant_dvPackageImpl theAccordant_dvPackage = registeredAccordant_dvPackage instanceof Accordant_dvPackageImpl ? (Accordant_dvPackageImpl)registeredAccordant_dvPackage : new Accordant_dvPackageImpl();
+		Accordant_dvPackageImpl theAccordant_dvPackage = (Accordant_dvPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof Accordant_dvPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new Accordant_dvPackageImpl());
 
 		isInited = true;
 
-		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Accordant_rqPackage.eNS_URI);
-		Accordant_rqPackageImpl theAccordant_rqPackage = (Accordant_rqPackageImpl)(registeredPackage instanceof Accordant_rqPackageImpl ? registeredPackage : Accordant_rqPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Accordant_fvPackage.eNS_URI);
-		Accordant_fvPackageImpl theAccordant_fvPackage = (Accordant_fvPackageImpl)(registeredPackage instanceof Accordant_fvPackageImpl ? registeredPackage : Accordant_fvPackage.eINSTANCE);
+		// Initialize simple dependencies
+		Accordant_fvPackage.eINSTANCE.eClass();
+		Accordant_rqPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theAccordant_dvPackage.createPackageContents();
-		theAccordant_rqPackage.createPackageContents();
-		theAccordant_fvPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAccordant_dvPackage.initializePackageContents();
-		theAccordant_rqPackage.initializePackageContents();
-		theAccordant_fvPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAccordant_dvPackage.freeze();
 
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(Accordant_dvPackage.eNS_URI, theAccordant_dvPackage);
 		return theAccordant_dvPackage;

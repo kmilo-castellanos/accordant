@@ -98,7 +98,8 @@ public class AccordantSparql  {
 	}
 
 	protected void loadData() {
-		FileManager.get().readModel(this.model, SOURCE+"ontology/accordant-bigowl.owl");
+		//FileManager.get().readModel(this.model, SOURCE+"ontology/accordant-bigowl.owl");
+		FileManager.get().readModel(this.model, SOURCE+"ontology/Accordant_Tech.owl");
 		this.prefix = "PREFIX accowl: <" + ACCORDANT_TECH_NS + "> \n"
 				+"PREFIX bigowl: <http://www.khaos.uma.es/perception/bigowl#> \n"
 				+ "PREFIX rdfs: <" + RDFS.getURI() + "> \n" 

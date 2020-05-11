@@ -352,18 +352,6 @@
         <element xmi:type="ecore:EEnumLiteral" href="accordant_fv.ecore#//DeliveryGuarantee/BEST_EFFORT"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_KnP5gcs8EeiK-MPy7Mpvlg"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_Mw34cMs8EeiK-MPy7Mpvlg" type="3009">
-        <element xmi:type="ecore:EEnumLiteral" href="accordant_fv.ecore#//DeliveryGuarantee/AT_LEAST_ONE"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_Mw34ccs8EeiK-MPy7Mpvlg"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_O7EfIMs8EeiK-MPy7Mpvlg" type="3009">
-        <element xmi:type="ecore:EEnumLiteral" href="accordant_fv.ecore#//DeliveryGuarantee/AT_MOST_ONE"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_O7EfIcs8EeiK-MPy7Mpvlg"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_YRol4Ms8EeiK-MPy7Mpvlg" type="3009">
-        <element xmi:type="ecore:EEnumLiteral" href="accordant_fv.ecore#//DeliveryGuarantee/EXACTLY_ONE"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_YRol4cs8EeiK-MPy7Mpvlg"/>
-      </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_IZr1wss8EeiK-MPy7Mpvlg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_IZr1w8s8EeiK-MPy7Mpvlg"/>
     </children>

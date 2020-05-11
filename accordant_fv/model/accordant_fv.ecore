@@ -80,9 +80,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DeliveryGuarantee">
     <eLiterals name="BEST_EFFORT"/>
-    <eLiterals name="AT_LEAST_ONE" value="1"/>
-    <eLiterals name="AT_MOST_ONE" value="2"/>
-    <eLiterals name="EXACTLY_ONE" value="3"/>
+    <eLiterals name="AT_LEAST_ONCE" value="1" literal="AT_LEAST_ONCE"/>
+    <eLiterals name="AT_MOST_ONCE" value="2" literal="AT_MOST_ONCE"/>
+    <eLiterals name="EXACTLY_ONCE" value="3" literal="EXACTLY_ONCE"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SyncType">
     <eLiterals name="ASYNC"/>

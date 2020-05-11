@@ -186,11 +186,11 @@ public class Util {
 		if ("BestEffort".equalsIgnoreCase(delivery)) {
 			return DeliveryGuarantee.BEST_EFFORT;
 		} else if ("AtLeastOne".equalsIgnoreCase(delivery)) {
-			return DeliveryGuarantee.AT_LEAST_ONE;
+			return DeliveryGuarantee.AT_LEAST_ONCE;
 		} else if ("AtMostOne".equalsIgnoreCase(delivery)) {
-			return DeliveryGuarantee.AT_MOST_ONE;
+			return DeliveryGuarantee.AT_MOST_ONCE;
 		}else if ("ExactlyOne".equalsIgnoreCase(delivery)) {
-			return DeliveryGuarantee.EXACTLY_ONE;
+			return DeliveryGuarantee.EXACTLY_ONCE;
 		}
 		return null;
 	}

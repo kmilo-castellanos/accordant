@@ -8,6 +8,7 @@ import co.edu.uniandes.accordant_fv.Adaptor;
 import co.edu.uniandes.accordant_fv.Distributor;
 import co.edu.uniandes.accordant_fv.Estimator;
 import co.edu.uniandes.accordant_fv.Event;
+import co.edu.uniandes.accordant_fv.Field;
 import co.edu.uniandes.accordant_fv.FunctionalView;
 import co.edu.uniandes.accordant_fv.Ingestor;
 import co.edu.uniandes.accordant_fv.Port;
@@ -25,7 +26,9 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -52,6 +55,9 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case Accordant_fvPackage.EVENT:
 				sequence_Event(context, (Event) semanticObject); 
+				return; 
+			case Accordant_fvPackage.FIELD:
+				sequence_Field(context, (Field) semanticObject); 
 				return; 
 			case Accordant_fvPackage.FUNCTIONAL_VIEW:
 				sequence_FunctionalView(context, (FunctionalView) semanticObject); 
@@ -90,7 +96,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         delivery=DeliveryModel? 
+	 *         delivery=DeliveryGuarantee? 
 	 *         synct=SyncType? 
 	 *         notification=NotificationModel? 
 	 *         buffering=Buffering? 
@@ -114,7 +120,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         delivery=DeliveryModel? 
+	 *         delivery=DeliveryGuarantee? 
 	 *         synct=SyncType? 
 	 *         notification=NotificationModel? 
 	 *         buffering=Buffering? 
@@ -139,6 +145,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (
 	 *         name=ID 
 	 *         procModel=ProcessingModel? 
+	 *         delivery=DeliveryGuarantee? 
 	 *         pmml=EString? 
 	 *         decision=[ArchDecision|ID]? 
 	 *         ports+=Port 
@@ -158,7 +165,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         delivery=DeliveryModel? 
+	 *         delivery=DeliveryGuarantee? 
 	 *         synct=SyncType? 
 	 *         notification=NotificationModel? 
 	 *         buffering=Buffering? 
@@ -171,6 +178,30 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Event(ISerializationContext context, Event semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Field returns Field
+	 *
+	 * Constraint:
+	 *     (name=ID dtype=EString order=TOSHORT)
+	 */
+	protected void sequence_Field(ISerializationContext context, Field semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Accordant_fvPackage.Literals.FIELD__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Accordant_fvPackage.Literals.FIELD__NAME));
+			if (transientValues.isValueTransient(semanticObject, Accordant_fvPackage.Literals.FIELD__DTYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Accordant_fvPackage.Literals.FIELD__DTYPE));
+			if (transientValues.isValueTransient(semanticObject, Accordant_fvPackage.Literals.FIELD__ORDER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Accordant_fvPackage.Literals.FIELD__ORDER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFieldAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getFieldAccess().getDtypeEStringParserRuleCall_2_0(), semanticObject.getDtype());
+		feeder.accept(grammarAccess.getFieldAccess().getOrderTOSHORTParserRuleCall_4_0(), semanticObject.getOrder());
+		feeder.finish();
 	}
 	
 	
@@ -203,6 +234,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         name=ID 
 	 *         type=AccessType 
 	 *         procModel=ProcessingModel? 
+	 *         delivery=DeliveryGuarantee? 
 	 *         conn=EString? 
 	 *         format=EString? 
 	 *         props=EString? 
@@ -221,7 +253,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Port returns Port
 	 *
 	 * Constraint:
-	 *     (name=ID type=PortType?)
+	 *     (name=ID type=PortType? (fields+=Field fields+=Field*)?)
 	 */
 	protected void sequence_Port(ISerializationContext context, Port semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -236,7 +268,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         delivery=DeliveryModel? 
+	 *         delivery=DeliveryGuarantee? 
 	 *         synct=SyncType? 
 	 *         notification=NotificationModel? 
 	 *         buffering=Buffering? 
@@ -274,6 +306,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         name=ID 
 	 *         type=AccessType 
 	 *         procModel=ProcessingModel? 
+	 *         delivery=DeliveryGuarantee? 
 	 *         conn=EString? 
 	 *         format=EString? 
 	 *         props=EString? 
@@ -295,7 +328,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         delivery=DeliveryModel? 
+	 *         delivery=DeliveryGuarantee? 
 	 *         synct=SyncType? 
 	 *         notification=NotificationModel? 
 	 *         buffering=Buffering? 
@@ -320,6 +353,7 @@ public class AfvlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (
 	 *         name=ID 
 	 *         procModel=ProcessingModel? 
+	 *         delivery=DeliveryGuarantee? 
 	 *         pmml=EString? 
 	 *         decision=[ArchDecision|ID]? 
 	 *         ports+=Port 
