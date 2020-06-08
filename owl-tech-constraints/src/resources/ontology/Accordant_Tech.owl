@@ -64,6 +64,15 @@
     
 
 
+    <!-- http://www.uniandes.edu.co/accordant/technology#supportAlg -->
+
+    <owl:ObjectProperty rdf:about="http://www.uniandes.edu.co/accordant/technology#supportAlg">
+        <rdfs:domain rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <rdfs:range rdf:resource="http://www.khaos.uma.es/perception/bigowl#Algorithm"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.uniandes.edu.co/accordant/technology#techCompatibleWith -->
 
     <owl:ObjectProperty rdf:about="http://www.uniandes.edu.co/accordant/technology#techCompatibleWith">
@@ -434,6 +443,14 @@
     
 
 
+    <!-- http://www.uniandes.edu.co/accordant/technology#KMeans -->
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#KMeans">
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#Algorithm"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.uniandes.edu.co/accordant/technology#Kafka -->
 
     <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Kafka">
@@ -547,6 +564,7 @@
         <technology:hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Batch"/>
         <technology:hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Microbatch"/>
         <technology:hasTechLicense rdf:resource="http://www.uniandes.edu.co/accordant/technology#BSD"/>
+        <technology:supportAlg rdf:resource="http://www.uniandes.edu.co/accordant/technology#Spectral_Clustering"/>
     </owl:NamedIndividual>
     
 
@@ -563,6 +581,14 @@
         <technology:hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Microbatch"/>
         <technology:hasTechLicense rdf:resource="http://www.uniandes.edu.co/accordant/technology#Apache"/>
         <technology:techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Kafka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Spectral_Clustering -->
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Spectral_Clustering">
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#Algorithm"/>
     </owl:NamedIndividual>
     
 

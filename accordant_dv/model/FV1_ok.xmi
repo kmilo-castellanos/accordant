@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="ASCII"?>
 <accordant_fv:FunctionalView xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:accordant_fv="http://uniandes.accordant.functional" name="FV1OK">
-  <conns xsi:type="accordant_fv:Stream" name="Broker-In" delivery="EXACTLY_ONE" synct="SYNC" notification="PUBSUB" protocol="TCP" props="topic:in">
+  <conns xsi:type="accordant_fv:Stream" name="Broker-In" delivery="EXACTLY_ONCE" synct="SYNC" notification="PUBSUB" protocol="TCP" props="topic:in">
     <roles type="IN" name="in-to-trans" port="Ingestor_prov"/>
     <roles name="out-from-trans" port="Transformer_req"/>
   </conns>
-  <conns xsi:type="accordant_fv:Stream" name="Broker-mid" delivery="EXACTLY_ONE" synct="SYNC" notification="PUBSUB" protocol="TCP" props="topic:mid">
+  <conns xsi:type="accordant_fv:Stream" name="Broker-mid" delivery="EXACTLY_ONCE" synct="SYNC" notification="PUBSUB" protocol="TCP" props="topic:mid">
     <roles type="IN" name="in-to-est" port="Transformer_prov"/>
     <roles name="out-from-est" port="Estimator_req"/>
   </conns>
-  <conns xsi:type="accordant_fv:Stream" name="Broker-out" delivery="EXACTLY_ONE" synct="SYNC" notification="PUBSUB" protocol="TCP" props="topic:out">
+  <conns xsi:type="accordant_fv:Stream" name="Broker-out" delivery="EXACTLY_ONCE" synct="SYNC" notification="PUBSUB" protocol="TCP" props="topic:out">
     <roles type="IN" name="in-brokerout" port="Estimator_prov"/>
     <roles name="out-brokerout" port="Sink_req"/>
   </conns>
-  <comps xsi:type="accordant_fv:Ingestor" name="ADSB Ingestor" procModel="MICROBATCH" delivery="EXACTLY_ONE" conn="" format="JSON" props="">
+  <comps xsi:type="accordant_fv:Ingestor" name="ADSB Ingestor" procModel="MICROBATCH" delivery="EXACTLY_ONCE" conn="" format="JSON" props="">
     <ports type="PROVIDED" name="Ingestor_prov" role="in-to-trans">
       <fields name="name" dtype="String"/>
       <fields name="type" dtype="Number" order="1"/>
@@ -20,7 +20,7 @@
     </ports>
     <decision href="UC1_ai.xmi#Dec1"/>
   </comps>
-  <comps xsi:type="accordant_fv:Transformer" name="ABSB Formater" procModel="MICROBATCH" delivery="EXACTLY_ONE" pmml="" sqlExp="" lambdaExp="" codeRepo="">
+  <comps xsi:type="accordant_fv:Transformer" name="ABSB Formater" procModel="MICROBATCH" delivery="EXACTLY_ONCE" pmml="" sqlExp="" lambdaExp="" codeRepo="">
     <ports name="Transformer_req" role="out-from-trans">
       <fields name="startDate" dtype="Date" order="3"/>
       <fields name="nameS" dtype="String" order="1"/>
@@ -33,12 +33,12 @@
     </ports>
     <decision href="UC1_ai.xmi#Dec2"/>
   </comps>
-  <comps xsi:type="accordant_fv:Estimator" name="NMAC Estimator" procModel="MICROBATCH" delivery="EXACTLY_ONE" pmml="Dtree.pmml">
+  <comps xsi:type="accordant_fv:Estimator" name="NMAC Estimator" procModel="MICROBATCH" delivery="EXACTLY_ONCE" pmml="Dtree.pmml">
     <ports name="Estimator_req" role="out-from-est"/>
     <ports type="PROVIDED" name="Estimator_prov" role="in-brokerout"/>
     <decision href="UC1_ai.xmi#Dec2"/>
   </comps>
-  <comps xsi:type="accordant_fv:Sink" name="NMAC Sink" procModel="MICROBATCH" delivery="EXACTLY_ONE" conn="" format="CSV">
+  <comps xsi:type="accordant_fv:Sink" name="NMAC Sink" procModel="MICROBATCH" delivery="EXACTLY_ONCE" conn="" format="CSV">
     <ports name="Sink_req" role="out-brokerout"/>
     <decision href="UC1_ai.xmi#Dec3"/>
   </comps>
