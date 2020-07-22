@@ -3,6 +3,7 @@ This repository comprises eclipse (modeling) projects of ACCORDANT framework. Th
 
 ![ACCORDANT Process](http://sistemasproyectos.uniandes.edu.co/iniciativas/architlab/wp-content/uploads/sites/7/2019/11/process.png)
 
+These projects are developed and tested using Eclipse Modeling Tools ([Eclipse IDE 2019-06](https://www.eclipse.org/downloads/packages/release/2019-06/r)). Xtext and OCL eclipse plugins must also be installed.
 
 ## ACCORDANT's domain-specific language (DSL) projects:
 
@@ -10,7 +11,6 @@ Metamodels
 * accordant_rq: Contains the ecore metamodel, diagram, and model java clases of architectural drivers
 * accordant_fv: Contains ecore metamodel, diagram, and model java clases of the functional view
 * accordant_dv: Contains ecore metamodel, diagram, and model java clases of the deployment view
-
 
 
 Architectural Inputs DSL

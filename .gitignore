@@ -1,3 +1,4 @@
 *.class
 *.prefs
 /MVC Diagram Class.png
+.DS_Store
