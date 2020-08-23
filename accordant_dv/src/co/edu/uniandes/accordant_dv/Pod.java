@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.Pod#getEnvs <em>Envs</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Pod#getNode <em>Node</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Pod#getDeplOwner <em>Depl Owner</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.Pod#getService <em>Service</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getPod()
@@ -175,5 +176,29 @@ public interface Pod extends EObject {
 	 * @generated
 	 */
 	void setDeplOwner(Deployment value);
+
+	/**
+	 * Returns the value of the '<em><b>Service</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.Service#getPod <em>Pod</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Service</em>' reference.
+	 * @see #setService(Service)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getPod_Service()
+	 * @see co.edu.uniandes.accordant_dv.Service#getPod
+	 * @model opposite="pod"
+	 * @generated
+	 */
+	Service getService();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.Pod#getService <em>Service</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Service</em>' reference.
+	 * @see #getService()
+	 * @generated
+	 */
+	void setService(Service value);
 
 } // Pod

@@ -178,7 +178,7 @@ public class AccordantDVTechValidator {
 
 	public static void main(String[] s) {
 		AccordantDVTechValidator loader = new AccordantDVTechValidator();
-		loader.loadDVModel("file:/Users/kmilo/git/accordant-V2/accordant_dv/model/DV1_ok.xmi");
+		loader.loadDVModel("file:/Volumes/MacHD2/Desarrollo/accordant/accordant/accordant_dv/model/DV1_ok.xmi");
 		System.out.println("validateID1:" + loader.validateID1());
 		System.out.println("validateID2:" + loader.validateID2());
 		System.out.println("validateID3:" + loader.validateID3());

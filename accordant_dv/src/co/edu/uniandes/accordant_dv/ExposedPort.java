@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.ExposedPort#getTarget <em>Target</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.ExposedPort#getPort <em>Port</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.ExposedPort#getExposes <em>Exposes</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.ExposedPort#getService <em>Service</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getExposedPort()
@@ -146,5 +147,29 @@ public interface ExposedPort extends EObject {
 	 * @generated
 	 */
 	EList<Pod> getExposes();
+
+	/**
+	 * Returns the value of the '<em><b>Service</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.Service#getPorts <em>Ports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Service</em>' container reference.
+	 * @see #setService(Service)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getExposedPort_Service()
+	 * @see co.edu.uniandes.accordant_dv.Service#getPorts
+	 * @model opposite="ports" required="true" transient="false"
+	 * @generated
+	 */
+	Service getService();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.ExposedPort#getService <em>Service</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Service</em>' container reference.
+	 * @see #getService()
+	 * @generated
+	 */
+	void setService(Service value);
 
 } // ExposedPort

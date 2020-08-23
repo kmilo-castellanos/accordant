@@ -24,8 +24,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -189,7 +188,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public EList<Device> getDevs() {
 		if (devs == null) {
-			devs = new EObjectContainmentEList<Device>(Device.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__DEVS);
+			devs = new EObjectContainmentWithInverseEList<Device>(Device.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__DEVS, Accordant_dvPackage.DEVICE__DV);
 		}
 		return devs;
 	}
@@ -202,7 +201,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public EList<Deployment> getDeployments() {
 		if (deployments == null) {
-			deployments = new EObjectContainmentEList<Deployment>(Deployment.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__DEPLOYMENTS);
+			deployments = new EObjectContainmentWithInverseEList<Deployment>(Deployment.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__DEPLOYMENTS, Accordant_dvPackage.DEPLOYMENT__DV);
 		}
 		return deployments;
 	}
@@ -215,7 +214,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public EList<Service> getServices() {
 		if (services == null) {
-			services = new EObjectContainmentEList<Service>(Service.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__SERVICES);
+			services = new EObjectContainmentWithInverseEList<Service>(Service.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__SERVICES, Accordant_dvPackage.SERVICE__DV);
 		}
 		return services;
 	}
@@ -228,7 +227,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public EList<ServerlessEnv> getServerless() {
 		if (serverless == null) {
-			serverless = new EObjectContainmentEList<ServerlessEnv>(ServerlessEnv.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__SERVERLESS);
+			serverless = new EObjectContainmentWithInverseEList<ServerlessEnv>(ServerlessEnv.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__SERVERLESS, Accordant_dvPackage.SERVERLESS_ENV__DV);
 		}
 		return serverless;
 	}
@@ -241,7 +240,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public EList<Artifact> getArtifacts() {
 		if (artifacts == null) {
-			artifacts = new EObjectContainmentEList<Artifact>(Artifact.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__ARTIFACTS);
+			artifacts = new EObjectContainmentWithInverseEList<Artifact>(Artifact.class, this, Accordant_dvPackage.DEPLOYMENT_VIEW__ARTIFACTS, Accordant_dvPackage.ARTIFACT__DV);
 		}
 		return artifacts;
 	}
@@ -324,6 +323,29 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 		fv = newFv;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.DEPLOYMENT_VIEW__FV, oldFv, fv));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__DEVS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDevs()).basicAdd(otherEnd, msgs);
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__DEPLOYMENTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDeployments()).basicAdd(otherEnd, msgs);
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__SERVICES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getServices()).basicAdd(otherEnd, msgs);
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__SERVERLESS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getServerless()).basicAdd(otherEnd, msgs);
+			case Accordant_dvPackage.DEPLOYMENT_VIEW__ARTIFACTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getArtifacts()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -493,7 +515,7 @@ public class DeploymentViewImpl extends MinimalEObjectImpl.Container implements 
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

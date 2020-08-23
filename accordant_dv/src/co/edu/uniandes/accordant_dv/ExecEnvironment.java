@@ -208,6 +208,7 @@ public interface ExecEnvironment extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Vars</b></em>' containment reference list.
 	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.EnvVar}.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.EnvVar#getExecEnv <em>Exec Env</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Vars</em>' containment reference list isn't clear,
@@ -216,7 +217,8 @@ public interface ExecEnvironment extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Vars</em>' containment reference list.
 	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getExecEnvironment_Vars()
-	 * @model containment="true"
+	 * @see co.edu.uniandes.accordant_dv.EnvVar#getExecEnv
+	 * @model opposite="execEnv" containment="true"
 	 * @generated
 	 */
 	EList<EnvVar> getVars();

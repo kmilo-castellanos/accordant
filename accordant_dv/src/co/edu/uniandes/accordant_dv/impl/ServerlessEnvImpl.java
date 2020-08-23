@@ -4,6 +4,7 @@ package co.edu.uniandes.accordant_dv.impl;
 
 import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
 import co.edu.uniandes.accordant_dv.Artifact;
+import co.edu.uniandes.accordant_dv.DeploymentView;
 import co.edu.uniandes.accordant_dv.ServerlessEnv;
 
 import java.util.Collection;
@@ -17,6 +18,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -33,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ServerlessEnvImpl#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ServerlessEnvImpl#getProps <em>Props</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ServerlessEnvImpl#getSaasArts <em>Saas Arts</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.ServerlessEnvImpl#getDv <em>Dv</em>}</li>
  * </ul>
  *
  * @generated
@@ -300,12 +303,59 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public DeploymentView getDv() {
+		if (eContainerFeatureID() != Accordant_dvPackage.SERVERLESS_ENV__DV) return null;
+		return (DeploymentView)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDv(DeploymentView newDv, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newDv, Accordant_dvPackage.SERVERLESS_ENV__DV, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDv(DeploymentView newDv) {
+		if (newDv != eInternalContainer() || (eContainerFeatureID() != Accordant_dvPackage.SERVERLESS_ENV__DV && newDv != null)) {
+			if (EcoreUtil.isAncestor(this, newDv))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newDv != null)
+				msgs = ((InternalEObject)newDv).eInverseAdd(this, Accordant_dvPackage.DEPLOYMENT_VIEW__SERVERLESS, DeploymentView.class, msgs);
+			msgs = basicSetDv(newDv, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.SERVERLESS_ENV__DV, newDv, newDv));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Accordant_dvPackage.SERVERLESS_ENV__SAAS_ARTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSaasArts()).basicAdd(otherEnd, msgs);
+			case Accordant_dvPackage.SERVERLESS_ENV__DV:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetDv((DeploymentView)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -320,8 +370,24 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 		switch (featureID) {
 			case Accordant_dvPackage.SERVERLESS_ENV__SAAS_ARTS:
 				return ((InternalEList<?>)getSaasArts()).basicRemove(otherEnd, msgs);
+			case Accordant_dvPackage.SERVERLESS_ENV__DV:
+				return basicSetDv(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case Accordant_dvPackage.SERVERLESS_ENV__DV:
+				return eInternalContainer().eInverseRemove(this, Accordant_dvPackage.DEPLOYMENT_VIEW__SERVERLESS, DeploymentView.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -344,6 +410,8 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 				return getProps();
 			case Accordant_dvPackage.SERVERLESS_ENV__SAAS_ARTS:
 				return getSaasArts();
+			case Accordant_dvPackage.SERVERLESS_ENV__DV:
+				return getDv();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -376,6 +444,9 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 				getSaasArts().clear();
 				getSaasArts().addAll((Collection<? extends Artifact>)newValue);
 				return;
+			case Accordant_dvPackage.SERVERLESS_ENV__DV:
+				setDv((DeploymentView)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -406,6 +477,9 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 			case Accordant_dvPackage.SERVERLESS_ENV__SAAS_ARTS:
 				getSaasArts().clear();
 				return;
+			case Accordant_dvPackage.SERVERLESS_ENV__DV:
+				setDv((DeploymentView)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -430,6 +504,8 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 				return PROPS_EDEFAULT == null ? props != null : !PROPS_EDEFAULT.equals(props);
 			case Accordant_dvPackage.SERVERLESS_ENV__SAAS_ARTS:
 				return saasArts != null && !saasArts.isEmpty();
+			case Accordant_dvPackage.SERVERLESS_ENV__DV:
+				return getDv() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -443,7 +519,7 @@ public class ServerlessEnvImpl extends MinimalEObjectImpl.Container implements S
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (provider: ");
 		result.append(provider);
 		result.append(", timeout: ");

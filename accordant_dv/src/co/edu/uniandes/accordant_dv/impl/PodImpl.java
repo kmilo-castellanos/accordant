@@ -8,6 +8,7 @@ import co.edu.uniandes.accordant_dv.Device;
 import co.edu.uniandes.accordant_dv.ExecEnvironment;
 import co.edu.uniandes.accordant_dv.Pod;
 
+import co.edu.uniandes.accordant_dv.Service;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -38,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.PodImpl#getEnvs <em>Envs</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.PodImpl#getNode <em>Node</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.PodImpl#getDeplOwner <em>Depl Owner</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.PodImpl#getService <em>Service</em>}</li>
  * </ul>
  *
  * @generated
@@ -122,6 +124,16 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 	 * @ordered
 	 */
 	protected Device node;
+
+	/**
+	 * The cached value of the '{@link #getService() <em>Service</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getService()
+	 * @generated
+	 * @ordered
+	 */
+	protected Service service;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -334,6 +346,68 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Service getService() {
+		if (service != null && service.eIsProxy()) {
+			InternalEObject oldService = (InternalEObject)service;
+			service = (Service)eResolveProxy(oldService);
+			if (service != oldService) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_dvPackage.POD__SERVICE, oldService, service));
+			}
+		}
+		return service;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Service basicGetService() {
+		return service;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetService(Service newService, NotificationChain msgs) {
+		Service oldService = service;
+		service = newService;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.POD__SERVICE, oldService, newService);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setService(Service newService) {
+		if (newService != service) {
+			NotificationChain msgs = null;
+			if (service != null)
+				msgs = ((InternalEObject)service).eInverseRemove(this, Accordant_dvPackage.SERVICE__POD, Service.class, msgs);
+			if (newService != null)
+				msgs = ((InternalEObject)newService).eInverseAdd(this, Accordant_dvPackage.SERVICE__POD, Service.class, msgs);
+			msgs = basicSetService(newService, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.POD__SERVICE, newService, newService));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -348,6 +422,10 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetDeplOwner((Deployment)otherEnd, msgs);
+			case Accordant_dvPackage.POD__SERVICE:
+				if (service != null)
+					msgs = ((InternalEObject)service).eInverseRemove(this, Accordant_dvPackage.SERVICE__POD, Service.class, msgs);
+				return basicSetService((Service)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -366,6 +444,8 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 				return basicSetNode(null, msgs);
 			case Accordant_dvPackage.POD__DEPL_OWNER:
 				return basicSetDeplOwner(null, msgs);
+			case Accordant_dvPackage.POD__SERVICE:
+				return basicSetService(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -405,6 +485,9 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 				return basicGetNode();
 			case Accordant_dvPackage.POD__DEPL_OWNER:
 				return getDeplOwner();
+			case Accordant_dvPackage.POD__SERVICE:
+				if (resolve) return getService();
+				return basicGetService();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -437,6 +520,9 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 			case Accordant_dvPackage.POD__DEPL_OWNER:
 				setDeplOwner((Deployment)newValue);
 				return;
+			case Accordant_dvPackage.POD__SERVICE:
+				setService((Service)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -467,6 +553,9 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 			case Accordant_dvPackage.POD__DEPL_OWNER:
 				setDeplOwner((Deployment)null);
 				return;
+			case Accordant_dvPackage.POD__SERVICE:
+				setService((Service)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -491,6 +580,8 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 				return node != null;
 			case Accordant_dvPackage.POD__DEPL_OWNER:
 				return getDeplOwner() != null;
+			case Accordant_dvPackage.POD__SERVICE:
+				return service != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -504,7 +595,7 @@ public class PodImpl extends MinimalEObjectImpl.Container implements Pod {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", host: ");

@@ -5,15 +5,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="devs" lowerBound="1" upperBound="-1"
-        eType="#//Device" containment="true"/>
+        eType="#//Device" containment="true" eOpposite="#//Device/dv"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="deployments" upperBound="-1"
-        eType="#//Deployment" containment="true"/>
+        eType="#//Deployment" containment="true" eOpposite="#//Deployment/dv"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
-        eType="#//Service" containment="true"/>
+        eType="#//Service" containment="true" eOpposite="#//Service/dv"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serverless" upperBound="-1"
-        eType="#//ServerlessEnv" containment="true"/>
+        eType="#//ServerlessEnv" containment="true" eOpposite="#//ServerlessEnv/dv"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="artifacts" upperBound="-1"
-        eType="#//Artifact" containment="true"/>
+        eType="#//Artifact" containment="true" eOpposite="#//Artifact/dv"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="project" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//Project"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fv" lowerBound="1" eType="ecore:EClass ../../accordant_fv/model/accordant_fv.ecore#//FunctionalView"/>
   </eClassifiers>
@@ -51,6 +51,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="os" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pods" upperBound="-1" eType="#//Pod"
         eOpposite="#//Pod/node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dv" lowerBound="1" eType="#//DeploymentView"
+        eOpposite="#//DeploymentView/devs"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TypeDevice">
     <eLiterals name="MEDIUM" value="2" literal="MEDIUM"/>
@@ -70,7 +72,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ports" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vars" upperBound="-1" eType="#//EnvVar"
-        containment="true"/>
+        containment="true" eOpposite="#//EnvVar/execEnv"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="commands" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="PaasArts" upperBound="-1"
@@ -91,6 +93,8 @@
         eOpposite="#//ExecEnvironment/PaasArts"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="saasEnv" eType="#//ServerlessEnv"
         eOpposite="#//ServerlessEnv/SaasArts"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dv" lowerBound="1" eType="#//DeploymentView"
+        eOpposite="#//DeploymentView/artifacts"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Deployment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -102,6 +106,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="strategy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="decision" eType="ecore:EClass ../../accordant_rq/model/accordant_rq.ecore#//ArchDecision"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" lowerBound="1" eType="#//DeploymentModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dv" lowerBound="1" eType="#//DeploymentView"
+        eOpposite="#//DeploymentView/deployments"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pod">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -114,17 +120,24 @@
         eOpposite="#//Device/pods"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="deplOwner" lowerBound="1"
         eType="#//Deployment" eOpposite="#//Deployment/pods"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" eType="#//Service"
+        eOpposite="#//Service/pod"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnvVar">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="execEnv" lowerBound="1"
+        eType="#//ExecEnvironment" eOpposite="#//ExecEnvironment/vars"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Service">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ports" lowerBound="1" upperBound="-1"
-        eType="#//ExposedPort" containment="true"/>
+        eType="#//ExposedPort" containment="true" eOpposite="#//ExposedPort/service"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="extAccess" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dv" lowerBound="1" eType="#//DeploymentView"
+        eOpposite="#//DeploymentView/services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pod" eType="#//Pod" eOpposite="#//Pod/service"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExposedPort">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -133,6 +146,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="exposes" upperBound="-1"
         eType="#//Pod"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" lowerBound="1"
+        eType="#//Service" eOpposite="#//Service/ports"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServerlessEnv">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="provider" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -143,6 +158,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="props" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SaasArts" upperBound="-1"
         eType="#//Artifact" eOpposite="#//Artifact/saasEnv"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dv" lowerBound="1" eType="#//DeploymentView"
+        eOpposite="#//DeploymentView/serverless"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DeploymentModel">
     <eLiterals name="ONPREMISES" literal="ONPREMISES"/>

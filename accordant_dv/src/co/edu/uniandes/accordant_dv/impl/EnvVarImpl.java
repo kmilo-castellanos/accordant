@@ -5,12 +5,16 @@ package co.edu.uniandes.accordant_dv.impl;
 import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
 import co.edu.uniandes.accordant_dv.EnvVar;
 
+import co.edu.uniandes.accordant_dv.ExecEnvironment;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.EnvVarImpl#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.EnvVarImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.EnvVarImpl#getExecEnv <em>Exec Env</em>}</li>
  * </ul>
  *
  * @generated
@@ -138,12 +143,101 @@ public class EnvVarImpl extends MinimalEObjectImpl.Container implements EnvVar {
 	 * @generated
 	 */
 	@Override
+	public ExecEnvironment getExecEnv() {
+		if (eContainerFeatureID() != Accordant_dvPackage.ENV_VAR__EXEC_ENV) return null;
+		return (ExecEnvironment)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetExecEnv(ExecEnvironment newExecEnv, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newExecEnv, Accordant_dvPackage.ENV_VAR__EXEC_ENV, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setExecEnv(ExecEnvironment newExecEnv) {
+		if (newExecEnv != eInternalContainer() || (eContainerFeatureID() != Accordant_dvPackage.ENV_VAR__EXEC_ENV && newExecEnv != null)) {
+			if (EcoreUtil.isAncestor(this, newExecEnv))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newExecEnv != null)
+				msgs = ((InternalEObject)newExecEnv).eInverseAdd(this, Accordant_dvPackage.EXEC_ENVIRONMENT__VARS, ExecEnvironment.class, msgs);
+			msgs = basicSetExecEnv(newExecEnv, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.ENV_VAR__EXEC_ENV, newExecEnv, newExecEnv));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_dvPackage.ENV_VAR__EXEC_ENV:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetExecEnv((ExecEnvironment)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_dvPackage.ENV_VAR__EXEC_ENV:
+				return basicSetExecEnv(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case Accordant_dvPackage.ENV_VAR__EXEC_ENV:
+				return eInternalContainer().eInverseRemove(this, Accordant_dvPackage.EXEC_ENVIRONMENT__VARS, ExecEnvironment.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Accordant_dvPackage.ENV_VAR__NAME:
 				return getName();
 			case Accordant_dvPackage.ENV_VAR__VALUE:
 				return getValue();
+			case Accordant_dvPackage.ENV_VAR__EXEC_ENV:
+				return getExecEnv();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,6 +255,9 @@ public class EnvVarImpl extends MinimalEObjectImpl.Container implements EnvVar {
 				return;
 			case Accordant_dvPackage.ENV_VAR__VALUE:
 				setValue((String)newValue);
+				return;
+			case Accordant_dvPackage.ENV_VAR__EXEC_ENV:
+				setExecEnv((ExecEnvironment)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -180,6 +277,9 @@ public class EnvVarImpl extends MinimalEObjectImpl.Container implements EnvVar {
 			case Accordant_dvPackage.ENV_VAR__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
+			case Accordant_dvPackage.ENV_VAR__EXEC_ENV:
+				setExecEnv((ExecEnvironment)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -196,6 +296,8 @@ public class EnvVarImpl extends MinimalEObjectImpl.Container implements EnvVar {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case Accordant_dvPackage.ENV_VAR__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+			case Accordant_dvPackage.ENV_VAR__EXEC_ENV:
+				return getExecEnv() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -209,7 +311,7 @@ public class EnvVarImpl extends MinimalEObjectImpl.Container implements EnvVar {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", value: ");

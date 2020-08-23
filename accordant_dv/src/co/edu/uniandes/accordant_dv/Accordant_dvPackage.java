@@ -240,13 +240,22 @@ public interface Accordant_dvPackage extends EPackage {
 	int DEVICE__PODS = 7;
 
 	/**
+	 * The feature id for the '<em><b>Dv</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE__DV = 8;
+
+	/**
 	 * The number of structural features of the '<em>Device</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_FEATURE_COUNT = 8;
+	int DEVICE_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Device</em>' class.
@@ -467,13 +476,22 @@ public interface Accordant_dvPackage extends EPackage {
 	int ARTIFACT__SAAS_ENV = 7;
 
 	/**
+	 * The feature id for the '<em><b>Dv</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT__DV = 8;
+
+	/**
 	 * The number of structural features of the '<em>Artifact</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT_FEATURE_COUNT = 8;
+	int ARTIFACT_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Artifact</em>' class.
@@ -567,13 +585,22 @@ public interface Accordant_dvPackage extends EPackage {
 	int DEPLOYMENT__MODEL = 7;
 
 	/**
+	 * The feature id for the '<em><b>Dv</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOYMENT__DV = 8;
+
+	/**
 	 * The number of structural features of the '<em>Deployment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOYMENT_FEATURE_COUNT = 8;
+	int DEPLOYMENT_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Deployment</em>' class.
@@ -649,13 +676,22 @@ public interface Accordant_dvPackage extends EPackage {
 	int POD__DEPL_OWNER = 5;
 
 	/**
+	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POD__SERVICE = 6;
+
+	/**
 	 * The number of structural features of the '<em>Pod</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POD_FEATURE_COUNT = 6;
+	int POD_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Pod</em>' class.
@@ -695,13 +731,22 @@ public interface Accordant_dvPackage extends EPackage {
 	int ENV_VAR__VALUE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Exec Env</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENV_VAR__EXEC_ENV = 2;
+
+	/**
 	 * The number of structural features of the '<em>Env Var</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENV_VAR_FEATURE_COUNT = 2;
+	int ENV_VAR_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Env Var</em>' class.
@@ -759,13 +804,31 @@ public interface Accordant_dvPackage extends EPackage {
 	int SERVICE__EXT_ACCESS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Dv</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE__DV = 4;
+
+	/**
+	 * The feature id for the '<em><b>Pod</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE__POD = 5;
+
+	/**
 	 * The number of structural features of the '<em>Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_FEATURE_COUNT = 4;
+	int SERVICE_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Service</em>' class.
@@ -832,13 +895,22 @@ public interface Accordant_dvPackage extends EPackage {
 	int EXPOSED_PORT__EXPOSES = 4;
 
 	/**
+	 * The feature id for the '<em><b>Service</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPOSED_PORT__SERVICE = 5;
+
+	/**
 	 * The number of structural features of the '<em>Exposed Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPOSED_PORT_FEATURE_COUNT = 5;
+	int EXPOSED_PORT_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Exposed Port</em>' class.
@@ -914,13 +986,22 @@ public interface Accordant_dvPackage extends EPackage {
 	int SERVERLESS_ENV__SAAS_ARTS = 5;
 
 	/**
+	 * The feature id for the '<em><b>Dv</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVERLESS_ENV__DV = 6;
+
+	/**
 	 * The number of structural features of the '<em>Serverless Env</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVERLESS_ENV_FEATURE_COUNT = 6;
+	int SERVERLESS_ENV_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Serverless Env</em>' class.
@@ -1200,6 +1281,17 @@ public interface Accordant_dvPackage extends EPackage {
 	EReference getDevice_Pods();
 
 	/**
+	 * Returns the meta object for the container reference '{@link co.edu.uniandes.accordant_dv.Device#getDv <em>Dv</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Dv</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Device#getDv()
+	 * @see #getDevice()
+	 * @generated
+	 */
+	EReference getDevice_Dv();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.ExecEnvironment <em>Exec Environment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1429,6 +1521,17 @@ public interface Accordant_dvPackage extends EPackage {
 	EReference getArtifact_SaasEnv();
 
 	/**
+	 * Returns the meta object for the container reference '{@link co.edu.uniandes.accordant_dv.Artifact#getDv <em>Dv</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Dv</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Artifact#getDv()
+	 * @see #getArtifact()
+	 * @generated
+	 */
+	EReference getArtifact_Dv();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.Deployment <em>Deployment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1527,6 +1630,17 @@ public interface Accordant_dvPackage extends EPackage {
 	EAttribute getDeployment_Model();
 
 	/**
+	 * Returns the meta object for the container reference '{@link co.edu.uniandes.accordant_dv.Deployment#getDv <em>Dv</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Dv</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Deployment#getDv()
+	 * @see #getDeployment()
+	 * @generated
+	 */
+	EReference getDeployment_Dv();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.Pod <em>Pod</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1603,6 +1717,17 @@ public interface Accordant_dvPackage extends EPackage {
 	EReference getPod_DeplOwner();
 
 	/**
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.Pod#getService <em>Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Service</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Pod#getService()
+	 * @see #getPod()
+	 * @generated
+	 */
+	EReference getPod_Service();
+
+	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.EnvVar <em>Env Var</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1633,6 +1758,17 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEnvVar_Value();
+
+	/**
+	 * Returns the meta object for the container reference '{@link co.edu.uniandes.accordant_dv.EnvVar#getExecEnv <em>Exec Env</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Exec Env</em>'.
+	 * @see co.edu.uniandes.accordant_dv.EnvVar#getExecEnv()
+	 * @see #getEnvVar()
+	 * @generated
+	 */
+	EReference getEnvVar_ExecEnv();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.Service <em>Service</em>}'.
@@ -1687,6 +1823,28 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getService_ExtAccess();
+
+	/**
+	 * Returns the meta object for the container reference '{@link co.edu.uniandes.accordant_dv.Service#getDv <em>Dv</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Dv</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Service#getDv()
+	 * @see #getService()
+	 * @generated
+	 */
+	EReference getService_Dv();
+
+	/**
+	 * Returns the meta object for the reference '{@link co.edu.uniandes.accordant_dv.Service#getPod <em>Pod</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Pod</em>'.
+	 * @see co.edu.uniandes.accordant_dv.Service#getPod()
+	 * @see #getService()
+	 * @generated
+	 */
+	EReference getService_Pod();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.ExposedPort <em>Exposed Port</em>}'.
@@ -1752,6 +1910,17 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getExposedPort_Exposes();
+
+	/**
+	 * Returns the meta object for the container reference '{@link co.edu.uniandes.accordant_dv.ExposedPort#getService <em>Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Service</em>'.
+	 * @see co.edu.uniandes.accordant_dv.ExposedPort#getService()
+	 * @see #getExposedPort()
+	 * @generated
+	 */
+	EReference getExposedPort_Service();
 
 	/**
 	 * Returns the meta object for class '{@link co.edu.uniandes.accordant_dv.ServerlessEnv <em>Serverless Env</em>}'.
@@ -1828,6 +1997,17 @@ public interface Accordant_dvPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getServerlessEnv_SaasArts();
+
+	/**
+	 * Returns the meta object for the container reference '{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getDv <em>Dv</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Dv</em>'.
+	 * @see co.edu.uniandes.accordant_dv.ServerlessEnv#getDv()
+	 * @see #getServerlessEnv()
+	 * @generated
+	 */
+	EReference getServerlessEnv_Dv();
 
 	/**
 	 * Returns the meta object for enum '{@link co.edu.uniandes.accordant_dv.EventConnTech <em>Event Conn Tech</em>}'.
@@ -2071,6 +2251,14 @@ public interface Accordant_dvPackage extends EPackage {
 		EReference DEVICE__PODS = eINSTANCE.getDevice_Pods();
 
 		/**
+		 * The meta object literal for the '<em><b>Dv</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE__DV = eINSTANCE.getDevice_Dv();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.ExecEnvironmentImpl <em>Exec Environment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2243,6 +2431,14 @@ public interface Accordant_dvPackage extends EPackage {
 		EReference ARTIFACT__SAAS_ENV = eINSTANCE.getArtifact_SaasEnv();
 
 		/**
+		 * The meta object literal for the '<em><b>Dv</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARTIFACT__DV = eINSTANCE.getArtifact_Dv();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl <em>Deployment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2317,6 +2513,14 @@ public interface Accordant_dvPackage extends EPackage {
 		EAttribute DEPLOYMENT__MODEL = eINSTANCE.getDeployment_Model();
 
 		/**
+		 * The meta object literal for the '<em><b>Dv</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEPLOYMENT__DV = eINSTANCE.getDeployment_Dv();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.PodImpl <em>Pod</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2375,6 +2579,14 @@ public interface Accordant_dvPackage extends EPackage {
 		EReference POD__DEPL_OWNER = eINSTANCE.getPod_DeplOwner();
 
 		/**
+		 * The meta object literal for the '<em><b>Service</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference POD__SERVICE = eINSTANCE.getPod_Service();
+
+		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.EnvVarImpl <em>Env Var</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2399,6 +2611,14 @@ public interface Accordant_dvPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENV_VAR__VALUE = eINSTANCE.getEnvVar_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Exec Env</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENV_VAR__EXEC_ENV = eINSTANCE.getEnvVar_ExecEnv();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.ServiceImpl <em>Service</em>}' class.
@@ -2441,6 +2661,22 @@ public interface Accordant_dvPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SERVICE__EXT_ACCESS = eINSTANCE.getService_ExtAccess();
+
+		/**
+		 * The meta object literal for the '<em><b>Dv</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE__DV = eINSTANCE.getService_Dv();
+
+		/**
+		 * The meta object literal for the '<em><b>Pod</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE__POD = eINSTANCE.getService_Pod();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.ExposedPortImpl <em>Exposed Port</em>}' class.
@@ -2491,6 +2727,14 @@ public interface Accordant_dvPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EXPOSED_PORT__EXPOSES = eINSTANCE.getExposedPort_Exposes();
+
+		/**
+		 * The meta object literal for the '<em><b>Service</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXPOSED_PORT__SERVICE = eINSTANCE.getExposedPort_Service();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.impl.ServerlessEnvImpl <em>Serverless Env</em>}' class.
@@ -2549,6 +2793,14 @@ public interface Accordant_dvPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SERVERLESS_ENV__SAAS_ARTS = eINSTANCE.getServerlessEnv_SaasArts();
+
+		/**
+		 * The meta object literal for the '<em><b>Dv</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVERLESS_ENV__DV = eINSTANCE.getServerlessEnv_Dv();
 
 		/**
 		 * The meta object literal for the '{@link co.edu.uniandes.accordant_dv.EventConnTech <em>Event Conn Tech</em>}' enum.

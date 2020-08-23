@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getProps <em>Props</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getSaasArts <em>Saas Arts</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getDv <em>Dv</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getServerlessEnv()
@@ -174,5 +175,29 @@ public interface ServerlessEnv extends EObject {
 	 * @generated
 	 */
 	EList<Artifact> getSaasArts();
+
+	/**
+	 * Returns the value of the '<em><b>Dv</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.DeploymentView#getServerless <em>Serverless</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Dv</em>' container reference.
+	 * @see #setDv(DeploymentView)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getServerlessEnv_Dv()
+	 * @see co.edu.uniandes.accordant_dv.DeploymentView#getServerless
+	 * @model opposite="serverless" required="true" transient="false"
+	 * @generated
+	 */
+	DeploymentView getDv();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getDv <em>Dv</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Dv</em>' container reference.
+	 * @see #getDv()
+	 * @generated
+	 */
+	void setDv(DeploymentView value);
 
 } // ServerlessEnv

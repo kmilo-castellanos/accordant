@@ -3,7 +3,9 @@
 package co.edu.uniandes.accordant_dv.impl;
 
 import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
+import co.edu.uniandes.accordant_dv.DeploymentView;
 import co.edu.uniandes.accordant_dv.ExposedPort;
+import co.edu.uniandes.accordant_dv.Pod;
 import co.edu.uniandes.accordant_dv.Service;
 
 import java.util.Collection;
@@ -18,8 +20,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -34,6 +36,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ServiceImpl#getPorts <em>Ports</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ServiceImpl#getType <em>Type</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ServiceImpl#getExtAccess <em>Ext Access</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.ServiceImpl#getDv <em>Dv</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.ServiceImpl#getPod <em>Pod</em>}</li>
  * </ul>
  *
  * @generated
@@ -110,6 +114,16 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	protected String extAccess = EXT_ACCESS_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getPod() <em>Pod</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPod()
+	 * @generated
+	 * @ordered
+	 */
+	protected Pod pod;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -159,7 +173,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	@Override
 	public EList<ExposedPort> getPorts() {
 		if (ports == null) {
-			ports = new EObjectContainmentEList<ExposedPort>(ExposedPort.class, this, Accordant_dvPackage.SERVICE__PORTS);
+			ports = new EObjectContainmentWithInverseEList<ExposedPort>(ExposedPort.class, this, Accordant_dvPackage.SERVICE__PORTS, Accordant_dvPackage.EXPOSED_PORT__SERVICE);
 		}
 		return ports;
 	}
@@ -216,12 +230,158 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @generated
 	 */
 	@Override
+	public DeploymentView getDv() {
+		if (eContainerFeatureID() != Accordant_dvPackage.SERVICE__DV) return null;
+		return (DeploymentView)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDv(DeploymentView newDv, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newDv, Accordant_dvPackage.SERVICE__DV, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDv(DeploymentView newDv) {
+		if (newDv != eInternalContainer() || (eContainerFeatureID() != Accordant_dvPackage.SERVICE__DV && newDv != null)) {
+			if (EcoreUtil.isAncestor(this, newDv))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newDv != null)
+				msgs = ((InternalEObject)newDv).eInverseAdd(this, Accordant_dvPackage.DEPLOYMENT_VIEW__SERVICES, DeploymentView.class, msgs);
+			msgs = basicSetDv(newDv, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.SERVICE__DV, newDv, newDv));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Pod getPod() {
+		if (pod != null && pod.eIsProxy()) {
+			InternalEObject oldPod = (InternalEObject)pod;
+			pod = (Pod)eResolveProxy(oldPod);
+			if (pod != oldPod) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Accordant_dvPackage.SERVICE__POD, oldPod, pod));
+			}
+		}
+		return pod;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Pod basicGetPod() {
+		return pod;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPod(Pod newPod, NotificationChain msgs) {
+		Pod oldPod = pod;
+		pod = newPod;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.SERVICE__POD, oldPod, newPod);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPod(Pod newPod) {
+		if (newPod != pod) {
+			NotificationChain msgs = null;
+			if (pod != null)
+				msgs = ((InternalEObject)pod).eInverseRemove(this, Accordant_dvPackage.POD__SERVICE, Pod.class, msgs);
+			if (newPod != null)
+				msgs = ((InternalEObject)newPod).eInverseAdd(this, Accordant_dvPackage.POD__SERVICE, Pod.class, msgs);
+			msgs = basicSetPod(newPod, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.SERVICE__POD, newPod, newPod));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_dvPackage.SERVICE__PORTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPorts()).basicAdd(otherEnd, msgs);
+			case Accordant_dvPackage.SERVICE__DV:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetDv((DeploymentView)otherEnd, msgs);
+			case Accordant_dvPackage.SERVICE__POD:
+				if (pod != null)
+					msgs = ((InternalEObject)pod).eInverseRemove(this, Accordant_dvPackage.POD__SERVICE, Pod.class, msgs);
+				return basicSetPod((Pod)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Accordant_dvPackage.SERVICE__PORTS:
 				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
+			case Accordant_dvPackage.SERVICE__DV:
+				return basicSetDv(null, msgs);
+			case Accordant_dvPackage.SERVICE__POD:
+				return basicSetPod(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case Accordant_dvPackage.SERVICE__DV:
+				return eInternalContainer().eInverseRemove(this, Accordant_dvPackage.DEPLOYMENT_VIEW__SERVICES, DeploymentView.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -240,6 +400,11 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				return getType();
 			case Accordant_dvPackage.SERVICE__EXT_ACCESS:
 				return getExtAccess();
+			case Accordant_dvPackage.SERVICE__DV:
+				return getDv();
+			case Accordant_dvPackage.SERVICE__POD:
+				if (resolve) return getPod();
+				return basicGetPod();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -266,6 +431,12 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 			case Accordant_dvPackage.SERVICE__EXT_ACCESS:
 				setExtAccess((String)newValue);
 				return;
+			case Accordant_dvPackage.SERVICE__DV:
+				setDv((DeploymentView)newValue);
+				return;
+			case Accordant_dvPackage.SERVICE__POD:
+				setPod((Pod)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -290,6 +461,12 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 			case Accordant_dvPackage.SERVICE__EXT_ACCESS:
 				setExtAccess(EXT_ACCESS_EDEFAULT);
 				return;
+			case Accordant_dvPackage.SERVICE__DV:
+				setDv((DeploymentView)null);
+				return;
+			case Accordant_dvPackage.SERVICE__POD:
+				setPod((Pod)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -310,6 +487,10 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case Accordant_dvPackage.SERVICE__EXT_ACCESS:
 				return EXT_ACCESS_EDEFAULT == null ? extAccess != null : !EXT_ACCESS_EDEFAULT.equals(extAccess);
+			case Accordant_dvPackage.SERVICE__DV:
+				return getDv() != null;
+			case Accordant_dvPackage.SERVICE__POD:
+				return pod != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -323,7 +504,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", type: ");

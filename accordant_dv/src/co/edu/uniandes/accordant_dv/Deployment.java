@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.Deployment#getStrategy <em>Strategy</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Deployment#getDecision <em>Decision</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Deployment#getModel <em>Model</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.Deployment#getDv <em>Dv</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeployment()
@@ -233,5 +234,29 @@ public interface Deployment extends EObject {
 	 * @generated
 	 */
 	void setModel(DeploymentModel value);
+
+	/**
+	 * Returns the value of the '<em><b>Dv</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.DeploymentView#getDeployments <em>Deployments</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Dv</em>' container reference.
+	 * @see #setDv(DeploymentView)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeployment_Dv()
+	 * @see co.edu.uniandes.accordant_dv.DeploymentView#getDeployments
+	 * @model opposite="deployments" required="true" transient="false"
+	 * @generated
+	 */
+	DeploymentView getDv();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.Deployment#getDv <em>Dv</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Dv</em>' container reference.
+	 * @see #getDv()
+	 * @generated
+	 */
+	void setDv(DeploymentView value);
 
 } // Deployment

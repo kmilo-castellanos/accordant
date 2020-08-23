@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.Device#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Device#getOs <em>Os</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Device#getPods <em>Pods</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.Device#getDv <em>Dv</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDevice()
@@ -227,5 +228,29 @@ public interface Device extends EObject {
 	 * @generated
 	 */
 	EList<Pod> getPods();
+
+	/**
+	 * Returns the value of the '<em><b>Dv</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.DeploymentView#getDevs <em>Devs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Dv</em>' container reference.
+	 * @see #setDv(DeploymentView)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDevice_Dv()
+	 * @see co.edu.uniandes.accordant_dv.DeploymentView#getDevs
+	 * @model opposite="devs" required="true" transient="false"
+	 * @generated
+	 */
+	DeploymentView getDv();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.Device#getDv <em>Dv</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Dv</em>' container reference.
+	 * @see #getDv()
+	 * @generated
+	 */
+	void setDv(DeploymentView value);
 
 } // Device

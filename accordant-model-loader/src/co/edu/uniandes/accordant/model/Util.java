@@ -23,9 +23,15 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+import co.edu.uniandes.accordant_dv.DeploymentModel;
+import co.edu.uniandes.accordant_dv.TypeDevice;
 import co.edu.uniandes.accordant_fv.AccessType;
 import co.edu.uniandes.accordant_fv.Buffering;
 import co.edu.uniandes.accordant_fv.DeliveryGuarantee;
@@ -52,6 +58,25 @@ public class Util {
 		return name!=null? name.replaceAll(" ", "_"):null;
 	}
 
+	public static String getMxCellParent(Element objectElement) {
+		NodeList mxCells = objectElement.getElementsByTagName("mxCell");
+		for (int g = 0; g < mxCells.getLength(); g++) {
+			Node mxCell = mxCells.item(g);
+			NamedNodeMap attMap=mxCell.getAttributes();
+			Node parent = attMap.getNamedItem("parent");
+			if(parent!=null) {
+				return parent.getNodeValue();
+			}
+			/*if (mxCell.getParentNode()!=null) {
+				
+			}*/
+			/*if (mxCell.getNodeType() == Node.ELEMENT_NODE) {
+				Element el = (Element) mxCell;
+			}*/
+		}	
+		return null;
+	}
+	
 	
 	public static String[] getValuesMatch(String pattern, String text) {
 		Pattern r = Pattern.compile(pattern);
@@ -289,4 +314,30 @@ public class Util {
 		}
 	}
 	
+	
+	public static TypeDevice parseDeviceType(String type) {
+		if (type.equals("LARGE")) {
+			return TypeDevice.LARGE;
+		} else if (type.equals("MEDIUM")) {
+			return TypeDevice.MEDIUM;
+		} else if (type.equals("SMALL")) {
+			return TypeDevice.SMALL;
+		} else if (type.equals("MICRO")) {
+			return TypeDevice.MICRO;
+		} else if (type.equals("XLARGE")) {
+			return TypeDevice.XLARGE;
+		}		
+		return null;
+	}
+	
+	public static DeploymentModel parseDeploymentModel(String model) {
+		if (model.equals("CLOUD")) {
+			return DeploymentModel.CLOUD;
+		} else if (model.equals("HYBRID")) {
+			return DeploymentModel.HYBRID;
+		} else if (model.equals("ONPREMISES")) {
+			return DeploymentModel.ONPREMISES;
+		}		
+		return null;
+	}
 }

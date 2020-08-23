@@ -61,6 +61,7 @@ public interface DeploymentView extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Devs</b></em>' containment reference list.
 	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.Device}.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.Device#getDv <em>Dv</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Devs</em>' containment reference list isn't clear,
@@ -69,7 +70,8 @@ public interface DeploymentView extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Devs</em>' containment reference list.
 	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeploymentView_Devs()
-	 * @model containment="true" required="true"
+	 * @see co.edu.uniandes.accordant_dv.Device#getDv
+	 * @model opposite="dv" containment="true" required="true"
 	 * @generated
 	 */
 	EList<Device> getDevs();
@@ -77,6 +79,7 @@ public interface DeploymentView extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Deployments</b></em>' containment reference list.
 	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.Deployment}.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.Deployment#getDv <em>Dv</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Deployments</em>' containment reference list isn't clear,
@@ -85,7 +88,8 @@ public interface DeploymentView extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Deployments</em>' containment reference list.
 	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeploymentView_Deployments()
-	 * @model containment="true"
+	 * @see co.edu.uniandes.accordant_dv.Deployment#getDv
+	 * @model opposite="dv" containment="true"
 	 * @generated
 	 */
 	EList<Deployment> getDeployments();
@@ -93,6 +97,7 @@ public interface DeploymentView extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Services</b></em>' containment reference list.
 	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.Service}.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.Service#getDv <em>Dv</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Services</em>' containment reference list isn't clear,
@@ -101,7 +106,8 @@ public interface DeploymentView extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Services</em>' containment reference list.
 	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeploymentView_Services()
-	 * @model containment="true"
+	 * @see co.edu.uniandes.accordant_dv.Service#getDv
+	 * @model opposite="dv" containment="true"
 	 * @generated
 	 */
 	EList<Service> getServices();
@@ -109,6 +115,7 @@ public interface DeploymentView extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Serverless</b></em>' containment reference list.
 	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.ServerlessEnv}.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.ServerlessEnv#getDv <em>Dv</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Serverless</em>' containment reference list isn't clear,
@@ -117,7 +124,8 @@ public interface DeploymentView extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Serverless</em>' containment reference list.
 	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeploymentView_Serverless()
-	 * @model containment="true"
+	 * @see co.edu.uniandes.accordant_dv.ServerlessEnv#getDv
+	 * @model opposite="dv" containment="true"
 	 * @generated
 	 */
 	EList<ServerlessEnv> getServerless();
@@ -125,6 +133,7 @@ public interface DeploymentView extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Artifacts</b></em>' containment reference list.
 	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.Artifact}.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.Artifact#getDv <em>Dv</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Artifacts</em>' containment reference list isn't clear,
@@ -133,7 +142,8 @@ public interface DeploymentView extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Artifacts</em>' containment reference list.
 	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getDeploymentView_Artifacts()
-	 * @model containment="true"
+	 * @see co.edu.uniandes.accordant_dv.Artifact#getDv
+	 * @model opposite="dv" containment="true"
 	 * @generated
 	 */
 	EList<Artifact> getArtifacts();

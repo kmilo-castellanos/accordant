@@ -6,18 +6,22 @@ import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
 import co.edu.uniandes.accordant_dv.ExposedPort;
 import co.edu.uniandes.accordant_dv.Pod;
 
+import co.edu.uniandes.accordant_dv.Service;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,6 +36,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ExposedPortImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ExposedPortImpl#getPort <em>Port</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ExposedPortImpl#getExposes <em>Exposes</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.ExposedPortImpl#getService <em>Service</em>}</li>
  * </ul>
  *
  * @generated
@@ -257,6 +262,93 @@ public class ExposedPortImpl extends MinimalEObjectImpl.Container implements Exp
 	 * @generated
 	 */
 	@Override
+	public Service getService() {
+		if (eContainerFeatureID() != Accordant_dvPackage.EXPOSED_PORT__SERVICE) return null;
+		return (Service)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetService(Service newService, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newService, Accordant_dvPackage.EXPOSED_PORT__SERVICE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setService(Service newService) {
+		if (newService != eInternalContainer() || (eContainerFeatureID() != Accordant_dvPackage.EXPOSED_PORT__SERVICE && newService != null)) {
+			if (EcoreUtil.isAncestor(this, newService))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newService != null)
+				msgs = ((InternalEObject)newService).eInverseAdd(this, Accordant_dvPackage.SERVICE__PORTS, Service.class, msgs);
+			msgs = basicSetService(newService, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.EXPOSED_PORT__SERVICE, newService, newService));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_dvPackage.EXPOSED_PORT__SERVICE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetService((Service)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Accordant_dvPackage.EXPOSED_PORT__SERVICE:
+				return basicSetService(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case Accordant_dvPackage.EXPOSED_PORT__SERVICE:
+				return eInternalContainer().eInverseRemove(this, Accordant_dvPackage.SERVICE__PORTS, Service.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Accordant_dvPackage.EXPOSED_PORT__NAME:
@@ -269,6 +361,8 @@ public class ExposedPortImpl extends MinimalEObjectImpl.Container implements Exp
 				return getPort();
 			case Accordant_dvPackage.EXPOSED_PORT__EXPOSES:
 				return getExposes();
+			case Accordant_dvPackage.EXPOSED_PORT__SERVICE:
+				return getService();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -298,6 +392,9 @@ public class ExposedPortImpl extends MinimalEObjectImpl.Container implements Exp
 				getExposes().clear();
 				getExposes().addAll((Collection<? extends Pod>)newValue);
 				return;
+			case Accordant_dvPackage.EXPOSED_PORT__SERVICE:
+				setService((Service)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -325,6 +422,9 @@ public class ExposedPortImpl extends MinimalEObjectImpl.Container implements Exp
 			case Accordant_dvPackage.EXPOSED_PORT__EXPOSES:
 				getExposes().clear();
 				return;
+			case Accordant_dvPackage.EXPOSED_PORT__SERVICE:
+				setService((Service)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -347,6 +447,8 @@ public class ExposedPortImpl extends MinimalEObjectImpl.Container implements Exp
 				return port != PORT_EDEFAULT;
 			case Accordant_dvPackage.EXPOSED_PORT__EXPOSES:
 				return exposes != null && !exposes.isEmpty();
+			case Accordant_dvPackage.EXPOSED_PORT__SERVICE:
+				return getService() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -360,7 +462,7 @@ public class ExposedPortImpl extends MinimalEObjectImpl.Container implements Exp
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", protocol: ");

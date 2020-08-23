@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.Service#getPorts <em>Ports</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Service#getType <em>Type</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Service#getExtAccess <em>Ext Access</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.Service#getDv <em>Dv</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.Service#getPod <em>Pod</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getService()
@@ -55,6 +57,7 @@ public interface Service extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
 	 * The list contents are of type {@link co.edu.uniandes.accordant_dv.ExposedPort}.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.ExposedPort#getService <em>Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ports</em>' containment reference list isn't clear,
@@ -63,7 +66,8 @@ public interface Service extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ports</em>' containment reference list.
 	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getService_Ports()
-	 * @model containment="true" required="true"
+	 * @see co.edu.uniandes.accordant_dv.ExposedPort#getService
+	 * @model opposite="service" containment="true" required="true"
 	 * @generated
 	 */
 	EList<ExposedPort> getPorts();
@@ -119,5 +123,53 @@ public interface Service extends EObject {
 	 * @generated
 	 */
 	void setExtAccess(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Dv</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.DeploymentView#getServices <em>Services</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Dv</em>' container reference.
+	 * @see #setDv(DeploymentView)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getService_Dv()
+	 * @see co.edu.uniandes.accordant_dv.DeploymentView#getServices
+	 * @model opposite="services" required="true" transient="false"
+	 * @generated
+	 */
+	DeploymentView getDv();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.Service#getDv <em>Dv</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Dv</em>' container reference.
+	 * @see #getDv()
+	 * @generated
+	 */
+	void setDv(DeploymentView value);
+
+	/**
+	 * Returns the value of the '<em><b>Pod</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.Pod#getService <em>Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pod</em>' reference.
+	 * @see #setPod(Pod)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getService_Pod()
+	 * @see co.edu.uniandes.accordant_dv.Pod#getService
+	 * @model opposite="service"
+	 * @generated
+	 */
+	Pod getPod();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.Service#getPod <em>Pod</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pod</em>' reference.
+	 * @see #getPod()
+	 * @generated
+	 */
+	void setPod(Pod value);
 
 } // Service

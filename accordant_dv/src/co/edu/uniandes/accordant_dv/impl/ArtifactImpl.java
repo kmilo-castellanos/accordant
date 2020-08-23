@@ -4,6 +4,7 @@ package co.edu.uniandes.accordant_dv.impl;
 
 import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
 import co.edu.uniandes.accordant_dv.Artifact;
+import co.edu.uniandes.accordant_dv.DeploymentView;
 import co.edu.uniandes.accordant_dv.ExecEnvironment;
 import co.edu.uniandes.accordant_dv.ServerlessEnv;
 import co.edu.uniandes.accordant_fv.Component;
@@ -17,6 +18,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +36,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getTechnology <em>Technology</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getPaasEnv <em>Paas Env</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getSaasEnv <em>Saas Env</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.ArtifactImpl#getDv <em>Dv</em>}</li>
  * </ul>
  *
  * @generated
@@ -487,6 +490,49 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 * @generated
 	 */
 	@Override
+	public DeploymentView getDv() {
+		if (eContainerFeatureID() != Accordant_dvPackage.ARTIFACT__DV) return null;
+		return (DeploymentView)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDv(DeploymentView newDv, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newDv, Accordant_dvPackage.ARTIFACT__DV, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDv(DeploymentView newDv) {
+		if (newDv != eInternalContainer() || (eContainerFeatureID() != Accordant_dvPackage.ARTIFACT__DV && newDv != null)) {
+			if (EcoreUtil.isAncestor(this, newDv))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newDv != null)
+				msgs = ((InternalEObject)newDv).eInverseAdd(this, Accordant_dvPackage.DEPLOYMENT_VIEW__ARTIFACTS, DeploymentView.class, msgs);
+			msgs = basicSetDv(newDv, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.ARTIFACT__DV, newDv, newDv));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Accordant_dvPackage.ARTIFACT__PAAS_ENV:
@@ -497,6 +543,10 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 				if (saasEnv != null)
 					msgs = ((InternalEObject)saasEnv).eInverseRemove(this, Accordant_dvPackage.SERVERLESS_ENV__SAAS_ARTS, ServerlessEnv.class, msgs);
 				return basicSetSaasEnv((ServerlessEnv)otherEnd, msgs);
+			case Accordant_dvPackage.ARTIFACT__DV:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetDv((DeploymentView)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -513,8 +563,24 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 				return basicSetPaasEnv(null, msgs);
 			case Accordant_dvPackage.ARTIFACT__SAAS_ENV:
 				return basicSetSaasEnv(null, msgs);
+			case Accordant_dvPackage.ARTIFACT__DV:
+				return basicSetDv(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case Accordant_dvPackage.ARTIFACT__DV:
+				return eInternalContainer().eInverseRemove(this, Accordant_dvPackage.DEPLOYMENT_VIEW__ARTIFACTS, DeploymentView.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -546,6 +612,8 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 			case Accordant_dvPackage.ARTIFACT__SAAS_ENV:
 				if (resolve) return getSaasEnv();
 				return basicGetSaasEnv();
+			case Accordant_dvPackage.ARTIFACT__DV:
+				return getDv();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -581,6 +649,9 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 				return;
 			case Accordant_dvPackage.ARTIFACT__SAAS_ENV:
 				setSaasEnv((ServerlessEnv)newValue);
+				return;
+			case Accordant_dvPackage.ARTIFACT__DV:
+				setDv((DeploymentView)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -618,6 +689,9 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 			case Accordant_dvPackage.ARTIFACT__SAAS_ENV:
 				setSaasEnv((ServerlessEnv)null);
 				return;
+			case Accordant_dvPackage.ARTIFACT__DV:
+				setDv((DeploymentView)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -646,6 +720,8 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 				return paasEnv != null;
 			case Accordant_dvPackage.ARTIFACT__SAAS_ENV:
 				return saasEnv != null;
+			case Accordant_dvPackage.ARTIFACT__DV:
+				return getDv() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -659,7 +735,7 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", props: ");

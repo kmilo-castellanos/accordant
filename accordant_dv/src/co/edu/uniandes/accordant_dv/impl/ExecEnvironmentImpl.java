@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -389,7 +389,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public EList<EnvVar> getVars() {
 		if (vars == null) {
-			vars = new EObjectContainmentEList<EnvVar>(EnvVar.class, this, Accordant_dvPackage.EXEC_ENVIRONMENT__VARS);
+			vars = new EObjectContainmentWithInverseEList<EnvVar>(EnvVar.class, this, Accordant_dvPackage.EXEC_ENVIRONMENT__VARS, Accordant_dvPackage.ENV_VAR__EXEC_ENV);
 		}
 		return vars;
 	}
@@ -472,6 +472,8 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case Accordant_dvPackage.EXEC_ENVIRONMENT__VARS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getVars()).basicAdd(otherEnd, msgs);
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__PAAS_ARTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPaasArts()).basicAdd(otherEnd, msgs);
 			case Accordant_dvPackage.EXEC_ENVIRONMENT__POD_OWNER:
@@ -686,7 +688,7 @@ public class ExecEnvironmentImpl extends MinimalEObjectImpl.Container implements
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", cpu_req: ");

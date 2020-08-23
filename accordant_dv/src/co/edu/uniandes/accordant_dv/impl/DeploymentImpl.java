@@ -5,6 +5,7 @@ package co.edu.uniandes.accordant_dv.impl;
 import co.edu.uniandes.accordant_dv.Accordant_dvPackage;
 import co.edu.uniandes.accordant_dv.Deployment;
 import co.edu.uniandes.accordant_dv.DeploymentModel;
+import co.edu.uniandes.accordant_dv.DeploymentView;
 import co.edu.uniandes.accordant_dv.Pod;
 
 import co.edu.uniandes.accordant_rq.ArchDecision;
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -39,6 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl#getStrategy <em>Strategy</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl#getDecision <em>Decision</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl#getModel <em>Model</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.impl.DeploymentImpl#getDv <em>Dv</em>}</li>
  * </ul>
  *
  * @generated
@@ -399,12 +402,59 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public DeploymentView getDv() {
+		if (eContainerFeatureID() != Accordant_dvPackage.DEPLOYMENT__DV) return null;
+		return (DeploymentView)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDv(DeploymentView newDv, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newDv, Accordant_dvPackage.DEPLOYMENT__DV, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDv(DeploymentView newDv) {
+		if (newDv != eInternalContainer() || (eContainerFeatureID() != Accordant_dvPackage.DEPLOYMENT__DV && newDv != null)) {
+			if (EcoreUtil.isAncestor(this, newDv))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newDv != null)
+				msgs = ((InternalEObject)newDv).eInverseAdd(this, Accordant_dvPackage.DEPLOYMENT_VIEW__DEPLOYMENTS, DeploymentView.class, msgs);
+			msgs = basicSetDv(newDv, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Accordant_dvPackage.DEPLOYMENT__DV, newDv, newDv));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Accordant_dvPackage.DEPLOYMENT__PODS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPods()).basicAdd(otherEnd, msgs);
+			case Accordant_dvPackage.DEPLOYMENT__DV:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetDv((DeploymentView)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -419,8 +469,24 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 		switch (featureID) {
 			case Accordant_dvPackage.DEPLOYMENT__PODS:
 				return ((InternalEList<?>)getPods()).basicRemove(otherEnd, msgs);
+			case Accordant_dvPackage.DEPLOYMENT__DV:
+				return basicSetDv(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case Accordant_dvPackage.DEPLOYMENT__DV:
+				return eInternalContainer().eInverseRemove(this, Accordant_dvPackage.DEPLOYMENT_VIEW__DEPLOYMENTS, DeploymentView.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -448,6 +514,8 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 				return basicGetDecision();
 			case Accordant_dvPackage.DEPLOYMENT__MODEL:
 				return getModel();
+			case Accordant_dvPackage.DEPLOYMENT__DV:
+				return getDv();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -486,6 +554,9 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 			case Accordant_dvPackage.DEPLOYMENT__MODEL:
 				setModel((DeploymentModel)newValue);
 				return;
+			case Accordant_dvPackage.DEPLOYMENT__DV:
+				setDv((DeploymentView)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -522,6 +593,9 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 			case Accordant_dvPackage.DEPLOYMENT__MODEL:
 				setModel(MODEL_EDEFAULT);
 				return;
+			case Accordant_dvPackage.DEPLOYMENT__DV:
+				setDv((DeploymentView)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -550,6 +624,8 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 				return decision != null;
 			case Accordant_dvPackage.DEPLOYMENT__MODEL:
 				return model != MODEL_EDEFAULT;
+			case Accordant_dvPackage.DEPLOYMENT__DV:
+				return getDv() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -563,7 +639,7 @@ public class DeploymentImpl extends MinimalEObjectImpl.Container implements Depl
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", replicas: ");

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link co.edu.uniandes.accordant_dv.EnvVar#getName <em>Name</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.EnvVar#getValue <em>Value</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.EnvVar#getExecEnv <em>Exec Env</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getEnvVar()
@@ -73,5 +74,29 @@ public interface EnvVar extends EObject {
 	 * @generated
 	 */
 	void setValue(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Exec Env</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.ExecEnvironment#getVars <em>Vars</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Exec Env</em>' container reference.
+	 * @see #setExecEnv(ExecEnvironment)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getEnvVar_ExecEnv()
+	 * @see co.edu.uniandes.accordant_dv.ExecEnvironment#getVars
+	 * @model opposite="vars" required="true" transient="false"
+	 * @generated
+	 */
+	ExecEnvironment getExecEnv();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.EnvVar#getExecEnv <em>Exec Env</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Exec Env</em>' container reference.
+	 * @see #getExecEnv()
+	 * @generated
+	 */
+	void setExecEnv(ExecEnvironment value);
 
 } // EnvVar

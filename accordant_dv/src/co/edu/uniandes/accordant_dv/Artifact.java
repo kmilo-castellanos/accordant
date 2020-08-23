@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getTechnology <em>Technology</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getPaasEnv <em>Paas Env</em>}</li>
  *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getSaasEnv <em>Saas Env</em>}</li>
+ *   <li>{@link co.edu.uniandes.accordant_dv.Artifact#getDv <em>Dv</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getArtifact()
@@ -234,5 +235,29 @@ public interface Artifact extends EObject {
 	 * @generated
 	 */
 	void setSaasEnv(ServerlessEnv value);
+
+	/**
+	 * Returns the value of the '<em><b>Dv</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link co.edu.uniandes.accordant_dv.DeploymentView#getArtifacts <em>Artifacts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Dv</em>' container reference.
+	 * @see #setDv(DeploymentView)
+	 * @see co.edu.uniandes.accordant_dv.Accordant_dvPackage#getArtifact_Dv()
+	 * @see co.edu.uniandes.accordant_dv.DeploymentView#getArtifacts
+	 * @model opposite="artifacts" required="true" transient="false"
+	 * @generated
+	 */
+	DeploymentView getDv();
+
+	/**
+	 * Sets the value of the '{@link co.edu.uniandes.accordant_dv.Artifact#getDv <em>Dv</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Dv</em>' container reference.
+	 * @see #getDv()
+	 * @generated
+	 */
+	void setDv(DeploymentView value);
 
 } // Artifact
