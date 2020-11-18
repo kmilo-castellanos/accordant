@@ -12,7 +12,7 @@ public class LoadDriver {
 	public static void main(String s[]) {
 		try {
 
-			String projectName = "UC1";
+			String projectName = "ChurnEstimation";
 			String connString = "mongodb://127.0.0.1:3001/";
 			String outputPath = null;
 			if (s != null && s.length > 2) {

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<accordant_rq:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:accordant_rq="http://uniandes.accordant.requirement" name="ChurnEstimation">
+  <scenarios measure="LATENCY" maxValue="2.0" unit="SECONDS" qAttribute="PERFORMANCE" stimulus="Llegada de la solicitud" environment="Sistema en operaci&#xf3;n normal" name="LatenciaChurn" response="Probabilidad de abandono"/>
+  <scenarios measure="UPDATETIME" maxValue="1.0" unit="MINUTES" qAttribute="MODIFIABILITY" stimulus="Solicitud de actualizaci&#xf3;n del modelo predictivo" environment="Sistema en operaci&#xf3;n normal" name="ActualizacionChurn" response="Componente actualizado con la nueva versi&#xf3;n del modelo de estimaci&#xf3;n"/>
+  <tactics name="Increase_Available_Resources" qAttribute="PERFORMANCE"/>
+  <tactics name="Mantain_Multiple_Copies" qAttribute="PERFORMANCE"/>
+  <tactics name="Introduce_Concurrency" qAttribute="PERFORMANCE"/>
+  <tactics name="Increase_Computation_Efficiency" qAttribute="PERFORMANCE"/>
+  <tactics name="Reduce_Computational_Overhead" qAttribute="PERFORMANCE"/>
+  <tactics name="Manage_Event_Rate" qAttribute="PERFORMANCE"/>
+  <tactics name="Control_Frequency_of_Sampling" qAttribute="PERFORMANCE"/>
+  <tactics name="Scheduling_Policy" qAttribute="PERFORMANCE"/>
+  <tactics name="Runtime_Registration" qAttribute="MODIFIABILITY"/>
+  <analyzedQs qs="LatenciaChurn" name="A_LatenciaChurn">
+    <decisions name="D1" rationale="Aumentar los recursos de computo a trav&#xe9;s de escalamiento horizontal del componente de estimaci&#xf3;n de abandono" code="D1" appliedTactics="//@tactics.0" isSensitivityPoint="true"/>
+  </analyzedQs>
+  <analyzedQs qs="ActualizacionChurn" name="A_ActualizacionChurn">
+    <decisions name="D2" rationale="Utilizar una tecnolog&#xed;a que permita actualizar el modelo en tiempo de ejecuci&#xf3;n del componente de estimaci&#xf3;n de abandono" code="D2" appliedTactics="//@tactics.8" isSensitivityPoint="true"/>
+  </analyzedQs>
+</accordant_rq:Project>

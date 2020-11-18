@@ -51,7 +51,7 @@ class AdvlGenerator extends AbstractGenerator {
 		metadata:
 		  name: «format(serv.name)»
 		spec:
-		  type: NodePort
+		  type: «serv.type»
 		  selector:
 		     component: «format(serv.name)»
 		«IF serv.ports!==null»

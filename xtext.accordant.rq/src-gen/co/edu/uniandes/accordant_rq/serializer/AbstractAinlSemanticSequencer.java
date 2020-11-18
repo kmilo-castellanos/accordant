@@ -24,7 +24,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
-public class AinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
+public abstract class AbstractAinlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 
 	@Inject
 	private AinlGrammarAccess grammarAccess;

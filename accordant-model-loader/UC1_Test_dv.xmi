@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII"?>
+<accordant_dv:DeploymentView xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:accordant_dv="http://uniandes.accordant.deployment" name="UC1DVModel">
+  <project href="UC1_ai.xmi#UC1"/>
+  <fv href="UC1_FVModel2_fv.xmi#UC1FVModel"/>
+</accordant_dv:DeploymentView>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ASCII"?>
+<accordant_fv:FunctionalView xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:accordant_fv="http://uniandes.accordant.functional" name="ChurnEstimationFVModel">
+  <conns xsi:type="accordant_fv:Event" name="CustomerData" protocol="" props="topic:CustomerData">
+    <roles type="IN" name="CustomerData_in_CustomerHTTP" port="CustomerHTTP_prov_CustomerData"/>
+    <roles name="CustomerData_out_ChurnEstimator" port="ChurnEstimator_req_CustomerData"/>
+  </conns>
+  <conns xsi:type="accordant_fv:Event" name="Churn" protocol="" props="topic:ChurnData">
+    <roles type="IN" name="Churn_in_ChurnEstimator" port="ChurnEstimator_prov_Churn"/>
+    <roles name="Churn_out_MongoSink" port="MongoSink_req_Churn"/>
+  </conns>
+  <comps xsi:type="accordant_fv:Ingestor" name="CustomerHTTP" conn="" format="CSV" props="">
+    <ports type="PROVIDED" name="CustomerHTTP_prov_CustomerData" role="CustomerData_in_CustomerHTTP"/>
+  </comps>
+  <comps xsi:type="accordant_fv:Estimator" name="ChurnEstimator" pmml="https://s3.amazonaws.com/ccastellanos87.bda.workshop.io/data/ChurnDTree-v2.pmml.xml">
+    <ports name="ChurnEstimator_req_CustomerData" role="CustomerData_out_ChurnEstimator">
+      <fields name="VMailMessage" dtype="Integer"/>
+      <fields name="DayMins" dtype="Double" order="1"/>
+      <fields name="EveMins" dtype="Double" order="2"/>
+      <fields name="NightMins" dtype="Double" order="3"/>
+      <fields name="IntlMins" dtype="Double" order="4"/>
+      <fields name="CustServCalls" dtype="Integer" order="5"/>
+      <fields name="DayCalls" dtype="Integer" order="6"/>
+      <fields name="DayCharge" dtype="Double" order="7"/>
+      <fields name="EveCalls" dtype="Integer" order="8"/>
+      <fields name="EveCharge" dtype="Double" order="9"/>
+      <fields name="NightCalls" dtype="Integer" order="10"/>
+      <fields name="NightCharge" dtype="Double" order="11"/>
+      <fields name="IntlCalls" dtype="Integer" order="12"/>
+      <fields name="IntlCharge" dtype="Double" order="13"/>
+      <fields name="AreaCode" dtype="String" order="14"/>
+      <fields name="Phone" dtype="String" order="15"/>
+      <fields name="AccountLength" dtype="Integer" order="16"/>
+      <fields name="Churn" dtype="String" order="17"/>
+      <fields name="IntlPlan" dtype="Integer" order="18"/>
+      <fields name="VMailPlan" dtype="Integer" order="19"/>
+      <fields name="State" dtype="String" order="20"/>
+    </ports>
+    <ports type="PROVIDED" name="ChurnEstimator_prov_Churn" role="Churn_in_ChurnEstimator">
+      <fields name="VMailMessage" dtype="Integer"/>
+      <fields name="DayMins" dtype="Double" order="1"/>
+      <fields name="EveMins" dtype="Double" order="2"/>
+      <fields name="NightMins" dtype="Double" order="3"/>
+      <fields name="IntlMins" dtype="Double" order="4"/>
+      <fields name="CustServCalls" dtype="Integer" order="5"/>
+      <fields name="DayCalls" dtype="Integer" order="6"/>
+      <fields name="DayCharge" dtype="Double" order="7"/>
+      <fields name="EveCalls" dtype="Integer" order="8"/>
+      <fields name="EveCharge" dtype="Double" order="9"/>
+      <fields name="NightCalls" dtype="Integer" order="10"/>
+      <fields name="NightCharge" dtype="Double" order="11"/>
+      <fields name="IntlCalls" dtype="Integer" order="12"/>
+      <fields name="IntlCharge" dtype="Double" order="13"/>
+      <fields name="AreaCode" dtype="String" order="14"/>
+      <fields name="Phone" dtype="String" order="15"/>
+      <fields name="AccountLength" dtype="Integer" order="16"/>
+      <fields name="Churn" dtype="String" order="17"/>
+      <fields name="IntlPlan" dtype="Integer" order="18"/>
+      <fields name="VMailPlan" dtype="Integer" order="19"/>
+      <fields name="State" dtype="String" order="20"/>
+    </ports>
+    <decision href="ChurnEstimation_ai.xmi#D1"/>
+  </comps>
+  <comps xsi:type="accordant_fv:Sink" name="MongoSink" conn="mongodb://172.31.76.235:27017/churn" format="" type="DATABASE">
+    <ports name="MongoSink_req_Churn" role="Churn_out_MongoSink"/>
+  </comps>
+  <project href="ChurnEstimation_ai.xmi#ChurnEstimation"/>
+</accordant_fv:FunctionalView>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="ASCII"?>
+<accordant_fv:FunctionalView xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:accordant_fv="http://uniandes.accordant.functional" name="INSFVModel">
+  <conns xsi:type="accordant_fv:Event" name="EntradaTSeries" protocol="" props="">
+    <roles type="IN" name="EntradaTSeries_in_TSeries" port="TSeries_prov_EntradaTSeries"/>
+    <roles name="EntradaTSeries_out_ClusterEstimator" port="ClusterEstimator_req_EntradaTSeries"/>
+  </conns>
+  <conns xsi:type="accordant_fv:Event" name="EstSalida" protocol="" props="">
+    <roles type="IN" name="EstSalida_in_ClusterEstimator" port="ClusterEstimator_prov_EstSalida"/>
+    <roles name="EstSalida_out_MongoSink" port="MongoSink_req_EstSalida"/>
+  </conns>
+  <comps xsi:type="accordant_fv:Ingestor" name="TSeries" conn="file:////Volumes/MacHD2/Desarrollo/Caoba-INS/SeriesDeTiempo2018.csv" format="csv" props="" type="FILESYSTEM">
+    <ports type="PROVIDED" name="TSeries_prov_EntradaTSeries" role="EntradaTSeries_in_TSeries"/>
+  </comps>
+  <comps xsi:type="accordant_fv:Estimator" name="ClusterEstimator" pmml="file:////Volumes/MacHD2/Desarrollo/Caoba-INS/modelo_clust_sem.pmml">
+    <ports type="PROVIDED" name="ClusterEstimator_prov_EstSalida" role="EstSalida_in_ClusterEstimator">
+      <fields name="X100" dtype="Double"/>
+      <fields name="X110" dtype="Double" order="1"/>
+      <fields name="X112" dtype="Double" order="2"/>
+      <fields name="X113" dtype="Double" order="3"/>
+      <fields name="X155" dtype="Double" order="4"/>
+      <fields name="X205" dtype="Double" order="5"/>
+      <fields name="X210" dtype="Double" order="6"/>
+      <fields name="X217" dtype="Double" order="7"/>
+      <fields name="X220" dtype="Double" order="8"/>
+      <fields name="X228" dtype="Double" order="9"/>
+      <fields name="X230" dtype="Double" order="10"/>
+      <fields name="X298" dtype="Double" order="11"/>
+      <fields name="X300" dtype="Double" order="12"/>
+      <fields name="X305" dtype="Double" order="13"/>
+      <fields name="X310" dtype="Double" order="14"/>
+      <fields name="X320" dtype="Double" order="15"/>
+      <fields name="X330" dtype="Double" order="16"/>
+      <fields name="X340" dtype="Double" order="17"/>
+      <fields name="X341" dtype="Double" order="18"/>
+      <fields name="X343" dtype="Double" order="19"/>
+      <fields name="X345" dtype="Double" order="20"/>
+      <fields name="X348" dtype="Double" order="21"/>
+      <fields name="X356" dtype="Double" order="22"/>
+      <fields name="X360" dtype="Double" order="23"/>
+      <fields name="X370" dtype="Double" order="24"/>
+      <fields name="X380" dtype="Double" order="25"/>
+      <fields name="X390" dtype="Double" order="26"/>
+      <fields name="X400" dtype="Double" order="27"/>
+      <fields name="X410" dtype="Double" order="28"/>
+      <fields name="X412" dtype="Double" order="29"/>
+      <fields name="X414" dtype="Double" order="30"/>
+      <fields name="X420" dtype="Double" order="31"/>
+      <fields name="X430" dtype="Double" order="32"/>
+      <fields name="X440" dtype="Double" order="33"/>
+      <fields name="X450" dtype="Double" order="34"/>
+      <fields name="X452" dtype="Double" order="35"/>
+      <fields name="X455" dtype="Double" order="36"/>
+      <fields name="X456" dtype="Double" order="37"/>
+      <fields name="X457" dtype="Double" order="38"/>
+      <fields name="X459" dtype="Double" order="39"/>
+      <fields name="X460" dtype="Double" order="40"/>
+      <fields name="X470" dtype="Double" order="41"/>
+      <fields name="X490" dtype="Double" order="42"/>
+      <fields name="X495" dtype="Double" order="43"/>
+      <fields name="X500" dtype="Double" order="44"/>
+      <fields name="X510" dtype="Double" order="45"/>
+      <fields name="X520" dtype="Double" order="46"/>
+      <fields name="X530" dtype="Double" order="47"/>
+      <fields name="X540" dtype="Double" order="48"/>
+      <fields name="X549" dtype="Double" order="49"/>
+      <fields name="X550" dtype="Double" order="50"/>
+      <fields name="X560" dtype="Double" order="51"/>
+      <fields name="X580" dtype="Double" order="52"/>
+      <fields name="X590" dtype="Double" order="53"/>
+      <fields name="X600" dtype="Double" order="54"/>
+      <fields name="X610" dtype="Double" order="55"/>
+      <fields name="X620" dtype="Double" order="56"/>
+      <fields name="X730" dtype="Double" order="57"/>
+      <fields name="X735" dtype="Double" order="58"/>
+      <fields name="X740" dtype="Double" order="59"/>
+      <fields name="X750" dtype="Double" order="60"/>
+      <fields name="X760" dtype="Double" order="61"/>
+      <fields name="X770" dtype="Double" order="62"/>
+      <fields name="X800" dtype="Double" order="63"/>
+      <fields name="X810" dtype="Double" order="64"/>
+      <fields name="X820" dtype="Double" order="65"/>
+      <fields name="X825" dtype="Double" order="66"/>
+      <fields name="X831" dtype="Double" order="67"/>
+      <fields name="X850" dtype="Double" order="68"/>
+      <fields name="X875" dtype="Double" order="69"/>
+      <fields name="X895" dtype="Double" order="70"/>
+    </ports>
+    <ports name="ClusterEstimator_req_EntradaTSeries" role="EntradaTSeries_out_ClusterEstimator">
+      <fields name="X100" dtype="Double"/>
+      <fields name="X110" dtype="Double" order="1"/>
+      <fields name="X112" dtype="Double" order="2"/>
+      <fields name="X113" dtype="Double" order="3"/>
+      <fields name="X155" dtype="Double" order="4"/>
+      <fields name="X205" dtype="Double" order="5"/>
+      <fields name="X210" dtype="Double" order="6"/>
+      <fields name="X217" dtype="Double" order="7"/>
+      <fields name="X220" dtype="Double" order="8"/>
+      <fields name="X228" dtype="Double" order="9"/>
+      <fields name="X230" dtype="Double" order="10"/>
+      <fields name="X298" dtype="Double" order="11"/>
+      <fields name="X300" dtype="Double" order="12"/>
+      <fields name="X305" dtype="Double" order="13"/>
+      <fields name="X310" dtype="Double" order="14"/>
+      <fields name="X320" dtype="Double" order="15"/>
+      <fields name="X330" dtype="Double" order="16"/>
+      <fields name="X340" dtype="Double" order="17"/>
+      <fields name="X341" dtype="Double" order="18"/>
+      <fields name="X343" dtype="Double" order="19"/>
+      <fields name="X345" dtype="Double" order="20"/>
+      <fields name="X348" dtype="Double" order="21"/>
+      <fields name="X356" dtype="Double" order="22"/>
+      <fields name="X360" dtype="Double" order="23"/>
+      <fields name="X370" dtype="Double" order="24"/>
+      <fields name="X380" dtype="Double" order="25"/>
+      <fields name="X390" dtype="Double" order="26"/>
+      <fields name="X400" dtype="Double" order="27"/>
+      <fields name="X410" dtype="Double" order="28"/>
+      <fields name="X412" dtype="Double" order="29"/>
+      <fields name="X414" dtype="Double" order="30"/>
+      <fields name="X420" dtype="Double" order="31"/>
+      <fields name="X430" dtype="Double" order="32"/>
+      <fields name="X440" dtype="Double" order="33"/>
+      <fields name="X450" dtype="Double" order="34"/>
+      <fields name="X452" dtype="Double" order="35"/>
+      <fields name="X455" dtype="Double" order="36"/>
+      <fields name="X456" dtype="Double" order="37"/>
+      <fields name="X457" dtype="Double" order="38"/>
+      <fields name="X459" dtype="Double" order="39"/>
+      <fields name="X460" dtype="Double" order="40"/>
+      <fields name="X470" dtype="Double" order="41"/>
+      <fields name="X490" dtype="Double" order="42"/>
+      <fields name="X495" dtype="Double" order="43"/>
+      <fields name="X500" dtype="Double" order="44"/>
+      <fields name="X510" dtype="Double" order="45"/>
+      <fields name="X520" dtype="Double" order="46"/>
+      <fields name="X530" dtype="Double" order="47"/>
+      <fields name="X540" dtype="Double" order="48"/>
+      <fields name="X549" dtype="Double" order="49"/>
+      <fields name="X550" dtype="Double" order="50"/>
+      <fields name="X560" dtype="Double" order="51"/>
+      <fields name="X580" dtype="Double" order="52"/>
+      <fields name="X590" dtype="Double" order="53"/>
+      <fields name="X600" dtype="Double" order="54"/>
+      <fields name="X610" dtype="Double" order="55"/>
+      <fields name="X620" dtype="Double" order="56"/>
+      <fields name="X730" dtype="Double" order="57"/>
+      <fields name="X735" dtype="Double" order="58"/>
+      <fields name="X740" dtype="Double" order="59"/>
+      <fields name="X750" dtype="Double" order="60"/>
+      <fields name="X760" dtype="Double" order="61"/>
+      <fields name="X770" dtype="Double" order="62"/>
+      <fields name="X800" dtype="Double" order="63"/>
+      <fields name="X810" dtype="Double" order="64"/>
+      <fields name="X820" dtype="Double" order="65"/>
+      <fields name="X825" dtype="Double" order="66"/>
+      <fields name="X831" dtype="Double" order="67"/>
+      <fields name="X850" dtype="Double" order="68"/>
+      <fields name="X875" dtype="Double" order="69"/>
+      <fields name="X895" dtype="Double" order="70"/>
+    </ports>
+    <decision href="INS_ai.xmi#Dec1"/>
+  </comps>
+  <comps xsi:type="accordant_fv:Sink" name="MongoSink" conn="mongodb:127.0.0.1:3001" format="" type="DATABASE">
+    <ports name="MongoSink_req_EstSalida" role="EstSalida_out_MongoSink"/>
+  </comps>
+  <project href="INS_ai.xmi#INS"/>
+</accordant_fv:FunctionalView>

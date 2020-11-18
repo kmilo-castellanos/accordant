@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<accordant_rq:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:accordant_rq="http://uniandes.accordant.requirement" name="INS">
+  <scenarios measure="LATENCY" minValue="50.0" maxValue="500.0" qAttribute="PERFORMANCE" stimulus="Llegada de una petici&#xf3;n de estimacion de cluster para una serie de tiempo de una enfermedad" environment="Sistema en operaci&#xf3;n normal" name="QS1" response="Cluster asignado"/>
+  <scenarios measure="UPDATETIME" minValue="2.0" maxValue="4.0" unit="MINUTES" qAttribute="MODIFIABILITY" stimulus="Llegada de una peticion de actualizaci&#xf3;n del modelo de estimacion" environment="Operaci&#xf3;n normal" name="QS2" response="Componente actualizado con la nueva version"/>
+  <tactics name="Increase_Available_Resources" qAttribute="PERFORMANCE"/>
+  <tactics name="Mantain_Multiple_Copies" qAttribute="PERFORMANCE"/>
+  <tactics name="Introduce_Concurrency" qAttribute="PERFORMANCE"/>
+  <tactics name="Increase_Computation_Efficiency" qAttribute="PERFORMANCE"/>
+  <tactics name="Reduce_Computational_Overhead" qAttribute="PERFORMANCE"/>
+  <tactics name="Manage_Event_Rate" qAttribute="PERFORMANCE"/>
+  <tactics name="Control_Frequency_of_Sampling" qAttribute="PERFORMANCE"/>
+  <tactics name="Scheduling_Policy" qAttribute="PERFORMANCE"/>
+  <tactics name="Runtime_Registration" qAttribute="MODIFIABILITY"/>
+  <analyzedQs qs="QS1" name="A_QS1">
+    <decisions name="Dec1" rationale="Desplegar dos instancias del componente de estimacion de cluster para incrementar los recursos y reducir la latencia" code="Dec1" appliedTactics="//@tactics.0" isSensitivityPoint="true"/>
+  </analyzedQs>
+  <analyzedQs qs="QS2" name="A_QS2">
+    <decisions name="Dec2" rationale="Permitir actualizar el modelo en tiempo de ejecucion" code="Dec2" appliedTactics="//@tactics.8" isSensitivityPoint="true"/>
+  </analyzedQs>
+</accordant_rq:Project>

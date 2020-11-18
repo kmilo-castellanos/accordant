@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ASCII"?>
+<accordant_dv:DeploymentView
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:accordant_dv="http://uniandes.accordant.deployment"
+    xmlns:accordant_fv="http://uniandes.accordant.functional"
+    name="ChurnEstimationDVModel">
+  <devs host="A"
+      cpu="300"
+      mem="500"
+      name="DevA"
+      pods="Pod_Deployment2 Pod_Deployment1 Pod_Deployment3"/>
+  <deployments
+      name="Deployment2"
+      replicas="2"
+      maxSurge="10"
+      maxUnavail="10"
+      strategy="">
+    <pods name="Pod_Deployment2"
+        node="DevA"
+        service="//@services.0">
+      <envs
+          name="OpenScoringEnv"
+          cpu_req="50.0"
+          image="jpmml/openscoring:1.2.2"
+          PaasArts="ChurnEstimator"/>
+    </pods>
+  </deployments>
+  <deployments
+      name="Deployment1"
+      replicas="1"
+      strategy="">
+    <pods name="Pod_Deployment1"
+        node="DevA"
+        service="//@services.1">
+      <envs
+          name="JVMEnv"
+          image="openjdk:7"
+          PaasArts="CustHttp MongoSink"/>
+    </pods>
+  </deployments>
+  <deployments
+      name="Deployment3"
+      replicas="1"
+      maxSurge="10"
+      maxUnavail="10"
+      strategy="">
+    <pods name="Pod_Deployment3"
+        node="DevA">
+      <envs
+          name="kafkaEnv"
+          cpu_req="50.0"
+          image="wurstmeister/kafka"
+          PaasArts="InEvent OutEvent"/>
+    </pods>
+  </deployments>
+  <services
+      name="ChurnService"
+      type="NodePort"
+      pod="Pod_Deployment2">
+    <ports name="TCP_8090"
+        protocol="TCP"
+        target="30090"
+        port="8090"/>
+  </services>
+  <services
+      name="CustDataService"
+      type="NodePort"
+      pod="Pod_Deployment1">
+    <ports name="TCP_8080"
+        protocol="TCP"
+        target="30080"
+        port="8080"/>
+  </services>
+  <artifacts
+      name="ChurnEstimator"
+      technology="OpenScoring"
+      paasEnv="OpenScoringEnv">
+    <comp xsi:type="accordant_fv:Estimator"
+        href="ChurnEstimation_Churn-FV_fv.xmi#ChurnEstimator"/>
+  </artifacts>
+  <artifacts
+      name="CustHttp"
+      technology="Java"
+      paasEnv="JVMEnv"/>
+  <artifacts
+      name="MongoSink"
+      technology="Java"
+      paasEnv="JVMEnv"/>
+  <artifacts
+      name="InEvent"
+      technology="Kafka"
+      paasEnv="kafkaEnv"/>
+  <artifacts
+      name="OutEvent"
+      technology="Kafka"
+      paasEnv="kafkaEnv"/>
+  <project href="ChurnEstimation_ai.xmi#ChurnEstimation"/>
+  <fv href="ChurnEstimation_Churn-FV_fv.xmi#ChurnEstimationFVModel"/>
+</accordant_dv:DeploymentView>

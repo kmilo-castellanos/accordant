@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<accordant_dv:DeploymentView xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:accordant_dv="http://uniandes.accordant.deployment" xmlns:accordant_fv="http://uniandes.accordant.functional" name="UC1DVModel">
+  <devs host="" name="Device" os="" pods="Pod_Dep1"/>
+  <deployments name="Dep1" replicas="3" maxSurge="10" maxUnavail="10" strategy="">
+    <pods name="Pod_Dep1" node="Device" service="//@services.0">
+      <envs name="ExcEnv" image="" PaasArts="Artifact"/>
+    </pods>
+    <decision href="UC1_ai.xmi#Dec1"/>
+  </deployments>
+  <services name="Service" type="" pod="Pod_Dep1"/>
+  <artifacts name="Artifact" technology="" paasEnv="ExcEnv">
+    <comp xsi:type="accordant_fv:Ingestor" href="UC1_FVModel2_fv.xmi#Ingestor"/>
+  </artifacts>
+  <project href="UC1_ai.xmi#UC1"/>
+  <fv href="UC1_FVModel2_fv.xmi#UC1FVModel"/>
+</accordant_dv:DeploymentView>

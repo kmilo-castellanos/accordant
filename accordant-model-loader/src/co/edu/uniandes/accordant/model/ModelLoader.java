@@ -6,17 +6,30 @@ import java.util.List;
 import java.util.Map;
 
 import org.bson.Document;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreEList;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.xtext.resource.IResourceServiceProvider;
+import org.eclipse.xtext.ui.resource.IResourceSetProvider;
+import org.eclipse.xtext.ui.resource.XtextResourceSetProvider;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import co.edu.uniandes.accordant.db.mongo.MongoConnection;
+import co.edu.uniandes.accordant_dv.Accordant_dvFactory;
+import co.edu.uniandes.accordant_dv.Artifact;
+import co.edu.uniandes.accordant_dv.Deployment;
+import co.edu.uniandes.accordant_dv.DeploymentView;
+import co.edu.uniandes.accordant_dv.Device;
+import co.edu.uniandes.accordant_dv.EnvVar;
+import co.edu.uniandes.accordant_dv.ExecEnvironment;
+import co.edu.uniandes.accordant_dv.ExposedPort;
+import co.edu.uniandes.accordant_dv.Pod;
+import co.edu.uniandes.accordant_dv.Service;
 import co.edu.uniandes.accordant_fv.Accordant_fvFactory;
 import co.edu.uniandes.accordant_fv.AnalyticsComponent;
 import co.edu.uniandes.accordant_fv.Component;
@@ -34,17 +47,8 @@ import co.edu.uniandes.accordant_fv.RoleType;
 import co.edu.uniandes.accordant_fv.Sink;
 import co.edu.uniandes.accordant_fv.Stream;
 import co.edu.uniandes.accordant_fv.Transformer;
-import co.edu.uniandes.accordant_dv.Accordant_dvFactory;
-import co.edu.uniandes.accordant_dv.Artifact;
-import co.edu.uniandes.accordant_dv.Deployment;
-import co.edu.uniandes.accordant_dv.ExecEnvironment;
-import co.edu.uniandes.accordant_dv.ExposedPort;
-import co.edu.uniandes.accordant_dv.DeploymentView;
-import co.edu.uniandes.accordant_dv.Device;
-import co.edu.uniandes.accordant_dv.EnvVar;
-import co.edu.uniandes.accordant_dv.Pod;
-import co.edu.uniandes.accordant_dv.Service;
 import co.edu.uniandes.accordant_rq.Accordant_rqFactory;
+import co.edu.uniandes.accordant_rq.AinlStandaloneSetupGenerated;
 import co.edu.uniandes.accordant_rq.AnalyzedQS;
 import co.edu.uniandes.accordant_rq.ArchDecision;
 import co.edu.uniandes.accordant_rq.Constraint;
@@ -159,7 +163,13 @@ public class ModelLoader {
 							}
 						}
 					}
+					
+					
+					
 					storeModel(resource);
+					
+					//serialize(project);
+
 
 					List<Document> models = conn.getModels(projectName);
 					System.out.println("Models: " + String.valueOf(models.size()));
@@ -257,8 +267,8 @@ public class ModelLoader {
 							Element objectElement = (Element) oNode;
 							String eclass = objectElement.getAttribute("class");
 							String id = objectElement.getAttribute("id");
-							// String name = objectElement.getAttribute("name");
-							// System.out.println("element: " + eclass + ", " + id + ", " + name);
+							String name = objectElement.getAttribute("name");
+							System.out.println("element: " + eclass + ", " + id + ", " + name);
 							if (eclass != null) {
 								if (eclass.equals(ModelLoader.INGESTOR) || eclass.equals(ModelLoader.SINK)
 										|| eclass.equals(ModelLoader.TRANSFORMER)
@@ -276,6 +286,7 @@ public class ModelLoader {
 									comp.setFuncView(fv);
 									compMap.put(id, comp);
 									compNameMap.put(comp.getName(), comp);
+									System.out.println("Comp:"+id+","+comp.getName());
 									if (objectElement.getAttribute("decisionCode") != null) {
 										ArchDecision dec = decisionsMap.get(objectElement.getAttribute("decisionCode"));
 										if (dec != null) {
@@ -285,6 +296,7 @@ public class ModelLoader {
 								} else if (eclass.equals(ModelLoader.EVENT) || eclass.equals(ModelLoader.PROCALL)
 										|| eclass.equals(ModelLoader.STREAM)) {
 									// Connnectors
+									System.out.println("connectors");
 									if (eclass.equals(ModelLoader.EVENT)) {
 										conn = createEvent(objectElement);
 									} else if (eclass.equals(ModelLoader.PROCALL)) {
@@ -295,14 +307,27 @@ public class ModelLoader {
 									fv.getConns().add(conn);
 									connMap.put(id, conn);
 									connNameMap.put(conn.getName(), conn);
-
+									System.out.println("Conn:"+id+","+conn.getName());
 									if (objectElement.getAttribute("decisionCode") != null) {
 										ArchDecision dec = decisionsMap.get(objectElement.getAttribute("decisionCode"));
 										if (dec != null) {
 											conn.setDecision(dec);
 										}
 									}
-								} else if (eclass.equals(ModelLoader.PORT)) {
+								}
+							}
+						}
+					}
+					for (int i = 0; i < objectNodes.getLength(); i++) {
+						Node oNode = objectNodes.item(i);
+						if (oNode.getNodeType() == Node.ELEMENT_NODE) {
+							Element objectElement = (Element) oNode;
+							String eclass = objectElement.getAttribute("class");
+							String id = objectElement.getAttribute("id");
+							String name = objectElement.getAttribute("name");
+							System.out.println("element: " + eclass + ", " + id + ", " + name);
+							if (eclass != null) {
+								if (eclass.equals(ModelLoader.PORT)) {
 									// Ports and Roles
 									// NodeList mxCells = objectElement.getElementsByTagName("mxCell");
 									processEdge(objectElement, connMap, compMap);
@@ -694,6 +719,9 @@ public class ModelLoader {
 		} else if (compMap.containsKey(source)) {
 			comp = compMap.get(source);
 			conn = connMap.get(target);
+			System.out.println("source: "+source+"->"+comp);
+			System.out.println("target: "+target+"->"+conn);
+			//System.out.println("edgeCell: "+edgeCell.getAttribute("parent"));
 			port = createPort(Util.formatName(comp.getName()) + "_prov_" + Util.formatName(conn.getName()), true);
 			role = createRole(Util.formatName(conn.getName()) + "_in_" + Util.formatName(comp.getName()), true);
 		}
@@ -846,6 +874,20 @@ public class ModelLoader {
 
 	public void setOutputPath(String outputPath) {
 		this.outputPath = outputPath;
+	}
+	
+	private void serialize(Project p) {
+		URI resourceUri = URI.createURI("test.ail");
+
+		XtextResourceSetProvider resourceProvider = (XtextResourceSetProvider) IResourceServiceProvider.Registry.INSTANCE
+				.getResourceServiceProvider(resourceUri).get(IResourceSetProvider.class);
+		//resourceSet = resourceProvider.get(ResourcesPlugin.getWorkspace().getRoot().getProject(""));
+		//validXtextResource = (XtextResource) resourceSet.createResource(resourceUri);
+		
+		AinlStandaloneSetupGenerated setup= new AinlStandaloneSetupGenerated();
+		com.google.inject.Injector injector = setup.createInjectorAndDoEMFRegistration();  
+		org.eclipse.xtext.serializer.impl.Serializer serializer = injector.getInstance(org.eclipse.xtext.serializer.impl.Serializer.class);  
+		String s = serializer.serialize(p);  
 	}
 
 }
