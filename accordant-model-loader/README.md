@@ -15,4 +15,4 @@ Where <project_name> corresponds to the project name in ArchiAndes to be importe
 
 To use the code generators for functional or deployment view, run:
 
-co.edu.uniandes.accordant.codegenerator.FVCodeGenerator or DVCodeGenerator specifying the input xmi models.
+*co.edu.uniandes.accordant.codegenerator.FVCodeGenerator* or *DVCodeGenerator* specifying the input xmi models and the output path.

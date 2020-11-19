@@ -1,7 +1,7 @@
 # ACCORDANT's Repository
 This repository comprises eclipse (modeling) projects of ACCORDANT framework. The ACCORDANT is based on a domain-specific modeling approach to design big data analytics (BDA) applications based on architectural inputs, functional, and deployment views. The seven stepts of ACCORDANT process are described below. For more information, please visit the [ACCORDANT Site](https://sistemasproyectos.uniandes.edu.co/iniciativas/architlab/research/big-data-analytics/). A repository with use cases implemented with ACCORDANT can be found in [ACCORDANT-usecases](https://github.com/kmilo-castellanos/accordant-usecases).
 
-![ACCORDANT Process](http://sistemasproyectos.uniandes.edu.co/iniciativas/architlab/wp-content/uploads/sites/7/2019/11/process.png)
+![ACCORDANT Process](https://github.com/kmilo-castellanos/accordant/raw/master/process.png?raw=true)
 
 These projects are developed and tested using Eclipse Modeling Tools ([Eclipse IDE 2019-06](https://www.eclipse.org/downloads/packages/release/2019-06/r)). Xtext and OCL eclipse plugins must also be installed.
 
@@ -36,4 +36,4 @@ Deployment View DSL
 
 
 ArchiAndes to Accordant Importer
-* accordant-model-loader:: Java project to import Inputs and Draw.io Models stored in [ArchiAndes](https://github.com/kmilo-castellanos/ArchInputs).
+* accordant-model-loader:: Java project to import Inputs and Draw.io Models stored in [ArchiAndes](https://github.com/kmilo-castellanos/ArchInputs) and execute code generators.
