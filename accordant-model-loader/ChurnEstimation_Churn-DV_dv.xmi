@@ -82,12 +82,18 @@
   </artifacts>
   <artifacts
       name="CustHttp"
-      technology="Java"
-      paasEnv="JVMEnv"/>
+      technology="HttpKafka"
+      paasEnv="JVMEnv">
+    <comp xsi:type="accordant_fv:Ingestor"
+        href="ChurnEstimation_Churn-FV_fv.xmi#CustomerHTTP"/>
+  </artifacts>
   <artifacts
       name="MongoSink"
-      technology="Java"
-      paasEnv="JVMEnv"/>
+      technology="MongoDB"
+      paasEnv="JVMEnv">
+    <comp xsi:type="accordant_fv:Sink"
+        href="ChurnEstimation_Churn-FV_fv.xmi#MongoSink"/>
+  </artifacts>
   <artifacts
       name="InEvent"
       technology="Kafka"
