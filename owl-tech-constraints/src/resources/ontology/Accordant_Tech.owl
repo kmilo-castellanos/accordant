@@ -12,8 +12,6 @@
         <owl:imports rdf:resource="http://www.khaos.uma.es/perception/bigowl"/>
     </owl:Ontology>
     
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
