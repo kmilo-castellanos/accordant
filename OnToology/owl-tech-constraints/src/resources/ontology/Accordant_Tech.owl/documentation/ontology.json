@@ -1,0 +1,503 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "http://www.uniandes.edu.co/accordant/technology#Adaptor"
+    }, {
+      "@id" : "http://www.uniandes.edu.co/accordant/technology#EventConnector"
+    }, {
+      "@id" : "http://www.uniandes.edu.co/accordant/technology#ProcedureCall"
+    }, {
+      "@id" : "http://www.uniandes.edu.co/accordant/technology#StreamConnector"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid6",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "http://www.uniandes.edu.co/accordant/technology#Copyleft"
+    }, {
+      "@id" : "http://www.uniandes.edu.co/accordant/technology#LGPL"
+    }, {
+      "@id" : "http://www.uniandes.edu.co/accordant/technology#Permissive"
+    }, {
+      "@id" : "http://www.uniandes.edu.co/accordant/technology#Public_Domain"
+    } ]
+  } ]
+}, {
+  "@id" : "http://www.khaos.uma.es/perception/bigowl#Algorithm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.khaos.uma.es/perception/bigowl#DataAnalysing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.khaos.uma.es/perception/bigowl#DataCollection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.khaos.uma.es/perception/bigowl#DataMining",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.khaos.uma.es/perception/bigowl#DataProcessing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.khaos.uma.es/perception/bigowl#DataSink",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.khaos.uma.es/perception/bigowl#Integer",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.khaos.uma.es/perception/bigowl#DataSink" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "http://www.khaos.uma.es/perception/bigowl"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#AGPL",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#Copyleft" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Adaptor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Connector"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Apache",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#Permissive" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#At_Least_Once",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#DeliveryGuarantee" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#At_Most_Once",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#DeliveryGuarantee" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#BSD",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#Permissive" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Batch",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#ProcessingModel" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#BestEffort",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#DeliveryGuarantee" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#CC0",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#Public_Domain" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Connector",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Connector"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Copyleft",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Non-Proprietary"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Creative_Commons",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#Public_Domain" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#DeliveryGuarantee",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#TechFeature"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#ProcessingModel"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#EventConnector",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Event"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Connector"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Exactly_Once",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#DeliveryGuarantee" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Flink",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#Technology" ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechFeature" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Batch"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Exactly_Once"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Stream"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechLicense" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Apache"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#techCompatibleWith" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Kafka"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Flume",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.khaos.uma.es/perception/bigowl#DataCollection", "http://www.khaos.uma.es/perception/bigowl#DataSink", "http://www.uniandes.edu.co/accordant/technology#Technology" ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechFeature" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#At_Least_Once"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Batch"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Microbatch"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Stream"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechLicense" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Apache"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#techCompatibleWith" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Kafka"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#GPL",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#Copyleft" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Hadoop",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.khaos.uma.es/perception/bigowl#DataProcessing", "http://www.uniandes.edu.co/accordant/technology#Technology" ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechFeature" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Batch"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechLicense" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Apache"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#techCompatibleWith" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Kafka"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Spark"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Sqoop"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Hive",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.khaos.uma.es/perception/bigowl#DataCollection", "http://www.khaos.uma.es/perception/bigowl#DataSink", "http://www.uniandes.edu.co/accordant/technology#Technology" ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechFeature" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Batch"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechLicense" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Apache"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#techCompatibleWith" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Hadoop"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Spark"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Hive_Streaming",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#Technology" ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechFeature" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#At_Least_Once"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Microbatch"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Stream"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechLicense" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Apache"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#techCompatibleWith" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Flume"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Spark"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Storm"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#KMeans",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.khaos.uma.es/perception/bigowl#Algorithm" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Kafka",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#EventConnector", "http://www.uniandes.edu.co/accordant/technology#Technology" ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechFeature" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#At_Least_Once"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#At_Most_Once"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Exactly_Once"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Microbatch"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Stream"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechLicense" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Apache"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#techCompatibleWith" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Flink"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Samza"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Spark"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Storm"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#LGPL",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#LGPL" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Non-Proprietary"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#License",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#MIT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#Permissive" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Microbatch",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#ProcessingModel" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#MongoSpark",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.khaos.uma.es/perception/bigowl#DataCollection", "http://www.khaos.uma.es/perception/bigowl#DataSink", "http://www.uniandes.edu.co/accordant/technology#Technology" ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechFeature" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Batch"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Microbatch"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechLicense" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Apache"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#techCompatibleWith" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Spark"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Mozilla",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#LGPL" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Non-Proprietary",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#License"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Proprietary"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Openscoring",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.khaos.uma.es/perception/bigowl#DataAnalysing", "http://www.uniandes.edu.co/accordant/technology#Technology" ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechFeature" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#At_Most_Once"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Batch"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Microbatch"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechLicense" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#AGPL"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#PMMLEstimator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.khaos.uma.es/perception/bigowl#DataMining"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Permissive",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Non-Proprietary"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#ProcedureCall",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Connector"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#ProcessingModel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#TechFeature"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Proprietary",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#License"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Public_Domain",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Non-Proprietary"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#RabbitMQ",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#EventConnector", "http://www.uniandes.edu.co/accordant/technology#Technology" ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechFeature" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#At_Least_Once"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#At_Most_Once"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Microbatch"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Stream"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechLicense" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Mozilla"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Samza",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#Technology" ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechFeature" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#At_Least_Once"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Batch"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Stream"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechLicense" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Apache"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#techCompatibleWith" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Kafka"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#ScikitLearn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.khaos.uma.es/perception/bigowl#DataAnalysing", "http://www.uniandes.edu.co/accordant/technology#Technology" ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechFeature" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Batch"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Microbatch"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechLicense" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#BSD"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#supportAlg" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Spectral_Clustering"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Spark",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.khaos.uma.es/perception/bigowl#DataAnalysing", "http://www.khaos.uma.es/perception/bigowl#DataProcessing", "http://www.uniandes.edu.co/accordant/technology#Technology" ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechFeature" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#At_Least_Once"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Batch"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Exactly_Once"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Microbatch"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechLicense" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Apache"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#techCompatibleWith" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Kafka"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Spectral_Clustering",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.khaos.uma.es/perception/bigowl#Algorithm" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Sqoop",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.khaos.uma.es/perception/bigowl#DataCollection", "http://www.khaos.uma.es/perception/bigowl#DataSink", "http://www.uniandes.edu.co/accordant/technology#Technology" ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechFeature" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Batch"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechLicense" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Apache"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#techCompatibleWith" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Hadoop"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Storm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.khaos.uma.es/perception/bigowl#DataProcessing", "http://www.uniandes.edu.co/accordant/technology#Technology" ],
+  "http://www.uniandes.edu.co/accordant/technology#hasTechFeature" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#At_Least_Once"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#At_Most_Once"
+  }, {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Stream"
+  } ],
+  "http://www.uniandes.edu.co/accordant/technology#techCompatibleWith" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Kafka"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Stream",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.uniandes.edu.co/accordant/technology#ProcessingModel" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#StreamConnector",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Stream"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Connector"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#TechFeature",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Technology",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#Vendor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#hasTechFeature",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Technology"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#TechFeature"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#hasTechLicense",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Technology"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#License"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#hasTechVendor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Technology"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Vendor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#morePermisive",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Non-Proprietary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Non-Proprietary"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#supportAlg",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Technology"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.khaos.uma.es/perception/bigowl#Algorithm"
+  } ]
+}, {
+  "@id" : "http://www.uniandes.edu.co/accordant/technology#techCompatibleWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Technology"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.uniandes.edu.co/accordant/technology#Technology"
+  } ]
+} ]
