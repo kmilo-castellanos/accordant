@@ -1,0 +1,734 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.uniandes.edu.co/accordant/technology#"
+     xml:base="http://www.uniandes.edu.co/accordant/technology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:technology="http://www.uniandes.edu.co/accordant/technology#">
+    <owl:Ontology rdf:about="http://www.uniandes.edu.co/accordant/technology">
+        <owl:imports rdf:resource="http://www.khaos.uma.es/perception/bigowl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#hasTechFeature -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.uniandes.edu.co/accordant/technology#hasTechFeature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <rdfs:range rdf:resource="http://www.uniandes.edu.co/accordant/technology#TechFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#hasTechLicense -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.uniandes.edu.co/accordant/technology#hasTechLicense">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <rdfs:range rdf:resource="http://www.uniandes.edu.co/accordant/technology#License"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#hasTechVendor -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.uniandes.edu.co/accordant/technology#hasTechVendor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <rdfs:range rdf:resource="http://www.uniandes.edu.co/accordant/technology#Vendor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#morePermisive -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.uniandes.edu.co/accordant/technology#morePermisive">
+        <rdfs:domain rdf:resource="http://www.uniandes.edu.co/accordant/technology#Non-Proprietary"/>
+        <rdfs:range rdf:resource="http://www.uniandes.edu.co/accordant/technology#Non-Proprietary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#supportAlg -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.uniandes.edu.co/accordant/technology#supportAlg">
+        <rdfs:domain rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <rdfs:range rdf:resource="http://www.khaos.uma.es/perception/bigowl#Algorithm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#techCompatibleWith -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.uniandes.edu.co/accordant/technology#techCompatibleWith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <rdfs:range rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.khaos.uma.es/perception/bigowl#Algorithm -->
+
+
+    <owl:Class rdf:about="http://www.khaos.uma.es/perception/bigowl#Algorithm"/>
+    
+
+
+    <!-- http://www.khaos.uma.es/perception/bigowl#DataAnalysing -->
+
+
+    <owl:Class rdf:about="http://www.khaos.uma.es/perception/bigowl#DataAnalysing"/>
+    
+
+
+    <!-- http://www.khaos.uma.es/perception/bigowl#DataCollection -->
+
+
+    <owl:Class rdf:about="http://www.khaos.uma.es/perception/bigowl#DataCollection"/>
+    
+
+
+    <!-- http://www.khaos.uma.es/perception/bigowl#DataMining -->
+
+
+    <owl:Class rdf:about="http://www.khaos.uma.es/perception/bigowl#DataMining"/>
+    
+
+
+    <!-- http://www.khaos.uma.es/perception/bigowl#DataProcessing -->
+
+
+    <owl:Class rdf:about="http://www.khaos.uma.es/perception/bigowl#DataProcessing"/>
+    
+
+
+    <!-- http://www.khaos.uma.es/perception/bigowl#DataSink -->
+
+
+    <owl:Class rdf:about="http://www.khaos.uma.es/perception/bigowl#DataSink"/>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Adaptor -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#Adaptor">
+        <rdfs:subClassOf rdf:resource="http://www.uniandes.edu.co/accordant/technology#Connector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Connector -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#Connector">
+        <rdfs:label>Connector</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Copyleft -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#Copyleft">
+        <rdfs:subClassOf rdf:resource="http://www.uniandes.edu.co/accordant/technology#Non-Proprietary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#DeliveryGuarantee -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#DeliveryGuarantee">
+        <rdfs:subClassOf rdf:resource="http://www.uniandes.edu.co/accordant/technology#TechFeature"/>
+        <owl:disjointWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#ProcessingModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#EventConnector -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#EventConnector">
+        <rdfs:subClassOf rdf:resource="http://www.uniandes.edu.co/accordant/technology#Connector"/>
+        <rdfs:label>Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#LGPL -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#LGPL">
+        <rdfs:subClassOf rdf:resource="http://www.uniandes.edu.co/accordant/technology#Non-Proprietary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#License -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#License"/>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Non-Proprietary -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#Non-Proprietary">
+        <rdfs:subClassOf rdf:resource="http://www.uniandes.edu.co/accordant/technology#License"/>
+        <owl:disjointWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Proprietary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#PMMLEstimator -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#PMMLEstimator">
+        <rdfs:subClassOf rdf:resource="http://www.khaos.uma.es/perception/bigowl#DataMining"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Permissive -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#Permissive">
+        <rdfs:subClassOf rdf:resource="http://www.uniandes.edu.co/accordant/technology#Non-Proprietary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#ProcedureCall -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#ProcedureCall">
+        <rdfs:subClassOf rdf:resource="http://www.uniandes.edu.co/accordant/technology#Connector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#ProcessingModel -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#ProcessingModel">
+        <rdfs:subClassOf rdf:resource="http://www.uniandes.edu.co/accordant/technology#TechFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Proprietary -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#Proprietary">
+        <rdfs:subClassOf rdf:resource="http://www.uniandes.edu.co/accordant/technology#License"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Public_Domain -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#Public_Domain">
+        <rdfs:subClassOf rdf:resource="http://www.uniandes.edu.co/accordant/technology#Non-Proprietary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#StreamConnector -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#StreamConnector">
+        <rdfs:subClassOf rdf:resource="http://www.uniandes.edu.co/accordant/technology#Connector"/>
+        <rdfs:label>Stream</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#TechFeature -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#TechFeature"/>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Technology -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Vendor -->
+
+
+    <owl:Class rdf:about="http://www.uniandes.edu.co/accordant/technology#Vendor"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.khaos.uma.es/perception/bigowl#Integer -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.khaos.uma.es/perception/bigowl#Integer">
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#DataSink"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#AGPL -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#AGPL">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Copyleft"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Apache -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Apache">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Permissive"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#At_Least_Once -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#At_Least_Once">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#DeliveryGuarantee"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#At_Most_Once -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#At_Most_Once">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#DeliveryGuarantee"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#BSD -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#BSD">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Permissive"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Batch -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Batch">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#ProcessingModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#BestEffort -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#BestEffort">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#DeliveryGuarantee"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#CC0 -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#CC0">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Public_Domain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Creative_Commons -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Creative_Commons">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Public_Domain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Exactly_Once -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Exactly_Once">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#DeliveryGuarantee"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Flink -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Flink">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Batch"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Exactly_Once"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Stream"/>
+        <hasTechLicense rdf:resource="http://www.uniandes.edu.co/accordant/technology#Apache"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Kafka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Flume -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Flume">
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#DataCollection"/>
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#DataSink"/>
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#At_Least_Once"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Batch"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Microbatch"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Stream"/>
+        <hasTechLicense rdf:resource="http://www.uniandes.edu.co/accordant/technology#Apache"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Kafka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#GPL -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#GPL">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Copyleft"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Hadoop -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Hadoop">
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#DataProcessing"/>
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Batch"/>
+        <hasTechLicense rdf:resource="http://www.uniandes.edu.co/accordant/technology#Apache"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Kafka"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Spark"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Sqoop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Hive -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Hive">
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#DataCollection"/>
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#DataSink"/>
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Batch"/>
+        <hasTechLicense rdf:resource="http://www.uniandes.edu.co/accordant/technology#Apache"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Hadoop"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Spark"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Hive_Streaming -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Hive_Streaming">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#At_Least_Once"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Microbatch"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Stream"/>
+        <hasTechLicense rdf:resource="http://www.uniandes.edu.co/accordant/technology#Apache"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Flume"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Spark"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Storm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#KMeans -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#KMeans">
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#Algorithm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Kafka -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Kafka">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#EventConnector"/>
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#At_Least_Once"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#At_Most_Once"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Exactly_Once"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Microbatch"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Stream"/>
+        <hasTechLicense rdf:resource="http://www.uniandes.edu.co/accordant/technology#Apache"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Flink"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Samza"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Spark"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Storm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#LGPL -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#LGPL">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#LGPL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#MIT -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#MIT">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Permissive"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Microbatch -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Microbatch">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#ProcessingModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#MongoSpark -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#MongoSpark">
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#DataCollection"/>
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#DataSink"/>
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Batch"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Microbatch"/>
+        <hasTechLicense rdf:resource="http://www.uniandes.edu.co/accordant/technology#Apache"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Spark"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Mozilla -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Mozilla">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#LGPL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Openscoring -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Openscoring">
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#DataAnalysing"/>
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#At_Most_Once"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Batch"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Microbatch"/>
+        <hasTechLicense rdf:resource="http://www.uniandes.edu.co/accordant/technology#AGPL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#RabbitMQ -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#RabbitMQ">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#EventConnector"/>
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#At_Least_Once"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#At_Most_Once"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Microbatch"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Stream"/>
+        <hasTechLicense rdf:resource="http://www.uniandes.edu.co/accordant/technology#Mozilla"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Samza -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Samza">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#At_Least_Once"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Batch"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Stream"/>
+        <hasTechLicense rdf:resource="http://www.uniandes.edu.co/accordant/technology#Apache"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Kafka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#ScikitLearn -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#ScikitLearn">
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#DataAnalysing"/>
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Batch"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Microbatch"/>
+        <hasTechLicense rdf:resource="http://www.uniandes.edu.co/accordant/technology#BSD"/>
+        <supportAlg rdf:resource="http://www.uniandes.edu.co/accordant/technology#Spectral_Clustering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Spark -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Spark">
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#DataAnalysing"/>
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#DataProcessing"/>
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#At_Least_Once"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Batch"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Exactly_Once"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Microbatch"/>
+        <hasTechLicense rdf:resource="http://www.uniandes.edu.co/accordant/technology#Apache"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Kafka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Spectral_Clustering -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Spectral_Clustering">
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#Algorithm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Sqoop -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Sqoop">
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#DataCollection"/>
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#DataSink"/>
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Batch"/>
+        <hasTechLicense rdf:resource="http://www.uniandes.edu.co/accordant/technology#Apache"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Hadoop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Storm -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Storm">
+        <rdf:type rdf:resource="http://www.khaos.uma.es/perception/bigowl#DataProcessing"/>
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#Technology"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#At_Least_Once"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#At_Most_Once"/>
+        <hasTechFeature rdf:resource="http://www.uniandes.edu.co/accordant/technology#Stream"/>
+        <techCompatibleWith rdf:resource="http://www.uniandes.edu.co/accordant/technology#Kafka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uniandes.edu.co/accordant/technology#Stream -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.uniandes.edu.co/accordant/technology#Stream">
+        <rdf:type rdf:resource="http://www.uniandes.edu.co/accordant/technology#ProcessingModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.uniandes.edu.co/accordant/technology#Adaptor"/>
+            <rdf:Description rdf:about="http://www.uniandes.edu.co/accordant/technology#EventConnector"/>
+            <rdf:Description rdf:about="http://www.uniandes.edu.co/accordant/technology#ProcedureCall"/>
+            <rdf:Description rdf:about="http://www.uniandes.edu.co/accordant/technology#StreamConnector"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.uniandes.edu.co/accordant/technology#Copyleft"/>
+            <rdf:Description rdf:about="http://www.uniandes.edu.co/accordant/technology#LGPL"/>
+            <rdf:Description rdf:about="http://www.uniandes.edu.co/accordant/technology#Permissive"/>
+            <rdf:Description rdf:about="http://www.uniandes.edu.co/accordant/technology#Public_Domain"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/ -->
+
+

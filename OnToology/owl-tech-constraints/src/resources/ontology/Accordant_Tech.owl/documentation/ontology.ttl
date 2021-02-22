@@ -1,0 +1,453 @@
+@prefix : <http://www.uniandes.edu.co/accordant/technology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.uniandes.edu.co/accordant/technology> .
+
+<http://www.uniandes.edu.co/accordant/technology> rdf:type owl:Ontology ;
+                                                   owl:imports <http://www.khaos.uma.es/perception/bigowl> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.uniandes.edu.co/accordant/technology#hasTechFeature
+:hasTechFeature rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Technology ;
+                rdfs:range :TechFeature .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#hasTechLicense
+:hasTechLicense rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Technology ;
+                rdfs:range :License .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#hasTechVendor
+:hasTechVendor rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Technology ;
+               rdfs:range :Vendor .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#morePermisive
+:morePermisive rdf:type owl:ObjectProperty ;
+               rdfs:domain :Non-Proprietary ;
+               rdfs:range :Non-Proprietary .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#supportAlg
+:supportAlg rdf:type owl:ObjectProperty ;
+            rdfs:domain :Technology ;
+            rdfs:range <http://www.khaos.uma.es/perception/bigowl#Algorithm> .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#techCompatibleWith
+:techCompatibleWith rdf:type owl:ObjectProperty ,
+                             owl:SymmetricProperty ;
+                    rdfs:domain :Technology ;
+                    rdfs:range :Technology .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.khaos.uma.es/perception/bigowl#Algorithm
+<http://www.khaos.uma.es/perception/bigowl#Algorithm> rdf:type owl:Class .
+
+
+###  http://www.khaos.uma.es/perception/bigowl#DataAnalysing
+<http://www.khaos.uma.es/perception/bigowl#DataAnalysing> rdf:type owl:Class .
+
+
+###  http://www.khaos.uma.es/perception/bigowl#DataCollection
+<http://www.khaos.uma.es/perception/bigowl#DataCollection> rdf:type owl:Class .
+
+
+###  http://www.khaos.uma.es/perception/bigowl#DataMining
+<http://www.khaos.uma.es/perception/bigowl#DataMining> rdf:type owl:Class .
+
+
+###  http://www.khaos.uma.es/perception/bigowl#DataProcessing
+<http://www.khaos.uma.es/perception/bigowl#DataProcessing> rdf:type owl:Class .
+
+
+###  http://www.khaos.uma.es/perception/bigowl#DataSink
+<http://www.khaos.uma.es/perception/bigowl#DataSink> rdf:type owl:Class .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Adaptor
+:Adaptor rdf:type owl:Class ;
+         rdfs:subClassOf :Connector .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Connector
+:Connector rdf:type owl:Class ;
+           rdfs:label "Connector" .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Copyleft
+:Copyleft rdf:type owl:Class ;
+          rdfs:subClassOf :Non-Proprietary .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#DeliveryGuarantee
+:DeliveryGuarantee rdf:type owl:Class ;
+                   rdfs:subClassOf :TechFeature ;
+                   owl:disjointWith :ProcessingModel .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#EventConnector
+:EventConnector rdf:type owl:Class ;
+                rdfs:subClassOf :Connector ;
+                rdfs:label "Event" .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#LGPL
+:LGPL rdf:type owl:Class ;
+      rdfs:subClassOf :Non-Proprietary .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#License
+:License rdf:type owl:Class .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Non-Proprietary
+:Non-Proprietary rdf:type owl:Class ;
+                 rdfs:subClassOf :License ;
+                 owl:disjointWith :Proprietary .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#PMMLEstimator
+:PMMLEstimator rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.khaos.uma.es/perception/bigowl#DataMining> .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Permissive
+:Permissive rdf:type owl:Class ;
+            rdfs:subClassOf :Non-Proprietary .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#ProcedureCall
+:ProcedureCall rdf:type owl:Class ;
+               rdfs:subClassOf :Connector .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#ProcessingModel
+:ProcessingModel rdf:type owl:Class ;
+                 rdfs:subClassOf :TechFeature .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Proprietary
+:Proprietary rdf:type owl:Class ;
+             rdfs:subClassOf :License .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Public_Domain
+:Public_Domain rdf:type owl:Class ;
+               rdfs:subClassOf :Non-Proprietary .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#StreamConnector
+:StreamConnector rdf:type owl:Class ;
+                 rdfs:subClassOf :Connector ;
+                 rdfs:label "Stream" .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#TechFeature
+:TechFeature rdf:type owl:Class .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Technology
+:Technology rdf:type owl:Class .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Vendor
+:Vendor rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.khaos.uma.es/perception/bigowl#Integer
+<http://www.khaos.uma.es/perception/bigowl#Integer> rdf:type owl:NamedIndividual ,
+                                                             <http://www.khaos.uma.es/perception/bigowl#DataSink> .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#AGPL
+:AGPL rdf:type owl:NamedIndividual ,
+               :Copyleft .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Apache
+:Apache rdf:type owl:NamedIndividual ,
+                 :Permissive .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#At_Least_Once
+:At_Least_Once rdf:type owl:NamedIndividual ,
+                        :DeliveryGuarantee .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#At_Most_Once
+:At_Most_Once rdf:type owl:NamedIndividual ,
+                       :DeliveryGuarantee .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#BSD
+:BSD rdf:type owl:NamedIndividual ,
+              :Permissive .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Batch
+:Batch rdf:type owl:NamedIndividual ,
+                :ProcessingModel .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#BestEffort
+:BestEffort rdf:type owl:NamedIndividual ,
+                     :DeliveryGuarantee .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#CC0
+:CC0 rdf:type owl:NamedIndividual ,
+              :Public_Domain .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Creative_Commons
+:Creative_Commons rdf:type owl:NamedIndividual ,
+                           :Public_Domain .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Exactly_Once
+:Exactly_Once rdf:type owl:NamedIndividual ,
+                       :DeliveryGuarantee .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Flink
+:Flink rdf:type owl:NamedIndividual ,
+                :Technology ;
+       :hasTechFeature :Batch ,
+                       :Exactly_Once ,
+                       :Stream ;
+       :hasTechLicense :Apache ;
+       :techCompatibleWith :Kafka .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Flume
+:Flume rdf:type owl:NamedIndividual ,
+                <http://www.khaos.uma.es/perception/bigowl#DataCollection> ,
+                <http://www.khaos.uma.es/perception/bigowl#DataSink> ,
+                :Technology ;
+       :hasTechFeature :At_Least_Once ,
+                       :Batch ,
+                       :Microbatch ,
+                       :Stream ;
+       :hasTechLicense :Apache ;
+       :techCompatibleWith :Kafka .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#GPL
+:GPL rdf:type owl:NamedIndividual ,
+              :Copyleft .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Hadoop
+:Hadoop rdf:type owl:NamedIndividual ,
+                 <http://www.khaos.uma.es/perception/bigowl#DataProcessing> ,
+                 :Technology ;
+        :hasTechFeature :Batch ;
+        :hasTechLicense :Apache ;
+        :techCompatibleWith :Kafka ,
+                            :Spark ,
+                            :Sqoop .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Hive
+:Hive rdf:type owl:NamedIndividual ,
+               <http://www.khaos.uma.es/perception/bigowl#DataCollection> ,
+               <http://www.khaos.uma.es/perception/bigowl#DataSink> ,
+               :Technology ;
+      :hasTechFeature :Batch ;
+      :hasTechLicense :Apache ;
+      :techCompatibleWith :Hadoop ,
+                          :Spark .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Hive_Streaming
+:Hive_Streaming rdf:type owl:NamedIndividual ,
+                         :Technology ;
+                :hasTechFeature :At_Least_Once ,
+                                :Microbatch ,
+                                :Stream ;
+                :hasTechLicense :Apache ;
+                :techCompatibleWith :Flume ,
+                                    :Spark ,
+                                    :Storm .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#KMeans
+:KMeans rdf:type owl:NamedIndividual ,
+                 <http://www.khaos.uma.es/perception/bigowl#Algorithm> .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Kafka
+:Kafka rdf:type owl:NamedIndividual ,
+                :EventConnector ,
+                :Technology ;
+       :hasTechFeature :At_Least_Once ,
+                       :At_Most_Once ,
+                       :Exactly_Once ,
+                       :Microbatch ,
+                       :Stream ;
+       :hasTechLicense :Apache ;
+       :techCompatibleWith :Flink ,
+                           :Samza ,
+                           :Spark ,
+                           :Storm .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#LGPL
+:LGPL rdf:type owl:NamedIndividual ,
+               :LGPL .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#MIT
+:MIT rdf:type owl:NamedIndividual ,
+              :Permissive .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Microbatch
+:Microbatch rdf:type owl:NamedIndividual ,
+                     :ProcessingModel .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#MongoSpark
+:MongoSpark rdf:type owl:NamedIndividual ,
+                     <http://www.khaos.uma.es/perception/bigowl#DataCollection> ,
+                     <http://www.khaos.uma.es/perception/bigowl#DataSink> ,
+                     :Technology ;
+            :hasTechFeature :Batch ,
+                            :Microbatch ;
+            :hasTechLicense :Apache ;
+            :techCompatibleWith :Spark .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Mozilla
+:Mozilla rdf:type owl:NamedIndividual ,
+                  :LGPL .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Openscoring
+:Openscoring rdf:type owl:NamedIndividual ,
+                      <http://www.khaos.uma.es/perception/bigowl#DataAnalysing> ,
+                      :Technology ;
+             :hasTechFeature :At_Most_Once ,
+                             :Batch ,
+                             :Microbatch ;
+             :hasTechLicense :AGPL .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#RabbitMQ
+:RabbitMQ rdf:type owl:NamedIndividual ,
+                   :EventConnector ,
+                   :Technology ;
+          :hasTechFeature :At_Least_Once ,
+                          :At_Most_Once ,
+                          :Microbatch ,
+                          :Stream ;
+          :hasTechLicense :Mozilla .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Samza
+:Samza rdf:type owl:NamedIndividual ,
+                :Technology ;
+       :hasTechFeature :At_Least_Once ,
+                       :Batch ,
+                       :Stream ;
+       :hasTechLicense :Apache ;
+       :techCompatibleWith :Kafka .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#ScikitLearn
+:ScikitLearn rdf:type owl:NamedIndividual ,
+                      <http://www.khaos.uma.es/perception/bigowl#DataAnalysing> ,
+                      :Technology ;
+             :hasTechFeature :Batch ,
+                             :Microbatch ;
+             :hasTechLicense :BSD ;
+             :supportAlg :Spectral_Clustering .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Spark
+:Spark rdf:type owl:NamedIndividual ,
+                <http://www.khaos.uma.es/perception/bigowl#DataAnalysing> ,
+                <http://www.khaos.uma.es/perception/bigowl#DataProcessing> ,
+                :Technology ;
+       :hasTechFeature :At_Least_Once ,
+                       :Batch ,
+                       :Exactly_Once ,
+                       :Microbatch ;
+       :hasTechLicense :Apache ;
+       :techCompatibleWith :Kafka .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Spectral_Clustering
+:Spectral_Clustering rdf:type owl:NamedIndividual ,
+                              <http://www.khaos.uma.es/perception/bigowl#Algorithm> .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Sqoop
+:Sqoop rdf:type owl:NamedIndividual ,
+                <http://www.khaos.uma.es/perception/bigowl#DataCollection> ,
+                <http://www.khaos.uma.es/perception/bigowl#DataSink> ,
+                :Technology ;
+       :hasTechFeature :Batch ;
+       :hasTechLicense :Apache ;
+       :techCompatibleWith :Hadoop .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Storm
+:Storm rdf:type owl:NamedIndividual ,
+                <http://www.khaos.uma.es/perception/bigowl#DataProcessing> ,
+                :Technology ;
+       :hasTechFeature :At_Least_Once ,
+                       :At_Most_Once ,
+                       :Stream ;
+       :techCompatibleWith :Kafka .
+
+
+###  http://www.uniandes.edu.co/accordant/technology#Stream
+:Stream rdf:type owl:NamedIndividual ,
+                 :ProcessingModel .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Adaptor
+                :EventConnector
+                :ProcedureCall
+                :StreamConnector
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Copyleft
+                :LGPL
+                :Permissive
+                :Public_Domain
+              )
+] .
+
+
+###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
